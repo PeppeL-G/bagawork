@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/(other)/tutorials/04-gui-layouts/+page.md";

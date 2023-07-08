@@ -1,0 +1,8 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# Counter
+This example shows how to create an app with a counter.
+
+::bagawork-project[app&link&code&baga=eNqVkk1rg0AQQP+KDD0YYsS0N6GHJNCSQ6GkObTUgIs7tlLdld2VJpX9711j/MS29CCM47wZd96WQPIc/BIiThF8iFIipfVwWuW5hUeFjErLxGXAAlU9nK0x5gLtWZ1SxI14wRQK69byqpRuSiOBROGTIkI9kreOEKgKwaxNjVWfBljCDJghU5eCiUnzW2s5YCj+ySzGjECJv9QPT6NBOxDzlKKQ4L+WkFDwlw4wklVbOx8SHOBxbJo+g+818YuJtVPXX3f1GHFG7879fsYODuRmO4OB9T9s65eBs94+W3PVS9m5uC+SsYUd/5R2nQnU3nB2eFW2W9DhzJXJF9rLmdMUbXhaZEw2+RYOVNVrIh2odaHMxbHDRdfOfSeMpmbzxB3L60b12V2la5Lvi+yz/bjpMp/sML5yHdlEs8td0MbW0ezeM6ZO4N94raU9ZnlqdjywNRC0kh/beEWLVP3DT60k7Obrg/4GuI1RwQ==]

@@ -1,0 +1,7 @@
+:root{
+	/*
+		We want text in <main> to have a max width, so all elements
+		in <main> showing text should use this max width.
+	*/
+	--main-text-max-width: 40em;
+}

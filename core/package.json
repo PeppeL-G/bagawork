@@ -1,0 +1,12 @@
+{
+  "name": "@bagawork/core",
+  "version": "0.0.0",
+  "description": "Contains the core functionally for creating Bagawork apps.",
+  "main": "src/index.js",
+  "type": "module",
+  "keywords": [
+    "bagawork"
+  ],
+  "author": "Peter Larsson-Green",
+  "license": "ISC"
+}

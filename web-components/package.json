@@ -1,0 +1,15 @@
+{
+  "name": "@bagawork/web-components",
+  "version": "0.0.0",
+  "description": "Contains web components to visualize Bagawork apps.",
+  "main": "src/index.js",
+  "type": "module",
+  "dependencies": {
+    "@bagawork/core": "^0.0.0"
+  },
+  "keywords": [
+    "bagawork"
+  ],
+  "author": "Peter Larsson-Green",
+  "license": "ISC"
+}

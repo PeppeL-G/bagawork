@@ -1,0 +1,21 @@
+{
+  "name": "@bagawork/editor",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@bagawork/core": "^0.0.0",
+    "@bagawork/web-components": "^0.0.0",
+    "@codemirror/basic-setup": "^0.18.2",
+    "@codemirror/commands": "^0.18.0",
+    "@codemirror/lang-javascript": "^0.18.0",
+    "@codemirror/state": "^0.18.3",
+    "@codemirror/view": "^0.18.3",
+    "pako": "^2.1.0",
+    "js-base64": "^3.7.5"
+  },
+  "files": [
+    "./src/"
+  ],
+  "author": "Peter Larsson-Green",
+  "license": "ISC"
+}

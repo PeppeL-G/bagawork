@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/(other)/examples/21-sticks/+page.md";
