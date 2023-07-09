@@ -1,6 +1,5 @@
 import {applyAttributesToElement} from '../../functions/apply-props-to-element.js'
 import {createGuiElement} from '../../functions/create-gui-element.js'
-import { SpaceComponent } from '@bagawork/core/src/components/SpaceComponent.js'
 
 const ParentElement = (
 	typeof HTMLElement == 'undefined' ?
@@ -43,7 +42,7 @@ export default class RowsElement extends ParentElement{
 		style.gridTemplateRows = rowsComponent.children.map(childComponent => {
 			if(childComponent.props.size != undefined){
 				return `minmax(auto, ${childComponent.props.size}fr)`
-			} else if (childComponent instanceof SpaceComponent){
+			} else if (childComponent.constructor.name == "SpaceComponent"){
 				return '1fr'
 			}else if(childComponent){
 				return 'min-content'

@@ -1,6 +1,5 @@
 import {applyAttributesToElement} from '../../functions/apply-props-to-element.js'
 import {createGuiElement} from '../../functions/create-gui-element.js'
-import { SpaceComponent } from '@bagawork/core/src/components/SpaceComponent.js'
 
 const ParentElement = (
 	typeof HTMLElement == 'undefined' ?
@@ -44,7 +43,7 @@ export default class ColumnsElement extends ParentElement{
 			const size = childComponent.props.size
 			if(size != undefined){
 				return `minmax(auto, ${size}fr)`
-			} else if (childComponent instanceof SpaceComponent) {
+			} else if (childComponent.constructor.name == "SpaceComponent") {
 				return '1fr'
 			}else{
 				return 'max-content'
