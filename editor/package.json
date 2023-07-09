@@ -1,10 +1,10 @@
 {
   "name": "@bagawork/editor",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@bagawork/core": "^0.0.0",
-    "@bagawork/web-components": "^0.0.0",
+    "@bagawork/core": "^0.0.1",
+    "@bagawork/web-components": "^0.0.3",
     "@codemirror/basic-setup": "^0.18.2",
     "@codemirror/commands": "^0.18.0",
     "@codemirror/lang-javascript": "^0.18.0",
