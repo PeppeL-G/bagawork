@@ -24,6 +24,9 @@ export function createGuiElement(guiComponent){
 		return new RowsElement()
 	}else if(guiComponent instanceof SpaceComponent){
 		return new SpaceElement()
+	}else{
+		// This should never happen if implemented correctly.
+		console.error(`createGuiElement(): No GUI element exists for the GUI component`, guiComponent)
 	}
 	
 }

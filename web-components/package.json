@@ -1,6 +1,6 @@
 {
   "name": "@bagawork/web-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Contains web components to visualize Bagawork apps.",
   "main": "src/index.js",
   "type": "module",
