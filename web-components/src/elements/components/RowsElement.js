@@ -1,6 +1,6 @@
 import {applyAttributesToElement} from '../../functions/apply-props-to-element.js'
 import {createGuiElement} from '../../functions/create-gui-element.js'
-import { SpaceComponent } from '@bagawork/core/src/components/SpaceComponent'
+import { SpaceComponent } from '@bagawork/core/src/components/SpaceComponent.js'
 
 const ParentElement = (
 	typeof HTMLElement == 'undefined' ?
