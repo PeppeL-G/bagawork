@@ -38,6 +38,6 @@ const myDirection = new Direction(
 )
 ```
 
-The direction can then be added to a `Page` using for example [Page.createAfterDirections()](./page/#creating-after-directions).
+The direction can then be added to a `Page` using for example [Page.createAfterDirections()](/documentation/page).
 
 :::

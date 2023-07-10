@@ -47,7 +47,7 @@ To indicate which `Page` the user should come to when the `Timer` times out, use
 
 :::
 
-The `page()` configuration method accepts the same type of values as the `page` parameter in the [Direction](./direction) constructor.
+The `page()` configuration method accepts the same type of values as the `page` parameter in the [Direction](/documentation/direction) constructor.
 
 
 

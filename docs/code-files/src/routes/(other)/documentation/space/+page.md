@@ -18,6 +18,6 @@ You pass the child to the `Space` component as its main content.
 
 ::: tip Common usage
 
-A common usage of the `Space` component is to just occupy space, so other children in a layout are positioned as desired. For examples, see the documentation for the [`Columns`](./columns) and [`Rows`](./rows) components.
+A common usage of the `Space` component is to just occupy space, so other children in a layout are positioned as desired. For examples, see the documentation for the [`Columns`](/documentation/columns) and [`Rows`](/documentation/rows) components.
 
 :::

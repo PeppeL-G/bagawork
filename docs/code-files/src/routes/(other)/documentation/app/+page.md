@@ -86,7 +86,7 @@ class StartPage extends Page{
 
 :::
 
-See the documentation for the [Page](page) class to learn which methods you can override in it to configure how the page should work.
+See the documentation for the [Page](/documentation/page) class to learn which methods you can override in it to configure how the page should work.
 
 
 

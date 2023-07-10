@@ -3,9 +3,10 @@
 
 	import { projectToAppCreator } from "@bagawork/editor/src/functions/project-to-app-creator.js";
 	import { AppElement } from "@bagawork/web-components";
+	import { browser } from '$app/environment';
 	
 	function showApp(appDiv) {
-				
+		
 		const createApp = projectToAppCreator(project.app, null, project.pages);
 
 		const appElement = new AppElement();
@@ -14,7 +15,9 @@
 	}
 </script>
 
-<div use:showApp class="app" />
+{#if browser}
+	<div use:showApp class="app" />
+{/if}
 
 <style>
 	.app {

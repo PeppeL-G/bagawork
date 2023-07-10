@@ -19,7 +19,7 @@ The `Mouth` class relies on text-to-speech functionality provided by the user's 
 
 
 ## Making the mouth speak
-By default, `Mouth` is disabled and won't speak anything. To make it speak the text in the [Text](./text) component in the graphical user interface on all `Page`s, enable it by calling the `enable()` method on it.
+By default, `Mouth` is disabled and won't speak anything. To make it speak the text in the [Text](/documentation/text) component in the graphical user interface on all `Page`s, enable it by calling the `enable()` method on it.
 
 ::: tip Example
 

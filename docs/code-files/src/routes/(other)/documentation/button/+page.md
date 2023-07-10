@@ -34,7 +34,7 @@ By default, when the user clicks on the `Button`, the user will come to the same
 
 :::
 
-The value you pass to `page()` can be the same type of value you pass as the `page` argument in the [Direction](./direction) constructor. It's typically the name of the `Page` class the user should come to.
+The value you pass to `page()` can be the same type of value you pass as the `page` argument in the [Direction](/documentation/direction) constructor. It's typically the name of the `Page` class the user should come to.
 
 
 
