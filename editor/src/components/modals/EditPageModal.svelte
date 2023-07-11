@@ -51,19 +51,19 @@
 <Modal bind:showModal>
 	<div class="edit-page-modal">
 		
-		<div class="code-editor">
-			<CodeEditor
-				code={page.code}
-				bind:this={codeEditor}
-			/>
-		</div>
-		
 		<div class="preview-section">
 			<div class="app-component">
 				<ViewApp
 					startPage={page}
 				/>
 			</div>
+		</div>
+		
+		<div class="code-editor">
+			<CodeEditor
+				code={page.code}
+				bind:this={codeEditor}
+			/>
 		</div>
 		
 		<div class="buttons-row">
@@ -89,7 +89,7 @@
 	background-color: aqua;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: 1fr 250px;
+	grid-template-columns: 250px 1fr;
 	grid-template-rows: 1fr auto;
 	align-items: center;
 	height: 100%;
@@ -98,18 +98,14 @@
 
 .code-editor{
 	grid-row: 1;
-	grid-column: 1;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: auto;
+	grid-column: 2;
+	height: 100%;
 }
 
 .preview-section{
 	grid-row: 1;
-	grid-column: 2;
+	grid-column: 1;
 	padding: 0.5em;
-	position: sticky;
-	top: 0;
 }
 
 .buttons-row{

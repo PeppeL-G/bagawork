@@ -2,52 +2,77 @@
 	
 	export let code
 	
-	import {EditorView, keymap} from "@codemirror/view"
-	import {EditorState} from "@codemirror/state"
-	import {basicSetup} from "@codemirror/basic-setup"
-	import {javascript} from "@codemirror/lang-javascript"
-	import {defaultTabBinding} from "@codemirror/commands"
-	import {indentUnit} from "@codemirror/language"
-	import { onMount } from "svelte"
+	import monacoLoader from '@monaco-editor/loader';
 	
-	let editorDiv
-	let editorView
+	let monacoEditor
 	
-	onMount(() => {
+	async function showEditor(editorContainer){
 		
-		editorView = new EditorView({
-			state: EditorState.create({
-				doc: code,
-				extensions: [
-					basicSetup,
-					keymap.of([
-						defaultTabBinding
-					]),
-					javascript(),
-					indentUnit.of("\t")
-				]
-			}),
-			parent: editorDiv,
+		const monaco = await monacoLoader.init()
+		
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(`
+			/** A class representing a page. */
+			class Page {
+				
+				/**
+				 * This method is called when:
+				 *  - the user navigates to this page
+				 * In this method you can initialize the page's internal state.
+				 */
+				onBefore(){}
+				
+				/**
+				 * This method is called:
+				 * - after onBefore() has been called
+				 * - if the user leaves the app when this page is shown, this method will
+				 *   be called when the user comes back to the app, and this page is shown
+				 *   again.
+				 * In this method you must create and send back the root GUI component
+				 * of the page's GUI.
+				 */
+				createGui(){}
+				
+				/**
+				 * This method is called:
+				 * - when the user is going to another page in your app
+				 * In this method you can write some code that changes the app's
+				 * global state before the new page the user navigates to is created.
+				 */
+				onAfter(){}
+				
+			}
+		`)
+		
+		monacoEditor = monaco.editor.create(editorContainer, {
+			value: code,
+			fontSize: 16,
+			tabSize: 2,
+			automaticLayout: true,
+			scrollBeyondLastLine: false,
+			renderWhitespace: "all",
+			trimAutoWhitespace: false,
+			language: 'javascript',
 		})
 		
-	})
+	}
 	
 	export function getCode(){
-		return editorView.state.doc.toString()
+		return monacoEditor.getValue()
 	}
 	
 </script>
 
 <div
-	class="editor"
-	bind:this={editorDiv}
+	class="codeEditor"
+	use:showEditor
 />
 
 <style scoped>
 
-.editor{
+.codeEditor{
 	background-color: white;
 	color: black;
+	height: 100%;
 }
 
 </style>
