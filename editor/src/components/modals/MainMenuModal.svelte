@@ -1,6 +1,13 @@
 <script>
-	export let showModal;
-	export let options;
+	export let showModal = true
+	export let options = {
+		showCopyLinkButton: true,
+		showFileButtons: true,
+		extraOptions: [/*{
+			text: '',
+			onClick(bagaCode){}
+		}*/]
+	}
 
 	import Modal from "./Modal.svelte";
 	import { getClassName } from "../../functions/get-class-name.js";
@@ -17,13 +24,13 @@
 	}
 
 	async function copyLink() {
-		const compressedProjectString = getCompressedProject(getProject());
-
-		const currentUrlWithoutHash = location.href.split("#")[0];
 		
-		const link = `${currentUrlWithoutHash}#${compressedProjectString}`
-
+		const compressedProjectString = getCompressedProject(getProject());
+		
+		const link = `https://bagawork.com/editor#${compressedProjectString}`
+		
 		navigator.clipboard.writeText(link);
+		
 	}
 
 	function saveToFile() {
@@ -73,44 +80,61 @@
 			}
 		});
 	}
+	
+	function onExtraOptionClick(option){
+		
+		const bagaCode = getCompressedProject(getProject()) 
+		
+		option.onClick(bagaCode)
+		
+	}
+	
 </script>
 
 <Modal bind:showModal>
 	<div class="main-menu-modal">
 		<h1>Main menu</h1>
-
-		<div>
-			<button on:click={copyLink}>
-				Copy project to clipboard as recreational link
-			</button>
-		</div>
-
-		<div>
-			<button on:click={saveToFile}>
-				Save project to BAGA file 
-			</button>
-		</div>
-
-		<div>
-			<input
-				type="file"
-				id="file"
-				style="display: none;"
-				on:change={openFromFile}
-				accept=".baga"
-			/>
-			<button class="open-button">
-				<label for="file">Load project from BAGA file</label>
-			</button>
-		</div>
-
-		{#each options as option}
+		
+		{#if options.showCopyLinkButton}
 			<div>
-				<button on:click={option.onClick}>
+				<button on:click={copyLink}>
+					Copy project to clipboard as recreational link
+				</button>
+			</div>
+		{/if}
+		
+		
+		{#if options.showFileButtons}
+			
+			<div>
+				<button on:click={saveToFile}>
+					Save project to BAGA file 
+				</button>
+			</div>
+			
+			<div>
+				<input
+					type="file"
+					id="file"
+					style="display: none;"
+					on:change={openFromFile}
+					accept=".baga"
+				/>
+				<button class="open-button">
+					<label for="file">Load project from Baga file</label>
+				</button>
+			</div>
+			
+		{/if}
+			
+		{#each options.extraOptions as option}
+			<div>
+				<button on:click={() => onExtraOptionClick(option)}>
 					{option.text}
 				</button>
 			</div>
 		{/each}
+		
 	</div>
 </Modal>
 

@@ -1,7 +1,9 @@
 <script>
-	export let mainMenuOptions = [
-		// {text: "", onClick: function(){}}
-	];
+	export let mainMenuOptions = {
+		showCopyLinkButton: true,
+		showFileButtons: true,
+		extraOptions: [],
+	}
 
 	import Editor from "./Editor.svelte"
 	import { app, folders, pages, pageTemplates } from "../stores.js";

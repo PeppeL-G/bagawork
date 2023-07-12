@@ -1,7 +1,9 @@
 <script>
-	export let mainMenuOptions = [
-		// {text: "", onClick: function(){}}
-	];
+	export let mainMenuOptions = {
+		showCopyLinkButton: true,
+		showFileButtons: true,
+		extraOptions: [],
+	}
 
 	import MainMenuModal from "./modals/MainMenuModal.svelte";
 	import EditAppModal from "./modals/EditAppModal.svelte";

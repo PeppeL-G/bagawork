@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## Unreleased
 * Replaced [CodeMirror](https://codemirror.net/) with [MonacoEditor](https://microsoft.github.io/monaco-editor/)
+* Changed `mainMenuOptions`
 
 ## [0.0.1] - 2023-07-09
 * Updated `@bagawork` dependencies
