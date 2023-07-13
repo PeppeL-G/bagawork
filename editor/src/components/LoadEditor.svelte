@@ -4,6 +4,8 @@
 		showFileButtons: true,
 		extraOptions: [],
 	}
+	
+	export let bagaCode = ""
 
 	import Editor from "./Editor.svelte"
 	import { app, folders, pages, pageTemplates } from "../stores.js";
@@ -14,35 +16,35 @@
 	let isDoneLoading = false
 	
 	onMount(() => {
-		// If a compressed project is provided in the hash of the URL,
-		// load the project from it.
-		if (location.hash) {
-			// Remove the # character.
-			const compressedProject = location.hash.substring(1);
-
+		
+		if (bagaCode != "") {
+			
 			try {
-				const project = getDecompressedProject(compressedProject);
-
-				$app = project.app;
-				$folders = project.folders;
-				$pages = project.pages;
-				$pageTemplates = project.pageTemplates;
+				
+				const project = getDecompressedProject(bagaCode)
+				
+				$app = project.app
+				$folders = project.folders
+				$pages = project.pages
+				$pageTemplates = project.pageTemplates
+				
+				// If the project contains no page templates, add default ones.
+				if(project.pageTemplates.length == 0){
+					$pageTemplates = defaultProject.pageTemplates
+				}
 				
 			} catch (error) {
-				console.log(error);
-
-				alert("The information about the project in the link is invalid.");
+				console.log(error)
+				alert("The baga code given to the editor is invalid. Loading the default project instead.")
 			}
 		}
 		
-		// If couldn't load project from hash, go with default project.
+		// If no project is loaded from the baga code, load default project.
 		if(!$app?.code){
-			$app = defaultProject.app;
-			$folders = defaultProject.folders;
-			$pages = defaultProject.pages;
-			$pageTemplates = defaultProject.pageTemplates;
-		}else if($pageTemplates.length == 0){
-			$pageTemplates = defaultProject.pageTemplates;
+			$app = defaultProject.app
+			$folders = defaultProject.folders
+			$pages = defaultProject.pages
+			$pageTemplates = defaultProject.pageTemplates
 		}
 		
 		isDoneLoading = true
