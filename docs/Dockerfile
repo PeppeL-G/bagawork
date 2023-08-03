@@ -6,7 +6,7 @@ FROM node:lts-alpine
 # Copy over and setup the docs app.
 WORKDIR /docs
 COPY ./docs/package*.json /docs/
-RUN npm remove @bagawork/core @bagawork/web-components @bagawork/editor
+RUN npm remove @bagawork/editor
 
 # Copy over local packages into their own workspaces.
 RUN npm init --yes -w /docs/packages/core

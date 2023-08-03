@@ -13,8 +13,12 @@
 		
 	{:else}
 		
-		<h1>What error? 😲</h1>
+		<h1>What? 😲</h1>
 		<p>This is a bit embarrassing... An error occurred that we didn't know existed 😟 Well, congratulation, you managed to break our website! Are you happy now? 😜</p>
+		
+		<p>For the curious one, here's a log of the error:</p>
+		
+		<pre>{$page.error.message}</pre>
 		
 	{/if}
 	
