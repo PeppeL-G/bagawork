@@ -20,11 +20,14 @@
 				text: '3. Using GUI Components',
 				href: '/tutorials/03-using-gui-components',
 			}, {
-				text: '4. GUI Layouts',
-				href: '/tutorials/04-gui-layouts',
+				text: '4. Positioning GUI Components',
+				href: '/tutorials/04-positioning-gui-components',
 			}, {
 				text: '5. Changing Page',
 				href: '/tutorials/05-changing-page',
+			}, {
+				text: '6. Sizing GUI Components',
+				href: '/tutorials/06-sizing-gui-components',
 			}, {
 				text: '?. TODO',
 				href: '/tutorials/todo',

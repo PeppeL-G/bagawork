@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 4. GUI Layouts
+# 4. Positioning GUI Components
 This tutorial will teach you how to create more fancy GUIs by using multiple GUI components in your pages' GUIs.
 
 ## The root component
