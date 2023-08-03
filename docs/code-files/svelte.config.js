@@ -6,6 +6,7 @@ import customContainerPlugin from "remark-custom-container/dist/esm/index.js"
 import { createBagaworkProjectPlugin } from './plugins/create-bagawork-project-plugin.js'
 import { createOnlineEditorPlugin } from './plugins/create-online-editor-plugin.js'
 import rehypeExternalLinks from 'rehype-external-links'
+import { createDocsPlugin } from './plugins/create-docs-plugin.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -23,6 +24,7 @@ const config = {
 				remarkDirectivePlugin,
 				createBagaworkProjectPlugin,
 				createOnlineEditorPlugin,
+				createDocsPlugin,
 			],
 			rehypePlugins: [
 				[rehypeExternalLinks, {rel: ['nofollow'], target: "_blank"}],
