@@ -23,6 +23,9 @@
 				text: '4. GUI Layouts',
 				href: '/tutorials/04-gui-layouts',
 			}, {
+				text: '5. Changing Page',
+				href: '/tutorials/05-changing-page',
+			}, {
 				text: '?. TODO',
 				href: '/tutorials/todo',
 			}]

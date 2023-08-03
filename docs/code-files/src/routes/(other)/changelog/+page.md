@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * On the editor page, read baga code from hash of the URL
 * Updated the editor to `0.0.3`
 * Removed back to close button in editor
+* Added the docs plugin
+* Added tutorial 5 (going to another page)
 
 ## [0.0.1] - 2023-07-10
 Made it deployable to GitHub Pages.
