@@ -1,7 +1,7 @@
 import { visit } from 'unist-util-visit'
 
 // Use it like this:
-// ::editor
+// :online-editor
 export function createOnlineEditorPlugin() {
 	return (tree) => {
 		visit(tree, (node) => {
