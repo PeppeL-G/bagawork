@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 3. Using GUI Components
+# 3. Configuring GUI Components
 This tutorial will teach you the basics of how to create and configure GUI components in your pages.
 
 ## `Page.createGui()`

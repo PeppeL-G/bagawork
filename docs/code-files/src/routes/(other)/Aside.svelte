@@ -17,8 +17,8 @@
 				text: '2. Pages',
 				href: '/tutorials/02-pages',
 			}, {
-				text: '3. Using GUI Components',
-				href: '/tutorials/03-using-gui-components',
+				text: '3. Configuring GUI Components',
+				href: '/tutorials/03-configuring-gui-components',
 			}, {
 				text: '4. Positioning GUI Components',
 				href: '/tutorials/04-positioning-gui-components',
