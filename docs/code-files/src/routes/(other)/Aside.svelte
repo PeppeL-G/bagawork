@@ -29,6 +29,9 @@
 				text: '6. Sizing GUI Components',
 				href: '/tutorials/06-sizing-gui-components',
 			}, {
+				text: '7. The App Class',
+				href: '/tutorials/07-the-app-class',
+			}, {
 				text: '?. TODO',
 				href: '/tutorials/todo',
 			}]
