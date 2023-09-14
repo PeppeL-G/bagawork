@@ -78,7 +78,8 @@ export function createBagaworkProjectPlugin() {
 												p => getClassName(p.code) == className
 											)
 											if(!page){
-												console.log(`Can't find the page with name ${className}.`)
+												console.error(`Can't find the page with name ${className}.`)
+												console.error(node.children[0].value)
 											}
 											return createCodeNode(page.code)
 										}
