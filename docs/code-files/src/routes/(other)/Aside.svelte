@@ -32,6 +32,9 @@
 				text: '7. The App Class',
 				href: '/tutorials/07-the-app-class',
 			}, {
+				text: '8. Exercises',
+				href: '/tutorials/08-exercises',
+			}, {
 				text: '?. TODO',
 				href: '/tutorials/todo',
 			}]
