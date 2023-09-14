@@ -1,5 +1,6 @@
 <script>
 	import LoadEditor from '@bagawork/editor/src/components/LoadEditor.svelte'
+	import { onMount } from 'svelte'
 	
 	const mainMenuOptions = {
 		showCopyLinkButton: true,
@@ -7,15 +8,28 @@
 		extraOptions: [],
 	}
 	
-	const hashStartToRemove = "#"
+	let bagaCode = ""
 	
-	const bagaCode = location.hash.substring(
-		hashStartToRemove.length,
-	)
+	let isDoneLoading = false
+	
+	onMount(() => {
+		
+		const hashStartToRemove = "#"
+		
+		bagaCode = location.hash.substring(
+			hashStartToRemove.length,
+		)
+		
+		isDoneLoading = true
+		
+	})
 	
 </script>
 
-<LoadEditor
-	{bagaCode}
-	{mainMenuOptions}
-/>
+{#if isDoneLoading}
+	<LoadEditor
+		{bagaCode}
+		{mainMenuOptions}
+	/>
+{/if}
+
