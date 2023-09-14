@@ -38,7 +38,7 @@
 		href="/changelog"
 		class:isCurrent={$page.url.pathname == '/changelog'}
 	>
-		v0.0.1
+		v0.0.2
 	</a>
 </nav>
 
