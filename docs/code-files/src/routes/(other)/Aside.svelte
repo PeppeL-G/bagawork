@@ -9,35 +9,38 @@
 		'contact': [],
 		
 		'tutorials': [{
-			name: 'Tutorials',
+			name: 'Fundamentals',
 			links: [{
 				text: '1. Introduction',
-				href: '/tutorials/01-introduction',
+				href: '/tutorials/fundamentals/01-introduction',
 			}, {
 				text: '2. Pages',
-				href: '/tutorials/02-pages',
+				href: '/tutorials/fundamentals/02-pages',
 			}, {
 				text: '3. Configuring GUI Components',
-				href: '/tutorials/03-configuring-gui-components',
+				href: '/tutorials/fundamentals/03-configuring-gui-components',
 			}, {
 				text: '4. Positioning GUI Components',
-				href: '/tutorials/04-positioning-gui-components',
+				href: '/tutorials/fundamentals/04-positioning-gui-components',
 			}, {
 				text: '5. Changing Page',
-				href: '/tutorials/05-changing-page',
+				href: '/tutorials/fundamentals/05-changing-page',
 			}, {
 				text: '6. Sizing GUI Components',
-				href: '/tutorials/06-sizing-gui-components',
+				href: '/tutorials/fundamentals/06-sizing-gui-components',
 			}, {
 				text: '7. The App Class',
-				href: '/tutorials/07-the-app-class',
+				href: '/tutorials/fundamentals/07-the-app-class',
 			}, {
 				text: '8. Exercises',
-				href: '/tutorials/08-exercises',
-			}, {
-				text: '?. TODO',
-				href: '/tutorials/todo',
-			}]
+				href: '/tutorials/fundamentals/08-exercises',
+			}],
+		}, {
+			name: 'Programming',
+			links: [{
+				text: '1. App constants',
+				href: '/tutorials/programming/01-app-constants',
+			}],
 		}],
 		
 		'examples': [{

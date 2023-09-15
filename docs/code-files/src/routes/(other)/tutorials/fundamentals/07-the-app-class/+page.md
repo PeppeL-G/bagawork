@@ -1,4 +1,4 @@
-# 6. The App Class
+# 7. The App Class
 This tutorial will teach you the basics about the `App` class.
 
 
