@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ## [?.?.?] - ????-??-??
 * Introduced tutorial sections
 * Added the app constant tutorial
+* Added the app variable tutorial
 
 ## [0.0.2] - 2023-09-14
 * On the editor page, read baga code from hash of the URL

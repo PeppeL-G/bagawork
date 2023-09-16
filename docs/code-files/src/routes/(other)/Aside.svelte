@@ -40,6 +40,9 @@
 			links: [{
 				text: '1. App constants',
 				href: '/tutorials/programming/01-app-constants',
+			}, {
+				text: '2. App Variables',
+				href: '/tutorials/programming/02-app-variables',
 			}],
 		}],
 		
