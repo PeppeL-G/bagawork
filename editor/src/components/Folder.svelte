@@ -10,6 +10,8 @@
 	import { getClassName } from '../functions/get-class-name.js'
 	import { app, folders, pages } from '../stores.js'
 	
+	const directionToLeftExtraX = 50
+	
 	let showCreatePageModal = false
 	let showEditPageModal = false
 	let selectedPageId = -1
@@ -140,21 +142,44 @@
 						dy ** 2
 					)
 					
-					const angle = Math.atan2(
-						dy,
-						dx
-					) * 180 / Math.PI
-					
 					const centerX = startX + dx/2
-					const centerY = startY + dy/2
 					
-					lines.push({
-						length,
-						angle,
-						centerX,
-						centerY,
-						text: direction.description
-					})
+					// If endPage is to right of startPage.
+					if(0 <= dx){
+						
+						const angle = Math.atan2(
+							dy,
+							dx
+						) * 180 / Math.PI
+						
+						const centerY = startY + dy/2
+						
+						lines.push({
+							length,
+							angle,
+							centerX,
+							centerY,
+							text: direction.description,
+						})
+						
+					}else{
+						
+						const angle = Math.atan2(
+							dy,
+							dx
+						) * 180 / Math.PI + 180
+						
+						const centerY = startY + dy/2 + directionToLeftExtraX
+						
+						lines.push({
+							length,
+							angle,
+							centerX,
+							centerY,
+							text: `← ${direction.description}`,
+						})
+						
+					}
 					
 				}
 				
