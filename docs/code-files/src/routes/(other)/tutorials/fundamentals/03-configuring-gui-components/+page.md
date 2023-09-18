@@ -21,7 +21,7 @@ To create the page's GUI, you use the different GUI Components Bagawork contains
 * The GUI Component stored in the `Button` variable displays a button
 * And so on...
 
-So, to build a GUI, you must learn which the different GUI components that exist in Bagawork. They are all mentioned on the [Documentation](../../documentation/) page, but learning how to use them by reading the documentation only can be a bit tricky. Therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
+So, to build a GUI, you must learn which the different GUI components that exist in Bagawork. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by reading the documentation only can be a bit tricky. Therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
 
 ## Creating a new instance of a GUI component
 To use a GUI Component, create a new instance of it by simply writing the name of the variable storing the GUI Component you want to use. For example, to use the `Text` GUI Component, simply write `Text`. Easy as that! 🙂
