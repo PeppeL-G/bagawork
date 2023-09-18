@@ -74,6 +74,7 @@ class FeelingGoodPage extends Page{
 			Space,
 			Text(\`Glad to hear that! :)\`),
 			Space,
+			Button(\`Restart\`).page(AskFeelingPage)
 		)
 	}
 	
