@@ -9,7 +9,7 @@
 		"deploy": "node ./scripts/deploy.js"
 	},
 	"dependencies": {
-		"@bagawork/editor": "^0.0.2",
+		"@bagawork/editor": "^0.0.4",
 		"@sveltejs/kit": "^1.25.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"mdsvex": "^0.11.0",
