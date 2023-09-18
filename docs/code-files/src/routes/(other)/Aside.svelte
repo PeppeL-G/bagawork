@@ -43,6 +43,9 @@
 			}, {
 				text: '2. App Variables',
 				href: '/tutorials/programming/02-app-variables',
+			}, {
+				text: '3. Page Constants and Variables',
+				href: '/tutorials/programming/03-page-constants-and-variables',
 			}],
 		}],
 		
