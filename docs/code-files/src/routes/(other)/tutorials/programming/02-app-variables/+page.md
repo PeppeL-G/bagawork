@@ -87,7 +87,7 @@ class StartPage extends Page{
 ### The final solution
 So, here's all the code for the app using an app variable.
 
-::bagawork-project[app&link&code=InfoApp-StartPage&baga=eNptUMFKxDAQ/ZU4eGghFFdYkIKHrQf1oIj2oNiFxnaqhWwS0hR3Kfl3J1tat+IhMHkzb+a9N4AwBtIBKl0jpFBJ0XXs4bAxhuHeoao7RvVQqMKFp1WGjbYYxSPkRKLEDtk1KzeyrbAMqJ+mO3SP1M11pj/+YRC6nK8sCocvTlj3JD5/j1h0vVVsbpyQPHgOjZY12g7S9wHaGtIVh3CD/BwpwEE3DYl5hfRiqt+o9lsOhvYtmOOy+/GziGW+P0cTPsNS/W3f/tX9rL+7aEQKlxM3Ku9QSs3OhzEMf1bGfBrIekcxR+XNl1B06hiW0yyEFSeE1RJtJJLTbCdyvAiGw548XK05HCC9XK8mtznujCSlwfXW/wB1ArUv]
+::bagawork-project[app&link&code=MyApp-StartPage&baga=eNptUMFKxDAQ/ZU4eGghFFdYkIKHrQf1oIj2oNiFxnaqhWwS0hR3Kfl3J1tat+IhMHkzb+a9N4AwBtIBKl0jpFBJ0XXs4bAxhuHeoao7RvVQqMKFp1WGjbYYxSPkRKLEDtk1KzeyrbAMqJ+mO3SP1M11pj/+YRC6nK8sCocvTlj3JD5/j1h0vVVsbpyQPHgOjZY12g7S9wHaGtIVh3CD/BwpwEE3DYl5hfRiqt+o9lsOhvYtmOOy+/GziGW+P0cTPsNS/W3f/tX9rL+7aEQKlxM3Ku9QSs3OhzEMf1bGfBrIekcxR+XNl1B06hiW0yyEFSeE1RJtJJLTbCdyvAiGw548XK05HCC9XK8mtznujCSlwfXW/wB1ArUv]
 
 
 
