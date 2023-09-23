@@ -43,13 +43,13 @@ The syntax for obtaining the value stored in a variable is the same as for const
 
 Example of an app using an app variable.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNpdUMtKAzEU/ZV4cNFCECsUJOCi3agLodAuKrYwYeaODKRJSFJoCfn3Jg4zOi4C5z7O4yZCWgsRUZuGIFAr6T37uK6sZXQJpBvPMo4HfQjlGb2m1jiazftWkA9anoi9sGqlupqq0k3Ddu1IBtoG6cJGfv+SHIWz02wc/CElJI7WqIach/iK6BqIBUdxyfl+KOAwbesp7CEeB/yZcTpy2Kw3YfZi730xOXP0H08tRZymfz13/3Pv8vqseiOlDLuP/Q+ku2o+OYPjkh2flxxXiKflYsi2o5NVWbdkPKYbTguGAA==]
+::bagawork-project[app&link&code=MyApp-StartPage&baga=eNpdUE1rAyEQ/Sv20UMCEppCoAg9pJe2h0IgOaQ0gZXd2bJgVNRAgvjfo1122+1BmRnnfRkhrYWIqE1DEKiV9J59XNfWMroE0o1nuY4HfQjlGP1CrXE0m/ejIBdanog9s2qtupqqMk3Ddu1IBtoG6cJGfv+CHIWz02x8+ANKSBytUQ05D/EV0TUQS46ikv39QMBh2tZT2EM8DPVnrtORw2a+CbIne++bScxRf4xamjh1/3ru/vve5fVFyNeseiOlDLuP/Teku2o+ycJxybJPK44rxONqORjc0cmqTF6MHtMNCAqH8w==]
 
 :::
 
-But the benefit with variables over constants is that they can also change value while the app is running. The syntax for storing a new value in an app variable that has already been created is the same as when creating a new one. If we for exmaple would want to store the name `Bob` in `a.name` after it has been created, we would write `` a.name = `Bob` ``. Easy as that!
+But the benefit with variables over constants is that they can also change value while the app is running. The syntax for storing a new value in an app variable that has already been created is the same as when creating a new one. If we for example would want to store the name `Bob` in `a.name` after it has been created, we would write `` a.name = `Bob` ``. Easy as that!
 
-However, a very good question is *where* we should write the code `` a.name = `Bob` ``. And it all depends on *when* we want the app to change the name to `Bob`. Very often, it is when the user has interacted with the GUI, for example have clicked on a button, so let's go thorugh how to make that happen.
+However, a very good question is *where* we should write the code `` a.name = `Bob` ``. And it all depends on *when* we want the app to change the name to `Bob`. Very often, it is when the user has interacted with the GUI, for example have clicked on a button, so let's go through how to make that happen.
 
 In your own `App` class, you can not only implement pre-defined methods, but also create your own ones (you can name them whatever you want). To tell the computer which code that should run when the user clicks on a `Button`, that code needs to be in a method. So your `App` class can for example look like this:
 
@@ -64,7 +64,7 @@ class MyApp extends App{
 }
 ```
 
-The methods in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method should reflect what the code in the method does, so `setNameToBob()` is a very good name, since that's precisely what the code in the method does.
+The methods in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method should reflect what the code in the method does, so `setNameToBob()` is a very good name in this case, since that's precisely what the code in the method does.
 
 To tell the computer that the code in the method `setNameToBob()` should be executed when the user clicks on a button, we need to call the configuration method `handler()` on the button, and pass it the method as an argument (i.e. write `a.setNameToBob` between the parentheses):
 
@@ -72,9 +72,9 @@ To tell the computer that the code in the method `setNameToBob()` should be exec
 class StartPage extends Page{
 	
 	createGui(){
-		return Rows(
-			Text(`Hello ${a.name}!`),
-			Button(`Change name to Bob`).handler(a.setNameToBob)
+		return Rows.children(
+			Text.text(`Hello ${a.name}!`),
+			Button.text(`Change name to Bob`).handler(a.setNameToBob)
 		)
 	}
 	
@@ -87,7 +87,7 @@ class StartPage extends Page{
 ### The final solution
 So, here's all the code for the app using an app variable.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNptUMFKxDAQ/ZU4eGghFFdYkIKHrQf1oIj2oNiFxnaqhWwS0hR3Kfl3J1tat+IhMHkzb+a9N4AwBtIBKl0jpFBJ0XXs4bAxhuHeoao7RvVQqMKFp1WGjbYYxSPkRKLEDtk1KzeyrbAMqJ+mO3SP1M11pj/+YRC6nK8sCocvTlj3JD5/j1h0vVVsbpyQPHgOjZY12g7S9wHaGtIVh3CD/BwpwEE3DYl5hfRiqt+o9lsOhvYtmOOy+/GziGW+P0cTPsNS/W3f/tX9rL+7aEQKlxM3Ku9QSs3OhzEMf1bGfBrIekcxR+XNl1B06hiW0yyEFSeE1RJtJJLTbCdyvAiGw548XK05HCC9XK8mtznujCSlwfXW/wB1ArUv]
+::bagawork-project[app&link&code=MyApp-StartPage&baga=eNptkE1LxDAQhv9KHDy0EIorLEjBw9aDelBEe1DchcZ26haySUlT3CXkvzvZ2roVDwnz9c7H40C0LaQOSl0hpFBK0XXs4bBqW4Z7i6rqGNlurdY2PK0yrLXBKB5CViRK7JBds2IlmxKLEPVjdYf2kbK5zvTHPwqKzutLg8LiixXGPonP3yEGbW8UmxInIg+eQ61lhaaD9N1BU0G64BBm0D1HCXDQdU3LvEJ6MdpvZPsNh5b6zZRDs/vBmWGZ5k9oguPm29/2zd+9n/VXl5TbRlYGVTSk1janJomlLyruUErNzt2Axp8VMR+rst4S9J+6m61QNP3Iz2oW+MUJxSqJJhLJKe6xQzxjxWFPZ10tORwgvVwuRgA57lpJywcQG/8Nppu8jA==]
 
 
 

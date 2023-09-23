@@ -102,11 +102,11 @@ class AskQuestionPage extends Page{
 		p.startTimeInMs = Date.now()
 	}
 	createGui(){
-		return Rows(
-			Text(`Do you know the answer to this question?`),
+		return Rows.children(
+			Text.text(`Do you know the answer to this question?`),
 			Cols(
-				Button(`Yes`).handler(() => p.answer='yes'),
-				Button(`No` ).handler(() => p.answer='no'),
+				Button.text(`Yes`).handler(() => p.answer='yes'),
+				Button.text(`No` ).handler(() => p.answer='no'),
 			),
 		)
 	}
@@ -142,11 +142,11 @@ class AskQuestionPage extends Page{
 		p.startTimeInMs = Date.now()
 	}
 	createGui(){
-		return Rows(
-			Text(`Do you know the answer to this question?`),
+		return Rows.children(
+			Text.text(`Do you know the answer to this question?`),
 			Cols(
-				Button(`Yes`).handler(() => p.answer='yes'),
-				Button(`No` ).handler(() => p.answer='no'),
+				Button.text(`Yes`).handler(() => p.answer='yes'),
+				Button.text(`No` ).handler(() => p.answer='no'),
 			),
 		)
 	}
@@ -192,11 +192,11 @@ class AskQuestionPage extends Page{
 		p.startTimeInMs = Date.now()
 	}
 	createGui(){
-		return Rows(
-			Text(`Do you know the answer to this question?`),
+		return Rows.children(
+			Text.text(`Do you know the answer to this question?`),
 			Cols(
-				Button(`Yes`).handler(() => p.answer='yes'),
-				Button(`No` ).handler(() => p.answer='no'),
+				Button.text(`Yes`).handler(() => p.answer='yes'),
+				Button.text(`No` ).handler(() => p.answer='no'),
 			),
 		)
 	}
@@ -245,7 +245,7 @@ class NoPage extends Page{
 You can also specify additional `Direction`s using the GUI Components you use. For example, if you want the user to come to the `YesPage` when the user clicks on the *Yes* `Button`, you can use the `page()` configuration method on the `Button` like this:
 
 ```js
-Button(`yes`).page(YesPage)
+Button.text(`yes`).page(YesPage)
 ```
 
 Then you don't need to have:

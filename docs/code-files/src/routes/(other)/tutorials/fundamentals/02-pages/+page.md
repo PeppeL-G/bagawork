@@ -61,20 +61,21 @@ When a page needs to show its GUI to the user, the method `createGui(){ }` in th
 
 Example showing JavaScript code for how to create two different pages with different GUIs.
 
-::bagawork-project[link&code=AboutMePage-AboutSwedenPage&baga=eNqdkt9rwjAQx/+V271MoQx/zJe+uYcNH2SCPmxMwdhctRCTkqSolP7vS4za6jaEQQOX5i7fzzd3JbI8x7jERHHCGBPBjIHxYZjnQHtLkhtwcTmXc+tXoolZmlqm7YStqdUOJ1aTLbSE4UoVdkz+yP+vQlmFVYSpEpy0wfirxIxj3I1Qsq3XPN6GEao0NWQ/MO6c408XV1HI79X5lCjJX4/3/V22iDB3GFeCgWEUNleOG+AX335T1qbfiuzW7syltpYjYFuYkCX9sGyfbFcObO+gOw7qgHG/c/HRv4sx3REn+S+UUPpoIBVsDZmBlSgImORwICHU7ukWcHAC7A4ugM9NwN4NoAcZyXe7IR0a8BPRLyVfKFW6no/GNNw1Mds4cPcx8A2ETIKTA+U1IZDV73yWG6bu+X9TOzdiUDfiNBkz2ubCcfgJWVTf9hcLcg==]
+::bagawork-project[link&code=AboutMePage-AboutSwedenPage&baga=eNqdkt9rwjAQx/+V271MoYg/5kvf3MOGDzJBHzamYGyuWohJSVJUSv/3JUatPzY2Bk25NHf5fr69K5HlOcYlJooTxpgIZgyM9oM8B9pZktyAi8uZnFm/Ek3M0sQybcdsRY1mOLGabKElDJaqsCPyR/57FcoqrCJMleCkDcafJWYc406Ekm285uE2jFClqSH7jnH7FH+4uIpCfrfOp0RJ/nK47+eyeYS5w7gSDAzDsLlyfAF+9u03ZW36tchu7U5dasu6V2MxBLaBMVnSD4vm0Xvl6HaOvO3I9hj32mczvV9ZJlviJP/PE+ofDaSCrSAzsBQFAZMc9iSE2rZuKftHyk7/TPl0Sdm9ofQ0Q/lm16RDK+45/VLymVKl60m5mIu/OZmuHb17GPh+QibBaYLywhDw6j9+0hykrhHfSZ5a0q9bchyUKW1y4WD8wMyrL5PCEUs=]
 
 The GUI in the pages above will just contain some text. To specify that, we add the method `createGui(){ }`, and:
 
-1. In JavaScript use `return` to indicate what is written to the right side of `return` should be returned back from the method
-2. To the right of `return` use the GUI Component `Text` (a GUI Component we can use to display text):
-	1. Between the parentheses we use two `` ` `` symbols to indicate the start respective end of a *string* (a JavaScript value containing text) the `Text` component should display
-	2. In the string (between the two `` ` ``) write the characters the string should contain
+1. In JavaScript, use `return` to indicate what is written to the right side of `return` should be returned back from the method (in this method, what we return back is what will be shown on the screen)
+2. To the right of `return`, use the GUI Component `Text` (a GUI Component we can use to display text)
+3. To the right of `Text`, call the configuration method `text()` to indicate which text the `Text` component should show on the screen
+4. Between the parentheses in `text()` we use two `` ` `` symbols to indicate the start respective end of a *string* (a JavaScript value containing text)
+5. In the string (between the two `` ` `` symbols), write the characters the string should contain
 
 :::
 
 ::: warning Don't freak out!
 
-If you have never programmed before, the code and the description of the code above might seem very complicated, but you don't really need to remember all the details how of it works. For now, it's enough for you to just know that you can use `` Text(`Hello`) `` to create a `Text` GUI Component that displays the text `Hello` to the user. Easy as that! 🙂
+If you have never programmed before, the code and the description of the code above might seem very complicated, but you don't really need to remember all the details how of it works. For now, it's enough for you to just know that you can use `` Text.text(`Hello`) `` to create a `Text` GUI Component that displays the text `Hello` to the user. Easy as that! 🙂
 
 :::
 

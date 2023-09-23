@@ -1,10 +1,14 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
 # 7. The App Class
 This tutorial will teach you the basics about the `App` class.
 
 
 
 ## App structure
-As you should know by now, a Bagatell app consists of different pages. However, that is not enough for a Bagatell app to work. For example, the computer would have no idea about which of your pages that first should be shown to the user, so something more is needed. Therefor, Bagatell apps also consists of an `App` class.
+As you should know by now, a Bagatell app consists of different pages. However, that is not enough for a Bagatell app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a Bagatell app also consists of an `App` class.
 
 
 
@@ -32,7 +36,7 @@ In our :online-editor, the app class has already been created for you, and you c
 
 :::
 
-You can name your own app class whatever you want.
+You can name your own app class whatever you want, but remember that all classes in your app need to have a unique name, so you can't have a page class with the same name as your app class.
 
 To specify how your own app class should work, you override some predefined methods in it (it works the same way as you override methods in the `Page` class, but the `App` class has other methods you can override). 
 
@@ -40,13 +44,13 @@ To specify how your own app class should work, you override some predefined meth
 
 
 ## Creating the Start Page
-When the user starts your Bagawork app, the method named `createStartPage()` will be called in your app class. In this method, you should return back the page that should be shown to the user directly when the app starts.
+When the user starts your Bagawork app, the method named `createStartPage()` will be called in your `App` class. In this method, you should return back the page that should be shown to the user directly when the app starts.
 
 ::: tip Example
 
 Example showing a Bagawork app consisting of two pages, and how the app class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
 
-::bagawork-project[link&code=MyApp-FirstPage-SecondPage&baga=eNq1ksFKxDAQhl8lzqmFIFVZxdz04OJBENuDYheabadusduEZoq7lL67SWu7dJH1JKRkZsL88+drWpBag2ghVRmCgLSUxrCn/Z3WDHeEVWaYjdu4isl9aY2SMCRZ07P8QM8fTqhGauqKPRS16Q9ctRuaOug45KrMsDYg3lsoMhAXHCq5dRN7LeCg8twgvYIIxvjNxt2Kg7Z6s85B7HFIZsan+ZN5lxy5XzbFse8X9WW8oRJTqGWKfMwiq+Ql0aYwzC7aIMvdEOZcnSU+/73rviFSlZcsFSPVdxlMVZX1bYl/7jYv7EvO4Sjjz7hx2IG4DCyQPYirIOj4gGBxCsFB9D8ZzG7zN4O1TD9HEAd8I4fpr53AsLi9+cFwPb6JCLe6tHdxb2PVfQMXlPrV]
+::bagawork-project[link&app&code=MyApp-FirstPage-SecondPage&baga=eNq9klFLwzAQx79KvKcWwqjKFPOmDw4fBHF7UJywmF5dsUtCcsON0u9u0q4bHTJ8EtrmLsf/7p9fU4O0FkQNyuQIAlQlvWeP21trGW4Ide5ZiOu5nlN8lUNJOCXp6El+YpJ2FXJIa6fZfel8W4i7TSdqoOFQmCpH50G81VDmIM45aLmKE9tewMEUhUd6AZH18WuIm3cONvQbKLtmD10yML6fvzcfkyP3k3V57PvZfPuRWpZV7lAnXWlOUysV8j6bhZYjCp9kMVuWnoWHlsiKOJJFj2eLlP8uvVsTGb0TTwwj00o9KqPzVrtIR3FJpu1WNN33SgcoOWxAXGSB0RbEZZY1vKMyPkXl0PT/sAzO9kcsH1J99WwOWHs0+397gsz45npH5qq/OTNc2SocL96g9+YHEXYJng==]
 
 :::
 

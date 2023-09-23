@@ -6,32 +6,36 @@
 This tutorial will teach you how to take the user to another page when she interacts with the GUI on the page currently shown to the user.
 
 ## Multiple pages
-An app who's GUI always look the same is usually not that fun. Therefore, most Bagawork apps consists of multiple different pages, and when we want to show change the GUI shown to the user in the app, we simply take the user to another page in the app, and show the GUI of that page instead. Simple as that!
+An app who's GUI always look the same is usually not that fun. Therefore, most Bagawork apps consists of multiple different pages, and when we want to change the GUI shown to the user in the app, we simply take the user to another page in the app, and show the GUI of that page instead. Simple as that!
 
 ## Going to another page
-To take the user to another page in the app, the user usually needs to interact with the GUI on the page somehow. The simplest example of this is by clicking on a button. For that purpose, Bagawork has the :docs[button] component.
+To take the user to another page in the app, the user usually needs to interact with the GUI on the page somehow. The simplest example of this is by clicking on a button. For that purpose, Bagawork has the `Button` component.
 
-When using the :docs[button] component, you pass it the text that should be in the button as its main content.
+To tell the `Button` which text it should display, use the configuration method `text()`, and pass it the text it should contain as a string.
 
 ::: tip Example
 
-Example of how to show a :docs[button] on a page.
+Example of how to show a `Button` on a page (note: nothing special should happen when you click on the button in this example).
 
-::bagawork-project[link&app&code=StartPage&baga=eNpdT8FqwzAM/RVPpwTMSLebb9tl9DAYXQ4bSyEmUdpAYhtbYS3G/z57XlM6sEBP8nt6z4M0BoSHTvcIArpJOsdez0/GMDwRqt6x2PtGNZSqsygJ30laepMHLMq8IYu0WMXWRZqGTAoQOAx66tE6EF8exh7EhoOSc7r4SwEOehgc0geI6tJ/xj7sOZiod8PMYtsMboyv91fzCfir85dl/O95p79dkScN1ZFXtPVxdCw+OuJV8r4t+eXb80KkVdFumZyZZBnetWXel3/pQ4x1AvFQxUhnEI/VGqfG2UzRToq1Dz8GA4cU]
+::bagawork-project[link&app&code=StartPage&baga=eNpdUE1LxDAQ/StxTi2UUvWWm15kD4JoD4pdaGin20KbhGSKu4T8dxOz22WFJLz5evNeHAitgTvoVI/AoZuFtez19KQ1wyOh7C0L2DWyoXg7g4Lwg4ShN3HALE8VMkirkWwrxKxPQx58AYOaezQW+LeDqQd+X4AUS9z4NwIFqGGwSJ/Aqwv+CtjvC9CB72Yyke1ScCN827+Jj4G7Kn9Zp/+a39WPLbtxmnuDMkulhupAUFJ4srYeJ8vCoRGvC8o2Ly69zyuRkufuHRMLEyzl7to8NeXnD/HB6RH4QxVcnoA/VpvDGhc9B4XR6d7/AsASjnE=]
 
 :::
 
-By default, when clicking on the :docs[button], the current page will be reloaded. In the example above, it looks like nothing happens when you click on the button, but the page shown on the screen is actually deleted, and then it's created anew. But the new page looks the same as the previous one, so you can't notice that.
+By default, when clicking on `Button`, the current page will be reloaded. In the example above, it looks like nothing happens when you click on the button, but what actually have happened is:
 
-To take the user to another page when the user clicks on the :docs[button], you can call the configuration method `.page()` on the :docs[button], and pass it the name of the page the user should come to.
+1. The page shown on the screen has been deleted
+2. The page has been created anew
+3. The GUI of the new page is shown (the `createGui()` method has been called)
+
+To take the user to another page when the button is clicked, call the configuration method `page()` and pass it the name of the page the user should come to.
 
 ::: tip Example
 
 Example of an app where the user can go between 3 pages.
 
-::bagawork-project[link&app&code=FirstPage-SecondPage-ThirdPage&baga=eNqlksFrgzAUxv8VeSeFMGZtO5rbdljZYTBWDxuzoGjcBJtIElmL5H9fYmaqpe2lB+Hle74v3y9JB1nTAO4gZwUBDHmdCeG9Hh6bxiN7SWghPF13CU2k+XJOMkk2MuPyLfsmfmA7khPZcuo9V1z0DaMqO6RAIShZXRAuAH91UBWAQwQ025kdey9AwMpSEPkB+H6oP3Wttgga7TeZtGYvdjEJ7vZ34c2iOyZft9Vp5nf2K3yrJDLWc37qbNIADZ2nVkpG/XTNPMm8DckZLewvdyagf1QCOxL8n4HScHsddR4hOACOwpVCFmV2DeXodxvLOOkFmPin4hMWJ5xHmYfLHiV8WAwo0TUUZ3cbySjmBZDRvVkQJ5wHWa4W9k5m7qHFZNfUOpJ5cFv1B0MVFmA=]
+::bagawork-project[link&app&code=FirstPage-SecondPage-ThirdPage&baga=eNqtkkFrgzAUx7+KvJNCKLO2HfW2HVZ2GIy1h41ZqGhcBZtI8mQtku++aGrUUTz1kPDyXt4//1+SGuKyhLCGhKcUQkiKWErn7fJUlg49I2WpdHRcRyzCZiSCxki3GAt8j3+o65kKCoqVYM5LLmRbaLLKNClQBDJepFRICL9ryFMIfQIsPjUntlpAgGeZpPgJ4UMXf+lY7QmUWm/UacRezWJk3J5vzTeLune+qfL/nj/4r5wlx7xIBWWuKUW40wIz1JN7sKIHj3Tl5wqRs+uGDXeQO1uacJaafbPGs9tnPNPnXa9Fad6zdr8ICFwgDPy1IoZuPkXX690Tb+h7im93zMUIzyZu0y38VUvnPy47umCKzsrdE25geopt8MSGzSZus63WS/Nyc/tDd/RUFtpl81P36g+vBSx3]
 
 :::
 
 ## That's it!
-Good work, now you know how to navigate between the pages in your app! 🥳 But remember that the :docs[button] component is just one way to take the user to another page, there exists more ways you can learn later on.
+Good work, now you know how to navigate between the pages in your app! 🥳 But remember that the `Button` component is just one way to take the user to another page, there exists more ways you can learn later on.

@@ -35,7 +35,7 @@ The npm package `@bagawork/core` implements different classes you can use when b
 		
 		class StartPage extends Page{
 			createGui(){
-				return Text(`Hello, world`)
+				return Text.text(`Hello, world`)
 			}
 		}
 		

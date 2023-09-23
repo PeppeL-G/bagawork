@@ -10,6 +10,6 @@ The `Text` component is a view showing some text to the user. You pass the text 
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjzFvwjAUhP+KexNIHloqhnrLVBgqIcFQ1CBhxS8oInEs+0UCRf7vdUBEpFsn3zs/333uoZ2D6lG0hqBQ1DoE8XXNnBN0YbImiKT73OZceNJMW9aeN/pEs/nNzdkTd96K8WJwY24jokTZ1oZ8gPrpURmoNwmrm6Hptg6JtiwD8TfU60Pvk44HCZeyJi/vYev7MAEeu0foYXii/uyqv7y7tDo7rsiTqIIIbUOCk/VynI8fkLhALd4XEtd0Lj8eVDtqXJ1SJ3QToCyc12Vmupr/TfTUHw/xF+0GkOE=]
+::bagawork-project[app&link&code=StartPage&baga=eNqdjzFrwzAQhf+K+qYERElTMlSbpyZDoNAMLXEgwjoXE1sW0hkSjP575YSYuGMX6d3T3btPPbRzUD2K1hAUilqHILaXzDlBZyZrgki6z23OhSfN9Mna84f+odn86ubsiTtvxfgwuDG3EVGibGtDPkDte1QG6kXC6mbYdG2HRFuWgfgLanHX30nHg4RLWZPJW9jmVkyAx90j9FA8UL931V/eXWp95nTMjmvyJKogQtuQGKyn43z8hcQZavm6lLike/V2R9tR4+oUPUGcUGXhtCkz09X8P6wHiHiIv9C2lMc=]
 
 :::

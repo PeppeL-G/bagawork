@@ -10,7 +10,7 @@ The `Slider` component is a view in which the user can select a number in an int
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkD9rwzAQxb+KeJMDIjgpHarNU8lQKCRDSx2IsM7FVJaFJFMHo+9eOSGp3a3Tvfv37seNkNZCjKg6RRCotPSevZwLaxkNgYzyLOmxNGWoHMlA+yBdeJWflK0u1TI4Cr0zzNA3mzWnXixNROSoO63IeYiPEY2C2HAY2U73Lgvg6OraU3iDyG/6Pel45LDJbbF5NdtdkwX2/fodfUpm7M9985d6r5vktm4bk+WrdSuHbJPnv/AcA8T2YctxTvHx6UZ0oNbq5LggW8AU/mtXF6rX4R80hzSanU6z5x3jDxI7kDg=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkMFqwzAMhl/F6JSCCWnLDvUtp9HDYNAeWpZCTayMMMcxtkJTgt+9Tku7ZLddrF+S9etDA0hrQQxQtgpBQKml9+zjmlvLsCc0yrOoh8IUVDqUhDuSjj7lNyaLe7Ugh9Q5wwxe2KQ59kJhAgQOVasVOg/ia4BagVhyMLIZ990HgENbVR7pACJ76mPU4cTBRrfZ5MNs+0hm2K/tL/QxmbC/d/Vf6p2uo1va1CbJFmkj+2SZZb/wHHoQq/WKwzXGt82TaI+N1dFxRjaDyf3PtspVp+kfNPv4NaX4JOfz5IKncAPqYpIr]
 
 :::
 
@@ -22,7 +22,7 @@ By default, the initial number will be the one between the minimum and maximum n
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkD1rwzAQhv+KuEkBUZqvodo8lQyFQDIk1IEI61xMZVlIZ+Jg9N8rJyS1u3W6977ee7gelHMgeygajSChMCoE9nHNnGPYEVodWNJ9bnMqPCrCHSlPW/WFfHar5uSRWm+ZxQsbNYdezG2EKKBsjEYfQH72UGmQcwFW1cO92wIIaMoyIB1Avj70Mel4EuCS22Tzbra5JxPs5/Un+pCM2N/b6i/1zlTJja9mL3Vl+TwF1fH1L72ADuRiuRBwTXH99kDaY+1MspygTWiy8L0pM90a+gfOPo3y83n0vVP8AYSmkGI=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkMFqwzAMhl/F6OSCKWvXHuZbTqWHwaA9bDSFmlgpoY5jbIWlBL/7nJZ2yW67SL8s6deHe1DOgeyhaDSChMKoENj7NXOOYUdodWBJ97nNqfCoCHekPH2oM/LZ7TUnj9R6yyx+s1Fz6MXcRogCysZo9AHkoYdKg1wIsKoe7t0WQEBTlgHpE+TLQ38lHY8CXHKbbN7Ntvdigv28/kQfihH7pq3+Uu9Mldz4ajavK8sXKamOr3/pBXQgl69LAdeU128PpD3WziTLCdqEJguXbZnp1tA/cPZpdE4p8NNp9IXH+ANdrpJV]
 
 :::
 
@@ -34,7 +34,7 @@ By default, the user can only select integer numbers between the minimum and max
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkE1rwzAMhv9K0MkBE/pBDvMtp9HDYNAeNpZCTayUMMcxtkJTgv/7nJZ2yW47+ZVkvXqkEaS1IEaoOoUgoNLS++TtWlib4EBolE+iHktTUuVQEu5JOnqXZ2TpLVuSQ+qdSQxekllxqoXSBAgc6k4rdB7E1wiNArHmYGQ7zbs1AIeurj3SB4jVQ39GHY4cbHRbdN7Ndvdggf2c/kSfghn7a9/8pd7rJrplbWPYOs08oWWrLE+zVg4s/12CwwBis91wuMY3f3mQHbC1OjovCBdQhf/e1YXqNf2D6hC/stNpdsRj+AF1vZKr]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkE1rwzAMhv9K0CkBY/pBDvMtp9HDYNAeNpZCTayUMMcxtkJTgv/7nJZ2yW672K8s69UjjSCtBTFC1SkEAZWW3idv18LaBAdCo3wS9ViakiqHknBP0tG7PGOa3V5Lcki9M4nBSzJLTrlQmgCBQd1phc6D+BqhUSDWDIxsp363AmDQ1bVH+gCxeujPqMORgY1ui8q72e4eLLCf3Z/oUzBjf+2bv9R73UQ33jYmXWfcE9p0xfOMt3JI898hGAwgNtsNg2u885cH2QFbq6PzgnABVfjvXV2oXtM/qA7xK6d4pKfTbJPH8ANaMpSe]
 
 :::
 
@@ -89,7 +89,7 @@ If you want to store the number the user has selected in `Slider` in the current
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjzFrwzAQhf+KuEkBERyXDtXmqWQoFBJCSx2wsM5FVJYVSaYORv+9ckJSu1une6e7e+/TCMJa4CPUnUTgUGvhPXk5F9YSHAIa6UnSY2nKUDsUAXdBuPAqPpGuLq9lcBh6Z4jBbzIbTrNYmgiRQdNpic4D/xhBSeAbBka0U97lABh0TeMxvAHPbvo96XhkYJPb4vJqtr02C+x7+h19ambsz736S73TKrmtW2XoJlutWzHQPEvCHoSjlTpVvx9hMADPH3IG51Qfn250e2ytTu4LygVY4b+2TSF7Hf5Btk+rtJrlx2P8AcjSlBw=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVj8FqwzAMhl/F6OSCCWnGDvMtp9HDYNAyNpZCTKwMM8fxbIelBL/7nJZ2yW67WL8k69enCYS1wCdoeonAodHCe/J0Kq0lOAY00pOkp8pUoXEoAu6DcOFZfCDdnKtVcBgGZ4jBb7Jozr1YmQiRQdtric4Df59ASeBbBkZ0877zADDo29ZjeAWeX/Vb0vHIwCa31eTFbHdJVti37Tf0OVmwPw7qL/Veq+SWdcrQbb7JOjHSIk/CvghHa/VV/x7CYARe3BUMTineP1zpDthZndxXlCuw0n/u2lIOOvyD7JC+ZiE9tF5AxGP8AbR8lg8=]
 
 :::
 
@@ -99,7 +99,7 @@ If you instead want to store it in the `App`, use the configuration method `aVar
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjzFrwzAQhf+KuUkGYRyXDtXmqWQoFBJCSx2wsM5FVJYVSaYORv+9ckJSu1une6e7e+/TBNwYYBM0vUBg0CjuXPJyLo1JcPSohUuinipd+cYi97jz3PpX/okkvbxW3qIfrE40fieL4TwLlQ4QKLS9EmgdsI8JpAC2oaB5N+ddDoBC37YO/Ruw/Kbfow5HCia6rS6vZttrs8K+p9/R52bB/jzIv9Q7JaNb1klNNmnW8ZEUeZ5m/MAtqeWp/v0HhRFY8VBQOMf6+HSD22NnVDRfQa64Sve1bUsxKP8PsH1cJfUiPxzDD0Rak90=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVj8FqwzAMhl8l6OSACWnGDvMtp9HDYNBSNpZCTKwMM8dxbYelBL/7nJZ2yW67WL8k69enCbgxwCZoeoHAoFHcueTlXBqT4OhRC5dEPVW68o1F7nHnufWv/BNJeqlW3qIfrE40fieL5twLlQ4QKLS9EmgdsI8JpAC2oaB5N++7DACFvm0d+jdg+U2/Rx2OFEx0W01ezbbXZIV9335Hn5MF+/Mg/1LvlIxuWSc12aRZx0dS5Hma8QO3pJan+vcOCiOw4qGgcI7x8ekGt8fOqGi+glxxle5r25ZiUP4fYPv4NfPxIfUCIhzDDy7JldA=]
 
 :::
 
@@ -109,6 +109,6 @@ If you want to do something more complicated than just storing the number the us
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUUFqwzAQ/Iq6JxlEiFN6qKEF9xJyaClNDi11wKq1bk1l2UhrkmD89yoxTuzcetLsrHZ2RmpB1jVELWSVQogg09I59nyI65rhntAoxzxuE5NQZlESrklaepXfyIMTm5BFaqxhBnds1Dz2usR00AnIK63QOog+WygURKEAI8vjvtMACKjy3CG9QzQf8IfH3VZA7dUmk73Yqi8mts/bz9aPxcj7simuXb9VO8d7JqG1Lrz0rCwMD4NZKfc8XMyD2Y80SqPlDjVmhOqlKb/QsodHJj1NV3wQiEHvqSGqDE+X1U06sJeHEbCHaHG7EHDw5939kHaDZa2920nqSdDY/a7yWDWa/pF046/yNB19zLb7AyPHsbY=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkcFqwzAMhl/F0ykBE9qOHRbYILuUHjbG2sPGUqgXK2uYYwdboSkh7z63Wdqmt50s6bekT1ILoqogbiEzEiGGTAnn2PM+qSqGDaGWjnm7TXVKmUVBuCRh6VV8YxAeoylZpNpqpnHHLsSD1qW6g45DbpRE6yD+bKGQEE85aFEe+h0TgIPJc4f0DvFksD+83a05VL7aKLMvtuidEfap+wn94Fywz+vimvrN7FyUbQslLeqgl1JaqsL3iMpCB9MwKkUTTGeTMNoKLRXawKHCjFC+1OUXWvbwyIQP01U8DPlQ76kmMjoizxVs5uZmM0jnNXFoIJ7dzjjs/Xt3P8y+wrJSnn20g9HYiftZ5ImsFf1j7pX/+sezubjVuvsFFq25Ew==]
 
 :::

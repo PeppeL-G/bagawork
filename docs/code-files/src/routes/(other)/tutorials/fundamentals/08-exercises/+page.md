@@ -3,18 +3,18 @@
 </script>
 
 # 8. Exercises
-Great work! Now you know the basics of how to create a Bagatell app that contains a static GUI (static GUI means that the GUI in each page looks the same each time the user comes to that page). Below you find examples of apps you can create with what you you have learned so far. Try to implement them as exercises!
+Great work! Now you know the basics of how to create a Bagatell app that contains a static GUI (static GUI means that the GUI in each page looks the same each time the user comes to that page). Below you find examples of apps you can create with what you have learned so far. Try to implement them as exercises!
 
 If you want to compare your implementation with our's, or if you need to take a peak on our implementation to get started, feel free to do so, but try to complete as much as possible on your own (that's how you learn).
 
 ::: warning Book Exercise
 
-::bagawork-project[app&link&baga=eNq1lGFr2zAQhv/KTZ9sUMpapyM1Y9B0XTfIutLkw8ZSsGafU4MtGemyNAT/90lRnS5mzRqWQUxOOvu98/tYt2Kirlm8YqnKkMUsLYUx8Hl5XteAD4QyM2Dj1VROyV2pRkE4JqHpRswwCH2GNNJcS7hQP1G7hNtt/EMNazjLVZmhNiz+vmJFxuJjzqSoXMW1FuNM5blB+sri1238zcbNHWe11dt60ot98outxjf1N827Raf7q3nR7ftWLUzgd6Y0rkWKvF1NrFKQTO4RRgVRiTBEfJWEnfxwCTdIqGHUu/otuS11ocp5JZ8KdfNTGs6JlAyStSlwiyIr5CwJj5wFwYdCm7XrIX9O4c+Vwy0anD1Y406tdUv7fxY13Bt7ssvYMaZKZv/DWWun/UFpyRkgBXm5hFyrygZqYQ1db7mIg5AZ2DJA91hoMAtEAomp9epoD89bj9/29jC27fYk2XVPK91710qPRFc5fJbJm75nEg36LZNoF5NN24dG8kWmCPNaSRBARYXcOa4RFsLYndIfgx8WmjvCGXiC/4Zgc3D/juB4TwRPn+5LIESD6BHCoIVwugtCC/jgA+fjJVxevz/ALHFTBM5nopB7mP3iQTLon/lBYj/ax1k9waou7Wu7mX3X/AJ1V0TM]
+::bagawork-project[app&link&baga=eNq1lW1v2jAQx7/Kza+IZNDa0IlG06TSdd0ktlWFF5tGJbzkApGCHdmXUYTy3WdjwhZEEa2KlIfzQ+4u/599XjFRFCxasVglyCIW58IY+Lq8KgrAR0KZGLD2aizH5O5YoyAcktB0J6bYCvwIaaRSS7hWf1C7Addb+Y8qVnGWqjxBbVj0a8WyhEVnnEkxdxHXvhhnKk0N0g8Wva3tn9auHjgrrL/Gl97ZF99oJL6Nv03eNXayvy2z3bzv1cJ04lmWJxplyw+NaViIGHndGlmXHbKP1mQ0QxhkRDlCH/HNJNg3qb+EOyTUMGjf/jej6fRa5eVc7om9O3FM/ZJIyY3ztWpwjyLJ5HQSdJxGrU+ZNmssAX/Kzf48ggYuzh6tshdW26V9X4YV98qfH1J+iLGSyemlt3rbC3IL2gApSPMlpFrNraEWVux1l7M4CJmADQo0w0yDWSASSIytcp2X8Gjo/779DNEbP3A+OTSxEaT9oQ4yELsxgifJvet6cmGvW5MLD5Hb/sBpwX2XMUJZKAkCKJsjd1w0wkIY25P73fTbonV1IQHP+TVBbWvDkaDOXgLq3zY4BlXYCzeoejWqi0Oo6mVw4ur2+QZuvn189ZrlqhVcTUUmn4Hk6ILV6176gmWX/ebQGOG8yK0k7vB4qP4Cc6x52w==]
 
 :::
 
 ::: warning App Exercise
 
-::bagawork-project[app&link&baga=eNrNVV1r2zAU/SsXPdngmaSJN2L2sg9YS+koSx/2kUIU+zoxsyUjXTfNgv97JWtO40DD1uahGGPdK+45V4dzrS3jVcXiLUtkiixmScG1hguRyQ9VBXhPKFINZr2diRnZN1HICafEFV3zJXq+2yGFVCsBVyhqm7fJxtU0rAlYJosUlWbxry3LUxYPAyZ4aSlbKBYwmWUa6TuLB936h1k3twGrDF6v0oFduKDXeUe/a90GB71/qfPDrr/JtfZcZkY3ptabWw3swed+0G1MK55gqPM/6A3CQfS44SqmWGBCsF5xgo2sYc0FAUkwpCmUUiHwhawpnPthgRl5B8C76JMs6lI89nO4P6OPNZEU3vyKq1waOCuQ1wb2uH7wVKX/DI6fWKS842iD03N8luI3buBSimXH5FI28690+3m/Z7+A3RunRFHANiwejUZN4Jx0dsxJu6O+xEr9Xp1NWmDINXC4y1OUsDRzAMmKK54QKnDIKSw28DUXllqGMF2hLSHzqVQuEjQdyqyNzzeqLhAuc7FMZRnOX26r9292nvo7Tkf0f1Lwt8MzJ/hw0gk+Ojq6nX9PLXgL/L+Cn6PR16xBIJpW2jHWSb0n/zXyZPV65B4PJq3cw2gnd3RM7v6AnVrzvYl+hvJtRekgyP5OC3mHGhZcmEe/Js3ftZqPJ+PunrrBsirMoex9dds8AO1joz0=]
+::bagawork-project[app&link&baga=eNrNVW1vmzAQ/isnfwKJoaQJm4L2ZS/SWlWdqqUf9pJKccyRoIGN7KNpFvHfZ0NhSbRGe2mkCgG+M3fPwz1ne8t4WbJ4y4RKkMVM5NwYuJCpelOWgPeEMjFgx9uZnJG7hUZOOCWu6Zov0fPbGdJIlZZwhbJyfues25ia1QFLVZ6gNiz+tmVZwuJhwCQvHGSTigVMpalB+sziQTf+Ysf1bcBKm28vsk120Rp7zDv4nrozDrh/qLJD1p/U2oRileWJRum1UzO6sUlCsg9v7iriyjD3g252WnKBocl+oDcIB9GviZ2wKeYoCNYrTrBRFay5JCAFlkcChdIIfKEqCud+mGNK3kH23nqn8qqQv6F4+OGM3lZESj7gX3GdKZvcVdBrDFcPP3gs3P9vxK+YJ7xDbIxTI75X8jtu4FLJZYfbupznT8F3/f5e7wbs3rZZFAVsw+LRaFQHbRueHWvD/sefpA/3Se+0VwMDmQEOd1mCCpZ2SYFYcc0FoYYWJ4HFBj5m0hFRIUxX6ELIvkqdSYGWr0ob+3yjqxzhMpPLRBXh/Knb8fWLvhcf1ukRbR4V4+XwrBVjOOnEGB3dE7q+P60YDczfinGOtvZ2DBLREmu2BiOqHWmukYvVc5ViPJg0UgyjXoromBT7C/O0euzsC/+gShNRtCnIbd+5ukMDCy7tZZ6vHq8aPcaTcXdw3mBR5vYX3QF6W/8EDsXbVA==]
 
 :::

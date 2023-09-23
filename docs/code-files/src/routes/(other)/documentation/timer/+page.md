@@ -14,7 +14,7 @@ The `Timer` component is a view that functions as a timer: you specify what time
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqNUU1rwzAM/StCpw5Mv8YOy62n0cNgsMI2lkK9WFnMXNvYytoS8t/npDRrbr3Ykp6f9PTcoPQeswYLpwgzLIyMEZ5PK++BjkxWRUhxk9uci0CS6ZVl4Bf5TZO7vppzIK6DBUsHuAI7rM1ti63A0hlFIWL22aBWmC0EWrnv5vUEFOjKMhK/Yza/xB8pbrcCfeo2Yp6brc/JSPYwfZDeJVfan2o9qJ7N4I2gkr8E1jFET4UuNSk4VLqogKtUT22gmw86CohuIHKl4xk4aGPgiyCQcVL1bLI9mfWeQn9GcDVPR15tOnAaqXBJ5WQx/3dL4BGz5f1S4CndD48XCza09yatMLJitP0q/qzLlaoN37L+RUh6Otntrn5r2/4B5cu5Mw==]
+::bagawork-project[app&link&code=StartPage&baga=eNqNUU1rwzAM/StCpw5Mv8YOy62n0cNgsMI2lkK9WFnMXNvYytoS8t/npDRrbr3Ykp6f9PTcoPQeswYLpwgzLIyMEZ5PK++BjkxWRUhxk9uci0CS6ZVl4Bf5TZO7vppzIK6DBUsHuAI7rM1ti63A0hlFIWL22aBWmC0EWrnv5vUEFOjKMhK/Yza/xB8pbrcCfeo2Yp6brc/JSPYwfZDeJVfan2o9qJ7N4I2gkr8E1jFET4UuNSk4VLqogKtUT22gmw86CohuIHKl4xk4aGPgiyCQcVL1bLI9mfWeQn9GcDVPR15tOnAaqXBJ5WQx/3dL4BGz5f1S4CndD48XCza09yatMLJitP0q/qzLlaoN37L+RUh6OuV0THa7qy/btn+K97sm]
 
 :::
 
@@ -43,7 +43,7 @@ To indicate which `Page` the user should come to when the `Timer` times out, use
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkcFqwzAMhl/F6JSCKVvWjs237DJ6GAzWw8ZSiEmUEZY4xlZYS/C7z07arOlh0JMly/+vT3IPUmsQPeRtgSAgr6W17OWQaM1wT6gKy3zcpyql3KAkfCNp6FV+YbQYblMySJ1RTOEPOyuGmkuVA8ehbOsCjQXx2UNVgLjloGQT+g0C4NCWpUV6B3Fzij987HYctHebKUezzZjMsKfuE3pIztifu+qS+qkjalWUDVpGVYMmWyxD02gbkuDwNwuHPYg4vuNw8OfDveMjVvwf1uRzBdagWVrMW/8+Wh+JpgEviFaPqyPR+rSyLTa69t6z1c2wEvu9KZOiq+kaLv80yrKz3925X8AQyG4=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkU1rwzAMhv+K0SkFE7asHZtv2WX0MBish42lEJMoIyxxjK2wluD/PuejWdPDoCdLlt9Xj+QOpNYgOsiaHEFAVklr2csx1prhgVDllvm4S1RCmUFJ+EbS0Kv8wmA13CZkkFqjmMIfdlbsay5RDhyHoqlyNBbEZwdlDuKWg5J1328QAIemKCzSO4ibU/zhY7fnoL3bQjmabcdkgT13n9H75Iz9uS0vqZ9aokaF5BVBOhgwKms06SrsOwe7Pult/gbicAARRXccjv58uHd8ZIv+Y5t9rmAbNKHFrPHvg81ENE95QbR+XE9Em9Pedljrynsv9rfAiu33tojztqJruPzTaWPp2T/v3S/0msxU]
 
 :::
 
@@ -58,6 +58,6 @@ Use the configuration method `handler()` to specify a function that should be ca
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVklFLwzAQx79KvKcUwtBuihYU6ovsQRDcg2IHDe1Vi21akitulH53k3ar7R6EPeUul///fnekBVnXELSQVClCAEkhjWHP+7CuGe4IVWqYjdtIRZRolISvJDW9yE/kXn8bkUZqtGIKf9ik6GpdpDroBGRVkaI2EHy0kKcQXAlQsnT9egEIqLLMIL1BcHmM323cbQXU1m2mHMzWQzLDHruP6C6ZsD81+Sn1Y0NUKR73WkZ5iTr2Fq4p37jEOfzNImAHge8vBezteXvTiQHL/w9r9DkDq9csDCaVfc+XB6JxQG/xJVVaoObcY/cPTNqQeAROVjV0EYF3Ar26Wx2gr49b3WBZF7b9bLsz8tB8r7MwbQo6B90+5XE8+QDb7hc7PtNC]
+::bagawork-project[app&link&code=StartPage&baga=eNqVklFLwzAQx79KvKcUQtFuihYU6ovsQRDcg2IHDe1Vi21akitulH53k26r7R6EPeUul///fnekA9k0EHaQ1hlCCGkpjWHPu6hpGG4JVWaYjbtYxZRqlISvJDW9yE/k3nAbk0ZqtWIKf9ik6Gp9rHroBeR1maE2EH50UGQQXglQsnL9BgEIqPPcIL1BeHmM323cbwQ01m2m3Jut9skMe+w+ortkwv7UFqfUjy1RrXyyCp4MBoyKCnXi+a4zX7vE2fwNJGALYRAsBOzseXvTiz1b8B/b6HMG26DxDaa1fc8XB6JxSs//kiorUXPusfsHJm1IPAYnq1u6iME7gV7eLQ/Q18fVrrFqStt+tuIZeWS+V3mUtSWdg26fHpaaTL7Cpv8F6iXXKA==]
 
 :::

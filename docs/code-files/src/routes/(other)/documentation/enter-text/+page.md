@@ -12,7 +12,7 @@ The `EnterText` component is a view in which the user can enter some text.
 
 In this example, the GUI consists of only the `EnterText` component, so it covers the entire screen.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkDFrwzAQhf+KeFMKGpqEDtXmoYQMhUI8tNSBCOscQhxZSGfqYPTfKyfE2N063Tvd3Xsf6qGdg+pRNoagUNY6BPF+zZwT1DFZE0TSfWELLj1pph1rzx/6SIun22vBnrj1Vlj6EZPhMIuFjYgSVVMb8gHqu8fJQC0lrL4MebcDSDRVFYg/oZ4f+ivpuJdwyW12eTfb3psZ9pg+og/NhH3Tnv5Sv1kmn6f9kVeig1qtVxLXVF9eHxA5XVydTGYws/wsnLdVZtqa/wEwZC8Oh8l/7eMvnj2NLw==]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkEFrAjEQhf9KeCcLoVhLD81tDyIeCoV6sHQFw2ZWxDUbkllUlvz3ZhWXXW9ekjczmfc+0kI7B9WiqA1Boah0COLrkjkn6MxkTRBJt7nNufCkmX5Ye/7WO5q8XLs5e+LGW2HpJAbDbhZzGxElyroy5APUX4u9gXqTsPrY5V0XIFGXZSBeQ03v+jfpuJFwyW20eTNb3ooRdp/eo3fFgH3R7B+p55bJr9L7nlfiDDV7n0lc0v3xeYdY0dFVyWQEM8rPwmFZZqap+AmALvuV0zHZbgefton/Z0aPIg==]
 
 :::
 
@@ -20,7 +20,7 @@ In this example, the GUI consists of only the `EnterText` component, so it cover
 
 A `Button` can be added to the GUI to serve as a submit button (takes the user to the next `Page` when clicked, the same as pressing the enter key in `EnterText`), for example:
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUU1Lw0AU/CvLu5jCEmzFg7lIFZEeBLEFFbeQJXmxxXR32X2hrSFn7/5Ef4mbhLRJ8eJp533NDLMlSGMgKiHRKUIESS6dYw/7qTEMd4QqdczjUihBiUVJOCdp6VG+YzBquoIsUmEVU7hlvWE9q4SqoOKQ6TxF6yB6K2GdQjTmoOSm1msOgIPOMof0AtF5h189rpYcjGcbXLZks7YY2D6oH6zXRc/7fbE+df2kty5oO4LmRibYFQtPEsTPK0lnju11YVnt+Toe8T/Xb3V+JBJ0pwhtTRG69ScG41Focr+9aswHcTNuCMMw7FEKuimItArin6/vXr9Dx1g57CCaXEw47P17edVltcCNV6JhZoOYpu5jlk3TIqd/5NSmEfe+dVn9AlRQywY=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUdFKwzAU/ZVwX+wgFDfxwb7IFJE9COIGKmbQ0N66YpeE5JZtlj777if6JabdOlvxxZfk3pzcc05OKpDGQFRBolOECJJCOsfudlNjGG4JVeqYryuhBCUWJeGcpKV7+YrBqD0VZJFKq5jCDeuBDVYLVUPNIdNFitZB9FJBnkI05qDkutFrB4CDzjKH9ATRaVc/+7pecjCebTC5J5vtm4Hto/rRetP0vN+W+W/XD3rjwmSVF6lFFewhQXMjE+yahWcLyS9B/LiSdOLYTpeWNS+4jEf8z5lrXbgjm6AbRWhbHpe/YzAehabwt1ftU4K4hVvCMAx7lIKuSiKtDupfH589sKt+kuawhWhyNuGw8/v5RRffAtdejoYxDpKburdZNk3Lgv4RXS+XuPfdy/obZ+3UVg==]
 
 :::
 
@@ -31,7 +31,7 @@ The text passed as the main content to `EnterText` will be used as the initial t
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjs1Kw0AUhV9lelYVZqEVF84uC5EuBMGCLabQIXOjwXQyzNzQljDv7qShNXHn6p77d87XQTsH1aFoDEGhqHUI4uWUOSfoyGRNEEl3uc258KSZ3lh7ftWfNL85T3P2xK23wtJBjJb9LuY2IkqUTW3IB6iPDpWBupOwet/nnR8g0ZRlIF5D3V70Jum4lXDJbfI5mC2HZoJ9Tb+i982I/bmt/lI/WSa/Svfz3buvmMQXeZrtfvEljlCL+4XEKdWHxwvTivauTp4TtglOFr6XZWbamv/BM6CM8uM2/gDz8ZIw]
+::bagawork-project[app&link&code=StartPage&baga=eNqVj0FrwzAMhf+K+04tmLF17DDfciijh8FghW0shZpY6cJSx9gKawn+73Na2iW79WI9SdbTpw7aOagORWMICkWtQxDPh8w5QXsma4JIusttzoUnzfTK2vOL3tJ0dqzm7Ilbb4WlHzFo9r2Y24goUTa1IR+gPjtUBupOwupdv+84AImmLAPxO9TtWX8kHdcSLrmNJk9my1Mywr5sv6D3yYD9qa3+Uy8sk1+l/zecnunmzVdM4os8TTZ/N0jsoeb3c4lDig+PZ7AV7VydjEeAI6YsfC/LzLQ1XwE14BlAxHX8BeMklhY=]
 
 :::
 
@@ -43,7 +43,7 @@ The configuration method `placeholder()` can be used to show a text in the `Ente
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjzFrwzAQhf+KeJMLorQpHarNQykZAoFmaKkDFvY5DXVkIZ1pgtF/r+SQ1O7WSe/udO99N0BbCzWg6mqCQtVq78XqlFsr6Mhkai+iHgpTcOVIM72ydrzWO8puxm7Bjrh3Rhj6FpNhmoXCBASJpmtrch7qY8C+hrqXMPqQ8sYFSHRN44nfoO4u+j3qsJWw0W22eTZbnosZ9jX9ip6KCftLv/9L/WyY3Cb+v7WtruhzNM/KsS0SZPl7icQRavGwkDjF9/HpgrehQ1zmOeaMLPdfyyav+5b/gZaosnKSH7bhB8AdlrA=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVjzFrwzAQhf+KeJMLorQpHarNQykZAoFmaKkDFvY5DXVkIZ1pgtF/r6yQ1O7WRXp3p/fu0wBtLdSAqqsJClWrvRerU26toCOTqb2IeihMwZUjzfTK2vFa7yi7Sd2CHXHvjDD0LSbDcRYKExAkmq6tyXmojwH7GupewujDuC8ZINE1jSd+g7q76Peow1bCxrSZ8xy2PBcz7Ov2K/pYTNhf+v1f6mfD5Dbx/a1tdUWfKTwrU1uMkOXvTySOUIuHhcQp3o9PF7wNHaKZ55gzstx/LZu87lv+B1qi4nhk5QQibMMPuKuYow==]
 
 :::
 
@@ -93,7 +93,7 @@ If you want to store what the user has entered in `EnterText` in the current `Pa
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVj0FrwzAMhf+K0SkFU7aOHeZbDqP0MBislJWmEGMrW1jqGFuhDcH/fU5CQ7LbTn5Psp4+dSCtBdGBqjWCAFVJ79lbm1rL8EZotGdRd5nJSDmUhB8kHb3LL0xWQzUjh9Q4wwxe2azZ90JmAgQORV1pdB7EqYNSg3jkYOSl3zcMAIe6KDzSJ4iHuz5GHc4cbExbTI5hu9EssKftE3pvZuzbpvxL/WoI3T7+X9tKKvwewpN8KDNVUpuv1vYgY2k001kcbiA2TxsObXyfX+6se7zEJFoyLzBT/7MrUt1U9A/OHjHJZ/vDOfwCn2KbWQ==]
+::bagawork-project[app&link&code=StartPage&baga=eNqVj0FLxDAQhf9KmFMXwqIrHsytB1n2IAguotiFhmSqxW4akiluKfnvpilbWm9eknlvMm++DCCtBTGAajWCANVI79lTn1vL8EJotGexHgpTkHIoCV9IOnqWn5htkluQQ+qcYQZ/2KI59kJhAgQOVdtodB7ExwC1BnHLwcjzuC8NAIe2qjzSG4iba/0e63DiYGPaanIKO0xihT1vn9FHsWDfd/Vf6kdD6I7x/dY2UuFXCs/KZDNVU19utvZVRmsS87c4XEDs7nYc+njfP1xZj3iOSbRmXmHm/vtQ5bpr6B+cCZHikZULiHAKv689nUw=]
 
 :::
 
@@ -103,7 +103,7 @@ If you instead want to store it in the `App`, use the configuration method `aVar
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVj0FrwzAMhf+K0SkFU7aOHeZbDqP0MBislJWmEGMrW1jqGFuhDcH/fU5CQ7LbTn5Psp4+dSCtBdGBqjWCAFVJ79lbm1rL8EZotGdRd5nJSDmUhB8kHb3LL0xWQzUjh9Q4wwxe2azZ90JmAgQORV1pdB7EqYNSg3jkYOSl3zcMAIe6KDzSJ4iHuz5GHc4cbExbTI5hu9EssKftE3pvZuzbpvxL/WoI3T7+X9tKKvwewpN8KDNVUpuv1vIgY2k001kcbiA2TxsObXyfX+6se7zEJFoyLzBT/7MrUt1U9A/OHjHJZ/vDOfwClnqbSg==]
+::bagawork-project[app&link&code=StartPage&baga=eNqVj0FLxDAQhf9KmFMXwqIrHsytB1n2IAguotiFhmSqxW4akiluKfnvpilbWm9eknlvMm++DCCtBTGAajWCANVI79lTn1vL8EJotGexHgpTkHIoCV9IOnqWn5htkluQQ+qcYQZ/2KI59kJhAgQOVdtodB7ExwC1BnHLwcjzuC8NAIe2qjzSG4iba/0e63DiYGPaanIKO0xihT1vn9FHsWDfd/Vf6kdD6I7x/dY2UuFXCs/KZDNVU19utvJVRmsS87c4XEDs7nYc+njfP1xZj3iOSbRmXmHm/vtQ5bpr6B+cCZHikZULiHAKv6YKnT0=]
 
 :::
 
@@ -113,6 +113,6 @@ If you want to do something more complicated than just storing the text the user
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUcFKxDAQ/ZUwpxaC6IoHAwo9iOxBENyDYhcamqlbzKYhmeKW0n83adnaettTZt7LzHsv6UFaC6KHslEIAkotvWcvXWYtwxOhUZ6Fus9NTqVDSfhG0tGr/MIkHdGcHFLrDDP4wxZk5IbcDDBwqBqt0HkQnz3UCsQNByOPUW8cAA5NVXmkdxDX5/oj1MOegw3bVpPTsu3UrGzP6rP12Cy8P7f1f9dPhtDtwv0JzenKalniYRRJipFmZU1dkc43DtIoHViMJKo4zR4emQwYLcH07xE4nEBsbjccunDe3Z+T7fAY9GidcBUq89/bKlOtpgtSRfWkKBafsB9+ASPDrNU=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUcFKxDAQ/ZUwpxbCoiseDCj0ILIHQXAPil1oSKZusZuGZIpbSv/dpGVr681LMvPezLx5SQ/SWhA9qEYjCFC19J49d5m1DM+ERnsW4j43OSmHkvCVpKMX+YlJOqI5OaTWGWbwmy3IyA25GWDgUDa1RudBfPRQaRDXHIw8Rb2xATg0ZemR3kBcXeL3EA8HDjZMW3VOw3ZTslp7Vp9Xj8li96e2+rv1oyF0+1A/oTltbC0VHkeRpBhppirqinSuOEqj68BiJFHHbnb/wGTAaAmmv4/A4Qxie7Pl0IX79u7ibI+noEdrhytTmf/alZlua/qHq6i+oXAkRbH4icPwA4sKrsg=]
 
 :::

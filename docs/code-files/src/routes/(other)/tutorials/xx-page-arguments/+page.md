@@ -14,7 +14,7 @@ Imagine you should build an app that functions as in the example below (no matte
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage-SumPage1-SumPage2-SumPage3&baga=eNqVk01vgkAQhv/KOidMScNHUSTpAQ9tPbRpqoc2xUQig5rCLoEl2hD+excQRGytHkiG3X1nn3lnNgM3isDKYMk8BAuWgZsk5PnbjiKCO47US4iIM4c6fBmjy3HK3Zi/uiuU+uWqw2PkaUwJxS1pbRZ7uUNzyGXwWeBhnID1mcHGA0uVgbphcV8pABmY7yfI38FS6vhDxLlcndcO53HJqPdQ5vtbNpchEhBHF1YMk+rnqNoGuqm4+GmV/JhuusW+sW0iVSsOH6ecMyotpmu2JUkaEuYTldwQbdG/LTikaRoWKdW+fE6iC4nRkWjnJaaQqB2JXksOLZBhJ8pWDBm+wdJHesvXM7bsoa9wZSaOSouydHJP9EWHQDfMkkAdDmsCo02gdQjs5OtFtN1euRt6SlF8jI7RZ/FhFvcXVsE/nE8YBKzXQNYZbZ9j/FvCfRWaoVQ+Ks18Di7wUbvax3IehI9m10fjblARmI2PwwsI9KsJyvESBKOTTg6qWRqow/qxzTCMApHs6NF12znxbS8N+NUgZasIX2OMvRZLPs9/AA7rmdM=]
+::bagawork-project[app&link&code=StartPage-SumPage1-SumPage2-SumPage3&baga=eNqdk01vgkAQhv/KOidNiREooiQ94KGthzZN9dCmmEhgUFPcJcsSNYb/3gUEEfthPZDMsvvOPPPu7B7cKAJrDx7zESzwQjeOydPOjiKCW4HUj4mM9w51hMfRFTgRLhcv7gLbnfyvIziKhFNCcUNqm9le6tAUUgUCFvrIY7A+9rDywVIVoO46q5cLQAEWBDGKN7B6Zfwu41QpzmvH8+gx6t/n+X6WzRSIJMRJwYJhXCxOuq2gq46zRa3lh2TVbPaVbeKut1yFPkfaLrYcMUqEYLQrZJ72fLJkGxIna8ICopIbos073YyqPUnWWQG1o/yp06XOaOi0C3QDqVMbOr3UHa9Gga20o2cosANLH+o1v3+x64D/D7em8uiBMneC3BF93sDQjUGOoZpmiWHUMbQGhh1/PsuZsBfuip6jZB+jIwwYPw7qoWARXAL7iGHIWhVpmdYOBPLvsh5a0Yxe4WivmuD+BY5q1zmaz4h0dNB01LjtFxiDylHzAgz9Oox85CTG8Oxi+8V89VWzfJhTXEehzHjyQJu3Ow5sPwnFdTT5zRGxRI6tGlA6S78AXNqs4g==]
 
 :::
 
@@ -39,7 +39,7 @@ First, we delete our 3 sum pages (`SumPage1`, `SumPage2` and `SumPage3`), and in
 ```js
 class SumPage extends Page{
 	createGui(){
-		return Text(`1 + 2 = 3`) // OBS: we will change the text here later.
+		return Text.text(`1 + 2 = 3`) // OBS: we will change the text here later.
 	}
 }
 ```
@@ -56,7 +56,7 @@ class SumPage extends Page{
 		p.rightTerm = 2
 	}
 	createGui(){
-		return Text(`1 + 2 = 3`)
+		return Text.text(`1 + 2 = 3`)
 	}
 }
 ```
@@ -71,7 +71,7 @@ class SumPage extends Page{
 	}
 	createGui(){
 		const sum = p.leftTerm + p.rightTerm
-		return Text(`${p.leftTerm} + ${p.rightTerm} = ${sum}`)
+		return Text.text(`${p.leftTerm} + ${p.rightTerm} = ${sum}`)
 	}
 }
 ```
@@ -79,13 +79,13 @@ class SumPage extends Page{
 So, if someone tries to navigate to this page the "ordinary" way, e.g. using a button:
 
 ```js
-Button("Show sum").page(SumPage)
+Button.text("Show sum").page(SumPage)
 ```
 
 Then this page will display the text `5 + 2 = 7`. But, the one navigating to this page can also pass custom values to the arguments, and make this page display the sum of two other numbers by using *argument methods* on the `Page` class (works similar to how configuration methods works on GUI Components):
 
 ```js
-Button("Show sum").page(SumPage.leftTerm(2).rightTerm(4))
+Button.text("Show sum").page(SumPage.leftTerm(2).rightTerm(4))
 ```
 
 By navigating to `SumPage` this way, it will show the text `2 + 4 = 6` instead. So this way, we have created a more general version of the page that can display the sum of any two numbers!
@@ -94,7 +94,7 @@ So, using this new knowledge, we can improve our first sample app using page arg
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage-SumPage&baga=eNqVU8FuozAQ/RV31AOoKAogpBQpB3robg+7Wm1yaLVUCgpDEhVsZBulFfK/14TgOLSJtAcke5h5894bTwtZXUPcwprlCDGsy0wI8usjqWuC7xJpLog+tylN5ZpjJnEhMy7/ZBt03EM0lRxlwymhuCfWz+6fSqkC5UHByhy5gPhfC7scYt8DmlVdv0MBeMCKQqB8hng6nF/0WXl9fnDKxzWj+eMB73LZqwe1JnHWsOfw1F/O1BrSRnF3sST/aHZjsX/ZXjh9JJUPjZSMOqvFlu2JaCrCCuKTOxKs3EnHw1k0VQfpetcqQl0RjSomJRZyibxyQnfCd5ttf4nc61AzDeVfhJrZUL6BOk3Mg3ft0jTy4APi8D60xnDFxb7NVw/1UBK+aSqkUhgba0OHzIk/xAwtHQyOdL4bgn4DQh7EzomFdEcsiLNxLTUrZ3XbnpKVzu7uJl9prNtWY6rVyInwfnBiNjgR2U4EIycS8fZbv9Zkk+3oVzu6j9EHLBg/rZDRevXR9Sp+YlmyG0NyQEwKifw7wKOKIJr2KqZmP5ZY1aVudbYnYylPRZI3pfyP3bBoErlFjjeWo+pVfQIgIomO]
+::bagawork-project[app&link&code=StartPage-SumPage&baga=eNqVU01vozAU/Cuu1QOoCAUQUorUAz3sbg+tVpsctiqVguCRoAUb2Q+lFeK/rwnBcejX7gHJz2bmzcyzO5o2DY06mvEcaESzKpWS3L/GTUPgBYHlkqh1l7AEMwEpwgpTgT/TLVj2YTdBAdgKRhjsiXE4nPUJ62nv0IJXOQhJo6eOljmNPIeytB76HQDUobwoJOBvGi2m9aNa9874v3/6HzLO8m8Hvo9hzw5tlIizhqOGu7E4c6tFa8dDYVj+3pZzs7/4XrrZrqxyAcwajxK8bRE5c1HxWJvVju+JbGvCC+KRK+JvbHdQZa3aemhgO1/CAgULZzC3ggLXIGorsF1RbndjEdr/wLdUfN6HfEuTz9N8p0k69EWltwgd+kqj4DowxvNJumObt9mqYcVi29bAUOp4Gy2H3BBv2tOy1KZ/lPPecNTdkHgwe0MMpitiUJyNca1UHXO67E6IXkGGWoN6RXjZKeJ+M4sjuJ7iWE5xhGYc/iyOWP55UFc53qYle5vJ8HF2CwUXp/elDX96Iw0rP6Cq+IVWOtHGBYJ4j/VoxQ8Xo5WFfkFrqJtK9Tt7SXM/d0WctxX+x+uZayW4AwEXRrb9c/8XvxqYtw==]
 
 :::
 

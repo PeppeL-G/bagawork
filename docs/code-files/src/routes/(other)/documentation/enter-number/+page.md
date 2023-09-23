@@ -12,7 +12,7 @@ The `EnterNumber` component is a view in which the user can enter a number.
 
 In this example, the GUI consists of only the `EnterNumber` component, so it covers the entire screen.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkD9rwzAQxb+KeFMKGtqEDNXmoZQMLYFmSKgDUa1zCbVlIZ1JgtF3r5wQY3frdO/+vftxHbRzUB2KxhAUikqHIN4umXOCzkzWBJF0l9ucC0+a6YO157X+ptnDtZqzJ269FZZOYtTsezG3EVGibCpDPkB9djgaqCcJq+v+3nUBEk1ZBuIt1ONd75KOewmX3CabN7PVLZlgD9cH9D4Zsb+2x7/UL5bJv7f1F/mBWOIMNV/MJS4pLp/vGBuqXZVsJjgTgiz8rMrMtBX/A2GTRmeHw+hj+/gLxAiN8w==]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkEFrwzAMhf+KeacOzNg6ephvOYzSw8ZgPbQ0hXqxMsoSx9gKawn+73NaGpLddrGeJOvpQx20c1AdisYQFIpKhyBez5lzgk5M1gSRdJfbnAtPmumDted3/UWzu0s1Z0/ceiss/YhRs+/F3EZEibKpDPkAtetwNFCPElbX/b7LACSasgzEG6iHm94mHfcSLrlNJq9mq2sywR62D+h9MmJftse/1C+Wyb+19Sf5gVjiBDV/mkucU1w83zDWVLsq2UxwJgRZ+F6VmWkr/gfCOn295/TMDofR2fbxF5Dlj+Y=]
 
 :::
 
@@ -21,7 +21,7 @@ In this example, the GUI consists of only the `EnterNumber` component, so it cov
 
 A `Button` can be added to the GUI to serve as a submit button (takes the user to the next page when clicked, the same as pressing the enter key in `EnterNumber`), for example:
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUU1Lw0AU/CvLu5jCEmzFg7lIFZEeFLUFFbeQNXmxxXR32X2hrSFn7/5Ef4nbhLSJePG0875mhtkSpDEQlZDoFCGCJJfOsZvt2BiGG0KVOuZxKZSgxKIknJK0dCffMBjUXUEWqbCKKVyzznA3q4SqoOKQ6TxF6yB6KWGZQjTkoORqp1cfAAedZQ7pCaLjFj97XM05GM/Wu2zIJk3Rs71X31vfFR3v18Xyt+sHvXZB0xE0NTLBtph5kiB+XEg6cmyrC8sm9+fxgP+5fKnzA42gK0Vob4vVK9rQLT8wGA5Ck/v9RW0+iOsFTxiGYYdS0EVBpFUQf39+dfotOoTKYQPR6GTEYevf07M2qRmuvA71E+uFNHbvk2ycFjn9I6Umi7jzqfPqBzp/ybw=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUUFOwzAQ/Eq0F1LJsmgRB3JBBSHUAwhoJUC4UkyyoRGpbdkbtSXKmTtP5CW4KSkJ4sLFnvV6Z8bjCqQxEFWQ6BQhgqSQzgVXm7ExAa4JVeoCjyuhBCUWJeGUpKUb+YLhoDkVZJFKqwKFq6DT3PZqoWqoGWS6SNE6iJ4qyFOIhgyUXG71mgFgoLPMIT1AdNjiR4/rOQPj2XqTO7LJrujZ3qvvrW+LjvfLMv/t+k6vHE8WeZFaVOGuJWhqZIJtMfNsnPwSxvcLSQcu2OjSBpPb03jA/pw414Xbcwm6UIT2ulw+o+Uuf8NwOOCm8PcXzVPCuLngCTnnHUpBZyWRVt/an+8fnWaLfnJmsIZodDRisPH78Ukb3gyXXoz6IfZyG7vXSTZOy4L+EVwnlbjz2fP6CzZk0ww=]
 
 :::
 
@@ -32,7 +32,7 @@ The number passed as the main content to `EnterNumber` will be used as the initi
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkD9rwzAQxb+KeJMLGhqHDtXmoZQMLYVmaKkDUa1zCLVlIZ1pgtF3r5yQ1O7W6d79e/fjBmjnoAZUnSEoVI0OQTwdC+cEHZisCSLpobQlV5400ytrzy96R9nNqVqyJ+69FZa+xaQ59mJpI6JE3TWGfID6GLA3UAsJq9vx3mkBEl1dB+I3qNuLfk86biRccpttns1W52SGfb1+RR+TCftjv/9L/WCZ/HPffpLPFvnyF1viAJUvc4ljinf3F5Y1ta5JXjOmGUYRvlZ1YfqG/8GxTqPZdjt52yb+ABjdjto=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkEFPwzAMhf9K9E5FihDrxIHcekBoBxASO4DopIXGRRNtGiWu2FTlv5Nu2mi5cYmf7fj5kwdo56AGVJ0hKFSNDkE8HgrnBO2ZrAki6aG0JVeeNNMLa8/P+pOyq2O1ZE/ceyssfYtJc+zF0kZEibprDPkA9T5gZ6AWEla3477jACS6ug7Er1A3Z/2WdNxIuOQ2mzyZrU7JDPuy/YI+JhP2h373l/reMvmnvv0gny3y5S+2xB4qX+YShxRv784sa2pdk7xmTDOMInyt6sL0Df+DY52+XnN6su12crtN/AHqLpDN]
 
 :::
 
@@ -44,7 +44,7 @@ The configuration method `placeholder()` can be used to show a text in the `Ente
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjzFPwzAQhf+KdVOQLERbMeAtA0IZiqjoACKVYuJLW5E4ln0WjSL/d5xULQkbk9/5+d373IM0BkQPZasQBJS1dI6tu9QYhidCrRyLus91TqVFSfhK0tKL3GNyM97mZJG81UzjN5uYgxdyHSBwqNpaoXUgPno4KhALDlo2Q98YAA5tVTmkNxB3F/0eddhxMHHbLHlelp2HGfa1/Yo+DBP2J3/8S/2oCe2zbz7R3ppalngY1yfFaLCu9ZZlm+L3OxxOIJarJYcunvcPF8YtNjFPc9YZXuq+sipVvqZ/8G3j06SY9Idd+AGwW5hc]
+::bagawork-project[app&link&code=StartPage&baga=eNqVjzFPwzAQhf+KdVOQrApadcBbBoQygEDtACKVYuILVCSOZZ/VRpH/O06qloSti313z+/d5x6kMSB6KFuFIKCspXPsqUuNYXgk1MqxWPe5zqm0KAk3JC29yC9MbsZpThbJW800HthEHLSQ6wCBQ9XWCq0D8dHDXoG446BlM+wbDcChrSqH9Abi9ly/xzrsOJiYNnOewrJTM8O+bL+gD82E/dHv/1M/aEL77JtPtAtTyxK/x/ikGAXWtd6y7LX4+w6HI4jlasmhi/f6/sy4xSb6ac46w0vdT1alytd0Bd82Pl1QPJJiAhF24RexRZpP]
 
 :::
 
@@ -78,7 +78,7 @@ Use the configuration method `page()` to specify which `Page` the user should co
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVk19rgzAUxb9KuC+zIEOttc63spXRh5XB+tAxS8302sqsSoxbRfzu8w9atSD4luTck/vLSZIBjSIwMrBDB8EA26dxTN7SVRQRvHIMnJgU48wMTG4zpBw/OGX8nZ5QmFWrJmfIExaQAP9IRyy13AxyyEVwQ99BFoPxlYHngCGLENBL2a8ygAih68bI92BIzfizGOcHEaJit56z3mxTT3rYbfcWvZx02F8Tb0i9DjiybXL5Rlavm/wx8qmN56qNYFUFJA0TRsqdvYCkSFlszW7l5Xm3eKLc+8XVCcumfTUWsmZu8gfpKOvrB4M8nz3fKYvFjijrR1mSSnnlJD6/kyXpuC/EF6R9a34LXIRrkY20ECEFQ1W0XKyzU8ayG/BPSHBXlArWwG8NcOZ6jSPrywZnPobTZjMZpHUOEbS5XCEoy6cGQR1DaPOfjNA67xBUpUJYaGqDsBhDaG55MkFjvL+GZQWgLdXmb+3wUrx33v9j/SDin41bnWkyR6d/fsj/ARYNhWA=]
+::bagawork-project[app&link&code=StartPage&baga=eNqdk11rwjAUhv9KODdTKNJqtV3vZJPhxWQwLxyraGaPWlZjSdPNUvLf1w9SbYXCehNO8p6PJ29ICjQMwUlhd/YQHNgFNIrIazINQ4IXgcyLSBanLnPFjiMV+C4oF2/0gL1+ceoKjiLmjDD8JTdirkmXSZAa7M+BhzwC5zMF3wPH0IDRUz6vKAANzvt9hGIFjq7ijyyWaw3CrFutsmw2Lzc17Gp6hZ5vbthfYr9JPWMC+SI+fSEvz10xCAO6w2MxprctEkhyjjnJO/uMJEh5tO1f0/P7LvBAhf+D0wPmQ+tq1EvV3hUP+sawZw8OeTr6gZcnazeiYW8MXc/lqRcH4k7W9c0qE5+R1kvl1XANLpk3+liDBBxzOJFa6d2wzbsG/z8cXGapA5EtvW2jybbBNLJLJsO2FNOojakyqBtNVd7kmIyMgmNoPSoOs42jeoluHFX5HYc5LDjGE1NxjNs41KN3w1DV969iFRQTy1T/bYmn7A+I+r+rWxJ9z/fFxbrB3EDItfwD8sSPHw==]
 
 :::
 
@@ -89,7 +89,7 @@ If you want to store what the user has entered in `EnterNumber` in your current 
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUMtOhDAU/ZXmxgWTEKJjXNgdC2NYaDTOwolM0goXJULbKZc4hPTfLUxAcOeq577Ooz1IY4D3kOkcgUNWyaZhD11sDMMTocob5nGfqpQyi5LwhaSlJ/mBwWbspmSRWquYwm+2GA4zlyoHLoRCVznaBvhbD2UO/CoEJetBbzyAEHRRNEivwC8nvPfYHUIwnm11eSZLzsXK9qw+Wx+Khff7tvzr+k4R2se2fkcbmUpm+DnSB2IcsE63liXPYhOZQJRHMcVKSau48Bszn6zQUiD2umU4nGLOLnoTlUcXid/PCOEEfHu9DaHz783tlHCHtVenddJVuLj5Soo4byv6R7qdXw3EQt8d3A8Cya7q]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUMFOhDAQ/ZVm4oFNCNE1HuTGwRgOGo17cCObtNJBiVC67RCXkP67hQ0I3ry0b/pm3rzXHoTWEPeQNxIhhrwS1rKHLtGa4YlQScs87jOVUW5QEL6QMPQkPjDYjK8ZGaTWKKbwmy3IgXOZcuBCKJpKorEQv/VQSoivQlCiHvaNAxBCUxQW6RXiywnvPXaHELRXW02exdJzsbI9b5+tD8XC+31b/nV9pwjNY1u/o4l0JXL8HOUDPhKsa1rD0me+iXTAyyOfYmXUqKTwHbOeqNBQwPdNy3AYRckueh2VRxfx388I4QTx9nobQufvm9sp4Q5rv53WSVfhEvuVFolsK/pHup1vjcgfAV+YcAf3A3R5sN0=]
 
 :::
 
@@ -103,6 +103,6 @@ If you want to do something more complicated than just storing the number the us
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUMtOwzAQ/BVrxSGVogqKOJBbDwjlAALRAxWpFDfe0IrEsey1aBT533GeJNw4eR+zM+NpgCsFUQNZJRAiyApuDHuqt0oxvBBKYZivm0QmlGnkhG/ENb3wTwxW3TQhjWS1ZBK/2WzZ7lwiHbgQ8qoQqA1EHw2cBUQ3IUhetnrdAYRQ5blBeofoeqz3vnaHEJRnW1z2ZHHfLGxP6pP1tpl5f7Tnv64fJKF+tuURdT9PaK0KnuGpkwnSDsDqymoWv6arCXTiUhQeoIaq5xi/ndB8GmBLgmLADA64P6cg3VeWDXt21SyQbp3+5hjCBaLN7SaE2r9392M4Oyy9YVqGtMhla77ifCtsQf8IZuehQTrTdwf3A3PbxtM=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUE1PhDAQ/SvNxAObEKJrPNgbB2M4aDTuwY1sQpcO7kYoTRniEtL/bvkUvHlpX2fevHl9LQitgbeQlhKBQ5qLqmJPTag1wwuhkhVzuI1VTKlBQfhGwtCL+ERv01djMki1UUzhN1s0u56NlQXrQ1bmEk0F/KOFswR+44MSRbevHwAfyiyrkN6BX09477A9+KCd2mpyEIuGx8r2vH223j0W3h/r81/XD4rQPNfFEc1QjynQuUjx1K/xkp7AmrI2LHpNNjPpJJTMHUGPaNCYvh3TsuphJ4Jy5IwOhBsnL9mXNRv77KpdMW2Q/ObowwX49nbrQ+Puu/spnB0WzjCtQ1rlElZfURbKOqd/BLNz1IDc4SULE/ZgfwBdJ8jG]
 
 :::

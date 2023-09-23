@@ -14,7 +14,7 @@ Just as `App.onBefore()` is called directly when your app starts/before the firs
 
 Example of an app that uses `Page.onBefore()` in `BobPage` and `ClairePage`.
 
-::bagawork-project[app&link&code=MyApp-StartPage-BobPage-ClairePage&baga=eNrVk01rg0AQhv/KduhBQUJtgglCD7GHtIdCaXNoaAJudSxS48ruShLE/95dt5pYUmmPPcjOjPvOxzNsBbQowK8gYjGCD1FGhSAPh3lRENxLzGNBlF2t87XUH8sDTBhHyzYhSUc53SK5IeE8SyMMdbRub0ccqcRnSbl8pO9HEUdZ8px0P05ENdQOJCyLkQvwXytIY/BdB3QV1V8jAQdYkgiUL+BftfZK2fXGgULl6ylNsnvj9Mbs6nejaqfqd78o0+99P7GdsExkLZdKa4V3mGWMXFYGR30R2k57ISilwmaFC0YkIwF7I7rF0B7pw1K+LvrT9duMphx7ChM6Fdk9fg7s1agzBeYA/tj1aseguB5C8dXGeRADS1e6cyv/HbQVKzlpMqWC5Gx35Dc6wy+g0YdGIvTWekS6PQ4AmXheA8Sdzlog4yEgR8p/ZmKk/wTL1G2wTLxZ+3iWuC0y1ax+RJv6E3UKcrU=]
+::bagawork-project[app&link&code=MyApp-StartPage-BobPage-ClairePage&baga=eNrVk0FPgzAUx79KffEACSHiFraQeBgepgcTozu4uCVUKErsKGlLtoXw3W3pYMNMEr15oPS99v/6769tBbgoIKggZgmBAGKKhUAP+1lRILKTJE8EUv1qla+k/lgekpRxYtkmJbGb4w1BNyia0Swmkc7W7eyYEyzJs8RcPuL3o4gTWfIcdQMnohpqB1JGE8IFBK8VZAkEngN6FeWvkYADLE0FkS8QXLX9perXawcKVa+nNMXuTdDbZrd+t1UdVH338zL77vuJbYUbf2Q04SS3zNBKLlQRV6rGiu4IpQxdVgZOfRHZTjsrLKWCeJg3Z0gyFLI3pF1Htqt/loq1j0HNLcUZJz2ZSZ0q7R5XB3YKwVQB20Mw8vzaMYiuhxAdvJwHNHAZlO7cVfgLzCUrOWrqZgLlbHvk6v7ENcTxp6Yk9AH3IHVHPsBo7PsNI28ybRmNhhgdwf8ak5H+X1ITryE19qft01uQTUGVf/0E1/UXbCOKvw==]
 
 :::
 
@@ -28,7 +28,7 @@ Just as the `a` variable (short for **a**pp) is an object that we can store cons
 
 Example of an app with a page that uses a page constant.
 
-::bagawork-project[app&link&code=StartPage&baga=eNp1kF1LwzAUhv/K4eDFBqU4BJGCF1WGeLEproLDDRvb01HokpCkc6Xkv5tYWlc/LgLnI+8553lbZFJi1GImcsIIs4ppDYsmlhLoaIjnGlzcbvjG+Cf4DRVC0WTalQwLOdsTXEMaV2VGqa/a/nemiBlaGabMI9t9ixSZWnEYGiciizbAQlQ5KY3Ra4tljtEsQL/F3fclwQBFUWgyLxid9/HaxXYboHTzRspu2H2XjDCH/QOqT/5nleHtw/MyeVq/LePF3DOvPign/hf0XV3+xE3clkl61o7HWCg1MNh5FWSi5kY1IcwPpJp3kTdQiQNp+KUK0+nItQCPDvDK2dFgdDG77K1IaC8rd4+3ZGs/AVf3rIA=]
+::bagawork-project[app&link&code=StartPage&baga=eNp1kG9LwzAQxr/Kcfhig1IcgkjBF1WG+GJTXAWHGza211HokpCkc6Xku5tYWlf/vEi4u+S5u9/TIpMSoxYzkRNGmFVMa1g0sZRAR0M81+DidsM3xh/Bb6gQiibTrmRYyNme4BrSuCozSn3V9r8zRczQyjBlHtnuW6TI1IrD8HAismgDLESVk9IYvbZY5hjNAvRT3H5fEgxQFIUm84LReR+vXWy3AUrXb6Tsmt13yQhzmD+g+uR/VhnePjwvk6f12zJezD3z6oNy4n9B39XlT9zETQmNuybpWTvuZaHUwGDnpZCJmhvVhDA/kGreRd5AJQ6k4ZcqTKcj6wI8Osor50mD0cXssvcjob2s3FLel639BOFcrnM=]
 
 :::
 
@@ -43,7 +43,7 @@ Most apps typically store data in the `a` variable, and it is usually initialize
 
 Example of an app that initializes app data in `App.onBefore()`, and that have methods in `Page` classes to change that data when the user clicks on a button on respective page.
 
-::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNqtUsFKw0AQ/ZV18JBACLZSkYCHtgf1oIj2oNhC1mRiA9ts2GywJeTfne0msdFYLx4Wdmf2vXlvZirgeQ5BBZGMEQKIBC8Kdreb5jnDrcYsLhjdq2W21ObIbIaJVOi4NqS5n/ENsisWTkUaYWiidfs7Usg1Pmmu9AN//wIp1KXKWJc4ANVQe5BIEaMqIHitII0hGHlgqpC+PQQ8kElSoH6G4Ky9v9C9XnmQE18Paclu7aNns6vfWTWPqq/+uky/636UH4VjI0u9IKwT3qAQkp1Wth31Seh67YdZqaltTjhf84xKmXzo+kamY0P3FDGFW4jba4cHW1J+ST53EJyPLmrPOhsfc9Yn/gd76YG3hp3tZKn2dtgaFfrHLTMt2Uy+kXOKxQKVk/s0NSNxISnRdKQbyZ9kc8FThcN8Nvcbpdvb0UMRA1ttNA//t0UGII2yn1OcjCfNFCftpi5wkwsag9nYVf0JWjVBMA==]
+::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNqtU01Pg0AQ/SvrxAMkhNiaGkPioe1BPWiM9qCxTVhhsCRblixLbEP47852AYui6cEDZHc+3rw3M1sBz3MIKohkjBBAJHhRsLvdNM8ZbjVmccHoXC2zpTafzGaYSIWOa02a+xnfILti4VSkEYbGWrfRkUKu8UlzpR/4+1eSQl2qjHWOg6Qaag8SKWJUBQSvFaQxBCMPTBXit08BD2SSFKifIThrzy90rlce5ITXy7Rgt/bSk9nV76SaS9Vnf12m33k/yo/Cj9apiBVmjnUt9YJAfE0/J7xBISQ7rWxz6pPQ9dqoWampiU3cfM0zqm6CQtc3zB1ruieL4dLmub0OebAlMZckfQfB+eii9qzY8V9i+8D/rjg9kNvUYjtZqr04tkaF/hFdYFqymXyjZpAtFqic3KfZGtYLSY6mSd3gjkOcC54qHAa1vt9w3d46HzIZeACG+HC8LTKQ0jD7Od3JeNJMd9Iu9QI3uaDxmOVe1Z9ER1Hd]
 
 :::
 

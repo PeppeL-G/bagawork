@@ -98,7 +98,7 @@ You can make the app speak the text in `Text` components using the speakers on t
 
 Example of code showing how to make your app speak.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUstqwzAQ/BWxJxtEaNInvhTnkuZQKG0OLXXAqr1OTBzJSDJJMP73SlH9yqGQi7Uje0YzI9fAyhKCGhKRIgSQFEwp8noKy5LgUSNPFTFzHfFICz7HTEj0/DOMNJvsRaW3E+TspzDbdrexj0Qi0/ihmdRvbNMTJOpKcsLxQAYv/2gNNBQyUaQoFQTfNeQpBFMKnO2tszMBKIgsU6g/Ibhp5y8zN2sKpVEbMZ3Y0oFRwO70LqQFde99UeWXrj2HIj2vtOnCixeCaEFWRsGSY39iDXgt9t3nfToKRwhms1sKJ7M+PTTUGZ39Z7RVu8Lnuziozqvle/FLTvQWJVKyFQfCJJKTqEgqcr55jn16GWzOkp2N5vAwXNdbT3InhENNkuUce+GLCu6nj38V3LW3tsJ9WZg0o9sb9RCq3TIL06rQVzThrMWDH2zd/AJTxAcj]
+::bagawork-project[app&link&code=StartPage&baga=eNqVUk1rg0AQ/SvLnBQWaewnXoq5pDkUSptDSw241TFKzK6sK0kQ/3t3Y/wKpZDLOjPy3rz3dmtgRQFeDZGIETyIclaW5PXoFwXBg0Iel0TXdcADJfgcEyHRsk9toJizE5VKHeTsJ9djM23MEUlkCj8Uk+qNbQaARFVJTjjuyejnGdZAQyEReYyyBO+7hiwGb0aBs51RdgIABZEkJapP8G66+kvXzZpCodkmyJZs2TYTg/323qRp6kH7osouVVttF6h5pXQWjtJQK1wIogRZ6dowhLZjVFhdb7eYwSKFA3iue0vhqL9PDw1t1br/qe3YrhD7LvalE6VZHkvkvXJDdNb9khGVokRKUrEnTCI5iorEIuOb59Cmf3qds2hr3LbDsd8+zwE52uWP2UmScRxWXERzP3s8R3PXXekKd0WuXU6udpKPX26XiR9XuboioZG+cPQE180vaIIUWQ==]
 
 :::
 
@@ -106,4 +106,4 @@ Example of code showing how to make your app speak.
 The speak functionality uses text-to-speech functionality provided by the user's web browser. Not all web browsers provide such functionality, and will therefor not work for all your users.
 :::
 
-The app's voice can also be configured and disabled. Check out the documentation for the [Mouth](../mouth) class for more information.
+The app's voice can also be configured and disabled. Check out the documentation for the :docs[mouth] class for more information.

@@ -12,7 +12,7 @@ You pass the child to the `Space` component as its main content.
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVULFqwzAQ/RVzkw0itAkZqs10SDMUCsnQUgesWmdjIktCkmmM0b9Xjohbk6mT3t29d/eeRmBaAx2hUhyBQiWYtcnrkGud4MWh5DYJeCxk4SqDzOHBMePeWINpdu0WzqDrjUzmwdT1hfTgCdRKcDQW6OcILQf6SECybrp0pQMBVdcW3TvQhxv+CNifCOiwa6GMy/axWBieb8+mp+KP613f3vnVrMLVF6vOjVG95M9KKJOWAwqhvstspRnnrWzSbZZGXeGOYXtavkyMQLiTirbDMiORnc3fQOACdL1ZExjCu326ZTtip0Xwtsi4iJXb877OeS/cP3JFk+XvfX/yP2mfqxI=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkMFqwzAMhl8l6JSACVtHD/Ot7LD1MBish42lEM9WslDHNrbDGoLffU5Ds4aeerElWb/0/R6AGQN0AK4FAgUumXPJa78xJsGjRyVcEuOhUIXnFpnHd8+sf2M1ptmpWniLvrMqmR/GaihUgECg0lKgdUC/BmgE0HsCirXjplM7ENBV5dB/AL07x58xDnsCJs5aKKdh2ylZAM+7Z+gxuaB+7porXsM45t+MH2qrOyWetNQ2LXuUUv+WWW6YEI2q03WW859GinRSF34Xd+Q+Hmn5MjbH3qspsmmxzMgkyeYfIXAEunpYEejjvX4829xha2TEXNhdONy4w7baiE76GyxekJb/EGEf/gCDrbEq]
 
 :::
 

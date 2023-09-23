@@ -3,6 +3,10 @@ All notable changes to this website will be documented on this webpage.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2023-09-23
+* Rewrote all code containing components to not be invoked as a function, but use a configuration method to set the main content instead
+* Updated the editor to v0.0.5
+
 ## [0.0.3] - 2023-09-18
 * Introduced tutorial sections
 * Added the app constant tutorial

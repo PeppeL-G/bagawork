@@ -11,7 +11,7 @@ This tutorial will teach you what constants in programming are, and how you can 
 ## The problem
 To understand the usefulness of constants, let's first go though an app that could benefit from using constants, but that doesn't use them. Such an app is the app shown below.
 
-::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNVE1v2zAM/SuETjbgGmmdbIPRy9pDWwwdiqWHfaSAVZlODNiSIdFLs8D/fZIVp02ABN3Www6GSUrkI/WetGa8aVi6ZkLlyFImKm4M3MhCfWwawCdCmRuw9nomZ+Q+oZETTolruuNzDEK/Qhqp1RJuUbYu7oKdz+lYF7FCVTlqw9Ifa1bmLD2NmOS1g+xLsYipojBIX1k6Guxv1u4eItbYejuZvtiNd3Y6H+C3rTtnr/erttzv+otamsBHZnRvc4NscwZZGA3xacMFxqb8hcEoHk2eF3zCFCsUBMsFJ1ipFpZcEpACi5lDrTQCf1QtxVkYV1hQsFd4612qqq3lczv76zO6aImUDLJbrktly7nzCXrHTRtGhzLDv8D4jlXOB4zeeS3Gy3i4I4eIPVnmJpOIrViaJEkXeWbPjjG7xX4zauEENtMdYMLv7vdAaYDDzzJHBXOrWxALrrkg1OCRc3hcwedSutZUDNMFuhSyv0aXUqCdQBW9f73SbYXwqZTzXNVx9u86OD/ZimAj/yP8HCRknCQ9IeMP44GQ5OhVGwT3loRsJH2UkH7PnxJyjfb8rQ0S0bba30sj2hf03CEXi/+JjnFPx+m798MbeI91U9nR3Fv40P0GsG0LKw==]
+::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNVN9v0zAQ/ldOfkqkLOpICyjiBXhgExqa6B6AdVI9+9JYSu3IudCVKv/77Pzo2ooWEEziIcmdz3f32d932TBelizdMGEkspSJglcVXOrMvC1LwAdCLStw9mamZ+QfYZETTolbuuYLDMIuQhapthquUNd+3S82XU7DmohlppBoK5bebpiSLD2PmOZL37ItxSJmsqxC+sLS0WB/dXZzF7HS1dvL7Ipdds4e8qH9Frp3DrB/qNUh6s9mVcUiV4W0qIMuNKMbVyQm9wrm/Y3Mw2gITksuMK7UDwxG8WjyFNjJmmKBgmCVc4K1qWHFNQEZcDAkLI1F4PempngexgVmFBxU33rvTVEv9U8QHm6c0buayOi+/xW3yrji/gKD1vHXEUbH0sO/7vgNC8mHjq3zux1318M99UTswRE9mURszdIkSZqoE8KLU0LY9n4mJcAZ9Gc9wtlOSrsRVAUcviuJBhZO+SBybrkgtNCBkXC/hk9Ke7QmhmmOPoXcp7RKC3SHMlnrX6xtXSB8VHohzTKe/2vZvDnbaqYfpxMEHmVsnCQtY+PX44Gx5OToDvp8Psb6efg1Y+3GP2XsAh1BzgaN6NC3c16Jeoe/a+Qi/3/5Grd8nb98Nfx0b3BZFu6g/ud71zwCw2E26g==]
 
 As you can see in the app, the name of the app, `InfoApp`, is currently shown at the top of all the three pages. The problem with the current implementaiton of the app is that this name has been *hardcoded* in all the three different pages. Hardcoded means that the same value (`InfoApp` in this case) has been written in the source code at each placed it is used.
 
@@ -65,33 +65,33 @@ In this case, the constants are stored in the object in the `a` variable, so to 
 To display the name of the app on the `MenuPage`, the following code were used before:
 
 ```js
-Text(`InfoApp`)
+Text.text(`InfoApp`)
 ```
 
 With  the constants we have now, we can instead write:
 
 ```js
-Text(a.APP_NAME)
+Text.text(a.APP_NAME)
 ```
 
-When the computer executes this code, it will first retrieve the value for the `APP_NAME` constant from the object in the `a` variable, and it will get back the string value `InfoApp`, and pass that to the `Text()` component, which then will display that text. Easy as that!
+When the computer executes this code, it will first retrieve the value for the `APP_NAME` constant from the object in the `a` variable, and it will get back the string value `InfoApp`, and pass that to the `Text.text()` component, which then will display that text. Easy as that!
 
 However, for the `MarioPage` it is a little bit more complicated. To show the name of the app on the `MarioPage`, the following code were used before:
 
 ```js
-Text(`InfoApp - Mario`)
+Text.text(`InfoApp - Mario`)
 ```
 
 If we would try to simply replace `InfoApp` with `a.APP_NAME`:
 
 ```js
-Text(`a.APP_NAME - Mario`)
+Text.text(`a.APP_NAME - Mario`)
 ```
 
-Then the `Text()` component would display the text `a.APP_NAME - Mario`. That is, our constant has not been used at all. Remember, in JavaScript, when creating a string with two `` ` `` characters, all characters between them will be interpreted as text part of the string. But, in a string created with two `` ` `` characters, we can in the string write `${SOMETHING}`, where we want the computer to replace that entire thing with the value we get from `SOMETHING`. So for the `MarioPage`, we would instead write:
+Then the `Text.text()` component would display the text `a.APP_NAME - Mario`. That is, our constant has not been used at all. Remember, in JavaScript, when creating a string with two `` ` `` characters, all characters between them will be interpreted as text part of the string. But, in a string created with two `` ` `` characters, we can in the string write `${SOMETHING}`, where we want the computer to replace that entire thing with the value we get from `SOMETHING`. So for the `MarioPage`, we would instead write:
 
 ```js
-Text(`${a.APP_NAME} - Mario`)
+Text.text(`${a.APP_NAME} - Mario`)
 ```
 
 And we can use the same strategy on the `ZeldaPage`.
@@ -100,7 +100,7 @@ And we can use the same strategy on the `ZeldaPage`.
 ### The final solution
 So, here's the code for the app using constants, instead of harding the name of the app at multiple places.
 
-::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNlF1r2zAUhv/KQezCBtekdbIN012kZaxlpISlF/tImVX5ODHYkpHlpanxf58kx3ESSOjWXezCWEfSez70HKkmtChIWBMmYiQhYRktS7jliRgXBeCTQh6XoMf1nM+V+QS/wkRIdNx2SlF/PJ3+vBtPPsIHiDbSyKw1nYZJpApniko1pYteKlFVksMEeWXmdzQNaTySiCxGWZLwR03SmITnHuE0N2laV8QjIklKVF9JOOjG3/S4efBIof3tKVtnt62xV20XfluuMer93D9V6WHWX8SqdNqZubrXWqc/CdfrFmYFZeiX6TM6A38w6hesIpphhkzBakkVrEUFK8oVKAE6aAy5Pmagj6JSfuT6GSbKOXC8ta5FVuW8z+dwfa6uKqXZOdGEylRod+aAHGuYcl3vmNL9ixjfMYtpF8MaL42xO+/u9YNHnjS60cgjaxIGQdB4LdqLU2i3sV/NNnpT93gbOINNjUd4tBq7B9ISKPxKYxSw0O0LbEklZQoltPFjeFzDXcpNgsKH2RKNROlfIVPOUNchEmvfrGWVIXxO+SIWuR+9vhsuz7atsLkFJygdxTIMAotl+H7YYQlO3riu7f49lk17n8Ri9/wplhvUFPQYOKJO2N7RklU7kKZI2fJ/gjK0UM7fvusexHvMi0yXZh7Gh+Y3eV0f9w==]
+::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNVG1v0zAQ/isniw+JlEUdaWGK4EOHEJtQp4ruA4NOxHMujaXEjhyHrovy33HemraiBcSQ+JDkzufn3p67lIRmGfFLwmSIxCcsoXkO1yKS0ywDfNQowhyMXC7FUtePFJcYSYWW3R5p6k7n828309l7eAtBBw1qW9VjmEKqcaGp0nO6GqAKdaEEzFAU9fkOpiKVQyKZhKhy4n8tCQ+Jf+4QQdM6zcYVcYiMohz1Z+KPevnOyNW9QzLjbw/ZOrtulb1q+/Dbcmul3M/9Q8EPs/4k17nLYp6ECoXVmpb61jhxtXlZQ19sp7cuMsrQzfkTWiN3NBkMAyxYYIJMwzqmGjaygDUVGrQEk0cIqek80AdZaDew3QQjbR1432rvZFKk4icpHl5c6stCG167+DOquDTO6w5ajVL3w3aOwe2/jvgFk5D2ERvldyPuntt74+OQR8P0ZOKQDfE9z6ucdhJenpqEbexnHoXgRTlMQwVn0FV8hLkdYHMReA4UvvMQJazMAgCLqaJMo4I2pRAeNnDDRZ2zdGERYw3R5pMpLhia0mTU6FcbVSQIH7lYhTJ1g+cenjdn28nptuoEjUd5G3tew9v4Ytzz5p3c4H5K/zVv3W78mrfm4p/ydoWGJiODQDQ1NDufs2KHxTlSFv+/rI0b1s5fve7/wLeYZokptP4T31c/AFqcS7Y=]
 
 
 

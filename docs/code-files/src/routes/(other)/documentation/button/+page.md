@@ -20,7 +20,7 @@ Clicking on the `Button` takes the user to the next page in the app (if one exis
 
 In this example, the GUI consists only of the `Button`, making it cover the entire screen.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVjr1qwzAUhV9FPZMDGtqUDtXmZigZCoVmaKkDFvZ1MZFlIV1DgtG7V06Iibt1uuf+nfON0M5Bjaj6mqBQGR2CeDvlzgk6Mtk6iKTHwhZcedJMH6w9v+sfylbnacGeePBWzItpGgsbESWa3tTkA9T3iLaGepCwupuSzueQ6JsmEH9C3V/1V9JxL+GS1+LzYra9NAvgOXuGnpob6teh/cv7MjD3Nis3pq0OoqO7cjWTSxyh1o9riVOqT89XnB11ziS7BdaCJA+HbZPXg+F/oOzSaVbe5Md9/AXuAI5X]
+::bagawork-project[app&link&code=StartPage&baga=eNqVzj1rwzAQBuC/or5TAqI0KR2qzelQMgQKzdBSByKsczGxZSGdIcHov1dOGhN366S70308PbRzUD2K1hAUilqHIDanzDlBRyZrgkhxn9ucC0+a6Z215zf9TbP5uZqzJ+68FePHUI25jYgSZVsb8gHqq0dloBYSVjfDpXM7JNqyDMQfUA/X+DPFcSfh0q7J5GXZ+pJMwOPtET0kN+rXrvrrXXXMrb3nNDHbv9RVcRAN3e3nI1/iCLV8XEqc0vv0fDVtqXF12jmxTThZOKzLzHQ1/8OzTa2/mhtE3MUft6aSPQ==]
 
 :::
 
@@ -30,7 +30,7 @@ By default, when the user clicks on the `Button`, the user will come to the same
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage-DestinationPage&baga=eNqVkU1LxDAQhv9KnVMLQbSyRXPrIix7EEQXVOxCQzvVsm1SkinuUvLf7Qft2h6EPWVmMvPO8yYNiKoC3kCiUgQOSSGMcZ5OYVU5eCSUqXHauIlkRIlGQfhKQtOz+ELX66sRaaRaS2e66Ko2khYsg0wVKWoD/LOBPAV+y0CKstvUtwMDlWUG6R34zRh/tLHdM6hardnkILYdkhnwtHuC7pI/1Js6X/KuayIl3XijHPpGjbF33W10H9FQLgXlSnYi3mSHwRG4f+czOLXn6sGygcz/j2yhdgHfi/ox7lCJaNfOufEbFokq0aEeeal9FXts7B/NrUVy6NqnBxpdToVxZuFzFQSDz+B+/IsdllXRss7+ZGY2NIdtFqZ1QRf4HKzF5/12b38BK4nntQ==]
+::bagawork-project[app&link&code=StartPage-DestinationPage&baga=eNqVkVFrgzAUhf+Ku08KoWyOls03y6D0YTC2wjZmwaDXVaqJJFfWIvnvi3Xa6sOgT7m5yTn3O0kDvKogaCCRKUIAScG1dp6PYVU5eCAUqXZs3UQiokQhJ3wjruiFf6PrnboRKaRaCWc4aLsmEgYMg0wWKSoNwVcDeQrBHQPBy3bS6TowkFmmkT4guO3rT1ubLYPKeo2Undm624yAh9kDdLu5oF7V+ZR3WRNJMSOrcOOVdGiHCmNv1o51n1BTLjjlUrRO3pCJwQEC/95ncLTr/NGwDs//D2/idgXkq/zRs2SXF6lC4XZHEW2swR/4OxaJLNGhU4DppJvYY71olHfJk32rGR6uDz40euEk+nyx6KIvHvo/2mBZFRZ/9Fej/KHer7MwrQu6IvpFyPgMYbbmFwRb8vg=]
 
 :::
 
@@ -43,6 +43,6 @@ To run some of your own code when the user clicks on the `Button`, create a new 
 
 ::: tip Example
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNqVkE9Pg0AQxb/KOvEAcUPaGg+S9NB6MD34J9qDTWnClh0sKeyS3UXbEL67CwgNptF4WWaYfW/2/UpgeQ5+CZHkCD5EKdOaPBxneU7wYFBwTWxdBiIwUswxlgodt2kDwzxRZFtUT/G8MHZ8lybRXpMpGdXzqj4ihczgq2HKPLP3k1ShKZQg/aAXJMJKMhTm8Yz1X5uvpmT87VRBRSGWKUelwV+XkHDwxxQEy+qczWKgIONYo3kDf9TVK1tXGwq5fdVA2Zot2maAq0/RI6ub8pT/vkh+Jn+Rn9pp/wRmaXVOuJIF2bEPJFGdBjkxOyTbJh+5LM9HrohJMtRe6NLOrB07YXOBZHgRut6OCZ6icpj3K9/OxO0hUjiAP7meUDja781tR2aJWZ7aZANCAygzvV/EM16k5h9UWhDhaX+1qb4AEZ/xvg==]
+::bagawork-project[app&link&code=MyApp-StartPage&baga=eNqVkE9Pg0AQxb/KOvFAIyFtjQdJemg9mB78E+1BI03YsoOQwkJ2B21D+O4uUKiYRuNldyZv582+Xwk8z8EtIcgEggtBwrVmd/t5njPcEUqhmalLT3qUyQWGmUJr1LQecUcW6QbVQ7goyMg3SRxsNZuxca1X9REo5ITPxBU98vfjqEIqlGS90A/E0oykKOn+hPVfmy9mbHJwqqCyIcwSgUqD+1ZCLMCd2CB5WudsFoMNWRhqpBdwx139aupqbUNufjWYbM2WbTPA1afokdVNecx/W8Q/kz9ln9oJojgRCqXVSh6tjIFD5rD816xgEf9AFtTZUDCKkG2atOy8PA2gYhSnqB1/ZHeOrXzwbF6xFM/8kRNxKRJUFnd+Rd45jXquNuzAnV5Obdib++q6g7XCNE9M2AG0Aae53i7DuSgS+geob0j84yeqdfUFzkT7Dg==]
 
 :::
