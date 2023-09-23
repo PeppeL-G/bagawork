@@ -1,6 +1,14 @@
 import {Component} from '../Component.js'
 
-export class RowsComponent extends Component{
+export class RowsComponent extends Component {
+	
+	constructor(props) {
+		
+		super(props)
+		
+		this.children = props.children ?? []
+		
+	}
 	
 	onAfter(a, p){
 		for(const child of this.children){

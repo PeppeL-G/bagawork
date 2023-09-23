@@ -8,11 +8,6 @@ export function createComponentCreator(Component){
 			const realProxy = createRealComponentCreator(Component)
 			return Reflect.get(realProxy, prop, receiver)
 		},
-		// E.g. Text(...)
-		apply(target, thisArg, argumentsList){
-			const realProxy = createRealComponentCreator(Component)
-			return Reflect.apply(realProxy, realProxy, argumentsList)
-		}
 	})
 	
 	return sharedComponentCreator
@@ -21,12 +16,11 @@ export function createComponentCreator(Component){
 
 export function createRealComponentCreator(Component){
 	
-	let childProxies = []
 	let props = {}
 	
 	let lastAccessedProp = ""
-	const setLastAccessedProp = (value=true) => {
-		props[lastAccessedProp] = value
+	const setLastAccessedProp = (...args) => {
+		props[lastAccessedProp] = args
 		return proxy
 	}
 	
@@ -37,23 +31,22 @@ export function createRealComponentCreator(Component){
 			}else if(prop == 'isCreatorProxy'){
 				return true
 			}else if(prop == 'create'){
-				const children = childProxies.map(
-					c => (
-						c?.isCreatorProxy ?
-						c.create :
-						c
-					)
-				)
-				return new Component(children, props)
+				
+				for (const [propName, propValues] of Object.entries(props)) {
+					for(const [i, propValue] of propValues.entries()){
+						if(propValue?.isCreatorProxy){
+							props[propName][i] = propValue.create
+						}
+					}
+				}
+				
+				return new Component(props)
+				
 			}else{
 				lastAccessedProp = prop
 				return setLastAccessedProp
 			}
 		},
-		apply(target, thisArg, argumentsList){
-			childProxies = argumentsList.flat(Infinity)
-			return proxy
-		}
 	})
 	
 	return proxy

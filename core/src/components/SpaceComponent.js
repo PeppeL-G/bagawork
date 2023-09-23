@@ -1,13 +1,19 @@
 import {Component} from '../Component.js'
 
-export class SpaceComponent extends Component{
+export class SpaceComponent extends Component {
+	
+	constructor(props) {
+		
+		super(props)
+		
+		this.child = props.child?.[0] ?? null
+		
+	}
 	
 	onAfter(a, p){
 		
-		const child = this.children[0]
-		
-		if(child){
-			child.onAfter(a, p)
+		if(this.child){
+			this.child.onAfter(a, p)
 		}
 		
 	}
@@ -16,11 +22,9 @@ export class SpaceComponent extends Component{
 		
 		const afterDirections = []
 		
-		const child = this.children[0]
-		
-		if(child){
+		if(this.child){
 			afterDirections.push(
-				...child.createAfterDirections()
+				...this.child.createAfterDirections()
 			)
 		}
 		

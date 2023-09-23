@@ -1,9 +1,9 @@
 export class Component{
 	
-	constructor(children, props){
+	constructor(props){
 		
-		this.children = children
-		this.props = props
+		this.backgroundColor = props.backgroundColor?.[0] ?? ""
+		this.size = props.size?.[0] ?? null
 		
 	}
 	
