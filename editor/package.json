@@ -1,6 +1,6 @@
 {
   "name": "@bagawork/editor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "dependencies": {
     "@bagawork/core": "^0.0.2",
