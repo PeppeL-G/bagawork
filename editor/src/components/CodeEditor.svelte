@@ -2,7 +2,18 @@
 	
 	export let code
 	
-	import monacoLoader from '@monaco-editor/loader';
+	import monacoLoader from '@monaco-editor/loader'
+	import arrayTsString from '../editor-type-definitions/js/Array.d.ts?raw'
+	import stringTsString from '../editor-type-definitions/js/String.d.ts?raw'
+	import mathTsString from '../editor-type-definitions/js/Math.d.ts?raw'
+	import appTsString from '../editor-type-definitions/bagawork/App.d.ts?raw'
+	import pageTsString from '../editor-type-definitions/bagawork/Page.d.ts?raw'
+	import componentTsString from '../editor-type-definitions/bagawork/Component.d.ts?raw'
+	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.d.ts?raw'
+	import textTsString from '../editor-type-definitions/bagawork/components/Text.d.ts?raw'
+	import spaceTsString from '../editor-type-definitions/bagawork/components/Space.d.ts?raw'
+	import rowsTsString from '../editor-type-definitions/bagawork/components/Rows.d.ts?raw'
+	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.d.ts?raw'
 	
 	let monacoEditor
 	
@@ -10,38 +21,21 @@
 		
 		const monaco = await monacoLoader.init()
 		
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(`
-			/** A class representing a page. */
-			class Page {
-				
-				/**
-				 * This method is called when:
-				 *  - the user navigates to this page
-				 * In this method you can initialize the page's internal state.
-				 */
-				onBefore(){}
-				
-				/**
-				 * This method is called:
-				 * - after onBefore() has been called
-				 * - if the user leaves the app when this page is shown, this method will
-				 *   be called when the user comes back to the app, and this page is shown
-				 *   again.
-				 * In this method you must create and send back the root GUI component
-				 * of the page's GUI.
-				 */
-				createGui(){}
-				
-				/**
-				 * This method is called:
-				 * - when the user is going to another page in your app
-				 * In this method you can write some code that changes the app's
-				 * global state before the new page the user navigates to is created.
-				 */
-				onAfter(){}
-				
-			}
-		`)
+		monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+	 		noLib: true,
+			allowNonTsExtensions: true,
+		})
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(pageTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(appTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(arrayTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(stringTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(mathTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(componentTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(buttonTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(textTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(spaceTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(rowsTsString)
+		monaco.languages.typescript.javascriptDefaults.addExtraLib(columnsTsString)
 		
 		monacoEditor = monaco.editor.create(editorContainer, {
 			value: code,
@@ -52,6 +46,9 @@
 			renderWhitespace: "all",
 			trimAutoWhitespace: false,
 			language: 'javascript',
+			suggest: {
+				showKeywords: false,
+			},
 		})
 		
 	}

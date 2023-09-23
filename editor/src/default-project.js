@@ -35,17 +35,17 @@ class AskFeelingPage extends Page{
 	}
 	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`Hello!\`),
+			Text.text(\`Hello!\`),
 			Space,
-			Text(\`How are you feeling?\`),
+			Text.text(\`How are you feeling?\`),
 			Space,
-			Columns(
+			Columns.children(
 				Space,
-				Button(\`Bad\`).page(FeelingBadPage),
+				Button.text(\`Bad\`).page(FeelingBadPage),
 				Space,
-				Button(\`Good\`).page(FeelingGoodPage),
+				Button.text(\`Good\`).page(FeelingGoodPage),
 				Space,
 			),
 		)
@@ -70,11 +70,11 @@ class FeelingGoodPage extends Page{
 	}
 	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`Glad to hear that! :)\`),
+			Text.text(\`Glad to hear that! :)\`),
 			Space,
-			Button(\`Restart\`).page(AskFeelingPage)
+			Button.text(\`Restart\`).page(AskFeelingPage)
 		)
 	}
 	
@@ -97,11 +97,11 @@ class FeelingBadPage extends Page{
 	}
 	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`Sorry to hear that :(\`),
+			Text.text(\`Sorry to hear that :(\`),
 			Space,
-			Button(\`I feel better now\`).page(FeelingGoodPage)
+			Button.text(\`I feel better now\`).page(FeelingGoodPage)
 		)
 	}
 	
@@ -124,7 +124,7 @@ class PageInOtherFolder extends Page{
 	}
 	
 	createGui(){
-		return Text(\`This is a page in the other folder!\`)
+		return Text.text(\`This is a page in the other folder!\`)
 	}
 	
 	onAfter(){
@@ -147,15 +147,15 @@ class AskIfAdultPage extends Page{
 	}
 	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`Are you older than 18?\`),
+			Text.text(\`Are you older than 18?\`),
 			Space,
-			Columns(
+			Columns.children(
 				Space,
-				Button(\`No\`).page(null),
+				Button.text(\`No\`).page(null),
 				Space,
-				Button(\`Yes\`).page(null),
+				Button.text(\`Yes\`).page(null),
 				Space,
 			),
 		)
@@ -177,14 +177,14 @@ class EnterAgePage extends Page{
 	}
 	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`What's your age?\`),
+			Text.text(\`What's your age?\`),
 			Space,
-			Button(\`10\`).page(null),
-			Button(\`15\`).page(null),
-			Button(\`20\`).page(null),
-			Button(\`25\`).page(null),
+			Button.text(\`10\`).page(null),
+			Button.text(\`15\`).page(null),
+			Button.text(\`20\`).page(null),
+			Button.text(\`25\`).page(null),
 			Space,
 		)
 	}
