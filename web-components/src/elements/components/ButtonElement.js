@@ -27,7 +27,7 @@ export default class ButtonElement extends ParentElement{
 		this.buttonComponent = buttonComponent
 		
 		// Fix HTML.
-		this.innerText = this.buttonComponent.children[0]
+		this.innerText = this.buttonComponent.text
 		
 		// Fix CSS.
 		applyAttributesToElement(

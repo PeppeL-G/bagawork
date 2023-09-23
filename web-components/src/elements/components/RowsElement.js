@@ -23,7 +23,7 @@ export default class RowsElement extends ParentElement{
 	setGuiComponent(rowsComponent, frameworkApp){
 		
 		// Fix HTML.
-		for(const childComponent of rowsComponent.children){
+		for (const childComponent of rowsComponent.children){
 			
 			const childElement = createGuiElement(childComponent)
 			this.appendChild(childElement)
@@ -40,8 +40,8 @@ export default class RowsElement extends ParentElement{
 		const style = this.style
 		
 		style.gridTemplateRows = rowsComponent.children.map(childComponent => {
-			if(childComponent.props.size != undefined){
-				return `minmax(auto, ${childComponent.props.size}fr)`
+			if(childComponent.size != null){
+				return `minmax(auto, ${childComponent.size}fr)`
 			} else if (childComponent.constructor.name == "SpaceComponent"){
 				return '1fr'
 			}else if(childComponent){

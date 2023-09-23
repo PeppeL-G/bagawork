@@ -21,13 +21,11 @@ export default class SpaceElement extends ParentElement{
 	setGuiComponent(spaceComponent, frameworkApp){
 		
 		// Fix HTML.
-		const childComponent = spaceComponent.children[0]
-		
-		if(childComponent){
+		if (spaceComponent.child){
 			
-			const childElement = createGuiElement(childComponent)
+			const childElement = createGuiElement(spaceComponent.child)
 			this.appendChild(childElement)
-			childElement.setGuiComponent(childComponent, frameworkApp)
+			childElement.setGuiComponent(spaceComponent.child, frameworkApp)
 			
 			// Fix CSS.
 			childElement.style.height = "100%"

@@ -30,7 +30,7 @@ export default class TextElement extends ParentElement{
 		
 		// Fix HTML.
 		// \u200B is zero width character (if text is empty, we want the span to have a height).
-		this.textSpan.innerText = (textComponent.children[0] || '').trim() || "\u200B"
+		this.textSpan.innerText = textComponent.text.trim() || "\u200B"
 		
 		// Fix CSS.
 		applyAttributesToElement(
@@ -39,15 +39,11 @@ export default class TextElement extends ParentElement{
 		)
 		
 		const style = this.style
-		const gravity = textComponent.props.gravity || ''
 		
-		if(textComponent.props.left || gravity.includes('<')){
+		if(textComponent.left){
 			style.justifyContent = 'start'
 			style.textAlign = 'left'
-		}else if(gravity.includes('|')){
-			style.justifyContent = 'center'
-			style.textAlign = 'center'
-		}else if(textComponent.props.right || gravity.includes('>')){
+		}else if(textComponent.right){
 			style.justifyContent = 'end'
 			style.textAlign = 'right'
 		}else{
@@ -55,11 +51,9 @@ export default class TextElement extends ParentElement{
 			style.textAlign = 'center'
 		}
 		
-		if(textComponent.props.top || gravity.includes('^')){
+		if(textComponent.top){
 			style.alignItems = 'start'
-		}else if(gravity.includes('-')){
-			style.alignItems = 'center'
-		}else if(textComponent.props.bottom || gravity.includes('v')){
+		}else if(textComponent.bottom){
 			style.alignItems = 'end'
 		}else{
 			style.alignItems = 'center'
