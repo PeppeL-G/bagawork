@@ -10,7 +10,7 @@
 	import { getClassName } from '../functions/get-class-name.js'
 	import { app, folders, pages } from '../stores.js'
 	
-	const directionToLeftExtraX = 50
+	const directionToLeftExtraY = 50
 	
 	let showCreatePageModal = false
 	let showEditPageModal = false
@@ -160,6 +160,7 @@
 							centerX,
 							centerY,
 							text: direction.description,
+							isBack: false,
 						})
 						
 					}else{
@@ -169,14 +170,15 @@
 							dx
 						) * 180 / Math.PI + 180
 						
-						const centerY = startY + dy/2 + directionToLeftExtraX
+						const centerY = startY + dy/2 + directionToLeftExtraY
 						
 						lines.push({
 							length,
 							angle,
 							centerX,
 							centerY,
-							text: `← ${direction.description}`,
+							text: direction.description,
+							isBack: true,
 						})
 						
 					}
@@ -307,6 +309,7 @@
 			
 			<div
 				class="line"
+				class:isBack={line.isBack}
 				style:width={`${line.length}px`}
 				style:transform={
 					`translate(${line.centerX}px, ${line.centerY}px) translate(-50%, -50%) rotate(${line.angle}deg)`
@@ -449,6 +452,11 @@
 	background-color: black;
 	color: white;
 	text-align: center;
+}
+
+.isBack{
+	color: black;
+	background-color: white;
 }
 
 </style>
