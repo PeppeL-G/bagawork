@@ -10,23 +10,37 @@ On this page you find the documentation for the GUI Component `Button`.
 
 
 ## Introduction
-The `Button` component is a view that displays some text to the user shown as a button, and which the user can click on. The text passed as the main content to the `Button` will be shown in the `Button`.
-
-The text is always centered both vertically and horizontally in the `Button`.
-
-Clicking on the `Button` takes the user to the next page in the app (if one exists, which is not the case in the app below).
+The `Button` component is a view that displays some text to the user shown as a button, and which the user can click on. Clicking on the `Button` takes the user to "the next page in the app".
 
 ::: tip Example
 
-In this example, the GUI consists only of the `Button`, making it cover the entire screen.
+Example showing what the `Button` component looks like when shown on the screen.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVzj1rwzAQBuC/or5TAqI0KR2qzelQMgQKzdBSByKsczGxZSGdIcHov1dOGhN366S70308PbRzUD2K1hAUilqHIDanzDlBRyZrgkhxn9ucC0+a6Z215zf9TbP5uZqzJ+68FePHUI25jYgSZVsb8gHqq0dloBYSVjfDpXM7JNqyDMQfUA/X+DPFcSfh0q7J5GXZ+pJMwOPtET0kN+rXrvrrXXXMrb3nNDHbv9RVcRAN3e3nI1/iCLV8XEqc0vv0fDVtqXF12jmxTThZOKzLzHQ1/8OzTa2/mhtE3MUft6aSPQ==]
+::bagawork-project[app&baga=eNpdjs1qwzAQhF9FmVMCoqQJPVS3NofQQ6GQHFLqQIS1Lia2LKQ1JBi9e2SbmKannf2b+Tpo56A65I0hKOSVDkF8Xt+cE3RhsiaIpLvMZpx70kw71p6/9C/NF8M0Y0/ceiumRT+NmY2IEkVTGfIB6qdDaaCeJayu+6ThHBJNUQTiA9Tyrr+TjkcJl7wePkezj7F5AJ6yJ+i++UO9bcv/vO8tc2OfOH3MT5uqzM+iptlpMeFLXKBW65XENdWX1zvTnmpXJc+e7RhvwPdu3w==]
+
+Note: In this example, the button covers the entire screen (which usually isn't the case), and clicking on it just reloads the same page, so nothing should happen when you click on the button in this example.
 
 :::
 
 
-## Going to another page
-By default, when the user clicks on the `Button`, the user will come to the same `Page` again. To take the user to another page instead, use the configuration method `page()`:
+
+## text() - Setting the text
+Use the configuration method `text()` to tell the `Button` component which text it should display. Pass the text as a string. The text will always be centered in the `Button`.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNpdjs1qwzAQhF9FmVMCoqQJPVS3NofQQ6GQHFLqQIS1Lia2LKQ1JBi9e2SbmKannf2b+Tpo56A65I0hKOSVDkF8Xt+cE3RhsiaIpLvMZpx70kw71p6/9C/NF8M0Y0/ceiumRT+NmY2IEkVTGfIB6qdDaaCeJayu+6ThHBJNUQTiA9Tyrr+TjkcJl7wePkezj7F5AJ6yJ+i++UO9bcv/vO8tc2OfOH3MT5uqzM+iptlpMeFLXKBW65XENdWX1zvTnmpXJc+e7RhvwPdu3w==]
+
+:::
+
+
+
+
+
+## page() - Going to another page
+Use the configuration method `page()` to tell the `Button` component which page the user should come to when clicking on the button. Pass the page as an argument.
+
+If this method is not used, then the current page will be reloaded when the user clicks on the button.
 
 ::: tip Example
 
@@ -34,12 +48,11 @@ By default, when the user clicks on the `Button`, the user will come to the same
 
 :::
 
-The value you pass to `page()` can be the same type of value you pass as the `page` argument in the [Direction](/documentation/direction) constructor. It's typically the name of the `Page` class the user should come to.
 
 
 
-## Handling clicks
-To run some of your own code when the user clicks on the `Button`, create a new method containing that code, and pass the method to the configuration method `handler()`.
+## `handler()` - Handling clicks
+Use the configuration method `handler()` to tell the `Button` component which method to call when the user clicks on the button. Pass it a reference to the method (e.g. `a.theMethodName` or `p.theMethodName`, depending on what you have named your method and if you wrote it in your `App` class or `Page` class).
 
 ::: tip Example
 
