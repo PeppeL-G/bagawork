@@ -1,5 +1,6 @@
 <script>
 	
+	import { changelogEntries } from 'data/changelog-entries.js'
 	import { page } from '$app/stores'
 	
 	const links = [
@@ -12,6 +13,8 @@
 		{text: "Implementation", href: "/implementation", target: "_self"},
 		{text: "Contact", href: "/contact", target: "_self"},
 	]
+	
+	const lastChangelogEntry = changelogEntries[0]
 	
 </script>
 
@@ -38,7 +41,7 @@
 		href="/changelog"
 		class:isCurrent={$page.url.pathname == '/changelog'}
 	>
-		v0.0.4
+		v{lastChangelogEntry.version}
 	</a>
 </nav>
 

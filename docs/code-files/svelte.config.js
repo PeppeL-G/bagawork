@@ -12,6 +12,9 @@ import { createDocsPlugin } from './plugins/create-docs-plugin.js'
 const config = {
 	kit: {
 		adapter: adapter(),
+		alias: {
+			'data': 'src/data',
+		},
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [
