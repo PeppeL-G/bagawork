@@ -72,7 +72,7 @@ Example of an app specifying which `Page` to first show the user.
 ```js
 class MyApp extends App{
 	createStartPage(){
-		return new StartPage()
+		return StartPage
 	}
 }
 ```

@@ -19,7 +19,7 @@ Example showing the basic structure of a simple app.
 ```js
 class MyApp extends App{
 	createStartPage(){
-		return new StartPage()
+		return StartPage
 	}
 }
 ```
