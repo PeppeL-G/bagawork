@@ -24,24 +24,21 @@ So, why is is bad to use hardcoded values like this? The main problem with hardc
 Luckilly, there exists a solution to the problem of hardcoding values, namely to use constants instead. The idea is the constant value (in this case the name of the app, `InfoApp`) is only written at one place in your code, and then you refer to that value each time you want to use it.
 
 
-### How to create constants
-In Bagawork, when the user starts your app, the method `App.onBefore()` will be called. So in this method, you can write code that should be executed directly when the app starts, and here we can write code that creates the constants we need to use in the app.
+### How to create app constants
+Directly in your `App` class you can create constants that are accessible throughout your entire app, including in your `Page` classes. In the code below you find an example of how to create the following app constants:
 
-In Bagawork, there exists a special variable called `a`, short for `app`. This variable stores an object, and in that object we can store our constant values. Each constant value also needs to be associated with a name, so we can distinguish the constants from each other.
-
-In the code below you find an example of how to create the following constants:
-
-* `a.APP_NAME` will have the string value `InfoApp`
-* `a.CREATED_DATE` will have the string value `2023-09-15`
+* `APP_NAME` will have the string value `InfoApp`
+* `CREATED_DATE` will have the string value `2023-09-15`
 
 ```js
 class MyApp extends App{
-	onBefore(){
-		a.APP_NAME = `InfoApp`
-		a.CREATED_DATE `2023-09-15`
-		// You can create as many constants as you want.
-	}
+	
+	APP_NAME = `InfoApp`
+	CREATED_DATE `2023-09-15`
+	// You can create as many app constants as you want.
+	
 	// And then you have createStartPage() as usual...
+	
 }
 ```
 
@@ -51,6 +48,7 @@ In Javascript, there exists different naming conventions for different type of v
 
 * Classes `AreNamedLikeThis`
 * Methods `areNamedLikeThis()`
+* Variables `areNamedLikeThis`
 * Constants `ARE_NAMED_LIKE_THIS`
 
 Although it's not strictly required to follow this naming convention, all good programmers do follow it, because by following a naming convention it is easier for other programmers to read your code, so we recommend you to do the same.
@@ -60,21 +58,21 @@ Although it's not strictly required to follow this naming convention, all good p
 
 
 ### How to use constants
-In this case, the constants are stored in the object in the `a` variable, so to retrieve the value of a constant, we simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
+In Bagawork, everything you create in your `App` class (constants, variables and methods) are accessible in a special variable called `a` (short for *app*). To retrieve the value of a constant, you would simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
 
-To display the name of the app on the `MenuPage`, the following code were used before:
+To display the name of the app on the `MenuPage` we had before, the following code were used:
 
 ```js
 Text.text(`InfoApp`)
 ```
 
-With  the constants we have now, we can instead write:
+With the constants we have now, we can instead write:
 
 ```js
 Text.text(a.APP_NAME)
 ```
 
-When the computer executes this code, it will first retrieve the value for the `APP_NAME` constant from the object in the `a` variable, and it will get back the string value `InfoApp`, and pass that to the `Text.text()` component, which then will display that text. Easy as that!
+When the computer executes this code, it will first retrieve the value for the `APP_NAME` constant from the object in the `a` variable, and it will get back the string value `InfoApp`, and pass that to the `Text.text()` method, which then will display that text. Easy as that!
 
 However, for the `MarioPage` it is a little bit more complicated. To show the name of the app on the `MarioPage`, the following code were used before:
 
@@ -88,7 +86,7 @@ If we would try to simply replace `InfoApp` with `a.APP_NAME`:
 Text.text(`a.APP_NAME - Mario`)
 ```
 
-Then the `Text.text()` component would display the text `a.APP_NAME - Mario`. That is, our constant has not been used at all. Remember, in JavaScript, when creating a string with two `` ` `` characters, all characters between them will be interpreted as text part of the string. But, in a string created with two `` ` `` characters, we can in the string write `${SOMETHING}`, where we want the computer to replace that entire thing with the value we get from `SOMETHING`. So for the `MarioPage`, we would instead write:
+Then the `Text` component would display the text `a.APP_NAME - Mario`. That is, our constant has not been used at all. Remember, in JavaScript, when creating a string with two `` ` `` characters, all characters between them will be interpreted as text part of the string. But, in a string created with two `` ` `` characters, we can write `${SOMETHING}`, where we want the computer to replace that entire thing with the value we get from `SOMETHING`. So for the `MarioPage`, we would instead write:
 
 ```js
 Text.text(`${a.APP_NAME} - Mario`)
@@ -100,7 +98,7 @@ And we can use the same strategy on the `ZeldaPage`.
 ### The final solution
 So, here's the code for the app using constants, instead of harding the name of the app at multiple places.
 
-::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNVG1v0zAQ/isniw+JlEUdaWGK4EOHEJtQp4ruA4NOxHMujaXEjhyHrovy33HemraiBcSQ+JDkzufn3p67lIRmGfFLwmSIxCcsoXkO1yKS0ywDfNQowhyMXC7FUtePFJcYSYWW3R5p6k7n828309l7eAtBBw1qW9VjmEKqcaGp0nO6GqAKdaEEzFAU9fkOpiKVQyKZhKhy4n8tCQ+Jf+4QQdM6zcYVcYiMohz1Z+KPevnOyNW9QzLjbw/ZOrtulb1q+/Dbcmul3M/9Q8EPs/4k17nLYp6ECoXVmpb61jhxtXlZQ19sp7cuMsrQzfkTWiN3NBkMAyxYYIJMwzqmGjaygDUVGrQEk0cIqek80AdZaDew3QQjbR1432rvZFKk4icpHl5c6stCG167+DOquDTO6w5ajVL3w3aOwe2/jvgFk5D2ERvldyPuntt74+OQR8P0ZOKQDfE9z6ucdhJenpqEbexnHoXgRTlMQwVn0FV8hLkdYHMReA4UvvMQJazMAgCLqaJMo4I2pRAeNnDDRZ2zdGERYw3R5pMpLhia0mTU6FcbVSQIH7lYhTJ1g+cenjdn28nptuoEjUd5G3tew9v4Ytzz5p3c4H5K/zVv3W78mrfm4p/ydoWGJiODQDQ1NDufs2KHxTlSFv+/rI0b1s5fve7/wLeYZokptP4T31c/AFqcS7Y=]
+::bagawork-project[app&link&code=InfoApp-MenuPage-MarioPage-ZeldaPage&baga=eNrNVFuPk0AU/isnEx8gYUlXWjVEH6ox7sZ009h98NKNzA6HQgIzZDjYrYT/7nDrLbZqXBMfgHPm3Of7DhXjec78igkVIvOZSHlRwLWM1DTPAR8IZViAkaulXFLzTOfzrzfT2Vt4BUHvFww2oZETLohrmvMVWnYXRRqp1BJmKMvmvDmsu5ia1Q6LVBqiLpj/pWJJyPxLh0meNe20qZjDVBQVSB+ZPxrkT0au7xyWm3wHkV2y6045mGoovx2rUarD3t+VyXHXH9S6cEWcpKFGaXWmJd2aJC6Zl8Xd4UpsZ7Auci7QLZLvaI3c0WRn2IUFC0xREKxjTrBRJay5JCAFpo8QMqUR+L0qyQ1sN8WIrKPsW+2NSstM/qTFY8clvS6JlOzrz7hOlEne3KDVKs192M6pcPuvK37GNORDxVb53Yr75/YBfRz2YJCeTBy2Yb7nebXTMeHpOSZsaz8yFYIn1Y4NNVxAP/EJ5PYCW0dICuDwLQlRwcosAIiYay4INXQthXC/gZtENj0rFxYxNiFkPrlOpEAzmopa/WqjyxThfSJXocrc4LHJ8/Jiy5x+q87AeBK3see1uI1fjAfcvLMbPLD0X+PW78avcWsd/xS3KzQwGRkkopmh3flClHsozpGL+P9Fbdyidvns+fAHvsUsT82gzZ/4rv4BwE1Cqg==]
 
 
 

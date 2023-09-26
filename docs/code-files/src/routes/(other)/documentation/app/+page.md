@@ -36,19 +36,57 @@ In the `App` class you can use the special global variable named `a` to refer to
 
 
 
-## Initializing the global state
-When the user starts using your app, a new instance of your `App` class will be created, and the method `onBefore()` will be called. In this method you can initialize any global state you need to use in your app.
+## The `a` variable
+In Bagawork, you can use the special variable named `a`, short for *app*, to access the constants/variables/methods you have in your `App` class. The `a` variables exists everywhere, both in your `App` class and in your `Page` classes.
 
 ::: tip Example
 
-Example of code initializing a global app state (for an app where we need to be able to keep track of for how long the user has used the app, and how many lives the user still have (this app is apparently some sort of game)).
+```js
+class MyApp extends App{
+	
+	A_CONSTANT = "The constant value"
+	
+	aVariable = "The variable value"
+	
+	aMethod(){
+		
+		// Can use a.A_CONSTANT to access the constant value.
+		// Can use a.aVariable to access the variable value.
+		// Can use a.aMethod to access the method.
+		
+	}
+	
+}
+```
+
+:::
+
+
+
+## `onBefore()` - Initializing the state of the app
+The method `onBefore()` will be called directly when the app starts. In it, you can initialize the state of your app.
+
+::: tip Example
 
 ```js
 class MyApp extends App{
+	
+	TERM_1 = 5
+	TERM_2 = 4
+	
+	// We want the sum variable to contain the sum of TERM_1 and TERM_2.
+	// However, the "a" variable can only be used in methods, so we can't
+	// write sum = a.TERM_1 + a.TERM_2 here. So instead, we initialize
+	// the sum to a dummy value (0 in this case)...
+	sum = 0
+	
 	onBefore(){
-		a.startTime = Date.now()
-		a.playerRemainingLives = 3
+		
+		// ...and in this method we assigns sum its correct value.
+		a.sum = a.TERM_1 + a.TERM_2
+		
 	}
+	
 }
 ```
 
@@ -86,7 +124,7 @@ class StartPage extends Page{
 
 :::
 
-See the documentation for the [Page](/documentation/page) class to learn which methods you can override in it to configure how the page should work.
+See the documentation for the :docs[page] class to learn which methods you can override in it to configure how the page should work.
 
 
 

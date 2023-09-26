@@ -38,14 +38,14 @@
 		}, {
 			name: 'Programming',
 			links: [{
-				text: '1. App constants',
+				text: '1. App Constants',
 				href: '/tutorials/programming/01-app-constants',
 			}, {
-				text: '2. App Variables',
+				text: '2. App Variables and Methods',
 				href: '/tutorials/programming/02-app-variables',
 			}, {
-				text: '3. Page Constants and Variables',
-				href: '/tutorials/programming/03-page-constants-and-variables',
+				text: '3. Page Constants/Variables/Methods',
+				href: '/tutorials/programming/03-page-constants-variables-methods',
 			}],
 		}],
 		

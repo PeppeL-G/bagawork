@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Improved the documentation for Button, Text, Columns and Rows`,
+		`Rewrote docs and tutorials on how to create app/page constants/variables (so intellisense in the editor works)`,
 	],
 }, {
 	version: `0.0.4`,
