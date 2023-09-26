@@ -24,7 +24,7 @@ Note: In this example, the button covers the entire screen (which usually isn't 
 
 
 
-## text() - Setting the text
+## `text()` - Setting the text
 Use the configuration method `text()` to tell the `Button` component which text it should display. Pass the text as a string. The text will always be centered in the `Button`.
 
 ::: tip Example
@@ -37,7 +37,7 @@ Use the configuration method `text()` to tell the `Button` component which text 
 
 
 
-## page() - Going to another page
+## `page()` - Going to another page
 Use the configuration method `page()` to tell the `Button` component which page the user should come to when clicking on the button. Pass the page as an argument.
 
 If this method is not used, then the current page will be reloaded when the user clicks on the button.
