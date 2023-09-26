@@ -2,7 +2,7 @@
  * This class represents a GUI component that can be used to
  * build the GUI shown to the user. Use sub-classes to this class.
  */
-declare interface Component {
+abstract class Component {
 
 	/**
 	 * This method is only useful to call when the component is used as a
@@ -13,13 +13,13 @@ declare interface Component {
 	 * @param numberOfShares The number of shares of the remaining
 	 * available space this child component should occupy
 	 */
-	size(numberOfShares: number): Component;
+	abstract size(numberOfShares: number): Component;
 	
 	/**
 	 * This method sets the background color the GUI component will have.
 	 * 
 	 * @param colorName The name of the color in English, such as `red`
 	 */
-	backgroundColor(colorName: string): Component;
+	abstract backgroundColor(colorName: string): Component;
 	
 }

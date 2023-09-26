@@ -1,19 +1,24 @@
 <script>
 	
-	export let code
+	export let code = ""
 	
+	import { app } from '../stores.js'
+	import { getClassName } from '../functions/get-class-name.js'
 	import monacoLoader from '@monaco-editor/loader'
+	
 	import arrayTsString from '../editor-type-definitions/js/Array.d.ts?raw'
 	import stringTsString from '../editor-type-definitions/js/String.d.ts?raw'
 	import mathTsString from '../editor-type-definitions/js/Math.d.ts?raw'
+	
 	import appTsString from '../editor-type-definitions/bagawork/App.d.ts?raw'
 	import pageTsString from '../editor-type-definitions/bagawork/Page.d.ts?raw'
-	import componentTsString from '../editor-type-definitions/bagawork/Component.d.ts?raw'
-	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.d.ts?raw'
-	import textTsString from '../editor-type-definitions/bagawork/components/Text.d.ts?raw'
-	import spaceTsString from '../editor-type-definitions/bagawork/components/Space.d.ts?raw'
-	import rowsTsString from '../editor-type-definitions/bagawork/components/Rows.d.ts?raw'
-	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.d.ts?raw'
+	
+	import componentTsString from '../editor-type-definitions/bagawork/Component.ts?raw'
+	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.ts?raw'
+	import textTsString from '../editor-type-definitions/bagawork/components/Text.ts?raw'
+	import spaceTsString from '../editor-type-definitions/bagawork/components/Space.ts?raw'
+	import rowsTsString from '../editor-type-definitions/bagawork/components/Rows.ts?raw'
+	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.ts?raw'
 	
 	let monacoEditor
 	
@@ -25,17 +30,44 @@
 	 		noLib: true,
 			allowNonTsExtensions: true,
 		})
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(pageTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(appTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(arrayTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(stringTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(mathTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(componentTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(buttonTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(textTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(spaceTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(rowsTsString)
-		monaco.languages.typescript.javascriptDefaults.addExtraLib(columnsTsString)
+		
+		monaco.languages.typescript.javascriptDefaults.setExtraLibs([
+			{content: appTsString},
+			{content: pageTsString},
+			{content: arrayTsString},
+			{content: stringTsString},
+			{content: mathTsString},
+			{content: componentTsString},
+			{content: buttonTsString},
+			{content: textTsString},
+			{content: spaceTsString},
+			{content: rowsTsString},
+			{content: columnsTsString},
+		])
+		
+		const aClassName = getClassName($app.code)
+		const codePageName = getClassName(code)
+		
+		if(aClassName != "UnknownClassName"){
+			
+			monaco.languages.typescript.javascriptDefaults.addExtraLib(
+				`const a = new ${aClassName}();`,
+			)
+			
+			// If the user doesn't edit the App class, add it as a lib.
+			if(aClassName != codePageName){
+				monaco.languages.typescript.javascriptDefaults.addExtraLib(
+					$app.code,
+				)
+			}
+			
+		}
+		
+		if(codePageName != "UnknownClassName" && codePageName != aClassName){
+			monaco.languages.typescript.javascriptDefaults.addExtraLib(
+				`const p = new ${codePageName}();`,
+			)
+		}
 		
 		monacoEditor = monaco.editor.create(editorContainer, {
 			value: code,
