@@ -6,4 +6,8 @@ export function applyAttributesToElement(guiComponent, htmlElement){
 		style.backgroundColor = guiComponent.backgroundColor
 	}
 	
+	if(guiComponent.cornerRadius){
+		style.borderRadius = `${guiComponent.cornerRadius}mm`
+	}
+	
 }
