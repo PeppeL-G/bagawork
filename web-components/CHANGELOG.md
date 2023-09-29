@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [?.?.?] - ????-??-??
 * Added support for the configuration method `cornerRadius()`
+* Added support for `all/horizontal/vertical/left/right/top/bottom()` to the `Space` component
 
 ## [0.0.4] - 2023-09-23
 Update `@bagatell/core` to `0.0.2` and adapt the web components.

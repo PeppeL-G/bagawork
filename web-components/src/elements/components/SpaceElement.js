@@ -30,9 +30,14 @@ export default class SpaceElement extends ParentElement{
 			// Fix CSS.
 			childElement.style.height = "100%"
 			
+			// Fix CSS.
+			this.style.paddingLeft = `${spaceComponent.left}mm`
+			this.style.paddingRight = `${spaceComponent.right}mm`
+			this.style.paddingTop = `${spaceComponent.top}mm`
+			this.style.paddingBottom = `${spaceComponent.bottom}mm`
+			
 		}
 		
-		// Fix CSS.
 		applyAttributesToElement(
 			spaceComponent,
 			this,
