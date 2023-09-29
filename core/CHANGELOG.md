@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [?.?.?] - ????-??-??
 * Added the configuration method `cornerRadius()`
+* Added `all()`, `horizontal()`, `vertical()`, `left/right/top/bottom()` to the `Space` component
 
 ## [0.0.2] - 2023-09-23
 Removed invoking a component as a function. Similar functionality is implemented through configuration methods instead.
