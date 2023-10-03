@@ -29,10 +29,6 @@ const Button = (() => new (
 		 */
 		onClick(clickHandler: () => void){ return this };
 		
-		// Override methods defined in Component, and give them correct return
-		// value.
-		size(numberOfShares: number){ return this };
-		backgroundColor(colorName: string){ return this };
-		
 	}
+	
 ))()

@@ -5,7 +5,7 @@
 # Configuration Methods
 On this page you find the documentation for configuration methods than can be used on all GUI components.
 
-## `backgroundColor()`
+## `backgroundColor()` - Setting the background color
 Indicates which background color the GUI component should have. Possible values:
 
 * A string containing the name of a color in English, such as `` `red` `` or `` `blue` ``
@@ -14,12 +14,85 @@ Indicates which background color the GUI component should have. Possible values:
 
 
 
+## `border()` - Adding a border around the component
+Use the configuration method `border(thickness, color, sides)` to tell the component that is should have a border around itself.
 
-## `cornerRadius()` - Curving the corners
+The border will only be applied on the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
+
+This configuration method can be called multiple times to give
+different sides different type of borders.
+
+The parameters:
+
+* `thickness` - A number indicating how many millimeters thick the border should be
+* `color` - The English name of a color the border should have, e.g.  `` `blue` ``
+* `sides` - A string indicating which sides of the component the bord should be added to. Write:
+	* `t` in the string to add it to the **T**op side
+	* `b` in the string to add it to the **B**ottom side
+	* `l` in the string to add it to the **L**eft side
+	* `r` in the string to add it to the **R**ight side
+
+If `sides` is not provided, the border will be added to all sides
+(the default value is `` `tblr` ``).
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFkl1r2zAUhv/K4dzMBhGSjMDwzXDHKL3oKG2gK0vBqnUcm8iSkWTWEPzfK9WNG4e0ZFe7MEg65z0fz+sd8qbBZIe5FoQJ5pJbC9fbtGmAnh0pYcGfdyu1cuHLDXFHd44bd8PXFMV9xBlyrVEwBMJr14s67BgWWgoyFpM/O6wEJjOGiteh46sEGeqisOR+YzLdnx/8uXtk2Ph6I2Vf7Kq/jAYf+g/Dh8vR9JdtdTz30qf3Dys3eeL5Zm10q8QPLbWJMkMii9/D2vju0YJB9iRbOog4XyXKlmVlIdd1oxUpByW3wGFR1+DKKt9A0EBfA7QCLiXYSpCd9IUGaAyfMZlPPY0tJl+nA4kl1Y30W4yIjCCkdnNVpKKVn5DQ6oIKbd4NPOj9Cadb/ddO8rKSwpCK9ovfNTwntr8Flm8oUkOw1S28+uX35wpm375nMTut9LjbWp1ocJy4chet8zu8tfmls3gS2ESqlTJmZ8oeyJ6n20fiESSt0sL5H+EEwfDL997Mj7z5qbwkXdP/dua+5O6LDeYY8N0/9mREbDY9DWyctDgjaX5OpfkHlQ4n/BdPHrsXFxrKfw==]
+
+:::
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU1Fr2zAQ/itCL7NBpElGYfPLcMsYfdgYa2ArS8GKdY5NZZ2RTqwh+L9Pjhs3ztKSPfXBWHff3X2n77O3XDYNT7Y8RwU84bmWzrGvm7RpGDwSGOVYOG+XZkndk1uQBLckLX2Xa4jiHiEL5K1hA9Bl276p5a3gBWoF1vHk95ZXiiczwY2sO8ZdCxcci8IB/eLJdH++C+f2XvAmzBt19sNu+mC0+MA/LN8FR9t/8dXx3otQ3ieWNFnJ/GFt0Rt1jRptlFlQWfwMow3s0aVg2Up7yMKbVv/iH0NeV/UO1/YAp8AVZYuycizHukEDhlgpHVNVUYDton6EY2gYYXOxQiKsmasUMGkU01DQha3WJe1yk374ILfgjzyZT4OOG568nw4aLqBudLj/SMuRfKl7uClS5fUrGqK5ggLts/UH3K8o/AP/uEleVlqFG0Z7MW4bmYPYR50LT/KkFtgGPds5zaiUhs0+fMpicbozGOVrc4LguHBJVz6IaZ5ovmEWTzptIuO1jsWZbXfgzuvbI/FIJDRpQeETOaFg97P03syPvPlsQku6hrd25mcp6Z3rzLEssL/syUix2fS0YOOiyzOK5udMmr8w6XDD//Hkvv0L9v3fqA==]
+
+:::
+
+
+
+
+
+
+## `cornerRadius()` - Rounding the corners
 Use the configuration method `cornerRadius()` to tell the component how round the corners of the component should be. Pass the amount as an integer representing the number of milimeters. Default is `0`, meaning the corners will be sharp (90 degrees; not round at all).
 
 ::: tip Example
 
 ::bagawork-project[app&link&code=StartPage&baga=eNrFUk1rwkAQ/SvLXJpAkGgplFxKLKV4aCkqtFKFbLMTDcbdsB9Ukfz3boxGI6nYUw+B3Z15b+a9ly3QPIdgC7FgCAHEGVWKvGzCPCe41siZIva8nfKpLr9YItU40lTqNzpHx60qWqI2kpO6UL4WFaiAwoNEZAylguBzCymDoOsBp6ty4g4CHogkUag/IPAP54k9FzMPcsvXQFZkg+rSWLyeXy9fXs62fzbp+d5j2149THXni8bLuRSGs0eRCelEElnk1uVYSI5ySFlqlNP1jwVtSZxovEBStSgiONGLVO3o7eMqFxy5JlQi2fEj61TEtVUerCHo+daDDQS3fq1/jKs8s7s3fGhID9VykITMZBf0C97HRMhjbCezL7gzFN+qEy/SjEnkzkHvKKcxeodbKXHvQGjlbYQhu5SsAZST7v1D5HrtSGuyWfGWAeeNU9032mrYj3kVkdspvXG4yTLXuxI2QXUd7lBxGyYJHiYaZZuD5Y9eZdM7y+aJW0g4x/9O5n1B9Y0qw5HETv89k4ZjXb/dsGbT3RVNvWuYer8wnW74l0xmxQ/jcsff]
+
+:::
+
+
+
+
+
+## `padding()` - Adding space between the border and the content
+Use the configuration method `padding(amount, sides)` to tell the component how much space there should be between the border of the component and its content. Default is `0`, meaning no space at all.
+
+The padding will only be applied to the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
+
+This configuration method can be called multiple times to give different sides different amounts of padding.
+
+The parameters:
+
+* `amount` - The amount of padding the component should have
+in millimeters
+* `sides` - A string indicating which sides of the component the padding should be applied to. Write:
+	* `t` in the string to include the **T**op side
+	* `b` in the string to include the **B**ottom side
+	* `l` in the string to include the **L**eft side
+	* `r` in the string to include the **R**ight side
+
+If `sides` is not provided, the padding will be applied to all sides
+(the default value is `` `tblr` ``).
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFUlFLwzAQ/ivhXmyhjHUykL5IFREfFNGBDjdobK5rMU1CkqJj9L+brlu3jinzyYfC5e6+u/u+ryugSkG0glQyhAhSTo0h98tYKYJfFgUzxMWrmZjZ5ks1UovPlmr7SBfo+W3FarSVFqQrNNm6BdVQB5BJzlAbiN5WUDCIwgAELZuNawgEILPMoH2FaLiNpy6u5wEoN6+HbIfdtY/e4d3+7vjmcXD9bVUc3j1x7W1iZgfvNP1YaFkJdi251F6ikSV+V1aUsUIsvHC8y1mH95JJXhiSylJJgcKSnBoSjsuSbBBECkI5J6ZgaAbtxE6jAL4gGg0d+SVE58OO+ARLxd3RPQF6nGPzcZfFrOK/EJfiCjOpd37t7f5Flif5aQZpXnCmUXhbts+KphhsX410G/6xRrKUFVnbQ2xOBQkvLhM/OI506lalOLLgsHFmryrrOGzWPMjEHzTaeKLi3A9OhE3RnIbbVvyeSFLEmUV9TMHmD2+9GR14cyMcJF7gfzvzklN7ZhpzNHHbf/akp1g4PC5Yv2l8QtPolEmjHybtX/gXT+b1NzudxGM=]
+
+:::
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU12L2zAQ/CtCL7VBBNulUPxSfKWUe7ij9ALt0RxYsdYfnCwJaU0vhPz3ynbixsF3pE99MGg1OzvrGXtPuTE03dNCC6ApLSR3jtztMmMIvCAo4Yg/7zdqg/1TWOAID8gtfuMVBOGIoAXsrCIT0N8eRtKBHhgttRRgHU1/7WkjaBozqnjbKw4UyqguSwf4k6bR6fzoz4cnRo2fN2OOw27HYrb4pD8t3xcX23/tmsu91759vNjgasuL58rqTonPWmob5BZEHk6w4UI0qgqSiJEctwtI3CPSniGoTXBWebUgX9eNI4VujVagkNTckSRqW3KcQrQiWAPxVOIaAYQrQbYaUbdDzYaLeIEhocQBtE1V49C8GneZEmH0haZJ5K3e0fR9NNm8htZIb9HM7pnDmXu+LTPRyTds1uoGSm3/fh1n2m+E8F3/dquibqSwoIKTWw+GF8BOVR/U0b/MAtnpjgwfg39xrkj88VMesmWmz7Jr1YLAZeMGbzrvsjrK3Os8XPXeBKqTMmRX0h7BXcc7IeHMJK2yEsEuOdj/T2M2yUU2X5SnZBX872R+1BzfuT4cS7z665nMHIujZcPmTR+uaEqumZS8Mul8w3/J5OnwB3216kk=]
 
 :::

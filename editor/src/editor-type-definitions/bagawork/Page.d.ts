@@ -6,7 +6,7 @@
  * functionality you want it to have.
  * 
  * You can use the special **p** variable (short for **p**age) to
- * refer to the instance of your class.
+ * refer to the instance of your Page class.
  */
 declare class Page {
 	

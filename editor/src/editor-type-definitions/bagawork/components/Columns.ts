@@ -13,9 +13,6 @@ const Columns = (() => new (
 		 */
 		children(theChildren: Component){ return this; };
 		
-		// Override methods defined in Component, and give them correct return value.
-		size(numberOfShares: number){ return this; };
-		backgroundColor(colorName: string){ return this; };
-		
 	}
+	
 )) ()

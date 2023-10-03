@@ -72,6 +72,9 @@
 				text: 'Button',
 				href: '/documentation/button',
 			}, {
+				text: 'Space',
+				href: '/documentation/space',
+			}, {
 				text: 'Text',
 				href: '/documentation/text',
 			}],
@@ -83,9 +86,6 @@
 			}, {
 				text: 'Rows',
 				href: '/documentation/rows',
-			}, {
-				text: 'Space',
-				href: '/documentation/space',
 			}],
 		}, {
 			name: 'Classes',

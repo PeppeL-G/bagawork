@@ -8,9 +8,9 @@ export class ButtonComponent extends Component{
 		super(props)
 		
 		this.wasClicked = false
-		this.text = props.text?.[0] ?? ""
-		this.handler = props.handler?.[0] ?? null
-		this.page = props.page?.[0] ?? null
+		this.text = props.text?.[0]?.[0] ?? ""
+		this.handler = props.handler?.[0]?.[0] ?? null
+		this.page = props.page?.[0]?.[0] ?? null
 		
 	}
 	

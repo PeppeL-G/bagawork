@@ -6,7 +6,7 @@ export class RowsComponent extends Component {
 		
 		super(props)
 		
-		this.children = props.children ?? []
+		this.children = props.children?.[0] ?? []
 		
 	}
 	

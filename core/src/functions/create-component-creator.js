@@ -20,7 +20,10 @@ export function createRealComponentCreator(Component){
 	
 	let lastAccessedProp = ""
 	const setLastAccessedProp = (...args) => {
-		props[lastAccessedProp] = args
+		if (!(props[lastAccessedProp] instanceof Array)){
+			props[lastAccessedProp] = []
+		}
+		props[lastAccessedProp].push(args)
 		return proxy
 	}
 	
@@ -32,10 +35,14 @@ export function createRealComponentCreator(Component){
 				return true
 			}else if(prop == 'create'){
 				
-				for (const [propName, propValues] of Object.entries(props)) {
-					for(const [i, propValue] of propValues.entries()){
-						if(propValue?.isCreatorProxy){
-							props[propName][i] = propValue.create
+				Object.val
+				
+				for (const propValue of Object.values(props)) {
+					for(const args of propValue){
+						for(const [argIndex, arg] of args.entries()){
+							if(arg?.isCreatorProxy){
+								args[argIndex] = arg.create
+							}
 						}
 					}
 				}

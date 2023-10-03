@@ -32,17 +32,21 @@
 		})
 		
 		monaco.languages.typescript.javascriptDefaults.setExtraLibs([
-			{content: appTsString},
-			{content: pageTsString},
+			
 			{content: arrayTsString},
 			{content: stringTsString},
 			{content: mathTsString},
+			
+			{content: appTsString},
+			{content: pageTsString},
+			
 			{content: componentTsString},
 			{content: buttonTsString},
 			{content: textTsString},
 			{content: spaceTsString},
 			{content: rowsTsString},
 			{content: columnsTsString},
+			
 		])
 		
 		const aClassName = getClassName($app.code)

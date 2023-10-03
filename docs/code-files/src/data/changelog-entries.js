@@ -5,7 +5,10 @@ export const changelogEntries = [{
 		`Improved the documentation for Button, Text, Columns and Rows`,
 		`Rewrote docs and tutorials on how to create app/page constants/variables (so intellisense in the editor works)`,
 		`Added docs for cornerRadius()`,
-		`Improved the docs for the Space component`,
+		`Changed the Space component to a View instead of Layout`,
+		`Added docs for the global configuration method padding()`,
+		`Added docs for the global configuration method border()`,
+		`Added more intellisense to the editor`,
 	],
 }, {
 	version: `0.0.4`,
