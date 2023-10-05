@@ -84,6 +84,9 @@
 				text: 'Columns',
 				href: '/documentation/columns',
 			}, {
+				text: 'Layers',
+				href: '/documentation/layers',
+			}, {
 				text: 'Rows',
 				href: '/documentation/rows',
 			}],

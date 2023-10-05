@@ -19,6 +19,9 @@ export const Text = createComponentCreator(TextComponent)
 import {ColumnsComponent} from './components/ColumnsComponent.js'
 export const Columns = createComponentCreator(ColumnsComponent)
 
+import {LayersComponent} from './components/LayersComponent.js'
+export const Layers = createComponentCreator(LayersComponent)
+
 import {RowsComponent} from './components/RowsComponent.js'
 export const Rows = createComponentCreator(RowsComponent)
 

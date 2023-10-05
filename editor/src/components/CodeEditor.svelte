@@ -19,6 +19,7 @@
 	import spaceTsString from '../editor-type-definitions/bagawork/components/Space.ts?raw'
 	import rowsTsString from '../editor-type-definitions/bagawork/components/Rows.ts?raw'
 	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.ts?raw'
+	import layersTsString from '../editor-type-definitions/bagawork/components/Layers.ts?raw'
 	
 	let monacoEditor
 	
@@ -46,6 +47,7 @@
 			{content: spaceTsString},
 			{content: rowsTsString},
 			{content: columnsTsString},
+			{content: layersTsString},
 			
 		])
 		
