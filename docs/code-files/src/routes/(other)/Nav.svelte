@@ -14,7 +14,9 @@
 		{text: "Contact", href: "/contact", target: "_self"},
 	]
 	
-	const lastChangelogEntry = changelogEntries[0]
+	const lastChangelogEntry = changelogEntries.find(
+		e => 0 < e.changelogEntries.length,
+	)
 	
 </script>
 
