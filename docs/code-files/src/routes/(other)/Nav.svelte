@@ -15,7 +15,7 @@
 	]
 	
 	const lastChangelogEntry = changelogEntries.find(
-		e => 0 < e.changelogEntries.length,
+		e => 0 < e.changes.length,
 	)
 	
 </script>
