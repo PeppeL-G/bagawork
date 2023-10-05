@@ -1,13 +1,11 @@
 # @bagawork/editor
-Contains an Editor implemented in [Svelte](https://svelte.dev/) one can use to create Bagawork apps.
+Contains an Editor implemented in [Svelte](https://svelte.dev/) one can use to create [Bagawork](https://bagawork.com/) apps.
 
-## Publish instructions
-To publish a new version of this npm package:
+## What is this?
+[bagawork.com/implementation/editor/](https://bagawork.com/implementation/editor/)
 
-1. `cd editor`
-2. `code package.json`
-3. Update `"@bagawork/core": "^X.Y.Z"` if needed
-3. Update `"@bagawork/web-components": "^X.Y.Z"` if needed
-4. Update `"version": "X.Y.Z"`
-5. Save
-6. `npm publish --access public`
+## Learn
+[bagawork.com/tutorials/](https://bagawork.com/tutorials/)
+
+## Changelog
+[bagawork.com/changelog/](https://bagawork.com/changelog/)

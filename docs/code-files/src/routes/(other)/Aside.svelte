@@ -50,7 +50,7 @@
 		}],
 		
 		'examples': [{
-			name: 'Examples',
+			name: 'Apps',
 			links: [{
 				text: 'Hello, World!',
 				href: '/examples/hello-world'
@@ -114,7 +114,7 @@
 		}],
 		
 		'implementation': [{
-			name: 'Implementation',
+			name: 'npm packages',
 			links: [{
 				text: '@bagawork/core',
 				href: '/implementation/core'

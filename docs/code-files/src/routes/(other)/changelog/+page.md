@@ -3,8 +3,8 @@
 </script>
 
 # Changelog
-All notable changes to this website will be documented on this webpage.
+All notable changes to Bagawork and this website will be documented on this page.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Bagawork versions follow the [SemVer](https://semver.org/) numbering convention.
 
 <Changelog />

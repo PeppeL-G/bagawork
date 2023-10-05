@@ -44,15 +44,15 @@ In Bagawork, you can use the special variable named `a`, short for *app*, to acc
 ```js
 class MyApp extends App{
 	
-	A_CONSTANT = "The constant value"
+	THE_CONSTANT_NAME = "The constant value"
 	
-	aVariable = "The variable value"
+	theVariableNAME = "The variable value"
 	
-	aMethod(){
+	theMethodName(){
 		
-		// Can use a.A_CONSTANT to access the constant value.
-		// Can use a.aVariable to access the variable value.
-		// Can use a.aMethod to access the method.
+		// Can use a.THE_CONSTANT_NAME to access the constant value.
+		// Can use a.theVariableName to access the variable value.
+		// Can use a.theMethodName to access the method.
 		
 	}
 	

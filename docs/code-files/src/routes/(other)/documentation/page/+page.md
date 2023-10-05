@@ -56,17 +56,17 @@ In Bagawork, you can use the special variable named `p`, short for *page*, to ac
 ::: tip Example
 
 ```js
-class StartPage extends Pate{
+class StartPage extends Page{
 	
-	A_CONSTANT = "The constant value"
+	THE_CONSTANT_NAME = "The constant value"
 	
-	aVariable = "The variable value"
+	theVariableName = "The variable value"
 	
-	aMethod(){
+	theMethodName(){
 		
-		// Can use p.A_CONSTANT to access the constant value.
-		// Can use p.aVariable to access the variable value.
-		// Can use p.aMethod to access the method.
+		// Can use p.THE_CONSTANT_NAME to access the constant value.
+		// Can use p.theVariableName to access the variable value.
+		// Can use p.theMethodName to access the method.
 		
 	}
 	

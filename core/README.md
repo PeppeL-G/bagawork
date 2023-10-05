@@ -1,11 +1,11 @@
 # @bagawork/core
-Contains the core functionally for creating Bagawork apps.
+Contains the core functionally for creating [Bagawork](https://bagawork.com/) apps.
 
-## Publish instructions
-To publish a new version of this npm package:
+## What is this?
+[bagawork.com/implementation/core/](https://bagawork.com/implementation/core/)
 
-1. `cd core`
-2. `code package.json`
-3. Update `"version": "X.Y.Z"`
-4. Save
-5. `npm publish --access public`
+## Learn
+[bagawork.com/tutorials/](https://bagawork.com/tutorials/)
+
+## Changelog
+[bagawork.com/changelog/](https://bagawork.com/changelog/)
