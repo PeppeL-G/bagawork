@@ -14,6 +14,25 @@ export const changelogEntries = [{
 		`Added docs for the global configuration method border()`,
 		`Added more intellisense to the editor`,
 	],
+	}, {
+	version: `0.0.7`,
+	date: `2023-10-05`,
+	changes: [
+		`Fixed problems with the script that releases a new version`,
+	],
+}, {
+	version: `0.0.6`,
+	date: `2023-10-05`,
+	changes: [
+		`To simplify, all @bagawork packages and docs website use the same version (update one to a new version, then update all to a new version)`,
+		`Added script that updates and publishes all @bagawork packages and that deploy the docs website at the same time`,
+	],
+}, {
+	version: `0.0.5`,
+	date: `2023-10-05`,
+	changes: [
+		`Version 0.0.5 is skipped (see next version)`,
+	],
 }, {
 	version: `0.0.4`,
 	date: `2023-09-23`,
