@@ -53,16 +53,16 @@
 			name: 'Apps',
 			links: [{
 				text: 'Hello, World!',
-				href: '/examples/hello-world'
+				href: '/examples/apps/hello-world'
 			}, {
 				text: 'Book',
-				href: '/examples/book'
+				href: '/examples/apps/book'
 			}, {
 				text: 'Counter',
-				href: '/examples/counter'
+				href: '/examples/apps/counter'
 			}, {
 				text: 'Quiz',
-				href: '/examples/quiz'
+				href: '/examples/apps/quiz'
 			}],
 		}], 
 		
