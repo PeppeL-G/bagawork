@@ -1,0 +1,8 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# Modal
+This example shows how to create an app showing/hiding a [Modal](https://m3.material.io/components/dialogs/overview)/Dialog.
+
+::bagawork-project[app&link&code&baga=eNqVVF1r3DAQ/CtCfbHBmLQ0pDWUcr2HJtCUkuShoQ5YsdZnE1ky0rqX4/B/r/xt5dyGHpyRLM3u7M6sj5RVFY2ONFUcaERTwYwh14dNVRF4RpDcELs+xjLG9m9ytZfXijNBPpEkGV+nGhjCLTKNP9gOPL8HoAastSTTQfu2Wca6BFF14SYIC90cub2ROLhUKAP/Br0AdOy+sYOq0assja2StjQc0f1TAJJyCCBrIZZnRea5KUZiUwgcoTYNaBNWjPNC7rwLP3xk6dNOq1ryrRJKe8mbi+GX+GGaF4JrkN4YJ8YbtTenoH1eILQApSXoG8aL2njnqwFivLPahWgfXnLZ0QyWp7cVSyH4630NJFUlGMKIUHJHOJhUFxUWv4G0d0hbua2N2H6GYWg5CcjQey2HraMupVknvAaI8UuNqORAbNvKbpPlTHIB2goyG8EPXgu2vDGv/X7RLLUePDvoeKIDE0UKj6KGNfEW5gocYww7f040uLOhTUAzJbhNRqNfR1pwGr0NqGRlO4/d5NCAqiwzgD/t0cfzcXdPo/dnzUNA26wOuI931W+cyZ4mcZrudnOcp+RrXbycXtvo5QCNdXU2XRFz4aXvALxzy2fHgY6s92AcUZ2vwolS/tC6xvbkuSvvQKN3Zx/GNtxBWQnL1WmH04GNebrKNrwW+B8tWNSUzBSah+YPJ4Ls+Q==]

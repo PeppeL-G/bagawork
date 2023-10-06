@@ -67,6 +67,9 @@
 		}, {
 			name: 'GUIs',
 			links: [{
+				text: 'Modal',
+				href: '/examples/guis/modal'
+			}, {
 				text: 'Navigation Bar',
 				href: '/examples/guis/navigation-bar'
 			}],

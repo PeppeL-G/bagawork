@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Added the Layers component`,
 		`Added the example GUI Navigation Bar`,
 		`Children that are null or undefined are not used (instead of crashing)`,
+		`Added the example GUI Modal`,
 	],
 }, {
 	version: `0.0.8`,
