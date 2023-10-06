@@ -64,6 +64,12 @@
 				text: 'Quiz',
 				href: '/examples/apps/quiz'
 			}],
+		}, {
+			name: 'GUIs',
+			links: [{
+				text: 'Navigation Bar',
+				href: '/examples/guis/navigation-bar'
+			}],
 		}], 
 		
 		'documentation': [{

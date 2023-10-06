@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the Layers component`,
+		`Added the example GUI Navigation Bar`,
 	],
 }, {
 	version: `0.0.8`,

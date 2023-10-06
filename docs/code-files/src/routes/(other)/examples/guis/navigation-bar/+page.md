@@ -1,0 +1,8 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# Navigation Bar
+This example shows how to create an app with a [Navigation Bar](https://m3.material.io/components/navigation-bar/overview).
+
+::bagawork-project[app&link&code&baga=eNqtks9q20AQxl9F3ZMMi6gdmyS6uTm0gRZKkkNLFNBau3aE5V2xO0viCj1Dob3nzxv2EToreW3JEJNADhKaHc1vv/lmKsLKksQVyRQXJCZZwYwJvq2nZRmIexCSmwC/q0Qm4J5MCwbiEpiG72whwkGbAS3Aahl8USvhzt1h3a/5ytbKQlhi9kxJJMNe7YW6M9GMZcuFVlbyM1UoHaZmuZ4VVqSDKLvNC66FDNuqBJAotIlM/kuEw06+ewX1PyPOriReoDQXOhzSIJ0VeFmKH4D0knGey0UP5GsTuCxZJugu/mQBlIwALQrTf4+/n5JEut4bENrifRjQVzP+PCNjOkOPPKQJ3kj5+4AU1zzLtpxNeJjkM4PO6GpSUzJXBRpmSHxdkZyTeEiJZCu3K80WEErUfG4E/MDU6cRHP0k8/ljfUOIU9Ipb3nkb9LbOm7ZdPBdUuw36bPP9fWNRb7l8M1dI2FjioB/S/e5qlH3fKFjjezKqaatvdEjfdh7vKrChvqhwND5tNB6dHHuNR4c0dmb9rio33MCaF6WOTyatneNjP/grsSoL5PYWoO+pWZ7Pp9wW8Aa5HV3pTkR9U/8HB2O6iA==]
