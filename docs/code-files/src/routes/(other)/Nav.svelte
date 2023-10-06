@@ -6,12 +6,12 @@
 	const links = [
 		{text: "Bagawork", href: "/", target: "_self"},
 		{text: ""},
-		{text: "Documentation", href: "/documentation", target: "_self"},
-		{text: "Tutorials", href: "/tutorials", target: "_self"},
-		{text: "Examples", href: "/examples", target: "_self"},
-		{text: "Editor", href: "/editor", target: "_blank"},
-		{text: "Implementation", href: "/implementation", target: "_self"},
-		{text: "Contact", href: "/contact", target: "_self"},
+		{text: "Documentation", href: "/documentation/", target: "_self"},
+		{text: "Tutorials", href: "/tutorials/", target: "_self"},
+		{text: "Examples", href: "/examples/", target: "_self"},
+		{text: "Editor", href: "/editor/", target: "_blank"},
+		{text: "Implementation", href: "/implementation/", target: "_self"},
+		{text: "Contact", href: "/contact/", target: "_self"},
 	]
 	
 	const lastChangelogEntry = changelogEntries.find(
@@ -38,10 +38,14 @@
 			<span class="spacer"></span>
 		{/if}
 	{/each}
+	<span class="lastSpacer"></span>
 	<a
 		class="version"
-		href="/changelog"
-		class:isCurrent={$page.url.pathname == '/changelog'}
+		href="/changelog/"
+		class:isCurrent={$page.url.pathname == '/changelog/'}
+		class:isSubCurrent={
+			$page.url.pathname.startsWith('/changelog/')
+		}
 	>
 		v{lastChangelogEntry.version}
 	</a>
@@ -60,8 +64,11 @@
 		width: 5em;
 	}
 	
+	.lastSpacer{
+		flex: 1
+	}
+	
 	.version{
-		flex: 1;
 		text-align: right;
 		padding: 0 1em;
 	}

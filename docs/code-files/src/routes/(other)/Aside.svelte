@@ -12,40 +12,40 @@
 			name: 'Fundamentals',
 			links: [{
 				text: '1. Introduction',
-				href: '/tutorials/fundamentals/01-introduction',
+				href: '/tutorials/fundamentals/01-introduction/',
 			}, {
 				text: '2. Pages',
-				href: '/tutorials/fundamentals/02-pages',
+				href: '/tutorials/fundamentals/02-pages/',
 			}, {
 				text: '3. Configuring GUI Components',
-				href: '/tutorials/fundamentals/03-configuring-gui-components',
+				href: '/tutorials/fundamentals/03-configuring-gui-components/',
 			}, {
 				text: '4. Positioning GUI Components',
-				href: '/tutorials/fundamentals/04-positioning-gui-components',
+				href: '/tutorials/fundamentals/04-positioning-gui-components/',
 			}, {
 				text: '5. Changing Page',
-				href: '/tutorials/fundamentals/05-changing-page',
+				href: '/tutorials/fundamentals/05-changing-page/',
 			}, {
 				text: '6. Sizing GUI Components',
-				href: '/tutorials/fundamentals/06-sizing-gui-components',
+				href: '/tutorials/fundamentals/06-sizing-gui-components/',
 			}, {
 				text: '7. The App Class',
-				href: '/tutorials/fundamentals/07-the-app-class',
+				href: '/tutorials/fundamentals/07-the-app-class/',
 			}, {
 				text: '8. Exercises',
-				href: '/tutorials/fundamentals/08-exercises',
+				href: '/tutorials/fundamentals/08-exercises/',
 			}],
 		}, {
 			name: 'Programming',
 			links: [{
 				text: '1. App Constants',
-				href: '/tutorials/programming/01-app-constants',
+				href: '/tutorials/programming/01-app-constants/',
 			}, {
 				text: '2. App Variables and Methods',
-				href: '/tutorials/programming/02-app-variables',
+				href: '/tutorials/programming/02-app-variables/',
 			}, {
 				text: '3. Page Constants/Variables/Methods',
-				href: '/tutorials/programming/03-page-constants-variables-methods',
+				href: '/tutorials/programming/03-page-constants-variables-methods/',
 			}],
 		}],
 		
@@ -53,25 +53,25 @@
 			name: 'Apps',
 			links: [{
 				text: 'Hello, World!',
-				href: '/examples/apps/hello-world'
+				href: '/examples/apps/hello-world/'
 			}, {
 				text: 'Book',
-				href: '/examples/apps/book'
+				href: '/examples/apps/book/'
 			}, {
 				text: 'Counter',
-				href: '/examples/apps/counter'
+				href: '/examples/apps/counter/'
 			}, {
 				text: 'Quiz',
-				href: '/examples/apps/quiz'
+				href: '/examples/apps/quiz/'
 			}],
 		}, {
 			name: 'GUIs',
 			links: [{
 				text: 'Modal',
-				href: '/examples/guis/modal'
+				href: '/examples/guis/modal/'
 			}, {
 				text: 'Navigation Bar',
-				href: '/examples/guis/navigation-bar'
+				href: '/examples/guis/navigation-bar/'
 			}],
 		}], 
 		
@@ -79,25 +79,25 @@
 			name: 'Views',
 			links: [{
 				text: 'Button',
-				href: '/documentation/button',
+				href: '/documentation/button/',
 			}, {
 				text: 'Space',
-				href: '/documentation/space',
+				href: '/documentation/space/',
 			}, {
 				text: 'Text',
-				href: '/documentation/text',
+				href: '/documentation/text/',
 			}],
 		}, {
 			name: 'Layouts',
 			links: [{
 				text: 'Columns',
-				href: '/documentation/columns',
+				href: '/documentation/columns/',
 			}, {
 				text: 'Layers',
-				href: '/documentation/layers',
+				href: '/documentation/layers/',
 			}, {
 				text: 'Rows',
-				href: '/documentation/rows',
+				href: '/documentation/rows/',
 			}],
 		}, {
 			name: 'Classes',
@@ -129,13 +129,13 @@
 			name: 'npm packages',
 			links: [{
 				text: '@bagawork/core',
-				href: '/implementation/core'
+				href: '/implementation/core/'
 			}, {
 				text: '@bagawork/web-components',
-				href: '/implementation/web-components'
+				href: '/implementation/web-components/'
 			}, {
 				text: '@bagawork/editor',
-				href: '/implementation/editor'
+				href: '/implementation/editor/'
 			}],
 		}],
 		
@@ -157,7 +157,12 @@
 			
 			<div class="links">
 				{#each group.links as {text, href}}
-					<a {href}  class:current={$page.url.pathname === href}>{text}</a>
+					<a
+						{href}
+						class:isCurrent={$page.url.pathname === href}
+					>
+						{text}
+					</a>
 				{/each}
 			</div>
 			
@@ -192,7 +197,7 @@
 	.links a:last-child{
 		padding-bottom: 0.5em
 	}
-	.links a.current{
+	.links a.isCurrent{
 		color: #42b883;
 	}
 	
