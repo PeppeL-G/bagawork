@@ -35,6 +35,7 @@ publishWebComponentsPackage()
 publishEditorPackage()
 deployDocsApp()
 createCommit()
+restoreScriptFile()
 
 function publishCorePackage() {
 	
@@ -152,6 +153,24 @@ function createCommit(){
 	childProcess.execSync(
 		`git push`,
 	)
+	
+}
+
+function restoreScriptFile(){
+	
+	const pathToScriptFile = `./scripts/publish-next-version.js`
+	
+	let scriptFileAsString = fs.readFileSync(
+		pathToScriptFile,
+		{ encoding: "utf8" },
+	)
+	
+	scriptFileAsString = changelogEntriesAsString.replace(
+		/const newVersion = "[0-9]+\.[0-9]+\.[0-9]+"/,
+		`const newVersion = "?.?.?"`,
+	)
+	
+	fs.writeFileSync(pathToScriptFile, scriptFileAsString)
 	
 }
 
