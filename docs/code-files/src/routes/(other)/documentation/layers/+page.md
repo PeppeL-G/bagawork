@@ -26,3 +26,5 @@ Use the configuration method `children()` to tell the `Layers` component which i
 ::bagawork-project[app&link&code=StartPage&baga=eNqVkU1PwzAMhv+K5QudFFUwxIHeJg5oEkhI7ACiSMsad42WJlXisk1T/zvpBvsCDlwS24lfP9a7Qdk0mG2wcIoww8LIEOBxPWoaoBWTVQFivMltzoUnyfTM0vOTnFMy2FZz9sStt7B/6KtdbjvsBJbOKPIBs7cNaoXZlUAr637S9jsKdGUZiF8wu/yOX2PcvQtsotZJ505svEtOgPez99B9ckR93+pz3ge5jmRpUWmjPNlk95jzJEqkHI9kOgZZw4wqbRVwRWD6lhhJBuXlMoCEmSwWc+9aqwQEB2vXQiHtBUMggprS6UD8JXxQ1Hab1FopQwKWmqsobXRNR/pRKmXXJIP0ULtzxvlk2v/8fdDrjueLBuiDLOjyaNoXQSXPl5lRIdtAsEXtt7U9ZumdZXA/FQ6LDvb+C1xhNrweClzH++b229QJ1Y2JppyYe+LnKCzG5Ui1hv9h6NHa0wNE9959AvybBGY=]
 
 :::
+
+Any child that is `null` or `undefined` will not be used.

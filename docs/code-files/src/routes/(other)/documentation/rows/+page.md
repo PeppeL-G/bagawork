@@ -35,6 +35,8 @@ Use the configuration method `children()` to tell the `Rows` component which its
 
 :::
 
+Any child that is `null` or `undefined` will not be used.
+
 If the height of all children together is greater than the height of the `Rows` component, the `Rows` component will become scrollable, so the user can scroll the children vertically. Try resizing the screen for the app in the example below to see how it works.
 
 ::: tip Example

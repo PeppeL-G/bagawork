@@ -34,6 +34,8 @@ Use the configuration method `children()` to tell the `Columns` component which 
 
 :::
 
+Any child that is `null` or `undefined` will not be used.
+
 If the width of all children together is greater than the width of the `Columns` component, the `Columns` component will become scrollable, so the user can scroll the children horizontally. Try resizing the screen for the app in the example below to see how it works.
 
 ::: tip Example
