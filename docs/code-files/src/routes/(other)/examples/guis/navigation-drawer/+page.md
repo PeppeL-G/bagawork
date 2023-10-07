@@ -1,0 +1,8 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# Navigation Drawer
+This example shows how to create an app with a [Navigation Drawer](https://m3.material.io/components/navigation-drawer/overview).
+
+::bagawork-project[app&link&code&baga=eNq1VMGK2zAQ/RVXvdhgTJJN2N1AD+kW2oWWlmYPLc2CFXucmCiSkWSyafC15x77Gf2mfknHduTIwdlmYRuIsTR+b96MnmZHaJaR8Y5EIgYyJhGjSjkftpMsc+BBA4+Vg++7GZ/p8p+qN5JuQH7MgDuvHC1zMKFIAtUw1VTqT3QBrleDtASdS+68E2so98vNwmAE0tSEzec0OJGjAUVMKPgXKqFMHcEqfe/pVuTazVDJjeBYoDYU9ZOBduKK6HWuteB2LE3cdp4Gqm0IZq9fgiXlMUOVNLA0e4HGzrrhnx8/Q6/GF4Biz+Y6NK2h+vW7oeouBnl4ztiTqkHMjWD5mqtgTqPVQoqcx7gjpBu+vNz/Qi+IlimLJXDXwGf6s9h0gDbLVAMCMhrHKV+4g07sTJ/TvdJOFRU6zVjL822WaUYjCFT6Hdxe0Ou3g+ekmMzRKSZHtfgPSUoT0qhJs1+eSGTt2NF2rMsI+zvYfSxqtZ2zHLpOsjl/IWOsoO874ZwhPixfuo/edq+l8Q6rrfvUN6VP6TpjUI4XY167LLyoIFUD6chk3WH/OL9/TOhZs6AghU8SwbAkRcbfdiSNybjvE07X5QysRhjxiUgSBfoLhq5HZvWVjIe94t4nZfIWuOa7rRetaWrs2QzUcrE7jKS3eXo8LNEq9rQyxVRNPPj/RXhcXYGyHyoFW3yOBoVf6xs8pq+x9rMKrFhPKhwMryuNF1eXRuPFYxqte/GsKve8Tq5OSh1ejep2Di/Nwd8BOhd5WwZo91StbpNJnDP9BLmWrvAgorgv/gJPlsj6]

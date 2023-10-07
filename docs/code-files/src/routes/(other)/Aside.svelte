@@ -72,6 +72,9 @@
 			}, {
 				text: 'Navigation Bar',
 				href: '/examples/guis/navigation-bar/'
+			}, {
+				text: 'Navigation Drawer',
+				href: '/examples/guis/navigation-drawer/'
 			}],
 		}], 
 		
