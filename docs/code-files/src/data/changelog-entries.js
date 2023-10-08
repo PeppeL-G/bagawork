@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the example GUI Navigation Drawer`,
+		`Added the configuration method showIf(), and updated examples to use it`,
 	],
 }, {
 	version: `0.0.9`,

@@ -25,7 +25,11 @@ export default class LayersElement extends ParentElement{
 	setGuiComponent(layersComponent, frameworkApp){
 		
 		// Fix HTML.
-		for(const childComponent of layersComponent.children){
+		const childComponents = layersComponent.children.filter(
+			c => c.showIf,
+		)
+		
+		for(const childComponent of childComponents){
 			
 			const childElement = createGuiElement(childComponent)
 			this.appendChild(childElement)

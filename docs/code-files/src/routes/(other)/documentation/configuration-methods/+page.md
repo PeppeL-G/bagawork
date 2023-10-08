@@ -96,3 +96,18 @@ If `sides` is not provided, the padding will be applied to all sides
 ::bagawork-project[app&link&code=StartPage&baga=eNrFU12L2zAQ/CtCL7VBBNulUPxSfKWUe7ij9ALt0RxYsdYfnCwJaU0vhPz3ynbixsF3pE99MGg1OzvrGXtPuTE03dNCC6ApLSR3jtztMmMIvCAo4Yg/7zdqg/1TWOAID8gtfuMVBOGIoAXsrCIT0N8eRtKBHhgttRRgHU1/7WkjaBozqnjbKw4UyqguSwf4k6bR6fzoz4cnRo2fN2OOw27HYrb4pD8t3xcX23/tmsu91759vNjgasuL58rqTonPWmob5BZEHk6w4UI0qgqSiJEctwtI3CPSniGoTXBWebUgX9eNI4VujVagkNTckSRqW3KcQrQiWAPxVOIaAYQrQbYaUbdDzYaLeIEhocQBtE1V49C8GneZEmH0haZJ5K3e0fR9NNm8htZIb9HM7pnDmXu+LTPRyTds1uoGSm3/fh1n2m+E8F3/dquibqSwoIKTWw+GF8BOVR/U0b/MAtnpjgwfg39xrkj88VMesmWmz7Jr1YLAZeMGbzrvsjrK3Os8XPXeBKqTMmRX0h7BXcc7IeHMJK2yEsEuOdj/T2M2yUU2X5SnZBX872R+1BzfuT4cS7z665nMHIujZcPmTR+uaEqumZS8Mul8w3/J5OnwB3216kk=]
 
 :::
+
+
+
+
+
+
+
+## `showIf()` - Conditionally showing the GUI component
+By default, all the GUI components you use will be shown. Use the configuration method `showIf(condition)` to only show the GUI component if the `condition` you pass to it is `true`.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFk+FrozAYxv+V98LBKYjYjsGQjcMex+iHjbEVtnEdNNPXKhcTSSJdEf/3xep5TVdH79N9MCQmz/O8eX9aE1qWJKxJLBIkIYkZVQputlFZAr5p5IkCM6+XfKnbJ5ZINT5oKvUdXaPjdjtaoq4kh2Gjfdt0ooY0HkkFS1AqEv6qSZ6QcOIRTos2cSchHhFpqlA/kTD4M3828+bFI6Xxs5Sd2bxbWIUP+UPx7eKg+usqH+ruxlhwpUFSnojitipeUc5QbxB5EPFkAldwQ3Xmd/uOu6/s730vNsqPs5wlErnTH9ALU4SvzeCsFhn2/sB3AZCrEL7WY5mNv3I9y0dlYjNPndEiLyHwz90hjmqTABRUQRnrM7+MeBohXF6N3v+j6Wu+/mC515YBvEfeSDgNDNEtCc+CgeYCi5IZEhZVC2Skfs/TKKnYJzQFn2EqJFowm3HWn7J6KGmM3hFykUTYigp23xzojHKYXHzf66St/CFYVfAjAYcHl3pWaXOHPuZWrFy/7Y3DK8Zc70TZM6rTdBam5m8Lo1SjPNbB9rft2EwP2PzkRhKt8X+TeTTf4zfVwpFg0seZWB2bBMcbZh86P+HQ9BSn6YjTfoX/wuSleQcILQ/r]
+
+:::

@@ -20,9 +20,13 @@ export class PageElement extends ParentElement{
 		
 		this.innerText = ''
 		
-		const guiElement = createGuiElement(frameworkPage.rootGuiComponent)
-		this.appendChild(guiElement)
-		guiElement.setGuiComponent(frameworkPage.rootGuiComponent, frameworkApp)
+		if(frameworkPage.rootGuiComponent.showIf){
+			
+			const guiElement = createGuiElement(frameworkPage.rootGuiComponent)
+			this.appendChild(guiElement)
+			guiElement.setGuiComponent(frameworkPage.rootGuiComponent, frameworkApp)
+			
+		}
 		
 	}
 	

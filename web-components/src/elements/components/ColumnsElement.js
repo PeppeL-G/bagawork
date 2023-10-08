@@ -23,7 +23,11 @@ export default class ColumnsElement extends ParentElement{
 	setGuiComponent(colsComponent, frameworkApp){
 		
 		// Fix HTML.
-		for (const childComponent of colsComponent.children){
+		const childComponents = colsComponent.children.filter(
+			c => c.showIf,
+		)
+		
+		for (const childComponent of childComponents){
 			
 			const childElement = createGuiElement(childComponent)
 			this.appendChild(childElement)
@@ -39,7 +43,7 @@ export default class ColumnsElement extends ParentElement{
 		
 		const style = this.style
 		
-		style.gridTemplateColumns = colsComponent.children.map(childComponent => {
+		style.gridTemplateColumns = childComponents.map(childComponent => {
 			const size = childComponent.size
 			if(size != null){
 				return `minmax(auto, ${size}fr)`
