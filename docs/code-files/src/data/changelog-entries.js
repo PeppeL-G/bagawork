@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the example GUI Navigation Drawer`,
 		`Added the configuration method showIf(), and updated examples to use it`,
+		`Added the run Baga app page (accessed from the editor)`,
 	],
 }, {
 	version: `0.0.9`,

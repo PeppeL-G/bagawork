@@ -5,7 +5,16 @@
 	const mainMenuOptions = {
 		showCopyLinkButton: true,
 		showFileButtons: true,
-		extraOptions: [],
+		extraOptions: [{
+			text: `Copy link to run app`,
+			onClick(bagaCode){
+				
+				const url = `https://bagawork.com/run#${bagaCode}`
+				
+				navigator.clipboard.writeText(url)
+				
+			}
+		}],
 	}
 	
 	let bagaCode = ""
