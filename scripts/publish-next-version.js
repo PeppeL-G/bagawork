@@ -165,7 +165,7 @@ function restoreScriptFile(){
 		{ encoding: "utf8" },
 	)
 	
-	scriptFileAsString = changelogEntriesAsString.replace(
+	scriptFileAsString = scriptFileAsString.replace(
 		/const newVersion = "[0-9]+\.[0-9]+\.[0-9]+"/,
 		`const newVersion = "?.?.?"`,
 	)
