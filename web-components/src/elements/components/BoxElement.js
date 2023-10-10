@@ -36,52 +36,50 @@ export default class LayersElement extends ParentElement{
 	
 	setGuiComponent(boxComponent, frameworkApp){
 		
-		if(boxComponent.child){
+		if(typeof boxComponent.width == 'number'){
+			this.boxDiv.style.width = `${boxComponent.width}mm`
+		}
+		if (typeof boxComponent.height == 'number') {
+			this.boxDiv.style.height = `${boxComponent.height}mm`
+		}
+		
+		if (typeof boxComponent.aspectRatioWidth == 'number'){
 			
-			if(typeof boxComponent.width == 'number'){
-				this.boxDiv.style.width = `${boxComponent.width}mm`
-			}
-			if (typeof boxComponent.height == 'number') {
-				this.boxDiv.style.height = `${boxComponent.height}mm`
-			}
+			this.boxDiv.style.aspectRatio = `${boxComponent.aspectRatioWidth} / ${boxComponent.aspectRatioHeight}`
 			
-			if (typeof boxComponent.aspectRatioWidth == 'number'){
+			if (this.boxDiv.style.width == `100%` && this.boxDiv.style.height == `100%`){
 				
-				this.boxDiv.style.aspectRatio = `${boxComponent.aspectRatioWidth} / ${boxComponent.aspectRatioHeight}`
-				
-				if (this.boxDiv.style.width == `100%` && this.boxDiv.style.height == `100%`){
-					
-					if (boxComponent.aspectRatioHeight / boxComponent.aspectRatioWidth < this.boxDiv.clientHeight / this.boxDiv.clientWidth){
-						this.boxDiv.style.height = `auto`
-					}else{
-						this.boxDiv.style.width = `auto`
-					}
-					
-				}else if (this.boxDiv.style.width == `100%`) {
-					this.boxDiv.style.width = `auto`
-				}else if (this.boxDiv.style.height == `100%`) {
+				if (boxComponent.aspectRatioHeight / boxComponent.aspectRatioWidth < this.boxDiv.clientHeight / this.boxDiv.clientWidth){
 					this.boxDiv.style.height = `auto`
+				}else{
+					this.boxDiv.style.width = `auto`
 				}
 				
+			}else if (this.boxDiv.style.width == `100%`) {
+				this.boxDiv.style.width = `auto`
+			}else if (this.boxDiv.style.height == `100%`) {
+				this.boxDiv.style.height = `auto`
 			}
 			
-			if(boxComponent.top){
-				this.boxDiv.style.alignSelf = 'start'
-			}
-			if(boxComponent.bottom){
-				this.boxDiv.style.alignSelf = 'end'
-			}
-			if(boxComponent.left){
-				this.boxDiv.style.justifySelf = 'start'
-			}
-			if(boxComponent.right){
-				this.boxDiv.style.justifySelf = 'end'
-			}
-			
+		}
+		
+		if(boxComponent.top){
+			this.boxDiv.style.alignSelf = 'start'
+		}
+		if(boxComponent.bottom){
+			this.boxDiv.style.alignSelf = 'end'
+		}
+		if(boxComponent.left){
+			this.boxDiv.style.justifySelf = 'start'
+		}
+		if(boxComponent.right){
+			this.boxDiv.style.justifySelf = 'end'
+		}
+		
+		if(boxComponent.child){
 			const childElement = createGuiElement(boxComponent.child)
 			this.boxDiv.appendChild(childElement)
 			childElement.setGuiComponent(boxComponent.child, frameworkApp)
-			
 		}
 		
 		// Fix CSS.
