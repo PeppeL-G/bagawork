@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added the Box component`
+	],
 }, {
 	version: `0.0.10`,
 	date: `2023-10-09`,

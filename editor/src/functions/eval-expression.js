@@ -1,5 +1,6 @@
 import {
 	App,
+	Box,
 	Button,
 	Columns,
 	Direction,
@@ -12,6 +13,7 @@ import {
 
 const variables = {
 	App,
+	Box,
 	Button,
 	Columns,
 	Direction,

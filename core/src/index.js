@@ -16,6 +16,9 @@ export const Button = createComponentCreator(ButtonComponent)
 import {TextComponent} from './components/TextComponent.js'
 export const Text = createComponentCreator(TextComponent)
 
+import {BoxComponent} from './components/BoxComponent.js'
+export const Box = createComponentCreator(BoxComponent)
+
 import {ColumnsComponent} from './components/ColumnsComponent.js'
 export const Columns = createComponentCreator(ColumnsComponent)
 

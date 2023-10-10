@@ -93,6 +93,9 @@
 		}, {
 			name: 'Layouts',
 			links: [{
+				text: 'Box',
+				href: '/documentation/box/',
+			}, {
 				text: 'Columns',
 				href: '/documentation/columns/',
 			}, {

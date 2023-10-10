@@ -15,6 +15,7 @@ export default class TextElement extends ParentElement{
 		this.style.flexDirection = 'row'
 		this.style.height = '100%'
 		this.style.boxSizing = 'border-box'
+		this.style.overflow = 'auto'
 		
 		this.textSpan = document.createElement('span')
 		
