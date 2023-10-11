@@ -6,7 +6,7 @@
 	
 	import ViewApp from '../ViewApp.svelte'
 	import Modal from './Modal.svelte'
-	import { pageTemplates, pages } from '../../stores.js'
+	import { editorSettings, pageTemplates, pages } from '../../stores.js'
 	import EditPageTemplateModal from './EditPageTemplateModal.svelte';
 	
 	let showEditPageTemplateModal = false
@@ -98,6 +98,8 @@ class MyPage extends Page{
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div
 						class="page-template"
+						style:width={`${$editorSettings.folderScreen.widthInMm}mm`}
+						style:height={`${$editorSettings.folderScreen.heightInMm}mm`}
 						on:click|stopPropagation={() => addPage(pageTemplate)}
 					>
 						<ViewApp
@@ -163,8 +165,6 @@ class MyPage extends Page{
 }
 
 .page-template{
-	width: 150px;
-	height: 250px;
 	border: 0.3em solid black;
 }
 

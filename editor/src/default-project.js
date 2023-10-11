@@ -1,5 +1,16 @@
 export const defaultProject = {
 	
+	editorSettings: {
+		codeScreen: {
+			widthInMm: 40*1.5,
+			heightInMm: 66*1.5,
+		},
+		folderScreen: {
+			widthInMm: 40,
+			heightInMm: 66,
+		},
+	},
+	
 	app: {
 		code: `
 class MyApp extends App{
