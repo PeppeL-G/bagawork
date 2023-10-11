@@ -4,7 +4,7 @@
 	
 	import CodeEditor from '../CodeEditor.svelte'
 	import ViewApp from '../ViewApp.svelte'
-	import { app } from '../../stores.js'
+	import { editorSettings, app } from '../../stores.js'
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
 	
@@ -25,8 +25,14 @@
 <Modal bind:showModal>
 	<div class="edit-app-modal">
 		
-		<div class="preview-section">
-			<div class="app-component">
+		<div
+			class="preview-section"
+		>
+			<div
+				class="app-component"
+				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
+				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
+			>
 				<ViewApp />
 			</div>
 		</div>
@@ -53,7 +59,7 @@
 	background-color: lime;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: 250px 1fr;
+	grid-template-columns: auto 1fr;
 	grid-template-rows: 1fr auto;
 	align-items: center;
 	height: 100%;
@@ -85,7 +91,6 @@
 	margin: 0 auto;
 	background-color: aqua;
 	border: 5px solid black;
-	aspect-ratio: 9 / 16;
 }
 
 </style>

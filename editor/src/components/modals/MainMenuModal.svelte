@@ -13,7 +13,10 @@
 	import { getClassName } from "../../functions/get-class-name.js";
 	import { app, folders, pages, pageTemplates } from "../../stores.js";
 	import { getCompressedProject, getDecompressedProject } from "../../functions/project-compressor.js";
-
+	import EditSettingsModal from "./EditSettingsModal.svelte";
+	
+	let showEditSettingsModal = false
+	
 	function getProject(){
 		return {
 			app: $app,
@@ -103,6 +106,11 @@
 			</div>
 		{/if}
 		
+		<div>
+			<button on:click={() => showEditSettingsModal = true}>
+				Edit settings
+			</button>
+		</div>
 		
 		{#if options.showFileButtons}
 			
@@ -137,6 +145,12 @@
 		
 	</div>
 </Modal>
+
+{#if showEditSettingsModal}
+	<EditSettingsModal
+		bind:showModal={showEditSettingsModal}
+	/>
+{/if}
 
 <style>
 	.main-menu-modal {

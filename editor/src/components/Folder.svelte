@@ -8,7 +8,7 @@
 	import { pageToAppCreator} from '../functions/page-to-app-creator.js'
 	import { createFrameworkApp } from '@bagawork/core'
 	import { getClassName } from '../functions/get-class-name.js'
-	import { app, folders, pages } from '../stores.js'
+	import { editorSettings, app, folders, pages } from '../stores.js'
 	
 	const directionToLeftExtraY = 50
 	
@@ -324,6 +324,8 @@
 			
 			<div
 				class="page-container"
+				style:width={`${$editorSettings.folderScreen.widthInMm}mm`}
+				style:height={`${$editorSettings.folderScreen.heightInMm}mm`}
 				style:transform={
 					`translate(${page.x}px, ${page.y}px) translate(-50%, -50%)`
 				}
@@ -406,8 +408,6 @@
 
 .page-container{
 	position: absolute;
-	width: 150px;
-	height: 250px;
 	background-color: aqua;
 	border: 5px solid black;
 	display: grid;
