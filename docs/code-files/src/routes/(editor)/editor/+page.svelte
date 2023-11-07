@@ -6,10 +6,11 @@
 		`default-src 'none';`,
 		`form-action 'none';`,
 		`connect-src 'none';`,
-		`img-src *;`,
-		`script-src 'self' 'unsafe-inline' 'unsafe-eval';`,
+		`img-src * data:;`,
+		`script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net blob:;`,
 		`style-src-attr 'self' 'unsafe-inline';`,
-		`style-src-elem 'self' 'unsafe-inline';`,
+		`style-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net;`,
+		`font-src https://cdn.jsdelivr.net;`
 	].join(` `)
 	
 	const mainMenuOptions = {
