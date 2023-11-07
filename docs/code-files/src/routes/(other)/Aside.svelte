@@ -61,6 +61,9 @@
 				text: 'Counter',
 				href: '/examples/apps/counter/'
 			}, {
+				text: 'Power Point Presentation',
+				href: '/examples/apps/power-point-presentation/'
+			}, {
 				text: 'Quiz',
 				href: '/examples/apps/quiz/'
 			}],

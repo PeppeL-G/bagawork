@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Added the Box component`,
 		`Added the settings to change screen preview sizes`,
 		`Made the editor and running Baga apps more secure by using a Content Security Policy`,
+		`Added the example app Power Point Presentation`,
 	],
 }, {
 	version: `0.0.10`,
