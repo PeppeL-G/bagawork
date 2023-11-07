@@ -2,6 +2,16 @@
 	import LoadEditor from '@bagawork/editor/src/components/LoadEditor.svelte'
 	import { onMount } from 'svelte'
 	
+	const contentSecurityPolicyValue = [
+		`default-src 'none';`,
+		`form-action 'none';`,
+		`connect-src 'none';`,
+		`img-src *;`,
+		`script-src 'self' 'unsafe-inline' 'unsafe-eval';`,
+		`style-src-attr 'self' 'unsafe-inline';`,
+		`style-src-elem 'self' 'unsafe-inline';`,
+	].join(` `)
+	
 	const mainMenuOptions = {
 		showCopyLinkButton: true,
 		showFileButtons: true,
@@ -34,6 +44,13 @@
 	})
 	
 </script>
+
+<svelte:head>
+	<meta
+		http-equiv="Content-Security-Policy"
+		content={contentSecurityPolicyValue}
+	/>
+</svelte:head>
 
 {#if isDoneLoading}
 	<LoadEditor

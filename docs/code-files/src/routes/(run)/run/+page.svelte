@@ -4,6 +4,16 @@
 	import { AppElement } from "@bagawork/web-components"
 	import { browser } from '$app/environment'
 	
+	const contentSecurityPolicyValue = [
+		`default-src 'none';`,
+		`form-action 'none';`,
+		`connect-src 'none';`,
+		`img-src *;`,
+		`script-src 'self' 'unsafe-inline' 'unsafe-eval';`,
+		`style-src-attr 'self' 'unsafe-inline';`,
+		`style-src-elem 'self' 'unsafe-inline';`,
+	].join(` `)
+	
 	function showApp(appDiv) {
 		
 		const hashStartToRemove = "#"
@@ -23,6 +33,13 @@
 	}
 	
 </script>
+
+<svelte:head>
+	<meta
+		http-equiv="Content-Security-Policy"
+		content={contentSecurityPolicyValue}
+	/>
+</svelte:head>
 
 {#if browser}
 	<div use:showApp class="app" />
