@@ -52,7 +52,7 @@ abstract class Component{
 	 * (the default value is `` `tblr` ``).
 	 */
 	padding(amount: number, sides: string = `tblr`){ return this };
-	
+
 	/**
 	 * This method sets the border the GUI component should have.
 	 * The border will only be applied to the sides of the component
@@ -74,6 +74,26 @@ abstract class Component{
 	 * If `sides` is not provided, the border will be applied to all sides
 	 * (the default value is `` `tblr` ``).
 	 */
-	border(thickness: number, color: string, sides: string = `tblr`){ return this }
+	border(thickness: number, color: string, sides: string = `tblr`) { return this }
+
+	/**
+	 * This method will remove the component if the condition you pass
+	 * to it is false. If the condition is true, the component will be
+	 * used as usual.
+	 * 
+	 * @param condition The condition indicating when the component
+	 * should be kept/removed
+	 */
+	keepIf(condition: boolean) { return this }
+
+	/**
+	 * This method will hide the component if the condition you pass
+	 * to it is false. If the condition is true, the component will be
+	 * shown as usual.
+	 * 
+	 * @param condition The condition indicating when the component
+	 * should be shown/hidden
+	 */
+	showIf(condition: boolean) { return this }
 	
 }

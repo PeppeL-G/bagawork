@@ -24,7 +24,7 @@ export default class RowsElement extends ParentElement{
 		
 		// Fix HTML.
 		const childComponents = rowsComponent.children.filter(
-			c => c.showIf,
+			c => c.keepIf,
 		)
 		
 		for (const childComponent of childComponents){

@@ -65,6 +65,19 @@ Use the configuration method `cornerRadius()` to tell the component how round th
 
 
 
+## `keepIf()` - Conditionally keep/remove the GUI component
+By default, all the GUI components you use will be shown. Use the configuration method `keepIf(condition)` to only keep the GUI component if the `condition` you pass to it is `true`. If the `condition` instead is `false`, the GUI component will be removed, and not used at all.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNp9Us1uwjAMfhXP2qGVqqps2iWCA70gDkzTxmHTQCK0LlRr0yhJBajquy+lpYNtcEhkx/5+YrlCLiWyCqMiJmQYZVxrmB3GUgLtDYlYg42rhViY5kSKuKE3w5V54Rty3LZiFJlSCegLzWvdgmqsPUyKLCalkX1WmMbIBh4KnjeKRwh6WCSJJvOOLDjFHzaulx5Ky3eBbMmmbXJhvNfvzTdJ715xERf5c5mvSYVkdkQiGIt4ACMITj2FCCkp1M/XpH8DNuNm29Ud9+zTp0lNyvT3jF6LnfajbZrFioTTlhZmbg37xl7Oar4laClBHDUh1Qzuq+tGan/lehdMX0Rymjg3vA8h8J/cXpIbqwIcdM6zrNO9u8JqgTAcwXXyv7TrdPMPaVgaO++ueUKClB0ZCNp1vX2r2yHOt8rDPbKHwK7LAdlj0K/KnHKZWZ5mZZb1N/cnBIM=]
+
+:::
+
+
+
+
+
 ## `padding()` - Adding space between the border and the content
 Use the configuration method `padding(amount, sides)` to tell the component how much space there should be between the border of the component and its content. Default is `0`, meaning no space at all.
 
@@ -103,11 +116,11 @@ If `sides` is not provided, the padding will be applied to all sides
 
 
 
-## `showIf()` - Conditionally showing the GUI component
-By default, all the GUI components you use will be shown. Use the configuration method `showIf(condition)` to only show the GUI component if the `condition` you pass to it is `true`.
+## `showIf()` - Conditionally show/hide the GUI component
+By default, all the GUI components you use will be shown. Use the configuration method `showIf(condition)` to only show the GUI component if the `condition` you pass to it is `true`. If the `condition` instead is `false`, the GUI component will still be used (so it will still occupy space), but it will not be shown to the user.
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk+FrozAYxv+V98LBKYjYjsGQjcMex+iHjbEVtnEdNNPXKhcTSSJdEf/3xep5TVdH79N9MCQmz/O8eX9aE1qWJKxJLBIkIYkZVQputlFZAr5p5IkCM6+XfKnbJ5ZINT5oKvUdXaPjdjtaoq4kh2Gjfdt0ooY0HkkFS1AqEv6qSZ6QcOIRTos2cSchHhFpqlA/kTD4M3828+bFI6Xxs5Sd2bxbWIUP+UPx7eKg+usqH+ruxlhwpUFSnojitipeUc5QbxB5EPFkAldwQ3Xmd/uOu6/s730vNsqPs5wlErnTH9ALU4SvzeCsFhn2/sB3AZCrEL7WY5mNv3I9y0dlYjNPndEiLyHwz90hjmqTABRUQRnrM7+MeBohXF6N3v+j6Wu+/mC515YBvEfeSDgNDNEtCc+CgeYCi5IZEhZVC2Skfs/TKKnYJzQFn2EqJFowm3HWn7J6KGmM3hFykUTYigp23xzojHKYXHzf66St/CFYVfAjAYcHl3pWaXOHPuZWrFy/7Y3DK8Zc70TZM6rTdBam5m8Lo1SjPNbB9rft2EwP2PzkRhKt8X+TeTTf4zfVwpFg0seZWB2bBMcbZh86P+HQ9BSn6YjTfoX/wuSleQcILQ/r]
+::bagawork-project[app&link&code=StartPage&baga=eNp9Ul9rgzAQ/yq3Yw8KInZjL6F9WF9KHzrG1oeNtdBUzypoIknEFvG7L1br2m3tQ8Jd7n5/clyNvCiQ1RjKiJBhmHGtYXF4LgqgvSERabBxvRIr055QETf0brgyr3xHjttVjCJTKgFDoX1tOlCDjYexzCJSGtlXjWmEbOSh4HmreISghzKONZkPZMEp/rRxs/awsHwXyI5s3iUXxgf9wXybDO4VF5HMX8p8S2pKpiISwbOIRjCB4NQjxZRiqX6+Vvg3YAtukr7uuGefPk1qVqa/Z/QmK+2HSZpFioTTlVZmaQ37xl7OZpkQdJQgjpqQagb39XUjjb9xvQsmnchqHjs3vI8h8J/cQZIbqwIcdM6zrNe9u8JqgTCewHXyv7TbdPcP6bQ0dt5984wEKTsyEFT1vUOr2yPOt8rDPbKHwK7LAdljMKzKkvIiszztyqybbyduBLs=]
 
 :::

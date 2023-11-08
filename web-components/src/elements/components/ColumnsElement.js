@@ -24,7 +24,7 @@ export default class ColumnsElement extends ParentElement{
 		
 		// Fix HTML.
 		const childComponents = colsComponent.children.filter(
-			c => c.showIf,
+			c => c.keepIf,
 		)
 		
 		for (const childComponent of childComponents){

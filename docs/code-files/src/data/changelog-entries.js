@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Made the editor and running Baga apps more secure by using a Content Security Policy`,
 		`Added the example app Power Point Presentation`,
 		`Made pages remember their old values when the user comes back to them`,
+		`Renamed showIf() to keepIf(), and added showIf()`
 	],
 }, {
 	version: `0.0.10`,

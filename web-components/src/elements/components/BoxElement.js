@@ -76,7 +76,7 @@ export default class LayersElement extends ParentElement{
 			this.boxDiv.style.justifySelf = 'end'
 		}
 		
-		if(boxComponent.child){
+		if(boxComponent.child?.keepIf ?? false){
 			const childElement = createGuiElement(boxComponent.child)
 			this.boxDiv.appendChild(childElement)
 			childElement.setGuiComponent(boxComponent.child, frameworkApp)

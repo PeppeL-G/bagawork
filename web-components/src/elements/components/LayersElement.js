@@ -26,7 +26,7 @@ export default class LayersElement extends ParentElement{
 		
 		// Fix HTML.
 		const childComponents = layersComponent.children.filter(
-			c => c.showIf,
+			c => c.keepIf,
 		)
 		
 		for(const childComponent of childComponents){

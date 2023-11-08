@@ -6,6 +6,7 @@ export class Component{
 		this.size = props.size?.[0]?.[0]
 		this.cornerRadius = props.cornerRadius?.[0]?.[0]
 		this.showIf = props.showIf?.[0]?.[0] ?? true
+		this.keepIf = props.keepIf?.[0]?.[0] ?? true
 		
 		const paddings = props.padding ?? [[]]
 		paddings.reverse()

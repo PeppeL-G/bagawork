@@ -35,5 +35,9 @@ export function applyAttributesToElement(guiComponent, htmlElement){
 	if(guiComponent.cornerRadius){
 		style.borderRadius = `${guiComponent.cornerRadius}mm`
 	}
+
+	if(!guiComponent.showIf){
+		style.visibility = `hidden`
+	}
 	
 }
