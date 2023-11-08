@@ -46,6 +46,9 @@
 			}, {
 				text: '3. Page Constants/Variables/Methods',
 				href: '/tutorials/programming/03-page-constants-variables-methods/',
+			}, {
+				text: '4. Using numbers',
+				href: '/tutorials/programming/04-using-numbers/',
 			}],
 		}],
 		
