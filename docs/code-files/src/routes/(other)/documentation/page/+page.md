@@ -51,7 +51,11 @@ class GameOverPage extends Page{
 
 
 ## The `p` variable
-In Bagawork, you can use the special variable named `p`, short for *page*, to access the constants/variables/methods you have in your `Page` class.
+In Bagawork, you can use the special variable named `p`, short for *page*, to access the constants/variables/methods you have in your `Page` class. So, unlike the `a` variable, the `p` variable refers to different things in your different pages:
+
+* In the `HelloPage`, you can use `p` to access the constants/variables/methods you have in the `HelloPage`
+* In the `AboutPage`, you can use `p` to access the constants/variables/methods you have in the `AboutPage`
+* Etc.
 
 ::: tip Example
 
@@ -86,26 +90,22 @@ In your `Page` classes, you can also use the special Bagawork variable `a` to ac
 
 
 ## `onBefore()` - Initializing the state of the page
-The method `onBefore()` will be called directly when user come to the page (*before* the page is shown on the screen). In it, you can initialize the state of your page.
+The method `onBefore()` will be called directly the first time the user come to the page (before the page is shown on the screen). In it, you can write code that is executed each time the user comes to the page.
 
 ::: tip Example
 
 ```js
-class SumPage extends Page{
+class SomePage extends Page{
 	
-	TERM_1 = 5
-	TERM_2 = 4
-	
-	// We want the sum variable to contain the sum of TERM_1 and TERM_2.
-	// However, the "a" variable can only be used in methods, so we can't
-	// write sum = a.TERM_1 + a.TERM_2 here. So instead, we initialize
-	// the sum to a dummy value (0 in this case)...
-	sum = 0
+	// This variable should keep track of how many
+	// times the user has been on this page.
+	numberOfVisits = 0
 	
 	onBefore(){
 		
-		// ...and in this method we assigns sum its correct value.
-		p.sum = p.TERM_1 + p.TERM_2
+		// So each time the user comes to this page,
+		// we increment it by 1.
+		p.numberOfVisits += 1
 		
 	}
 	
@@ -116,7 +116,7 @@ class SumPage extends Page{
 
 ::: tip Not needed?
 
-You only need to initialize the page's state if your page needs one. Many simple pages can leave this method empty, or simply not have it at all.
+You only need to implement `onBefore()` if you need it. Many simple pages can leave this method empty, or simply not have it at all.
 
 :::
 
@@ -147,13 +147,13 @@ class AskQuestionPage extends Page{
 
 ::: tip The size of the root component
 
-The root component in your GUI (the `Rows` component in the example above) will always be as wide and high as the screen/the space on the screen your app can use.
+The root component in your GUI (the `Rows` component in the example above) will always be as wide and high as the screen itself.
 
 :::
 
 ::: tip Building the GUI
 
-The GUI is built with the GUI Components from the Bagawork frameworks. In the sidebar on this page you have a list of them (*Views* and *Layouts*).
+The GUI is built with the GUI Components from the Bagawork framework. In the sidebar on this page you have a list of them (*Views* and *Layouts*).
 
 :::
 

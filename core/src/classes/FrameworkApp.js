@@ -10,6 +10,7 @@ export class FrameworkApp{
 	app = null
 	runtimeSettings = {}
 	frameworkPage = null
+	oldPageValues = {}
 	
 	constructor(app, runtimeSettings=null){
 		
@@ -37,6 +38,9 @@ export class FrameworkApp{
 	loadPage(page){
 		
 		this.frameworkPage = new FrameworkPage(this, page)
+		this.frameworkPage.setValues(
+			this.oldPageValues[this.frameworkPage.getName()] ?? {},
+		)
 		
 		if(!this.runtimeSettings.isPreview){
 			
@@ -59,6 +63,8 @@ export class FrameworkApp{
 		this.frameworkPage.runOnAfter()
 		
 		const afterDirection = this.frameworkPage.getFirstTrueAfterDirection()
+		
+		this.oldPageValues[this.frameworkPage.getName()] = this.frameworkPage.getValues()
 		
 		if(afterDirection){
 			

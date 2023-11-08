@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added the settings to change screen preview sizes`,
 		`Made the editor and running Baga apps more secure by using a Content Security Policy`,
 		`Added the example app Power Point Presentation`,
+		`Made pages remember their old values when the user comes back to them`,
 	],
 }, {
 	version: `0.0.10`,

@@ -57,4 +57,20 @@ export class FrameworkPage{
 		)
 	}
 	
+	getName(){
+		return this.page.constructor.name
+	}
+	
+	getValues(){
+		return JSON.parse(
+			JSON.stringify(this.page),
+		)
+	}
+	
+	setValues(object){
+		for(const key of Object.keys(object)){
+			this.page[key] = object[key]
+		}
+	}
+	
 }
