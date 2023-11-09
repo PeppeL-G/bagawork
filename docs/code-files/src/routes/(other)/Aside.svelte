@@ -49,6 +49,9 @@
 			}, {
 				text: '4. Using numbers',
 				href: '/tutorials/programming/04-using-numbers/',
+			}, {
+				text: '5. Using booleans, keepIf() and showIf()',
+				href: '/tutorials/programming/05-using-booleans-keepif-and-showif/',
 			}],
 		}],
 		
