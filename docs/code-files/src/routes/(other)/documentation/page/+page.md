@@ -8,9 +8,9 @@ On this page you find the documentation for the `Page` class.
 
 
 ## Introduction
-Your app consists of different pages. One page at a time will be shown to the user, so each page has its own graphical user interface (GUI). The user can interact with the GUI in a page (for example by clicking on a button in the page), after which the app will go to the next page and show the GUI of that one instead, and so on.
+Your app consists of different pages. One page at a time will be shown to the user, so each page has its own graphical user interface (GUI). The user can interact with the GUI in a page (for example by clicking on a button in it). After the user has interacted with the GUI on the page, the app will take the user to the next page and show the GUI of that one instead, and so on.
 
-To add a page to your app, create your own class that extends the `Page` class, and in which you override some methods to give your own `Page` class the specific behavior you want it to have. You can name your own `Page` classes whatever you want, but they need to have unique names.
+To add a page to your app, create your own class that extends the `Page` class, and override some methods there to give your own `Page` class the specific behavior you want it to have. You can name your own `Page` classes whatever you want, but they need to have unique names within your app.
 
 ::: tip Example
 
@@ -59,6 +59,12 @@ In Bagawork, you can use the special variable named `p`, short for *page*, to ac
 
 ::: tip Example
 
+Example of a page with:
+
+* A page constant
+* A page variable
+* A page method
+
 ```js
 class StartPage extends Page{
 	
@@ -90,27 +96,11 @@ In your `Page` classes, you can also use the special Bagawork variable `a` to ac
 
 
 ## `onBefore()` - Initializing the state of the page
-The method `onBefore()` will be called directly the first time the user come to the page (before the page is shown on the screen). In it, you can write code that is executed each time the user comes to the page.
+The method `onBefore()` will be called each time the user comes to the page (before the page is shown on the screen).
 
 ::: tip Example
 
-```js
-class SomePage extends Page{
-	
-	// This variable should keep track of how many
-	// times the user has been on this page.
-	numberOfVisits = 0
-	
-	onBefore(){
-		
-		// So each time the user comes to this page,
-		// we increment it by 1.
-		p.numberOfVisits += 1
-		
-	}
-	
-}
-```
+::bagawork-project[app&link&code=StartPage&baga=eNrFVNFumzAU/ZUra1KDhiihirQiVROdpqoPW6cl2ha1leLApaCAjWzTNIr49xoIJCDSZX3ZQxDYPufce851toRmGXG3xOcBEpf4CZUSvm28LAN8UcgCCfp9+8AeVPnzBVKFU0WF+kGfcGTUO0qgygWDdqNcLWpQQQqThDwJUEji3m9JHBB3bBJG01KxghCT8DCUqP4Q127e5/q9eDRJpvk6yJrstv7oFN7qt8WXH2315+cwi2IJz1TEdJkgyIjnSQArxAyUoP4KeAgRX0NK2WaHUHGKElSEkEsUEFEJS0QGnOlFTVaWZ5VnWZ4uUdyFv2IZKwlXYDe6nF1jyMXervqpyacckPpRJbLX8HklyfcCZotYI8RMx5AiUxArWG5gbNW7mdUr4eMVjPeCRTfEmzzux/eTr6XlR3ESCGSjHVLNtJeW0o/RYs5zbcAzHjiAB6Z/2PZLKGr7rIVhNnTXudKG7AhveNnmnaYRJcPCsMpuR+2CUaOMzjyZ5IW4jq0HZUPcC9suzHo0Jm+NRks5PBrv96SaqLiekFbkLw23ljUNtwvHG55cOFXDzuVlcytmmGaJLrtzOzpde3J1G3pBnrxxKwan873DMs2oj+aATZ5A2OjxqQLSZlEG40+fD2zqIr/wJE/ZgED/YM/f77yxlOVJYpgnwuYoT8M1O0bHJM68UKEYcrD8+6uzcXrZfGUa4j3h/07md0TVmSzDEaDVj2fScWxsDxvWPTQ54ZBzCpNzhOmwwn/J5LF4BT88hSY=]
 
 :::
 
@@ -134,7 +124,7 @@ class AskQuestionPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`Do you know the answer to this question?`),
-			Cols(
+			Columns.children(
 				Button.text(`Yes`).page(YesPage),
 				Button.text(`No` ).page(NoPage),
 			),
@@ -212,138 +202,5 @@ class AskQuestionPage extends Page{
 ::: tip Not needed?
 
 You only need to handle user input in `onAfter()` if your app's logic require's that. Many simple apps can simply leave this method empty, or not have it at all.
-
-:::
-
-
-
-## `createAfterDirection()` -  Creating *after directions*
-When the user has interacted with the GUI, it needs to be taken to the next `Page`. `createAfterDirections()` will be called to figure out which that next `Page` is. This method should return an array of `Direction`s, where each `Direction` represents a condition that indicates when that `Direction` should be used, and which `Page` the user should come to when that condition is `true`.
-
-If none of the `Page`'s `Direction`s' have a condition that returns `true`, the user will come to a new instance of the `Page` the user currently is on.
-
-::: tip Example
-
-Example showing how to use `Page.createAfterDirections()`.
-
-```js
-class AskQuestionPage extends Page{
-	
-	startTimeInMs = Date.now()
-	answer = ``
-	
-	createGui(){
-		return Rows.children(
-			Text.text(`Do you know the answer to this question?`),
-			Cols(
-				Button.text(`Yes`).handler(p.onYesAnswer),
-				Button.text(`No` ).handler(p.onNoAnswer),
-			),
-		)
-	}
-	
-	onYesAnswer(){
-		p.answer = `yes`
-	}
-	
-	onNoAnswer(){
-		p.answer = `no`
-	}
-	
-	createAfterDirections(){
-		return [
-			new Direction(
-				TooSlowPage,
-				() => 10000 < Date.now() - p.startTimeInMs,
-				`Took more than 10 seconds to answer`,
-			),
-			new Direction(
-				YesPage,
-				() => p.answer == `yes`,
-				`The user clicked on the yes-button`,
-			),
-			new Direction(
-				NoPage,
-				() => true, // Directions are tested in order, so can hard code true in the last direction.
-				`The user clicked on the no-button`,
-			),
-		]
-	}
-}
-```
-
-```js
-class TooSlowPage extends Page{
-	// Override methods here...
-}
-```
-
-```js
-class YesPage extends Page{
-	// Override methods here...
-}
-```
-
-```js
-class NoPage extends Page{
-	// Override methods here...
-}
-```
-
-:::
-
-You can also specify additional `Direction`s using the GUI Components you use. For example, if you want the user to come to the `YesPage` when the user clicks on the *Yes* `Button`, you can use the `page()` configuration method on the `Button` like this:
-
-```js
-Button.text(`yes`).page(YesPage)
-```
-
-Then you don't need to have:
-
-```js
-new Direction(
-	YesPage,
-	() => p.answer == `yes`,
-	`The user clicked on the yes-button`,
-)
-```
-
-in `createAfterDirections()`.
-
-Using the GUI Components' configuration methods is usually much easier than to implement your own `Direction`s in `createAfterDirections()`, so we recommend you to use the configuration methods whenever possible, and only implement your own `Direction`s in `createAfterDirections()` when you need `Direction`s that can't be expressed using the configuration methods.
-
-Check out the documentation for the different *Views* GUI components in the sidebar to learn which configuration methods you can use to automatically add `Direction`s to a `Page`.
-
-
-
-
-## `createBeforeDirections()` - Creating *before directions*
-In some special cases, when a user comes to one `Page`, let's call it `PageA`, you might want to immediately send the user to another `Page`, let's call that one `PageB`, without the user seeing `PageA`. For this, you can add a *before direction* in `PageA` by implementing the method `createBeforeDirections()`. 
-
-`createBeforeDirections()` will be called directly when the user comes to the `Page`, and should return an array with `Direction`s. If one of those `Direction`s' condition is `true`, the user will come to the `Page` the `Direction` leads to. Otherwise, the initial `Page` will be shown as usual.
-
-::: tip Example
-Example showing how to use `Page.createBeforeDirections()`.
-
-```js
-class MyPage extends Page{
-	createBeforeDirections(){
-		// One should not be allowed to view this
-		// page between 00:00 and 08:59.
-		return [
-			new Direction(
-				MorningPage,
-				() => new Date().getHours() < 9,
-				`It's morning`,
-			),
-		]
-	}
-}
-```
-:::
-
-::: warning Life cycle methods
-
-When a before direction's condition is `true`, no other methods on the `Page` will be called, not even `onBefore()` nor `onAfter()`!
 
 :::

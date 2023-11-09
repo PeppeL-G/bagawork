@@ -20,7 +20,7 @@ With the classes from `@bagawork/core` you can specify how your own Bagawork app
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My App</title>
 		<style>
-			#appContainer{
+			#appScreen{
 				width: 100px;
 				height: 300px;
 			}
@@ -32,11 +32,11 @@ With the classes from `@bagawork/core` you can specify how your own Bagawork app
 			
 			document.addEventListener('DOMContentLoaded', function(){
 				
-				const appContainer = document.querySelector('#appContainer')
+				const appScreen = document.querySelector('#appScreen')
 				
 				showAppInContainer(
 					createApp,
-					appContainer,
+					appScreen,
 					// Can pass runtime settings as third argument if you want.
 				)
 				
@@ -45,7 +45,7 @@ With the classes from `@bagawork/core` you can specify how your own Bagawork app
 		</script>
 	</head>
 	<body>
-		<div id="appContainer"></div>
+		<div id="appScreen"></div>
 	</body>
 	</html>
 	```

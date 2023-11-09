@@ -4,7 +4,7 @@ On this page you find the documentation for the npm package `@bagawork/editor` (
 
 
 ## Introduction
-The npm package `@bagawork/editor` is a library implementing our :online-editor. A *project* in the Editor is a JS object that contains all information the Editor needs to know about the Bagatell app implemented in it. 
+The npm package `@bagawork/editor` is a library implementing our :online-editor. A *project* in the Editor is a JS object that contains all information the Editor needs to know about the Bagawork app implemented in it. 
 
 * `@bagawork/editor/src/components/LoadEditor.svelte` is a Svelte component one can use to show our :online-editor
 * `@bagawork/editor/src/functions/compressor.js` exports two functions:
@@ -17,17 +17,17 @@ The npm package `@bagawork/editor` is a library implementing our :online-editor.
 
 ## Quick start
 1. `npm install @bagawork/editor`
-2. In a Svelte component to show the `LoadEditor` component:
+2. In a Svelte component, to show the `LoadEditor` component:
 	```html
 	<script>
 		import LoadEditor from '@bagawork/editor/components/LoadEditor.svelte'
 		
 		const mainMenuOptions = [{
 			text: "Text option 1",
-			onClick(){ alert("Click on text option 1") },
+			onClick(bagaCode){ alert("Click on text option 1") },
 		}, {
 			text: "Text option 2",
-			onClick(){ alert("Click on text option 2") },
+			onClick(bagaCode){ alert("Click on text option 2") },
 		}, /* ... */]
 		
 	</script>

@@ -50,7 +50,7 @@ In other words: you don't need to do anything special to handle overflow; the `C
 
 
 ## Positioning the children
-The children in the `Columns` component are positioned to the left. If you want them to be positioned elsewhere you can insert extra `Space` children to "push apart" the other children.
+The children in the `Columns` component are positioned to the left. If you want them to be positioned elsewhere you can insert extra :docs[space] children to "push apart" the other children.
 
 ::: tip Example
 

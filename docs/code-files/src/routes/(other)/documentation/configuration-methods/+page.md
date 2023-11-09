@@ -10,6 +10,12 @@ Indicates which background color the GUI component should have. Possible values:
 
 * A string containing the name of a color in English, such as `` `red` `` or `` `blue` ``
 
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFUsFqg0AQ/ZXtXKogwVgKxUsxpZQcWkoTaEMNuNUxhphd2V3bhOC/d42JiWJCeupBmNmZNzPvPTdAswzcDYQ8QnAhTKmU5HntZRnBlUIWSaLjjc98VX6hQKpwpKhQr3SGhllVlECVC0bqQvlaVKACCgtinkYoJLifG5hH4PYtYHRZbtxCwAIexxLVB7j2Pp7ouJhakOl5DWQ1bFgljcPr/fXxZdK6/imft+8e6/bqwVe9LxouZoLnLHrgKRdGIDAKzLqsdK8RDElCv5FQoovkgLiqGmvqFqzAdWzNaQ3ujV3zGeMyS/UtDV4NKp5cDGMvytMzfDgbYMzFwYaj3WfYvvEf2QuTeRoJZMae2CijIVr7rFRkR9UTSNY8J1vViUooI/27+8C0upFatHzJOha0G301yJXmsFvzwgOzV2pjsDxNTetC2ATlZbh9xWyIxJkXKxRdCpY/buWN0/LmkWmIN8P/duY9oepaluYIoref9qShWN/uFqzZdHtBk3PJJOfEpOML/+LJtPgFJVy1vQ==]
+
+:::
+
 
 
 

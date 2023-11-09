@@ -8,7 +8,7 @@ On this page you find the documentation for the GUI Component `Layers`.
 
 
 ## Introduction
-The `Layers` component is a layout that stacks its children on top of each other as layers (the first child is the bottom layer, then the second child is the layer on top of that one, and so on). The children are always as wide and tall as the `Layers` component. 
+The `Layers` component is a layout that shows its children in front of each others, like layers (the first child is the bottom layer, then the second child is the layer on top of that one, and so on). The children are always as wide and tall as the `Layers` component. 
 
 ::: tip Example
 
@@ -23,7 +23,7 @@ Use the configuration method `children()` to tell the `Layers` component which i
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkU1PwzAMhv+K5QudFFUwxIHeJg5oEkhI7ACiSMsad42WJlXisk1T/zvpBvsCDlwS24lfP9a7Qdk0mG2wcIoww8LIEOBxPWoaoBWTVQFivMltzoUnyfTM0vOTnFMy2FZz9sStt7B/6KtdbjvsBJbOKPIBs7cNaoXZlUAr637S9jsKdGUZiF8wu/yOX2PcvQtsotZJ505svEtOgPez99B9ckR93+pz3ge5jmRpUWmjPNlk95jzJEqkHI9kOgZZw4wqbRVwRWD6lhhJBuXlMoCEmSwWc+9aqwQEB2vXQiHtBUMggprS6UD8JXxQ1Hab1FopQwKWmqsobXRNR/pRKmXXJIP0ULtzxvlk2v/8fdDrjueLBuiDLOjyaNoXQSXPl5lRIdtAsEXtt7U9ZumdZXA/FQ6LDvb+C1xhNrweClzH++b229QJ1Y2JppyYe+LnKCzG5Ui1hv9h6NHa0wNE9959AvybBGY=]
+::bagawork-project[app&link&code=StartPage&baga=eNqVkk9Lw0AQxb/KMBdTWIp/8GBuxYMUFAQ9WEwh2+ykCW52w+5ELSXf3U1S06aePGVmd+e93/CyR1nXGO8xs4owxkxL7+Fpt6hroG8mozyEep+YhDNHkumFpeNnuaVo1p8m7IgbZ2C86E7bxLTYCsytVuQ8xu97LBXGVwKNrDqn/jkKtHnuid8wvvytV6Fu1wLroDWZHMSWQzMBHr1H6K45oX5oynPeR7kLZPOsKLVyZKLhMuHXIDFnW0ezOYcySpcgK9hQURoFXBDobjBUkkE5+eVBwkZmH1tnG6MEeAs720AmzQWDJ4KK5ulMTOSP7++tti5KdVlROjE8OpWmb6pSKU0CvkougmU3ceL718Iy22pcYjUgHYCAPqlTtc22OBE/GBbyfKcNZbLxBD1Zt7TpqHJnDYPN/ygcYWbjzyDwG+Prm2uBu/C9vftN+JWqWoeEJklPwl34j2W+UI3mf6Q7pNivnh4h2nX7A57SCTo=]
 
 :::
 

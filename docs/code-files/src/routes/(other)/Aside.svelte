@@ -123,9 +123,6 @@
 				text: 'App',
 				href: '/documentation/app',
 			}, {
-				text: 'Direction',
-				href: '/documentation/direction',
-			}, {
 				text: 'Page',
 				href: '/documentation/page',
 			}],
@@ -134,12 +131,6 @@
 			links: [{
 				text: 'Configuration Methods',
 				href: '/documentation/configuration-methods',
-			}, {
-				text: 'Environment',
-				href: '/documentation/environment',
-			}, {
-				text: 'State Handling',
-				href: '/documentation/state-handling',
 			}],
 		}],
 		
