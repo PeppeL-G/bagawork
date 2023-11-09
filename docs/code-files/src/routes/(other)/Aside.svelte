@@ -67,6 +67,9 @@
 				text: 'Power Point Presentation',
 				href: '/examples/apps/power-point-presentation/'
 			}, {
+				text: 'Multiplication Table',
+				href: '/examples/apps/multiplication-table/'
+			}, {
 				text: 'Quiz',
 				href: '/examples/apps/quiz/'
 			}],

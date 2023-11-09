@@ -9,6 +9,7 @@ export const changelogEntries = [{
 		`Made pages remember their old values when the user comes back to them`,
 		`Renamed showIf() to keepIf(), and added showIf()`,
 		`Added the tutorial Using Numbers`,
+		`Added the example app Multiplication Table`,
 	],
 }, {
 	version: `0.0.10`,
