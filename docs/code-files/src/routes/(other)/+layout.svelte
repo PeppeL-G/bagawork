@@ -2,10 +2,15 @@
 	import Nav from "./Nav.svelte"
 	import Aside from "./Aside.svelte"
 	import Footer from "./Footer.svelte"
+	import PublicAnnouncement from "./PublicAnnouncement.svelte"
 	import "prismjs/themes/prism-twilight.min.css"
 </script>
 
 <div class="layout">
+	
+	<div class="publicAnnouncement">
+		<PublicAnnouncement />
+	</div>
 	
 	<div class="nav">
 		<Nav />
@@ -32,30 +37,35 @@
 		background-color: rgb(36, 36, 36);
 		display: grid;
 		grid-template-columns: 20em 1fr;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto auto 1fr auto;
+	}
+	
+	.publicAnnouncement{
+		grid-column: 1 / span 2;
+		grid-row: 1;
 	}
 	
 	.nav{
-		grid-column: 1 / 3;
-		grid-row: 1;
+		grid-column: 1 / span 2;
+		grid-row: 2;
 	}
 	
 	aside{
 		grid-column: 1;
-		grid-row: 2;
+		grid-row: 3;
 	}
 	
 	main{
 		grid-column: 1;
-		grid-row: 2;
+		grid-row: 3;
 		padding: 1em;
 		grid-column: 2;
 		overflow-x: hidden;
 	}
 	
 	.footer{
-		grid-column: 1 / 3;
-		grid-row: 3;
+		grid-column: 1 / span 2;
+		grid-row: 4;
 	}
 	
 </style>
