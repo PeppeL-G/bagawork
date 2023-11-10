@@ -10,7 +10,8 @@ export const changelogEntries = [{
 		`Renamed showIf() to keepIf(), and added showIf()`,
 		`Added the tutorial Using Numbers`,
 		`Added the example app Multiplication Table`,
-		`Added the tutorial Using booleans, keepIf() and showIf()`
+		`Added the tutorial Using booleans, keepIf() and showIf()`,
+		`Added the Text Symbols page`,
 	],
 }, {
 	version: `0.0.10`,

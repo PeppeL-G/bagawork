@@ -131,6 +131,9 @@
 			links: [{
 				text: 'Configuration Methods',
 				href: '/documentation/configuration-methods',
+			}, {
+				text: 'Text Symbols',
+				href: '/documentation/text-symbols',
 			}],
 		}],
 		
