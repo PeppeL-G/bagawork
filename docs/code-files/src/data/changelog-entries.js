@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.11`,
+	date: `2023-11-10`,
 	changes: [
 		`Added the Box component`,
 		`Added the settings to change screen preview sizes`,
