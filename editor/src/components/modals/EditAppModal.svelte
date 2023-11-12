@@ -28,6 +28,7 @@
 		<div
 			class="preview-section"
 		>
+			
 			<div
 				class="app-component"
 				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
@@ -35,6 +36,13 @@
 			>
 				<ViewApp />
 			</div>
+			
+			<div class="preview-buttons">
+				<button on:click={save}>
+					Refresh
+				</button>
+			</div>
+			
 		</div>
 		
 		<div class="code-editor">
@@ -42,10 +50,6 @@
 				code={$app.code}
 				bind:this={codeEditor}
 			/>
-		</div>
-		
-		<div class="buttons-row">
-			<input type="button" value="Refresh Preview" on:click={save}>
 		</div>
 		
 	</div>
@@ -74,17 +78,21 @@
 	top: 0;
 }
 
+.preview-buttons{
+	text-align: center;
+	
+	& button{
+		display: block;
+		margin: 0 auto;
+		margin-top: 1em;
+	}
+	
+}
+
 .code-editor{
 	grid-row: 1;
 	grid-column: 2;
 	height: 100%;
-}
-
-.buttons-row{
-	grid-row: 2;
-	grid-column: 1 / 3;
-	text-align: center;
-	padding: 0.5em;
 }
 
 .app-component{

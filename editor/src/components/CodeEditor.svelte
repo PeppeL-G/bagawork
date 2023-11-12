@@ -77,6 +77,9 @@
 		
 		monacoEditor = monaco.editor.create(editorContainer, {
 			value: code,
+			minimap:{
+				enabled: false,
+			},
 			fontSize: 16,
 			tabSize: 2,
 			automaticLayout: true,

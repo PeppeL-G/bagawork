@@ -158,7 +158,7 @@
 		max-width: 600px;
 		border-radius: 3em;
 		margin: 0 auto;
-		background-color: silver;
+		background-color: rgb(75, 75, 255);
 		padding: 1em;
 	}
 

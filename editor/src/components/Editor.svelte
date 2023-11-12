@@ -47,7 +47,10 @@
 	</div>
 
 	<div class="header">
-		<button on:click={() => (showEditAppModal = true)}>
+		<button
+			class="editAppButton"
+			on:click={() => showEditAppModal = true}
+		>
 			{getClassName($app.code)}
 		</button>
 
@@ -104,9 +107,14 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		background-color: lime;
+		background-color: rgb(160, 160, 160);
 		z-index: 2;
 		text-align: center;
+		padding: 0.5em;
+		border: 5px solid black;
+		border-top: none;
+		border-right: none;
+		border-bottom-left-radius: 1em;
 	}
 
 	.header > button {
@@ -114,6 +122,10 @@
 		padding: 0.5em;
 		display: inline-block;
 		color: black;
+	}
+	
+	.header > .editAppButton{
+		background-color: lime;
 	}
 
 	.header .folder-titles {
@@ -126,7 +138,6 @@
 		padding: 0.5em;
 		color: black;
 		font-weight: bold;
-		border: 3px solid lime;
 	}
 
 	.header .folder-titles button.create-folder {
@@ -135,7 +146,7 @@
 	}
 
 	.header .folder-titles button.current {
-		background-color: rgba(0, 0, 0, 0);
+		border: 3px solid black;
 	}
 
 	.folder {
@@ -150,7 +161,7 @@
 		bottom: 0.75em;
 		display: inline-flex;
 		align-items: center;
-		background-color: lime;
+		background-color: rgb(75, 75, 255);
 		padding: 1em;
 		border-radius: 100%;
 		font-size: 1em;
