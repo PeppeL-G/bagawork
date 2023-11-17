@@ -4,9 +4,10 @@
 	
 	import CodeEditor from '../CodeEditor.svelte'
 	import ViewApp from '../ViewApp.svelte'
-	import { editorSettings, app } from '../../stores.js'
+	import { editorSettings, app, pages } from '../../stores.js'
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
+	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	
 	let codeEditor
 	
@@ -34,7 +35,12 @@
 				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
 				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
 			>
-				<ViewApp />
+				<ViewApp
+					createAppCode={getCreateAppCode(
+						$app,
+						$pages,
+					)}
+				/>
 			</div>
 			
 			<div class="preview-buttons">

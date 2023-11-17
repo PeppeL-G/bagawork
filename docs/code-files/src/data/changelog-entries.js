@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Improved the GUI in the editor`,
+		`Added the debug page to the editor`,
 	],
 }, {
 	version: `0.0.11`,

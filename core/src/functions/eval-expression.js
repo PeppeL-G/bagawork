@@ -9,25 +9,25 @@ import {
 	Rows,
 	Space,
 	Text,
-} from '@bagawork/core'
+} from '../index.js'
 
-const variables = {
-	App,
-	Box,
-	Button,
-	Columns,
-	Direction,
-	Layers,
-	Page,
-	Rows,
-	Space,
-	Text,
-}
-
-const parameters = Object.keys(variables)
-const args = parameters.map(p => variables[p])
-
-export default function evalExpression(jsExpressionAsString){
+export function evalExpression(jsExpressionAsString) {
+	
+	const variables = {
+		App,
+		Box,
+		Button,
+		Columns,
+		Direction,
+		Layers,
+		Page,
+		Rows,
+		Space,
+		Text,
+	}
+	
+	const parameters = Object.keys(variables)
+	const args = Object.values(variables)
 	
 	const code = `
 		(function evaluateExpression(${parameters.join(', ')}){ return ${jsExpressionAsString}})

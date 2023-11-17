@@ -1,17 +1,21 @@
 <script>
 	export let project;
-
-	import { projectToAppCreator } from "@bagawork/editor/src/functions/project-to-app-creator.js";
-	import { AppElement } from "@bagawork/web-components";
-	import { browser } from '$app/environment';
+	
+	import { getCreateAppCode } from '@bagawork/editor/src/functions/get-create-app-code.js'
+	import { AppElement } from '@bagawork/web-components'
+	import { browser } from '$app/environment'
 	
 	function showApp(appDiv) {
 		
-		const createApp = projectToAppCreator(project.app, null, project.pages);
-
-		const appElement = new AppElement();
-		appDiv.appendChild(appElement);
-		appElement.showApp(createApp, { isPreview: false });
+		const createAppCode = getCreateAppCode(
+			project.app,
+			project.pages,
+		)
+		
+		const appElement = new AppElement()
+		appDiv.appendChild(appElement)
+		appElement.showApp(createAppCode)
+		
 	}
 </script>
 

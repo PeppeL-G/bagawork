@@ -1,24 +1,13 @@
-import {isClass} from "../functions/is-class.js"
-import {Page} from "./Page.js"
-
 export class Direction{
 	
-	constructor(page, condition, description){
-		this.page = page
+	constructor(Page, condition, description=``){
+		this.Page = Page
 		this.condition = condition
 		this.description = description
 	}
 	
 	createPage(){
-		if(isClass(this.page)){
-			return new this.page()
-		}else if(this.page instanceof Page){
-			return this.page
-		}else if(this.page instanceof Function){
-			return this.page()
-		}else{
-			return null
-		}
+		return this.Page
 	}
 	
 	isTrue(){
@@ -26,7 +15,7 @@ export class Direction{
 	}
 	
 	getDescription(){
-		return this.description || ""
+		return this.description
 	}
 	
 }

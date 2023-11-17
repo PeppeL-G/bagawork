@@ -4,9 +4,8 @@
 	
 	import EditPageModal from './modals/EditPageModal.svelte'
 	import CreatePageModal from './modals/CreatePageModal.svelte'
-	import ViewFrameworkApp from './ViewFrameworkApp.svelte'
-	import { pageToAppCreator} from '../functions/page-to-app-creator.js'
-	import { createFrameworkApp } from '@bagawork/core'
+	import ViewSinglePageFrameworkApp from './ViewSinglePageFrameworkApp.svelte'
+	import { getSinglePageFrameworkApp} from '../functions/get-single-page-framework-app.js'
 	import { getClassName } from '../functions/get-class-name.js'
 	import { editorSettings, app, folders, pages } from '../stores.js'
 	
@@ -23,92 +22,35 @@
 	$: folder = $folders.find(f => f.id == folderId) ?? $folders[0]
 	$: pagesInFolder = $pages.filter(p => p.folderId == folderId)
 	
-	$: pageNames = $pages.map(
-		p => getClassName(p.code)
-	)
-	$: pageNamesAsString = pageNames.join()
+	$: wrappedPages = getWrappedPages($app, pagesInFolder)
+	$: lines = getLines(wrappedPages)
 	
-	// Values are apps or error messages (string).
-	const cachedFrameworkApps = new Map()
-	
-	function getFrameworkAppFromPage(app, page, pageNamesAsString){
+	function getWrappedPages(app, pagesInFolder){
 		
-		const cacheKey = app.code+page.code+pageNamesAsString
-		
-		const cachedFrameworkApp = cachedFrameworkApps.get(cacheKey)
-		
-		if(typeof cachedFrameworkApp == "string"){
-			throw cachedFrameworkApp
-		}
-		
-		if(cachedFrameworkApp){
-			return cachedFrameworkApp
-		}
-		
-		try {
+		return pagesInFolder.map(page => {
 			
-			const createApp = pageToAppCreator(
+			const frameworkApp = getSinglePageFrameworkApp(
 				app,
+				$pages,
 				page,
-				pageNames,
 			)
-			
-			const frameworkApp = createFrameworkApp(
-				createApp,
-				{isPreview: true},
-			)
-			
-			frameworkApp.start()
-			
-			cachedFrameworkApps.set(cacheKey, frameworkApp)
-			
-			return frameworkApp
-			
-		}catch(error){
-			console.log(`Error when creating/starting app: ${error.message}`)
-			const errorMessage = error.toString()
-			cachedFrameworkApps.set(cacheKey, errorMessage)
-			throw errorMessage
-		}
-		
-	}
-	
-	$: things = getThings($app, pagesInFolder, pageNames)
-	
-	function getThings(app, pages, pageNames){
-		
-		const wrappedPages = pages.map(page => {
-			
-			let frameworkApp = null
-			let errorMessage = ""
-			
-			try{
-				frameworkApp = getFrameworkAppFromPage(
-					app,
-					page,
-					pageNamesAsString,
-				)
-			}catch(errorMsg){
-				errorMessage = errorMsg
-			}
 			
 			return {
 				page,
 				frameworkApp,
-				errorMessage
 			}
 			
 		})
+		
+	}
+	
+	function getLines(){
 		
 		const lines = []
 		
 		for(const wrappedStartPage of wrappedPages){
 			
-			if(wrappedStartPage.errorMessage){
-				continue
-			}
-			
-			const startFrameworkPage = wrappedStartPage.frameworkApp.frameworkPage
+			const startFrameworkPage = wrappedStartPage.frameworkApp?.frameworkPage
 			
 			if(!startFrameworkPage){
 				continue
@@ -124,9 +66,7 @@
 			for(const direction of directions){
 				
 				const wrappedEndPage = wrappedPages.find(
-					wp =>
-						direction.createPage()?.constructor?.name ==
-						getClassName(wp.page.code)
+					wp => direction.Page.name == getClassName(wp.page.code)
 				)
 				
 				if(wrappedEndPage){
@@ -189,12 +129,7 @@
 			
 		}
 		
-		const things = {
-			wrappedPages,
-			lines,
-		}
-		
-		return things
+		return lines
 		
 	}
 	
@@ -305,7 +240,7 @@
 		style:transform={`translate(${folder.offsetX}px, ${folder.offsetY}px)`}
 	>
 		
-		{#each things.lines as line}
+		{#each lines as line}
 			
 			<div
 				class="line"
@@ -320,7 +255,7 @@
 			
 		{/each}
 		
-		{#each things.wrappedPages as {page, frameworkApp, errorMessage} (page.id)}
+		{#each wrappedPages as {page, frameworkApp} (page.id)}
 			
 			<div
 				class="page-container"
@@ -348,9 +283,8 @@
 				>
 					
 					<div class="disabled-page">
-						<ViewFrameworkApp
+						<ViewSinglePageFrameworkApp
 							{frameworkApp}
-							{errorMessage}
 						/>
 					</div>
 					

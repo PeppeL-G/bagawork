@@ -1,6 +1,7 @@
 <script>
 	
 	export let code = ""
+	export let isReadOnly = false
 	
 	import { app } from '../stores.js'
 	import { getClassName } from '../functions/get-class-name.js'
@@ -90,6 +91,7 @@
 			suggest: {
 				showKeywords: false,
 			},
+			readOnly: isReadOnly,
 		})
 		
 	}

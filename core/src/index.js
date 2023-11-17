@@ -4,9 +4,6 @@ export { Direction } from './classes/Direction.js'
 export { FrameworkApp } from './classes/FrameworkApp.js'
 export { Page } from './classes/Page.js'
 
-// Functions
-export { createFrameworkApp } from './functions/create-framework-app.js'
-
 // Components
 import { createComponentCreator } from './functions/create-component-creator.js'
 

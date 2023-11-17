@@ -19,10 +19,15 @@ function realGetClassName(code){
 const cache = new Map()
 
 function cachedGetClassName(code){
-	let cachedClassName = cache.get(code)
-	if(!cachedClassName){
-		cachedClassName = realGetClassName(code)
-		cache.set(code, cachedClassName)
+	
+	const cachedClassName = cache.get(code)
+	
+	if(cachedClassName){
+		return cachedClassName
 	}
-	return cachedClassName
+	
+	const className = realGetClassName(code)
+	cache.set(code, className)
+	return className
+	
 }

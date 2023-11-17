@@ -1,41 +1,36 @@
 <script>
 	
-	export let startPage
+	export let createAppCode = ""
 	
-	import ViewFrameworkApp from './ViewFrameworkApp.svelte'
-	import { app } from '../stores.js'
-	import { projectToAppCreator } from '../functions/project-to-app-creator.js'
-	import { createFrameworkApp } from '@bagawork/core'
+	import { AppElement } from '@bagawork/web-components'
 	
-	let frameworkApp = null
-	let errorMessage = ""
-	
-	$: {
+	function showApp(appDiv, createAppCode){
 		
-		errorMessage = ""
+		const appElement = new AppElement()
+		appDiv.appendChild(appElement)
+		appElement.showApp(createAppCode)
 		
-		try{
-			
-			const createApp = projectToAppCreator(
-				$app,
-				startPage,
-			)
-			frameworkApp = createFrameworkApp(
-				createApp,
-				{isPreview: false}
-			)
-			frameworkApp.start()
-			
-		}catch(error){
-			console.log("Error creating/starting app:", error)
-			errorMessage = error.toString()
+		return {
+			update(createAppCode){
+				appElement.innerText = ""
+				appElement.showApp(createAppCode)
+			}
 		}
 		
 	}
 	
 </script>
 
-<ViewFrameworkApp
-	{frameworkApp}
-	{errorMessage}
+<div
+	class="app"
+	use:showApp={createAppCode}
 />
+
+<style>
+
+.app{
+	width: 100%;
+	height: 100%;
+}
+
+</style>

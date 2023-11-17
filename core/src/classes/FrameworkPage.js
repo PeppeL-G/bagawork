@@ -1,6 +1,10 @@
+import { Component } from "../Component.js"
+import { Page } from "@bagawork/core"
+
 export class FrameworkPage{
 	
 	frameworkApp = null
+	Page = null
 	page = null
 	beforeDirections = []
 	rootGuiComponent = null
@@ -8,15 +12,142 @@ export class FrameworkPage{
 	
 	// The constructor only initializes so beforeDirections can be used.
 	// The rest is initialized in initializeTheRest().
-	constructor(frameworkApp, page){
+	constructor(frameworkApp, Page){
 		
 		this.frameworkApp = frameworkApp
-		this.page = page
+		this.Page = Page
 		
-		this.beforeDirections.push(
-			...this.page.createBeforeDirections()
-		)
+	}
+	
+	async createPageInstance() {
 		
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
+		
+		if(this.frameworkApp.pageValues[this.Page.name]){
+			
+			this.page = Object.create(this.Page.prototype)
+			
+		}else{
+			
+			if(okToContinue){
+				
+				for(const key of Object.getOwnPropertyNames(this.Page.prototype)){
+					
+					const value = this.Page.prototype[key]
+					
+					if(typeof value == "function" && !Page.prototype.hasOwnProperty(key)){
+						this.Page.prototype[key] = (...args) => {
+							
+							okToContinue(
+								`${this.Page.name}.${value.name}()`,
+								true,
+							)
+							
+							try{
+								return value.apply(this.page, args)
+							}catch(error){
+								onError(
+									`Error in ${this.Page.name}.${value.name}()`,
+								)
+							}
+							
+						}
+					}
+					
+				}
+				
+			}
+			
+			okToContinue && await okToContinue(
+				`new ${this.Page.name}`
+			)
+			
+			try {
+				this.page = new this.Page()
+			} catch (error) {
+				onError(
+					`An error ocurred while creating the ${this.Page.name} instance: ${error}.`,
+				)
+				return
+			}
+			
+		}
+		
+		this.restoreValues()
+		
+	}
+
+	async createBeforeDirections() {
+
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
+		
+		if(this.Page.prototype.hasOwnProperty('createBeforeDirections')){
+			
+			okToContinue && await okToContinue(
+				`${this.Page.name}.createBeforeDirections()`,
+			)
+
+			let createdBeforeDirections
+
+			try {
+				createdBeforeDirections = this.page.createBeforeDirections()
+			} catch (error) {
+				onError(
+					`Error in ${this.Page.name}.createBeforeDirections(): ${error}.`,
+				)
+				return
+			}
+
+			// TODO: Check that createdBeforeDirections is an array with
+			// Direction instances.
+
+			this.beforeDirections.push(
+				...createdBeforeDirections
+			)
+			
+		}
+
+	}
+
+	async createAfterDirections() {
+
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
+		
+		if (this.Page.prototype.hasOwnProperty('createAfterDirections')) {
+			
+			okToContinue && await okToContinue(
+				`${this.Page.name}.createAfterDirections()`,
+			)
+
+			let createdAfterDirections
+
+			try {
+				createdAfterDirections = this.page.createAfterDirections()
+			} catch (error) {
+				onError(
+					`Error in ${this.Page.name}.createAfterDirections(): ${error}.`,
+				)
+				return
+			}
+
+			// TODO: Check that createdAfterDirections is an array with
+			// Direction instances.
+
+			this.afterDirections.push(
+				...createdAfterDirections
+			)
+			
+		}
+
 	}
 	
 	getFirstTrueBeforeDirection(){
@@ -25,10 +156,80 @@ export class FrameworkPage{
 		)
 	}
 	
-	// This initializes the rest that wasn't initialized in the constructor.
-	initializeTheRest(){
+	async runOnBefore() {
+
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
 		
-		this.rootGuiComponent = this.page.createGui().create
+		if (this.Page.prototype.hasOwnProperty('onBefore')) {
+			
+			okToContinue && await okToContinue(
+				`${this.Page.name}.onBefore()`,
+			)
+			
+			try {
+				this.page.onBefore()
+			} catch (error) {
+				onError(
+					`Error in ${this.Page.name}.onBefore(): ${error}.`,
+				)
+				return
+			}
+			
+		}
+		
+	}
+	
+	// This initializes the rest that wasn't initialized in createPageInstance.
+	async initializeTheRest() {
+
+		const {
+			okToContinue,
+			onError,
+			onPageShow,
+		} = this.frameworkApp.runtimeSettings
+		
+		okToContinue && await okToContinue(
+			`${this.Page.name}.createGui()`,
+		)
+		
+		if(!this.Page.prototype.hasOwnProperty('createGui')){
+			onError(
+				`Error in ${this.Page.name}: Must implement createGui().`
+			)
+			return
+		}
+		
+		let gui
+		
+		try {
+			gui = this.page.createGui()
+		} catch (error) {
+			onError(
+				`Error in ${this.Page.name}.createGui(): ${error}.`,
+			)
+			return
+		}
+		
+		try{
+			this.rootGuiComponent = gui.create
+		} catch (error) {
+			onError(
+				`Error in ${this.Page.name}.createGui(): must return a GUI component.`,
+			)
+			return
+		}
+		
+		if (!(this.rootGuiComponent instanceof Component)) {
+			onError(
+				`Error in ${this.Page.name}.createGui(): must return a GUI component.`,
+			)
+			return
+		}
+		
+		onPageShow()
 		
 		this.afterDirections.push(
 			...this.page.createAfterDirections()
@@ -39,15 +240,31 @@ export class FrameworkPage{
 		
 	}
 	
-	runOnBefore(){
-		this.page.onBefore()
-	}
-	
-	runOnAfter(){
+	async runOnAfter(){
+		
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
 		
 		this.rootGuiComponent.onAfter(this.frameworkApp.app, this.page)
 		
-		this.page.onAfter()
+		if (this.Page.prototype.hasOwnProperty('onAfter')) {
+			
+			okToContinue && await okToContinue(
+				`${this.Page.name}.onAfter()`,
+			)
+			
+			try{
+				this.page.onAfter()
+			}catch(error){
+				onError(
+					`Error in ${this.Page.name}.onAfter(): ${error}.`,
+				)
+				return
+			}
+			
+		}
 		
 	}
 	
@@ -57,20 +274,25 @@ export class FrameworkPage{
 		)
 	}
 	
-	getName(){
-		return this.page.constructor.name
-	}
-	
-	getValues(){
-		return JSON.parse(
+	rememberValues(){
+		
+		this.frameworkApp.pageValues[this.Page.name] = JSON.parse(
 			JSON.stringify(this.page),
 		)
+		
 	}
 	
-	setValues(object){
-		for(const key of Object.keys(object)){
-			this.page[key] = object[key]
+	restoreValues(){
+		
+		const values = this.frameworkApp.pageValues[
+			this.Page.name
+		] ?? {}
+		
+		for (const key of Object.keys(values)) {
+			this.page[key] = values[key]
 		}
+		
 	}
+	
 	
 }

@@ -5,17 +5,17 @@
 	
 	import CodeEditor from '../CodeEditor.svelte'
 	import ViewApp from '../ViewApp.svelte'
-	import { editorSettings, pages } from '../../stores.js'
+	import { editorSettings, app, pages } from '../../stores.js'
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
 	import EditAppModal from './EditAppModal.svelte'
+	import DebugModal from './DebugModal.svelte'
+	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	
-	let page
-	$: {
-		page = $pages.find(p => p.id == pageId)
-	}
+	$: page = $pages.find(p => p.id == pageId)
 	
 	let showEditAppModal = false
+	let showDebugModal = false
 	
 	let codeEditor
 	
@@ -59,13 +59,20 @@
 				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
 			>
 				<ViewApp
-					startPage={page}
+					createAppCode={getCreateAppCode(
+						$app,
+						$pages,
+						page,
+					)}
 				/>
 			</div>
 			
 			<div class="preview-buttons">
 				<button on:click={save}>
 					Refresh
+				</button>
+				<button on:click={() => (save(), showDebugModal = true)}>
+					Debug
 				</button>
 			</div>
 			
@@ -80,7 +87,7 @@
 		
 		<button
 			class="edit-app-button"
-			on:click={() => showEditAppModal = true}
+			on:click={() => (save(), showEditAppModal = true)}
 		>
 			Edit app
 		</button>
@@ -97,6 +104,13 @@
 {#if showEditAppModal}
 	<EditAppModal
 		bind:showModal={showEditAppModal}
+	/>
+{/if}
+
+{#if showDebugModal}
+	<DebugModal
+		bind:showModal={showDebugModal}
+		{pageId}
 	/>
 {/if}
 

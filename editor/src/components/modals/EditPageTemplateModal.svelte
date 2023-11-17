@@ -4,22 +4,16 @@
 	export let pageTemplateId
 	
 	import CodeEditor from '../CodeEditor.svelte'
-	import ViewApp from '../ViewApp.svelte'
-	import { editorSettings, app, pageTemplates } from '../../stores.js'
+	import { editorSettings, app, pageTemplates, pages } from '../../stores.js'
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
 	import EditAppModal from './EditAppModal.svelte'
+	import ViewApp from '../ViewApp.svelte'
+	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	
 	let pageTemplate
-	let startPage
 	
-	$: {
-		pageTemplate = $pageTemplates.find(pt => pt.id == pageTemplateId)
-		startPage = {
-			code: pageTemplate.code
-		}
-		$app
-	}
+	$: pageTemplate = $pageTemplates.find(pt => pt.id == pageTemplateId)
 	
 	let showEditAppModal = false
 	
@@ -55,15 +49,27 @@
 	<div class="edit-page-template-modal">
 		
 		<div class="preview-section">
+			
 			<div
 				class="app-component"
 				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
 				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
 			>
 				<ViewApp
-					{startPage}
+					createAppCode={getCreateAppCode(
+						$app,
+						$pages,
+						{code: pageTemplate.code},
+					)}
 				/>
 			</div>
+			
+			<div class="preview-buttons">
+				<button on:click={save}>
+					Refresh
+				</button>
+			</div>
+			
 		</div>
 		
 		<div class="code-editor">
@@ -73,11 +79,19 @@
 			/>
 		</div>
 		
+		<button
+			class="edit-app-button"
+			on:click={() => (save(), showEditAppModal = true)}
+		>
+			Edit app
+		</button>
+		
 		<div class="buttons-row">
-			<input type="button" value="Delete" on:click={remove}>
-			<input type="button" value="Edit app" on:click={() => showEditAppModal = true}>
-			<input type="button" value="Refresh Preview" on:click={save}>
+			<button on:click={remove}>
+				Delete this page template
+			</button>
 		</div>
+		
 		
 	</div>
 </Modal>
@@ -96,30 +110,52 @@
 	background-color: orange;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-template-rows: 1fr auto;
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: auto 1fr auto;
 	align-items: center;
 	height: 100%;
 	overflow: auto;
 }
 
 .preview-section{
-	grid-row: 1;
+	grid-row: 1 / span 3;
 	grid-column: 1;
 	padding: 0.5em;
 	position: sticky;
 	top: 0;
 }
 
-.code-editor{
+.preview-buttons{
+	text-align: center;
+	
+	& button{
+		display: block;
+		margin: 0 auto;
+		margin-top: 1em;
+	}
+	
+}
+
+.edit-app-button{
 	grid-row: 1;
-	grid-column: 2;
+	grid-column: 3;
+	z-index: 1000000;
+	background-color: lime;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	transform: translate(1em, -1em);
+	font-weight: bold;
+}
+
+.code-editor{
+	grid-row: 1 / span 2;
+	grid-column: 2 / span 2;
 	height: 100%;
 }
 
 .buttons-row{
-	grid-row: 2;
-	grid-column: 1 / 3;
+	grid-row: 3;
+	grid-column: 2 / span 2;
 	text-align: center;
 	padding: 0.5em;
 }

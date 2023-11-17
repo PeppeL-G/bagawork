@@ -1,5 +1,5 @@
 import { PageElement } from './PageElement.js'
-import { createFrameworkApp } from '@bagawork/core'
+import { FrameworkApp } from '@bagawork/core'
 
 const ParentElement = (
 	typeof HTMLElement == 'undefined' ?
@@ -33,51 +33,69 @@ export class AppElement extends ParentElement {
 			'moveon',
 			this.moveOn.bind(this)
 		)
+		shadowRoot.addEventListener(
+			'updateGui',
+			this.updateGui.bind(this),
+		)
 
 	}
 
 	// This is the "easy" interface other programmers should use.
-	showApp(createApp, runtimeSettings) {
+	async showApp(createApp, runtimeSettings = {}) {
+		
+		const oldOnError = runtimeSettings.onError
+		const oldOnPageShow = runtimeSettings.onPageShow
 
-		let frameworkApp
-
-		try {
-			frameworkApp = createFrameworkApp(createApp, runtimeSettings)
-		} catch (error) {
-			console.log("Error when creating app", error)
-			this.showError("Error when creating app")
-			return
+		runtimeSettings.onError = (errorMessage) => {
+			this.showError(errorMessage)
+			oldOnError && oldOnError(errorMessage)
 		}
 
-		try {
-			frameworkApp.start()
-		} catch (error) {
-			console.log("Error when starting app", error)
-			this.showError("Error when starting app")
-			return
+		runtimeSettings.onPageShow = () => {
+			this.updateGui()
+			oldOnPageShow && oldOnPageShow()
 		}
-
-		this.showFrameworkApp(frameworkApp)
-
-	}
-
-	// This is the "hard" interface only the editor/docs website should use.
-	// The editor should call start on the framework app.
-	showFrameworkApp(frameworkApp) {
-
-		this.frameworkApp = frameworkApp
-
+		
+		this.frameworkApp = new FrameworkApp(createApp, runtimeSettings)
+		
+		await this.frameworkApp.start()
+		
 		this.updateGui()
-
+		
 	}
-
-	moveOn() {
+	
+	// This is the "hard" interface only the editor/docs website should use.
+	// The editor/docs website should call createAppInstance(), start(), etc.
+	// themselves.
+	showSinglePageFrameworkApp(frameworkApp) {
+		
+		this.frameworkApp = frameworkApp
+		
+		// Add an error listener.
+		const oldOnError = frameworkApp.runtimeSettings.onError
+		const oldOnPageShow = frameworkApp.runtimeSettings.onPageShow
+		
+		frameworkApp.runtimeSettings.onError = (errorMessage) => {
+			this.showError(errorMessage)
+			oldOnError && oldOnError(errorMessage)
+		}
+		
+		frameworkApp.runtimeSettings.onPageShow = () => {
+			this.updateGui()
+			oldOnPageShow && oldOnPageShow()
+		}
+		
+		this.updateGui()
+		
+	}
+	
+	async moveOn() {
 
 		try {
-			this.frameworkApp.moveOn()
+			await this.frameworkApp.moveOn()
 		} catch (error) {
-			console.log("Error when moving on", error)
-			this.showError("Error when moving on")
+			console.log("Error received in AppElement.moveOn()", error)
+			this.showError("Error when moving on (this is a bug in the BagaWork framework, it should never happen).")
 			return
 		}
 
@@ -86,17 +104,22 @@ export class AppElement extends ParentElement {
 	}
 
 	updateGui() {
-
-		this.pageElement.showPage(
-			this.frameworkApp.frameworkPage,
-			this.frameworkApp,
+		
+		if(this.frameworkApp.errorMessage){
+			this.showError(this.frameworkApp.errorMessage)
+		}else{
+			this.pageElement.showPage(
+				this.frameworkApp.frameworkPage,
+				this.frameworkApp,
 		)
-
+		}
+		
+		
 	}
 
-	showError(runtimeErrorMessage) {
+	showError(errorMessage) {
 
-		this.pageElement.innerText = `A runtime error occurred: ${runtimeErrorMessage}`
+		this.pageElement.innerText = errorMessage
 
 	}
 

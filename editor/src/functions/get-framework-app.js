@@ -1,23 +1,20 @@
-import { createFrameworkApp } from "@bagawork/core";
-import { pageToAppCreator } from "./page-to-app-creator";
-import projectToAppCreator from "./get-framework-app/project-to-app-creator";
+import { FrameworkApp } from "@bagawork/core"
+import { getCreateAppCode } from "./get-create-app-code.js"
 
-export function getFrameworkApp(startPage, isPreview){
+export function getFrameworkApp(
+	app,
+	pages,
+	startPage,
+	runtimeSettings={isPreview: false},
+){
 	
-	let createApp = null
-	
-	if(isPreview){
-		createApp = pageToAppCreator()
-	}else{
-		createApp = projectToAppCreator()
-	}
-	
-	const frameworkApp = createFrameworkApp(
-		createApp,
-		{isPreview: true},
+	const createAppCode = getCreateAppCode(
+		app,
+		pages,
+		startPage,
 	)
 	
-	console.log("frameworkApp")
+	const frameworkApp = new FrameworkApp(createAppCode, runtimeSettings)
 	
 	frameworkApp.start()
 	

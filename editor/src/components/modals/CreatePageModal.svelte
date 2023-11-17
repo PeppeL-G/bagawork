@@ -4,10 +4,11 @@
 	export let createAtX
 	export let createAtY
 	
-	import ViewApp from '../ViewApp.svelte'
 	import Modal from './Modal.svelte'
-	import { editorSettings, pageTemplates, pages } from '../../stores.js'
-	import EditPageTemplateModal from './EditPageTemplateModal.svelte';
+	import { app, editorSettings, pageTemplates, pages } from '../../stores.js'
+	import EditPageTemplateModal from './EditPageTemplateModal.svelte'
+	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
+	import ViewApp from '../ViewApp.svelte'
 	
 	let showEditPageTemplateModal = false
 	let selectedPageTemplateId = -1
@@ -51,26 +52,19 @@
 			code: `
 class MyPage extends Page{
 	
-	onBefore(){
-		
-	}
-	
 	createGui(){
-		return Rows(
+		return Rows.children(
 			Space,
-			Text(\`Is this a new template?\`),
+			Text.text(\`Is this a new template?\`),
 			Space,
-			Columns(
+			Columns.children(
 				Space,
-				Button(\`No\`).page(null),
-				Button(\`Yes\`).page(null),
+				Button.text(\`No\`),
+				Space,
+				Button.text(\`Yes\`),
 				Space,
 			)
 		)
-	}
-	
-	onAfter(){
-		
 	}
 	
 }
@@ -103,8 +97,14 @@ class MyPage extends Page{
 						on:click|stopPropagation={() => addPage(pageTemplate)}
 					>
 						<ViewApp
-							startPage={{code: pageTemplate.code}}
+							createAppCode={getCreateAppCode(
+								$app,
+								$pages,
+								{code: pageTemplate.code},
+								true,
+							)}
 						/>
+						<div class="overlay"></div>
 					</div>
 					
 					<button
@@ -166,11 +166,22 @@ class MyPage extends Page{
 
 .page-template{
 	border: 0.3em solid black;
+	position: relative;
+}
+
+.overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
 }
 
 .edit-page-button{
 	display: grid;
 	margin: auto;
+	margin-top: 0.25em;
 }
 
 .new-page-template-button{
