@@ -1,8 +1,7 @@
 <script>
 	import { getDecompressedProject } from '@bagawork/editor/src/functions/project-compressor.js'
-	import { projectToAppCreator } from "@bagawork/editor/src/functions/project-to-app-creator.js"
-	import { AppElement } from "@bagawork/web-components"
-	import { browser } from '$app/environment'
+	import { getCreateAppCode } from "@bagawork/editor/src/functions/get-create-app-code.js"
+	import { showAppInElement } from "@bagawork/web-components"
 	
 	const contentSecurityPolicyValue = [
 		`default-src 'none';`,
@@ -14,7 +13,7 @@
 		`style-src-elem 'self' 'unsafe-inline';`,
 	].join(` `)
 	
-	function showApp(appDiv) {
+	function showApp(screenDiv) {
 		
 		const hashStartToRemove = "#"
 		
@@ -24,11 +23,18 @@
 		
 		const project = getDecompressedProject(bagaCode)
 		
-		const createApp = projectToAppCreator(project.app, null, project.pages)
+		const createAppCode = getCreateAppCode(
+			project.app,
+			project.pages,
+		)
 		
-		const appElement = new AppElement()
-		appDiv.appendChild(appElement)
-		appElement.showApp(createApp, { isPreview: false })
+		const runtimeSettings = {}
+		
+		showAppInElement(
+			createAppCode,
+			screenDiv,
+			runtimeSettings,
+		)
 		
 	}
 	
@@ -41,12 +47,13 @@
 	/>
 </svelte:head>
 
-{#if browser}
-	<div use:showApp class="app" />
-{/if}
+<div
+	use:showApp
+	class="screen"
+/>
 
 <style>
-	.app {
+	.screen {
 		width: 100vw;
 		height: 100vh;
 	}
