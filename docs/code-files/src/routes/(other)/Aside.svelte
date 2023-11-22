@@ -155,7 +155,7 @@
 		
 	}
 	
-	$: groups = routes[$page.url.pathname.split('/')[1]]
+	$: groups = routes[$page.url.pathname.split('/')[1]] ?? []
 	
 </script>
 

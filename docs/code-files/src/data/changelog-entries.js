@@ -4,6 +4,8 @@ export const changelogEntries = [{
 	changes: [
 		`Improved the GUI in the editor`,
 		`Added the debug page to the editor`,
+		`Added documentation for runtime settings`,
+		`Added runtime settings for listening for app state changes, and resume using an old app state`,
 	],
 }, {
 	version: `0.0.11`,

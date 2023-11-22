@@ -20,24 +20,34 @@ With the classes from `@bagawork/core` you can specify how your own Bagawork app
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My App</title>
 		<style>
-			#appScreen{
+			
+			#screen{
 				width: 100px;
 				height: 300px;
 			}
+			
 		</style>
 		<script type="module">
 			
-			import { createApp } from './create-app.js' // The file exporting your createApp() function.
-			import { showAppInContainer } from '@bagawork/web-components' // Can't load the package like this in a web browser, but you get the idea.
+			// The file exporting your createApp() function, or write the
+			// createApp() function directly in this <script> element.
+			import { createApp } from './create-app.js'
+			
+			// Can't import showAppInElement from the package directly in
+			// a web browser like this, but you get the idea.
+			import { showAppInElement } from '@bagawork/web-components'
 			
 			document.addEventListener('DOMContentLoaded', function(){
 				
-				const appScreen = document.querySelector('#appScreen')
+				const screenElement = document.querySelector('#screen')
 				
-				showAppInContainer(
+				// Read more about runtimeSettings further down.
+				const runtimeSettings = {}
+				
+				showAppInElement(
 					createApp,
-					appScreen,
-					// Can pass runtime settings as third argument if you want.
+					screenElement,
+					runtimeSettings,
 				)
 				
 			})
@@ -45,7 +55,10 @@ With the classes from `@bagawork/core` you can specify how your own Bagawork app
 		</script>
 	</head>
 	<body>
-		<div id="appScreen"></div>
+		<div id="screen"></div>
 	</body>
 	</html>
 	```
+
+## Runtime settings
+The runtime settings you can pass to `showAppInElement()` are the same ones documented on the webpage for [@bagawork/core](../core/).

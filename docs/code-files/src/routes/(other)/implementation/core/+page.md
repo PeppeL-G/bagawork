@@ -21,6 +21,7 @@ The npm package `@bagawork/core` implements different classes you can use when b
 	```js
 	import {
 		App,
+		Button,
 		Page,
 		Text,
 	} from '@bagawork/core'
@@ -35,11 +36,23 @@ The npm package `@bagawork/core` implements different classes you can use when b
 		
 		class StartPage extends Page{
 			createGui(){
-				return Text.text(`Hello, world`)
+				return Button.text(`View greeting`).page(GreetingPage)
 			}
 		}
 		
-		return MyApp
+		class GreetingPage extends Page{
+			createGui(){
+				return Text.text(`Hello, world!`)
+			}
+		}
+		
+		return {
+			App: MyApp,
+			Pages: {
+				StartPage,
+				GreetingPage,
+			},
+		}
 		
 	}
 	```
@@ -49,7 +62,7 @@ The npm package `@bagawork/core` implements different classes you can use when b
 
 
 ## Implementation details
-A Bagawork app is implemented as a function (referred to as the `createApp()` function) that returns the `App` class that should be used. The reason for this design is so that the `App` and `Page` classes can have access to the `a` and `p` "variables". For an example, see the *Quick start* code above.
+A Bagawork app is implemented as a function (referred to as the `createApp()` function) that returns the `App` class that should be used, together with all the `Pages` that are used. The reason for this design is so that the `App` and `Page` classes can have access to the Bagawork variables `a` and `p`. For an example, see the *Quick start* code above.
 
 
 
@@ -71,41 +84,19 @@ sequenceDiagram
 	createApp(environment)->>Framework: Returns App
 </Mermaid>
 
-Setting up the environment for `createApp()` is not straight forward, since the `p` property needs to be updated to contain the current page in the app. To make that happen, the environment is actually implemented as a JS proxy that intercepts property access and send back the correct value, but to the one implementing the `createApp()` function, it can be seen as a JS object that always contains up-to-date values.
+Setting up the environment for `createApp()` is not straight forward, since the `p` property needs to be updated to contain the current page in the app. To make that happen, the environment is actually implemented as a JS proxy that intercepts property access and send back the correct value, but to the one implementing the `createApp()` function it can be seen as a JS object that always contains up-to-date values.
 
 
 
 
 
-### `createFrameworkApp()`
-Since implementing the environment for `createApp()` is not straightforward, the helper function `createFrameworkApp(createApp)` exists that creates such an environment and pass it to `createApp(environment)` to create the `App` class. `createFrameworkApp(createApp)` will then return a `FrameworkApp` instance that contains a reference to the `App` instance.
+### FrameworkApp & FrameworkPage VS App & Page
+To hide framework implementation details as much as possible from the ones implementing Bagawork apps, `App` and `Page` contains no framework logic:
 
-<Mermaid>
-sequenceDiagram
-	participant Framework
-	participant createFrameworkApp(createApp)
-	participant createApp(environment)
-	Framework->>createFrameworkApp(createApp): createFrameworkApp(createApp)
-	createFrameworkApp(createApp)->>createFrameworkApp(createApp): Create environment
-	createFrameworkApp(createApp)->>createApp(environment): createApp(environment)
-	createApp(environment)->>createApp(environment): Create App and Pages
-	createApp(environment)->>createFrameworkApp(createApp): Return App
-	createFrameworkApp(createApp)->>createFrameworkApp(createApp): Create FrameworkApp
-	createFrameworkApp(createApp)->>createFrameworkApp(createApp): frameworkApp.start()
-	createFrameworkApp(createApp)->>Framework: Return frameworkApp
-</Mermaid>
+* The logic for `App` is implemented in `FrameworkApp` (it has access to the `App` that should be used, and an instance of it)
+* The logic for `Page` is implemented in `FrameworkPage` (it has a access to the currently shown `Page`, and an instance of it)
 
-
-
-
-
-### App & Page VS FrameworkApp & FrameworkPage
-To hide implementation details from the ones implementing Bagawork apps, `App` and `Page` contains as little logic as possible:
-
-* Most of the logic for `App` is implemented in `FrameworkApp` (it has access to the `App` instance)
-* Most of the logic for `Page` is implemented in `FrameworkPage` (it has a access to the currently shown `Page` instance)
-
-Bagawork then uses the framework versions of these classes, and they in turn use the plain versions when needed. 
+Bagawork then uses `FrameworkApp` and `FrameworkPage`, and they in turn use the provided `App` and `Page` classes when they need to get some info from them. 
 
 <Mermaid>
 flowchart LR
@@ -116,19 +107,21 @@ flowchart LR
 `FrameworkApp` and `FrameworkPage` also have access to each other.
 
 
-### Runtime settings
-When calling `createFrameworkApp()`, you can pass it a JS object containing runtime settings. It does by default contain the following options:
-
-```js
-const defaultRuntimeSettings = {
-	isPreview: false, // If set to true, then onBeforeDirections won't take effect when showing the app, etc. This should in most cases only be true in the Editor.
-}
-```
-
 
 
 ### Starting the app
-The figure below shows the order methods are invoked when starting and running the app for the first time.
+To run your app, pass your `createApp()` function to a new `FrameworkApp` instance:
+
+```js
+const runtimeSettings = {}
+const frameworkApp = new FrameworkApp(createApp, runtimeSettings)
+```
+
+You can read more about the runtime settings you can use further down on this page.
+
+It is also possible to pass a string that contains JS code that evaluates to the `createApp()` function instead of passing it the `createApp()` function directly.
+
+Then simply call `frameworkApp.start()` to make the machinery start! The figure below shows the order methods are invoked when starting the app for the first time.
 
 <Mermaid>
 sequenceDiagram
@@ -167,3 +160,33 @@ sequenceDiagram
 	end
 	Note over FrameworkApp: End moveOn()
 </Mermaid>
+
+
+
+
+
+### Runtime settings
+
+#### Saving and restoring the state
+Each time the app changes which page to show to the user, the app's internal state (app variables and page variables) might have been changed. If you want the user to be able to close the app and later start it again with the same state as it had as when the user closed the app, you need to store the state the app had when it was closed, and then start the app with that stored state.
+
+Set `runtimeSettings.onStateChange` to `(newState) => localStorage['state'] = JSON.stringify(newState)` to listen for when the app changes page and store the new state of the app in JSON format in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+Set `runtimeSettings.state` to `JSON.parse(localStorage['state'] ?? '""') || null` to start the app with the state (potentially) stored in `localStorage`.
+
+
+
+#### Listening for errors
+Set `runtimeSettings.onError` to `(errorMessage) => console.log(errorMessage)` to listen for when the code in the app crashes. When a crash occurs, the app will also display the error message on the screen. 
+
+
+
+#### Previewing
+Set `runtimeSettings.isPreview` to `true` for `Page.onBeforeDirections()` not take effect (will probably only be used by the editor).
+
+
+
+#### Debugging
+Set `runtimeSettings.okToContinue` to `` async (nextToExecute = `Step description`, continuesImmediately=false) => Promise.resolve() `` to make the app run in debug mode. This way, the function you provide will be called each time the app runs a step (described by `nextToExecute`), and your function should return back a promise that should be resolved when it's time to run that step.
+
+Some things the debugger can't wait for (like when the user call her own App/Page function (since those aren't async)), and for those steps, `continuesImmediately` will be `true`, and the promise you return back won't be used, but the current step will be executed immediately. 

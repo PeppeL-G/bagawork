@@ -8,21 +8,21 @@ const ParentElement = (
 )
 
 export class AppElement extends ParentElement {
-
+	
 	constructor() {
 		super()
-
+		
 		// Prevent the one using this element to style this
 		// element nor any of its children.
 		this.style.all = 'initial'
-
+		
 		this.style.boxSizing = 'border-box'
 		this.style.display = 'block'
 		this.style.height = '100%'
 		this.style.backgroundColor = 'aqua'
-
+		
 		this.pageElement = new PageElement()
-
+		
 		const shadowRoot = this.attachShadow({
 			mode: 'closed'
 		})
@@ -41,10 +41,9 @@ export class AppElement extends ParentElement {
 	}
 
 	// This is the "easy" interface other programmers should use.
-	async showApp(createApp, runtimeSettings = {}) {
+	async showApp(createApp, runtimeSettings={}) {
 		
 		const oldOnError = runtimeSettings.onError
-		const oldOnPageShow = runtimeSettings.onPageShow
 
 		runtimeSettings.onError = (errorMessage) => {
 			this.showError(errorMessage)
@@ -53,7 +52,6 @@ export class AppElement extends ParentElement {
 
 		runtimeSettings.onPageShow = () => {
 			this.updateGui()
-			oldOnPageShow && oldOnPageShow()
 		}
 		
 		this.frameworkApp = new FrameworkApp(createApp, runtimeSettings)
@@ -65,15 +63,12 @@ export class AppElement extends ParentElement {
 	}
 	
 	// This is the "hard" interface only the editor/docs website should use.
-	// The editor/docs website should call createAppInstance(), start(), etc.
-	// themselves.
+	// The editor/docs website should call start() themselves.
 	showSinglePageFrameworkApp(frameworkApp) {
 		
 		this.frameworkApp = frameworkApp
 		
-		// Add an error listener.
 		const oldOnError = frameworkApp.runtimeSettings.onError
-		const oldOnPageShow = frameworkApp.runtimeSettings.onPageShow
 		
 		frameworkApp.runtimeSettings.onError = (errorMessage) => {
 			this.showError(errorMessage)
@@ -82,7 +77,6 @@ export class AppElement extends ParentElement {
 		
 		frameworkApp.runtimeSettings.onPageShow = () => {
 			this.updateGui()
-			oldOnPageShow && oldOnPageShow()
 		}
 		
 		this.updateGui()
@@ -111,7 +105,7 @@ export class AppElement extends ParentElement {
 			this.pageElement.showPage(
 				this.frameworkApp.frameworkPage,
 				this.frameworkApp,
-		)
+			)
 		}
 		
 		

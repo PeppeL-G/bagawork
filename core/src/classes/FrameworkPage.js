@@ -26,9 +26,10 @@ export class FrameworkPage{
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
-		if(this.frameworkApp.pageValues[this.Page.name]){
+		if(this.frameworkApp.pageStates[this.Page.name]){
 			
 			this.page = Object.create(this.Page.prototype)
+			this.restoreState()
 			
 		}else{
 			
@@ -76,7 +77,13 @@ export class FrameworkPage{
 			
 		}
 		
-		this.restoreValues()
+	}
+	
+	async loadFromState(){
+		
+		this.page = Object.create(this.Page.prototype)
+		this.restoreState()
+		await this.initializeTheRest()
 		
 	}
 
@@ -274,17 +281,17 @@ export class FrameworkPage{
 		)
 	}
 	
-	rememberValues(){
+	rememberState(){
 		
-		this.frameworkApp.pageValues[this.Page.name] = JSON.parse(
+		this.frameworkApp.pageStates[this.Page.name] = JSON.parse(
 			JSON.stringify(this.page),
 		)
 		
 	}
 	
-	restoreValues(){
+	restoreState(){
 		
-		const values = this.frameworkApp.pageValues[
+		const values = this.frameworkApp.pageStates[
 			this.Page.name
 		] ?? {}
 		
@@ -294,5 +301,10 @@ export class FrameworkPage{
 		
 	}
 	
+	getPageState(){
+		return JSON.parse(
+			JSON.stringify(this.frameworkPage.page),
+		)
+	}
 	
 }
