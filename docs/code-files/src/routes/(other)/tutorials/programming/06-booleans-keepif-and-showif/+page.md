@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 5. Using booleans, `keepIf()` and `showIf()`
+# 5. Booleans, `keepIf()` and `showIf()`
 This tutorial will teach you how to use boolean values in JavaScript, and conditionally keep/remove or show/hide GUI components.
 
 

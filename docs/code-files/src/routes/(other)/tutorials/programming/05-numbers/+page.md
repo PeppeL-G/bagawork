@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 4. Using numbers
+# 5. Numbers
 This tutorial will teach you what datatypes are, and how to use numbers in JavaScript.
 
 
@@ -23,8 +23,8 @@ Number is a datatype in JavaScript that represents a number (big surprice! xD). 
 
 * Write `51` to create the number value `51`
 * Write `-140` to create the number value `-140`
-* Write `6.57` to createh the number value `6.57`
-* Write `-13.7` to createh the number value `-13.7`
+* Write `6.57` to create the number value `6.57`
+* Write `-13.7` to create the number value `-13.7`
 
 ::: warning Localization
 
@@ -38,7 +38,7 @@ Just as strings (and all datatypes), number values can be stored in constant and
 
 Example of an app that creates a page constant that stores a number.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU9Fq2zAU/RVxKSzujKnTbiuGMZySljy0G2m6JSxl0ezrJlSRXElmDcb/XilevCg4JX3ag82Vrs65OufYJdA8h6iERKQIESSMKkWuV3GeE3zWyFNFTF1O+VTb5zL+/nU4GPV/3dxd9/pD8pmEnza9RCLVeKup1N/oA3a8GqUl6kJy0jTsblWDKqh8yARLUSqIfpawSCEKfeB0aW+zhoAPIssU6jFEJ5t6Yurq3ofc8DnImmxQLxxRzfxGmF00ysZGy5ktJlYUeU9CV9dVsdhVNBR/VJDMFyyVyDt1a6pHhj7Q5tWZ0WjN1CULRfCpoIxoQY7K9V4VzDy/BfM7MifyYFy1AM32a9BkC2qLSdWKt409DGnDcLyf4XiHwXMC9eHZeH9uklpBdBp+3KQ0wmXOjI9OWk5AsXocZHFasFdSEryHmZD/Pq6t2W9O6janCbbZEEskK1GQ9bdE9JxyEp5/2bLMRV4IVix5y4Ddg1PdK7TR8HfMjZh5gfWmwwvGPP9A2ATVYbi2gKyFcaZRtjlof8c6m+5ONn1uIPED/u9kfsypfqdsOJKY6fszcRwLT9oNcw99OOBQ9xCm7h6m7Ru+JZP76gUaTP8h]
+::bagawork-project[app&link&code=StartPage&baga=eNrFk19r2zAUxb/KRQwab8bU6doFwxjOyEoe+oc0axOWsmj2dROmSJ4k0wbj7z6pbtwoOCN92oPNlaXfvT7n2CWheU6ikiQiRRKRhFGl4GId5zngk0aeKjB1OeMzba9v8e3VaDge/Lz8ftEfjOAzhJ82e4lEqvFGU6mv6QN2vJrSEnUhOTQb9mlVQxWpfJIJlqJUJPpRkmVKotAnnK7s2zwjxCciyxTqCYmON/XU1NW9T3LTzyHrZsN64Yhq5jfC7KJRNjFaPtpiaoquq+m8WO6qGYlHFSSLJUsl8k69NdNj0zrQ5taZ0wjelXkwqeADhLBUgH8KykALOA3mnt9C/NoibDGtHOxsD5Y02Ps2rPeKeY7zPnkyJvWMpWsSnYRnGzvHuMqZEe3Y6jgZq9/DLE4L9g87Be9jJuTrV7A1+8223uQ0wTbtsURYiwKeQwe9oBzC3pctn1zyq2DFircM2D040/1CGw0vYy7F3AusNx1eMOb5B2JTVIdxbQFZC+NMo2xz0P43dTbdnWwG3CDxA/7vZO4WVB8pG44EM31/Jo5j4XG7Ye6h0wMOdQ/p1N3TafsN35LJffUXjUfliA==]
 
 :::
 

@@ -38,20 +38,23 @@
 		}, {
 			name: 'Programming',
 			links: [{
-				text: '1. App Constants',
-				href: '/tutorials/programming/01-app-constants/',
+				text: '1. Page Constants',
+				href: '/tutorials/programming/01-page-constants/',
 			}, {
-				text: '2. App Variables and Methods',
-				href: '/tutorials/programming/02-app-variables/',
+				text: '2. App Constants',
+				href: '/tutorials/programming/02-app-constants/',
 			}, {
-				text: '3. Page Constants/Variables/Methods',
-				href: '/tutorials/programming/03-page-constants-variables-methods/',
+				text: '3. Page Variables & Methods',
+				href: '/tutorials/programming/03-page-variables-and-methods/',
 			}, {
-				text: '4. Using numbers',
-				href: '/tutorials/programming/04-using-numbers/',
+				text: '4. App Variables & Methods',
+				href: '/tutorials/programming/04-app-variables-and-methods/',
 			}, {
-				text: '5. Using booleans, keepIf() and showIf()',
-				href: '/tutorials/programming/05-using-booleans-keepif-and-showif/',
+				text: '5. Numbers',
+				href: '/tutorials/programming/05-numbers/',
+			}, {
+				text: '6. Booleans, keepIf() & showIf()',
+				href: '/tutorials/programming/06-booleans-keepif-and-showif/',
 			}],
 		}],
 		

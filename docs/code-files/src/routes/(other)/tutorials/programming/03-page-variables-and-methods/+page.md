@@ -1,0 +1,137 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# 2. Page Variables and Methods
+This tutorial will teach you what page variables are in Bagawork, and how you can create them and change them using page methods.
+
+
+
+## Why page variables are needed
+An app that should only display static data (that is, the data/text shown in the app is the same all the time, so the GUI on each page always looks the same) is quite rare these days. Most apps allows the user to make changes to the data in the app, and those changes are then reflected in the GUI shown to the user.
+
+For example, in an app that plays music, the user can usually create her own playlists, and add and remove song to/from that playlist. To achieve that, we can store the data that represents the songs in the user's playlist in a page variable. We will start off with much simpler examples than a playlist with songs, but it's a good example of that the data in an app often need to change as the user do different things in the app.
+
+
+
+
+## How to create page variables
+Instead of hardcoding values in the code, you in previous tutorials learned that you could put those values in page constants (or app constants) instead. The idea with page variables is the very same, but with the different that after a page variable has been created an assigned its value, it can later store another value, for example when the user clicks on a `Button`.
+
+Page variables are created the same way as page constants, but we use `thisNamingConvention` for app variables instead of `THIS_NAMING_CONVENTION` (which is only used for constants).
+
+In the code below you find an example of how to create the following page variables:
+
+* `name` will have the string value `Alice`
+* `lastVisit` will have the string value `2023-09-16`
+
+```js
+class MyPage extends Page{
+	
+	name = `Alice`
+	lastVisit = `2023-09-16`
+	// You can create as many page variables as you want.
+	
+	// And then you have createGui() as usual.
+	
+}
+```
+
+
+
+## How to use page variables
+You obtain the value stored in a page variable the same way as you would retrieve a constant from it, i.e. you would write `p.theName`. For example, to obtain the value stored in the page variable `lastVisit`, we would write `p.lastVisit` (which would evaluate to the string `2023-09-16` in this case).
+
+::: tip Example
+
+Example of an app using a page variable.
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFUm1LwzAQ/ivxEFwhjHUwkIJIJ6L7oIgKOtygob1uxSwpSYqO0v9uYt1cxjbmJz+05Hp5Xu651sDKEqIaUpkhRJBypjW5W8ZlSfDToMg0sed6IibGPalCZvDJMGUe2Aw7QdsxCk2lBFk33NemBTXQUMglz1BpiN5qKDKIQgqCLZziNwQoyDzXaF4h6q3OY3tuphRKy+chW7JRW3jG1/pr865Yu3eS5IIkMS9STPyZbqpie5pnS9I19tVJbpFzSU7rsus4mpMk8Cak8GnNnA8oLCHqD8KV7WdclNySe/Y9x7F+H+VxVvEDtqUYYi7Vb9ob2gfsP8oP3U3nBc8Uis4P0jyVLEW6qjZGjBWSpazId7jEzJkg4fllEtDdyCvJq4XYIbB9cWKGlbEz/MjcyyToumw6ouI8oEfCxqiPw606gReSFHFuUO1K0P2f7W76W7u5FhYSz/C/N/MyZ+ZMu+UoYtX378RLLOztDsy/NDjiUv8Ypv4epk2Hf9nJtPkCiJ+r9w==]
+
+:::
+
+But the benefit with variables over constants is that they can also change value while the app is running. If we would want to store the name `Bob` in the page variable `name` while the app is running we would write the code `` p.name = `Bob` ``. Easy as that!
+
+However, a very good question is *where* we should write the code `` p.name = `Bob` ``. And it all depends on *when* we want the app to change the name to `Bob`. Very often, it is when the user has interacted with the GUI somehow, for example have clicked on a button, so let's go through how to make that happen.
+
+In your own `Page` class, you can not only write different pre-defined methods, but you can also create your own methods (you can name them whatever you want). To tell the computer which code that should run when the user clicks on a `Button`, that code needs to be written in a method. So your `Page` class can for example look like this:
+
+```js
+class MyPage extends Page{
+	
+	name = `Alice`
+	
+	setNameToBob(){
+		p.name = `Bob`
+	}
+	
+	// And then you have createGui() as usual.
+	
+}
+```
+
+The method in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method should reflect what the code in the method does, so `setNameToBob()` is a very good name in this case, since that's precisely what the code in the method does.
+
+To tell the computer that the code in the method `setNameToBob()` should be executed when the user clicks on a button, we need to call the configuration method `handler()` on the button, and pass it the method as an argument (i.e. write `p.setNameToBob` between the parentheses):
+
+```js
+class StartPage extends Page{
+	
+	name = `Alice`
+	
+	setNameToBob(){
+		p.name = `Bob`
+	}
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Hello ${p.name}!`),
+			Button.text(`Change name to Bob`).handler(p.setNameToBob)
+		)
+	}
+	
+}
+```
+
+::: warning Note!
+
+When passing a method as an argument (as we do when we use `Button.handler()`), you should not write the parentheses after the method name.
+
+So the following is correct:
+
+```js
+Button.handler(p.setNameToBob)
+```
+
+And the following is incorrect:
+
+```js
+Button.handler(p.setNameToBob())
+```
+
+:::
+
+::: tip Remember!
+
+In the code above, we haven't told Bagawork which page the user should come to when the button is clicked (we haven't used the configuration method `page()` on the `Button`), so when the user clicks the button, the current page will be reloaded (after the click handler (`setNameToBob`) has been executed).
+
+:::
+
+::: warning
+
+In a `Page`, you can only access the `Page` constants/variables/methods created on that page. For example, `PageA` cannnot access the page constants/variables/methods in `PageB`. To create a constant/variable/methos all pages can access, you should instead create an `App` constant/variable/method (learn more about this in next tutorial).
+
+:::
+
+
+
+### The final solution
+So, here's all the code for the app using a page variable, and that has two buttons to change the value stored in it.
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU2Fr2zAQ/SuaGMwGYZpAoBhGccrY+mFlrIGtLIVo9rkJUyQhyazB+L/vFM1ulbrDYx/2wUa6u/fu7j27pVxrmre0VBXQnJaCW0s+HgqtCTw4kJUleG7Xcu38UxrgDm4cN+4Tv4ckDRlnwDVGkiHho10AdbRjtFaiAmNp/q2lu4rmM0Yl3/uORwhlVNW1BfeV5mf9+RbP3R2jGvkiZCC7Cpdo8KH/MLy/DNP7luQt2RRiV8Kmj2Kra0ys1DE8rKSz5+XdM8xSfR9BYDSuD7q9b3anin1WP21WbneiMiCTkFq7FY6fOXwlmw8ghCKv20DevdqkrK9aNs4p+bvucssl7n2cwCkSZk4zjFYCTKKzeM1pLH6PUQ5MpIEgjaxm9AFdOV8weqD5fDHr/VvBXgtUIPIxsq6wP67qomrEH/xTcgm1Mo8e/YvGN5qXwEYULwyQg2rI8SsjDrcns/OLJ7rHyEslmr0caXBaeCL1tUJpvTaJbIRI2UTYLdhpuD6TRiIpWdQOvRxR0P+owZv5iTfvJEKKe/jfznzZcvfGenMMwe4vexIpNjsbFywuWkwomk9hmr/A9HTCv/HkrvsFnxoNMQ==]
+
+
+
+
+## That's it!
+Congratulation, now you know how to use page variables and page methods too! 🥳 But your `App` class can have its own variables and methods too, let's take a look at how those works next.
