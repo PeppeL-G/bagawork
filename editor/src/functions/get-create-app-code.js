@@ -37,19 +37,7 @@ export function getCreateAppCode(
 	const pageNames = pages.map(
 		p => getClassName(p.code),
 	)
-	
-	// This is used when startPage comes from  a page template
-	// and does not exist in the pages argument.
-	if (startPage && !pageNames.includes(startPageName)) {
 		
-		pageNames.push(startPageName)
-		pages = [
-			...pages,
-			startPage,
-		]
-		
-	}
-	
 	const pageCodes = pages.map(
 		p => (
 			fakeAllPagesButStartPage && p != startPage ?
@@ -57,6 +45,23 @@ export function getCreateAppCode(
 			p.code
 		),
 	)
+	
+	// This is used when startPage comes from a page template
+	// and does not exist in the pages array.
+	if (startPage && !pages.includes(startPage)){
+		
+		const startPageIndex = pageNames.findIndex(
+			n => n ==startPageName,
+		)
+		
+		if(startPageIndex != -1){
+			pageCodes[startPageIndex] = startPage.code
+		}else{
+			pageNames.push(startPageName)
+			pageCodes.push(startPage.code)
+		}
+		
+	}
 	
 	const appCode = (
 		startPage ?

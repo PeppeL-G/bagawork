@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Re-organized programming tutorials`,
 		`Improved the design on the website (light/dark mode + made it viewable on small screens)`,
+		`In the editor, made it possible to show a template with the same name as a page is having`,
 	],
 }, {
 	version: `0.0.13`,
