@@ -190,7 +190,7 @@
 <style>
 	
 	.group{
-		border: 1px solid white;
+		border: 1px solid var(--main-foreground-color);
 		width: 90%;
 		margin: 1em auto;
 	}
@@ -208,12 +208,17 @@
 	.links a{
 		flex: 1;
 		padding: 0.3em 0.5em 0.3em 1.5em;
+		text-decoration: none;
 	}
 	.links a:last-child{
 		padding-bottom: 0.5em
 	}
+	.links a:hover{
+		text-decoration: underline;
+	}
 	.links a.isCurrent{
-		color: #42b883;
+		color: var(--main-foreground-color);
+		text-decoration: underline;
 	}
 	
 </style>

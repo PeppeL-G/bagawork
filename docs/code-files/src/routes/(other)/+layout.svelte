@@ -32,40 +32,59 @@
 
 <style>
 	
+	@import "default-mode.css" screen;
+	@import "dark-mode.css" screen and (prefers-color-scheme: dark);
+	
 	.layout{
 		min-height: 100%;
-		background-color: rgb(36, 36, 36);
 		display: grid;
-		grid-template-columns: 20em 1fr;
-		grid-template-rows: auto auto 1fr auto;
-	}
-	
-	.publicAnnouncement{
-		grid-column: 1 / span 2;
-		grid-row: 1;
-	}
-	
-	.nav{
-		grid-column: 1 / span 2;
-		grid-row: 2;
-	}
-	
-	aside{
-		grid-column: 1;
-		grid-row: 3;
+		grid-template-rows: auto auto auto 1fr auto;
+		background-color: var(--main-background-color);
+		color: var(--main-foreground-color);
 	}
 	
 	main{
-		grid-column: 1;
-		grid-row: 3;
 		padding: 1em;
-		grid-column: 2;
 		overflow-x: hidden;
 	}
 	
-	.footer{
-		grid-column: 1 / span 2;
-		grid-row: 4;
+	@media (min-width: 50em){
+		
+		.layout{
+			min-height: 100%;
+			display: grid;
+			grid-template-columns: 20em 1fr;
+			grid-template-rows: auto auto 1fr auto;
+			background-color: var(--main-background-color);
+			color: var(--main-foreground-color);
+		}
+		
+		.publicAnnouncement{
+			grid-column: 1 / span 2;
+			grid-row: 1;
+		}
+		
+		.nav{
+			grid-column: 1 / span 2;
+			grid-row: 2;
+		}
+		
+		aside{
+			grid-column: 1;
+			grid-row: 3;
+		}
+		
+		main{
+			grid-column: 1;
+			grid-row: 3;
+			grid-column: 2;
+		}
+		
+		.footer{
+			grid-column: 1 / span 2;
+			grid-row: 4;
+		}
+		
 	}
 	
 </style>

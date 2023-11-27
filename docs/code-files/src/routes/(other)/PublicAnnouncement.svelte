@@ -1,5 +1,5 @@
 <div class="publicAnnouncement danger">
-	Note: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
+	<strong>Note</strong>: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
 </div>
 
 <style>
@@ -10,7 +10,7 @@
 	}
 	
 	.danger{
-		background-color: firebrick;
+		background-color: rgb(255, 0, 0, 0.8);
 	}
 	
 </style>

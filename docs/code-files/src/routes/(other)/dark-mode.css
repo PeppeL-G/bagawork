@@ -1,0 +1,10 @@
+:root{
+	
+	--main-background-color: #1b1b1f;
+	--main-foreground-color: rgba(255, 255, 245, .86);
+	--link-color: #3451b2;
+	--container-background-color: rgba(128, 128, 128, 0.05);
+	--container-tip-color: rgb(66, 211, 146);
+	--container-warning-color: #c90;
+	
+}
