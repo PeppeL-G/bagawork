@@ -55,6 +55,9 @@
 			}, {
 				text: '6. Booleans, keepIf() & showIf()',
 				href: '/tutorials/programming/06-booleans-keepif-and-showif/',
+			}, {
+				text: '7. onBefore()',
+				href: '/tutorials/programming/07-on-before/',
 			}],
 		}],
 		
