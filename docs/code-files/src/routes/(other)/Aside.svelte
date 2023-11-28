@@ -58,6 +58,9 @@
 			}, {
 				text: '7. onBefore()',
 				href: '/tutorials/programming/07-on-before/',
+			}, {
+				text: '8. Exercises',
+				href: '/tutorials/programming/08-exercises/',
 			}],
 		}],
 		
