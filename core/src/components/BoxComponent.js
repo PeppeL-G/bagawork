@@ -17,7 +17,7 @@ export class BoxComponent extends Component {
 		this.aspectRatioWidth = props.aspectRatio?.[0]?.[0]
 		this.aspectRatioHeight = props.aspectRatio?.[0]?.[1]
 		
-		this.child = props.child?.[0]?.[0]
+		this.child = props.child?.[0]?.[0]?.create
 		
 	}
 	

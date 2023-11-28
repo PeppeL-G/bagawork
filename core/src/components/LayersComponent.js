@@ -6,7 +6,9 @@ export class LayersComponent extends Component {
 		
 		super(props)
 		
-		this.children = props.children?.[0]?.flat(Infinity)?.filter(
+		this.children = props.children?.[0]?.flat(Infinity)?.map(
+			c => c?.create ?? c,
+		)?.filter(
 			c => c,
 		) ?? []
 		

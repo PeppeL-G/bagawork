@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`In the editor, made it possible to show a template with the same name as a page is having`,
 		`Added the tutorial onBefore()`,
 		`Added the tutorial Exercises to Programming section`,
+		`Fixed bug with nested array children`,
 	],
 }, {
 	version: `0.0.13`,

@@ -34,21 +34,7 @@ export function createRealComponentCreator(Component){
 			}else if(prop == 'isCreatorProxy'){
 				return true
 			}else if(prop == 'create'){
-				
-				Object.val
-				
-				for (const propValue of Object.values(props)) {
-					for(const args of propValue){
-						for(const [argIndex, arg] of args.entries()){
-							if(arg?.isCreatorProxy){
-								args[argIndex] = arg.create
-							}
-						}
-					}
-				}
-				
 				return new Component(props)
-				
 			}else{
 				lastAccessedProp = prop
 				return setLastAccessedProp
