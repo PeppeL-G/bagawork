@@ -26,8 +26,13 @@
 
 <style>
 	
+	:global(html, body){
+		padding: 0;
+		margin: 0;
+	}
+	
 	#errorPage{
-		background-color: rgba(0, 0, 0, 0.718);
+		background-color: rgb(128, 120, 128);
 		width: 100vw;
 		height: 100vh;
 		padding: 2em;
