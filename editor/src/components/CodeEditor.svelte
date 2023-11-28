@@ -22,6 +22,8 @@
 	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.ts?raw'
 	import layersTsString from '../editor-type-definitions/bagawork/components/Layers.ts?raw'
 	
+	import mTsString from '../editor-type-definitions/bagawork/m.ts?raw'
+	
 	let monacoEditor
 	
 	async function showEditor(editorContainer){
@@ -49,6 +51,8 @@
 			{content: rowsTsString},
 			{content: columnsTsString},
 			{content: layersTsString},
+			
+			{content: mTsString},
 			
 		])
 		

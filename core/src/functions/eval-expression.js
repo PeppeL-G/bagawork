@@ -10,6 +10,7 @@ import {
 	Space,
 	Text,
 } from '../index.js'
+import { m } from '../variables/m.js'
 
 export function evalExpression(jsExpressionAsString) {
 	
@@ -20,6 +21,7 @@ export function evalExpression(jsExpressionAsString) {
 		Columns,
 		Direction,
 		Layers,
+		m,
 		Page,
 		Rows,
 		Space,

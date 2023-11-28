@@ -136,6 +136,18 @@
 				href: '/documentation/page',
 			}],
 		}, {
+			name: 'Variables',
+			links: [{
+				text: 'a',
+				href: '/documentation/a',
+			}, {
+				text: 'm',
+				href: '/documentation/m',
+			}, {
+				text: 'p',
+				href: '/documentation/p',
+			}],
+		}, {
 			name: 'Various',
 			links: [{
 				text: 'Configuration Methods',

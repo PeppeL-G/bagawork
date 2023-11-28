@@ -8,6 +8,7 @@ export const changelogEntries = [{
 		`Added the tutorial onBefore()`,
 		`Added the tutorial Exercises to Programming section`,
 		`Fixed bug with nested array children`,
+		`Added the m variables and documentation for the a, m and p variables`
 	],
 }, {
 	version: `0.0.13`,
