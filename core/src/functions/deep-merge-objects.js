@@ -6,7 +6,11 @@ export function deepMergeObjects(target, ...sources){
 			
 			const value = source[key]
 			
-			if(typeof value == 'object' && value != null && value != undefined){
+			if(value instanceof Array){
+				
+				target[key] = value
+				
+			}else if(typeof value == 'object' && value != null && value != undefined){
 				
 				if(!target[key]){
 					target[key] = {}
