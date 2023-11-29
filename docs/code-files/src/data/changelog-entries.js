@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.15`,
+	date: `2023-11-29`,
 	changes: [
 		`Fixed a bug where starting an app with an old app state contained an array didn't work`,
 	],
