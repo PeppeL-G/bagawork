@@ -301,10 +301,4 @@ export class FrameworkPage{
 		
 	}
 	
-	getPageState(){
-		return JSON.parse(
-			JSON.stringify(this.frameworkPage.page),
-		)
-	}
-	
 }
