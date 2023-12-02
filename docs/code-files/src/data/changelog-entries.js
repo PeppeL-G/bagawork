@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added the edit state page in the editor`,
+	],
 }, {
 	version: `0.0.15`,
 	date: `2023-11-29`,

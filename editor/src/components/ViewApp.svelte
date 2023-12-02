@@ -1,19 +1,26 @@
 <script>
 	
 	export let createAppCode = ""
+	export let runtimeSettings = {}
 	
 	import { AppElement } from '@bagawork/web-components'
 	
-	function showApp(appDiv, createAppCode){
+	function showApp(screenDiv, {createAppCode, runtimeSettings}){
 		
 		const appElement = new AppElement()
-		appDiv.appendChild(appElement)
-		appElement.showApp(createAppCode)
+		screenDiv.appendChild(appElement)
+		appElement.showApp(
+			createAppCode,
+			runtimeSettings
+		)
 		
 		return {
-			update(createAppCode){
+			update({createAppCode, runtimeSettings}){
 				appElement.innerText = ""
-				appElement.showApp(createAppCode)
+				appElement.showApp(
+					createAppCode,
+					runtimeSettings,
+				)
 			}
 		}
 		
@@ -22,13 +29,13 @@
 </script>
 
 <div
-	class="app"
-	use:showApp={createAppCode}
+	class="screen"
+	use:showApp={{createAppCode, runtimeSettings}}
 />
 
 <style>
 
-.app{
+.screen{
 	width: 100%;
 	height: 100%;
 }

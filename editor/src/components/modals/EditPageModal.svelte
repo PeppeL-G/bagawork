@@ -9,6 +9,7 @@
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
 	import EditAppModal from './EditAppModal.svelte'
+	import EditStateModal from './EditStateModal.svelte'
 	import DebugModal from './DebugModal.svelte'
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	
@@ -16,6 +17,14 @@
 	
 	let showEditAppModal = false
 	let showDebugModal = false
+	let showEditStateModal = false
+	
+	let appState = null
+	const runtimeSettings = {
+		onStateChange(newState){
+			appState = newState
+		},
+	}
 	
 	let codeEditor
 	
@@ -51,7 +60,7 @@
 <Modal bind:showModal>
 	<div class="edit-page-modal">
 		
-		<div class="preview-section">
+		<div class="preview-child">
 			
 			<div
 				class="app-component"
@@ -64,38 +73,58 @@
 						$pages,
 						page,
 					)}
+					{runtimeSettings}
 				/>
 			</div>
 			
 			<div class="preview-buttons">
 				<button on:click={save}>
-					Refresh
-				</button>
-				<button on:click={() => (save(), showDebugModal = true)}>
-					Debug
+					Restart
 				</button>
 			</div>
 			
 		</div>
 		
-		<div class="code-editor">
+		<div class="menu-child">
+			
+			<div class="title">Menu</div>
+			
+			<ul>
+				<li>
+					<button
+						on:click={() => (save(), showDebugModal = true)}
+					>
+						Debug
+					</button>
+				</li>
+				<li>
+					<button
+						on:click={() => (save(), showEditAppModal = true)}
+					>
+						Edit app
+					</button>
+				</li>
+				<li>
+					<button
+						on:click={() => (save(), showEditStateModal = true)}
+					>
+						Edit state
+					</button>
+				</li>
+				<li>
+					<button on:click={remove}>
+						Delete page
+					</button>
+				</li>
+			</ul>
+			
+		</div>
+		
+		<div class="code-editor-child">
 			<CodeEditor
 				code={page.code}
 				bind:this={codeEditor}
 			/>
-		</div>
-		
-		<button
-			class="edit-app-button"
-			on:click={() => (save(), showEditAppModal = true)}
-		>
-			Edit app
-		</button>
-		
-		<div class="buttons-row">
-			<button on:click={remove}>
-				Delete this page
-			</button>
 		</div>
 		
 	</div>
@@ -114,66 +143,92 @@
 	/>
 {/if}
 
+{#if showEditStateModal}
+	<EditStateModal
+		bind:showModal={showEditStateModal}
+		initialState={appState}
+	/>
+{/if}
+
 <style>
 
 .edit-page-modal{
+	
 	margin: 0 auto;
 	padding: 1em;
 	background-color: aqua;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: auto 1fr auto;
-	grid-template-rows: auto 1fr auto;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: 1fr auto;
 	align-items: center;
 	height: 100%;
 	overflow: auto;
-}
-
-.preview-section{
-	grid-row: 1 / span 3;
-	grid-column: 1;
-	padding: 0.5em;
-}
-
-.preview-buttons{
-	text-align: center;
+	box-sizing: border-box;
 	
-	& button{
-		display: block;
-		margin: 0 auto;
-		margin-top: 1em;
+	& .preview-child{
+		
+		grid-row: 1;
+		grid-column: 1;
+		padding: 0.5em;
+		
+		& .app-component{
+			margin: 0 auto;
+			background-color: aqua;
+			border: 5px solid black;
+		}
+		
+		& .preview-buttons{
+			text-align: center;
+			
+			& button{
+				display: block;
+				margin: 0 auto;
+				margin-top: 1em;
+			}
+			
+		}
+		
 	}
 	
-}
-
-.edit-app-button{
-	grid-row: 1;
-	grid-column: 3;
-	z-index: 1000000;
-	background-color: lime;
-	border-radius: 0.5em;
-	padding: 0.5em;
-	transform: translate(1em, -1em);
-	font-weight: bold;
-}
-
-.code-editor{
-	grid-row: 1 / span 2;
-	grid-column: 2 / span 2;
-	height: 100%;
-}
-
-.buttons-row{
-	grid-row: 3;
-	grid-column: 2 / span 2;
-	text-align: left;
-	padding: 0.5em;
-}
-
-.app-component{
-	margin: 0 auto;
-	background-color: aqua;
-	border: 5px solid black;
+	& .menu-child{
+		
+		grid-row: 2;
+		grid-column: 1;
+		text-align: center;
+		padding: 0.5em;
+		
+		& .title{
+			font-weight: bold;
+			text-decoration: underline;
+			margin-top: 1em;
+			font-size: 1.25em;
+		}
+		
+		& ul{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			
+			& li{
+				margin-block: 0.5em;
+				
+				&:last-child{
+					margin-bottom: 0;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& .code-editor-child{
+		grid-row: 1 / span 2;
+		grid-column: 2;
+		height: 100%;
+	}
+	
 }
 
 </style>
