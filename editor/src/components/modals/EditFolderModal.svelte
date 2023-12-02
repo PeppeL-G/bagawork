@@ -14,6 +14,16 @@
 			f => f.id == folder.id
 		)
 		
+		const firstPageInFolder = $pages.find(
+			p => p.folderId == folderId,
+		)
+		
+		if(firstPageInFolder){
+			if(!confirm(`The folder you are deleting contains pages, and those pages will be deleted too if you delete the folder. Do you really want to delete the folder?`)){
+				return
+			}
+		}
+		
 		$folders.splice(folderIndex, 1)
 		
 		$pages = $pages.filter(
@@ -57,7 +67,6 @@
 	background-color: yellow;
 	border-radius: 3em;
 }
-
 
 .edit-folder-modal h1{
 	margin-top: 0;
