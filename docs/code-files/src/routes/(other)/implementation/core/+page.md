@@ -168,11 +168,20 @@ sequenceDiagram
 ### Runtime settings
 
 #### Saving and restoring the state
-Each time the app changes which page to show to the user, the app's internal state (app variables and page variables) might have been changed. If you want the user to be able to close the app and later start it again with the same state as it had as when the user closed the app, you need to store the state the app had when it was closed, and then start the app with that stored state.
+Each time the app changes which page to show to the user, the app's internal state (app variables, page variables, etc.) might have been changed. If you want the user to be able to close the app and later start it again with the same state as it had as when the user closed the app, you need to store the state the app had when it was closed, and then start the app with that stored state.
 
 Set `runtimeSettings.onStateChange` to `(newState) => localStorage['state'] = JSON.stringify(newState)` to listen for when the app changes page and store the new state of the app in JSON format in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 Set `runtimeSettings.state` to `JSON.parse(localStorage['state'] ?? '""') || null` to start the app with the state (potentially) stored in `localStorage`.
+
+
+
+
+#### Dealing with updates
+If a state has been stored, and the app then starts with that state running in a new version of the app, an update in the app needs to happen (the `onUpdate()` methods in the app needs to be called, etc.).
+
+Set `runtimeSettings.version` to the current version of the app, and the framework will perform the update (call the `onUpdate` methods in the app, etc.) if this version is higher than the version of the app stored in the state.
+
 
 
 

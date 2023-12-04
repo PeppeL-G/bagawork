@@ -35,6 +35,7 @@ export class FrameworkPage{
 			
 			if(okToContinue){
 				
+				// Add debug step listeners to all methods.
 				for(const key of Object.getOwnPropertyNames(this.Page.prototype)){
 					
 					const value = this.Page.prototype[key]
@@ -181,6 +182,35 @@ export class FrameworkPage{
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.name}.onBefore(): ${error}.`,
+				)
+				return
+			}
+			
+		}
+		
+	}
+	
+	async runOnUpdate(){
+		
+		const {
+			okToContinue,
+			onError,
+		} = this.frameworkApp.runtimeSettings
+		
+		if(this.Page.prototype.hasOwnProperty('onUpdate')){
+			
+			okToContinue && await okToContinue(
+				`${this.Page.name}.onUpdate()`,
+			)
+			
+			try{
+				this.page.onUpdate(
+					this.frameworkApp.runtimeSettings.state.pages[this.Page.name],
+					this.frameworkApp.runtimeSettings.state.version,
+				)
+			}catch(error){
+				onError(
+					`Error in ${this.Page.name}.onUpdate(): ${error}.`,
 				)
 				return
 			}

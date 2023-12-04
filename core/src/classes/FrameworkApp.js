@@ -11,7 +11,10 @@ const defaultRuntimeSettings = {
 	onError: null, // (errorMessage) => {},
 	onStateChange: (newState) => {},
 	state: null,
+	version: 1,
 }
+
+const constantNameRegExp = /^[A-Z0-9_]+$/
 
 export class FrameworkApp{
 	
@@ -55,13 +58,127 @@ export class FrameworkApp{
 			onError,
 		} = this.runtimeSettings
 		
+		okToContinue ?
+			await this.createAppInstance() :
+			      this.createAppInstance()
+		
+		if(this.errorMessage){
+			return
+		}
+		
+		// If debugging, add steps to calling user defined methods.
+		if (okToContinue) {
+			
+			// Add steps to App.
+			for (const key of Object.getOwnPropertyNames(this.App.prototype)) {
+				
+				const value = this.App.prototype[key]
+				
+				if (typeof value == "function" && !App.prototype.hasOwnProperty(key)) {
+					
+					this.App.prototype[key] = function(...args){
+						
+						okToContinue(
+							`${this.App.name}.${value.name}()`,
+							true,
+						)
+						
+						try {
+							return value.apply(this, args)
+						} catch (error) {
+							onError(
+								`Error in ${this.App.name}.${value.name}()`,
+							)
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+			// Add steps to all Pages.
+			for(const UserPage of Object.values(this.Pages)){
+				for (const key of Object.getOwnPropertyNames(UserPage.prototype)) {
+
+					const value = UserPage.prototype[key]
+
+					if (typeof value == "function" && !Page.prototype.hasOwnProperty(key)) {
+						UserPage.prototype[key] = function(...args){
+
+							okToContinue(
+								`${UserPage.name}.${value.name}()`,
+								true,
+							)
+
+							try {
+								return value.apply(this, args)
+							} catch (error) {
+								onError(
+									`Error in ${UserPage.name}.${value.name}()`,
+								)
+							}
+
+						}
+					}
+
+				}
+
+			}
+		}
+		
+		const state = this.runtimeSettings.state
+		
+		if(state){
+			
+			if(state.version < this.runtimeSettings.version){
+				okToContinue ?
+					await this.update() : 
+					      this.update()
+			}else{
+				okToContinue ?
+					await this.restoreFromState() :
+					      this.restoreFromState()
+			}
+			
+			return
+			
+		}
+		
+		okToContinue ?
+			await this.runOnBefore() :
+			      this.runOnBefore()
+		
+		if(this.errorMessage){
+			return
+		}
+		
+		const StartPage = this.runCreateStartPage()
+		
+		if(!StartPage){
+			return
+		}
+		
+		okToContinue ?
+			await this.loadPage(StartPage) :
+			      this.loadPage(StartPage)
+		
+	}
+	
+	async createAppInstance() {
+		
+		const {
+			okToContinue,
+			onError,
+		} = this.runtimeSettings
+		
 		if (typeof this.createApp == "string") {
 			
 			try {
 				this.createApp = evalExpression(this.createApp)
 			} catch (error) {
 				onError(
-					`Your code contains a Syntax Error: ${error}.`,
+					`The code contains a Syntax Error: ${error}.`,
 				)
 				return
 			}
@@ -131,7 +248,7 @@ export class FrameworkApp{
 		okToContinue && await okToContinue(
 			`new ${this.App.name}`,
 		)
-			
+		
 		try {
 			this.app = new this.App()
 		} catch (error) {
@@ -141,96 +258,24 @@ export class FrameworkApp{
 			return
 		}
 		
-		// If debugging, add steps to calling user defined methods.
-		if (okToContinue) {
-			
-			// Add steps to App.
-			for (const key of Object.getOwnPropertyNames(this.App.prototype)) {
-				
-				const value = this.App.prototype[key]
-				
-				if (typeof value == "function" && !App.prototype.hasOwnProperty(key)) {
-					this.App.prototype[key] = function(...args){
-						
-						okToContinue(
-							`${this.App.name}.${value.name}()`,
-							true,
-						)
-						
-						try {
-							return value.apply(this, args)
-						} catch (error) {
-							onError(
-								`Error in ${this.App.name}.${value.name}()`,
-							)
-						}
-						
-					}
-				}
-				
-			}
-			
-			// Add steps to all Pages.
-			for(const UserPage of Object.values(this.Pages)){
-				for (const key of Object.getOwnPropertyNames(UserPage.prototype)) {
-
-					const value = UserPage.prototype[key]
-
-					if (typeof value == "function" && !Page.prototype.hasOwnProperty(key)) {
-						UserPage.prototype[key] = function(...args){
-
-							okToContinue(
-								`${UserPage.name}.${value.name}()`,
-								true,
-							)
-
-							try {
-								return value.apply(this, args)
-							} catch (error) {
-								onError(
-									`Error in ${UserPage.name}.${value.name}()`,
-								)
-							}
-
-						}
-					}
-
-				}
-
-			}
-		}
+	}
+	
+	async runOnBefore() {
 		
-		const state = this.runtimeSettings.state
+		const {
+			okToContinue,
+			onError,
+		} = this.runtimeSettings
 		
-		if(state){
-			
-			this.pageStates = state.pageStates
-			
-			for (const key of Object.keys(state.appState)) {
-				this.app[key] = state.appState[key]
-			}
-			
-			this.frameworkPage = new FrameworkPage(
-				this,
-				this.Pages[state.currentPageName],
-			)
-			await this.frameworkPage.loadFromState()
-			this.runtimeSettings.onStateChange(
-				this.getState(),
-			)
-			return
-			
-		}
-		
-		if(this.App.prototype.hasOwnProperty('onBefore')){
+		if (this.App.prototype.hasOwnProperty('onBefore')) {
 			
 			okToContinue && await okToContinue(
 				`${this.App.name}.onBefore()`,
 			)
 			
-			try{
+			try {
 				this.app.onBefore()
-			}catch(error){
+			} catch (error) {
 				onError(
 					`Error in ${this.App.name}.onBefore(): ${error}.`,
 				)
@@ -239,11 +284,177 @@ export class FrameworkApp{
 			
 		}
 		
-		okToContinue && await okToContinue(
-			`${this.App.name}.createStartPage() (note: when previewing/debugging your app, ${this.App.name}.createStartPage() will always return the page you are previewing/debugging, and not the one you have written in ${this.App.name}.createStartPage())`,
+	}
+	
+	async update() {
+		
+		const {
+			state,
+		} = this.runtimeSettings
+		
+		let PageToLoadAfterUpdate = null
+		
+		for (const stateKey of Object.keys(state.app)) {
+
+			if (this.app.hasOwnProperty(stateKey)) {
+
+				if (!constantNameRegExp.test(stateKey)) {
+					this.app[stateKey] = state.app[stateKey]
+				}
+
+			}
+
+		}
+
+		PageToLoadAfterUpdate = await this.runOnUpdate()
+
+		if (this.errorMessage) {
+			return
+		}
+
+		if (
+			!PageToLoadAfterUpdate &&
+			!this.Pages.hasOwnProperty(state.currentPageName)
+		) {
+
+			PageToLoadAfterUpdate = this.runCreateStartPage()
+
+			if (this.errorMessage) {
+				return
+			}
+
+		}
+
+		await this.updatePages()
+		
+		this.frameworkPage = new FrameworkPage(
+			this,
+			PageToLoadAfterUpdate ?? this.Pages[state.currentPageName],
+		)
+		await this.frameworkPage.loadFromState()
+		this.runtimeSettings.onStateChange(
+			this.getState(),
 		)
 		
-		if (!this.App.prototype.hasOwnProperty('createStartPage')) {
+	}
+	
+	async runOnUpdate(){
+		
+		const {
+			okToContinue,
+			onError,
+		} = this.runtimeSettings
+		
+		let PageToLoad = null
+		
+		if (this.App.prototype.hasOwnProperty('onUpdate')) {
+			
+			okToContinue && await okToContinue(
+				`${this.App.name}.onUpdate()`,
+			)
+			
+			try {
+				PageToLoad = this.app.onUpdate(
+					this.runtimeSettings.state.app,
+					this.runtimeSettings.state.version,
+				)
+			} catch (error) {
+				onError(
+					`Error in ${this.App.name}.onUpdate(): ${error}.`,
+				)
+				return
+			}
+			
+			if (PageToLoad && !(PageToLoad instanceof Page)) {
+				onError(
+					`Error in ${this.App.name}.onUpdate(): If returning a value, it must be a class inheriting from Page.`,
+				)
+				return
+			}
+			
+		}
+		
+		return PageToLoad
+		
+	}
+	
+	async updatePages() {
+		
+		const {
+			state,
+		} = this.runtimeSettings
+		
+		for (const pageName of Object.keys(state.pages)) {
+			
+			if (this.Pages.hasOwnProperty(pageName)){
+				
+				this.pageStates[pageName] = {}
+				
+				this.frameworkPage = new FrameworkPage(
+					this,
+					this.Pages[pageName],
+				)
+				this.frameworkPage.page = new this.frameworkPage.Page()
+				
+				const { page } = this.frameworkPage
+				
+				for (const stateKey of Object.keys(state.pages[pageName])) {
+					
+					if (page.hasOwnProperty(stateKey)) {
+						
+						if (!constantNameRegExp.test(stateKey)) {
+							page[stateKey] = state.pages[pageName][stateKey]
+						}
+						
+					}
+					
+				}
+				
+				await this.frameworkPage.runOnUpdate()
+				this.frameworkPage.rememberState()
+				
+			}
+			
+		}
+		
+	}
+	
+	async restoreFromState(){
+		
+		const {
+			state,
+		} = this.runtimeSettings
+		
+		for (const key of Object.keys(state.app)) {
+			this.app[key] = state.app[key]
+		}
+		
+		this.pageStates = state.pages
+		
+		this.frameworkPage = new FrameworkPage(
+			this,
+			this.Pages[state.currentPageName],
+		)
+		await this.frameworkPage.loadFromState()
+		this.runtimeSettings.onStateChange(
+			this.getState(),
+		)
+		
+	}
+	
+	runCreateStartPage(){
+		
+		const {
+			okToContinue,
+			onError,
+		} = this.runtimeSettings
+		
+		okToContinue && okToContinue(
+			`${this.App.name}.createStartPage() (note: when previewing/debugging your app, ${this.App.name}.createStartPage() will always return the page you are previewing/debugging, and not the one you have written in ${this.App.name}.createStartPage())`,
+			true,
+		)
+		
+		if(!this.App.prototype.hasOwnProperty('createStartPage')){
 			onError(
 				`Error in ${this.App.name}: Method createStartPage() is missing.`,
 			)
@@ -254,25 +465,28 @@ export class FrameworkApp{
 		
 		try{
 			StartPage = this.app.createStartPage()
-		} catch (error) {
+		}catch(error){
 			onError(
 				`Error in ${this.App.name}.createStartPage(): ${error}.`,
 			)
 			return
 		}
 		
-		if(!(StartPage.prototype instanceof Page)){
+		if(!StartPage){
 			onError(
-				`Error in ${this.App.name}.createStartPage(): must return a class that inherits from the Page class that comes from Bagawork.`,
+				`Error in ${this.App.name}.createStartPage(): Does currently not return a value at all. Must return a class that inherits from the Page class that comes from Bagawork.`,
 			)
 			return
 		}
 		
-		if(okToContinue){
-			await this.loadPage(StartPage)
-		}else{
-			this.loadPage(StartPage)
+		if(!(StartPage.prototype instanceof Page)){
+			onError(
+				`Error in ${this.App.name}.createStartPage(): The returned value must be a class that inherits from the Page class that comes from Bagawork.`,
+			)
+			return
 		}
+		
+		return StartPage
 		
 	}
 	
@@ -349,11 +563,12 @@ export class FrameworkApp{
 		this.frameworkPage.rememberState()
 		
 		return {
-			pageStates: this.pageStates,
+			version: this.runtimeSettings.version,
 			currentPageName: this.frameworkPage.Page.name,
-			appState: JSON.parse(
+			app: JSON.parse(
 				JSON.stringify(this.app),
 			),
+			pages: this.pageStates,
 		}
 		
 	}

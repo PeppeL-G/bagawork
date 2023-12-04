@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the edit state page in the editor`,
 		`In the editor, double check with user when she's deleting a folder that contains pages`,
+		`Added functionality to update apps in the framework`,
 	],
 }, {
 	version: `0.0.15`,

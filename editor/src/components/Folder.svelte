@@ -44,7 +44,7 @@
 		
 	}
 	
-	function getLines(){
+	function getLines(wrappedPages){
 		
 		const lines = []
 		
@@ -63,6 +63,7 @@
 				startFrameworkPage.beforeDirections,
 				startFrameworkPage.afterDirections,
 			)
+			
 			for(const direction of directions){
 				
 				const wrappedEndPage = wrappedPages.find(
