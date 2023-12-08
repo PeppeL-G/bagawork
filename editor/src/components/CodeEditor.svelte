@@ -13,6 +13,7 @@
 	
 	import appTsString from '../editor-type-definitions/bagawork/App.d.ts?raw'
 	import pageTsString from '../editor-type-definitions/bagawork/Page.d.ts?raw'
+	import timeTsString from '../editor-type-definitions/bagawork/Time.ts?raw'
 	
 	import componentTsString from '../editor-type-definitions/bagawork/Component.ts?raw'
 	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.ts?raw'
@@ -43,6 +44,7 @@
 			
 			{content: appTsString},
 			{content: pageTsString},
+			{content: timeTsString},
 			
 			{content: componentTsString},
 			{content: buttonTsString},

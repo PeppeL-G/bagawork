@@ -4,6 +4,12 @@ export { Direction } from './classes/Direction.js'
 export { FrameworkApp } from './classes/FrameworkApp.js'
 export { Page } from './classes/Page.js'
 
+// Classes
+import { createClassCreator } from './functions/create-class-creator.js'
+
+import { TimeClass } from './classes/Time.js'
+export const Time = createClassCreator(TimeClass)
+
 // Components
 import { createComponentCreator } from './functions/create-component-creator.js'
 

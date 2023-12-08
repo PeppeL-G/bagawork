@@ -9,6 +9,7 @@ import {
 	Rows,
 	Space,
 	Text,
+	Time,
 } from '../index.js'
 import { m } from '../variables/m.js'
 
@@ -26,6 +27,7 @@ export function evalExpression(jsExpressionAsString) {
 		Rows,
 		Space,
 		Text,
+		Time,
 	}
 	
 	const parameters = Object.keys(variables)

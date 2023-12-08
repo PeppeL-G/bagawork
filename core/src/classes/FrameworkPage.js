@@ -1,5 +1,6 @@
 import { Component } from "../Component.js"
 import { Page } from "@bagawork/core"
+import { getState } from "../functions/get-state.js"
 
 export class FrameworkPage{
 	
@@ -313,21 +314,22 @@ export class FrameworkPage{
 	
 	rememberState(){
 		
-		this.frameworkApp.pageStates[this.Page.name] = JSON.parse(
-			JSON.stringify(this.page),
+		this.frameworkApp.pageStates[this.Page.name] = getState(
+			this.page,
 		)
 		
 	}
 	
 	restoreState(){
 		
-		const values = this.frameworkApp.pageStates[
+		const pageState = this.frameworkApp.pageStates[
 			this.Page.name
 		] ?? {}
 		
-		for (const key of Object.keys(values)) {
-			this.page[key] = values[key]
-		}
+		Object.assign(
+			this.page,
+			pageState,
+		)
 		
 	}
 	

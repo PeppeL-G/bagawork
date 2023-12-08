@@ -130,31 +130,34 @@
 			name: 'Classes',
 			links: [{
 				text: 'App',
-				href: '/documentation/app',
+				href: '/documentation/app/',
 			}, {
 				text: 'Page',
-				href: '/documentation/page',
+				href: '/documentation/page/',
+			}, {
+				text: 'Time',
+				href: '/documentation/time/',
 			}],
 		}, {
 			name: 'Variables',
 			links: [{
 				text: 'a',
-				href: '/documentation/a',
+				href: '/documentation/a/',
 			}, {
 				text: 'm',
-				href: '/documentation/m',
+				href: '/documentation/m/',
 			}, {
 				text: 'p',
-				href: '/documentation/p',
+				href: '/documentation/p/',
 			}],
 		}, {
 			name: 'Various',
 			links: [{
 				text: 'Configuration Methods',
-				href: '/documentation/configuration-methods',
+				href: '/documentation/configuration-methods/',
 			}, {
 				text: 'Text Symbols',
-				href: '/documentation/text-symbols',
+				href: '/documentation/text-symbols/',
 			}],
 		}],
 		

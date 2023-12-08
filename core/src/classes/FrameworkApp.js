@@ -3,6 +3,7 @@ import {deepMergeObjects} from '../functions/deep-merge-objects.js'
 import { App } from './App.js'
 import { Page } from './Page.js'
 import { evalExpression } from '../functions/eval-expression.js'
+import { getCopyWithRestoredClassInstances } from '../functions/get-copy-with-restored-class-instances.js'
 
 const defaultRuntimeSettings = {
 	isPreview: false,
@@ -425,17 +426,28 @@ export class FrameworkApp{
 			state,
 		} = this.runtimeSettings
 		
-		for (const key of Object.keys(state.app)) {
-			this.app[key] = state.app[key]
+		try{
+			
+			Object.assign(
+				this.app,
+				getCopyWithRestoredClassInstances(state.app),
+			)
+			
+			this.pageStates = getCopyWithRestoredClassInstances(state.pages)
+			
+			this.frameworkPage = new FrameworkPage(
+				this,
+				this.Pages[state.currentPageName],
+			)
+			
+			await this.frameworkPage.loadFromState()
+			
+		}catch(error){
+			
+			this.onError(`Error occurred when trying to restore the state: ${error}`)
+			return
+			
 		}
-		
-		this.pageStates = state.pages
-		
-		this.frameworkPage = new FrameworkPage(
-			this,
-			this.Pages[state.currentPageName],
-		)
-		await this.frameworkPage.loadFromState()
 		this.runtimeSettings.onStateChange(
 			this.getState(),
 		)
@@ -562,14 +574,14 @@ export class FrameworkApp{
 		
 		this.frameworkPage.rememberState()
 		
-		return {
-			version: this.runtimeSettings.version,
-			currentPageName: this.frameworkPage.Page.name,
-			app: JSON.parse(
-				JSON.stringify(this.app),
-			),
-			pages: this.pageStates,
-		}
+		return JSON.parse(
+			JSON.stringify({
+				version: this.runtimeSettings.version,
+				currentPageName: this.frameworkPage.Page.name,
+				app: this.app,
+				pages: this.pageStates,
+			}),
+		)
 		
 	}
 	
