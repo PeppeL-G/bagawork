@@ -10,6 +10,9 @@ import { createClassCreator } from './functions/create-class-creator.js'
 import { TimeClass } from './classes/Time.js'
 export const Time = createClassCreator(TimeClass)
 
+// Functions
+export { createPageCreator } from './functions/create-page-creator.js'
+
 // Components
 import { createComponentCreator } from './functions/create-component-creator.js'
 

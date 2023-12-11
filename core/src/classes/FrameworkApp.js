@@ -90,6 +90,7 @@ export class FrameworkApp{
 							onError(
 								`Error in ${this.App.name}.${value.name}()`,
 							)
+							debugger
 						}
 						
 					}
@@ -108,7 +109,7 @@ export class FrameworkApp{
 						UserPage.prototype[key] = function(...args){
 
 							okToContinue(
-								`${UserPage.name}.${value.name}()`,
+								`${UserPage.proxyName}.${value.name}()`,
 								true,
 							)
 
@@ -116,8 +117,9 @@ export class FrameworkApp{
 								return value.apply(this, args)
 							} catch (error) {
 								onError(
-									`Error in ${UserPage.name}.${value.name}()`,
+									`Error in ${UserPage.proxyName}.${value.name}()`,
 								)
+								debugger
 							}
 
 						}
@@ -181,6 +183,7 @@ export class FrameworkApp{
 				onError(
 					`The code contains a Syntax Error: ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -233,6 +236,7 @@ export class FrameworkApp{
 			onError(
 				`Error when defining classes: ${error}.`
 			)
+			debugger
 			return
 		}
 		
@@ -240,6 +244,7 @@ export class FrameworkApp{
 			onError(
 				`Error: Your own App class must inherit from the App class that comes from Bagawork.`,
 			)
+			debugger
 			return
 		}
 		
@@ -256,6 +261,7 @@ export class FrameworkApp{
 			onError(
 				`Error ocurred when creating a new instance of ${this.App.name}: ${error}.`,
 			)
+			debugger
 			return
 		}
 		
@@ -280,6 +286,7 @@ export class FrameworkApp{
 				onError(
 					`Error in ${this.App.name}.onBefore(): ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -363,6 +370,7 @@ export class FrameworkApp{
 				onError(
 					`Error in ${this.App.name}.onUpdate(): ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -370,6 +378,7 @@ export class FrameworkApp{
 				onError(
 					`Error in ${this.App.name}.onUpdate(): If returning a value, it must be a class inheriting from Page.`,
 				)
+				debugger
 				return
 			}
 			
@@ -445,6 +454,7 @@ export class FrameworkApp{
 		}catch(error){
 			
 			this.onError(`Error occurred when trying to restore the state: ${error}`)
+			debugger
 			return
 			
 		}
@@ -470,6 +480,7 @@ export class FrameworkApp{
 			onError(
 				`Error in ${this.App.name}: Method createStartPage() is missing.`,
 			)
+			debugger
 			return
 		}
 		
@@ -481,6 +492,7 @@ export class FrameworkApp{
 			onError(
 				`Error in ${this.App.name}.createStartPage(): ${error}.`,
 			)
+			debugger
 			return
 		}
 		
@@ -488,6 +500,7 @@ export class FrameworkApp{
 			onError(
 				`Error in ${this.App.name}.createStartPage(): Does currently not return a value at all. Must return a class that inherits from the Page class that comes from Bagawork.`,
 			)
+			debugger
 			return
 		}
 		
@@ -495,6 +508,7 @@ export class FrameworkApp{
 			onError(
 				`Error in ${this.App.name}.createStartPage(): The returned value must be a class that inherits from the Page class that comes from Bagawork.`,
 			)
+			debugger
 			return
 		}
 		
@@ -577,7 +591,7 @@ export class FrameworkApp{
 		return JSON.parse(
 			JSON.stringify({
 				version: this.runtimeSettings.version,
-				currentPageName: this.frameworkPage.Page.name,
+				currentPageName: this.frameworkPage.Page.proxyName,
 				app: this.app,
 				pages: this.pageStates,
 			}),

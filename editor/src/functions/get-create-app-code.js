@@ -4,9 +4,9 @@ import { getClassName } from "./get-class-name.js"
 const code = `
 function createApp({a, p}){
 	
-	class StartPage extends Page{
+	const StartPage = createPageCreator(class StartPage extends Page{
 		// ...
-	}
+	})
 	// ...
 	
 	return {
@@ -20,6 +20,14 @@ function createApp({a, p}){
 	
 }
 `
+
+function getPageCodeWithPageCreator(pageCode){
+	
+	const pageName = getClassName(pageCode)
+	
+	return `const ${pageName} = createPageCreator(${pageCode})`
+	
+}
 
 export function getCreateAppCode(
 	app,
@@ -39,7 +47,7 @@ export function getCreateAppCode(
 	)
 		
 	const pageCodes = pages.map(
-		p => (
+		p => getPageCodeWithPageCreator(
 			fakeAllPagesButStartPage && p != startPage ?
 			`class ${getClassName(p.code)} extends Page{ }` :
 			p.code

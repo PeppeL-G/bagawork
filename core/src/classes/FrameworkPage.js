@@ -27,10 +27,16 @@ export class FrameworkPage{
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
-		if(this.frameworkApp.pageStates[this.Page.name]){
+		if(this.frameworkApp.pageStates[this.Page.proxyName]){
 			
-			this.page = Object.create(this.Page.prototype)
+			const { Page, args } = this.Page.proxyGetPageAndArgs
+			
+			this.page = new Page()
 			this.restoreState()
+			Object.assign(
+				this.page,
+				args,
+			)
 			
 		}else{
 			
@@ -45,7 +51,7 @@ export class FrameworkPage{
 						this.Page.prototype[key] = (...args) => {
 							
 							okToContinue(
-								`${this.Page.name}.${value.name}()`,
+								`${this.Page.proxyName}.${value.name}()`,
 								true,
 							)
 							
@@ -53,8 +59,9 @@ export class FrameworkPage{
 								return value.apply(this.page, args)
 							}catch(error){
 								onError(
-									`Error in ${this.Page.name}.${value.name}()`,
+									`Error in ${this.Page.proxyName}.${value.name}()`,
 								)
+								debugger
 							}
 							
 						}
@@ -65,15 +72,21 @@ export class FrameworkPage{
 			}
 			
 			okToContinue && await okToContinue(
-				`new ${this.Page.name}`
+				`new ${this.Page.proxyName}`
 			)
 			
 			try {
-				this.page = new this.Page()
+				const { Page, args } = this.Page.proxyGetPageAndArgs
+				this.page = new Page()
+				Object.assign(
+					this.page,
+					args,
+				)
 			} catch (error) {
 				onError(
-					`An error ocurred while creating the ${this.Page.name} instance: ${error}.`,
+					`An error ocurred while creating the ${this.Page.proxyName} instance: ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -99,7 +112,7 @@ export class FrameworkPage{
 		if(this.Page.prototype.hasOwnProperty('createBeforeDirections')){
 			
 			okToContinue && await okToContinue(
-				`${this.Page.name}.createBeforeDirections()`,
+				`${this.Page.proxyName}.createBeforeDirections()`,
 			)
 
 			let createdBeforeDirections
@@ -108,8 +121,9 @@ export class FrameworkPage{
 				createdBeforeDirections = this.page.createBeforeDirections()
 			} catch (error) {
 				onError(
-					`Error in ${this.Page.name}.createBeforeDirections(): ${error}.`,
+					`Error in ${this.Page.proxyName}.createBeforeDirections(): ${error}.`,
 				)
+				debugger
 				return
 			}
 
@@ -134,7 +148,7 @@ export class FrameworkPage{
 		if (this.Page.prototype.hasOwnProperty('createAfterDirections')) {
 			
 			okToContinue && await okToContinue(
-				`${this.Page.name}.createAfterDirections()`,
+				`${this.Page.proxyName}.createAfterDirections()`,
 			)
 
 			let createdAfterDirections
@@ -143,8 +157,9 @@ export class FrameworkPage{
 				createdAfterDirections = this.page.createAfterDirections()
 			} catch (error) {
 				onError(
-					`Error in ${this.Page.name}.createAfterDirections(): ${error}.`,
+					`Error in ${this.Page.proxyName}.createAfterDirections(): ${error}.`,
 				)
+				debugger
 				return
 			}
 
@@ -175,15 +190,16 @@ export class FrameworkPage{
 		if (this.Page.prototype.hasOwnProperty('onBefore')) {
 			
 			okToContinue && await okToContinue(
-				`${this.Page.name}.onBefore()`,
+				`${this.Page.proxyName}.onBefore()`,
 			)
 			
 			try {
 				this.page.onBefore()
 			} catch (error) {
 				onError(
-					`Error in ${this.Page.name}.onBefore(): ${error}.`,
+					`Error in ${this.Page.proxyName}.onBefore(): ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -201,18 +217,19 @@ export class FrameworkPage{
 		if(this.Page.prototype.hasOwnProperty('onUpdate')){
 			
 			okToContinue && await okToContinue(
-				`${this.Page.name}.onUpdate()`,
+				`${this.Page.proxyName}.onUpdate()`,
 			)
 			
 			try{
 				this.page.onUpdate(
-					this.frameworkApp.runtimeSettings.state.pages[this.Page.name],
+					this.frameworkApp.runtimeSettings.state.pages[this.Page.proxyName],
 					this.frameworkApp.runtimeSettings.state.version,
 				)
 			}catch(error){
 				onError(
-					`Error in ${this.Page.name}.onUpdate(): ${error}.`,
+					`Error in ${this.Page.proxyName}.onUpdate(): ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -230,13 +247,14 @@ export class FrameworkPage{
 		} = this.frameworkApp.runtimeSettings
 		
 		okToContinue && await okToContinue(
-			`${this.Page.name}.createGui()`,
+			`${this.Page.proxyName}.createGui()`,
 		)
 		
 		if(!this.Page.prototype.hasOwnProperty('createGui')){
 			onError(
-				`Error in ${this.Page.name}: Must implement createGui().`
+				`Error in ${this.Page.proxyName}: Must implement createGui().`
 			)
+			debugger
 			return
 		}
 		
@@ -246,8 +264,9 @@ export class FrameworkPage{
 			gui = this.page.createGui()
 		} catch (error) {
 			onError(
-				`Error in ${this.Page.name}.createGui(): ${error}.`,
+				`Error in ${this.Page.proxyName}.createGui(): ${error}.`,
 			)
+			debugger
 			return
 		}
 		
@@ -255,15 +274,17 @@ export class FrameworkPage{
 			this.rootGuiComponent = gui.create
 		} catch (error) {
 			onError(
-				`Error in ${this.Page.name}.createGui(): must return a GUI component.`,
+				`Error in ${this.Page.proxyName}.createGui(): must return a GUI component.`,
 			)
+			debugger
 			return
 		}
 		
 		if (!(this.rootGuiComponent instanceof Component)) {
 			onError(
-				`Error in ${this.Page.name}.createGui(): must return a GUI component.`,
+				`Error in ${this.Page.proxyName}.createGui(): must return a GUI component.`,
 			)
+			debugger
 			return
 		}
 		
@@ -290,15 +311,16 @@ export class FrameworkPage{
 		if (this.Page.prototype.hasOwnProperty('onAfter')) {
 			
 			okToContinue && await okToContinue(
-				`${this.Page.name}.onAfter()`,
+				`${this.Page.proxyName}.onAfter()`,
 			)
 			
 			try{
 				this.page.onAfter()
 			}catch(error){
 				onError(
-					`Error in ${this.Page.name}.onAfter(): ${error}.`,
+					`Error in ${this.Page.proxyName}.onAfter(): ${error}.`,
 				)
+				debugger
 				return
 			}
 			
@@ -314,7 +336,7 @@ export class FrameworkPage{
 	
 	rememberState(){
 		
-		this.frameworkApp.pageStates[this.Page.name] = getState(
+		this.frameworkApp.pageStates[this.Page.proxyName] = getState(
 			this.page,
 		)
 		
@@ -323,7 +345,7 @@ export class FrameworkPage{
 	restoreState(){
 		
 		const pageState = this.frameworkApp.pageStates[
-			this.Page.name
+			this.Page.proxyName
 		] ?? {}
 		
 		Object.assign(

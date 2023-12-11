@@ -12,6 +12,7 @@ import {
 	Time,
 } from '../index.js'
 import { m } from '../variables/m.js'
+import { createPageCreator } from './create-page-creator.js'
 
 export function evalExpression(jsExpressionAsString) {
 	
@@ -20,6 +21,7 @@ export function evalExpression(jsExpressionAsString) {
 		Box,
 		Button,
 		Columns,
+		createPageCreator,
 		Direction,
 		Layers,
 		m,

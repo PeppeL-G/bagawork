@@ -165,7 +165,7 @@ class AskQuestionPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`Do you know the answer to this question?`),
-			Cols(
+			Columns.children(
 				Button.text(`Yes`).handler(p.onYesAnswer),
 				Button.text(`No` ).handler(p.onNoAnswer),
 			),
@@ -202,5 +202,36 @@ class AskQuestionPage extends Page{
 ::: tip Not needed?
 
 You only need to handle user input in `onAfter()` if your app's logic require's that. Many simple apps can simply leave this method empty, or not have it at all.
+
+:::
+
+
+## Referring to a page
+Sometimes you need to refer to a page you have created. For example, when the user clicks on a :docs[button], you might want to take the user to the page you have created named `AboutPage`. To tell the `Button` that the user should come to that page when the `Button` is clicked, you call the configuration method `page()` on the `Button`, and you pass it the page the user should come to. To obtain that page, simply write the name you have given your page, e.g.:
+
+```js
+Button.page(AboutPage)
+```
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU1FLwzAQ/ivhXlwhjK5joH2RTkT2oIgbqDjB2F7dsEtKkuLG6H83XWxdyja2BxHakuTuu7vv+9I1sDyHcA2xSBBCiDOmFLldRXlOcKmRJ4qY9XrKp7p6Y4lM41gzqe/ZB3Y8G9ESdSE5aQLVaWlBJZQUUpElKBWEL2uYJxD2KHC2qDpuIEBBpKlC/QShX6+fzbp8pZCbeg7SFhvZjTN4078Zvtq0pr8p5u25H8SX6sazeZZI5B0bmuqJKdLV5tN5m8zmiphHz/C3yZtH69RhobXgP8k3gmhBondR/KR1Kwqd5sCzKM8RicISwsA37FcQ9n2/pJbv4BDfpuRf8m2adA8T3tLFEm4O9hMe9IMN4eDiorZ6gos8M2M7lrus1ecojZIiO0Bd8CGmQv7e0K3eJwszzlmMdIdMkUSyEgXZGGTEYpz0zi+3ZHKRVyIrFnxHg3ZiS987UUvKiyzz6JGwZ1TH4eqI54gkeJRqlLsUrP5p603Q8uaaG0j0gf/tzOOM6TNVmSOJ6b7fE0exnr9bMDdpcERScEylYE+l7QlP8eS1/AZryhmz]
+
+:::
+
+## Page arguments
+When you specify a page the user should come to, you can also pass along arguments (values) to that page by using *page argument methods*. Page argument methods work the same way as configuration methods on GUI components, but with page argument methods, you decide the names. For example, if you want to pass along an argument named `age` with the value `10`, you would write:
+
+```js
+ThePageName.age(10)
+```
+
+You can name the argument whatever you want, and you can pass along how many page arguments you want.
+
+The arguments will then be assigned to the page the user comes to, so you can access them through the `p` variable, e.g. use `p.age` to obtain the value.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage-AboutPage&baga=eNrFlGFr2zAQhv/KIQaLwXUdl8BqKMPZshJYy1hTtrKURbXPiZkiGUluG4L/+yS7TuPM6VL2YZAEyXf33ul55awJzXMSrkksEiQhiRlVCi5WUZ4DPmrkiQKzXk/5VNtvLJFqvNJU6i90jj2njmiJupAcNgH7tKyLSlK6JBUsQalI+GNNsoSEfZdwurQdqxLiEpGmCvV3EvrN+sasy1uX5EavVVmLjetNa/BN/83wdrMz/XmR7c79VTwoL15kLJHIe3VoqidGxNPmpzebLDIF5qMX+Nxk5rhN6rDQWvCn5DFPBdA7UWiIWBabPM+eoRfZR7bQs2fvzZqgjfV95+9qQ3H3p1ZVPXCeNKuURslp2eCSRxIGvuG7IuGJ75duTXTwEtFNn26ix8cwWaBCeMgYgzlqSyiTcE9ZgQpSKZZg5wUq58USuVaeLbOzwhnMPo4+RdefJz8vo4vRzAZs6hkc9f/dsTfrvEJSWtvsxkiXsEIqFZjTevvMOxegxbbHNe/NA2cv2sFJUKENTk+bazvBZc7MAVrXt81X/RqnUVKwFyALPsRUyOe3bav3qxFd5TRGtwNYJBFWooDqKhgbKYf+u/dbmNqVHwQrlryjwW7iDt9L0SDlBWOOe2DZDarD6rruvkUYpRplF0H7/1R7E+x4M+KmJJrj/3bm24Lqt8qaI8F03+9Ji1jf7wbWThockBQcohTsUdqe8DWe3Ja/Ae2kXy4=]
 
 :::

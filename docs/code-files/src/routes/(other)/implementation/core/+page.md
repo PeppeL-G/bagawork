@@ -22,6 +22,7 @@ The npm package `@bagawork/core` implements different classes you can use when b
 	import {
 		App,
 		Button,
+		createPageCreator, 
 		Page,
 		Text,
 	} from '@bagawork/core'
@@ -34,17 +35,17 @@ The npm package `@bagawork/core` implements different classes you can use when b
 			}
 		}
 		
-		class StartPage extends Page{
+		const StartPage = createPageCreator(class StartPage extends Page{
 			createGui(){
 				return Button.text(`View greeting`).page(GreetingPage)
 			}
-		}
+		})
 		
-		class GreetingPage extends Page{
+		const GreetingPage = createPageCreator(class GreetingPage extends Page{
 			createGui(){
 				return Text.text(`Hello, world!`)
 			}
-		}
+		})
 		
 		return {
 			App: MyApp,
