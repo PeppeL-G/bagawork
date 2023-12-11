@@ -4,6 +4,7 @@ import { App } from './App.js'
 import { Page } from './Page.js'
 import { evalExpression } from '../functions/eval-expression.js'
 import { getCopyWithRestoredClassInstances } from '../functions/get-copy-with-restored-class-instances.js'
+import { createPageCreator } from '../functions/create-page-creator.js'
 
 const defaultRuntimeSettings = {
 	isPreview: false,
@@ -578,7 +579,9 @@ export class FrameworkApp{
 			
 			// No after direction is true. Then simply send
 			// the user to the current page the user is on.
-			await this.loadPage(this.frameworkPage.page.constructor)
+			await this.loadPage(
+				this.frameworkPage.Page,
+			)
 			
 		}
 		
