@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Fixed bug where default navigation (going to the same page) didn't work`,
+		`Fixed bug where page templates weren't shown`,
 	],
 }, {
 	version: `0.0.18`,

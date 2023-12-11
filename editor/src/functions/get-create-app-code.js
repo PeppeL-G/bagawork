@@ -59,14 +59,20 @@ export function getCreateAppCode(
 	if (startPage && !pages.includes(startPage)){
 		
 		const startPageIndex = pageNames.findIndex(
-			n => n ==startPageName,
+			n => n == startPageName,
 		)
 		
 		if(startPageIndex != -1){
-			pageCodes[startPageIndex] = startPage.code
+			pageCodes[startPageIndex] = getPageCodeWithPageCreator(
+				startPage.code,
+			)
 		}else{
 			pageNames.push(startPageName)
-			pageCodes.push(startPage.code)
+			pageCodes.push(
+				getPageCodeWithPageCreator(
+					startPage.code,
+				),
+			)
 		}
 		
 	}
