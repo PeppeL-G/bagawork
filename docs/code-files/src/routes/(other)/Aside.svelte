@@ -105,6 +105,9 @@
 				text: 'Button',
 				href: '/documentation/button/',
 			}, {
+				text: 'EnterText',
+				href: '/documentation/enter-text/',
+			}, {
 				text: 'Space',
 				href: '/documentation/space/',
 			}, {

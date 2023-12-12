@@ -28,6 +28,9 @@ export const Box = createComponentCreator(BoxComponent)
 import {ColumnsComponent} from './components/ColumnsComponent.js'
 export const Columns = createComponentCreator(ColumnsComponent)
 
+import { EnterTextComponent } from './components/EnterTextComponent.js'
+export const EnterText = createComponentCreator(EnterTextComponent)
+
 import {LayersComponent} from './components/LayersComponent.js'
 export const Layers = createComponentCreator(LayersComponent)
 

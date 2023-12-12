@@ -27,7 +27,7 @@ const Button = (() => new (
 		 * @param theClickHandler The function/method to be called when the
 		 * button is clicked
 		 */
-		onClick(clickHandler: () => void){ return this };
+		handler(clickHandler: () => void){ return this };
 		
 	}
 	

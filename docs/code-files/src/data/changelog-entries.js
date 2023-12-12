@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Fixed bug where default navigation (going to the same page) didn't work`,
 		`Fixed bug where page templates weren't shown`,
+		`Added the EnterText component`,
 	],
 }, {
 	version: `0.0.18`,

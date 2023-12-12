@@ -387,6 +387,7 @@
 	background-color: black;
 	color: white;
 	text-align: center;
+	min-height: 1lh;
 }
 
 .isBack{
