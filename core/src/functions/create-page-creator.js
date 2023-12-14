@@ -45,8 +45,6 @@ function createRealPageCreator(Page){
 	
 	const proxy = new Proxy(Page, {
 		get(target, prop, receiver) {
-
-			console.log(target, prop, receiver)
 			
 			switch(prop){
 				
