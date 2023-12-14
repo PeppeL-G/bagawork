@@ -73,6 +73,9 @@
 				text: 'Book',
 				href: '/examples/apps/book/'
 			}, {
+				text: 'Contacts',
+				href: '/examples/apps/contacts/'
+			}, {
 				text: 'Counter',
 				href: '/examples/apps/counter/'
 			}, {
