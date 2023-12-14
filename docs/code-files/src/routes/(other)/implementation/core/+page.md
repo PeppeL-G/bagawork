@@ -35,13 +35,13 @@ The npm package `@bagawork/core` implements different classes you can use when b
 			}
 		}
 		
-		const StartPage = createPageCreator(class StartPage extends Page{
+		const StartPage = createPageCreator(`StartPage`, class extends Page{
 			createGui(){
 				return Button.text(`View greeting`).page(GreetingPage)
 			}
 		})
 		
-		const GreetingPage = createPageCreator(class GreetingPage extends Page{
+		const GreetingPage = createPageCreator(`GreetingPage`, class extends Page{
 			createGui(){
 				return Text.text(`Hello, world!`)
 			}

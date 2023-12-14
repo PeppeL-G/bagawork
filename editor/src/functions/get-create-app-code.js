@@ -4,7 +4,7 @@ import { getClassName } from "./get-class-name.js"
 const code = `
 function createApp({a, p}){
 	
-	const StartPage = createPageCreator(class StartPage extends Page{
+	const StartPage = createPageCreator('StartPage', class extends Page{
 		// ...
 	})
 	// ...
@@ -25,7 +25,15 @@ function getPageCodeWithPageCreator(pageCode){
 	
 	const pageName = getClassName(pageCode)
 	
-	return `const ${pageName} = createPageCreator(${pageCode})`
+	return `const ${pageName} = createPageCreator(
+		'${pageName}',
+		${
+			pageCode.replace(
+				/^class\s+[^\s]+/,
+				`class`,
+			)
+		}
+		)`
 	
 }
 

@@ -1,4 +1,10 @@
-export function createPageCreator(Page){
+export function createPageCreator(pageName, Page){
+	
+	Object.defineProperty(Page, 'name', {
+		get(){
+			return pageName
+		}
+	})
 	
 	// All pages start with this proxy, but as soon as
 	// it's used to set a page argument, create a new one.
@@ -38,7 +44,9 @@ function createRealPageCreator(Page){
 	}
 	
 	const proxy = new Proxy(Page, {
-		get(target, prop, receiver){
+		get(target, prop, receiver) {
+
+			console.log(target, prop, receiver)
 			
 			switch(prop){
 				
