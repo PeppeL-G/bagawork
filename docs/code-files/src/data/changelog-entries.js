@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Fixed bug where a page can't refer to itself`,
+	],
 }, {
 	version: `0.0.19`,
 	date: `2023-12-12`,
