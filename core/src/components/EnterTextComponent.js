@@ -17,7 +17,7 @@ export class EnterTextComponent extends Component{
 		
 		this.text = props.text?.[0]?.[0] ?? ``
 		this.placeholder = props.placeholder?.[0]?.[0] ?? ``
-		this.handler = props.handler?.[0]?.[0]
+		this.handler = props.handler?.[0]
 		this.store = props.store?.[0]
 		this.page = props.page?.[0]?.[0]
 		this.pageIfEqual = props.pageIfEqual ?? []
@@ -37,7 +37,11 @@ export class EnterTextComponent extends Component{
 		}
 		
 		if(this.handler){
-			this.handler(this.enteredText)
+			
+			const [handler, ...args] = this.handler
+			
+			handler(this.enteredText, ...args)
+			
 		}
 		
 	}

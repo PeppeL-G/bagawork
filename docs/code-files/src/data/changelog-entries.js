@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Fixed bug where a page can't refer to itself`,
 		`Added the example app Contacts`,
+		`Added arguments to handlers`,
 	],
 }, {
 	version: `0.0.19`,

@@ -9,7 +9,7 @@ export class ButtonComponent extends Component{
 		
 		this.wasClicked = false
 		this.text = props.text?.[0]?.[0] ?? ""
-		this.handler = props.handler?.[0]?.[0] ?? null
+		this.handler = props.handler?.[0] ?? null
 		this.page = props.page?.[0]?.[0] ?? null
 		
 	}
@@ -20,7 +20,11 @@ export class ButtonComponent extends Component{
 	
 	onAfter(a, p){
 		if(this.wasClicked && this.handler){
-			this.handler()
+			
+			const [handler, ...args] = this.handler
+			
+			handler(...args)
+			
 		}
 	}
 	
