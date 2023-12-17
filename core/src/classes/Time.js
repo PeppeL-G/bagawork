@@ -45,13 +45,12 @@ export class TimeClass{
 		copy.date.setTime(this.date.getTime())
 		return copy
 	}
-
+	
 	setNow() {
 		this.date.setTime(Date.now())
 		return this
 	}
 	
-
 	setDate(year, month, day) {
 		this.date.setFullYear(year, month, day)
 		return this
@@ -121,6 +120,22 @@ export class TimeClass{
 		const time = new TimeClass()
 		time.date = new Date(json.iso)
 		return time
+	}
+	
+	valueOf(){
+		return this.date.getTime()
+	}
+	
+	isSameAs(otherTime) {
+		return +this == +otherTime
+	}
+	
+	isBefore(otherTime) {
+		return +this < +otherTime
+	}
+	
+	isBeforeOrSameAs(otherTime){
+		return +this <= +otherTime
 	}
 	
 }

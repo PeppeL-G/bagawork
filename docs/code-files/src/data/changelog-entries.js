@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added example to the start page`,
+		`Made Time objects comparable`,
 	],
 }, {
 	version: `0.0.20`,
