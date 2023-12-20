@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Fixed a bug with Time.setDate() (month was wrong)`,
+	],
 }, {
 	version: `0.0.21`,
 	date: `2023-12-20`,

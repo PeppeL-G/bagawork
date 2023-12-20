@@ -52,7 +52,7 @@ export class TimeClass{
 	}
 	
 	setDate(year, month, day) {
-		this.date.setFullYear(year, month, day)
+		this.date.setFullYear(year, month-1, day)
 		return this
 	}
 	
