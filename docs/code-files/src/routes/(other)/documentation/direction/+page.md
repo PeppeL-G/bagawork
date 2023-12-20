@@ -8,36 +8,33 @@ On this page you find the documentation for the `Direction` class.
 ## Introduction
 The `Direction` class represents a possible navigation from one `Page` to another `Page`. It consists of the following parts:
 
-* `page`: A value indicating which `Page` the user should come to
-* `condition`: A function indicating under which circumstance the `Direction` should be used
-* `description`: A text describing the condition in the `Direction` (used on the preview screen in our :online-editor)
+* `when`: A boolean value indicating if this `Direction` should be used
+* `page`: The `Page` the user should come to
+* `description`: A text describing when the `Direction` should be used (used when previewing the app in our :online-editor)
 
-A `Page` usually contains multiple `Direction`s, and when the user has interacted with the `Page` (for example clicked on a `Button`), the first `Direction` in the `Page` whose `condition` returns back `true` will be used to transition to the `page` in that `Direction`.
+A `Page` usually contains multiple `Direction`s, and when the user has interacted with the `Page` (for example clicked on a `Button`), the first `Direction` in the `Page` whose `when` is `true` will be used to transition to the `page` in that `Direction`.
 
 ## Creating a `Direction`
-All parts a `Direction` consists of are specified when creating the instance of the `Direction`. To create a new `Direction`, pass the constructor the parts:
-
-1. A value indicating which `Page` the `Direction` leads to, such as:
-	* `MyPage` (a reference to the `Page` class)
-	* `new MyPage()` (an instance of the `Page` class)
-	* `() => new MyPage()` (a function returning the `Page` instance)
-2. A function (the condition) returning `true` when the `Direction` should be used, such as:
-	* `() => Math.random() < 0.5`
-3. An optional string describing when the condition returns `true`, such as:
-	* `"Fifty-fifty"`
-
-::: tip Example
-
-Example showing how to create a new `Direction`.
+To create a new `Direction` object, simply write:
 
 ```js
-const myDirection = new Direction(
-	GoodNightPage,
-	() => 20 < new Date().getHours(),
-	"Time to sleep",
-)
+Direction
 ```
 
-The direction can then be added to a `Page` using for example [Page.createAfterDirections()](/documentation/page).
+To indicate when/if this direction should be used, call the configuration method `when()`, and pass it the boolean value, e.g.:
 
-:::
+```js
+Direction.when(true)
+```
+
+To indicate which page the user should come to when this direction is used, call the configuration method `page()`, and pass it the page, e.g.:
+
+```js
+Direction.when(true).page(ThePage)
+```
+
+To instruct the editor which text to show, call the configuration method `text()`, and pass it the text, e.g.:
+
+```js
+Direction.when(true).page(ThePage).text(`This is shown in the editor`)
+```

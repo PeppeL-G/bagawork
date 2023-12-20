@@ -94,6 +94,24 @@ In your `Page` classes, you can also use the special Bagawork variable `a` to ac
 
 
 
+## `createBeforeDirections()` - Redirecting the user to another page
+The method `createBeforeDirections()` will be called directly when the user comes to the page. In it, you can return an array of :docs[direction] objects. If there exists a `Direction` object that has `if` set to `true`, the user will immediately be taken to that page, and will never see the GUI of this page (no other methods on this page will be called, not even `onBefore()`).
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage-LuckyPage-UnluckyPage&baga=eNrFVGtr2zAU/SuaviwGYxynCZ2hDHcbJbBHWVO60Aai2deJqSIZSW5qgv/75PhRK7ghGxv7YKPHvcf3nHOvd5ikKfZ3OOQRYB+HlEiJvuRBmiJ4VsAiifR698AeVPmEAoiCG0WEuiYrGFjVjRKgMsFQe1GeFlVSgQsbx5xGICT273c4ibA/tDEjm/KL+xRsYx7HEtQP7I+a9Rz7Z5NiYeNUAxqpFdq02hiVtwW01Zebg/IvIeYCPiYCQpVwJlsW1TvURwpxBt/EbMvRBdo4grCIb6ZMDYY28qxudM38vj5TLayzXQMbvMBcoKHllFQGn7PwMS/rshylyxws74hEtDxcWvYJOF6Nc8toH1LGTKzFS7mFKcRVlhw6ONMwNdZsnUh0dTtF24RSrQfN0U9AmYQIJQypNaBUwFMCW3u/0ReiCmXwpJcSACWqCdVt5iwtoy1s/Ix9z3VtnGvXXbewK4PHxwxutTtmcA+v73wrnXCd0EhoNRuRO2znPENEQOXDm44Rl5lS2oVaE5EjsiIJW9YetA1XN0UPxfHofE9xePauoTg5RrFj678iWbfIX6U5GVVOjt1RM7Qz2KRUl2oMr8E1kI/TOIgyemRoOasG1hjT4g/FuElJCHaPNIGWJdfy7G3RLUsYGp6/7whkZn7gNNuwng8cBh4o+5U3krKMUss+MW0O8rS85sYyROIsiBWIPgXL33PljXfgzSemU4IV/G9n7tZEvZWlOUI3JbzuiaHY0O0XzAwanxDknYLkvYLUrfB3PFkUvwBFKL2t]
+
+:::
+
+::: tip Not needed?
+
+You only need to implement `createBeforeDirections()` if you need it.
+
+:::
+
+
+
+
 
 ## `onBefore()` - Initializing the state of the page
 The method `onBefore()` will be called each time the user comes to the page (before the page is shown on the screen).
@@ -204,6 +222,26 @@ class AskQuestionPage extends Page{
 You only need to handle user input in `onAfter()` if your app's logic require's that. Many simple apps can simply leave this method empty, or not have it at all.
 
 :::
+
+
+
+# `createAfterDirections()` - Redirecting the user to another page
+The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[direction] objects, indicating which page the user should come to.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage-LuckyPage-UnluckyPage&baga=eNrFVH+LmzAY/iq5/LMKoai9HjfhGN42RmG/uOu4lWuhQV9bOZtIEulJ8bsvNuppZ0s3buwPRc37Pnl++GaHaZpib4cDHgL2cJBQKdGX3E9TBM8KWCiRft7N2VyVVyCAKrhXVKjvdAUDy6woASoTDDUL5dfCNBW4IDjiSQhCYu9xh+MQew7BjG7KHfctmGAeRRLUT+yN6ucZ9i6vigXBqQbstBq0iXnpMG8INOzLlwP6n7L4kPgd38phsI6TUAAbmKW5mmqQodK3wfIOaJgjxZESOcp5JlCSBU/vlhapi28zpTirymcgL5o1q+VGzcGPFIgPsYBAxZzJho+5B/qTQpzBNzHdcnSDNkNBWcg3E6YGDkGu1a6uNDzWTBrY4Xat1bzA3CDHGpZuDj5r8nlpjVURfqByryhvKTqB41Y4P1jSh5SxLtbihW7zVxD8jD3XtgnOdei2XRCT7/hUvg3v1853xjNEBRgPLo7FOtXh0xWN2bLS3/xv1u9RVxLHo+u9ROfybS3x6pTElqX/SmQVz6vKvBqZJMf2qJ7ZKWzSRFPtzG5Hqy+fJpEfZsmJmeXsFiIuoDMixV+acZ/SAEiPNb62RY812seC1Joy5Fy3x7vb+Z4n2Yb1bHBYeODsV15byrIksciZbfo4Oa+v/8jhbH/c9DlYns4mG/cgm49Mt/gr+N/JPKypeiPNmat3P55JxzHH7jesWzQ+o8g9B8k9gtRm+CeZLIpfbaW+7Q==]
+
+:::
+
+::: tip Not needed?
+
+You only need to implement `createAfterDirections()` if you need it.
+
+:::
+
+
+
 
 
 ## Referring to a page

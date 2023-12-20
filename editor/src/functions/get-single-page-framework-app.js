@@ -6,6 +6,10 @@ import { getCreateAppCode } from "./get-create-app-code.js"
 // Key is the code, value is the framework app.
 const cachedFrameworkApps = new Map()
 
+const runtimeSettings = {
+	isPreview: true,
+}
+
 export function getSinglePageFrameworkApp(
 	app,
 	pages,
@@ -28,7 +32,7 @@ export function getSinglePageFrameworkApp(
 		return cachedFrameworkApp
 	}
 	
-	const frameworkPage = new FrameworkApp(createAppCode)
+	const frameworkPage = new FrameworkApp(createAppCode, runtimeSettings)
 	frameworkPage.start()
 	
 	cachedFrameworkApps[createAppCode] = frameworkPage

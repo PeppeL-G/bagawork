@@ -4,6 +4,9 @@ export const changelogEntries = [{
 	changes: [
 		`Added example to the start page`,
 		`Made Time objects comparable`,
+		`Added the Direction class`,
+		`Added Page.createBeforeDirections()`,
+		`Added Page.createAfterDirections()`,
 	],
 }, {
 	version: `0.0.20`,

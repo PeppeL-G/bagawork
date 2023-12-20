@@ -141,7 +141,7 @@ sequenceDiagram
 	FrameworkApp->>FrameworkPage: getFirstTrueBeforeDirection()
 	FrameworkPage->>FrameworkApp: null or direction
 	alt Got direction
-		FrameworkApp->>FrameworkApp: loadPage(direction.createPage())
+		FrameworkApp->>FrameworkApp: loadPage(direction.getPage())
 		FrameworkApp->>FrameworkApp: return
 	end
 	FrameworkApp->>FrameworkPage: runOnBefore()
@@ -155,7 +155,7 @@ sequenceDiagram
 	FrameworkPage->>Page: onAfter
 	FrameworkApp->>FrameworkPage: getFirstTrueAfterDirection()
 	alt Got direction
-		FrameworkApp->>FrameworkApp: loadPage(direction.createPage())
+		FrameworkApp->>FrameworkApp: loadPage(direction.getPage())
 	else Get no direction
 		FrameworkApp->>FrameworkApp: loadPage(currentPage)
 	end

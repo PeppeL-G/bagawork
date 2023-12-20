@@ -4,7 +4,7 @@
 const Time = (() => new (
 	
 	/**
-	 * This method returns a new Time object, representing the time now.
+	 * This class represents a point in time.
 	 */
 	class Time {
 

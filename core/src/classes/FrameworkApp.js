@@ -4,7 +4,6 @@ import { App } from './App.js'
 import { Page } from './Page.js'
 import { evalExpression } from '../functions/eval-expression.js'
 import { getCopyWithRestoredClassInstances } from '../functions/get-copy-with-restored-class-instances.js'
-import { createPageCreator } from '../functions/create-page-creator.js'
 
 const defaultRuntimeSettings = {
 	isPreview: false,
@@ -533,13 +532,15 @@ export class FrameworkApp{
 		
 		if(!this.runtimeSettings.isPreview){
 			
+			console.log("Is not previweing.")
+			
 			const beforeDirection = this.frameworkPage.getFirstTrueBeforeDirection()
 			
 			if(beforeDirection){
 				if (okToContinue){
-					await this.loadPage(beforeDirection.createPage())
+					await this.loadPage(beforeDirection.getPage())
 				}else{
-					this.loadPage(beforeDirection.createPage())
+					this.loadPage(beforeDirection.getPage())
 				}
 				return
 			}
@@ -567,13 +568,14 @@ export class FrameworkApp{
 		
 		await this.frameworkPage.runOnAfter()
 		
+		this.frameworkPage.refreshAfterDirections()
 		const afterDirection = this.frameworkPage.getFirstTrueAfterDirection()
 		
 		this.frameworkPage.rememberState()
 		
 		if(afterDirection){
 			
-			await this.loadPage(afterDirection.createPage())
+			await this.loadPage(afterDirection.getPage())
 			
 		}else{
 			

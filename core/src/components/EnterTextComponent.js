@@ -51,7 +51,7 @@ export class EnterTextComponent extends Component{
 		const afterDirections = this.pageIfEqual.map(
 			([conditionText, Page]) => new Direction(
 				Page,
-				() => this.enteredText == conditionText,
+				this.enteredText == conditionText,
 				conditionText,
 			)
 		)

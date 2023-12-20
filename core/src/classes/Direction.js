@@ -6,12 +6,12 @@ export class Direction{
 		this.description = description
 	}
 	
-	createPage(){
+	getPage(){
 		return this.Page
 	}
 	
-	isTrue(){
-		return this.condition()
+	getCondition(){
+		return this.condition
 	}
 	
 	getDescription(){

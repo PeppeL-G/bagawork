@@ -1,6 +1,7 @@
 import { Component } from "../Component.js"
 import { Page } from "@bagawork/core"
 import { getState } from "../functions/get-state.js"
+import { Direction } from "./Direction.js"
 
 export class FrameworkPage{
 	
@@ -103,7 +104,7 @@ export class FrameworkPage{
 	}
 
 	async createBeforeDirections() {
-
+		
 		const {
 			okToContinue,
 			onError,
@@ -114,9 +115,9 @@ export class FrameworkPage{
 			okToContinue && await okToContinue(
 				`${this.Page.proxyName}.createBeforeDirections()`,
 			)
-
+			
 			let createdBeforeDirections
-
+			
 			try {
 				createdBeforeDirections = this.page.createBeforeDirections()
 			} catch (error) {
@@ -126,12 +127,20 @@ export class FrameworkPage{
 				debugger
 				return
 			}
-
+			
 			// TODO: Check that createdBeforeDirections is an array with
 			// Direction instances.
-
 			this.beforeDirections.push(
-				...createdBeforeDirections
+				...createdBeforeDirections.map(
+					directionProxy => {
+						const args = directionProxy.proxyGetArgs
+						return new Direction(
+							args.page,
+							args.when,
+							args.text ?? ``,
+						)
+					},
+				),
 			)
 			
 		}
@@ -167,16 +176,35 @@ export class FrameworkPage{
 			// Direction instances.
 
 			this.afterDirections.push(
-				...createdAfterDirections
+				...createdAfterDirections.map(
+					directionProxy => {
+						const args = directionProxy.proxyGetArgs
+						return new Direction(
+							args.page,
+							args.when,
+							args.text ?? ``,
+						)
+					},
+				),
 			)
 			
 		}
 
 	}
 	
+	refreshAfterDirections(){
+		
+		this.afterDirections = []
+		this.createAfterDirections()
+		this.afterDirections.push(
+			...this.rootGuiComponent.createAfterDirections(),
+		)
+		
+	}
+	
 	getFirstTrueBeforeDirection(){
 		return this.beforeDirections.find(
-			d => d.isTrue()
+			d => d.getCondition()
 		)
 	}
 	
@@ -330,7 +358,7 @@ export class FrameworkPage{
 	
 	getFirstTrueAfterDirection(){
 		return this.afterDirections.find(
-			d => d.isTrue()
+			d => d.getCondition()
 		)
 	}
 	

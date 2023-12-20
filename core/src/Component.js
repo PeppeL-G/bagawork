@@ -53,7 +53,7 @@ export class Component{
 	
 	createAfterDirections(){
 		return [
-			/* new Direction(...) */
+			/* Direction */
 		]
 	}
 	

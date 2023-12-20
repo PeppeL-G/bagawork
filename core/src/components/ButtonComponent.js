@@ -37,7 +37,7 @@ export class ButtonComponent extends Component{
 			afterDirections.push(
 				new Direction(
 					this.page,
-					() => this.wasClicked,
+					this.wasClicked,
 					this.text,
 				)
 			)

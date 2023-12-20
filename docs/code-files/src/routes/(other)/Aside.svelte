@@ -138,6 +138,9 @@
 				text: 'App',
 				href: '/documentation/app/',
 			}, {
+				text: 'Direction',
+				href: '/documentation/direction/',
+			}, {
 				text: 'Page',
 				href: '/documentation/page/',
 			}, {
