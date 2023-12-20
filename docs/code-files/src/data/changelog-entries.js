@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.21`,
+	date: `2023-12-20`,
 	changes: [
 		`Added example to the start page`,
 		`Made Time objects comparable`,
