@@ -318,9 +318,7 @@ export class FrameworkPage{
 		
 		onPageShow()
 		
-		this.afterDirections.push(
-			...this.page.createAfterDirections()
-		)
+		this.createAfterDirections()
 		this.afterDirections.push(
 			...this.rootGuiComponent.createAfterDirections()
 		)
