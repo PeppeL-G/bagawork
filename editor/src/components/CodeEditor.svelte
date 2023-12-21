@@ -24,6 +24,7 @@
 	import rowsTsString from '../editor-type-definitions/bagawork/components/Rows.ts?raw'
 	import columnsTsString from '../editor-type-definitions/bagawork/components/Columns.ts?raw'
 	import layersTsString from '../editor-type-definitions/bagawork/components/Layers.ts?raw'
+	import imageTsString from '../editor-type-definitions/bagawork/components/Image.ts?raw'
 	
 	import mTsString from '../editor-type-definitions/bagawork/m.ts?raw'
 	
@@ -57,6 +58,7 @@
 			{content: rowsTsString},
 			{content: columnsTsString},
 			{content: layersTsString},
+			{content: imageTsString},
 			
 			{content: mTsString},
 			

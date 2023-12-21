@@ -111,6 +111,9 @@
 				text: 'EnterText',
 				href: '/documentation/enter-text/',
 			}, {
+				text: 'Image',
+				href: '/documentation/image/',
+			}, {
 				text: 'Space',
 				href: '/documentation/space/',
 			}, {
