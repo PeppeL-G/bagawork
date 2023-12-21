@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Fixed bug where the editor didn't show created after directions`,
+		`Updated example app Quiz to use new Direction syntax`,
 	],
 }, {
 	version: `0.0.22`,
