@@ -62,6 +62,12 @@
 				text: '8. Exercises',
 				href: '/tutorials/programming/08-exercises/',
 			}],
+		}, {
+			name: 'GUI',
+			links: [{
+				text: '1. Configuration Methods',
+				href: '/tutorials/gui/01-configuration-methods/',
+			}],
 		}],
 		
 		'examples': [{
