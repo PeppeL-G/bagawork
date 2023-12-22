@@ -5,7 +5,7 @@ export const changelogEntries = [{
 		`Fixed bug where the editor didn't show created after directions`,
 		`Updated example app Quiz to use new Direction syntax`,
 		`Added intellisense and link to the Image component`,
-		`Added the tutorial Configuration Methods`,
+		`Added the tutorial Styling`,
 	],
 }, {
 	version: `0.0.22`,

@@ -2,8 +2,13 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 1. Configuration Methods
-This tutorial will teach you some configuration methods you can use on all GUI components.
+# 1. Styling
+This tutorial will teach you how to style components configuration.
+
+
+
+## Introduction
+There exists some configuration methods we can use on all components to style them. In this tutorial, we will take a closer look at those configuration methods.
 
 
 

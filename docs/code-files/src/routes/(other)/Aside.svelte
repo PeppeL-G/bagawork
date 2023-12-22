@@ -65,8 +65,8 @@
 		}, {
 			name: 'GUI',
 			links: [{
-				text: '1. Configuration Methods',
-				href: '/tutorials/gui/01-configuration-methods/',
+				text: '1. Styling',
+				href: '/tutorials/gui/01-styling/',
 			}],
 		}],
 		
