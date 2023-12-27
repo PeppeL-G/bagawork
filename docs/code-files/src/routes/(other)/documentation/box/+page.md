@@ -10,15 +10,15 @@ On this page you find the documentation for the GUI Component `Box`.
 
 
 ## Introduction
-The `Box` component is a layout that can have a width and height specified by you in millimeters. It can contain one optional child, which will occupy the same space as the `Box` component itself. So if you ever want to give another GUI component a specific width and height, just wrap it in a `Box` component.
+The `Box` component is a layout that can have an optional child with a specific width and height specified by you in millimeters. So if you ever want to give a GUI component a specific width and height, just use it as a child in a `Box` component.
 
-If you don't specify the exact width and height of the box, it will get its width/height from the layout component it is used in (such as from a :docs[columns] or a :docs[rows] layout).
+The `Box` component will by default be sized per the GUI layout you use it in or cover the entire screen if it's the root GUI component. But its child component can be smaller than that.
 
 ::: tip Example
 
 Example showing what the `Box` component looks like when shown on the screen.
 
-::bagawork-project[app&baga=eNrFUsGK2zAQ/RV1LmuDCBuXQOtLcUopgbaU7kJ3qResWuPYRJaMNGYTgv+9crxx1yGB9NSD0Ugzb2bee96DaBqI95AbiRBDroRz7OsuaRqGW0ItHfPxPtUp5RYF4R0JS9/FGoPw8JqSRWqtZmOif+1S3UHHoTBKonUQ/9pDJSGec9Ci7icdyoGDKQqH9ADx7TF+9HH3xKHxvSbIodlquEwWHmePS/eXV1t/bqvTfZdmO3uuJJVBtAhnJVbrkg5hXlZKBkNtSve+4+y3yDdra1otPxplbJBZlFk4I58Lsi/GbDhb3dTMGeZqodSbLBzg4agFhy3E0duIw86fi/dHgvdYN8ovOCE64Za4zapIZKsuEOw/o5dYGPvXk5e5Q3BRgh/m2Q10LeqR8V0jcuQT/gPRxCLbmZYdbGBUCs3m7z5kIT+P9FK1tT4z4LQwpWVLnsPLmG/GS9trE+hWqZBfCXtEdx3umAknIhmdFIT2nIL9nzx4E51480l7SLLG/+3Mz1LQjevNscxPv+zJRLH57XnBpkWLK4qiazpFFzq93vBfPHnq/gDiHbZ4]
+::bagawork-project[app&baga=eNrFUtGK2zAQ/BV1X84GES4ugdYvxSmlBNpSegftUR9YtdaxiSwZac0lBP975fjintME0qc+GK+snZ2dGe9BNA3Ee8iNRIghV8I59nmXNA3DLaGWjvl6n+qUcouC8I6Epa9ijUF4+JqSRWqtZuNF/7VLdQcdh8IoidZB/HMPlYR4zkGLumc6tAMHUxQO6QfEt8f6wdfdI4fGz5ogh2Gr4TBZeOQel+4PL7b+2Fan+y7NdvZL5Ju1Na2W740yNsgsyiycPVWSyiBahLMSq3VJhzIvKyWDYURK957ob7iqavR48pdB9smYDWerm5o5w1wtlHqVhQM+HD3isIU4eh1x2Pn34u1R+D3WjfKLTwyYaE7cZlUkslUXhPeP0UssjP2T1TPvUFy05pt5coNei3qUfNeIHPnEgEFoYpHtTMsO8TAqhWbzN++ykJ9Heq/aWp8hOG1MadmS1/BM88V4a3tvAt0qFfIrYQ/orsMdb8KJSUYnBaE952D/hw/ZRCfZfNAekqzxfyfzvRR04/pwLPPslzOZODa/PW/YtGlxRVN0zaTowqSXG/5LJo/db3Jev30=]
 
 :::
 
@@ -27,16 +27,34 @@ Example showing what the `Box` component looks like when shown on the screen.
 ## `child()` - Setting the child
 Use the configuration method `child()` to tell the `Box` component which (optional) child it should have. 
 
+If the `Box` component has been given a size (for example by being the root layout, or by being used as a child in :docs[rows] or :docs[columns] and been given a `size()`, etc.), then it's child will by default get the same size as the `Box` component itself (except its padding).
+
 ::: tip Example
 
 ::bagawork-project[app&link&code=StartPage&baga=eNrFUlFLwzAQ/ivxXmwhDFcZaF+kExEfFNGBDis0NtetmCUlSXFj9L+btq7aucF88qH0krvv7r7vyxpYUUC4hlRxhBBSwYwht6uoKAguLUpuiIvXsYxtqpFZfLRM23s2Q89vbmOr0ZZaki5R31axrKCikCnBURsIX9aQcwiHFCRb1JOacqCgssygfYbwZBNPXVy9Uihcrx6ybXbTHnoLd7O7pevDj62vy3x737FaDt5Y+j7TqpT8UgmlvUQjT/xBwTjP5cwb+YN0ngvutcDYTlz73yCRL9ChrEt6yWSOpAGR3JA6c5T4LdzvhKGwhDA4DSis3H90vmE7wUUh3LY91j2ikXm/ySJeij1s60/JMWZKfxv0NbcN9urxoD5MS1ej7Bg/FixF2uPf8ow0kpUqSeMJsXMmyfDsIvHpbqSTqlzIHQO2C2M7Lq3j8DXmTjV+uOcmSyF8eiBsiuYw3Cbj90RSMsos6l0K1s+69SbY8uZKOkg0w/925mnO7LGpzdHETd/vSU+x4cluwfpFowOKgkM6BXs6/dzwL568Vp+1Lbyy]
 
 :::
 
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/SvafZkNJjQegdYvwx1j9GFjtIE11AVr1rVjokhCkmnS4P8+2a7d2k0g28sejK90P87ROdIBqFIQHSCTDCGCjFNjyPd9rBTBnUXBDHHxIRGJzTRSi3eWavuTFuj57W5iNdpKCzIkmt06ETXUAeSSM9QGoocDlAyieQCCbhukthwCkHlu0N5DdNHHKxfXjwEoN2vU2Q276RYjwgP2QLpZvGH9rSqnfG/lk5ll65IzjcLrUom9UzTD2W+abQotK8G+SC61l6pSbFI/6Kuu5W5mymf05v5MUcZKUXgL/32bRpb6HciAkNilI/m+lpdbdMXWJb10uUbStpHSkCbzIfX7Aa80TpAtnE4DWX+wI4AdROGnMIC9+y+ueo2XuFXcaTTSeiRvbDY3ecwqfkLj5pPiGnOpX6/FC24X/IsLwzFbvTpdYo1kLyvS3gRi11SQ+eXndCLJsHKCVFtxBGBa6CytrDvDC8wPmTbGuksuKs794My2FZrz+qbm9BLGuUV9TMHmMXXehBNvvgrXEhf4v535tab2o2nM0cShn/ZkpNj84rhg46LFGUXhOZPCE5PeMvwbTx7rP/Cf6Lg=]
+
+:::
+
+If the `Box` component has not been given a size, then it will by default be big enough to contain it's child component.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+Kdm5qgwmNR6DzTXHHGL3YGG2gK3XBmnXsmCiSkGSaEPzfK9u1W7sJpLvphbGk8/Xqee09UKUg2kMmGUIEGafGkF+7WCmCW4uCGeLW+0QkNtNILd5aqu0fWqDnt6eJ1WgrLcgQaE7rRNRQB5BLzlAbiB72UDKI5gEIumkmtekQgMxzg/YvROf9+t6t68cAlOs1quyaXXebkeBh9iC62bxR/bMqp3pv5JOZZauSM43C60KJvVU0w9k/mq0LLSvBvksutZeqUqxTP+izruR2pihjpSi8hf8+XSNL/a750DmxSyfufS4vN+iSrQt66XKFpC0jpSFN5Evq9w1exx8RWTg+g0h/sCGALUTh1zCAnXsvvvVsl7hR3LEZMR5hjc36Oo9ZxY+wbR4prjCX+vVzeJnbLf6H/nDNllfHJdZIdrIi7RdA7IoKMr+4TCdIhp0DUm3EgQHTRGdlZd0dXsb8ls6Jho0nKs794MSyezSn1U3N6RHGuUV9iGDzE3XehBNvfghXEhf42c7crag9M405mrjpxz0ZEZufHwY2TlqckBSe0ik80umtwo948lg/A76j5k0=]
+
+:::
+
+
+
 
 
 ## `width()` - Setting the width
-Use the configuration method `width()` to tell the `Box` component how many millimeters wide it should be. Pass it the width as a number.
+Use the configuration method `width()` to tell the `Box` component how many millimeters wide its child should be. Pass it the width as a number.
 
 ::: tip Example
 
@@ -47,7 +65,7 @@ Use the configuration method `width()` to tell the `Box` component how many mill
 
 
 ## `left()` - Left aligning the box
-If you have given the `Box` component a width, it will by default be centered at the space given to it by its parent layout. Use the configuration method `left()` to tell the `Box` component that is should be to the left instead.
+If you use the configuration method `width()`, the child will by default be centered at the space given to it by its parent layout. Use the configuration method `left()` to tell the `Box` component that the child should be to the left instead.
 
 ::: tip Example
 
@@ -60,7 +78,7 @@ If you have given the `Box` component a width, it will by default be centered at
 
 
 ## `right()` - Right aligning the box
-If you have given the `Box` component a width, it will by default be centered at the space given to it by its parent layout. Use the configuration method `right()` to tell the `Box` component that is should be to the right instead.
+If you use the configuration method `width()`, the child will by default be centered at the space given to it by its parent layout. Use the configuration method `right()` to tell the `Box` component that the child should be to the right instead.
 
 ::: tip Example
 
@@ -71,7 +89,7 @@ If you have given the `Box` component a width, it will by default be centered at
 
 
 ## `height()` - Setting the height
-Use the configuration method `height()` to tell the `Box` component how many millimeters tall it should be. Pass it the height as a number.
+Use the configuration method `height()` to tell the `Box` component how many millimeters tall its child should be. Pass it the height as a number.
 
 ::: tip Example
 
@@ -83,7 +101,7 @@ Use the configuration method `height()` to tell the `Box` component how many mil
 
 
 ## `top()` - Top aligning the box
-If you have given the `Box` component a height, it will by default be centered at the space given to it by its parent layout. Use the configuration method `top()` to tell the `Box` component that is should be at the top instead.
+If you use the configuration method `height()`, the child will by default be centered at the space given to it by its parent layout. Use the configuration method `top()` to tell the `Box` component that the child should be to the top instead.
 
 ::: tip Example
 
@@ -96,7 +114,7 @@ If you have given the `Box` component a height, it will by default be centered a
 
 
 ## `bottom()` - Bottom aligning the box
-If you have given the `Box` component a height, it will by default be centered at the space given to it by its parent layout. Use the configuration method `bottom()` to tell the `Box` component that is should be at the bottom instead.
+If you use the configuration method `height()`, the child will by default be centered at the space given to it by its parent layout. Use the configuration method `bottom()` to tell the `Box` component that the child should be to the bottom instead.
 
 ::: tip Example
 
@@ -126,6 +144,6 @@ If you use `aspectRatio()` without using `width()` and `height()`, then the `Box
 
 Note: Resizing the screen in this example won't work correctly, since the aspect ratio is only computed correctly when the app starts (when the app runs for real on a device, the screen size won't change, so this won't be a problem in production).
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk1Fr2zAQx7+K0MtsEKHxKGx+GU4ppQ8rpQ1spS5Ytc62qCIZ6Uxigr/75Ljx6iyB7KkPts/S3f1Pv7+9pbyuabyluRFAY5or7hz52SZ1TWCDoIUjPt6mOsXcAkd4RG7xnpcQhLvVFC1gYzUZN/rVLtUd7RgtjBJgHY2ft1QKGs8Z1XzVK+3SKaOmKBzgbxpf7OMnH3cvjNa+16RyaHY7vEwGHrXHofuXD1PfNPJw3oXZzF55/lZa02hxZZSxQWZBZOGs5kJIXQbzcMZdDTk+cJQmiBjxK3kllQiGVikuveC/bZRcge+DfjPIlhWQtRRYEekIV2veOj8mz1G1JCLoUx15lWUJlmDFtb8BqUCWFc6ycNAJR6aMbmgcfY0Ybf3z8vse1BJWtfIHnQCbMErc222RiEadANVfRi+gMPavt++6Q3AS5YNZu4GLBT2ieax5DmwCagCSWCCtacjOzuHM828/spAdr/RMm5U+InCYmOKiQX+Gd5k7s7PSf6m6USpkZ5Y9gTuvbr8TTiAZnRQI9hjB/o8YvIkOvLnWviQp4bOd+VVx/OJ6cyzx6qc9mRCbXxwHNk26PCMpOqdTdKLTxwn/x5OX7g9urdFx]
+::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KppvZIELjUdh8M5wxRi82RhvYSl2wYh3boopkpOMlJvi/T44br04TSK92YftI51PPK+8or2sa72huBNCY5oo7R763SV0T2CJo4Yi3d6lOMbfAEe6QW/zJSwjC/W6KFrCxmoyOfrdLdUc7RgujBFhH44cdlYLGc0Y1X/ed9uGUUVMUDvA3ja8O9r23u0dGa19rkjkUuxkWk4HH3uPQ/eLF1N8aeTzvwmxnK54/ldY0WnwxytggsyCycFZzIaQug3k4466GHG85ShNEjPidvJJKBEOpFJe+4esySq7B10HvDLJlBWQjBVZEOsLVhrfOj8lzVC2JCPpQR1ayLMESrLj2LyAVyLJCRlYNEg1/vOs4wvmDgX6XhcMk4Uid0S2Now8Ro63/Xn86oFzCulYexQTphGLinm6KRDTqDMr+MXoBhbH/1H/uOxhnYd+ajRvIWdAjvLua58AmKAdkiQXSmobsBR/OPP/4OQvZ6UxPvVnrEw2OA1NcNOjP8Nzmh9mL7e+ybpQK2YVp9+Auyzt4wgkko5MCwZ4i2P8zgzbRkTZftU9JSvjfyvyqOL53vTiW+O7nNZkQm1+dBjYNur4gKLqkUnSm0ssJ36LJY/cXCrvdlw==]
 
 :::

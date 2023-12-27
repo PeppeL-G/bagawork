@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Updated example app Quiz to use new Direction syntax`,
 		`Added intellisense and link to the Image component`,
 		`Added the tutorial Styling`,
+		`Improved docs for the Box component`,
 	],
 }, {
 	version: `0.0.22`,

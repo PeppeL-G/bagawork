@@ -85,7 +85,7 @@ export default class LayersElement extends ParentElement{
 		// Fix CSS.
 		applyAttributesToElement(
 			boxComponent,
-			this.boxDiv,
+			this,
 		)
 		
 	}
