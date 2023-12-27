@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Added intellisense and link to the Image component`,
 		`Added the tutorial Styling`,
 		`Improved docs for the Box component`,
+		`Improved docs for the Image component`,
 	],
 }, {
 	version: `0.0.22`,
