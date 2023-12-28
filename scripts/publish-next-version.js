@@ -17,7 +17,7 @@
 import childProcess from "node:child_process"
 import fs from "node:fs"
 
-const newVersion = "0.0.23"
+const newVersion = "?.?.?"
 
 const pathToCorePackageJsonFile = `./core/package.json`
 const pathToWebComponentsPackageJsonFile = `./web-components/package.json`
