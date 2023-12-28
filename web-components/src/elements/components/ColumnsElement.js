@@ -49,6 +49,8 @@ export default class ColumnsElement extends ParentElement{
 				return `minmax(auto, ${size}fr)`
 			} else if (childComponent.constructor.name == "SpaceComponent") {
 				return '1fr'
+			} else if (childComponent.constructor.name == "ImageComponent") {
+				return 'max-content'
 			}else{
 				return 'max-content'
 			}

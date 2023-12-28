@@ -9,6 +9,7 @@ export const changelogEntries = [{
 		`Improved docs for the Box component`,
 		`Improved docs for the Image component`,
 		`Added the tutorial Layouts`,
+		`Added the tutorial Images`,
 	],
 }, {
 	version: `0.0.22`,

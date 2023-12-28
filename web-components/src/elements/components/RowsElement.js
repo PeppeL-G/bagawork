@@ -48,6 +48,8 @@ export default class RowsElement extends ParentElement{
 				return `minmax(auto, ${childComponent.size}fr)`
 			} else if (childComponent.constructor.name == "SpaceComponent"){
 				return '1fr'
+			} else if (childComponent.constructor.name == "ImageComponent") {
+				return 'max-content'
 			}else if(childComponent){
 				return 'min-content'
 			}

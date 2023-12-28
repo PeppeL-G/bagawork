@@ -12,10 +12,18 @@ export default class ImageElement extends ParentElement{
 		super()
 		
 		this.style.boxSizing = 'border-box'
-		this.style.display = 'block'
-		this.style.width = "100%"
-		this.style.height = "100%"
-		this.style.margin = "0 auto"
+		this.style.display = `block`
+		this.style.margin = `auto`
+		this.style.objectFit = "contain"
+		this.style.maxWidth = `100%`
+		this.style.maxHeight = `100%`
+		this.style.width = `100%`
+		this.style.height = `100%`
+		
+		this.addEventListener('load', () => {
+			this.width = this.naturalWidth
+			this.height = this.naturalHeight
+		})
 		
 	}
 	
