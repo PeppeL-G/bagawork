@@ -70,6 +70,9 @@
 			}, {
 				text: '2. Layouts',
 				href: '/tutorials/gui/02-layouts/',
+			}, {
+				text: '3. Images',
+				href: '/tutorials/gui/03-images/',
 			}],
 		}],
 		
