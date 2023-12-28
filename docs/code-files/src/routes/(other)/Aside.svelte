@@ -67,6 +67,9 @@
 			links: [{
 				text: '1. Styling',
 				href: '/tutorials/gui/01-styling/',
+			}, {
+				text: '2. Layouts',
+				href: '/tutorials/gui/02-layouts/',
 			}],
 		}],
 		
