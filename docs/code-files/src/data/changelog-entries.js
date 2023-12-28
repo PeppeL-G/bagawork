@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.23`,
+	date: `2023-12-28`,
 	changes: [
 		`Fixed bug where the editor didn't show created after directions`,
 		`Updated example app Quiz to use new Direction syntax`,
