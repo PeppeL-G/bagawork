@@ -134,6 +134,73 @@ const Time = (() => new (
 		 * @returns The copy
 		 */
 		getCopy() { return this };
+
+		/**
+		 * This method checks if `otherTime` represents the same
+		 * time as your `Time` object.
+		 * @param otherTime The time to compare with
+		 * @returns `true` if they represent the same time, otherwise `false`
+		 */
+		isSameAs(otherTime) { return true };
+
+		/**
+		 * This method checks if your `Time` object represents a time
+		 * taking place before the `otherTime` object.
+		 * @param otherTime The time to compare with
+		 * @returns `true` if your `Time` object takes place before `otherTime`, otherwise `false`
+		 */
+		isBefore(otherTime) { return true };
+
+		/**
+		 * This method checks if your `Time` object represents a time
+		 * taking place before the `otherTime` object, or at the same
+		 * time.
+		 * @param otherTime The time to compare with
+		 * @returns `true` if your `Time` object takes place before or at the same time as `otherTime`, otherwise `false`
+		 */
+		isBeforeOrSameAs(otherTime) { return true };
+
+		/**
+		 * This method adds some years to the `Time` object.
+		 * @param years The number of years to add
+		 */
+		addYears(years) { return this };
+
+		/**
+		 * This method adds some months to the `Time` object.
+		 * @param months The number of months to add
+		 */
+		addMonths(months) { return this };
+
+		/**
+		 * This method adds some days to the `Time` object.
+		 * @param days The number of days to add
+		 */
+		addDays(days) { return this };
+
+		/**
+		 * This method adds some hours to the `Time` object.
+		 * @param hours The number of hours to add
+		 */
+		addHours(hours) { return this };
+
+		/**
+		 * This method adds some minutes to the `Time` object.
+		 * @param minutes The number of minutes to add
+		 */
+		addMinutes(minutes) { return this };
+
+		/**
+		 * This method adds some seconds to the `Time` object.
+		 * @param seconds The number of seconds to add
+		 */
+		addSeconds(seconds) { return this };
+
+		/**
+		 * This method adds some milliseconds to the `Time` object.
+		 * @param milliseconds The number of milliseconds to add
+		 */
+		addMilliseconds(milliseconds) { return this };
 		
 	}
 	

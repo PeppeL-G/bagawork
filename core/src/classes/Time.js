@@ -138,4 +138,39 @@ export class TimeClass{
 		return +this <= +otherTime
 	}
 	
+	addMilliseconds(milliseconds) {
+		this.date.setMilliseconds(this.date.getMilliseconds() + milliseconds)
+		return this
+	}
+	
+	addSeconds(seconds) {
+		this.date.setSeconds(this.date.getSeconds() + seconds)
+		return this
+	}
+	
+	addMinutes(minutes) {
+		this.date.setMinutes(this.date.getMinutes() + minutes)
+		return this
+	}
+	
+	addHours(hours) {
+		this.date.setHours(this.date.getHours() + hours)
+		return this
+	}
+	
+	addDays(days) {
+		this.date.setDate(this.date.getDate() + days)
+		return this
+	}
+	
+	addMonths(months) {
+		this.date.setMonth(this.date.getMonth() + months)
+		return this
+	}
+	
+	addYears(years) {
+		this.date.setFullYear(this.date.getFullYear() + years)
+		return this
+	}
+	
 }

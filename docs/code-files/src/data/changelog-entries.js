@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the example app Glossaries`,
+		`Added the addXXX() methods to the Time class`,
 	],
 }, {
 	version: `0.0.23`,

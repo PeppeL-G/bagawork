@@ -12,7 +12,17 @@ You can use the `Time` class to create an object that represents a specific poin
 
 
 ## Creating a new `Time` object
-To create a new `Time` object, simply write `Time`. This way, you obtain a `Time` object representing the time `0001-01-01 00:00:00`.
+To create a new `Time` object, simply write `Time`. This way, you obtain a `Time` object representing the time `0001-01-01 00:00:00`. Below you can see the names for the different parts a `Time` object consists of.
+
+```
+   Date     Clock  
+┝━━━━━━━━┥ ┝━━━━━━┥
+0001-01-01 00:00:00
+┝━━┥ ┝┥ ┝┥ ┝┥ ┝┥ ┝┥
+Year │  │ Hour │  │
+  Month │  Minute │
+       Day     Second
+```
 
 Often, you want to obtain the time that happen to be when your code is running. Call the method `setNow()` on your `Time` object to change the time in it to the time that happened to be when the computer calls `setNow()`.
 
@@ -60,6 +70,39 @@ Use the different `setXXX()` methods on the `Time` object to change which time i
 ::bagawork-project[app&link&code=StartPage&baga=eNrFU2Fr2zAQ/SviGMwCYZyMbsMwhtuN0Q8bYw10YS5E2OckVJGMdGYNxv99Ut16cYi3fBjsg23pdO/e3XtWC7KuIW2hMCVCCoWSzrHP+6yuGT4Q6tIxv25znVN4CouS8Iakpa9yjRHvT8giNVaz4SBEux7UQSegMqpE6yD90cK2hHQmQMtdYHyEgABTVQ7pO6TJ83rp192dgNrXGyH7Ytf9ZtT4wD80HzZD97TdIXvHFv4Te4IrZYr76EKw14K94SGyRGmjeZIkfDzwp2Z7POo389PFxWarSos66o9yuqllgeJ5t/BdxORf0WqN9MEXinjKXrR1HDqJh1i34hOYvsUj0FPwEHXIy0fiC3iA1I8kYA/pq2RQdIG7Wnn2kbIjMTN3f11lZaP+oKjRl1gZ+/tHOOD+d+JlFtneNOzRd0Ybqdns7fuJ8XO6MqrZ6RMEx4k5XTbkZ3ii+WJWPA7aRLpRioszYUt05+H4CYOChFlFaE8pGK5O7838yJuP2kOyNf5vZ243kl66YI5lnn3ak5Fis+S0YOOkizOS5udUmk9Umro0f/PkrvsFSoLhVA==]
 
 :::
+
+There are also several `addXXX()` methods avaialble to add seconds, minutes, hours, etc. to the `Time` object:
+
+* `addMilliseconds()` to add a some number of milliseconds to the `Time` object
+* `addSeconds()` to add a some number of seconds to the `Time` object
+* `addMinutes()` to add a some number of minutes to the `Time` object
+* `addHours()` to add a some number of hours to the `Time` object
+* `addDays()` to add a some number of days to the `Time` object
+* `addMonths()` to add a some number of months to the `Time` object
+* `addYears()` to add a some number of years to the `Time` object
+
+::: tip Removing time
+
+No `removeXXX()` methods exist. Instead, simply pass negative numbers to the `addXXX()` methods to remove time, e.g. `addHours(-1)` to remove one hour from the `Time` object.
+
+:::
+
+
+::: warning Watch out!
+
+`addMonths()` and `addYears()` are not always intuitive to use. For example, if if you have a `Time` object representing the date `2023-01-31` and you add one month to it, it will not represent the date `2023-02-31`, because that date doesn't exist! Instead, some logic is applied to find a logical valid date close to `2023-02-31`.
+
+:::
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/SviMpgNnkkyBsMwhvtB6cPKWANdmQsR1nViaktGkkmN8X+fFLVOHOzND4M92OjjnnvuPeeqBVpVELWQCoYQQVpQpci3Jq4qgi8aOVPErNuEJ9p+qUSq8V5Tqb/TLXq+u9ESdS056S/saedAHXQBZKJgKBVEv1rIGUTLADgtLeMBAgGILFOof0K0eFs/mnX3FEBl8g2QLtmt2wwK7/n74u2mr75BpVEy2pAvZJ2XGBqWO7H3/JAydkUb5X1Y+jZQi5Egd1EKKcV+MoHDH6W6qfNzkX6IvQrTXV4widxzV4m+r2iKwdtubeoPtfl5m8e+6FxF5F1bhX0b4Rb1lSHx/G7jj2HX4hR36GoG5rXFI8wdjCNP6/YHtgfwAtFqYfxsIPq46L1cY1kVJs/A04GNsXq+zWJWF3/wUvALzIQ8juAJ978TP5ZIGlGTw8QRvaOcLD9/nWg/0ZeiqEs+QnAemOiL2gwTf6W5Exs/tNp4vC4KP5gJM6MxD+ePGGQljDMzSGMK2kfrvFmdeXPNDSTe4v925mFH9XtlzZHEsE97MlBsuRgXbBj0aUbQak6m1USmqUfzN0+eut9RTRAX]
+
+:::
+
+
+
+
 
 
 
