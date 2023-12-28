@@ -91,6 +91,9 @@
 				text: 'Counter',
 				href: '/examples/apps/counter/'
 			}, {
+				text: 'Glossaries',
+				href: '/examples/apps/glossaries/'
+			}, {
 				text: 'Power Point Presentation',
 				href: '/examples/apps/power-point-presentation/'
 			}, {
