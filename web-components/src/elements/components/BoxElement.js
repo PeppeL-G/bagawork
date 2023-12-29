@@ -7,7 +7,7 @@ const ParentElement = (
 	HTMLElement
 )
 
-export default class LayersElement extends ParentElement{
+export default class BoxElement extends ParentElement{
 	
 	constructor() {
 		super()
@@ -95,6 +95,6 @@ export default class LayersElement extends ParentElement{
 if(typeof customElements != "undefined"){
 	customElements.define(
 		"bagawork-box",
-		LayersElement,
+		BoxElement,
 	)
 }
