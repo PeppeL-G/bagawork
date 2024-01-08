@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the example app Glossaries`,
 		`Added the addXXX() methods to the Time class`,
+		`Added the components Paper, PaperLine, PaperCircle and PaperRectangle`,
 	],
 }, {
 	version: `0.0.23`,

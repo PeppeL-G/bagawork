@@ -23,6 +23,18 @@ export const Button = createComponentCreator(ButtonComponent)
 import { ImageComponent } from './components/ImageComponent.js'
 export const Image = createComponentCreator(ImageComponent)
 
+import {PaperComponent} from './components/PaperComponent.js'
+export const Paper = createComponentCreator(PaperComponent)
+
+import { PaperCircleComponent } from './components/PaperCircleComponent.js'
+export const PaperCircle = createComponentCreator(PaperCircleComponent)
+
+import { PaperLineComponent } from './components/PaperLineComponent.js'
+export const PaperLine = createComponentCreator(PaperLineComponent)
+
+import { PaperRectangleComponent } from './components/PaperRectangleComponent.js'
+export const PaperRectangle = createComponentCreator(PaperRectangleComponent)
+
 import {TextComponent} from './components/TextComponent.js'
 export const Text = createComponentCreator(TextComponent)
 
