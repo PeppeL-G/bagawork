@@ -73,6 +73,9 @@
 			}, {
 				text: '3. Images',
 				href: '/tutorials/gui/03-images/',
+			}, {
+				text: '4. Paper',
+				href: '/tutorials/gui/04-paper/',
 			}],
 		}],
 		
