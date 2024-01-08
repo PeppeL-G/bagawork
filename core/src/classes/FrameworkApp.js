@@ -532,8 +532,6 @@ export class FrameworkApp{
 		
 		if(!this.runtimeSettings.isPreview){
 			
-			console.log("Is not previweing.")
-			
 			const beforeDirection = this.frameworkPage.getFirstTrueBeforeDirection()
 			
 			if(beforeDirection){
