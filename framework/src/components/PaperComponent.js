@@ -13,7 +13,7 @@ export class PaperComponent extends Component{
 		return this
 	}
 	
-	children(children) {
+	children(...children) {
 		this._children = children.flat(Infinity)?.filter(
 			c => c,
 		)
