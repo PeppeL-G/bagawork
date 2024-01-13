@@ -54,6 +54,7 @@ export class Component{
 		this._borderRight  = sides.includes(`r`) ? [amountInMm, color] : this._borderRight
 		this._borderTop    = sides.includes(`t`) ? [amountInMm, color] : this._borderTop
 		this._borderBottom = sides.includes(`b`) ? [amountInMm, color] : this._borderBottom
+		return this
 	}
 	
 	onAfter(a, p){
