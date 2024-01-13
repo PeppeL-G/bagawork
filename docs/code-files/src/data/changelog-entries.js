@@ -1,11 +1,16 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.24`,
+	date: `2024-01-13`,
 	changes: [
 		`Added the example app Glossaries`,
 		`Added the addXXX() methods to the Time class`,
 		`Added the components Paper, PaperLine, PaperCircle and PaperRectangle`,
 		`Added the tutorial Paper`,
+		`Merged the npm packages @bagawork/core and @bagawork/web-components into @bagawork/framework, and stopped using web components`,
 	],
 }, {
 	version: `0.0.23`,

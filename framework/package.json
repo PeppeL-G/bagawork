@@ -1,0 +1,15 @@
+{
+  "name": "@bagawork/framework",
+  "version": "0.0.24",
+  "description": "Contains the core functionally for creating Bagawork apps.",
+  "main": "src/index.js",
+  "files": [
+    "./src/"
+  ],
+  "type": "module",
+  "keywords": [
+    "bagawork"
+  ],
+  "author": "Peter Larsson-Green",
+  "license": "ISC"
+}
