@@ -1,5 +1,11 @@
+<script>
+	
+	const year = new Date().getFullYear()
+	
+</script>
+
 <footer>
-	Copyright Peter L-G 2023
+	Copyright Peter L-G {year}
 </footer>
 
 <style>
