@@ -39,7 +39,7 @@ export class RowsComponent extends Component {
 		
 		// Fix HTML.
 		const childComponents = this._children.filter(
-			c => c.keepIf,
+			c => c._keepIf,
 		)
 		
 		for (const childComponent of childComponents) {

@@ -131,7 +131,7 @@ export class BoxComponent extends Component {
 			childElement.style.justifySelf = 'end'
 		}
 		
-		if (this._child?.keepIf ?? false) {
+		if (this._child?._keepIf ?? false) {
 			childElement.appendChild(
 				this._child.createElement(),
 			)
