@@ -61,9 +61,9 @@ export class PaperLineComponent{
 			(this._endY / svgHeight) * 100
 		)
 		const thickness = (
-			this.thickness == undefined ?
+			this._thickness == undefined ?
 			1 :
-			this.thickness / Math.min(svgWidth, svgHeight) * 100
+			this._thickness / Math.min(svgWidth, svgHeight) * 100
 		)
 		
 		lineElement.setAttribute('x1', `${x1}%`)
