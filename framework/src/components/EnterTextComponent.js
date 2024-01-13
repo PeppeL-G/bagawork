@@ -17,6 +17,7 @@ export class EnterTextComponent extends Component{
 	
 	text(text){
 		this._text = text
+		this.enteredText = text
 		return this
 	}
 	
