@@ -15,8 +15,7 @@ For more information, see [bagawork.com](https://bagawork.com/).
 ## This repository
 This repository contains all code relevant to the Bagawork framework:
 
-* [./core/](./core/) - The npm package `@bagawork/core`
-* [./web-components/](./web-components/) - The npm package `@bagawork/web-components`
+* [./framework/](./framework/) - The npm package `@bagawork/framework`
 * [./editor/](./editor/) - The npm package `@bagawork/editor`
 * [./docs/](./docs/) - The source code for [bagawork.com](https://bagawork.com/)
 * [./scripts/](./scripts/) - Scripts for doing some tasks, like publishing next version of Bagawork

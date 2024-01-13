@@ -194,11 +194,8 @@
 		'implementation': [{
 			name: 'npm packages',
 			links: [{
-				text: '@bagawork/core',
-				href: '/implementation/core/'
-			}, {
-				text: '@bagawork/web-components',
-				href: '/implementation/web-components/'
+				text: '@bagawork/framework',
+				href: '/implementation/framework/'
 			}, {
 				text: '@bagawork/editor',
 				href: '/implementation/editor/'

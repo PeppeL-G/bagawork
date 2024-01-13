@@ -7,7 +7,7 @@ On this page you find the documentation for the `m` variable.
 
 
 ## Introduction
-The `m` variable, short for **M**ath, contains various methods you can call to perform various mathematical operations. You can use wherever you want in your code.
+The `m` variable, short for **M**ath, contains various methods you can call to perform various mathematical operations. You can use it wherever you want in your code.
 
 
 

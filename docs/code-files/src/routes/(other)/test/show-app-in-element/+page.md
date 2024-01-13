@@ -3,6 +3,6 @@
 </script>
 
 # `showAppInElement()`
-This page is used to test that `showAppInElement()` from `@bagawork/web-components` work as it should.
+This page is used to test that `showAppInElement()` from `@bagawork/framework` work as it should.
 
 <ShowAppInElement />

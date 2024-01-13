@@ -9,15 +9,14 @@ These Implementation pages are only intended for those who want to learn how Bag
 
 
 ## npm packages
-The Bagawork framework is implemented as three different [npm](https://www.npmjs.com/) packages:
+The Bagawork framework is implemented as two different [npm](https://www.npmjs.com/) packages:
 
-* [@bagawork/core](/implementation/core) contains the logic for describing how a Bagawork app should work
-* [@bagawork/web-components](/implementation/web-components) contains HTML Web Components for running and visualizing a Bagawork app on a webpage
+* [@bagawork/framework](/implementation/framework) contains the things needed to run a BagaWork app
 * [@bagawork/editor](/implementation/editor) contains a [Svelte](https://svelte.dev) component one can use to run our :online-editor
 
-They all follow the [SemVer](https://semver.org/) versioning convention, and they all use the same version number (e.g. if changes is made to one package and that's package version number is updated, the other packages will be updated to use that version number too), so you should rather see these three packages as one and the same, and not as three different packages.
+They all follow the [SemVer](https://semver.org/) versioning convention, and they all use the same version number, i.e. when the version number of one package is updated, the other one is updated to the same one version number, even if nothing has changed in it. So if you use both of these packages, always use the same version number in them!
 
-Changes made to each version is documented on the [Changelog](../changelog/) page.
+Changes made in each version is documented on the [Changelog](../changelog/) page.
 
 
 

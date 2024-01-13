@@ -9,11 +9,13 @@
 	import { onDestroy } from 'svelte'
 	
 	let codeEditor
+	let forceRestartAppKey = Math.random()
 	
 	function save(){
 		const newCode = codeEditor.getCode()
 		$app.code = newCode
 		$app = $app
+		forceRestartAppKey = Math.random()
 	}
 	
 	onDestroy(() => {
@@ -34,12 +36,14 @@
 				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
 				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
 			>
-				<ViewCompleteApp />
+				{#key forceRestartAppKey}
+					<ViewCompleteApp />
+				{/key}
 			</div>
 			
 			<div class="preview-buttons">
 				<button on:click={save}>
-					Refresh
+					Restart
 				</button>
 			</div>
 			

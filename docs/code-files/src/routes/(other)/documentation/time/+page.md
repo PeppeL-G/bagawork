@@ -90,7 +90,7 @@ No `removeXXX()` methods exist. Instead, simply pass negative numbers to the `ad
 
 ::: warning Watch out!
 
-`addMonths()` and `addYears()` are not always intuitive to use. For example, if if you have a `Time` object representing the date `2023-01-31` and you add one month to it, it will not represent the date `2023-02-31`, because that date doesn't exist! Instead, some logic is applied to find a logical valid date close to `2023-02-31`.
+`addMonths()` and `addYears()` are not always intuitive to use. For example, if you have a `Time` object representing the date `2023-01-31` and you add one month to it, it will not represent the date `2023-02-31`, because that date doesn't exist! Instead, some logic is applied to find a logical valid date close to `2023-02-31`.
 
 :::
 

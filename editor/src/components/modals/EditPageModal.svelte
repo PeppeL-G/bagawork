@@ -18,6 +18,7 @@
 	let showEditAppModal = false
 	let showDebugModal = false
 	let showEditStateModal = false
+	let forceRestartAppKey = Math.random()
 	
 	let appState = null
 	const runtimeSettings = {
@@ -32,6 +33,7 @@
 		const newCode = codeEditor.getCode()
 		page.code = newCode
 		$pages = $pages
+		forceRestartAppKey = Math.random()
 	}
 	
 	function remove(){
@@ -67,14 +69,16 @@
 				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
 				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
 			>
-				<ViewApp
-					createAppCode={getCreateAppCode(
-						$app,
-						$pages,
-						page,
-					)}
-					{runtimeSettings}
-				/>
+				{#key forceRestartAppKey}
+					<ViewApp
+						createAppCode={getCreateAppCode(
+							$app,
+							$pages,
+							page,
+						)}
+						{runtimeSettings}
+					/>
+				{/key}
 			</div>
 			
 			<div class="preview-buttons">

@@ -16,7 +16,7 @@ export const defaultProject = {
 class MyApp extends App{
 	
 	createStartPage(){
-		return AskFeelingPage
+		return StartPage
 	}
 	
 }
@@ -28,22 +28,13 @@ class MyApp extends App{
 		name: "Start",
 		offsetX: 0,
 		offsetY: 0,
-	}, {
-		id: 2,
-		name: "SecondFolder",
-		offsetX: 0,
-		offsetY: 0,
 	}],
 	
 	pages: [{
 		id: 1,
 		folderId: 1,
 		code: `
-class AskFeelingPage extends Page{
-	
-	onBefore(){
-		
-	}
+class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
@@ -62,10 +53,6 @@ class AskFeelingPage extends Page{
 		)
 	}
 	
-	onAfter(){
-		
-	}
-	
 }
 	`.trim(),
 		x: 200,
@@ -76,21 +63,13 @@ class AskFeelingPage extends Page{
 		code: `
 class FeelingGoodPage extends Page{
 	
-	onBefore(){
-		
-	}
-	
 	createGui(){
 		return Rows.children(
 			Space,
 			Text.text(\`Glad to hear that! :)\`),
 			Space,
-			Button.text(\`Restart\`).page(AskFeelingPage)
+			Button.text(\`To StartPage\`).page(StartPage)
 		)
-	}
-	
-	onAfter(){
-		
 	}
 	
 }
@@ -103,10 +82,6 @@ class FeelingGoodPage extends Page{
 		code: `
 class FeelingBadPage extends Page{
 	
-	onBefore(){
-		
-	}
-	
 	createGui(){
 		return Rows.children(
 			Space,
@@ -116,46 +91,16 @@ class FeelingBadPage extends Page{
 		)
 	}
 	
-	onAfter(){
-		
-	}
-	
 }
 	`.trim(),
 		x: 500,
 		y: 150
-	}, {
-		id: 4,
-		folderId: 2,
-		code: `
-class PageInOtherFolder extends Page{
-	
-	onBefore(){
-		
-	}
-	
-	createGui(){
-		return Text.text(\`This is a page in the other folder!\`)
-	}
-	
-	onAfter(){
-		
-	}
-	
-}
-	`.trim(),
-		x: 250,
-		y: 300
 	}],
 	
 	pageTemplates: [{
 		id: 1,
 		code: `
 class AskIfAdultPage extends Page{
-	
-	onBefore(){
-		
-	}
 	
 	createGui(){
 		return Rows.children(
@@ -172,20 +117,12 @@ class AskIfAdultPage extends Page{
 		)
 	}
 	
-	onAfter(){
-		
-	}
-	
 }
 		`.trim()
 	}, {
 		id: 2,
 		code: `
 class EnterAgePage extends Page{
-	
-	onBefore(){
-		
-	}
 	
 	createGui(){
 		return Rows.children(
@@ -198,10 +135,6 @@ class EnterAgePage extends Page{
 			Button.text(\`25\`).page(null),
 			Space,
 		)
-	}
-	
-	onAfter(){
-		
 	}
 	
 }

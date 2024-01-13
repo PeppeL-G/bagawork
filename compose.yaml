@@ -7,9 +7,8 @@ services:
       - "8080:8080"
     volumes:
       - "./docs/code-files/:/docs/code-files/"
-      - "./core/src/:/docs/packages/core/src/"
-      - "./web-components/src/:/docs/packages/web-components/src/"
       - "./editor/src/:/docs/packages/editor/src/"
+      - "./framework/src/:/docs/packages/framework/src/"
       # Place the node_modules folder at top level,
       # so intellisense in VS Code works for all folders.
       - "./node_modules/:/docs/node_modules/"

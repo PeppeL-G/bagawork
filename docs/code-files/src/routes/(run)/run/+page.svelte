@@ -1,7 +1,7 @@
 <script>
 	import { getDecompressedProject } from '@bagawork/editor/src/functions/project-compressor.js'
 	import { getCreateAppCode } from "@bagawork/editor/src/functions/get-create-app-code.js"
-	import { showAppInElement } from "@bagawork/web-components"
+	import { showAppInElement } from "@bagawork/framework"
 	
 	const contentSecurityPolicyValue = [
 		`default-src 'none';`,

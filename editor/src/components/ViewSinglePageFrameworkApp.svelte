@@ -2,22 +2,22 @@
 	
 	export let frameworkApp = null
 	
-	import { AppElement } from '@bagawork/web-components'
-	
-	function showApp(appDiv, frameworkApp){
+	function showApp(screenDiv, frameworkApp){
 		
-		const appElement = new AppElement()
-		appDiv.appendChild(appElement)
-		appElement.showSinglePageFrameworkApp(frameworkApp)
+		function update(frameworkApp){
+			
+			screenDiv.innerText = ``
+			
+			screenDiv.appendChild(
+				frameworkApp.createElement(),
+			)
+			
+		}
+		
+		update(frameworkApp)
 		
 		return {
-			update(frameworkApp){
-				
-				appElement.innerText = ``
-				
-				appElement.showSinglePageFrameworkApp(frameworkApp)
-				
-			},
+			update,
 		}
 		
 	}

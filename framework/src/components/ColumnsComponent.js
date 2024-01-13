@@ -1,0 +1,76 @@
+import { Component } from '../Component.js'
+import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+
+export class ColumnsComponent extends Component{
+	
+	_children = []
+	
+	children(...children){
+		this._children = children.flat(Infinity)?.filter(
+			c => c,
+		)
+		return this
+	}
+	
+	onAfter(a, p){
+		for(const child of this._children){
+			child.onAfter(a, p)
+		}
+	}
+	
+	createAfterDirections(){
+		
+		return this._children.map(
+			c => c.createAfterDirections()
+		).flat()
+		
+	}
+	
+	createElement(){
+		
+		const columnsElement = document.createElement(`div`)
+		columnsElement.classList.add(`columns`)
+		
+		columnsElement.style.display = 'grid'
+		columnsElement.style.gridTemplateRows = '1fr'
+		columnsElement.style.height = '100%'
+		columnsElement.style.overflow = 'auto'
+		columnsElement.style.boxSizing = 'border-box'
+		
+		// Fix HTML.
+		const childComponents = this._children.filter(
+			c => c.keepIf,
+		)
+		
+		for (const childComponent of childComponents) {
+			
+			columnsElement.appendChild(
+				childComponent.createElement(),
+			)
+			
+		}
+		
+		// Fix CSS.
+		applyAttributesToElement(
+			this,
+			columnsElement,
+		)
+		
+		columnsElement.style.gridTemplateColumns = childComponents.map(childComponent => {
+			const size = childComponent._size
+			if (size != 0) {
+				return `minmax(auto, ${size}fr)`
+			} else if (childComponent.constructor.name == "SpaceComponent") {
+				return '1fr'
+			} else if (childComponent.constructor.name == "ImageComponent") {
+				return 'max-content'
+			} else {
+				return 'max-content'
+			}
+		}).join(" ")
+		
+		return columnsElement
+		
+	}
+	
+}

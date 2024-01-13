@@ -31,7 +31,7 @@
 				
 			} catch (error) {
 				console.log(error)
-				alert("The baga code given to the editor is invalid. Loading the default project instead.")
+				alert("The baga code given to the editor is invalid. The default project will be loaded instead.")
 			}
 		}
 		

@@ -1,30 +1,35 @@
 <script>
-	export let project;
+	export let project
 	
 	import { getCreateAppCode } from '@bagawork/editor/src/functions/get-create-app-code.js'
-	import { AppElement } from '@bagawork/web-components'
+	import { showAppInElement } from '@bagawork/framework'
 	import { browser } from '$app/environment'
 	
-	function showApp(appDiv) {
+	function showApp(screenElement) {
 		
 		const createAppCode = getCreateAppCode(
 			project.app,
 			project.pages,
 		)
 		
-		const appElement = new AppElement()
-		appDiv.appendChild(appElement)
-		appElement.showApp(createAppCode)
+		showAppInElement(
+			createAppCode,
+			screenElement,
+		)
 		
 	}
+	
 </script>
 
 {#if browser}
-	<div use:showApp class="app" />
+	<div
+		use:showApp
+		class="screen"
+	/>
 {/if}
 
 <style>
-	.app {
+	.screen {
 		width: 200px;
 		height: 300px;
 		border: 5px solid black;

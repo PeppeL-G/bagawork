@@ -19,8 +19,7 @@ import fs from "node:fs"
 
 const newVersion = "?.?.?"
 
-const pathToCorePackageJsonFile = `./core/package.json`
-const pathToWebComponentsPackageJsonFile = `./web-components/package.json`
+const pathToFrameworkPackageJsonFile = `./framework/package.json`
 const pathToEditorPackageJsonFile = `./editor/package.json`
 const pathToDocsPackageJsonFile = `./docs/package.json`
 const pathToChangelogEntries = `./docs/code-files/src/data/changelog-entries.js`
@@ -30,37 +29,20 @@ if(newVersion == `?.?.?`){
 	process.exit(1)
 }
 
-publishCorePackage()
-publishWebComponentsPackage()
+publishFrameworkPackage()
 publishEditorPackage()
 deployDocsApp()
 createCommit()
 restoreScriptFile()
 
-function publishCorePackage() {
+function publishFrameworkPackage() {
 	
 	updateVersionInPackageJson(
-		pathToCorePackageJsonFile,
+		pathToFrameworkPackageJsonFile,
 		newVersion,
 	)
 	
-	publishPackageToNpm(`./core/`)
-	
-}
-
-function publishWebComponentsPackage() {
-	
-	updateVersionInPackageJson(
-		pathToWebComponentsPackageJsonFile,
-		newVersion,
-	)
-	updateDependencyInPackageJson(
-		pathToWebComponentsPackageJsonFile,
-		"@bagawork/core",
-		newVersion,
-	)
-	
-	publishPackageToNpm(`./web-components/`)
+	publishPackageToNpm(`./framework/`)
 	
 }
 
@@ -72,12 +54,7 @@ function publishEditorPackage() {
 	)
 	updateDependencyInPackageJson(
 		pathToEditorPackageJsonFile,
-		"@bagawork/core",
-		newVersion,
-	)
-	updateDependencyInPackageJson(
-		pathToEditorPackageJsonFile,
-		"@bagawork/web-components",
+		"@bagawork/framework",
 		newVersion,
 	)
 	
@@ -134,8 +111,7 @@ function deployDocsApp() {
 function createCommit(){
 	
 	const pathToFilesToAdd = [
-		pathToCorePackageJsonFile,
-		pathToWebComponentsPackageJsonFile,
+		pathToFrameworkPackageJsonFile,
 		pathToEditorPackageJsonFile,
 		pathToDocsPackageJsonFile,
 		pathToChangelogEntries,

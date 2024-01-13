@@ -1,4 +1,4 @@
-import { FrameworkApp } from "@bagawork/core"
+import { FrameworkApp } from "@bagawork/framework"
 import { getCreateAppCode } from "./get-create-app-code.js"
 
 export function getFrameworkApp(

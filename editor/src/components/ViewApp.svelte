@@ -3,25 +3,24 @@
 	export let createAppCode = ""
 	export let runtimeSettings = {}
 	
-	import { AppElement } from '@bagawork/web-components'
+	import { showAppInElement } from '@bagawork/framework'
 	
-	function showApp(screenDiv, {createAppCode, runtimeSettings}){
+	function showApp(screenDiv, args){
 		
-		const appElement = new AppElement()
-		screenDiv.appendChild(appElement)
-		appElement.showApp(
-			createAppCode,
-			runtimeSettings
-		)
+		function update({createAppCode, runtimeSettings}){
+			
+			showAppInElement(
+				createAppCode,
+				screenDiv,
+				runtimeSettings
+			)
+			
+		}
+		
+		update(args)
 		
 		return {
-			update({createAppCode, runtimeSettings}){
-				appElement.innerText = ""
-				appElement.showApp(
-					createAppCode,
-					runtimeSettings,
-				)
-			}
+			update,
 		}
 		
 	}

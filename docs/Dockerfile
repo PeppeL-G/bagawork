@@ -9,19 +9,15 @@ COPY ./docs/package*.json /docs/
 RUN npm remove @bagawork/editor
 
 # Copy over local packages into their own workspaces.
-RUN npm init --yes -w /docs/packages/core
-COPY ./core/package*.json /docs/packages/core/
-
-RUN npm init --yes -w /docs/packages/web-components
-COPY ./web-components/package*.json /docs/packages/web-components/
+RUN npm init --yes -w /docs/packages/framework
+COPY ./framework/package*.json /docs/packages/framework/
 
 RUN npm init --yes -w /docs/packages/editor
 COPY ./editor/package*.json /docs/packages/editor/
 
 # Copy over code files.
 COPY ./docs/code-files/ /docs/code-files/
-COPY ./core/src/ /docs/packages/core/src/
-COPY ./web-components/src/ /docs/packages/web-components/src/
+COPY ./framework/src/ /docs/packages/framework/src/
 COPY ./editor/src/ /docs/packages/editor/src/
 
 # Install npm packages when the container starts, so node_modules folder

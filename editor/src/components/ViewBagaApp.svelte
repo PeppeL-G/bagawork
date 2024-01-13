@@ -2,45 +2,38 @@
 	
 	export let bagaCode = ""
 	
-	import { AppElement } from '@bagawork/web-components'
+	import ViewApp from './ViewApp.svelte';
 	import { projectToCreateAppCode } from '../functions/project-to-create-app-code.js'
 	import { getDecompressedProject } from '../functions/project-compressor.js'
 	
-	function showApp(appDiv, bagaCode){
+	function getCreateAppCode(bagaCode){
 		
-		const appElement = new AppElement()
-		appDiv.appendChild(appElement)
-		
-		function parseAndShowApp(bagaCode){
+		try{
 			
-			try{
-				
-				const project = getDecompressedProject(bagaCode)
-				
-				const createAppCode = projectToCreateAppCode(
-					project.app,
-					project.pages,
-				)
-				
-				appElement.showApp(
-					createAppCode,
-				)
-				
-			}catch(error){
-				appElement.innerText = `<ViewBagaApp /> - Failed to load the project from the provided bagaCode "${bagaCode}".`
-			}
+			const project = getDecompressedProject(bagaCode)
 			
-		}
-		
-		parseAndShowApp(bagaCode)
-		
-		return {
-			update: parseAndShowApp,
+			const createAppCode = projectToCreateAppCode(
+				project.app,
+				project.pages,
+			)
+			
+			return createAppCode
+			
+		}catch(error){
+			
+			// TODO: Fix this better.
+			alert("Invalid baga code!")
+			return ``
+			
 		}
 		
 	}
 	
 </script>
+
+<ViewApp
+	createAppCode={getCreateAppCode(bagaCode)}
+/>
 
 <div
 	class="app"

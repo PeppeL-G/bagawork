@@ -5,7 +5,7 @@
 	import EditPageModal from './modals/EditPageModal.svelte'
 	import CreatePageModal from './modals/CreatePageModal.svelte'
 	import ViewSinglePageFrameworkApp from './ViewSinglePageFrameworkApp.svelte'
-	import { getSinglePageFrameworkApp} from '../functions/get-single-page-framework-app.js'
+	import { getCachedFrameworkApp} from '../functions/get-cached-framework-app.js'
 	import { getClassName } from '../functions/get-class-name.js'
 	import { editorSettings, app, folders, pages } from '../stores.js'
 	
@@ -29,7 +29,7 @@
 		
 		return pagesInFolder.map(page => {
 			
-			const frameworkApp = getSinglePageFrameworkApp(
+			const frameworkApp = getCachedFrameworkApp(
 				app,
 				$pages,
 				page,
