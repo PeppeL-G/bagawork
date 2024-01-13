@@ -4,7 +4,10 @@ export function applyAttributesToElement(guiComponent, htmlElement){
 	
 	style.backgroundColor = guiComponent._backgroundColor
 	style.borderRadius = `${guiComponent._cornerRadius}mm`
-	style.visibility = guiComponent._showIf ? `visible` : `hidden`
+	
+	if(guiComponent._showIf === false){
+		style.visibility = `hidden`
+	}
 	
 	style.paddingLeft   = `${guiComponent._paddingLeft  }mm`
 	style.paddingRight  = `${guiComponent._paddingRight }mm`
