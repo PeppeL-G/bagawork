@@ -97,7 +97,7 @@ export class PaperComponent extends Component{
 						.thickness(lineThicknessInMm)
 					
 					svgElement.appendChild(
-						paperLineComponent.create.getElement(
+						paperLineComponent.getElement(
 							svgWidthInMm,
 							svgHeightInMm,
 						),
@@ -116,7 +116,7 @@ export class PaperComponent extends Component{
 						.thickness(lineThicknessInMm)
 					
 					svgElement.appendChild(
-						paperLineComponent.create.getElement(
+						paperLineComponent.getElement(
 							svgWidthInMm,
 							svgHeightInMm,
 						)
