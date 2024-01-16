@@ -2,6 +2,7 @@ export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
 	changes: [
+		`Added the tutorial "Dynamically sized paper"`,
 		`Added Paper.coordinateSystem()`,
 	],
 }, {

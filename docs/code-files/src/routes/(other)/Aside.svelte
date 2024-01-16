@@ -76,6 +76,9 @@
 			}, {
 				text: '4. Paper',
 				href: '/tutorials/gui/04-paper/',
+			}, {
+				text: '5. Dynamically Sized Paper',
+				href: '/tutorials/gui/05-dynamically-sized-paper/',
 			}],
 		}],
 		
