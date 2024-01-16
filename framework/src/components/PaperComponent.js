@@ -6,10 +6,18 @@ import { PaperLine } from '../index.js'
 export class PaperComponent extends Component{
 	
 	_showCoordinates = false
+	_width
+	_height
 	_children = []
 	
 	showCoordinates() {
 		this._showCoordinates = true
+		return this
+	}
+	
+	coordinateSystem(width, height){
+		this._width = width
+		this._height = height
 		return this
 	}
 	
@@ -58,8 +66,12 @@ export class PaperComponent extends Component{
 		// until the element has been added to DOM, so delay.
 		setTimeout(() => {
 			
-			const svgWidthInMm = pixelToMm(svgElement.clientWidth)
-			const svgHeightInMm = pixelToMm(svgElement.clientHeight)
+			const svgWidth = this._width ?? pixelToMm(
+				 svgElement.clientWidth,
+			)
+			const svgHeight = this._height ?? pixelToMm(
+				svgElement.clientHeight,
+			)
 			
 			// Add all children.
 			const childComponents = this._children
@@ -68,8 +80,8 @@ export class PaperComponent extends Component{
 				
 				svgElement.appendChild(
 					childComponent.getElement(
-						svgWidthInMm,
-						svgHeightInMm,
+						svgWidth,
+						svgHeight,
 					),
 				)
 				
@@ -77,13 +89,13 @@ export class PaperComponent extends Component{
 			
 			if (this._showCoordinates) {
 				
-				const lineThicknessInMm = 0.25
-				const spaceBetweenLinesInMm = 10
+				const lineThicknessInMm = this._width == undefined ? 0.25 : 0.05
+				const spaceBetweenLinesInMm = this._width == undefined ? 10 : 1
 				const numberOfVerticalLines = Math.ceil(
-					svgWidthInMm / spaceBetweenLinesInMm,
+					svgWidth / spaceBetweenLinesInMm,
 				)
 				const numberOfHorizontalLines = Math.ceil(
-					svgHeightInMm / spaceBetweenLinesInMm,
+					svgHeight / spaceBetweenLinesInMm,
 				)
 				
 				for (let i = 0; i < numberOfVerticalLines; i++) {
@@ -92,14 +104,14 @@ export class PaperComponent extends Component{
 					
 					const paperLineComponent = PaperLine
 						.start(x, 0)
-						.end(x, svgHeightInMm)
+						.end(x, svgHeight)
 						.backgroundColor(`black`)
 						.thickness(lineThicknessInMm)
 					
 					svgElement.appendChild(
 						paperLineComponent.getElement(
-							svgWidthInMm,
-							svgHeightInMm,
+							svgWidth,
+							svgHeight,
 						),
 					)
 					
@@ -111,14 +123,14 @@ export class PaperComponent extends Component{
 					
 					const paperLineComponent = PaperLine
 						.start(0, y)
-						.end(svgWidthInMm, y)
+						.end(svgWidth, y)
 						.backgroundColor(`black`)
 						.thickness(lineThicknessInMm)
 					
 					svgElement.appendChild(
 						paperLineComponent.getElement(
-							svgWidthInMm,
-							svgHeightInMm,
+							svgWidth,
+							svgHeight,
 						)
 					)
 					
@@ -128,8 +140,8 @@ export class PaperComponent extends Component{
 				
 				svgElement.addEventListener('mousemove', (event) => {
 					
-					const x = pixelToMm(event.layerX).toFixed(1)
-					const y = pixelToMm(svgElement.clientHeight - event.layerY).toFixed(1)
+					const x = (event.layerX / svgElement.clientWidth * svgWidth).toFixed(1)
+					const y = (svgHeight - (event.layerY / svgElement.clientHeight * svgHeight)).toFixed(1)
 					
 					mouseCoordinatesTextElement.textContent = `x=${x} y=${y}`
 					

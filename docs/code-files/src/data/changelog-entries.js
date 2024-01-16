@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added Paper.coordinateSystem()`,
+	],
 }, {
 	version: `0.0.24`,
 	date: `2024-01-13`,
