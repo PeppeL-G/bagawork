@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the tutorial "Dynamically sized paper"`,
 		`Added Paper.coordinateSystem()`,
+		`Fixed lag problems with Box component`,
 	],
 }, {
 	version: `0.0.24`,

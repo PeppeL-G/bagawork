@@ -102,12 +102,15 @@ export class BoxComponent extends Component {
 				
 				// childElement.clientHeight and childElement.clientWidth
 				// hasn't received their correct values yet, so we need to delay.
+				const oldVisibility = boxElement.style.visibility
+				boxElement.style.visibility = `hidden`
 				setTimeout(() => {
 					if (this._aspectRatioHeight / this._aspectRatioWidth < childElement.clientHeight / childElement.clientWidth) {
 						childElement.style.height = `auto`
 					} else {
 						childElement.style.width = `auto`
 					}
+					boxElement.style.visibility = oldVisibility
 				}, 0)
 				
 			} else if (childElement.style.width == `100%`) {
