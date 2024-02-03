@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bagawork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../favicon.png">
+		
+		<link href="../../_app/immutable/assets/2.6a64X0rQ.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/ViewApp.e3Rych_X.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.MgRRR8EV.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.5K_1kFqr.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.UQwd20JU.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.XMEJNxjj.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.dSBlZf0X.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.0HuHagjb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.i__Fl8cY.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.LdnNlJLM.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.GL5_Ptf4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/each.n0BxkhDy.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/changelog-entries.GwVLleL0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.r6RieqPn.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/9.hnUw4x9l.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.07BtHkFf.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-3c5oy2"><div class="publicAnnouncement svelte-3c5oy2"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-oda83j"><strong>Note</strong>: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-3c5oy2"><nav class="svelte-oeac2t"><div class="section svelte-oeac2t"><a href="/" class="svelte-oeac2t" data-svelte-h="svelte-asi9fn">Bagawork</a></div> <div class="section svelte-oeac2t"><a href="/documentation/" target="_self" class="svelte-oeac2t  isSubCurrent">Documentation </a><a href="/tutorials/" target="_self" class="svelte-oeac2t">Tutorials </a><a href="/examples/" target="_self" class="svelte-oeac2t">Examples </a><a href="/editor/" target="_blank" class="svelte-oeac2t">Editor </a><a href="/implementation/" target="_self" class="svelte-oeac2t">Implementation </a><a href="/contact/" target="_self" class="svelte-oeac2t">Contact </a></div> <div class="section svelte-oeac2t"><a class="version svelte-oeac2t" href="/changelog/">v0.0.25</a></div> </nav></div> <aside class="svelte-3c5oy2"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Views</div> <div class="links svelte-12md48y"><a href="/documentation/button/" class="svelte-12md48y">Button </a><a href="/documentation/enter-text/" class="svelte-12md48y">EnterText </a><a href="/documentation/image/" class="svelte-12md48y">Image </a><a href="/documentation/space/" class="svelte-12md48y">Space </a><a href="/documentation/text/" class="svelte-12md48y">Text </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Layouts</div> <div class="links svelte-12md48y"><a href="/documentation/box/" class="svelte-12md48y">Box </a><a href="/documentation/columns/" class="svelte-12md48y">Columns </a><a href="/documentation/layers/" class="svelte-12md48y">Layers </a><a href="/documentation/rows/" class="svelte-12md48y">Rows </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Classes</div> <div class="links svelte-12md48y"><a href="/documentation/app/" class="svelte-12md48y isCurrent">App </a><a href="/documentation/direction/" class="svelte-12md48y">Direction </a><a href="/documentation/page/" class="svelte-12md48y">Page </a><a href="/documentation/time/" class="svelte-12md48y">Time </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Variables</div> <div class="links svelte-12md48y"><a href="/documentation/a/" class="svelte-12md48y">a </a><a href="/documentation/m/" class="svelte-12md48y">m </a><a href="/documentation/p/" class="svelte-12md48y">p </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Various</div> <div class="links svelte-12md48y"><a href="/documentation/configuration-methods/" class="svelte-12md48y">Configuration Methods </a><a href="/documentation/text-symbols/" class="svelte-12md48y">Text Symbols </a></div> </div> </aside></aside> <main class="svelte-3c5oy2"><h1 data-svelte-h="svelte-gth7d6"><code>App</code></h1> <p data-svelte-h="svelte-1fg5q15">On this page you find the documentation for the <code>App</code> class.</p> <h2 data-svelte-h="svelte-1ukekoe">Introduction</h2> <p data-svelte-h="svelte-1dbgeps">The <code>App</code> class represents your entire app. It is used to:</p> <ul data-svelte-h="svelte-uumoj"><li>Keep track of the app&#39;s global state through the app&#39;s instance variables (known as <em>app variables</em>)</li> <li>Create the first page shown to the user</li></ul> <p data-svelte-h="svelte-4li1ps">You should create your own class inheriting from <code>App</code> and in which you override some methods to give your own app the specific behavior you want it to have, as shown below.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-o5kqje">Example of the basic code for creating your own <code>App</code> class.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// Name your own app whatever you want (in this example MyApp).</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">// Override methods here to give your own app</span>
+	<span class="token comment">// the specific behavior you want it to have.</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <h2 data-svelte-h="svelte-2xzfq5">The <code>a</code> variable</h2> <p data-svelte-h="svelte-8pea4j">In Bagawork, you can use the special variable named <code>a</code>, short for <em>app</em>, to access the constants/variables/methods you have in your <code>App</code> class. The <code>a</code> variable can be used both in your <code>App</code> class and in your <code>Page</code> classes.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-uvw9hb">Example of an app with:</p><ul data-svelte-h="svelte-ykz76m"><li>An app constant</li> <li>An app variable</li> <li>An app method</li> </ul><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token constant">THE_CONSTANT_NAME</span> <span class="token operator">=</span> <span class="token string">"The constant value"</span>
+	
+	theVariableNAME <span class="token operator">=</span> <span class="token string">"The variable value"</span>
+	
+	<span class="token function">theMethodName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token comment">// Can use a.THE_CONSTANT_NAME to access the constant value.</span>
+		<span class="token comment">// Can use a.theVariableName to access the variable value.</span>
+		<span class="token comment">// Can use a.theMethodName to access the method.</span>
+		
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <h2 data-svelte-h="svelte-sftdll"><code>onBefore()</code> - Initializing the state of the app</h2> <p data-svelte-h="svelte-8iounh">The method <code>onBefore()</code> will be called directly when the app starts. In it, you can initialize the state of your app.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-wsbz82">Example of an app that uses <code>onBefore()</code>.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token constant">TERM_1</span> <span class="token operator">=</span> <span class="token number">5</span>
+	<span class="token constant">TERM_2</span> <span class="token operator">=</span> <span class="token number">4</span>
+	
+	<span class="token comment">// We want the sum variable to contain the sum of TERM_1 and TERM_2.</span>
+	<span class="token comment">// However, the "a" variable can only be used in methods, so we can't</span>
+	<span class="token comment">// write sum = a.TERM_1 + a.TERM_2 here. So instead, we initialize</span>
+	<span class="token comment">// the sum to a dummy value (0 in this case)...</span>
+	sum <span class="token operator">=</span> <span class="token number">0</span>
+	
+	<span class="token function">onBefore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token comment">// ...and in this method we assigns sum its correct value.</span>
+		a<span class="token punctuation">.</span>sum <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token constant">TERM_1</span> <span class="token operator">+</span> a<span class="token punctuation">.</span><span class="token constant">TERM_2</span>
+		
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <div class="remark-container tip" data-svelte-h="svelte-usow1f"><div class="remark-container__title">Not needed?</div><p>You only need to initialize the global state if your app needs one. Some simple apps don&#39;t need one, and can simply leave <code>onBefore()</code> empty, or not have this method at all.</p></div> <h2 data-svelte-h="svelte-14hesrt"><code>createStartPage()</code> - Creating the start page</h2> <p data-svelte-h="svelte-1rdmle">After <code>onBefore()</code> has been called, <code>createStartPage()</code> will be called. In this method, you should create and send back an instance of the <code>Page</code> class that should first be shown to the user. This method you must implement, otherwise your app won&#39;t know which <code>Page</code> to show when it starts, and the app will crash.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-cj3t71">Example of an app specifying which <code>Page</code> to first show the user.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createStartPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> StartPage
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">StartPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">// Override methods here to give this page</span>
+	<span class="token comment">// the specific behavior you want it to have.</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <p data-svelte-h="svelte-p3siuq">See the documentation for the <a href="/documentation/page/" title="Open the documentation for Page.">Page</a> class to learn which methods you can override in your <code>Page</code> classes to make them work the way you want.</p> <h2 data-svelte-h="svelte-1irrpl0"><code>onUpdate()</code> - Updating the state of the app</h2> <p data-svelte-h="svelte-noirew">Sometimes, after you have published your app, you:</p> <ul data-svelte-h="svelte-10sf7ij"><li>discover a bug in your app that you want to correct</li> <li>want to change how some functionality in your app works</li> <li>want to add more functionality to your app</li></ul> <p data-svelte-h="svelte-1r76dz7">All these cases result in you making changes to the code the app consist of, and when a user has run an older version of your app and then runs the new version of it, there might be some problem for the user. For example, let&#39;s say that one of your users currently is on the <code>HelpPage</code> in your app, and then the user leaves your app, and then you release a new version of your app where you have deleted the <code>HelpPage</code>. When the user comes back to your app and gets the latest version of your app, it will try to show the page named <code>HelpPage</code> to the user, but since that page no longer exists, it&#39;s not obvious how the app should function.</p> <p data-svelte-h="svelte-herdvq">So, when releasing a new version of your app, it&#39;s important to gracefully perform the update, so users that have been using an old version of the app won&#39;t get any problem when they start using the new version of it. For this reason, <code>App.onUpdate()</code> exists.</p> <div class="remark-container tip" data-svelte-h="svelte-1oz18e6"><div class="remark-container__title">onUpdate() only applies to previous users of your app!</div><p>A user that uses your app for the first time will always start using the latest version of your app, so you only need to worry about <code>App.onUpdate()</code> for users that have run an older version of your app.</p></div> <p data-svelte-h="svelte-f2e2in">There are three things you need to think about when updating a BagaApp:</p> <ul data-svelte-h="svelte-1kdxnlu"><li>Which page the user currently is on</li> <li>Which app variables your old and new versions have</li> <li>Which page variables your old and new versions have</li></ul> <p data-svelte-h="svelte-17h2bbr">These 3 things together constitutes the <em>state</em> of the app, and they can differ for different users, e.g.:</p> <ul data-svelte-h="svelte-gxxg9p"><li>One user might currently be on the <code>MenyPage</code> in your app, while another user might be on the <code>AboutPage</code></li> <li>Your app variable <code>isGirl</code> might have the value <code>true</code> for some of your users, but <code>false</code> for others</li> <li>Etc.</li></ul> <h3 data-svelte-h="svelte-tj9bl3">Updating the current page</h3> <p data-svelte-h="svelte-17rn2qq">The default update behavior for the user&#39;s current page is:</p> <ol data-svelte-h="svelte-1nfq4wa"><li>If a page with the same name as the user&#39;s current page in the old version of the app exists in the new version of the app, then show that page after the update</li> <li>Otherwise, call <code>App.createStartPage()</code> in the new version of the app, and show the page returned from that method</li></ol> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-yj1zk7">Example of code that would use the default update behavior for the user&#39;s current page.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the new version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token function">createStartPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token comment">// Return the same old start page here, or another one if you want.</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token comment">// You don't need to implement onUpdate() at all if you want the default update behavior.</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <p data-svelte-h="svelte-17k9w1v">If you want to show another page to the user directly after the app has been updated, you should implement <code>onUpdate()</code> and send back the page you want to show to the user directly after the update.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-hww4ov">Example of code that would take the user to the <code>ShowNewFeaturesPage</code> after the update.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the new version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token comment">// ...</span>
+	
+	<span class="token function">onUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> ShowNewFeaturesPage
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <h3 data-svelte-h="svelte-qrpv6b">Updating the app state</h3> <p data-svelte-h="svelte-dfsmti">The default update behavior for the app constants is to simply delete all old app constants, and only use the new app constants. If this doesn&#39;t work for you, then you are using constants wrong.</p> <p data-svelte-h="svelte-q93i13">The default update behavior for the app variables is to first create all the app variables with the default values they should have according to the new version of your app, and then copy over the values from the old app variables to the new app variables that have the same name.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-3iodai">Example showing which app variables that are delete/added/copied when updating an app.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the old version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	city <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Stockholm</span><span class="token template-punctuation string">&#96;</span></span>
+	isBoy <span class="token operator">=</span> <span class="token boolean">true</span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the new version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token comment">// "city" is delete.</span>
+	isBoy <span class="token operator">=</span> <span class="token boolean">true</span>
+	age <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment">// This one is added.</span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><p data-svelte-h="svelte-15hq0w9">In the new version of the app:</p><ul data-svelte-h="svelte-19b53jd"><li>The app variable <code>city</code> will no longer exist</li> <li>The app variable <code>isBoy</code> will have the value <code>true</code> for new users, but for users that have run the previous version of your app it will have whichever value it happened to have for respective user in the old version of the app when they update the app (run the latest version of it for the first time)</li> <li>The app variable <code>age</code> will have the value <code>10</code> for both new and old users of your app</li></ul></div> <p data-svelte-h="svelte-cexcut">If you need some additional logic applied, you can implement that in <code>onUpdate()</code>. When <code>onUpdate()</code> is called, it will receive the old app variables in a parameter called <code>oldA</code>, and you can use that to read out values from it. The default update behavior for app variables will have been applied before <code>onUpdate()</code> is called.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-d48f8q">Example of how to perform some custom logic when updating the app to a new version.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the old version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	city <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Stockholm</span><span class="token template-punctuation string">&#96;</span></span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the new version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token comment">// Instead of calling the app variable for "city",</span>
+	<span class="token comment">// we want to call it "cityName" in this new version,</span>
+	<span class="token comment">// but we want old users to have the same value it stored</span>
+	<span class="token comment">// as when they ran the old version of the app...</span>
+	cityName <span class="token operator">=</span> <span class="token string">"Stockholm"</span>
+	
+	<span class="token function">onUpdate</span><span class="token punctuation">(</span><span class="token parameter">oldA</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token comment">// ...so in here, we must read out the value of the "city"</span>
+		<span class="token comment">// variable from the old app, and store it in the new</span>
+		<span class="token comment">// "cityName" variable instead.</span>
+		a<span class="token punctuation">.</span>cityName <span class="token operator">=</span> oldA<span class="token punctuation">.</span>city
+		
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <p data-svelte-h="svelte-1dptpna">What&#39;s been described above is the general logic you need to think about when updating your app to a newer version. BUT, it can be a little bit more complicated than this. For example, you might have:</p> <ul data-svelte-h="svelte-2q020e"><li>First released the first version of your app (version <code>1</code>)</li> <li>And then released a new version of your app (version <code>2</code>)</li> <li>And then released a new version of your app (version <code>3</code>)</li></ul> <p data-svelte-h="svelte-3gviwm">So you might have:</p> <ul data-svelte-h="svelte-1ly7mxy"><li>Some really old users that haven&#39;t run your app for a long time, so the last version they used was version <code>1</code></li> <li>Some less old users that used version <code>2</code> of your app the last time they ran your app</li> <li>Your most active users, who use the latest version (version <code>3</code>) of your app</li></ul> <p data-svelte-h="svelte-s7b3sw">So when you release version <code>4</code> of you app, you might have:</p> <ul data-svelte-h="svelte-922as3"><li>Some users that are updating from version <code>1</code></li> <li>Some users that are updating from version <code>2</code></li> <li>Some users that are updating from version <code>3</code></li></ul> <p data-svelte-h="svelte-1iks1c">So in <code>onUpdate()</code>, you might need to perform different update logic depending on which version the user is updating from. For this reason, <code>onUpdate()</code> will also be called with a second argument, the <code>oldVersion</code> parameter, which contains a number describing which version the user is updating from.</p> <div class="remark-container tip"><div class="remark-container__title" data-svelte-h="svelte-1llzxwj">Example</div><p data-svelte-h="svelte-188im2p">Example of the code one usually needs to write when releasing a new version of the app.</p><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// This is the new version of the app.</span>
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token comment">// ...</span>
+	
+	<span class="token function">onUpdate</span><span class="token punctuation">(</span><span class="token parameter">oldA<span class="token punctuation">,</span> oldVersion</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			<span class="token comment">// Write code dealing with updates from version 1 here.</span>
+			
+		<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			<span class="token comment">// Write code dealing with updates from version 2 here.</span>
+			
+		<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			<span class="token comment">// Write code dealing with updates from version 3 here.</span>
+			
+		<span class="token punctuation">&#125;</span> <span class="token comment">// And so on...</span>
+		
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// Version 1.</span>
+<span class="token keyword">class</span> <span class="token class-name">FriendsApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	friends <span class="token operator">=</span> <span class="token punctuation">[</span>
+		<span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Alice</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token comment">// Just some</span>
+		<span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Bob</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>   <span class="token comment">// sample data.</span>
+	<span class="token punctuation">]</span>
+	
+	<span class="token comment">// ...</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1gzbaf0">In the second version, we also wanted to keep track of the age of each friend, so we needed the following code:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// Version 2.</span>
+<span class="token keyword">class</span> <span class="token class-name">FriendsApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	friends <span class="token operator">=</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Alice</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// Just some</span>
+		<span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Bob</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>   <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// sample data.</span>
+	<span class="token punctuation">]</span>
+	
+	<span class="token comment">// ...</span>
+	
+	<span class="token function">onUpdate</span><span class="token punctuation">(</span><span class="token parameter">oldA<span class="token punctuation">,</span> oldVersion</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token comment">// Since this is version 2, the only previous version the user can</span>
+		<span class="token comment">// have used is version 1, so we don't need to check oldVersion,</span>
+		<span class="token comment">// but it can be good to do anyway (consistency).</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			a<span class="token punctuation">.</span>friends <span class="token operator">=</span> oldA<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>createFriendObject<span class="token punctuation">)</span>
+			
+		<span class="token punctuation">&#125;</span>
+		
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">createFriendObject</span><span class="token punctuation">(</span><span class="token parameter">friendName</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">name</span><span class="token operator">:</span> friendName<span class="token punctuation">,</span>
+			<span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// All old friends gets age 0 by default.</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-zuvbbe">In the third version we also want to keep track of which city they live in, so we need the following code:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token comment">// Version 3.</span>
+<span class="token keyword">class</span> <span class="token class-name">FriendsApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	friends <span class="token operator">=</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Alice</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">city</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Stockholm</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// Just some</span>
+		<span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Bob</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>   <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token literal-property property">city</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Oslo</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>      <span class="token comment">// sample data.</span>
+	<span class="token punctuation">]</span>
+	
+	<span class="token comment">// ...</span>
+	
+	<span class="token function">onUpdate</span><span class="token punctuation">(</span><span class="token parameter">oldA<span class="token punctuation">,</span> oldVersion</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			<span class="token comment">// Same as before.</span>
+			a<span class="token punctuation">.</span>friends <span class="token operator">=</span> oldA<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>createFriendObject<span class="token punctuation">)</span>
+			
+		<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>oldVersion <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			a<span class="token punctuation">.</span>friends <span class="token operator">=</span> oldA<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>getOldFriendObjectWithCity<span class="token punctuation">)</span>
+			
+		<span class="token punctuation">&#125;</span>
+		
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">createFriendObject</span><span class="token punctuation">(</span><span class="token parameter">friendName</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">name</span><span class="token operator">:</span> friendName<span class="token punctuation">,</span>
+			<span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// All old friends gets age 0 by default.</span>
+			<span class="token literal-property property">city</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token comment">// All old friends gets empty string by default.</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">getOldFriendObjectWithCity</span><span class="token punctuation">(</span><span class="token parameter">friend</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">name</span><span class="token operator">:</span> friend<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+			<span class="token literal-property property">age</span><span class="token operator">:</span> friend<span class="token punctuation">.</span>age<span class="token punctuation">,</span>
+			<span class="token literal-property property">city</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token comment">// All old friends gets empty string by default.</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-1d81o8u">Updating the page states</h3> <p data-svelte-h="svelte-4g8baf">After <code>App.onUpdate()</code> has been called, it&#39;s time to update the data in your pages.</p> <p data-svelte-h="svelte-5n9xxy">The default update behavior for the page constants is to simply delete all old page constants, and only use the new page constants. If this doesn&#39;t work for you, then you are using constants wrong.</p> <p data-svelte-h="svelte-4g77bw">The default update behavior for the page variables is to first create all the page variables with the default values they should have according to the new version of your app, and then copy over the values from the old page variables to the new page variables that have the same name. This works very similar to <code>App.onUpdate()</code> works.</p> <p data-svelte-h="svelte-g5n71a">If you need some additional update logic in your pages, you can add the <code>onUpdate()</code> method to them too. It will be called with two arguments:</p> <ol data-svelte-h="svelte-1shxabe"><li><code>oldP</code>, which contains the old page variables for the page</li> <li><code>oldVersion</code>, which contains the old version (an integer) of the app the user has run before</li></ol></main> <div class="footer svelte-3c5oy2"><footer class="svelte-d9hz5y">Copyright Peter L-G 2024 </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_jp9xf4 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.MgRRR8EV.js"),
+						import("../../_app/immutable/entry/app.dSBlZf0X.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 9],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

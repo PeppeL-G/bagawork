@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bagawork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../favicon.png">
+		
+		<link href="../../_app/immutable/assets/2.6a64X0rQ.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/ViewApp.e3Rych_X.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.MgRRR8EV.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.5K_1kFqr.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.UQwd20JU.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.XMEJNxjj.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.dSBlZf0X.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.0HuHagjb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.i__Fl8cY.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.LdnNlJLM.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.GL5_Ptf4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/each.n0BxkhDy.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/changelog-entries.GwVLleL0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.r6RieqPn.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/14.mcxa8ng4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.07BtHkFf.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-3c5oy2"><div class="publicAnnouncement svelte-3c5oy2"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-oda83j"><strong>Note</strong>: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-3c5oy2"><nav class="svelte-oeac2t"><div class="section svelte-oeac2t"><a href="/" class="svelte-oeac2t" data-svelte-h="svelte-asi9fn">Bagawork</a></div> <div class="section svelte-oeac2t"><a href="/documentation/" target="_self" class="svelte-oeac2t  isSubCurrent">Documentation </a><a href="/tutorials/" target="_self" class="svelte-oeac2t">Tutorials </a><a href="/examples/" target="_self" class="svelte-oeac2t">Examples </a><a href="/editor/" target="_blank" class="svelte-oeac2t">Editor </a><a href="/implementation/" target="_self" class="svelte-oeac2t">Implementation </a><a href="/contact/" target="_self" class="svelte-oeac2t">Contact </a></div> <div class="section svelte-oeac2t"><a class="version svelte-oeac2t" href="/changelog/">v0.0.25</a></div> </nav></div> <aside class="svelte-3c5oy2"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Views</div> <div class="links svelte-12md48y"><a href="/documentation/button/" class="svelte-12md48y">Button </a><a href="/documentation/enter-text/" class="svelte-12md48y">EnterText </a><a href="/documentation/image/" class="svelte-12md48y">Image </a><a href="/documentation/space/" class="svelte-12md48y">Space </a><a href="/documentation/text/" class="svelte-12md48y">Text </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Layouts</div> <div class="links svelte-12md48y"><a href="/documentation/box/" class="svelte-12md48y">Box </a><a href="/documentation/columns/" class="svelte-12md48y">Columns </a><a href="/documentation/layers/" class="svelte-12md48y">Layers </a><a href="/documentation/rows/" class="svelte-12md48y">Rows </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Classes</div> <div class="links svelte-12md48y"><a href="/documentation/app/" class="svelte-12md48y">App </a><a href="/documentation/direction/" class="svelte-12md48y isCurrent">Direction </a><a href="/documentation/page/" class="svelte-12md48y">Page </a><a href="/documentation/time/" class="svelte-12md48y">Time </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Variables</div> <div class="links svelte-12md48y"><a href="/documentation/a/" class="svelte-12md48y">a </a><a href="/documentation/m/" class="svelte-12md48y">m </a><a href="/documentation/p/" class="svelte-12md48y">p </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Various</div> <div class="links svelte-12md48y"><a href="/documentation/configuration-methods/" class="svelte-12md48y">Configuration Methods </a><a href="/documentation/text-symbols/" class="svelte-12md48y">Text Symbols </a></div> </div> </aside></aside> <main class="svelte-3c5oy2"><h1 data-svelte-h="svelte-kmnygc"><code>Direction</code></h1> <p data-svelte-h="svelte-18swf03">On this page you find the documentation for the <code>Direction</code> class.</p> <h2 data-svelte-h="svelte-1ukekoe">Introduction</h2> <p data-svelte-h="svelte-k9d0zi">The <code>Direction</code> class represents a possible navigation from one <code>Page</code> to another <code>Page</code>. It consists of the following parts:</p> <ul data-svelte-h="svelte-1k23ale"><li><code>when</code>: A boolean value indicating if this <code>Direction</code> should be used</li> <li><code>page</code>: The <code>Page</code> the user should come to</li> <li><code>description</code>: A text describing when the <code>Direction</code> should be used (used when previewing the app in our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a>)</li></ul> <p data-svelte-h="svelte-6gdeuu">A <code>Page</code> usually contains multiple <code>Direction</code>s, and when the user has interacted with the <code>Page</code> (for example clicked on a <code>Button</code>), the first <code>Direction</code> in the <code>Page</code> whose <code>when</code> is <code>true</code> will be used to transition to the <code>page</code> in that <code>Direction</code>.</p> <h2 data-svelte-h="svelte-gru3gi">Creating a <code>Direction</code></h2> <p data-svelte-h="svelte-1a6qzxe">To create a new <code>Direction</code> object, simply write:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">Direction</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-2sa91z">To indicate when/if this direction should be used, call the configuration method <code>when()</code>, and pass it the boolean value, e.g.:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">Direction<span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-hw8yng">To indicate which page the user should come to when this direction is used, call the configuration method <code>page()</code>, and pass it the page, e.g.:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">Direction<span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>ThePage<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-e28sfr">To instruct the editor which text to show, call the configuration method <code>text()</code>, and pass it the text, e.g.:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">Direction<span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>ThePage<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">This is shown in the editor</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre></main> <div class="footer svelte-3c5oy2"><footer class="svelte-d9hz5y">Copyright Peter L-G 2024 </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_jp9xf4 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.MgRRR8EV.js"),
+						import("../../_app/immutable/entry/app.dSBlZf0X.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 14],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
