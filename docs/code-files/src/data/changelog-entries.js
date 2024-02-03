@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.25`,
+	date: `2024-02-03`,
 	changes: [
 		`Added the tutorial "Dynamically sized paper"`,
 		`Added Paper.coordinateSystem()`,
