@@ -121,6 +121,12 @@
 				text: 'Navigation Drawer',
 				href: '/examples/guis/navigation-drawer/'
 			}],
+		}, {
+			name: `Games`,
+			links: [{
+				text: `Tic Tac Toe`,
+				href: `/examples/games/tic-tac-toe/`,
+			}]
 		}], 
 		
 		'documentation': [{
