@@ -67,7 +67,7 @@
 			for(const direction of directions){
 				
 				const wrappedEndPage = wrappedPages.find(
-					wp => direction.Page.proxyName == getClassName(wp.page.code)
+					wp => direction.getPage().proxyName == getClassName(wp.page.code)
 				)
 				
 				if(wrappedEndPage){
@@ -100,7 +100,7 @@
 							angle,
 							centerX,
 							centerY,
-							text: direction.description,
+							text: direction.getDescription(),
 							isBack: false,
 						})
 						
