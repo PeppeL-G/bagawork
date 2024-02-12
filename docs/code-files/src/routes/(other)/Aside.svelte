@@ -124,6 +124,9 @@
 		}, {
 			name: `Games`,
 			links: [{
+				text: `21 Sticks`,
+				href: `/examples/games/21-sticks/`,
+			}, {
 				text: `Tic Tac Toe`,
 				href: `/examples/games/tic-tac-toe/`,
 			}]
