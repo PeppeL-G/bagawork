@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Validate args passed to framework methods`,
+	],
 }, {
 	version: `0.0.25`,
 	date: `2024-02-03`,

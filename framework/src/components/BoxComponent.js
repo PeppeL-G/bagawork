@@ -1,5 +1,6 @@
 import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class BoxComponent extends Component {
 	
@@ -13,43 +14,107 @@ export class BoxComponent extends Component {
 	_aspectRatioHeight = -1
 	_child = null
 	
-	width(width){
+	width(width) {
+		
+		validateArgs(
+			this,
+			`width`,
+			[`number`],
+			arguments,
+		)
+		
 		this._width = width
 		return this
 	}
 	
 	height(height) {
+		
+		validateArgs(
+			this,
+			`height`,
+			[`number`],
+			arguments,
+		)
+		
 		this._height = height
 		return this
 	}
 	
 	left() {
+		
+		validateArgs(
+			this,
+			`left`,
+			[],
+			arguments,
+		)
+		
 		this._left = true
 		return this
 	}
 	
 	right() {
+		
+		validateArgs(
+			this,
+			`right`,
+			[],
+			arguments,
+		)
+		
 		this._right = true
 		return this
 	}
 	
 	top() {
+		
+		validateArgs(
+			this,
+			`top`,
+			[],
+			arguments,
+		)
+		
 		this._top = true
 		return this
 	}
 	
 	bottom() {
+		
+		validateArgs(
+			this,
+			`bottom`,
+			[],
+			arguments,
+		)
+		
 		this._bottom = true
 		return this
 	}
 	
 	aspectRatio(width, height) {
+		
+		validateArgs(
+			this,
+			`aspectRatio`,
+			[`number`, `number`],
+			arguments,
+		)
+		
 		this._aspectRatioWidth = width
 		this._aspectRatioHeight = height
 		return this
 	}
 	
 	child(child) {
+		
+		validateArgs(
+			this,
+			`child`,
+			[`Component`],
+			arguments,
+		)
+		
 		this._child = child
 		return this
 	}

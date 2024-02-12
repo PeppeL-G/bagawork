@@ -1,27 +1,48 @@
-export class PaperRectangleComponent{
+import { PaperChild } from "../PaperChild.js"
+import { validateArgs } from "../functions/validate-args.js"
+
+export class PaperRectangleChild extends PaperChild{
 	
-	_backgroundColor = `black`
 	_width
 	_height
 	_centerX
 	_centerY
-
-	backgroundColor(color) {
-		this._backgroundColor = color
-		return this
-	}
 	
 	width(width) {
+		
+		validateArgs(
+			this,
+			`width`,
+			[`number`],
+			arguments,
+		)
+		
 		this._width = width
 		return this
 	}
 	
 	height(height) {
+		
+		validateArgs(
+			this,
+			`height`,
+			[`number`],
+			arguments,
+		)
+		
 		this._height = height
 		return this
 	}
 	
 	center(x, y) {
+		
+		validateArgs(
+			this,
+			`center`,
+			[`number`, `number`],
+			arguments,
+		)
+		
 		this._centerX = x
 		this._centerY = y
 		return this

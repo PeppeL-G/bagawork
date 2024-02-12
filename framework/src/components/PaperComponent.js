@@ -2,6 +2,7 @@ import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
 import { pixelToMm } from '../functions/pixel-to-mm.js'
 import { PaperLine } from '../index.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class PaperComponent extends Component{
 	
@@ -11,20 +12,47 @@ export class PaperComponent extends Component{
 	_children = []
 	
 	showCoordinates() {
+		
+		validateArgs(
+			this,
+			`showCoordinates`,
+			[],
+			arguments,
+		)
+		
 		this._showCoordinates = true
 		return this
 	}
 	
-	coordinateSystem(width, height){
+	coordinateSystem(width, height) {
+		
+		validateArgs(
+			this,
+			`coordinateSystem`,
+			[`number`, `number`],
+			arguments,
+		)
+		
 		this._width = width
 		this._height = height
 		return this
 	}
 	
 	children(...children) {
-		this._children = children.flat(Infinity)?.filter(
+		
+		const flattenedChildren = children.flat(Infinity)
+		
+		validateArgs(
+			this,
+			`showCoordinates`,
+			flattenedChildren.map(c => `PaperChild`),
+			arguments,
+		)
+		
+		this._children = flattenedChildren.filter(
 			c => c,
 		)
+		
 		return this
 	}
 	

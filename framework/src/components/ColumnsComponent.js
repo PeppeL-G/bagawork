@@ -1,12 +1,23 @@
 import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class ColumnsComponent extends Component{
 	
 	_children = []
 	
-	children(...children){
-		this._children = children.flat(Infinity)?.filter(
+	children(...children) {
+		
+		const flattenedChildren = children.flat(Infinity)
+		
+		validateArgs(
+			this,
+			`children`,
+			flattenedChildren.map(c => `Component`),
+			flattenedChildren,
+		)
+		
+		this._children = flattenedChildren.filter(
 			c => c,
 		)
 		return this

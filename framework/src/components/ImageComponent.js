@@ -1,11 +1,20 @@
 import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class ImageComponent extends Component {
 	
 	_url = ``
 	
-	url(url){
+	url(url) {
+
+		validateArgs(
+			this,
+			`url`,
+			[`string`],
+			arguments,
+		)
+		
 		this._url = url
 		return this
 	}

@@ -1,35 +1,52 @@
-export class PaperLineComponent{
+import { PaperChild } from "../PaperChild.js"
+import { validateArgs } from "../functions/validate-args.js"
+
+export class PaperLineChild extends PaperChild{
 	
-	_backgroundColor = `black`
 	_thickness
 	_startX
 	_startY
 	_endX
 	_endY
-
-	backgroundColor(color) {
-		this._backgroundColor = color
-		return this
-	}
 	
 	thickness(thickness) {
+		
+		validateArgs(
+			this,
+			`thickness`,
+			[`number`],
+			arguments,
+		)
+		
 		this._thickness = thickness
 		return this
 	}
 
 	start(x, y) {
+		
+		validateArgs(
+			this,
+			`start`,
+			[`number`, `number`],
+			arguments,
+		)
+		
 		this._startX = x
 		this._startY = y
 		return this
 	}
 	
 	end(x, y) {
+		
+		validateArgs(
+			this,
+			`end`,
+			[`number`, `number`],
+			arguments,
+		)
+		
 		this._endX = x
 		this._endY = y
-		return this
-	}
-	backgroundColor(color) {
-		this._backgroundColor = color
 		return this
 	}
 	

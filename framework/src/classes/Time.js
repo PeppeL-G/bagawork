@@ -1,6 +1,6 @@
 const startOfTimeTimestampInMs = -62135600008000
 
-export class TimeClass{
+export class Time{
 	
 	date = new Date(startOfTimeTimestampInMs)
 	
@@ -41,7 +41,7 @@ export class TimeClass{
 	}
 	
 	getCopy(){
-		const copy = new TimeClass()
+		const copy = new Time()
 		copy.date.setTime(this.date.getTime())
 		return copy
 	}
@@ -101,14 +101,14 @@ export class TimeClass{
 		try{
 			
 			return {
-				clazyName: TimeClass.name,
+				clazyName: Time.name,
 				iso: this.date.toISOString(),
 			}
 			
 		}catch(error){
 			
 			return {
-				clazyName: TimeClass.name,
+				clazyName: Time.name,
 				iso: `invalid`,
 			}
 			
@@ -117,7 +117,7 @@ export class TimeClass{
 	}
 	
 	static fromJSON(json){
-		const time = new TimeClass()
+		const time = new Time()
 		time.date = new Date(json.iso)
 		return time
 	}

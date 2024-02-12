@@ -1,21 +1,60 @@
+import { validateArgs } from "../functions/validate-args.js"
+
 export class Direction{
 	
-	constructor(Page, condition, description=``){
-		this.Page = Page
-		this.condition = condition
-		this.description = description
+	_Page = null
+	_condition = true
+	_description = ``
+	
+	page(page){
+		
+		validateArgs(
+			this,
+			`page`,
+			[`Page`],
+			arguments,
+		)
+		
+		this._Page = page
+		return this
+	}
+	
+	when(condition) {
+		
+		validateArgs(
+			this,
+			`when`,
+			[`boolean`],
+			arguments,
+		)
+		
+		this._condition = condition
+		return this
+	}
+	
+	text(description) {
+		
+		validateArgs(
+			this,
+			`text`,
+			[`string`],
+			arguments,
+		)
+		
+		this._description = description
+		return this
 	}
 	
 	getPage(){
-		return this.Page
+		return this._Page
 	}
 	
 	getCondition(){
-		return this.condition
+		return this._condition
 	}
 	
 	getDescription(){
-		return this.description
+		return this._description
 	}
 	
 }

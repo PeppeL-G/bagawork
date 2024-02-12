@@ -1,6 +1,7 @@
 import {Component} from '../Component.js'
-import { Direction } from '../classes/Direction.js'
+import { Direction } from '../index.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class EnterTextComponent extends Component{
 	
@@ -15,35 +16,89 @@ export class EnterTextComponent extends Component{
 	
 	enteredText = ``
 	
-	text(text){
+	text(text) {
+		
+		validateArgs(
+			this,
+			`text`,
+			[`string`],
+			arguments,
+		)
+		
 		this._text = text
 		this.enteredText = text
 		return this
 	}
 	
 	placeholder(placeholder) {
+		
+		validateArgs(
+			this,
+			`placeholder`,
+			[`string`],
+			arguments,
+		)
+		
 		this._placeholder = placeholder
 		return this
 	}
 	
 	handler(handler, ...handlerArgs) {
+		
+		let args = (
+			arguments.length == 0 ?
+				[] :
+				[handler]
+		)
+		
+		validateArgs(
+			this,
+			`handler`,
+			[`Function`],
+			args,
+		)
+		
 		this._handler = handler
 		this._handlerArgs = handlerArgs
 		return this
 	}
 	
 	store(store, name) {
+		
+		validateArgs(
+			this,
+			`store`,
+			[`object`, `string`],
+			arguments,
+		)
+		
 		this._store = store
 		this._storeName = name
 		return this
 	}
 	
 	page(page) {
+		
+		validateArgs(
+			this,
+			`page`,
+			[`Page`],
+			arguments,
+		)
+		
 		this._page = page
 		return this
 	}
 	
 	pageIfEqual(text, page) {
+		
+		validateArgs(
+			this,
+			`pageIfEqual`,
+			[`string`, `Page`],
+			arguments,
+		)
+		
 		this._pageIfEqual.push([text, page])
 		return this
 	}
@@ -63,21 +118,19 @@ export class EnterTextComponent extends Component{
 	createAfterDirections(){
 		
 		const afterDirections = this._pageIfEqual.map(
-			([conditionText, Page]) => new Direction(
-				Page,
-				this.enteredText == conditionText,
-				conditionText,
-			)
+			([conditionText, Page]) => Direction
+				.page(Page)
+				.when(this.enteredText == conditionText)
+				.text(conditionText)
 		)
 		
 		if(this._page){
 			
 			afterDirections.push(
-				new Direction(
-					this._page,
-					true,
-					`Any text`,
-				)
+				Direction
+					.page(this._page)
+					.when(true)
+					.text(`Any text`)
 			)
 			
 		}

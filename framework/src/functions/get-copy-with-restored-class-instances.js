@@ -1,4 +1,4 @@
-import { TimeClass } from "../classes/Time.js"
+import { Time } from "../classes/Time.js"
 
 export function getCopyWithRestoredClassInstances(original){
 	
@@ -6,8 +6,8 @@ export function getCopyWithRestoredClassInstances(original){
 		return original.map(getCopyWithRestoredClassInstances)
 	}else if(original instanceof Object){
 		
-		if(original.clazyName == TimeClass.name){
-			return TimeClass.fromJSON(original)
+		if(original.clazyName == Time.name){
+			return Time.fromJSON(original)
 		}
 		
 		return Object.fromEntries(

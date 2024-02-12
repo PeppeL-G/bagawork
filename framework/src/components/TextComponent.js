@@ -1,5 +1,6 @@
 import {Component} from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class TextComponent extends Component{
 	
@@ -10,26 +11,66 @@ export class TextComponent extends Component{
 	_bottom = false
 	
 	text(text) {
+		
+		validateArgs(
+			this,
+			`text`,
+			["string"],
+			arguments,
+		)
+		
 		this._text = text
 		return this
 	}
 	
 	left() {
+		
+		validateArgs(
+			this,
+			`text`,
+			[],
+			arguments,
+		)
+		
 		this._left = true
 		return this
 	}
 	
 	right() {
+		
+		validateArgs(
+			this,
+			`text`,
+			[],
+			arguments,
+		)
+		
 		this._right = true
 		return this
 	}
 	
 	top() {
+		
+		validateArgs(
+			this,
+			`text`,
+			[],
+			arguments,
+		)
+		
 		this._top = true
 		return this
 	}
 	
 	bottom() {
+		
+		validateArgs(
+			this,
+			`text`,
+			[],
+			arguments,
+		)
+		
 		this._bottom = true
 		return this
 	}

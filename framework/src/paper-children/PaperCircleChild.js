@@ -1,21 +1,34 @@
-export class PaperCircleComponent{
+import { validateArgs } from "../functions/validate-args.js"
+import { PaperChild } from "../PaperChild.js"
+
+export class PaperCircleChild extends PaperChild{
 	
-	_backgroundColor = `black`
 	_radius
 	_centerX
 	_centerY
 	
-	backgroundColor(color){
-		this._backgroundColor = color
-		return this
-	}
-	
 	radius(radius) {
+		
+		validateArgs(
+			this,
+			`radius`,
+			[`number`],
+			arguments,
+		)
+		
 		this._radius = radius
 		return this
 	}
 	
 	center(x, y) {
+		
+		validateArgs(
+			this,
+			`center`,
+			[`number`, `number`],
+			arguments,
+		)
+			
 		this._centerX = x
 		this._centerY = y
 		return this

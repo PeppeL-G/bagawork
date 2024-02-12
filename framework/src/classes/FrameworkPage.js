@@ -131,16 +131,7 @@ export class FrameworkPage{
 			// TODO: Check that createdBeforeDirections is an array with
 			// Direction instances.
 			this.beforeDirections.push(
-				...createdBeforeDirections.map(
-					directionProxy => {
-						const args = directionProxy.proxyGetArgs
-						return new Direction(
-							args.page,
-							args.when,
-							args.text ?? ``,
-						)
-					},
-				),
+				...createdBeforeDirections,
 			)
 			
 		}
@@ -176,16 +167,7 @@ export class FrameworkPage{
 			// Direction instances.
 
 			this.afterDirections.push(
-				...createdAfterDirections.map(
-					directionProxy => {
-						const args = directionProxy.proxyGetArgs
-						return new Direction(
-							args.page,
-							args.when,
-							args.text ?? ``,
-						)
-					},
-				),
+				...createdAfterDirections,
 			)
 			
 		}

@@ -5,11 +5,12 @@ export { Page } from './classes/Page.js'
 
 // Classes
 import { createClassCreator } from './functions/create-class-creator.js'
-import { createDirectionCreator } from './functions/create-direction-creator.js'
 
-import { TimeClass } from './classes/Time.js'
-export const Time = createClassCreator(TimeClass)
-export const Direction = createDirectionCreator()
+import { Time as TimeImplementation } from './classes/Time.js'
+export const Time = createClassCreator(TimeImplementation)
+
+import { Direction as DirectionImplementation } from './classes/Direction.js'
+export const Direction = createClassCreator(DirectionImplementation)
 
 // Functions
 export { createPageCreator } from './functions/create-page-creator.js'
@@ -27,14 +28,14 @@ export const Image = createComponentCreator(ImageComponent)
 import {PaperComponent} from './components/PaperComponent.js'
 export const Paper = createComponentCreator(PaperComponent)
 
-import { PaperCircleComponent } from './components/PaperCircleComponent.js'
-export const PaperCircle = createComponentCreator(PaperCircleComponent)
+import { PaperCircleChild } from './paper-children/PaperCircleChild.js'
+export const PaperCircle = createComponentCreator(PaperCircleChild)
 
-import { PaperLineComponent } from './components/PaperLineComponent.js'
-export const PaperLine = createComponentCreator(PaperLineComponent)
+import { PaperLineChild } from './paper-children/PaperLineChild.js'
+export const PaperLine = createComponentCreator(PaperLineChild)
 
-import { PaperRectangleComponent } from './components/PaperRectangleComponent.js'
-export const PaperRectangle = createComponentCreator(PaperRectangleComponent)
+import { PaperRectangleChild } from './paper-children/PaperRectangleChild.js'
+export const PaperRectangle = createComponentCreator(PaperRectangleChild)
 
 import {TextComponent} from './components/TextComponent.js'
 export const Text = createComponentCreator(TextComponent)

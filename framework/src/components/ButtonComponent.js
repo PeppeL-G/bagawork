@@ -1,6 +1,7 @@
 import {Component} from '../Component.js'
-import { Direction } from '../classes/Direction.js'
+import { Direction } from '../index.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
+import { validateArgs } from '../functions/validate-args.js'
 
 export class ButtonComponent extends Component{
 	
@@ -19,18 +20,48 @@ export class ButtonComponent extends Component{
 		this.padding(1, `tb`).padding(2, `lr`)
 	}
 	
-	text(text){
+	text(text) {
+		
+		validateArgs(
+			this,
+			`text`,
+			["string"],
+			arguments,
+		)
+		
 		this._text = text
 		return this
 	}
 	
 	handler(handler, ...handlerArgs) {
+		
+		let args = (
+			arguments.length == 0 ?
+			[] :
+			[handler]
+		)
+		
+		validateArgs(
+			this,
+			`handler`,
+			[`Function`],
+			args,
+		)
+		
 		this._handler = handler
 		this._handlerArgs = handlerArgs
 		return this
 	}
 	
 	page(page) {
+		
+		validateArgs(
+			this,
+			`page`,
+			[`Page`],
+			arguments,
+		)
+		
 		this._page = page
 		return this
 	}
@@ -50,11 +81,10 @@ export class ButtonComponent extends Component{
 		if(this._page){
 			
 			afterDirections.push(
-				new Direction(
-					this._page,
-					this.wasClicked,
-					this._text,
-				)
+				Direction
+					.page(this._page)
+					.when(this.wasClicked)
+					.text(this._text)
 			)
 			
 		}
