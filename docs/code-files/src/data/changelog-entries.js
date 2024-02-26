@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Validate args passed to framework methods`,
 		`Added the example game Tic Tac Toe`,
 		`Added the example game 21 Sticks`,
+		`Added the example game Chess`,
 	],
 }, {
 	version: `0.0.25`,

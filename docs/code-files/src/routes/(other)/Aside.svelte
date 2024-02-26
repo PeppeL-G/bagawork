@@ -129,6 +129,9 @@
 			}, {
 				text: `Tic Tac Toe`,
 				href: `/examples/games/tic-tac-toe/`,
+			}, {
+				text: `Chess`,
+				href: `/examples/games/chess/`,
 			}]
 		}], 
 		
