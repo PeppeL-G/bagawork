@@ -19,7 +19,7 @@ In this example, the GUI consists of only the `EnterText` component, so it cover
 
 
 ## `text()` - Setting an initial text
-Use the configuration method `text()` to give the `EnterText` an initial text it should contain contain initially. Pass the text as a string.
+Use the configuration method `text()` to give the `EnterText` an initial text it should contain initially. Pass the text as a string.
 
 ::: tip Example
 
