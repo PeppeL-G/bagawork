@@ -100,6 +100,9 @@
 				text: 'Glossaries',
 				href: '/examples/apps/glossaries/'
 			}, {
+				text: 'Personal Website',
+				href: '/examples/apps/personal-website/'
+			}, {
 				text: 'Power Point Presentation',
 				href: '/examples/apps/power-point-presentation/'
 			}, {
