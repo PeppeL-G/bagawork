@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.26`,
+	date: `2024-04-11`,
 	changes: [
 		`Validate args passed to framework methods`,
 		`Added the example game Tic Tac Toe`,
