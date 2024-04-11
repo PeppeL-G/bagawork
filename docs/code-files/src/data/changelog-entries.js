@@ -8,6 +8,7 @@ export const changelogEntries = [{
 		`Added the example game Chess`,
 		`Added favicons (bad logo until a proper one is made)`,
 		`Added motivation page`,
+		`Added the component EnterNumber`,
 	],
 }, {
 	version: `0.0.25`,

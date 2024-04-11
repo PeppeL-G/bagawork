@@ -118,7 +118,7 @@
 							angle,
 							centerX,
 							centerY,
-							text: direction.description,
+							text: direction.getDescription(),
 							isBack: true,
 						})
 						

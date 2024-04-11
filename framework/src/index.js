@@ -46,6 +46,9 @@ export const Box = createComponentCreator(BoxComponent)
 import {ColumnsComponent} from './components/ColumnsComponent.js'
 export const Columns = createComponentCreator(ColumnsComponent)
 
+import { EnterNumberComponent } from './components/EnterNumberComponent.js'
+export const EnterNumber = createComponentCreator(EnterNumberComponent)
+
 import { EnterTextComponent } from './components/EnterTextComponent.js'
 export const EnterText = createComponentCreator(EnterTextComponent)
 

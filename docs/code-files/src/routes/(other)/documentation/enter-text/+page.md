@@ -47,7 +47,7 @@ Use the configuration method `placeholder()` to show a text in the `EnterText` c
 Use the configuration method `pageIfEqual()` to specify a `Page` the user should come to if she has entered some specific text in the component. Pass the method two values:
 
 1. The text the user might enter
-1. The `Page` the user should come to if that text has been entered
+2. The `Page` the user should come to if that text has been entered
 
 You can call this method multiple times.
 
@@ -73,7 +73,7 @@ Use the configuration method `store()` to store the text the user entered in an 
 
 :::
 
-## `handler()` - Handling the entered name
+## `handler()` - Handling the entered text
 Use the configuration method `handler()` to tell the `EnterText` component which method to call to handle the entered text. The method will be passed the entered text as an argument. 
 
 ::: tip Example

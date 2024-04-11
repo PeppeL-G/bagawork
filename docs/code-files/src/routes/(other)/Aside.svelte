@@ -141,6 +141,9 @@
 				text: 'Button',
 				href: '/documentation/button/',
 			}, {
+				text: 'EnterNumber',
+				href: '/documentation/enter-number/',
+			}, {
 				text: 'EnterText',
 				href: '/documentation/enter-text/',
 			}, {

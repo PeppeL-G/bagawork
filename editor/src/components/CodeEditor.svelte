@@ -18,6 +18,7 @@
 	
 	import componentTsString from '../editor-type-definitions/bagawork/Component.ts?raw'
 	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.ts?raw'
+	import enterNumberTsString from '../editor-type-definitions/bagawork/components/EnterNumber.ts?raw'
 	import enterTextTsString from '../editor-type-definitions/bagawork/components/EnterText.ts?raw'
 	import textTsString from '../editor-type-definitions/bagawork/components/Text.ts?raw'
 	import spaceTsString from '../editor-type-definitions/bagawork/components/Space.ts?raw'
@@ -52,6 +53,7 @@
 			
 			{content: componentTsString},
 			{content: buttonTsString},
+			{content: enterNumberTsString},
 			{content: enterTextTsString},
 			{content: textTsString},
 			{content: spaceTsString},

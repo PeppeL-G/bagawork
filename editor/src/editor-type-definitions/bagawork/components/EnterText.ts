@@ -35,7 +35,7 @@ const EnterText = (() => new (
 		 * @param theText The text the user should have entered...
 		 * @param thePage ...to come to this page
 		 */
-		pageIfEqual(theText: String, thePage: Page) { return this };
+		pageIfEqual(theText: string, thePage: Page) { return this };
 		
 		/**
 		 * This method indicates which object (e.g. `a` or `p`) to store the
@@ -49,9 +49,9 @@ const EnterText = (() => new (
 		/**
 		 * This method indicates a function/method to call with the entered text when the user goes to next page.
 		 * 
-		 * @param theClickHandler The function/method to be called with the entered text
+		 * @param theHandler The function/method to be called with the entered text
 		 */
-		handler(clickHandler: (enteredText: string) => void){ return this };
+		handler(theHandler: (enteredText: string) => void){ return this };
 		
 	}
 	
