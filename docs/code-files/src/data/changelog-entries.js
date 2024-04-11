@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Added the example game 21 Sticks`,
 		`Added the example game Chess`,
 		`Added favicons (bad logo until a proper one is made)`,
+		`Added motivation page`,
 	],
 }, {
 	version: `0.0.25`,

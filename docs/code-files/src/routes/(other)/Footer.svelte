@@ -5,7 +5,8 @@
 </script>
 
 <footer>
-	Copyright Peter L-G {year}
+	Copyright Peter L-G {year} |
+	<a href="/motivation">Motivation</a>
 </footer>
 
 <style>
