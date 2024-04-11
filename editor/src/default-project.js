@@ -109,9 +109,9 @@ class AskIfAdultPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(\`No\`).page(null),
+				Button.text(\`No\`),
 				Space,
-				Button.text(\`Yes\`).page(null),
+				Button.text(\`Yes\`),
 				Space,
 			),
 		)
@@ -129,10 +129,10 @@ class EnterAgePage extends Page{
 			Space,
 			Text.text(\`What's your age?\`),
 			Space,
-			Button.text(\`10\`).page(null),
-			Button.text(\`15\`).page(null),
-			Button.text(\`20\`).page(null),
-			Button.text(\`25\`).page(null),
+			Button.text(\`10\`),
+			Button.text(\`15\`),
+			Button.text(\`20\`),
+			Button.text(\`25\`),
 			Space,
 		)
 	}
