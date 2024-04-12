@@ -42,6 +42,33 @@ Use the configuration method `placeholder()` to show a text in the `EnterNumber`
 
 
 
+## `decimals()` - Setting maximum number of decimals
+Use the configuration method `decimals()` to indicate how many decimals the entered number may contain. Pass it:
+
+* `0` to allow no decimals, e.g. allow numbers like `123` and `55` (i.e. only integers)
+* `1` to allow at most 1 decimal, e.g. `123`, `123.4` and `0.6`
+* `2` to allow at most 2 decimals, e.g. `123`, `123.4`, `123.45` and `1.23`
+* Etc.
+
+::: tip Example
+
+Example where the user can only enter integers.
+
+::bagawork-project[app&link&code=StartPage&baga=eNqVj01LxDAQhv9KmFMLoawrHsytB5E9KIJ7UOxCYzLVYpqGZAq7lPx30y5brTcvmXe+3nkygnQOxAiq1wgClJEhsIdT6RzDI6HVgSU9VrYi5VESPpP09CQ/MMvnakUeafCWLY2pGisbIXJoeqPRBxBvI7QaxBUHK7vp0jwOHPqmCUgvIDYX/Zp0PHBwyWu1eTbbnZMV8HJ7gZ6SX9T3Q/uX984S+sehe0dfOCMVfs72WT03WNqv80KjajtpQrbJl29xOILYXm85nFK8ub2w7rFLPrRmXmGW4WvXlHow9A/OfRotKD1ZXf9AxEP8BkQymyk=]
+
+:::
+
+::: tip Example
+
+Example where the user can enter at most 2 decimals.
+
+::bagawork-project[app&link&code=StartPage&baga=eNqVj01LxDAQhv9KmFMLoWjFg7n1IMseXAT3oNiFxmaqZdM0JFPYpeS/m3bZar15ybzz9c6TEaS1IEaoe4UgoNbSe/Z0LqxleCI0yrOox9KUVDuUhC8kHT3LT0zSuVqSQxqcYUtjqobSBAgcml4rdB7E+witAnHLwchuujSPA4e+aTzSK4ibq36LOhw42Oi12ryYbS/JCni5vUBPyS/qzdD+5X00hG43dB/oMqtljV+zfVLNDRb3qzRTWLed1D7J0+VbHE4g8rucwznG+4cr6x676ENr5hVm4Y/bplCDpn9w7uNoRvFJquoHIhzCN0VYmys=]
+
+:::
+
+
+
+
 
 ## `page()`, `pageIfEqual()`, `pageIfLower()`, `pageIfHigher()` & `pageIfBetween()` - Going to next page
 There are 4 different copnfiguration methods you can call to specify which page the user should come to depening on which number the user has entered:

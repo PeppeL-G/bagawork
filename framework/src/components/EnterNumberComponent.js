@@ -15,6 +15,7 @@ export class EnterNumberComponent extends Component{
 	_page = null
 	_pageIfEqual = []
 	_pageIfBetween = []
+	_decimals = Infinity
 	
 	enteredNumber = ``
 	
@@ -30,6 +31,20 @@ export class EnterNumberComponent extends Component{
 		this._number = number
 		this.enteredNumber = number
 		return this
+	}
+	
+	decimals(numberOfDecimals) {
+		
+		validateArgs(
+			this,
+			`decimals`,
+			[`number`],
+			arguments,
+		)
+			
+		this._decimals = numberOfDecimals
+		return this
+		
 	}
 	
 	defaultNumber(number) {
@@ -260,6 +275,31 @@ export class EnterNumberComponent extends Component{
 			// If it starts with a dot, remove it.
 			if([`.`, `,`].includes(inputElement.value[0])){
 				inputElement.value = inputElement.value.substring(1)
+			}
+			
+			const decimalCharacter = inputElement.value.match(/[.,]/)?.[0]
+			
+			// If no decimals are allowed and some exists,
+			// remove all after the first decimal,
+			// including the decimal characters.
+			if (this._decimals <= 0 && decimalCharacter){
+				
+				inputElement.value = inputElement.value.substring(
+					0,
+					inputElement.value.indexOf(decimalCharacter),
+				)
+				
+			}
+			
+			// If decimals are allowed and too many exists,
+			// remove the ones at the end.
+			if(0 < this._decimals && decimalCharacter){
+				
+				inputElement.value = inputElement.value.substring(
+					0,
+					inputElement.value.indexOf(decimalCharacter) + 1 + this._decimals,
+				)
+				
 			}
 			
 			this.enteredNumber = parseFloat(inputElement.value)

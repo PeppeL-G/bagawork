@@ -14,6 +14,13 @@ const EnterNumber = (() => new (
 		number(theNumber: number){ return this };
 		
 		/**
+		 * This methods sets the maximum number of decimals the entered number may have. Pass it `0` to only allow integers.
+		 * 
+		 * @param numberOfDecimals The maximum number of decimals allowed
+		 */
+		decimals(numberOfDecimals: number) { return this };
+		
+		/**
 		 * This methods sets the placeholder text that is shown in the component
 		 * when it's empty.
 		 * 

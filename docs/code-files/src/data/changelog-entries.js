@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the example app Personal Website`,
+		`Added the method EnterNumber.decimals()`,
 	],
 }, {
 	version: `0.0.26`,
