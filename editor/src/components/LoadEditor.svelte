@@ -42,10 +42,10 @@
 		if(!$app?.code){
 			$app = defaultProject.app
 		}
-		if(!$folders?.length){
+		if(!$folders){
 			$folders = defaultProject.folders
 		}
-		if(!$pages.length){
+		if(!$pages){
 			$pages = defaultProject.pages
 		}
 		if(!$pageTemplates.length){
