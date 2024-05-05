@@ -17,40 +17,37 @@
 	
 	onMount(() => {
 		
+		let loadedEditorSettings
+		let loadedApp
+		let loadedFolders
+		let loadedPages
+		let loadedPageTemplates
+		
 		if (bagaCode != "") {
 			
 			try {
 				
 				const project = getDecompressedProject(bagaCode)
 				
-				$editorSettings = project.editorSettings
-				$app = project.app
-				$folders = project.folders
-				$pages = project.pages
-				$pageTemplates = project.pageTemplates
+				loadedEditorSettings = project.editorSettings
+				loadedApp = project.app
+				loadedFolders = project.folders
+				loadedPages = project.pages
+				loadedPageTemplates = project.pageTemplates
 				
 			} catch (error) {
 				console.log(error)
 				alert("The baga code given to the editor is invalid. The default project will be loaded instead.")
 			}
+			
 		}
 		
 		// Whatever that failed to load, load from default.
-		if(!$editorSettings?.screen){
-			$editorSettings = defaultProject.editorSettings
-		}
-		if(!$app?.code){
-			$app = defaultProject.app
-		}
-		if(!$folders){
-			$folders = defaultProject.folders
-		}
-		if(!$pages){
-			$pages = defaultProject.pages
-		}
-		if(!$pageTemplates.length){
-			$pageTemplates = defaultProject.pageTemplates
-		}
+		$editorSettings = loadedEditorSettings ?? defaultProject.editorSettings
+		$app = loadedApp ?? defaultProject.app
+		$folders = loadedFolders ?? defaultProject.folders
+		$pages = loadedPages ?? defaultProject.pages
+		$pageTemplates = loadedPageTemplates ?? defaultProject.pageTemplates
 		
 		isDoneLoading = true
 		
