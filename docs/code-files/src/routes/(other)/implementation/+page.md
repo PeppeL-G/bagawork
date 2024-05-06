@@ -21,4 +21,4 @@ Changes made in each version is documented on the [Changelog](../changelog/) pag
 
 
 ## Source code
-The source code for all @bagawork packages is available in the Git repository <a href="https://github.com/PeppeL-G/bagawork" target="_blank">https://github.com/PeppeL-G/bagawork</a>.
+The source code for all @bagawork packages is available in the Git repository [https://github.com/PeppeL-G/bagawork](https://github.com/PeppeL-G/bagawork).

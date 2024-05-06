@@ -1,7 +1,7 @@
 # Motivation
-> Programming is one of the most difficult branches of applied mathematics; the poorer mathematicians had better remain pure mathematicians.
+> *Programming is one of the most difficult branches of applied mathematics; the poorer mathematicians had better remain pure mathematicians.*
 >
-> -- <cite>Edsger Dijkstra</cite>, <a href="https://www.brainyquote.com/quotes/edsger_dijkstra_204342" target="_blank">source</a>
+> -- [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) (famous professor in mathematics, and computer scientist), [source](https://www.brainyquote.com/quotes/edsger_dijkstra_204342)
 
 ## Short version
 Learning programming is hard. BagaWork tries to make it easier and more fun to learn programming, so we will get more and better programmers out there in the world.
@@ -41,7 +41,7 @@ Here is a short list of what the primary focus has been when designing BagaWork,
 	* The classes in the framework:
 		* Are easy to use:
 			* No need to use the `new` keyword
-			* Not much syntax needs to be learned thanks to <a href="https://en.wikipedia.org/wiki/Method_chaining" target="_blank">method chaining</a>
+			* Not much syntax needs to be learned thanks to [method chaining](https://en.wikipedia.org/wiki/Method_chaining)
 		* Have good descriptive names, so it is easy to remember what they represent
 		* Have good documentation:
 			* Written in a way that's easy to understand for beginners

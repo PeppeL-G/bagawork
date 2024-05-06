@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added the method EnterNumber.decimals()`,
 		`When loading the editor and the BagaCode contains no pages (empty array), don't populate it with default pages`,
 		`Added exercises to the "Fundamentals" tutorials`,
+		`All links on this website that leads to another website or to our online editor open in new window/tab`,
 	],
 }, {
 	version: `0.0.26`,
