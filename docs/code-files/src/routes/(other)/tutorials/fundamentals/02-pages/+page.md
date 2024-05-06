@@ -1,3 +1,7 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
 # 2. Pages
 This tutorial will teach you how to use pages in Bagawork.
 
@@ -87,6 +91,31 @@ In our :online-editor you can simply click on a page to show the code for it. Af
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+The code in [this BagaWork project](/editor#eNq1kl1LwzAUhv9KODeuEEZXGUhvpIrILhRxAx12sNCebsMuKckpbpT+d9PVlbWsEwQvGs7Jez6evLQAkWXgFxCpGMGHKBXGsKd9kGUMd4QyNszGRShDqr5IoyCcktD0IlY4cGqFNFKuJWuE6rasm0ooOSQqjVEb8D8K2MTgjzhIsa02HlqAg0oSg/QOvnuM5zYuFxwyO6/VWQ+b1EkLvNnfwFdJh/4x33S5Z7Z8SPYYLJdOi53DDnzPtVB78K/dBmiG2yy1w1pgLZbAfE6SIM7TvwC9qi8zjNabNNYoB7UU0jQTEfJjdgIdaGR7lbODMYzWQrLRze3S4ec771Wab+WZBd3CkO5yIiV/1jyrk5G/1M7RXCg+Kk7nR6mt9DpWPkhCHazw/418Wwu6MpWXmtn5/Ra23jpyT+rayrhP8Xp7vHHP1o5Zi/IbAX5ZWg==) currently displays an empty page. Change the code in it, so it displays the text `This app is cool!` instead, as shown below.
+
+::bagawork-project[app&baga=eNq1UsFqg0AQ/ZXtXBpBgrEEipdiSyk5tJQm0IYayKJjlJpd2R1pgvjvXWMjUWILhR5cZ/a9mXnz2BJ4noNXQigjBA/CjGvNHvd+njPcEYpIMxOXgQio/kKFnHBOXNEz3+DIahBSSIUSrAXq26opqqCyIZZZhEqD915CGoE3sUHwbT3xUAI2yDjWSG/gOcd4aeJqZUNu+nUqm2azJukIb+e34uukp/6hSPu6F4Y+JnOM1osk1cyYwswvlDK7WFudZWzYgec6RuUevCunVbjAbZ6Z7h2lHXG+/pjFflRkf1H4Ij/1OEzSLFIoRg0U0DznIdrH7GQLXyHby4IdnGKUcMEm1zdryz5feSezYivODOgTA7otiKT4HvMkT1r+wl2i/oF8RKzey2msdHtW3gtC5W/w/418TThd6tpLxUz/YQs7u06cE14XmQ4h7mCNOx2Y2jNrVX0BWO5fPQ==]
+
+:::
+
+
+::: exercise Exercise 2
+
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look like the page shown below.
+
+::bagawork-project[app&baga=eNq1UtFKw0AQ/JVzX2wglDRSlLxIFJE+KGILWkyhR7JpgulduNtgS8i/e2lMbUKrIAhJyN7szswOVwLPc/BKCGWE4EGYca3Zw9bPc4YbQhFpZv7LQARUv6FCTjglruiJr3BgNQgppEIJtgfq06oZqqCyIZZZhEqD91ZCGoE3skHwda24GwEbZBxrpFcDOVdtNQfPvawWNuSGsjPc8E2aouN9b2Hvvy56C9wXad/6zLQPyXwGy1mSamYeSvCb7mxpdZayYWPcOY4NW/AuHKe1OcN1nhmJjt2OQ1+/T2I/KrK/2HyWH3oYJmkWKRSDBgpomvMQ7bY6WMVXyLayYLu4zEJcsNHV9dKyj0/eyqxYiyMC/caAbgoiKb5kHuUB5S+9c9Q/NLeI1btBTZRuL8o7Qaj8Ff5/kC8Jp3NdZ6mY4T8dYWfXkXPQ10XGpxD35Iw7PqHaC2tRfQIKMmG9]
+
+::::hint
+
+When you add a new page, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like as shown above.
+
+::::
+
+:::
 
 ## That's it!
-And now you know the basic structure of all Bagawork apps. Good work, and congratulation! 🥳 But you probably want the GUI in the pages to not only display text, right? So continue with next tutorial to learn more about how the GUI works.
+Now you should know the role of pages in Bagawork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../03-configuring-gui-components/) 🙂

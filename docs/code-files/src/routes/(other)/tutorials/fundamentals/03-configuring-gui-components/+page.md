@@ -176,6 +176,43 @@ class StartPage extends Page{
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+The code in [this BagaWork project](/editor#eNq1UttKw0AQ/ZV1XkwglDZSkLxIFNE+KGIFLabQNZlcaLobdifYUvLvbhpbmtAoCD5k2dkzM+dCtsCLArwthDJC8CDMudbsYeMXBcM1oYg0M/dtIAKqv1AhJ5wSV/TEE7TsBiGFVCrBDkD9WjVDFVQOxDKPUGnw3reQReCNHBB8VTPuRsABGcca6Q284f4+M/dq7kBh9rUmm2WTpmgJP/AfxNdFR/1dmXV1v5j2AZnDWtxnjFJUeLawBx88XCZKliK6kblU1kJhZJ5VlqRk2S2PDqzBc4dG/Aa8i+FB+AuuityQtgy0NPt6OYn9qMz/IvxZfupBmGZ5pFBYDRTQtOAhOvvqyJyvkG1kyXYBGp9csNHl1cJ2Tk8a1+VKnCDoNgZ0XRJJ8U3zKI9W/tI7Q/1D8x6xOz9UE6XbifJWECo/wf8P8jXldK7rLBUz+/sjbHkdDY/62si4D3F7Z9xxD2snrHn1BUZAZ5o=) currently displays a page looking like this:
+
+::bagawork-project[app&baga=eNq1UttKw0AQ/ZV1XkwglDZSkLxIFNE+KGIFLabQNZlcaLobdifYUvLvbhpbmtAoCD5k2dkzM+dCtsCLArwthDJC8CDMudbsYeMXBcM1oYg0M/dtIAKqv1AhJ5wSV/TEE7TsBiGFVCrBDkD9WjVDFVQOxDKPUGnw3reQReCNHBB8VTPuRsABGcca6Q284f4+M/dq7kBh9rUmm2WTpmgJP/AfxNdFR/1dmXV1v5j2AZnDWtxnjFJUeLawBx88XCZKliK6kblU1kJhZJ5VlqRk2S2PDqzBc4dG/Aa8i+FB+AuuityQtgy0NPt6OYn9qMz/IvxZfupBmGZ5pFBYDRTQtOAhOvvqyJyvkG1kyXYBGp9csNHl1cJ2Tk8a1+VKnCDoNgZ0XRJJ8U3zKI9W/tI7Q/1D8x6xOz9UE6XbifJWECo/wf8P8jXldK7rLBUz+/sjbHkdDY/62si4D3F7Z9xxD2snrHn1BUZAZ5o=]
+
+Your task is to change the code, so the page instead looks like this:
+
+::bagawork-project[app&baga=eNq1UtFKw0AQ/JVzX0wglDZSkLxIFNE+KGILWmyhZ7JpQ6934W5DW0r+3UtjQxNaBcGHhN3Mzs7OkB3wLINgB5GKEQKIBDeGPW3DLGO4IZSxYbbeTeSEyifSyAmHxDW98Dk6boWQRsq1ZDVQfi0qUgGFB4kSMWoDwccO0hiCngeSr0rFPQU8UElikN4h6B7qsa2LqQeZ3ddgVssGVdM4vNavjy+b1vUPedq+e2THO2RfzuwxZbRAjRczt/PJo+Vcq1zGd0oo7cy2KIRaW4RU5rgdgQk5bsOrBxsI/K41sYXgqlsbGOEqE1a8YaRxe2iWgySMc/EXA69qbTrRIhWxRulU0ISGGY/QO3RHJkONbKtytg/S+uWS9a5vZq53mmnd5yt5QqA9OKHbnEjJb5lndbTyl9kxmh+GD4jb+rGqKP1WlPeSUIdz/P8g3xacLk2ZpWZ2//kIG1573aO5JtI/h/hnOX7/jGorrGnxBSSjalo=]
+
+::::hint
+
+Hmm... What were the names of the configuration methods to make the text appear to the `.left()` and `.top()`? Ah, that's right!
+
+::::
+
+:::
+
+::: exercise Exercise 2
+
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
+
+::bagawork-project[app&baga=eNq1kl1LwzAUhv9KODe2UEo3EaU3UkV0F4qooMMOlrWn21ialOQUHaP/3XR1Yy2rguBFICfv+XofsgFeFBBuIFEpQgiJ4Maw+3VUFAw/CWVqmL1vYhlTfRKNnPCZuKZHPkfHbRTSSKWWbC/Ur1VTVEHlQaZEitpA+L6BZQrhwAPJ83ritgQ8UFlmkN6sFFzsojGEw/Nq4kFhW7aKm36jJmjtvl9hv38ddAzclsvu6i823Z/xZDXXqpTptRJKO9OPxZJw6vpkVSeGOxRCsUyrnNEC2UwR2avAjFiitETNQjcG128Ex/VryXFbNDz4tLaCwIM1hKdBsPP3gnkh7G4tny1rkVmNsigtxV/8PakP4yeLpUg1SqeRYnoueILeLtoy2FqdRhrZWpVsy9ma5ZINLi6nrne80uIqc3lkQDcxpqvSspHfYx7UQctfcsdofkjeKW7n6zUohx2UN5JQR3P8f5CvC04npmapme3fj7DldRAc5LWVsz5l2FszPOuZ2oE1qb4AYt11yg==]
+
+
+::::hint
+
+When you add a new page, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like as shown above.
+
+::::
+
+:::
 
 ## That's it!
-Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to learn. You have only seen examples of how to use the `Text` component and a few configuration methods you can call to configure it, but Bagawork contains many more components you can use, and many other configuration methods you can call. The hard part will be to learn which these components and configuration methods are, and how you can combine them do create more complex GUIs (most GUIs do not only consist of a single GUI component). In next tutorial you will be introduced some more of them.
+Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learnt. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them do create more complex and useful GUIs (a GUI showing consisting of a single GUI component is usually not that useful). 
+
+Continue with [Tutorial 4. Positioning GUI Components](../04-positioning-gui-components/) when you are ready.

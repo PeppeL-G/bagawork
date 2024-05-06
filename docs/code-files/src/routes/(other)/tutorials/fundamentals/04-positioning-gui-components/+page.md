@@ -148,5 +148,61 @@ Most real GUIs are built on rows and columns like this, so this is a very powerf
 
 
 
+
+
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+The code in [this BagaWork project](/editor#eNq1kVFLwzAQx79KvBc7KKObDKQvUofoHhRxgzncYLG5bWVZUpKUrY5+d9NVy1pafdGHlEvv/ve/++UINI7BP0IoGYIPIadak8c0iGOCB4OCaWLj41zMTX5ChdTg2FBlnukanU6RMQpNogQpE/nfrBBlkLmwkpyh0uC/HSFi4PdcEHSXO54k4IJcrTSaV/C973hm42zhQmz7VZRFs1FxqQxe+pfD55fa9PdJVJ/7Re51N9xEnCkUTpGam4lt0jX24ywfkHO57HTfabhdK5kINpRcKmepkC07boNiqOhH2qTg0Q6bJVOpOLto0qS5/b5UdSp4XTiA3/cstxT8K69kNsFdzO2+FXYVXIHejlYBS/jfMRvHNMSm5QKFJJUJOb0dMRsqSO/65gxEVWkXT3aiwaBeODe3iTFSfNk8ybOWv9TOUP9Q3Aw7cwuU/RrKO2FQBWv8f5DTDTWXOmepiO3fjrCya887q6tmBm2ZfqumP2hxrcFaZJ9YNJZ5) currently displays a page looking like this:
+
+::bagawork-project[app&baga=eNq1kVFLwzAQx79KvBc7KKObDKQvUofoHhRxgzncYLG5bWVZUpKUrY5+d9NVy1pafdGHlEvv/ve/++UINI7BP0IoGYIPIadak8c0iGOCB4OCaWLj41zMTX5ChdTg2FBlnukanU6RMQpNogQpE/nfrBBlkLmwkpyh0uC/HSFi4PdcEHSXO54k4IJcrTSaV/C973hm42zhQmz7VZRFs1FxqQxe+pfD55fa9PdJVJ/7Re51N9xEnCkUTpGam4lt0jX24ywfkHO57HTfabhdK5kINpRcKmepkC07boNiqOhH2qTg0Q6bJVOpOLto0qS5/b5UdSp4XTiA3/cstxT8K69kNsFdzO2+FXYVXIHejlYBS/jfMRvHNMSm5QKFJJUJOb0dMRsqSO/65gxEVWkXT3aiwaBeODe3iTFSfNk8ybOWv9TOUP9Q3Aw7cwuU/RrKO2FQBWv8f5DTDTWXOmepiO3fjrCya887q6tmBm2ZfqumP2hxrcFaZJ9YNJZ5]
+
+Your task is to change the code, so the page instead looks like this:
+
+::bagawork-project[app&baga=eNq1kV1LwzAUhv9KPDduUMZWGUhvpA7RXSjiBnPYwWJztpVlSUlStjr6301XLWtpFQQvWk7ynvd8PDkCjWPwjhBKhuBByKnW5DH145jgwaBgmtj4GIjA5F+okBqcGKrMM11jp1soRqFJlCClkN9mhSmDzIGV5AyVBu/tCBEDb+CAoLu848kCDsjVSqN5Ba//Hc9tnC0ciG29irMoNi4OlcHL/uXw+aE2/X0S1eceSZ7shO6Fm4gzhaJTqIGZ2jo9Y3+d5QNyLpfd3jsNt2slE8GsS6rOUiFbdp0Gx0jRj7TJwaMdNltmUnF20eRJ8/b70tWtEHbgAJ7bt+hS8K76JbYp7mJuV67gqxDz9Xa88lnC/4LtRe4bmE1iGmLTcr5CksqEnJ6PmA0VZHB9cwai6mx9lHpiYG4TY6T4avMkz0r+kjtH/UNyM+zMKVC6NZR3wqDy1/j/IGcbai51zlIRW78dYWXXQf8sr6oM2xS31eMOW7rWYC2yT347l68=]
+
+::::hint
+
+Just changing the root GUI component to another GUI component should do it. But which GUI component should you change it to?
+
+::::
+
+:::
+
+::: exercise Exercise 2
+
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
+
+::bagawork-project[app&baga=eNq1kVFLwzAQx79KuBdbKGObDKQv0onIHhRRQYcbLDbXrSxNSnJljtHvbrq6sdZNRfChIZe7//3vft0Az3MINxBrgRBCLLm17HYd5TnDd0IlLHP3zURNqPpig5zwkbihez5Hz68zZJAKo9g+Ub2WtaiEMoBES4HGQvi6gVRA2AtA8axy3EogAJ0kFukFwu7uPnb3chpA7vo1lHWzUR00Bt/774evgtb0N0XanvtBr2znjcfLudGFEldaauPNDIqZ34kXqRQGlVcrJvSY8xiDXfTknDrkDm821EQ6Y9ULi3WWa4WK2CqlBZOYEOMynSsUrKruuM5fDNcopV65TFXu+Z8efgNmAO8Q9ruO0hrC8+6e0BNmuXTbNUg14ER2OUoiUcg/E/o9isggW+uCbf8UowVXrHdxOfOD40q3f5GpIwbtwgkNCwdZfdrc6YOWP9SO0X5TfBx2GdQo+y2U14rQRHP8f5DPC05ntmJpmOt/GmFj1173oK6ZGZzK9E9q+oMTri1Y0/IDAHKPhw==]
+
+::::hint
+
+Hmm... Doesn't the GUI look like two `Rows`? With the first row being some `Space`, and the second row being some `Text`?
+
+::::
+
+:::
+
+::: exercise Exercise 3
+
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
+
+::bagawork-project[app&baga=eNq1U99LwzAQ/lfCvbhCGVuHIH2RKiJ7mIgKKm7Q2N62YpqU5KqO0f/d1Oo0tR0i+NByP/LdXb7vsgVeFBBuIVEpQgiJ4Maw2SYqCoavhDI1zNrbuZxT/SUaOeE1cU2XfIUDr8mQRiq1ZLtEHa0aUAWVD0slUtQGwoctZCmEYx8kz+uO7xDwQS2XBukOwtGnfW/tauFDYes5yKbYtHGcwXf9d8PXTmv68zJrz32qRJlLM0zWmUg1ykGTndOVeumIzum64An6X/6N7Tck+xvEU8KcjWNv+MiTp5VWpUxteaUHscY09vaAgi6QyHLci5p0oTYohHpxcO7IXxk3/q36jGeSJUpaIomFXlcbk4ln1HF3Mc9ZAh9eIQxGVt0NhJPRTtkbzAthVXEUdkSNzNN0GaWl+Iuy3QL23jnSyDaqZO8bxmjNJRsfHcd9bPXuzc8NOSmJlPxoc6H2SNM6e4/mFzp6rRfXUBm0qDyzYupohf9P5O2a04GpudTM1u+n0LnrePTtnJs57MsEvZjg8FebWS2qNx9P07w=]
+
+::::hint
+
+Hmm... What does the root component look like? Does the GUI seem to consists of `Rows`, or `Columns`? After you have figured that out, you can hopefully figure out the rest too. Hopefully ^^
+
+::::
+
+:::
+
+
+
+
 ## That's it!
-Good work, now you have learned the basics about using layouts and building more fancy GUIs! 🥳 It takes some practice before you're good at seeing GUIs as rows and columns, but you actually don't need more than this to create a wide variety of layouts. Just look at your web browser; all GUI components in it are arranged as rows and columns!
+Good work, now you have learned the basics about using layouts and building more fancy GUIs! 🥳 It takes some practice before you're good at seeing GUIs as rows and columns, but you actually don't need much more than this to create a wide variety of layouts. Just look at your web browser; all GUI components in it are arranged as rows and columns!
+
+Excited about to learn some more? Then continue with [Tutorial 5. Changing Page](../05-changing-page/).

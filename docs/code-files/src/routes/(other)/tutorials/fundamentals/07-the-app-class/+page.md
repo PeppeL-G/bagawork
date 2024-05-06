@@ -8,7 +8,7 @@ This tutorial will teach you the basics about the `App` class.
 
 
 ## App structure
-As you should know by now, a Bagatell app consists of different pages. However, that is not enough for a Bagatell app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a Bagatell app also consists of an `App` class.
+As you should know by now, a Bagawork app consists of different pages. However, that is not enough for a Bagawork app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a Bagawork app also consists of an `App` class.
 
 
 
@@ -54,6 +54,27 @@ Example showing a Bagawork app consisting of two pages, and how the app class te
 
 :::
 
+
+
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+When opening [this BagaWork project](/editor#eNq1UsFqg0AQ/ZXtXBpBgloCxUuxpZQcWkoTaEsNZNExSs2u7I40Qfz3rjEJUWJLDz0oM755b948rIAXBfgVRDJG8CHKudbscRsUBcMNoYg1M3UVipCaJ1LICWfEFT3zFY6sFiGFVCrBjkDztW5JNdQ2JDKPUWnwPyrIYvBdGwRfNxt3FLBBJolGegPfOdTvpq4XNhRGr8NsxaZt0zHerHaPxpuu5/yhzPqe52Z8TOY1Ws7TTLNsL3OxtDpX2LAB33OMvS34V87R2hzXRW6kOxY7rgL9OU2CuMx30fzR3ov80uMozfJYoRi1UEizgkdoH7qTEwKFbCtLtouIUcoFc69vlpZ9nnkn83ItzizoD4Z0WxJJsV/zJE8kf5l9R/3D8AGxer9MG6XXi/JeEKpghf8f5GvK6VI3WSpm9Icj7NzqOidzXWQyhHiDHG8ysLUX1qL+BtD7XAA=) in the editor, it correctly displays a preview of `Page1` in the app. But, if you click on the `MyApp` button and preview the app, you can see that something is wrong: `MyApp.createStartPage()` tries to send back `StartPage`, which doesn't exist! So, when trying to run the app for real, it will crash as soon as it starts running. Fix this problem (please ^^).
+
+::::hint
+
+This problem can actually be fixed in 2 different ways:
+
+* Rename the page `Page1` to `StartPage`
+* Change the code in `MyApp.createStartPage()` to return `Page1` instead of `StartPage`
+
+Which you should do depends simply depends on if you prefer to have the first page in the app named `StartPage` or `Page1`. 
+
+::::
+
+:::
 
 
 

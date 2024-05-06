@@ -27,15 +27,15 @@ These tutorials have primarily been designed to teach you how to use Bagawork, a
 
 
 ## Coding
-The simplest way to write the code for your Bagatell apps is by using our :online-editor. It contains all the functionality you need for writing the code for your app and to run it directly in your web browser. It also allows you to save the code for your app in a special format called `baga` as a file on your own computer (so you later can open it in the editor again), as well as sharing your code with others through links.
+The simplest way to write the code for your BagaWork apps is by using our :online-editor. It contains all the functionality you need for writing the code for your app and to run it directly in your web browser. It also allows you to save the code for your app in a special format called `baga` as a file on your own computer (so you later can open it in the editor again), as well as sharing your code with others through links.
 
 
 
 ## Hosting
-When you're done creating your Bagatell app, you can use our website [Bagaland](https://bagaland.com) to host it. That way, anyone can run your app in their web browser, and they can even install it on smartphones/tablets.
+When you're done creating your BagaWork app, you can use our website [Bagaland](https://bagaland.com) to host it. That way, anyone can run your app in their web browser, and they can even install it on smartphones/tablets.
 
 
 
 
 ## That's it!
-Great work, now you have a basic understanding of what Bagawork is 🥳 Next tutorial will be about using pages in Bagawork, which are the fundamental components all Bagawork apps consist of.
+Great work! 🥳 Now that you have a basic understanding of what BagaWork is you should be ready to learn how to implement apps in BagaWork, starting with [Tutorial 2. Pages](../02-pages/).
