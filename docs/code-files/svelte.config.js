@@ -7,6 +7,7 @@ import { createBagaworkProjectPlugin } from './plugins/create-bagawork-project-p
 import { createOnlineEditorPlugin } from './plugins/create-online-editor-plugin.js'
 import rehypeExternalLinks from 'rehype-external-links'
 import { createDocsPlugin } from './plugins/create-docs-plugin.js'
+import { createHintPlugin } from './plugins/create-hint-plugin.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -28,6 +29,7 @@ const config = {
 				createBagaworkProjectPlugin,
 				createOnlineEditorPlugin,
 				createDocsPlugin,
+				createHintPlugin,
 			],
 			rehypePlugins: [
 				[rehypeExternalLinks, {rel: ['nofollow'], target: "_blank"}],
