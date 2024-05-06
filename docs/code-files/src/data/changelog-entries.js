@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.27`,
+	date: `2024-05-06`,
 	changes: [
 		`Added the example app Personal Website`,
 		`Added the method EnterNumber.decimals()`,
