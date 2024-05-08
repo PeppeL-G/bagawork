@@ -84,5 +84,53 @@ So, here's the code for the app using constants, instead of harding the name of 
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+The code in [this BagaWork project](/editor#eNq9VA1r2zAQ/StXMWgCwuSrW2sYwx0lZKztaANbWMqi2OfE1JaMJLc1wf99kj23cZaEbrSFxEg66T7ee3crwtKUuCviiwCJS/yYKQXnuZemgA8aeaDArFdTPtX27w3PLsa/LrzzM/gIsy8sQQWnggez+oIvkWm81kzqb2yBrXb1VEvUmeQwlIg64gtrs4aieleQgpJQxAFKRdyfKxIFxO1Swk0Ak1XpjlAiwlCh/kHcTr2emHVxQ0lq/DVeVs5G1aZR3HoKjzXazapZwzCLNrO/EvfK8ZdRHEjkrco01dcp85HWu7Fx6Wjzac2GQgSQCMlNNArvVsx5gq84mLXpdg+fRZwlfEugzYtTfZppLfjWcNeRNCEcC0zLUypa8AR5yUmb7nJYW9oNaih5IG6vYzDPidvvdApaodzbh3Iz5OviPBEZKMQEGMwjDXMhMdiEm4ISsESJ4Asr2lxkErh5DuwxUxeGArT5LRHm7BZlDmopUhC8PBLmI0FFgVmG5YnSVksUGA9gLg3skBgbr+2RBN+4URTSGJlC58UpH4HEMFNY0l2zfVUe7Wd6w89laGDJ5IYjz/cx/X/JDE5O/kimX0umv08yT3m/rlxGViyO48BIHyqYI3LgkY9wy8W95dBI469udeArsjusZLPIuJVJEtlRaejOU+Q8tzIpzffMiFBk2gHbkfMcd7X6FsyOO+9LzLqDDzVmg71t9kjR62I2XjILFoOFHTIxCw7g0ug8YDm1RR/GsQHSmm08MBlw/eyJtweGQb9fT/cxJmlsamlM+Y2RczsKvSCL3wAPT5ZagJIY0+uMQ/f404v394WYPbuHJ6hm/9qna6O8AeUZ1yi9xRs04/dKWGXjGP+7IWzU2u2s3WtajnZZejvf9I6epczipvgNJgtF4w==) contains an app that works like this:
+
+::bagawork-project[app&baga=eNq9VA1r2zAQ/StXMWgCwuSrW2sYwx0lZKztaANbWMqi2OfE1JaMJLc1wf99kj23cZaEbrSFxEg66T7ee3crwtKUuCviiwCJS/yYKQXnuZemgA8aeaDArFdTPtX27w3PLsa/LrzzM/gIsy8sQQWnggez+oIvkWm81kzqb2yBrXb1VEvUmeQwlIg64gtrs4aieleQgpJQxAFKRdyfKxIFxO1Swk0Ak1XpjlAiwlCh/kHcTr2emHVxQ0lq/DVeVs5G1aZR3HoKjzXazapZwzCLNrO/EvfK8ZdRHEjkrco01dcp85HWu7Fx6Wjzac2GQgSQCMlNNArvVsx5gq84mLXpdg+fRZwlfEugzYtTfZppLfjWcNeRNCEcC0zLUypa8AR5yUmb7nJYW9oNaih5IG6vYzDPidvvdApaodzbh3Iz5OviPBEZKMQEGMwjDXMhMdiEm4ISsESJ4Asr2lxkErh5DuwxUxeGArT5LRHm7BZlDmopUhC8PBLmI0FFgVmG5YnSVksUGA9gLg3skBgbr+2RBN+4URTSGJlC58UpH4HEMFNY0l2zfVUe7Wd6w89laGDJ5IYjz/cx/X/JDE5O/kimX0umv08yT3m/rlxGViyO48BIHyqYI3LgkY9wy8W95dBI469udeArsjusZLPIuJVJEtlRaejOU+Q8tzIpzffMiFBk2gHbkfMcd7X6FsyOO+9LzLqDDzVmg71t9kjR62I2XjILFoOFHTIxCw7g0ug8YDm1RR/GsQHSmm08MBlw/eyJtweGQb9fT/cxJmlsamlM+Y2RczsKvSCL3wAPT5ZagJIY0+uMQ/f404v394WYPbuHJ6hm/9qna6O8AeUZ1yi9xRs04/dKWGXjGP+7IWzU2u2s3WtajnZZejvf9I6epczipvgNJgtF4w==]
+
+As you can see, the page's GUI contains the name `James Bond` at multiple places. This name is currently stored in an app constant, so all pages can access it. All seems good!
+
+However, to improve security and anonymousity among the agents, it has now been decided that one should never referr to the agents by name, but only by their code numbers, which for `James Bond` is `007`.
+
+Change the code so the GUI displays `007` instead of `James Bond`. When you're done, it should look as shown below.
+
+::bagawork-project[app&baga=eNq9VA1r2zAQ/StXMWgCwjgfXVvDGN4oIbC2ow1sZSmLYp8TU1sykrzUBP/3Sfbc1lkSutEWbCPpWffx7t2tCcsy4q1JIEIkHgkSphScF36WAd5r5KECs15P+VTb1x+dXUx+XvjnZ/ABZq57PGuQQCLTeK2Z1F/ZAjvd+o6WqHPJYSQRdcwXFrNAWd8rSUlJJJIQpSLejzWJQ+L1KOEsteFU5gglIooU6u/Ec5v1jVmXt5Rkxl7rZm1sXG9aWT0N4SE5u1m3cxjl8Wb0V2KlnGAZJ6FE3qmhqb7OWIC02U2MSUebT2c2EiKEVEhuvFF4t2bOI2/lwaxLt1v4LJI85Vscbf441Z9yrQXf6u46lsaFY4np+ErFC54ir2rSpbsMNki3VRpK7onXdw3nBfEGrlvSmuX+PpbbLl+X5xuRg0JMgcE81jAXEsNNuikoAUuUCIFIUUEhcgncXAf2EKkHIwHaPEuEObtDWYBaigwEr46E+UhQcWiWUXWitNUSBcZDmEtDO6QG4w0eSwiMGUUhS5ApdF685GOQGOUKq3I31b6qjvZXesPOZWRoyeWGIT8IMPt/yQxPT/9IZtBIZrBPMo9xv65cxlYsjuPAWB8qmCNy4HGAcMfFytbQSOOvbnXgC7JfWMtmkXMrkzS2M9KUu8iQ88LKpIJXzIhQ5NoB25HzAne1+hbOTtz3FWe94XHD2XBvmz2U6HU5myyZJYvBwg6ZhIUHcGl0HrKC2qQPk8QQaWHrD0wEXD974u2hYTgYNNN9gmmWmFxaU35j5NyNIz/Mkzfgw5eVFqAqjOl1xqF38vHF+/tCzJ7dwzeoZv/ap09GeYvKM65R+os3aMZvtbCqxjH2d1PYyrXnPvmvjRztQvo77/SPnqXM8rb8De6IQuc=]
+
+:::
+
+
+::: exercise Exercise 2
+
+It can be fun to read texts containing smileys, such as 🙂, 😁 and 🤣. These are ordinary characters that can be used in the same way as letters (`a`, `b`, `c`, etc.), but they are quite hard to type on a keyboard, since they don't have their own keys on the keyboard, so people often copy-paste them:
+
+1. Search for the smiley using Google, for example "[smiley smiling face](https://www.google.com/search?q=smiley+smiling+face)"
+2. Find and copy the smiley from a search result
+3. Paste the smiley wherever they want to write it
+
+This is not a very convenient procedure when you need to use the same smiley multiple times in your app. But app constants can be used to make it more convenient for us programmers!
+
+Your task is to:
+
+1. Open [this BagaWork project](/editor#eNq1UcFqg0AQ/ZVlLo0gIRECxUuxpZQeWkoTaEMNZNExSnV32R1pg/jvXTUJUWJ76mFl1jfvzby3FXClwK8gkjGCD1HOjWFP+0Apht+EIjbM1lUoQmpOpJETLolreuE7nDgdQhqp1IKdgOZv3ZFqqF1IZB6jNuB/VJDF4M9dELxoJrYUcEEmiUF6B392rNe2rjcuKKvXMA/lCguV2yV6Yr31A/P5mARxmbernHw0l4GRhzIbWniVX2YapVkeaxSTDgppqXiE7vG2spJTsp/JNtDI9rJkrT9GKRdsfn2zddzLzDuZl4W4MGDYGNJtSSTFYcyzPJP8o3eN5pfmI+IMnqiL0htEeS8IdbDD/w/yLeV0ZZosNbP64xH2vM5nZ319ZDGGeKMcbzEydRDWpv4B1Ngrlw==)
+2. Create the following three app constants:
+	* `SMILEY_SMILING` storing 🙂
+	* `SMILEY_GRIN` storing 😁
+	* `SMILEY_LAUGH_CRYING` storing 🤣
+3. Add a few pages that make use of these app constants to display the smileys
+
+When you are done, your app can for example work like this:
+
+::bagawork-project[app&baga=eNq9ldFu2jAUhl/lyJo0kCLWAN0Y0lRRVDGkFk2004bWqvGSA4lI7Mh2RBHKxfYU29UutgfcI8xOCEpQYeWiXIRgH58/9vefnKwIjWPSXRGXe0i6xA2plHC17MUx4INC5knQ/1e37FaZ6/pqeHkxuc9u8A6cv79+fndKgcF4OMrnf3wrz1/2Pg7e3/fHk+FokMf//HYKUVcgVXitqFAf6Axr9fxxSqBKBINNwMymeVJKUotMeeihkKT7ZUUCj3RtizAamWNkKcQifDqVqD6T7qldDCZ6nW2ndxaJtWQlOdcb5oMKkM0WNlDMYFU9wCAJtrc+5gvZcP0g9ASyWh7STGLqolWMbrRkQ+mfmtMPA3cOnIHyEWQUhLiEJU9gQZkCxSFEqkUjLhDoV56ohlO3Hhc9T5TiLJeljbJr9YY5d+3aqJtDHKRg7F0LDETADs4vl8Fa55ImM78vlgGb7ZarV6y3yIO2qNO0yJJ0m+3XqZVb2NxrYXHg57XwxaqKO4UIKZPaUaoyWzlDWPgcFoIrzGZMIgQyM1xTeJqpzjl1505hZlGe9Z242p2TDNfbTkGrtY9W4e7RYJnKOpwVSA5R4vp5inlVXMpAIoIfyFc+Cp2Ayn8epG9adl6BrQ3T9j6mW5V+NLTll+4AxKHZ7pqxT4W3ztEtSILLI4Sp4NGGMy5RPlfldjLM7eama99gFIcaU6V7V1j35Hw47XlJeISu3dPt2JReZryhxMDunO1k0edhErFHHrC9cAvbiJck/7N2gnLP4vqjXbXURSsoL5hC0ZsdoXd+0gX2UhqWArT+2dPKyT4pratGTndFmjtzmqfOUz5B6V36D8CQTJs=]
+
+:::
+
+
+
+
 ## That's it!
 Great work, now you also now how to use app constants in Bagawork! 🥳 And constants are great, but variables are even more usefull, so let's take a look at them next.

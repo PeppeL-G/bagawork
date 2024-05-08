@@ -101,5 +101,39 @@ So, here's the code for the page using a constant, instead of harding the name a
 
 
 
+
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+::: exercise Exercise 1
+
+The code in [this BagaWork project](/editor#eNq1UmGL2kAQ/SvDUqjCEtRyUAKlxDs5LGhLT2iPetQlmWjoOht2J3hB8t+7Ma1nctpeP/RDwiYzb968t28vVJ6LcC9ik6AIRayVczArozwHfGSkxIE/75e05PqJLSrGO1aWP6k19vpNhS1yYQnu0DfwLHMuM1Q31NWqAVeikiI1OkHrRPhtL7JEhEMpSG1r5sNMIYVJU4f8VYSD3+d7f64epMj9vBayGTZtPloCnu1xFFN/HNVEt5P54vs8mk3gHaw++EUcjA0lq7bc2yLrCv1sdi6IN5lOLFKvKS154VkC9q/e6gaVhVf7PHjiqOSqH2hMudeXpwh5Bj6FjckReJM58Fu5WkKaUQKlKWCHWsvu8AA+Uoyg1iojCaawEBtiWwIhet0eF8C1/6NihpkhLHMkKiE11rMgJMgq0y54+Yo3BsgwaGQoHCRmR893evm0MTqGXeY26CTMurh+K0dSPIpwNPABKUX4ZnAMxwK3ufb31QpJKxeR+zFNo6TQfDkU/3jnd7mK8ZyiyOLhtg4h9R4rguHb96snK9rIa6OLLZ0h6DYueVwwG/pFMzcnI//Se4/uD83nza5kY+WoY+WEGG20xv9v5JeN4teHBFsfb7xsYUvrcHDS165cXaqMLmJGVxdYO2Y9VD8B6GfnMg==) contains a page that looks like this:
+
+::bagawork-project[app&baga=eNq1UmGL2kAQ/SvDUqjCEtRyUAKlxDs5LGhLT2iPetQlmWjoOht2J3hB8t+7Ma1nctpeP/RDwiYzb968t28vVJ6LcC9ik6AIRayVczArozwHfGSkxIE/75e05PqJLSrGO1aWP6k19vpNhS1yYQnu0DfwLHMuM1Q31NWqAVeikiI1OkHrRPhtL7JEhEMpSG1r5sNMIYVJU4f8VYSD3+d7f64epMj9vBayGTZtPloCnu1xFFN/HNVEt5P54vs8mk3gHaw++EUcjA0lq7bc2yLrCv1sdi6IN5lOLFKvKS154VkC9q/e6gaVhVf7PHjiqOSqH2hMudeXpwh5Bj6FjckReJM58Fu5WkKaUQKlKWCHWsvu8AA+Uoyg1iojCaawEBtiWwIhet0eF8C1/6NihpkhLHMkKiE11rMgJMgq0y54+Yo3BsgwaGQoHCRmR893evm0MTqGXeY26CTMurh+K0dSPIpwNPABKUX4ZnAMxwK3ufb31QpJKxeR+zFNo6TQfDkU/3jnd7mK8ZyiyOLhtg4h9R4rguHb96snK9rIa6OLLZ0h6DYueVwwG/pFMzcnI//Se4/uD83nza5kY+WoY+WEGG20xv9v5JeN4teHBFsfb7xsYUvrcHDS165cXaqMLmJGVxdYO2Y9VD8B6GfnMg==]
+
+As you can see, the page's GUI contains the name `James Bond` at multiple places. This name is currently stored in a page constant, and the GUI code refers to that page constant each needs to display the name. All seems good!
+
+However, to improve security and anonymousity among the agents, it has now been decided that one should never referr to the agents by name, but only by their code numbers, which for `James Bond` is `007`.
+
+Change the code so the GUI displays `007` instead of `James Bond`. When you're done, it should look as shown below.
+
+::bagawork-project[app&baga=eNq1UmGLm0AQ/SvDUmgCi5iUo0UoxbsLRz6YlibQHs3RLDpG6WZXdkdyEvzvXWObi15srx/6QVmdeW/mvX0HJoqCBQcW6wRZwGIprIWoCosC8JFQJRbc+bBWa2qe2KAgXJIw9ElscTRuK2SQSqNgia6BotzaXKumoanWLbhmNWeplgkay4JvB5YnLJhwpsSumXzkZJzpNLVIX1ng/z7fu3P9wFnh+DrIlmzefnQEPNvjJKb5OKkJ72aL1fdFGM3gPWx8/+2mq/OuzPsKP+u99eIsl4lBNWpLa1o5eo/ca7S5RWHg1aHwnshrvhl7ElMajfk5gl+AzyHTBQJluYUdWtvsnuYqgUqXsEcpeZ/cg48qRhBbkSsOujQQa0WmAoXoBDucBzfuj4gJIq2wKlCpClJt3BSEBEnk0novX/FWg9IEEglKC4neq+c7vZztGi3BPrcZWg5RHzfuBIizRxZMfZeMigVv/FMqVrgrpLuvTjo6gQjtj3kaJqWk4TT8450vCxHjJUWhweNtHdPpPBYKJu8+bJ6s6CJvtCx36sKAfuOarksirX6NWegzyr/03qP9Q/Nls2veWjntWTlThCbc4v838ksm6PUxwcbFG4ct7Gid+Gd93crVUGU6iJleDUztmfVQ/wSoAuQ2]
+
+:::
+
+
+::: exercise Exercise 2
+
+The code in [this BagaWork project](/editor#eNq1UlFr2zAQ/iuHXpaAMElGYfhlOO0YGWQbS2ErTSHCPsdiyslIZ1IT/N8nx1sXu8nWh+3BRtLd9919391BqLIU8UGkNkMRi9Qo72FZJ2UJ+MhImYdwPqxpze2XOlSMK1aOP6stjsZdhB1y5QhWGBJ4qb3XltqENtp04EY0UuTWZOi8iO8PQmcinkpBatdWPnIKKWyee+RvIp78Ot+Fc/MgRRn4esiObNFdegKe9fEkpr0M1Lyv9FDHF7v3UVpokzmkURda820giTj8RpsbVA4+hM49zC1lcjOODOY8GsvTZHkGuYDClghcaA8B7tvmck0Z1LaCPRojT3gj+EQpgtoqTRJs5SC1xK4GQgxiAiSC6/CiUoalJaxLJKohty4UQMiQlTY+enl3NxbIMhhkqDxkdk+9dl5ONEfPsNe+QC9hOcSNe3shxaOIZ5Mw8FrErydPw77FXWnCgHpD78058d8XeZJVhv/ZkFelSvGcosThcUbHpQv2KoLpm7eb31b0kdfWVDs6U2CYuOZ5xWzpZ5mP9oTyL7l36P+QfN7sRnZWzgZWviNGl2zx/xv5tVD86ri8Lmw2Xrawp3U6OcnrR64uRWYXMbOrC1UHZj00PwB1bdj9) is the same as in the `Exercise 1`, but no page constant is used, so `James Bond` has been hardcoded at multiple places in the GUI code!
+
+Your task is to rewrite the code so `James Bond` is put in a page constant, and in the GUI code refer to that constant whenever it needs to display the name. When you have done that, change the value in the page constant to `007` instead. When you're done, it should look as shown below.
+
+::bagawork-project[app&baga=eNq1UmGLm0AQ/SvDUmgCi5iUo0UoxbsLRz6YlibQHs3RLDpG6WZXdkdyEvzvXWObi15srx/6QVmdeW/mvX0HJoqCBQcW6wRZwGIprIWoCosC8JFQJRbc+bBWa2qe2KAgXJIw9ElscTRuK2SQSqNgia6BotzaXKumoanWLbhmNWeplgkay4JvB5YnLJhwpsSumXzkZJzpNLVIX1ng/z7fu3P9wFnh+DrIlmzefnQEPNvjJKb5OKkJ72aL1fdFGM3gPWx8/+2mq/OuzPsKP+u99eIsl4lBNWpLa1o5eo/ca7S5RWHg1aHwnshrvhl7ElMajfk5gl+AzyHTBQJluYUdWtvsnuYqgUqXsEcpeZ/cg48qRhBbkSsOujQQa0WmAoXoBDucBzfuj4gJIq2wKlCpClJt3BSEBEnk0novX/FWg9IEEglKC4neq+c7vZztGi3BPrcZWg5RHzfuBIizRxZMfZeMigVv/FMqVrgrpLuvTjo6gQjtj3kaJqWk4TT8450vCxHjJUWhweNtHdPpPBYKJu8+bJ6s6CJvtCx36sKAfuOarksirX6NWegzyr/03qP9Q/Nls2veWjntWTlThCbc4v838ksm6PUxwcbFG4ct7Gid+Gd93crVUGU6iJleDUztmfVQ/wSoAuQ2]
+
+:::
+
+
+
+
 ## That's it!
 Great work, now you have a basic understanding of what a page constant in Bagawork is 🥳 Next tutorial will be about using app constants in Bagawork, which are constants you can access from all your pages.

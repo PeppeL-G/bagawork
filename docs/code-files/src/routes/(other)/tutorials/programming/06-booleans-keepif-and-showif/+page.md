@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 5. Booleans, `keepIf()` and `showIf()`
+# 6. Booleans, `keepIf()` and `showIf()`
 This tutorial will teach you how to use boolean values in JavaScript, and conditionally keep/remove or show/hide GUI components.
 
 
@@ -12,8 +12,8 @@ An app often needs to do different things depending on if an answer to a questio
 * In a message app: Do you have 0 messages?
 	* If *yes*, show the text *You have no messages*
 	* If *no*, show a list with the messages
-* In a healthapp: Is the entered age negative?
-	* If *yes*, show the text *The age must be greater than or equal to 0*
+* In a health app: Is the entered age negative?
+	* If *yes*, show the text *The age you enter must be greater than or equal to 0*
 	* If *no*, show the text *The entered age is OK*
 
 To represent these *yes* and *no* answers, we can use the boolean datatype in JavaScript. This datatype only have two possible values:
@@ -26,7 +26,7 @@ So instead of thinking of it like the question *Do you have 0 messages?*, this d
 * In a message app: You have 0 messages
 	* If `true`, show the text *You have no messages*
 	* If `false`, show a list with the messages
-* In a healthapp: The entered age is negative
+* In a health app: The entered age is negative
 	* If `true`, show the text *The age must be greater than or equal to 0*
 	* If `false`, show the text *The entered age is OK*
 
@@ -177,7 +177,7 @@ Example showing how some `Text` components "jump around" on the screen when clic
 
 :::
 
-To avoid this, we want the components not shown on the screen to still occupy the space they would occupy if they wouldn't have been removed. To accomplish this, we can use the configuration `showIf()` instead of `keepIf()`. `showIf()` works the same way as `keepIf()`, but the component will still occupy space when it's not shown.
+To avoid this, we want the components not shown on the screen to still occupy the space they would occupy if they wouldn't have been removed. To accomplish this, we can use the configuration method `showIf()` instead of `keepIf()`. `showIf()` works the same way as `keepIf()`, but the component will still occupy space when it's not shown.
 
 ::: tip Example
 
@@ -187,7 +187,32 @@ Example showing how some `Text` components always occupy space on the screen, bu
 
 :::
 
-If you should use `keepIf()` or `showIf()` in your app does of course depends on how you want your app to work.
+If you should use `keepIf()` or `showIf()` in your app does of course depend on how you want your app to work.
+
+
+
+
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+
+::: exercise Exercise 1
+
+[This BagaWork project](/editor#eNq1UsFKw0AQ/ZVlLjawSBstlFwkipQeFLEFLabQJZm0pelu2J1gS8jFv/DkL/oJJo0pTWgUBA8JM3lv5r15JAURx+Ck4KsAwQE/Esawu50bxwy3hDIwLK9TT3pUPL5GQTgmoelBLLBjlQhppERLdgCKr1k5lEHGIVRRgNqA85LCKgCnx0GKTaG4HwEOKgwN0jM43aqe5nU24xDn+2qT5bJR2dSMH/QP5oum4X6YrJq+Jzn9nPJXZz5UKmBR4q/Z58f729yqXcJhC85l94LDDhx7YFf2JriJo3x1zWbNmWvWo9ANkugv9h7Vqzn3l6so0Cg7JeTROBY+8qo7OsHVyHYqYfuYGC2FZL3B1dzipydvVJRs5AmBJtGj64RIyW+Ze3W08hfuFM0P5AqxGr9NGaXdiPJWEmp3gf8f5NNS0JkpstQs398eYe3WXveIV0f6bYjdOmP3W1QbYc2yL/byX4o=) contains an empty page. Change the code in it, so it functions as shown below.
+
+::bagawork-project[app&baga=eNq1U1Fr2zAQ/ivavTQGYxJvhWIIwy3dyMPGWAptWQoR9jkxVSQjnWlD8H+fHCfGMnHz0PbBIPnuvu/uu0874EUB0Q4SlSJEkAhuDPu1jYuC4SuhTA2z591CLqj+Eo2ccE5c0x++wpHXREgjlVqyNlD/rZqiCiofMiVS1AaifzvIU4gmPki+qRn3JeCDyjKD9ADR+Hh+tOfqyYfC4jmVDdisuTiNt/xt8/Wl7T4387V6yeXqR64NXZdESrIpI12iO+DPMu+P9le9mCBZ5yLVKEdNaEHzgifoH28NYkCWfLS8EXnyzDb4ZekFxtLOslERnOrAC9ZcpgK1jdeJc0yUTA8x/yOZ2HTKMi4M9im73Zxk9DoLXVCvpJVqiLVV2EHoznkeYt+3YysfXiH6Nv7qwxai8Co8euUON4WwS3Q849gkNs+zLE5L8YZX3mWEOwt5WE6skW1VyfaeZWR1Z5Or78uhxd4oUW7kCYJ+Ys8Dv1UH8kzuI5o3kr0TK6/fcCNl2JPyVhLqeIWfL+T9mtOFqbXUzOIPS+jMOhl38tzI5VAkHKwJL5fn34cV66n6Dy3F9ZA=]
+
+This app can also be implemented as two different pages, but to practice on what has been taught in this tutorial, you may only use one page.
+
+::::hint
+
+The GUI actually contains two buttons, but only one of them is shown at a time! Use a boolean value to keep track of whether the first or the second button should be shown, and use two different click handler methods (one for each button) to change that value to `true`/`false`.
+
+::::
+
+:::
+
+
 
 
 ## That's it!

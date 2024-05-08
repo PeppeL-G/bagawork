@@ -70,5 +70,28 @@ Example of an app that uses `Page.onBefore()` to update how many times the user 
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+
+::: exercise Exercise 1
+
+[This BagaWork project](/editor#eNq9kttKw0AQhl9lnRtbWEobLZTclCiiRTxgC1psoUsyaYPJbtidYEvIu5s0NjahVW/0YsNM5p/Tt5uCiGOwU3CVh2CDGwpj2N3GiWOGa0LpGZbb6UzOqDiuRkE4JqHpUSyx1S4jpJESLVkVKP5mZVIGGQdfhR5qA/ZrCoEHdo+DFFHRcZsCHJTvG6QXsLs7e5rb2ZxDnNerZZbFRqVTG7zqXw1fOI3pr5OgOfeTejcddxWEnkbZKkMzGsfCRb7zJnnJDuWf1uIGw1BxJgMXGSkWIRLbqORk0T6oDr6kBrFQMrEUgdzX13tdJERKfuY/3Fa6do0rhzXY590zDhuwrYG1gzXBKA7zRWvQapwc8zbyHS8J/wGWo8uVt5fGaCUk6w2GR1e/VGESyQMNmsIGpXu1V/IH7RTNN+LDsDNeorQaKK8koXaW+Pcgn1eCTk3BUufvB4e/ez297p6uHukfi1hHc6z+ka4NWPPsA0PKkeM=) contains a page that should display the message `Hello, nice to meet you!` the first time the user comes to the page, and all times after that, it should display the message `Hi, nice to see you again!`. Currently, it always displays both of the messages. Change the code so it works as it should, as shown below.
+
+::bagawork-project[app&baga=eNq1Uu9LwzAQ/VfifXHDMNaqMIpDqogO8Qc60OGEhfa6FbskJCk6Rv93U2vXtaz6RT+05HJ37969lzUwKcFbQyBCBA+ChGlNbla+lAQ/DPJQE3teT/nU5F+gkBl8NEyZezbHTrfIGIUmVZxsEvltVjRlkFGIRBKi0uC9rCEOwXMocLbMJ361AAURRRrNM3j98jyx5+yVgrR4tc4CbFQENeKb+RvyeVCxFyk3qMiQ9Msrwc8wEqraRPbKqoMhcbb2KJe/TOPm2g/iXfeCRZyECnmnSE3No2QB0jIaW0Y9Y3+d2RUmiaCExwESI8gS0ZCVSPdm3d4bohxFnYrE0JLo7gSJKwSNmAMQNmcx34JxyAnZQFUodWJnqbEqfKPeXc/Kum7NQwof4B31DymswHMHbmnMGJcysarUDKp54uu3UeSHafKTMX+krK8KIb4eCDELxokzOJ21rX4uknTJdwxoFjZUuhVbkL/UTlD/ULxb7IwWUroNKS9yH/05/r+QTwtm9nWupbKvCtslrO3q9Lfq6pnjtozb2uMet0xtiPWafQK3Frdm]
+
+This app can also be implemented as two different pages, but to practice on what has been taught in this tutorial, you may only use one page.
+
+::::hint
+
+Use a counter in a page variable to keep track of how many times the user has seen the page. Let it start on `0`, and increment it by `1` each time `Page.onBefore()` runs. Then conditionally show the texts depending on if it has the value `1` or not.
+
+::::
+
+:::
+
+
+
+
 ## That's it!
 Wow, wow, wow... Now you know about `onBefore()` too! 🥳 Excellent work, soon you'll be fully experienced programmer. Just 999 more things to learn before that 😉

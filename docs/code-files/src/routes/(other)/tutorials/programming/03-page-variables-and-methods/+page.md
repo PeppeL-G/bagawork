@@ -133,5 +133,26 @@ So, here's all the code for the app using a page variable, and that has two butt
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+
+::: exercise Exercise 1
+
+Open [this BagaWork project](/editor#eNq9VNtKw0AQ/ZVlXmwhiCl4IS8SRbQPilhBixW6JNMLbnfD7sS2lPyB/+Av+gluGlu6MUGxKiFhNrPnzGTO2SyAJwkEC4hUjBBAJLgx7HIeJgnDGaGMDbPxoid7lN+RRk7YIa7pmg+x0SwypJFSLdk6kb/NClAGmQcDJWLUBoKHBYxjCHwPJJ/kFZcQ8EANBgbpHoK9Vdy1cfboQWL5HGRB1i4WTuPr+uvm80Wp+/N0XO77Rk3NbjQai1ijbBSpHnUSHqG3Wt1ayl2yj0b/Qk3ZhMs5M7aeYVOVipjNVcqG42dkJ3zI75R+Ou43vWqqUyXSiayoWN7Yo+rO8uskJVLyo6O315fXjXJVTBWIn6O2Q26P/sSwGbtcdSJs6HmaajtdElZQFBgRxgGrEa/pONuDGQQH/qEHcwhaR/7Krrc4SYS1mmNbx6mheWoPwjgV/2DXUOPSnctjw2jEJfOPfsWdjkZXql+vQmlvF03/a8mapd9IMcpWaZRnklCHQ/z7Qd6NOO2YfJaaWf76ETrf6u9t7HMz+3WZVi2mtf8tZ2aP2TvPbjh+) and change the code in it to make the app function as shown below.
+
+::bagawork-project[app&baga=eNq1Ve1q2zAUfRUhBovBhNpttmIYwy1j64+NsRba0hQsrJsPqkhGkpcG4zfYO/QV9wiT7dqzPGsNa0dwkHx1zr26OjouMMkyHBU4FRRwhFNGlEKfd3GWIbjXwKlCZlzM+VxXTyqBaDjXROqvZAkTr4loCTqXHHWB6m3ZgEpc+nghGAWpcHRT4DXFUeBjTjZVxhqCfSwWCwX6CkcH7fjajMtbH2eGz0I2ZGfNxCq8y98VX0266pUJK/QOJT8ffjy0T2Lv7WO+Hu7qm9iqabpaMyqBT5rQXJ9nJAW/nV2YhFNt/ibJJ7FFG8J3qEm3FTmjaCdytFx/B3RCluRSyLv3ieePU50Klm/4SMbhwrker6z6neRaC/5YUb1Nb7oinDKQk2yqgEGqg6pdnt+HDROMEDnIwopM/RObg/HweYwO1qPnszqYZ38w98d2DtfZ92R0mktzqJoZHdX0QCP0qjDJqiylQz1e7+IZvf8+5k7TjwTtLUhGAM1RuhAu1OGTKBfyaC+kCz3bGz1kKI3t3OPoTfDWxzschcdBazcXsMmYMQPLdiynidXd2SKmOfuL3byUocQSav+obQ9pozsUHL+If1gy/yISt2AHa69BJU+r2xt8BppWhoNWfuAaZLyE/9/IyxXRr1XVS4kMv7uF1l6Dg946OzJzRUInJpztcXVNs27LXySB9UU=]
+
+::::hint
+
+Add one page variable to keep track of which the selected stars are (start with ` `` ` (empty string) or `` `🌟🌟🌟` ``). Then add 5 page methods (one click handler for each button) that changes the page variable to a string containing 1 to 5 stars (depending on which button that was clicked). Then also display the string in the page variable in the last `Text` component.
+
+::::
+
+:::
+
+
+
+
 ## That's it!
 Congratulation, now you know how to use page variables and page methods too! 🥳 But your `App` class can have its own variables and methods too, let's take a look at how those works next.

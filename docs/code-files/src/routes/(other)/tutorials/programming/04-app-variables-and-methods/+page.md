@@ -52,26 +52,45 @@ As you can see in the example above, we can use the special `a` variable in your
 
 Example of an app that stores a name in an app variable, and that can be changed by calling different page methods by clicking on buttons.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNrFU11r2zAU/SvaZTAbhGkCgWIYxSlj68PKWANbWQrR7OsmTJGMLLMG4/++q2h2q9QdHnvYg40+7jn3nnPsFkRVQdpCrguEFHIp6pp9PGRVxfDBoipqRut2rdbWPUrskb1lm0zuctz0p7lBYfHGCmM/iXuMYl9vDdrGKDZcuNPOgzroOJRaFmhqSL+1sCsgnXFwDWiOIwQ46LKs0X6F9Kxf39K6u+NQEV+A9GRXfhPIGfoPktxm0ESk19R1pY+ihuFF8lxs9wyz1N9HEHQa1nuH3je7U28+6591km93sjCoIn+1tisaNLH0ijYfUErNXreevHu1iXlftWys1ep33eVWKFJ4nMBq5meOEzotJJqoSkKZ01icjlEOuugZ4iBVDg8UwPmCwwHS+WLWR7XCfSXJgiCyIKWs/nFVZkUj/xCVVksstXkM6V9MvqlEjnzE8swgO+iGHT8oZkk+m51fPDE+RF5q2ezVSIPTwhOvrzV567yJVCNlzCfCbrGehhsLyFmYlZbCHHHQ/ZM+m/lJNu8UQbJ7/N/JfNkK+6Z24RhG3V/OJHBsdjZuWFi0mFA0n8I0f4Hp6YR/k8ld9wuDYw0w]
+::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNrFVF1r2zAU/SuaGCwGYerQQGcYwylj68PKWANbWQrW7OsmTJGMLNMG4/++q6j2otQJfgjsIUGW78c595zrhvKypHFDM5UDjWkmeFWRr9ukLAk8G5B5RfDcLOXS2J/kGyAfSJqIdQZpd5tp4AbuDNfmG3+ESeDijQZTa0n6F/a2dUktbRktlMhBVzT+1dB1TuOIUdsAcexSKKOqKCowP2l80Z3v8dw+MFpiPS/TFbtxDx6dvn9PyT40PvrP9foQ93f1VIXZai1yDXLiXi3NAouEBv8m6RcQQpG3DQ8t7PZNGrAual4bo+RL3PWKS+xug9IgtMgn7uoWbyyWLi/wJsToM5K5mjG6pfF0FrXMkZ2eIusXPgvju5JnwAb47/EiRpGnFTcf92bg510rUW/kQPnDwIPhOau9jK2XMgixdy5AT8oQXWH5LtQuNGAjC8/V73FlMfB40WG6+0IujQ+wH7qzjb9Or3Ow+0CGBf/aLJfvI2eWy1m3IwvYlALV9nbFc0xS/bkpkrwWJ3ZEyTkUSv/D7mE9l58SDWSrarIzNzEoBYmuzu+oW9XpLmshRvvlHqpxecGgCZRMCoPGGpig/Rj2q+1p80liSvII/1uZH7ja7yorjibY/bgm3sSii+GB+UGzEUHTMZWmRyodX8zTmjy0fwHGSZXZ]
 
 :::
 
 
 
 ### App methods
-A page method can only be used in the `Page` that created the page method. If you want to be able to use the method in many different pages, you should isntead create the method as an *app method* by writing it in your `App` class instead. Then you can access it from all your methods using `a.theNameOfTheMethod`.
+A page method can only be used in the `Page` that created the page method. If you want to be able to use the method in many different pages, you should instead create the method as an *app method* by writing it in your `App` class instead. Then you can access it from all your pages using `a.theNameOfTheMethod`.
 
 ::: tip Example
 
 Example of an app that stores a name in an app variable, and that can be changed by calling different app methods by clicking on buttons.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNrFk2Fr2zAQhv+KegxqgzBNIFAMZTildP3QUtbAGppCNPvchCmSkWTWYPzfd47rNErd4X3aBxvpdO/d6XntCkRRQFxBqjOEGFIprGW326QoGL46VJlltK4WauGaR4kNsgu2TOQ6xWUXteju6GCmd+EgbNOdiD6m1x80U/2zR0FRPz81KBw+OGHcvXh5b2LQlUax/cGBqIaaQ65lhsZC/FTBOoN4xKHpQXfdSYCDznMa5hHis249p3X9zKGgep6yLXbTbjxk+/57bM2m8qe/LtfHc3/Xv22UrtYyM6iC9mjhZlQkcvQKlt9QSs2+VC2a+mQZ8i5rWjqn1Vve5Uoo6r7j5zRriYcRRTOJJhCRb9KwKo0LvTXooKsQesQ5vBKc8wmHLcTjyajDOMNNIQmBh9MjmNhfN3mSlfIvGLWaYq7Nu/s9n8hgyA+FSJH3IE8Msq0u2c5s5uj6bHT+9QC8r7zUstyongbHiUes7zSxbdgEqpQy5ANlc7TDdH0GNQiT3JGZPQSb/6X1ZnzkzZUiSfKC/9uZHyvhTm1jjmHU/XNPPGKjs35gftJkQNJ4SKXxJ5UOJ/wXT57rP9nADRI=]
+::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNrFlG9r2zAQxr+KJgazwZg6NNAZRnHK2PpiZayBrSwFa/a5CVMkI8u0wfi79xTNXpQ4rQeBvbDRn7vHuufnU0NZWdK4oZnMgcY046yqyJdNUpYEnjSIvCI4bhZioc0j2BrIB5ImfJVB2q1mCpiGW82U/soewPNtvFagayVIv2FW2y6pAn2DanO51epzWHj4jcOcmfw1kIGru/EtbQNaSJ6Dqmj8s6GrnMZRQE041ro9Fg2oLArU/UHjs258h+P2PqAlntnJtGLXduJY1tfY22YmjevQp3q17803+ViF2XLFcwXCs1sLPUeRUOPLSz8D55K8bWyV7ZvUD7qo25Jl0M9mtdZS/Mm6WjKBZzEpqR+aOjy7ZOwzJ/tXFaIlsUD8EFdzDspjocvQH6ViIA1q4Ean4DsUA/qEhl9MA7qh8WQatYEFMnkJiFvuSai4Tu0w2qvwccn05VFOV5LXazEgvx+4Z2Pn/hZm/7uNofGKsAUyQnYH0KHocLkDIM/fRxbk+bTrsTmsS44knF5zaCbV7+siyWv+Qo9JMYNCqr9XiXN1nIp1ooBsZE22Px7RaBOJLk5P+0Z2TETN+WiWd1CNyxvqNGNhUmiEPuCguUz7tnPYfBSYkjzA/ybzHdvuXWXgKIJfvxx3U0Znw4a5QdMRQZMxSpMjSsea5jUm9+0zBqXRWQ==]
 
 :::
 
 
 
 
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+
+::: exercise Exercise 1
+
+Open [this BagaWork project](/editor#eNq9VFFq4zAQvYqYn41BhMTd0q5/iluWbT92WbaFNmwKFvbECXUkI8mbhuAb7B16xR6hUpway9g0H0kxNiPPzJvR0xttgOU5BBuIRYIQQJwxpcjPdZjnBJ818kQRY2+mfKrtG0tkGm81k/o3S3HgVR4tUReSk9ph/5ZVUgklhZnIEpQKgr8bWCQQjClwtrQVtylAQcxmCvUDBKN3e2Ls8pFCbvCczArsplo4jdf16+btotX9j2LR7vuPWKlhPF9kiUQ+qFxTfZuzGOn76s5ADrX5DKJrsSJLxtdEmXqKrESRJWQtCpIu/iG5ZCm7F/LpIvJoN9SVyIol76jYDpzq7s7sc1loLfiuo9eX/y+RN7RUDSwJEhO7c482M9rYHRiHxDk01jHw9sBs2i569/F6jvYpPEPwdXRCYQ2Bf+6XtJKx/5GMd50cV8gTo1mFGcYak6AhVxvSFd8vaYflqznjKTZ53Q6l10vQ2bezHUH1xN/hMs/MJp3Jd1gK1dPNLEyK7BMmPpS4HfDtkRFt9kfG5wcZcIe4XyLql1srdoIq+libXusmrtXnUPmda5Rhiscn8n7O9BdluZTE4O8pqPGoEed6Tvs8fm+OfxrtM7rlY/kG9yyrTA==) and change the code in it to make the app function as shown below.
+
+::bagawork-project[app&baga=eNq9Ve1q2zAUfRWhP7PBhMRJaGcowy1j64+NsRa6sBQsrBsn1LGMJC8Nxm+wd+gr7hEm2YlreTYx6zqCg+R7z7nSuR/OMUlT7OU4ZBSwh8OYCIE+7f00RfAoIaECqXW+TJZSP0ISLtAFCn49/Xw6PsHRGnIgEm6Uj/xCIrDsCic5yIwnqDbot0VNCTGEcqKNNYCMjEBBB8DVANGH6ENNT6L6kLNByD70fDC6zVDgwsErFlPgAnvfc7yh2Js4OCFbnbBSU+xgtloJkN+wNz6uF2pd3Ds4VYIbyIrsutoYea8TVOdeb3IzvR+yTTuxX9lOjML1JqYcEqsyLeVNSkJwjrtbRTmS6s8KPrId2pJkjyoRdiyLKdqzDEWbH4AuSUTuGH94F9hON9UVi7Nt0hGx7biU3SfTv8tMSpYcTlSKbo+0VJYWgQPVN7dHa5LQGLilEvZcprbTJGqH7KAeTF8V9V/xD44xfVmMwXFmL48zONb8j1jNtRm1u6pso+Uc/Ii92Xjq4D323HO3cKrucU91z+GEr9s/C9Uq1b2Beo0u0S4d/odh09dNRgaulLIRNDUv54HdK9LZ27ODSPWwuYVtGquLGkPHUMoXD9crn2bxfxg2PodytpRpQ1LdD03O/8lsMYT7zIL+kmv5LkAEp+vTbn0E6go0pHyfSOB+BK8v5N2ayDdCa8mR4u+X0LjrZNzwMy3zPovbi3HnwZD2Le6L33SKZWI=]
+
+::::hint
+
+Add one app variable to keep track of which the selected stars are (start with ` `` ` (empty string) or `` `🌟🌟🌟` ``). Then add 5 app methods (one click handler for each button) that changes the app variable to a string containing 1 to 5 stars (depending on which button that was clicked). Then also display the string in the app variable in the last `Text` component.
+
+::::
+
+:::
+
+
 
 ## That's it!
-Good work! 🥳 Page constants/variables/methods are really similar to app constants/variables/methods, the only difference is in which class you should create them, and if you should use `p` or `a` to access them. If you will just use it in one of your pages, then write it in that `Page` class, and if you need to use it in multiple pages, then write it in your `App` class instead.
+Good work! 🥳 Page constants/variables/methods are really similar to app constants/variables/methods, the only difference is in which class you should create them, and if you should use `p` or `a` to access them. If you will just use the variable in one of your pages, then use a page variable, and if you need to use it in multiple pages, then use an app variable instead. Simple as that!

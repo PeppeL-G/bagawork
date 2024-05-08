@@ -112,7 +112,7 @@ Example of an app using two mathematical operations at the same time.
 
 
 ## Changing a number in a variable
-Just as for strings, we can use `p.theVariableName = 123` to store a new number in the variable (in this example, storing the number `123` in the page variable named `theVariableName`). But, where `123` is written, we don't have to write a single number like this, but we can also make use of any mathematical operation we want. A very commonthing apps do is to simply increment the value stored in a variable by `1` using an addition operation.
+Just as for strings, we can use `p.theVariableName = 123` to store a new number in the variable (in this example, storing the number `123` in the page variable named `theVariableName`). But, where `123` is written, we don't have to write a single number like this, but we can also make use of any mathematical operation we want. A very common thing apps do is to simply increment the value stored in a variable by `1` using an addition operation.
 
 ::: tip Example
 
@@ -165,6 +165,36 @@ The same app as before, but uses the shortcut syntax for increament the number s
 ::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KEIPZzLh1xrZiGMMp2chFu5FmH2Upi2IfN2ayZPTR1Rj/98lV7EYmHenVLmwkn/O+Ouc8coNJVeG4wSnPAMc4pURKdFEnVYXgXgHLJDLrZsVWqns+Jt8+L+bL2a/LrxfT2QK9R9G7PpYKIAquFBHqC7kFz7cqJUBpwdAQ6L62VtTiNsA5pxkIieOfDS4yHEcBZqTsqnmQ4ADzPJegfuD4tF9fm3V7E+DK+DlKaza3G6ep4fyhsW4zdJZyzRSIriO3oU+6GLey4H9kmG4Lmglgng2t1NL4hsq8vPVyC6g3vCOiIBsKqJAo1cIoFK3Ri6YKdxltuPaD3mSqleJsZzNnpoTSCHqztR9uCcsoCK8Kiz56boO+9fD35rtS46ShlZMT9GivTL1MlxtTrlRcQIYKhoYC0aZGUWhljx9f7SY1oAzwvZn6mWFU4/h19Lbns4SyomaQDicHTSJ/z/Mk0/QffDibQm5KGxpw2nwmqquKpBAcAJcIQDXX6OEWmbEQhqKzD3t8XOU5p7pkBw4YJ47AXnJDspuNxzSlfnCk7Brkcbo+4t4FzpJ8/wqMfkTLZjJiM+tgJ7fwv8l83xL1UnZwBDKnP83EmVh0enhgbtKbI5ImxzhNnnDar/A5TG7av6mfDC8=]
 
 :::
+
+
+
+## Exercises
+Complete the exercises below to see if you have fully mastered what has been taught in this tutorial.
+
+
+::: exercise Exercise 1
+
+[This BagaWork project](/editor#eNq1klFrwkAMx7/KkZdZ1ol2G0hfRjfG8GFjTGGTVejRpiqrd+UuZUrpd19rp/OKFRn4cJBc/snlfkkOPE3BzSGUEYILYcK1Zs9rL00ZrghFpFlp577wqTqhQk44Iq7olc+wY9URUkiZEmwXqG6LOqmAwoZYJhEqDe5nDosI3L4Ngi+rFzcpYIOMY430AW5va09Ku5jakJb1jMy62LB2jMZ37++ar5xG90/Zotn3m/zW3XC+SCKFolOHfBqlPER76z3IJFuKA7Km0Kf7jEiKLpVNdIKrwLLbpeNS8yvsHRUaNS+PSP8i+/eWMREbVuDe9K5tWIPrDJwt5jEu06REZOA2CHv6axh7UZacC/MeEE8hW8uMbcbNaM4F6w/ugsMf/P+AXuTp4CeoT0BvNda/Ruk0UD4KQuXN8Pwg3+ecLnTFUrGyfjtC46/9/YU0I7dtEac1x7kNTtnMYlr8AODZqeQ=) contains a page looking like this:
+
+::bagawork-project[app&baga=eNq1klFrwkAMx7/KkZdZ1ol2G0hfRjfG8GFjTGGTVejRpiqrd+UuZUrpd19rp/OKFRn4cJBc/snlfkkOPE3BzSGUEYILYcK1Zs9rL00ZrghFpFlp577wqTqhQk44Iq7olc+wY9URUkiZEmwXqG6LOqmAwoZYJhEqDe5nDosI3L4Ngi+rFzcpYIOMY430AW5va09Ku5jakJb1jMy62LB2jMZ37++ar5xG90/Zotn3m/zW3XC+SCKFolOHfBqlPER76z3IJFuKA7Km0Kf7jEiKLpVNdIKrwLLbpeNS8yvsHRUaNS+PSP8i+/eWMREbVuDe9K5tWIPrDJwt5jEu06REZOA2CHv6axh7UZacC/MeEE8hW8uMbcbNaM4F6w/ugsMf/P+AXuTp4CeoT0BvNda/Ruk0UD4KQuXN8Pwg3+ecLnTFUrGyfjtC46/9/YU0I7dtEac1x7kNTtnMYlr8AODZqeQ=]
+
+Change the code in it, so it works as shown below.
+
+::bagawork-project[app&baga=eNq1U2FL6zAU/SvhIrhiV7Y+BSmIVHk8/KCICu+JHTS0d27YJSG5RUfpfzddXV3KpvLED4EkN+fec889qYArBVEFmcwRIsgKbgy7XMZKMXwhFLlhdl8lIqFmZRo54S1xTdf8EQdeGyGNVGrBukBzW7egGmofprLIURuIHiqY5xCNfRB80VRcQcAHOZ0apH8Qjdb7e7uvJz4om89Btsku2oNDvKvfkW8O7+xlKQg1O2Ejt6E/5bzfyo18NkE2mxe5RjFoQwndKp6hvz6dy6JciC3P+g8TOiuJpAjI8hqkw9QLZlzkBeqBCnK0JBYobLoVPc/fnebO4t+S7FUqeGuoTj/COKUPnNJz8dXS75HNe29jzgn1G+kk7Yiy4QkbO5g+gy2YAxdTW7O8QHQ4+uXDEqLwOFyb5A4XqrDTdMzi+CM2TxfTOC+Lj0zyHUdszCfWyJayZCuzMrKis/HxabpdyP/30pX8+vDv0aSfj9jrfd5WyrAn5e9mNvEj/ryQf2ec9k2jpWY2/24JnV7Ho413buRoVyTciQmP0s9/gBVrUr8C3pPxrw==]
+
+::::hint
+
+You will need to:
+
+* Add one variable to keep track of the current number
+* Add one method to decrement the counter by one when the first button is clicked
+* Add one method to increment the counter by one when the second button is clicked
+* Change so the current number in your variable is shown instead of the hardcoded `0`
+
+::::
+
+:::
+
 
 
 

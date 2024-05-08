@@ -5,7 +5,7 @@
 # 8. Exercises
 Way to go! Your first step towards becoming a programmer is now taken 😎
 
-Below you have examples of apps you should be able to implement with what you have learned so far. Why don't you give it a try to implement them yourself from scratch?
+Below you have examples of apps you should be able to implement with what you have learned so far. Why don't you give it a try to implement them yourself from scratch? And don't just create copies of them, but try be creative and come up with your own apps, that is so much more fun!
 
 ::: warning Multiplication Table Exercise
 

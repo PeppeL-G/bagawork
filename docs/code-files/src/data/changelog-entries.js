@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added exercises to the "Programming" tutorials`,
+	],
 }, {
 	version: `0.0.27`,
 	date: `2024-05-06`,
