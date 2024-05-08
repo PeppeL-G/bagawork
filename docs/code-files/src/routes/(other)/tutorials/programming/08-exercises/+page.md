@@ -7,19 +7,19 @@ Way to go! Your first step towards becoming a programmer is now taken 😎
 
 Below you have examples of apps you should be able to implement with what you have learned so far. Why don't you give it a try to implement them yourself from scratch? And don't just create copies of them, but try be creative and come up with your own apps, that is so much more fun!
 
-::: warning Multiplication Table Exercise
+::: exercise Multiplication Table Exercise
 
 ::bagawork-project[app&link&baga=eNrFlGFrnEAQhv/KsgSqjRH1cslFCMGUUvKhJSSBJtTAiY65I97usq70DvG/d42NcS7n9mg/9IOw6z7vzjjjOzVNhKBhTVOeAQ1pWiRlSb5uIiEIrBWwrCR6XccsVu2TSkgU3KpEquvkCSy7O1ESVCUZ6Q/at00namjj0JwXGciShj9qusxo6DuUJas24ouEOpTneQnqnobe6/pBr5tHhwp9H1J2l111G5R4H79Pvt302a/JOfHwp3ypltsfccN/lm66WBaZBGZ1R7G6FUkKzuvuEy+qFduBbYOxuqyU4sxVOiNrfjS33UXCsgKkJdwMdBIrYMp2xvV3WvhbfVALd93MTTSKdoiiLdkfo72d4PeDHDzykXR56GIe1O12K6kB7GPYN8IBhgMjPMHwxAgfY/jYCE8xPDXCJxg+McKnGD41wjMMz4zwGYbP3sPDftoDd8aq/wl7H2gpOTonPsL6vwdhhxhrtJHXNAw8beINDSdeb+A7WIlC+w0ZGXk3Kp+v8iirCoOBObuEnMu3uYNS/CdHD6oZSSAbXpGXMUOUdhDxZxfzMXP87Sz4xrU929pYrCqKvU39AOV+OntnuzmLcqXnwY4KtpO6602w1ZvPTEuiJ/jfnfm+SNSHsm2OJDr6eE9QxXxvd8EwNN0DCva5KRi5adyC5p48Nr8AHFC0MA==]
 
 :::
 
-::: warning Counter Exercise
+::: exercise Counter Exercise
 
 ::bagawork-project[app&link&baga=eNqFUk1rwzAM/StB7JDQNKTsFuhh62HsMBhdDxtLYSFR10BiG1th7YL/++ym+Wy3HWxkSe9JT1YNiRAQ1ZDyDCGCtEiUcp6Od0I4eCBkmXKMXccsJntSiQnhCyWSnpNPdL0mQhKpksxZ8YoRShuyft3ANGgfdrzIUCqI3mvIM4gWPrCktDVPbOAD3+0U0itEYWu/GVtvfRCGb4RsyB6bx6j1QQedAPvoFTQJztIJW1fOjKwSGZ3BnSoRtNmzpbMYKIopw38x8ylGotH0e/65Iz2e9UOVT6e85l8qSPd5kUlkbhOKaWPkBmQu9+Om7lj1hxeo/Bvdhee3mSteVCVTrf+SKqZTiT/iMd1XRJydC877KsE+YVlhBIpgOqO+gwuCtR3NVZLh0IYEQ3tENbtKM/3jHt5a3mhjfTiY5QrNKh4hug27NdxgKQrzLXYdt/oH/qgrvQ==]
 
 :::
 
-::: warning Power Point Presentation Exercise
+::: exercise Power Point Presentation Exercise
 
 ::bagawork-project[app&link&baga=eNrNlFGPmkAQx7/KdF8KKSWIZ3KSmgs2TetDm8tp0rvUS9zIoMR1l7JL7ozha/UL9It1kUNFoYdP7YNkhZn//Gd+k90SGsfE25K5CJB4ZM6olPB148cx4LNCHkjQ5+2UT1X+mydIFY4VTdQtXaBhFl9UgipNOIxZFGAnf5UVGRnJLBIKFmAiifdjS6KAeB2LcLrOy+2EiEVEGEpU98RzyvODPmePFol1lUpmITYq/lRcF8X3tnN/B98i5QoTGIBTvhJ8iKFIDj3Edhn1bgDHTZRtf06j04bvxJO0YxoEEV8YPdOeLyMWJMiNImqqJtqOrfTDmH1BxsSbmWmV38YxnaNVEwnvYQR0Dbeo3cxMm2GoDNOWS/E0Cg0XPgxgb9ZsEBgKba/T7ztn+d1W+Xc0khhAxGFIE1wLKX//OpO6apCqdjZMlZ72i/Q3/dQ6OVejIGbaK8RYqx0AaNWu2TLf3edfwaDGjVlZR4s8E8919J5tiNd1nMwqNqv76ma5/9lmNW7PZEn5CjYiBW0CWCS1ay3SavN8voGfKUoVCS5vZq/u3CWg3b3aEWhw/8Kp13V3nNz+dXkXTHAdMz2xyp1QgeXL1Sj0g5Ttbqh6aGeELmDSHoSf4A7Dbq9AaSzQub5pxPBRsHTNawqcBp4OWpRj5iljptUy7QFlu7w6QPkI/VATrJtgfukXbNwTNp9y6P4C/zWZ70uq3socTgK6ejOTysQ6Tv3AqkG9FkFuGyW3QenY4SVMHrM/FvHVIA==]
 
