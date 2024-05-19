@@ -1,14 +1,13 @@
 services:
   docs:
-    build:
-      context: ./
-      dockerfile: ./docs/Dockerfile
+    build: ./docs/
     ports:
       - "8080:8080"
     volumes:
-      - "./docs/code-files/:/docs/code-files/"
-      - "./editor/src/:/docs/packages/editor/src/"
-      - "./framework/src/:/docs/packages/framework/src/"
-      # Place the node_modules folder at top level,
-      # so intellisense in VS Code works for all folders.
-      - "./node_modules/:/docs/node_modules/"
+      - "./docs/@bagawork/:/docs/@bagawork/"
+      - "./docs/markdown-plugins/:/docs/markdown-plugins/"
+      - "./docs/rehype-plugins/:/docs/rehype-plugins/"
+      - "./docs/src/:/docs/src/"
+      - "./docs/static/:/docs/static/"
+      - "./docs/svelte.config.js/:/docs/svelte.config.js/"
+      - "./docs/vite.config.js/:/docs/vite.config.js/"

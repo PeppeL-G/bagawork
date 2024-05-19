@@ -3,11 +3,14 @@
 	"version": "0.0.27",
 	"private": true,
 	"scripts": {
-		"dev": "cd code-files && vite dev",
-		"build": "cd code-files && vite build",
-		"preview": "cd code-files && vite preview",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
 		"deploy": "node ./scripts/deploy.js"
 	},
+	"workspaces": [
+		"./@bagawork/*"
+	],
 	"dependencies": {
 		"@bagawork/editor": "^0.0.27",
 		"@sveltejs/kit": "^2.3.2",

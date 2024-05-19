@@ -1,19 +1,16 @@
 import child_process from 'child_process'
 
-// Run:
+// In the /docs folder, run:
+// npm install (if needed)
 // npm run deploy
-// in the /docs folder.
 
 const commands = [
-	
-	// Install all dependencies.
-	'npm install',
 	
 	// Build it.
 	'npm run build',
 	
 	// Commit it.
-	'cd ./code-files/build/',
+	'cd ./build/',
 	'git init',
 	'git add -A',
 	'git commit -m "New deploy."',
@@ -22,9 +19,8 @@ const commands = [
 	'git push -f https://github.com/PeppeL-G/bagawork.git main:gh-pages',
 	
 	// Remove files generated in during the build.
-	'cd ../../',
-	'rm -rf ./code-files/build/',
-	'rm -rf ./node_modules/'
+	'cd ../',
+	'rm -rf ./build/',
 	
 ]
 

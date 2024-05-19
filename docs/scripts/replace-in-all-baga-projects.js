@@ -38,7 +38,7 @@ const replacer = (match, hello, world) => {
 	return `${hello.toLowerCase()}, ${world.toLowerCase()}!`
 }
 
-const rootFolderPath = '../code-files/src/routes'
+const rootFolderPath = '../src/routes'
 
 const entryPaths = fs.readdirSync(rootFolderPath, {
 	recursive: true,

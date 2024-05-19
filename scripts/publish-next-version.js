@@ -19,10 +19,10 @@ import fs from "node:fs"
 
 const newVersion = "?.?.?"
 
-const pathToFrameworkPackageJsonFile = `./framework/package.json`
-const pathToEditorPackageJsonFile = `./editor/package.json`
+const pathToFrameworkPackageJsonFile = `./docs/@bagawork/framework/package.json`
+const pathToEditorPackageJsonFile = `./docs/@bagawork/editor/package.json`
 const pathToDocsPackageJsonFile = `./docs/package.json`
-const pathToChangelogEntries = `./docs/code-files/src/data/changelog-entries.js`
+const pathToChangelogEntries = `./docs/src/data/changelog-entries.js`
 
 if(newVersion == `?.?.?`){
 	console.log(`Must change newVersion from "${newVersion}" to actual new version.`)
@@ -42,7 +42,7 @@ function publishFrameworkPackage() {
 		newVersion,
 	)
 	
-	publishPackageToNpm(`./framework/`)
+	publishPackageToNpm(`./docs/@bagawork/framework/`)
 	
 }
 
@@ -58,7 +58,7 @@ function publishEditorPackage() {
 		newVersion,
 	)
 	
-	publishPackageToNpm(`./editor/`)
+	publishPackageToNpm(`./docs/@bagawork/editor/`)
 	
 }
 
