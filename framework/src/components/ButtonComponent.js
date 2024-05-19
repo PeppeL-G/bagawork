@@ -2,6 +2,7 @@ import {Component} from '../Component.js'
 import { Direction } from '../index.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
 import { validateArgs } from '../functions/validate-args.js'
+import { bbcodeToHtml } from '../functions/bbcode-to-html.js'
 
 export class ButtonComponent extends Component{
 	
@@ -11,6 +12,7 @@ export class ButtonComponent extends Component{
 	_handler = null
 	_handlerArgs = []
 	_page = null
+	_useBBCode = false
 	
 	constructor(){
 		super()
@@ -30,7 +32,23 @@ export class ButtonComponent extends Component{
 		)
 		
 		this._text = text
+		this._useBBCode = false
 		return this
+	}
+	
+	textWithBBCode(text) {
+		
+		validateArgs(
+			this,
+			`textWithBBCode`,
+			["string"],
+			arguments,
+		)
+		
+		this._text = text
+		this._useBBCode = true
+		return this
+		
 	}
 	
 	handler(handler, ...handlerArgs) {
@@ -116,7 +134,11 @@ export class ButtonComponent extends Component{
 		)
 		
 		// Fix HTML.
-		buttonElement.innerText = this._text
+		if(this._useBBCode){
+			buttonElement.innerHTML = bbcodeToHtml(this._text)
+		}else{
+			buttonElement.innerText = this._text
+		}
 		
 		// Fix CSS.
 		applyAttributesToElement(

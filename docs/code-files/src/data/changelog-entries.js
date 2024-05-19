@@ -3,6 +3,9 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added exercises to the "Programming" tutorials`,
+		`Added the method Text.textWithBBCode()`,
+		`Added the method Button.textWithBBCode()`,
+		`Added the docs page BBCode`,
 	],
 }, {
 	version: `0.0.27`,

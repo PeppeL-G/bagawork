@@ -204,6 +204,9 @@
 		}, {
 			name: 'Various',
 			links: [{
+				text: 'BBCode',
+				href: '/documentation/bbcode/',
+			}, {
 				text: 'Configuration Methods',
 				href: '/documentation/configuration-methods/',
 			}, {

@@ -9,7 +9,14 @@ const Button = (() => new (
 		 * This methods sets the text shown in the button.
 		 * @param theText The text to be shown in the button
 		 */
-		text(theText: string){ return this };
+		text(theText: string) { return this };
+		
+		/**
+		 * Sets the text the component should show on the screen in which
+		 * BBCode can be used to format the text.
+		 * @param theText The text that should be shown
+		 */
+		textWithBBCode(theText: string) { return this };
 		
 		/**
 		 * This method indicates which page the user should come to when the
