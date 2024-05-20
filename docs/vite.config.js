@@ -6,9 +6,6 @@ const config = {
 	server: {
 		host: true,
 		port: 8080,
-		fs: {
-			allow: ['.'] // For the workspace @bagawork folder to work.
-		}
 	},
 }
 

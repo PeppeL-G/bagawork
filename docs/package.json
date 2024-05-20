@@ -8,9 +8,6 @@
 		"preview": "vite preview",
 		"deploy": "node ./scripts/deploy.js"
 	},
-	"workspaces": [
-		"./@bagawork/*"
-	],
 	"dependencies": {
 		"@bagawork/editor": "^0.0.27",
 		"@sveltejs/kit": "^2.3.2",

@@ -1,0 +1,12 @@
+{
+	"name": "bagawork",
+	"type": "module",
+	"workspaces": [
+		"./docs/",
+		"./editor/",
+		"./framework/"
+	],
+	"scripts": {
+		"dev": "cd ./docs/ && npm run dev "
+	}
+}

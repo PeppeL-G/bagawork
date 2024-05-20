@@ -1,13 +1,9 @@
 services:
   docs:
-    build: ./docs/
+    build: ./
     ports:
       - "8080:8080"
     volumes:
-      - "./docs/@bagawork/:/docs/@bagawork/"
-      - "./docs/markdown-plugins/:/docs/markdown-plugins/"
-      - "./docs/rehype-plugins/:/docs/rehype-plugins/"
-      - "./docs/src/:/docs/src/"
-      - "./docs/static/:/docs/static/"
-      - "./docs/svelte.config.js/:/docs/svelte.config.js/"
-      - "./docs/vite.config.js/:/docs/vite.config.js/"
+      - "./docs:/bagawork/docs"
+      - "./editor:/bagawork/editor"
+      - "./framework:/bagawork/framework"
