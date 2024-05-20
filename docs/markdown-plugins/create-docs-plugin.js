@@ -18,7 +18,8 @@ export function createDocsPlugin() {
 					}
 				}
 				*/
-				const className = node.children[0].value
+				
+				const className = node.children[0].value.toLowerCase()
 				const classNameCapitalized = className.charAt(0).toUpperCase() + className.slice(1)
 				
 				node.data = node.data ?? {}

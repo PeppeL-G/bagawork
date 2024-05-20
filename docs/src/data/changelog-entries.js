@@ -2,6 +2,12 @@ export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
 	changes: [
+		`Fixed deployment bug`,
+	],
+}, {
+	version: `0.0.28`,
+	date: `2024-05-20`,
+	changes: [
 		`Added exercises to the "Programming" tutorials`,
 		`Added the method Text.textWithBBCode()`,
 		`Added the method Button.textWithBBCode()`,
