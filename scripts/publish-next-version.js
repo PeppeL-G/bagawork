@@ -115,7 +115,8 @@ function createCommit(){
 		pathToEditorPackageJsonFile,
 		pathToDocsPackageJsonFile,
 		pathToChangelogEntries,
-		`./docs/package-lock.json`,
+		`./package-lock.json`,
+		`./package.json`
 	]
 	
 	childProcess.execSync(
