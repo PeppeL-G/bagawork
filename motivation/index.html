@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bagawork</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<!--
+			Favicon generated with:
+			https://realfavicongenerator.net/
+		-->
+		<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+		<link rel="manifest" href="../favicons/site.webmanifest">
+		<link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="../favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="../favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+		<link href="../_app/immutable/assets/2.DIlgFH-0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.CZ-UUmag.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.8fJQbMSY.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.DFPFbGJz.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.U33hhKo3.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.NQ3ufcd7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.CzDE4dZi.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.T_rQOyQ5.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.DuRojA1X.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/each.Baps6-EM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/changelog-entries.BurQ1OoU.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.Cywp0Pge.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/54.Bc5nRuKW.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-3c5oy2"><div class="publicAnnouncement svelte-3c5oy2"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-oda83j"><strong>Note</strong>: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-3c5oy2"><nav class="svelte-oeac2t"><div class="section svelte-oeac2t"><a href="/" class="svelte-oeac2t" data-svelte-h="svelte-asi9fn">Bagawork</a></div> <div class="section svelte-oeac2t"><a href="/documentation/" target="_self" class="svelte-oeac2t">Documentation </a><a href="/tutorials/" target="_self" class="svelte-oeac2t">Tutorials </a><a href="/examples/" target="_self" class="svelte-oeac2t">Examples </a><a href="/editor/" target="_blank" class="svelte-oeac2t">Editor </a><a href="/implementation/" target="_self" class="svelte-oeac2t">Implementation </a><a href="/contact/" target="_self" class="svelte-oeac2t">Contact </a></div> <div class="section svelte-oeac2t"><a class="version svelte-oeac2t" href="/changelog/">v0.0.30</a></div> </nav></div> <aside class="svelte-3c5oy2"><aside> </aside></aside> <main class="svelte-3c5oy2"><h1 data-svelte-h="svelte-txwopg">Motivation</h1> <blockquote data-svelte-h="svelte-1mgcfv8"><p><em>Programming is one of the most difficult branches of applied mathematics; the poorer mathematicians had better remain pure mathematicians.</em></p> <p>-- <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra" rel="nofollow" target="_blank">Edsger Dijkstra</a> (famous professor in mathematics, and computer scientist), <a href="https://www.brainyquote.com/quotes/edsger_dijkstra_204342" rel="nofollow" target="_blank">source</a></p></blockquote> <h2 data-svelte-h="svelte-1bgghas">Short version</h2> <p data-svelte-h="svelte-1m8mlrc">Learning programming is hard. BagaWork tries to make it easier and more fun to learn programming, so we will get more and better programmers out there in the world.</p> <h2 data-svelte-h="svelte-2urhy8">Long version</h2> <p data-svelte-h="svelte-1jsbezo">When teaching programming to beginners, there are kind of two different approaches one can take. <em>Teaching Approach 1</em> is:</p> <blockquote data-svelte-h="svelte-18xnrnk"><p>Start teaching the basics (numbers, strings, variables, arrays, conditional statements, loops, etc.), and then introduce higher level stuff, such as implementing graphical user interfaces (GUIs).</p></blockquote> <p data-svelte-h="svelte-hcb9w1">This approach sounds very logical and introduces things in a very pedagogical order. However, there exists one big downside with this approach: many students find the basics of programming very boring and hard to learn (much abstract thinking is needed), so they lose motivation to learn it, never get any good at it, and might even entirely give up on learning it. That&#39;s not good!</p> <p data-svelte-h="svelte-1p25arf"><em>Teaching Approach 2</em> is kind of the opposite:</p> <blockquote data-svelte-h="svelte-1jfy2py"><p>Start teaching high level stuff, such as implementing GUIs, and then introduce the basics along the way.</p></blockquote> <p data-svelte-h="svelte-bu7md0">This approach can give students an easier and more fun start, and keep them motivated to learn more. For example, initially a students might get the exercise to first design a GUI using pen and paper (which involves no programming at all), and then implement it with code in a programming language and a GUI framework (which involves very little programming). And GUIs are not something abstract; students can easily see how their code relates to the GUI they can see on their screens, so it&#39;s easy to understand what affects one change in the code will have.</p> <p data-svelte-h="svelte-1s8v2m7">However, the downside with Teaching Approach 2 is that students don&#39;t learn much programming at all in the beginning. Instead, they mostly only learn how to use a specific GUI framework, which usually isn&#39;t very valuable for them to know in the long run. But if they later can use this knowledge to learn the basics in programming in an easier and more fun way, it can definitely be a valid approach for teaching and learning programming.</p> <p data-svelte-h="svelte-19l56ul">Unfortunately, most GUI frameworks are not primarily designed to be easy to use, but primarily designed to run fast on computers. This is desirable for professional apps, but it does make the frameworks harder to use than they need to be, and is therefor a big drawback with Teaching Approach 2. Not only because the frameworks are harder to learn for the students, but also because they are harder to teach for the teachers, who in elementary schools often have very little experience of programming themselves.</p> <p data-svelte-h="svelte-15f2x3x">Most professional GUI frameworks are also very big, so it&#39;s hard to learn and know all there is to know about them. So, as a teacher it can be hard to help a student who suddenly has started to use a part of the framework the teacher has never heard of before. And how can the teacher in a good way inform the students about which parts of the framework they are allowed to use/can get help with? It&#39;s simply problematic. In addition to that, many of these frameworks are also poorly documented, or has a documentation written in such a way that it&#39;s hard for beginners to understand it.</p> <p data-svelte-h="svelte-vqx3zo">It would simply be good to have a way of creating apps that has been designed to be as easy as possible to use for both for students and teachers. <em>BagaWork</em> is such a framework/platform. And even though it hasn&#39;t been designed for good performance, many fun, cool and useful apps implemented in it still run fine one ordinary smartphones.</p> <p data-svelte-h="svelte-141wttp">Here is a short list of what the primary focus has been when designing BagaWork, and how it has been realized:</p> <ol data-svelte-h="svelte-1pk5oi9"><li>Making it easy to get started:<ul><li>Just visit our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a> in a web browser</li> <li>Our online editor is already populated with a small app showing the basics</li></ul></li> <li>Making it easy to learn:<ul><li>The framework is built on an architecture that is easy to understand:<ul><li>One <code>App</code> class and multiple <code>Page</code> classes</li> <li>One <code>Page</code> at a time is shown on the screen</li> <li>The GUI on the user&#39;s screen is changed by going to next <code>Page</code></li></ul></li> <li>The editor shows previews of the pages and navigation between them, so no/little abstract thinking is required (one can visually see the result of the code)</li> <li>The classes in the framework:<ul><li>Are easy to use:<ul><li>No need to use the <code>new</code> keyword</li> <li>Not much syntax needs to be learned thanks to <a href="https://en.wikipedia.org/wiki/Method_chaining" rel="nofollow" target="_blank">method chaining</a></li></ul></li> <li>Have good descriptive names, so it is easy to remember what they represent</li> <li>Have good documentation:<ul><li>Written in a way that&#39;s easy to understand for beginners</li> <li>Have many examples, and these are also editable by the students, making it very easy to test how things work</li></ul></li></ul></li> <li>Our <a href="/tutorials">Tutorials</a>:<ul><li>Introduce one new programming thing at a time, and in such a way that it can always be used in the students own apps (their &quot;toolbox&quot; simply keeps growing bigger and bigger for each tutorial they complete, and they can implement more and more fun and complex apps)</li> <li>Contain many examples, and these are also editable by the students, making it very easy to test how things work</li></ul></li></ul></li> <li>Making it easy to teach:<ul><li>The framework is small, so not much to teach (for a GUI framework)</li> <li>The code editor supports type hinting, so when showing something in the editor, one doesn&#39;t need to remember how to spell names 100% correct, and it also shows documentation, so one can quickly look up things one has forgotten</li></ul></li> <li>Making it easy to get help:<ul><li>If a page contains an error, the other pages in the editor are still previewable, making it obvious which page the error is in, which makes debugging and fixing the code much easier for both students and teachers</li> <li>When students need help, they can easily share their code with others by copy-pasting links containing the code</li></ul></li> <li>Making it easy to keep wanting to learn more:<ul><li>Apps can easily be distributed using links and run in the web browser</li> <li>Apps can quite easily be hosted on <a href="https://bagaland.com" rel="nofollow" target="_blank">bagaland.com</a> (creating an account is needed), where they can run in a web browser or be installed on Android/iOS devices as progressive web apps</li> <li>Apps can be hosted on any website (it&#39;s as hard as hosting your own website, and not recommended for beginners, but possible)</li></ul></li></ol></main> <div class="footer svelte-3c5oy2"><footer class="svelte-d9hz5y">Copyright Peter L-G 2024 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_5cz23e = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.CZ-UUmag.js"),
+						import("../_app/immutable/entry/app.NQ3ufcd7.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 54],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
