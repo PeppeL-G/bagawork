@@ -19,8 +19,8 @@ import fs from "node:fs"
 
 const newVersion = "?.?.?"
 
-const pathToFrameworkPackageJsonFile = `./docs/@bagawork/framework/package.json`
-const pathToEditorPackageJsonFile = `./docs/@bagawork/editor/package.json`
+const pathToFrameworkPackageJsonFile = `./framework/package.json`
+const pathToEditorPackageJsonFile = `./editor/package.json`
 const pathToDocsPackageJsonFile = `./docs/package.json`
 const pathToChangelogEntries = `./docs/src/data/changelog-entries.js`
 
@@ -42,7 +42,7 @@ function publishFrameworkPackage() {
 		newVersion,
 	)
 	
-	publishPackageToNpm(`./docs/@bagawork/framework/`)
+	publishPackageToNpm(`./framework/`)
 	
 }
 
@@ -58,7 +58,7 @@ function publishEditorPackage() {
 		newVersion,
 	)
 	
-	publishPackageToNpm(`./docs/@bagawork/editor/`)
+	publishPackageToNpm(`./editor/`)
 	
 }
 
