@@ -3,7 +3,7 @@
 </script>
 
 # 2. App Constants
-This tutorial will teach you what constants in programming are, and how you can create them in a Bagawork app.
+This tutorial will teach you what constants in programming are, and how you can create them in a BagaWork app.
 
 
 
@@ -40,7 +40,7 @@ class MyApp extends App{
 
 
 ### How to use app constants
-In Bagawork, everything you create in your `App` class (constants, variables and methods) are accessible in a special variable called `a` (short for *app*). To retrieve the value of a constant, you would simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
+In BagaWork, everything you create in your `App` class (constants, variables and methods) are accessible in a special variable called `a` (short for *app*). To retrieve the value of a constant, you would simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
 
 To display the name of the app on the `MenuPage` we had before, the following code were used:
 
@@ -133,4 +133,4 @@ When you are done, your app can for example work like this:
 
 
 ## That's it!
-Great work, now you also now how to use app constants in Bagawork! 🥳 And constants are great, but variables are even more usefull, so let's take a look at them next.
+Great work, now you also now how to use app constants in BagaWork! 🥳 And constants are great, but variables are even more usefull, so let's take a look at them next.

@@ -3,7 +3,7 @@
 </script>
 
 # 1. Page Constants
-This tutorial will teach you what page constants in Bagawork are, and show you what we can use them for, and how.
+This tutorial will teach you what page constants in BagaWork are, and show you what we can use them for, and how.
 
 
 
@@ -69,7 +69,7 @@ Although it's not strictly required to follow this naming convention, all good p
 
 
 ## How to use constants
-In Bagawork, everything you create in your `Page` class (constants, variables and methods) are accessible in a special variable called `p` (short for *page*). To retrieve the value of a constant, you would simply write `p.THE_NAME_OF_THE_CONSTANT`, for example `p.COUNTRY_NAME`.
+In BagaWork, everything you create in your `Page` class (constants, variables and methods) are accessible in a special variable called `p` (short for *page*). To retrieve the value of a constant, you would simply write `p.THE_NAME_OF_THE_CONSTANT`, for example `p.COUNTRY_NAME`.
 
 To display the title on the `InfoPage` we had before, the following code were used:
 
@@ -136,4 +136,4 @@ Your task is to rewrite the code so `James Bond` is put in a page constant, and 
 
 
 ## That's it!
-Great work, now you have a basic understanding of what a page constant in Bagawork is 🥳 Next tutorial will be about using app constants in Bagawork, which are constants you can access from all your pages.
+Great work, now you have a basic understanding of what a page constant in BagaWork is 🥳 Next tutorial will be about using app constants in BagaWork, which are constants you can access from all your pages.

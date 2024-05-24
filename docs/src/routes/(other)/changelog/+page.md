@@ -3,8 +3,8 @@
 </script>
 
 # Changelog
-All notable changes to Bagawork and this website will be documented on this page.
+All notable changes to BagaWork and this website will be documented on this page.
 
-Bagawork versions follow the [SemVer](https://semver.org/) numbering convention.
+BagaWork versions follow the [SemVer](https://semver.org/) numbering convention.
 
 <Changelog />

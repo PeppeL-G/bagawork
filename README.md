@@ -1,4 +1,4 @@
-# Bagawork
+# BagaWork
 For information about BagaWork, see [bagawork.com](https://bagawork.com/).
 
 
@@ -8,7 +8,7 @@ This repository contains all code relevant to the BagaWork framework:
 * [./docs/](./docs/) - The source code for [bagawork.com](https://bagawork.com/)
 * [./editor/](./editor/) - The npm package `@bagawork/editor`
 * [./framework/](./framework/) - The npm package `@bagawork/framework`
-* [./scripts/](./scripts/) - Scripts for doing some tasks, like publishing next version of Bagawork
+* [./scripts/](./scripts/) - Scripts for doing some tasks, like publishing next version of BagaWork
 
 For more information, see [bagawork.com/implementation](https://bagawork.com/implementation/) and respective folder in this repository.
 

@@ -199,4 +199,4 @@ You will need to:
 
 
 ## That's it!
-Good work, now you know the basics about how to use numbers in Bagawork! 🥳 It's not that hard, is it? In next tutorial, you'll see more useful examples of how we can use numbers.
+Good work, now you know the basics about how to use numbers in BagaWork! 🥳 It's not that hard, is it? In next tutorial, you'll see more useful examples of how we can use numbers.

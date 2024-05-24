@@ -1,5 +1,5 @@
 <div class="publicAnnouncement danger">
-	<strong>Note</strong>: This is a pre-release of Bagawork. Many things will likely change before the first stable release.
+	<strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
 </div>
 
 <style>

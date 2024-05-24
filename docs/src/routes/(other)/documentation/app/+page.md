@@ -31,7 +31,7 @@ class MyApp extends App{
 
 
 ## The `a` variable
-In Bagawork, you can use the special variable named `a`, short for *app*, to access the constants/variables/methods you have in your `App` class. The `a` variable can be used both in your `App` class and in your `Page` classes.
+In BagaWork, you can use the special variable named `a`, short for *app*, to access the constants/variables/methods you have in your `App` class. The `a` variable can be used both in your `App` class and in your `Page` classes.
 
 ::: tip Example
 

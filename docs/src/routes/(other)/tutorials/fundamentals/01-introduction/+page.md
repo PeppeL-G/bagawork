@@ -1,17 +1,17 @@
 # 1. Introduction
-This tutorial will teach you what Bagawork is, and some basic information about it. No fun, but good-to-know knowledge.
+This tutorial will teach you what BagaWork is, and some basic information about it. No fun, but good-to-know knowledge.
 
 
 
 
 ## Framework
-Creating an app from scratch (meaning you write *all* code yourself) is very hard and very, very time consuming (there's a lot of code to write). Therefor, some programmers create *frameworks* other programmers (such as you) can use to more easily create new apps. *Bagawork* is such a framework.
+Creating an app from scratch (meaning you write *all* code yourself) is very hard and very, very time consuming (there's a lot of code to write). Therefor, some programmers create *frameworks* other programmers (such as you) can use to more easily create new apps. *BagaWork* is such a framework.
 
-So, why use Bagawork to create your apps, and not one of the other frameworks that exist? Truth to be told, Bagawork is a very bad choice for professional apps, such as Spotify, Netflix, Microsoft Word, etc. Instead of being a suitable framework for those type of apps, Bagawork has been designed to be a very good choice and easy to use for people that have never programmed before, so they can get started and create small and useful apps by themselves as they learn and become better at programming (most frameworks for professional apps are very hard for beginners to use).
+So, why use BagaWork to create your apps, and not one of the other frameworks that exist? Truth to be told, BagaWork is a very bad choice for professional apps, such as Spotify, Netflix, Microsoft Word, etc. Instead of being a suitable framework for those type of apps, BagaWork has been designed to be a very good choice and easy to use for people that have never programmed before, so they can get started and create small and useful apps by themselves as they learn and become better at programming (most frameworks for professional apps are very hard for beginners to use).
 
 ::: warning Warning
 
-Although Bagawork has been designed to be as easy to use as possible, that does not mean it will be easy to learn and use; programming is hard 😎
+Although BagaWork has been designed to be as easy to use as possible, that does not mean it will be easy to learn and use; programming is hard 😎
 
 :::
 
@@ -19,9 +19,9 @@ Although Bagawork has been designed to be as easy to use as possible, that does 
 
 
 ## Language
-Bagawork is built on a programming language called *JavaScript*. Therefore your own Bagawork apps also need to be written in JavaScript, and therefor you need to know/learn JavaScript.
+BagaWork is built on a programming language called *JavaScript*. Therefore your own BagaWork apps also need to be written in JavaScript, and therefor you need to know/learn JavaScript.
 
-These tutorials have primarily been designed to teach you how to use Bagawork, and not JavaScript, but they will try to teach you the parts of JavaScript you need to know as they are used. But you won't become an expert JavaScript programmer after having read these tutorials.
+These tutorials have primarily been designed to teach you how to use BagaWork, and not JavaScript, but they will try to teach you the parts of JavaScript you need to know as they are used. But you won't become an expert JavaScript programmer after having read these tutorials.
 
 
 

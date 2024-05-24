@@ -15,13 +15,13 @@ As you learned in the previous tutorial, all your `Page` classes should contain 
 :::
 
 ## GUI Components
-To create the page's GUI, you use the different GUI Components Bagawork contains. They are stored in different pre-defined constants whose name reflect what they do, such as:
+To create the page's GUI, you use the different GUI Components BagaWork contains. They are stored in different pre-defined constants whose name reflect what they do, such as:
 
 * The GUI Component stored in the `Text` variable displays text
 * The GUI Component stored in the `Button` variable displays a button
 * And so on...
 
-So, to build a GUI, you must learn which the different GUI components that exist in Bagawork are. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
+So, to build a GUI, you must learn which the different GUI components that exist in BagaWork are. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
 
 ## Creating a new instance of a GUI component
 To use a GUI Component, create a new instance of it by simply writing the name of the constant that stores the GUI Component you want to use. For example, to use the `Text` GUI Component, simply write `Text`. Easy as that! 🙂

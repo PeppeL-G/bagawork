@@ -26,7 +26,7 @@
 			class:isCurrent={$page.url.pathname == "/"}
 			class:isSubCurrent={$page.url.pathname == "/"}
 		>
-			Bagawork
+			BagaWork
 		</a>
 	</div>
 	

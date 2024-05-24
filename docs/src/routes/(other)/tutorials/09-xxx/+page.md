@@ -3,10 +3,10 @@
 </script>
 
 # Tutorial 2: Pages
-This tutorial will teach you how to use pages in Bagawork.
+This tutorial will teach you how to use pages in BagaWork.
 
 ## App structure
-A Bagawork app consists of different *pages*. Each page has its own GUI, and one page at a time is shown at to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and show the GUI of that one.
+A BagaWork app consists of different *pages*. Each page has its own GUI, and one page at a time is shown at to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and show the GUI of that one.
 
 ::: tip Online Editor
 In our :online-editor you can very easily see which pages the app contains, as well as lines between the pages indicating how the user can navigate between them.
@@ -27,7 +27,7 @@ In our :online-editor you can very easily see which pages the app contains, as w
 
 
 ## Defining the app
-A Bagawork app does not only consist of pages. Typically, it also consists of data, and somehow you need to indicate which the first page shown to the user is. This information is represented through a class called `App`. This class contains a general description of how a Bagawork app should work, and you should create your own class extending this one.
+A BagaWork app does not only consist of pages. Typically, it also consists of data, and somehow you need to indicate which the first page shown to the user is. This information is represented through a class called `App`. This class contains a general description of how a BagaWork app should work, and you should create your own class extending this one.
 
 ::: tip Example
 Example showing JavaScript code for how to create your own app class called `MyApp` (you can name it whatever you want).

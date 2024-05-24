@@ -46,7 +46,7 @@ Example of an app using an app variable.
 
 :::
 
-As you can see in the example above, we can use the special `a` variable in your `Page` classes Bagawork to access your app variables.
+As you can see in the example above, we can use the special `a` variable in your `Page` classes BagaWork to access your app variables.
 
 ::: tip Example
 

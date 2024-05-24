@@ -1,2 +1,2 @@
 # @bagawork/framework
-Contains the core functionally for creating [Bagawork](https://bagawork.com/) apps.
+Contains the core functionally for creating [BagaWork](https://bagawork.com/) apps.

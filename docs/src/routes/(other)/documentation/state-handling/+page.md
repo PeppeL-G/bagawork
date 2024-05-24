@@ -9,7 +9,7 @@ On this page you find information on how to handle the state of your app.
 Use the `p` variable to remember the state of the page the user currently is on, and use the `a` variable to remember the state that needs to outlive a single page. The values you store in these variables will be remembered when the user leaves your application, and they will be used to restore the state of the application when the user comes back, so the user can continue using your application just as she left it (even though it in reality has been shutdown and restarted).
 
 ## Valid values
-Bagawork will store the state of your app in JSON format, so the values you store in your `a` and `p`variables must be serializable to JSON. Checkout the simple example below to learn which those values are, or checkout [json.org](https://www.json.org) if you want to get the complete picture.
+BagaWork will store the state of your app in JSON format, so the values you store in your `a` and `p`variables must be serializable to JSON. Checkout the simple example below to learn which those values are, or checkout [json.org](https://www.json.org) if you want to get the complete picture.
 
 ```js
 // Example of valid values.

@@ -6,7 +6,7 @@
 This tutorial will teach you how to create more fancy GUIs by using multiple GUI components in your pages' GUIs.
 
 ## The root component
-As you know, you should in the `Page` method `createGui()` use GUI components from Bagawork to create and send back the page's GUI. This method, as all methods, can only send back one value, and in this case that value should be a GUI component. That GUI component is know as the page's *root component*, and it will cover the entire screen. That it indeed does cover the entire screen is easy to verify by giving the component a background color.
+As you know, you should in the `Page` method `createGui()` use GUI components from BagaWork to create and send back the page's GUI. This method, as all methods, can only send back one value, and in this case that value should be a GUI component. That GUI component is know as the page's *root component*, and it will cover the entire screen. That it indeed does cover the entire screen is easy to verify by giving the component a background color.
 
 ::: tip Example
 

@@ -242,7 +242,7 @@ export class FrameworkApp{
 		
 		if (!(createAppResult?.App?.prototype instanceof App)) {
 			onError(
-				`Error: Your own App class must inherit from the App class that comes from Bagawork.`,
+				`Error: Your own App class must inherit from the App class that comes from BagaWork.`,
 			)
 			debugger
 			return
@@ -498,7 +498,7 @@ export class FrameworkApp{
 		
 		if(!StartPage){
 			onError(
-				`Error in ${this.App.name}.createStartPage(): Does currently not return a value at all. Must return a class that inherits from the Page class that comes from Bagawork.`,
+				`Error in ${this.App.name}.createStartPage(): Does currently not return a value at all. Must return a class that inherits from the Page class that comes from BagaWork.`,
 			)
 			debugger
 			return
@@ -506,7 +506,7 @@ export class FrameworkApp{
 		
 		if(!(StartPage.prototype instanceof Page)){
 			onError(
-				`Error in ${this.App.name}.createStartPage(): The returned value must be a class that inherits from the Page class that comes from Bagawork.`,
+				`Error in ${this.App.name}.createStartPage(): The returned value must be a class that inherits from the Page class that comes from BagaWork.`,
 			)
 			debugger
 			return

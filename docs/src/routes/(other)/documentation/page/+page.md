@@ -51,7 +51,7 @@ class GameOverPage extends Page{
 
 
 ## The `p` variable
-In Bagawork, you can use the special variable named `p`, short for *page*, to access the constants/variables/methods you have in your `Page` class. So, unlike the `a` variable, the `p` variable refers to different things in your different pages:
+In BagaWork, you can use the special variable named `p`, short for *page*, to access the constants/variables/methods you have in your `Page` class. So, unlike the `a` variable, the `p` variable refers to different things in your different pages:
 
 * In the `HelloPage`, you can use `p` to access the constants/variables/methods you have in the `HelloPage`
 * In the `AboutPage`, you can use `p` to access the constants/variables/methods you have in the `AboutPage`
@@ -87,7 +87,7 @@ class StartPage extends Page{
 
 ::: tip The "a" variable
 
-In your `Page` classes, you can also use the special Bagawork variable `a` to access the things you have in your `App` class. For more information, see the documentation for the :docs[app] class.
+In your `Page` classes, you can also use the special BagaWork variable `a` to access the things you have in your `App` class. For more information, see the documentation for the :docs[app] class.
 
 :::
 
@@ -161,7 +161,7 @@ The root component in your GUI (the `Rows` component in the example above) will 
 
 ::: tip Building the GUI
 
-The GUI is built with the GUI Components from the Bagawork framework. In the sidebar on this page you have a list of them (*Views* and *Layouts*).
+The GUI is built with the GUI Components from the BagaWork framework. In the sidebar on this page you have a list of them (*Views* and *Layouts*).
 
 :::
 

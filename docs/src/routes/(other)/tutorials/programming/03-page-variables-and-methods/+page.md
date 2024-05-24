@@ -3,7 +3,7 @@
 </script>
 
 # 2. Page Variables and Methods
-This tutorial will teach you what page variables are in Bagawork, and how you can create them and change them using page methods.
+This tutorial will teach you what page variables are in BagaWork, and how you can create them and change them using page methods.
 
 
 
@@ -113,7 +113,7 @@ Button.handler(p.setNameToBob())
 
 ::: tip Remember!
 
-In the code above, we haven't told Bagawork which page the user should come to when the button is clicked (we haven't used the configuration method `page()` on the `Button`), so when the user clicks the button, the current page will be reloaded (after the click handler (`setNameToBob`) has been executed).
+In the code above, we haven't told BagaWork which page the user should come to when the button is clicked (we haven't used the configuration method `page()` on the `Button`), so when the user clicks the button, the current page will be reloaded (after the click handler (`setNameToBob`) has been executed).
 
 :::
 

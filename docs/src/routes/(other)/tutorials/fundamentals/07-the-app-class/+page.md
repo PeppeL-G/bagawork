@@ -8,15 +8,15 @@ This tutorial will teach you the basics about the `App` class.
 
 
 ## App structure
-As you should know by now, a Bagawork app consists of different pages. However, that is not enough for a Bagawork app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a Bagawork app also consists of an `App` class.
+As you should know by now, a BagaWork app consists of different pages. However, that is not enough for a BagaWork app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a BagaWork app also consists of an `App` class.
 
 
 
 
 ## Creating the `App` class
-In programming, a *class* is a description of how a *thing* should work. The Bagawork framework contains a class called `App`, which is a general description of how a Bagawork app should work.
+In programming, a *class* is a description of how a *thing* should work. The BagaWork framework contains a class called `App`, which is a general description of how a BagaWork app should work.
 
-When you create a Bagawork app, you should create your own app class that *extends* the `App` class. This way, your own app class will already contain the general description of how a Bagawork app should work, and you just need to write a little bit of code to make it function the specific way you want it to. Great, right? 🙂
+When you create a BagaWork app, you should create your own app class that *extends* the `App` class. This way, your own app class will already contain the general description of how a BagaWork app should work, and you just need to write a little bit of code to make it function the specific way you want it to. Great, right? 🙂
 
 ::: tip Example
 
@@ -44,11 +44,11 @@ To specify how your own app class should work, you override some predefined meth
 
 
 ## Creating the Start Page
-When the user starts your Bagawork app, the method named `createStartPage()` will be called in your `App` class. In this method, you should return back the page that should be shown to the user directly when the app starts.
+When the user starts your BagaWork app, the method named `createStartPage()` will be called in your `App` class. In this method, you should return back the page that should be shown to the user directly when the app starts.
 
 ::: tip Example
 
-Example showing a Bagawork app consisting of two pages, and how the app class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
+Example showing a BagaWork app consisting of two pages, and how the app class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
 
 ::bagawork-project[link&app&code=MyApp-FirstPage-SecondPage&baga=eNq9klFLwzAQx79KvKcWwqjKFPOmDw4fBHF7UJywmF5dsUtCcsON0u9u0q4bHTJ8EtrmLsf/7p9fU4O0FkQNyuQIAlQlvWeP21trGW4Ide5ZiOu5nlN8lUNJOCXp6El+YpJ2FXJIa6fZfel8W4i7TSdqoOFQmCpH50G81VDmIM45aLmKE9tewMEUhUd6AZH18WuIm3cONvQbKLtmD10yML6fvzcfkyP3k3V57PvZfPuRWpZV7lAnXWlOUysV8j6bhZYjCp9kMVuWnoWHlsiKOJJFj2eLlP8uvVsTGb0TTwwj00o9KqPzVrtIR3FJpu1WNN33SgcoOWxAXGSB0RbEZZY1vKMyPkXl0PT/sAzO9kcsH1J99WwOWHs0+397gsz45npH5qq/OTNc2SocL96g9+YHEXYJng==]
 

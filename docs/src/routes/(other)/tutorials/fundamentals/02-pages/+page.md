@@ -3,10 +3,10 @@
 </script>
 
 # 2. Pages
-This tutorial will teach you how to use pages in Bagawork.
+This tutorial will teach you how to use pages in BagaWork.
 
 ## App structure
-A Bagawork app consists of different *pages*. Each page has its own Graphical User Interface (GUI), and one page at a time is shown to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and the app will show the GUI of that page instead, and so on.
+A BagaWork app consists of different *pages*. Each page has its own Graphical User Interface (GUI), and one page at a time is shown to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and the app will show the GUI of that page instead, and so on.
 
 ::: tip Online Editor
 
@@ -15,9 +15,9 @@ In our :online-editor you can very easily see a preview of the GUI of all the pa
 :::
 
 ## Creating a page
-In programming, a *class* is a description of how a *thing* should work. The Bagawork framework contains a class called `Page`, which is a general description of how a page in Bagawork should work.
+In programming, a *class* is a description of how a *thing* should work. The BagaWork framework contains a class called `Page`, which is a general description of how a page in BagaWork should work.
 
-When you want to create a new page in your Bagawork app, you should create your own class *extending* the `Page` class. This way, your own class will already contain the general description of how a Bagawork page should work, and you just need to write a little bit of code to make it look and function the specific way you want it to. Great, right? 🙂
+When you want to create a new page in your BagaWork app, you should create your own class *extending* the `Page` class. This way, your own class will already contain the general description of how a BagaWork page should work, and you just need to write a little bit of code to make it look and function the specific way you want it to. Great, right? 🙂
 
 ::: tip Example
 
@@ -118,4 +118,4 @@ When you add a new page, it will already contain some code for the GUI. You can 
 :::
 
 ## That's it!
-Now you should know the role of pages in Bagawork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../03-configuring-gui-components/) 🙂
+Now you should know the role of pages in BagaWork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../03-configuring-gui-components/) 🙂

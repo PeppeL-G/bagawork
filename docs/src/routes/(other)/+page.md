@@ -2,21 +2,21 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# Welcome to Bagawork!
+# Welcome to BagaWork!
 The perfect framework for app beginners.
 
 ## What's this?
-Bagawork is a JavaScript framework one can use to build apps. It has been designed to be very easy to use for beginners at programming, but still with the potential to create quite cool and useful apps in it. It is also very easy to share the apps you create with your friends, and install them on different type of devices (Android, iOS, computers, etc.).
+BagaWork is a JavaScript framework one can use to build apps. It has been designed to be very easy to use for beginners at programming, but still with the potential to create quite cool and useful apps in it. It is also very easy to share the apps you create with your friends, and install them on different type of devices (Android, iOS, computers, etc.).
 
 ---
 
 ## Why this?
-Many people trying to learn programming quickly give up because they think programming is too hard. By instead learning programming through Bagawork, they will hopefully keep on fighting and keep learning more and more about programming since they can create useful apps almost directly from the start, and easily share and install them on different devices.
+Many people trying to learn programming quickly give up because they think programming is too hard. By instead learning programming through BagaWork, they will hopefully keep on fighting and keep learning more and more about programming since they can create useful apps almost directly from the start, and easily share and install them on different devices.
 
 ---
 
 ## Examples?
-So, what type of apps can be implemented in Bagawork? Below you have one example.
+So, what type of apps can be implemented in BagaWork? Below you have one example.
 
 ::bagawork-project[app&baga=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]
 
@@ -25,14 +25,14 @@ For more examples, check out the [Examples](/examples) pages. There you can also
 ---
 
 ## How to create an app?
-We have developed an :online-editor you can use to develop Bagawork apps. However, instead of using the online editor on this website (the documentation website for Bagawork), you probably want to create an account at our [Bagaland](https://bagaland.com/) website, where you can also save your apps online and let other users install them on their devices.
+We have developed an :online-editor you can use to develop BagaWork apps. However, instead of using the online editor on this website (the documentation website for BagaWork), you probably want to create an account at our [Bagaland](https://bagaland.com/) website, where you can also save your apps online and let other users install them on their devices.
 
 ---
 
 ## How to install an app?
-The easiest way to install a Bagawork app is by creating an account on our [Bagaland](https://bagaland.com/) website, and then create and store your Bagawork apps there. That way, anyone can test run your app in their web browser, and they can also easily install it on their own devices.
+The easiest way to install a BagaWork app is by creating an account on our [Bagaland](https://bagaland.com/) website, and then create and store your BagaWork apps there. That way, anyone can test run your app in their web browser, and they can also easily install it on their own devices.
 
 ---
 
-## How do I learn Bagawork?
-Start learning Bagawork by taking our [Tutorials](/tutorials).
+## How do I learn BagaWork?
+Start learning BagaWork by taking our [Tutorials](/tutorials).

@@ -148,7 +148,7 @@ Some things the debugger can't wait for (like when the user call her own App/Pag
 
 
 ## Implementation details
-A Bagawork app is implemented as a function (referred to as the `createApp()` function) that returns the `App` class that should be used, together with all the `Pages` that are used. The reason for this design is so that the `App` and `Page` classes can have access to the Bagawork variables `a` and `p`. For an example, see the *Quick start* code above.
+A BagaWork app is implemented as a function (referred to as the `createApp()` function) that returns the `App` class that should be used, together with all the `Pages` that are used. The reason for this design is so that the `App` and `Page` classes can have access to the BagaWork variables `a` and `p`. For an example, see the *Quick start* code above.
 
 
 
@@ -177,12 +177,12 @@ Setting up the environment for `createApp()` is not straight forward, since the 
 
 
 ### FrameworkApp & FrameworkPage VS App & Page
-To hide framework implementation details as much as possible from the ones implementing Bagawork apps, `App` and `Page` contains no framework logic:
+To hide framework implementation details as much as possible from the ones implementing BagaWork apps, `App` and `Page` contains no framework logic:
 
 * The logic for `App` is implemented in `FrameworkApp` (it has access to the `App` that should be used, and an instance of it)
 * The logic for `Page` is implemented in `FrameworkPage` (it has a access to the currently shown `Page`, and an instance of it)
 
-Bagawork then uses `FrameworkApp` and `FrameworkPage`, and they in turn use the provided `App` and `Page` classes when they need to get some info from them. 
+BagaWork then uses `FrameworkApp` and `FrameworkPage`, and they in turn use the provided `App` and `Page` classes when they need to get some info from them. 
 
 <Mermaid>
 flowchart LR
