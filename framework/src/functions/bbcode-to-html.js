@@ -14,14 +14,20 @@ export function bbcodeToHtml(textWithBBCode){
 		/\[url=(http.+?)\](.+?)\[\/url\]/g,
 		`<a href="$1" target="_blank">$2</a>`,
 	)
-	text = text.replaceAll(
-		/\[size=([0-9]+)\](.*?)\[\/size\]/g,
-		`<span style="font-size: $1mm">$2</span>`,
-	)
-	text = text.replaceAll(
-		/\[color=(.*?)\](.+?)\[\/color\]/g,
-		`<span style="color: $1">$2</span>`,
-	)
+	
+	while (/\[size=([0-9]+)\](.*?)\[\/size\]/.test(text)){
+		text = text.replaceAll(
+			/\[size=([0-9]+)\](.*?)\[\/size\]/g,
+			`<span style="font-size: $1mm">$2</span>`,
+		)
+	}
+	
+	while (/\[color=(.*?)\](.+?)\[\/color\]/.test(text)){
+		text = text.replaceAll(
+			/\[color=(.*?)\](.+?)\[\/color\]/g,
+			`<span style="color: $1">$2</span>`,
+		)
+	}
 	
 	return text
 	
