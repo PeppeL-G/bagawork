@@ -215,4 +215,4 @@ When you add a new page, it will already contain some code for the GUI. You can 
 ## That's it!
 Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learnt. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them do create more complex and useful GUIs (a GUI showing consisting of a single GUI component is usually not that useful). 
 
-Continue with [Tutorial 4. Positioning GUI Components](../04-positioning-gui-components/) when you are ready.
+Continue with [Tutorial 4. Positioning GUI Components](../positioning-gui-components/) when you are ready.

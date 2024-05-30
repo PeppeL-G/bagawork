@@ -118,4 +118,4 @@ When you add a new page, it will already contain some code for the GUI. You can 
 :::
 
 ## That's it!
-Now you should know the role of pages in BagaWork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../03-configuring-gui-components/) 🙂
+Now you should know the role of pages in BagaWork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../configuring-gui-components/) 🙂

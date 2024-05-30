@@ -58,4 +58,4 @@ That is, the first page contains buttons that leads to the other two pages, but 
 ## That's it!
 Good work, now you know how to navigate between the pages in your app! 🥳 But remember that the `Button` component is just one way to take the user to another page, there exists more ways you can learn later on.
 
-When you are ready, continue with [Tutorial 6. Sizing GUI Components](../06-sizing-gui-components/).
+When you are ready, continue with [Tutorial 6. Sizing GUI Components](../sizing-gui-components/).

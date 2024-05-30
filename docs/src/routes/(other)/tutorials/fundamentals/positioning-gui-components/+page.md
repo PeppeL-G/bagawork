@@ -205,4 +205,4 @@ Hmm... What does the root component look like? Does the GUI seem to consists of 
 ## That's it!
 Good work, now you have learned the basics about using layouts and building more fancy GUIs! 🥳 It takes some practice before you're good at seeing GUIs as rows and columns, but you actually don't need much more than this to create a wide variety of layouts. Just look at your web browser; all GUI components in it are arranged as rows and columns!
 
-Excited about to learn some more? Then continue with [Tutorial 5. Changing Page](../05-changing-page/).
+Excited about to learn some more? Then continue with [Tutorial 5. Changing Page](../changing-page/).

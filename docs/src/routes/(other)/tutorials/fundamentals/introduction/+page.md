@@ -38,4 +38,4 @@ When you're done creating your BagaWork app, you can use our website [Bagaland](
 
 
 ## That's it!
-Great work! 🥳 Now that you have a basic understanding of what BagaWork is you should be ready to learn how to implement apps in BagaWork, starting with [Tutorial 2. Pages](../02-pages/).
+Great work! 🥳 Now that you have a basic understanding of what BagaWork is you should be ready to learn how to implement apps in BagaWork, starting with [Tutorial 2. Pages](../pages/).
