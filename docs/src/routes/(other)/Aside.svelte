@@ -12,76 +12,76 @@
 			name: 'Fundamentals',
 			links: [{
 				text: '1. Introduction',
-				href: '/tutorials/fundamentals/01-introduction/',
+				href: '/tutorials/fundamentals/introduction/',
 			}, {
 				text: '2. Pages',
-				href: '/tutorials/fundamentals/02-pages/',
+				href: '/tutorials/fundamentals/pages/',
 			}, {
 				text: '3. Configuring GUI Components',
-				href: '/tutorials/fundamentals/03-configuring-gui-components/',
+				href: '/tutorials/fundamentals/configuring-gui-components/',
 			}, {
 				text: '4. Positioning GUI Components',
-				href: '/tutorials/fundamentals/04-positioning-gui-components/',
+				href: '/tutorials/fundamentals/positioning-gui-components/',
 			}, {
 				text: '5. Changing Page',
-				href: '/tutorials/fundamentals/05-changing-page/',
+				href: '/tutorials/fundamentals/changing-page/',
 			}, {
 				text: '6. Sizing GUI Components',
-				href: '/tutorials/fundamentals/06-sizing-gui-components/',
+				href: '/tutorials/fundamentals/sizing-gui-components/',
 			}, {
 				text: '7. The App Class',
-				href: '/tutorials/fundamentals/07-the-app-class/',
+				href: '/tutorials/fundamentals/the-app-class/',
 			}, {
 				text: '8. Exercises',
-				href: '/tutorials/fundamentals/08-exercises/',
+				href: '/tutorials/fundamentals/exercises/',
 			}],
 		}, {
 			name: 'Programming',
 			links: [{
 				text: '1. Page Constants',
-				href: '/tutorials/programming/01-page-constants/',
+				href: '/tutorials/programming/page-constants/',
 			}, {
 				text: '2. App Constants',
-				href: '/tutorials/programming/02-app-constants/',
+				href: '/tutorials/programming/app-constants/',
 			}, {
 				text: '3. Page Variables & Methods',
-				href: '/tutorials/programming/03-page-variables-and-methods/',
+				href: '/tutorials/programming/page-variables-and-methods/',
 			}, {
 				text: '4. App Variables & Methods',
-				href: '/tutorials/programming/04-app-variables-and-methods/',
+				href: '/tutorials/programming/app-variables-and-methods/',
 			}, {
 				text: '5. Numbers',
-				href: '/tutorials/programming/05-numbers/',
+				href: '/tutorials/programming/numbers/',
 			}, {
 				text: '6. Booleans, keepIf() & showIf()',
-				href: '/tutorials/programming/06-booleans-keepif-and-showif/',
+				href: '/tutorials/programming/booleans-keepif-and-showif/',
 			}, {
 				text: '7. onBefore()',
-				href: '/tutorials/programming/07-on-before/',
+				href: '/tutorials/programming/on-before/',
 			}, {
 				text: '8. Exercises',
-				href: '/tutorials/programming/08-exercises/',
+				href: '/tutorials/programming/exercises/',
 			}],
 		}, {
 			name: 'GUI',
 			links: [{
 				text: '1. Formatting Text with BBCode',
-				href: '/tutorials/gui/01-formatting-text-with-bbcode/',
+				href: '/tutorials/gui/formatting-text-with-bbcode/',
 			}, {
 				text: '2. Styling',
-				href: '/tutorials/gui/02-styling/',
+				href: '/tutorials/gui/styling/',
 			}, {
 				text: '3. Layouts',
-				href: '/tutorials/gui/03-layouts/',
+				href: '/tutorials/gui/layouts/',
 			}, {
 				text: '4. Images',
-				href: '/tutorials/gui/04-images/',
+				href: '/tutorials/gui/images/',
 			}, {
 				text: '5. Paper',
-				href: '/tutorials/gui/05-paper/',
+				href: '/tutorials/gui/paper/',
 			}, {
 				text: '6. Dynamically Sized Paper',
-				href: '/tutorials/gui/06-dynamically-sized-paper/',
+				href: '/tutorials/gui/dynamically-sized-paper/',
 			}],
 		}],
 		
