@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 2. Layouts
+# 3. Layouts
 This tutorial will teach you how the different layouts in BagaWork works.
 
 

@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 5. Dynamically sized paper
+# 6. Dynamically sized paper
 This tutorial will teach you how to dynamically size the `Paper` component.
 
 

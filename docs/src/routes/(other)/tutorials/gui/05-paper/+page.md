@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 4. Paper
+# 5. Paper
 This tutorial will teach you how to use the `Paper` component to draw images in your app yourself.
 
 

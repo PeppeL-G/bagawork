@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 3. Images
+# 4. Images
 This tutorial will teach you how to display images in your BagaWork app.
 
 

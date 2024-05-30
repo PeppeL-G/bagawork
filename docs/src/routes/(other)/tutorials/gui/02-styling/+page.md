@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 1. Styling
+# 2. Styling
 This tutorial will teach you how to style components configuration.
 
 

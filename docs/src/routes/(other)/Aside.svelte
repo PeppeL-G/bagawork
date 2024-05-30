@@ -65,20 +65,23 @@
 		}, {
 			name: 'GUI',
 			links: [{
-				text: '1. Styling',
-				href: '/tutorials/gui/01-styling/',
+				text: '1. Formatting Text with BBCode',
+				href: '/tutorials/gui/01-formatting-text-with-bbcode/',
 			}, {
-				text: '2. Layouts',
-				href: '/tutorials/gui/02-layouts/',
+				text: '2. Styling',
+				href: '/tutorials/gui/02-styling/',
 			}, {
-				text: '3. Images',
-				href: '/tutorials/gui/03-images/',
+				text: '3. Layouts',
+				href: '/tutorials/gui/03-layouts/',
 			}, {
-				text: '4. Paper',
-				href: '/tutorials/gui/04-paper/',
+				text: '4. Images',
+				href: '/tutorials/gui/04-images/',
 			}, {
-				text: '5. Dynamically Sized Paper',
-				href: '/tutorials/gui/05-dynamically-sized-paper/',
+				text: '5. Paper',
+				href: '/tutorials/gui/05-paper/',
+			}, {
+				text: '6. Dynamically Sized Paper',
+				href: '/tutorials/gui/06-dynamically-sized-paper/',
 			}],
 		}],
 		
