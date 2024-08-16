@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the tutorial "Formatting Text with BBCode"`,
+		`Added a link to run app on the start page in a new window`,
 	],
 }, {
 	version: `0.0.30`,
