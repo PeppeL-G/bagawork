@@ -4,12 +4,12 @@
 	import { page } from '$app/stores'
 	
 	const links = [
-		{text: "Documentation", href: "/documentation/", target: "_self"},
-		{text: "Tutorials", href: "/tutorials/", target: "_self"},
-		{text: "Examples", href: "/examples/", target: "_self"},
+		{text: "Documentation", href: "/documentation/", target: ""},
+		{text: "Tutorials", href: "/tutorials/", target: ""},
+		{text: "Examples", href: "/examples/", target: ""},
 		{text: "Editor", href: "/editor/", target: "_blank"},
-		{text: "Implementation", href: "/implementation/", target: "_self"},
-		{text: "Contact", href: "/contact/", target: "_self"},
+		{text: "Implementation", href: "/implementation/", target: ""},
+		{text: "Contact", href: "/contact/", target: ""},
 	]
 	
 	const lastChangelogEntry = changelogEntries.find(

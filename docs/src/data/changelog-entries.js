@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the tutorial "Formatting Text with BBCode"`,
 		`Added a link to run app on the start page in a new window`,
+		`Fixed bug where some links on the website triggers a full page load instead of functioning as an SPA`,
 	],
 }, {
 	version: `0.0.30`,
