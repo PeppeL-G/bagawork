@@ -25,6 +25,7 @@
 	<div
 		use:showApp
 		class="screen"
+		translate="no"
 	/>
 {/if}
 
