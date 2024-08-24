@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.31`,
+	date: `2024-08-24`,
 	changes: [
 		`Added the tutorial "Formatting Text with BBCode"`,
 		`Added a link to run app on the start page in a new window`,
