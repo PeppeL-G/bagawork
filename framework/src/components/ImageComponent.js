@@ -24,7 +24,6 @@ export class ImageComponent extends Component {
 		const imageElement = document.createElement(`img`)
 		imageElement.classList.add(`image`)
 		
-		imageElement.style.boxSizing = 'border-box'
 		imageElement.style.display = `block`
 		imageElement.style.margin = `auto`
 		imageElement.style.objectFit = "contain"

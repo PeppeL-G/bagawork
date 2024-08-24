@@ -356,11 +356,16 @@ export class FrameworkPage{
 		
 		const pageElement = document.createElement(`div`)
 		pageElement.classList.add(`page`)
-		pageElement.style.display = 'block'
-		pageElement.style.height = '100%'
+		
+		pageElement.style.display = 'grid'
+		pageElement.style.gridTemplateRows = "1fr"
+		pageElement.style.gridTemplateColumns = "1fr"
+		pageElement.style.height = "100%"
+		
+		const rootElement = this.rootGuiComponent.createElement()
 		
 		pageElement.appendChild(
-			this.rootGuiComponent.createElement(),
+			rootElement,
 		)
 		
 		return pageElement

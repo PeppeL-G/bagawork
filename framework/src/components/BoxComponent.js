@@ -131,78 +131,81 @@ export class BoxComponent extends Component {
 		
 		const boxElement = document.createElement(`div`)
 		boxElement.classList.add(`box`)
-		
 		boxElement.style.display = 'grid'
-		boxElement.style.width = '100%'
-		boxElement.style.height = '100%'
-		boxElement.style.gridTemplateColumns = 'auto'
-		boxElement.style.gridTemplateColumns = 'auto'
-		boxElement.style.boxSizing = 'border-box'
-		boxElement.style.overflow = 'auto'
+		boxElement.style.gridTemplateRows = '1fr'
+		boxElement.style.gridTemplateColumns = '1fr'
+		boxElement.style.alignItems = 'center'
+		boxElement.style.justifyItems = 'center'
 		
-		const childElement = document.createElement('div')
-		childElement.style.display = 'inline-block'
-		childElement.style.width = '100%'
-		childElement.style.height = '100%'
-		childElement.style.overflow = 'auto'
-		childElement.style.boxSizing = 'border-box'
-		childElement.style.overflow = 'auto'
-		childElement.style.justifySelf = 'center'
-		childElement.style.alignSelf = 'center'
-		
-		boxElement.appendChild(childElement)
-		
-		if (typeof this._width != -1) {
-			childElement.style.width = `${this._width}mm`
-		}
-		if (typeof this._height != -1) {
-			childElement.style.height = `${this._height}mm`
-		}
-		
-		if (typeof this._aspectRatioWidth != -1) {
+		if (this._child?._keepIf ?? false) {
 			
-			childElement.style.aspectRatio = `${this._aspectRatioWidth} / ${this._aspectRatioHeight}`
+			const childElement = this._child.createElement()
+			boxElement.appendChild(childElement)
+
+			childElement.style.width = `100%`
+			childElement.style.height = `100%`
 			
-			if (childElement.style.width == `100%` && childElement.style.height == `100%`) {
+			if(this._width != -1 && this._height != -1){
+				boxElement.style.overflow = "auto"
+			}
+			
+			if (this._width != -1) {
+				childElement.style.width = `${this._width}mm`
+			}
+			if (this._height != -1) {
+				childElement.style.height = `${this._height}mm`
+			}
+			
+			if (this._aspectRatioWidth != -1) {
 				
-				// childElement.clientHeight and childElement.clientWidth
-				// hasn't received their correct values yet, so we need to delay.
-				const oldVisibility = boxElement.style.visibility
-				boxElement.style.visibility = `hidden`
-				setTimeout(() => {
-					if (this._aspectRatioHeight / this._aspectRatioWidth < childElement.clientHeight / childElement.clientWidth) {
-						childElement.style.height = `auto`
-					} else {
-						childElement.style.width = `auto`
-					}
-					boxElement.style.visibility = oldVisibility
-				}, 0)
+				childElement.style.setProperty(
+					'--aspect-ratio',
+					`${this._aspectRatioWidth} / ${this._aspectRatioHeight}`,
+				)
+				childElement.style.aspectRatio = `var(--aspect-ratio)`
 				
-			} else if (childElement.style.width == `100%`) {
-				childElement.style.width = `auto`
-			} else if (childElement.style.height == `100%`) {
-				childElement.style.height = `auto`
+				if (this._width == -1) {
+					childElement.style.width = `auto`
+				}
+				
+				if (this._height == -1) {
+					childElement.style.height = `auto`
+				}
+				
+				if(this._width == -1 && this._height == -1){
+					
+					boxElement.style.containerType = "size"
+					childElement.style.width = `min(100cqw, 100cqh * var(--aspect-ratio))`
+					//childElement.style.overflow = `auto`
+					
+				}
+				
+			}
+			
+			if (this._top) {
+				boxElement.style.alignItems = 'start'
+			}
+			if (this._bottom) {
+				boxElement.style.alignItems = 'end'
+			}
+			if (this._left) {
+				boxElement.style.justifyItems = 'start'
+			}
+			if (this._right) {
+				boxElement.style.justifyItems = 'end'
 			}
 			
 		}
 		
-		if (this._top) {
-			childElement.style.alignSelf = 'start'
-		}
-		if (this._bottom) {
-			childElement.style.alignSelf = 'end'
-		}
-		if (this._left) {
-			childElement.style.justifySelf = 'start'
-		}
-		if (this._right) {
-			childElement.style.justifySelf = 'end'
-		}
-		
-		if (this._child?._keepIf ?? false) {
-			childElement.appendChild(
-				this._child.createElement(),
-			)
+		if(!this._child){
+			
+			if (this._width != -1) {
+				boxElement.style.width = `${this._width}mm`
+			}
+			if (this._height != -1) {
+				boxElement.style.height = `${this._height}mm`
+			}
+			
 		}
 		
 		// Fix CSS.

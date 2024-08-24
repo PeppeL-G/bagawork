@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added a link to run app on the start page in a new window`,
 		`Fixed bug where some links on the website triggers a full page load instead of functioning as an SPA`,
 		`Marked the app screens as not translatable on the website`,
+		`Improved Box (no more flashing!), and minor implementation improvements to other components`,
 	],
 }, {
 	version: `0.0.30`,

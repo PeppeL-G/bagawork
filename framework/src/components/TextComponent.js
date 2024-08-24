@@ -99,8 +99,6 @@ export class TextComponent extends Component{
 		
 		textElement.style.display = 'flex'
 		textElement.style.flexDirection = 'row'
-		textElement.style.height = '100%'
-		textElement.style.boxSizing = 'border-box'
 		textElement.style.overflow = 'auto'
 		
 		const contentElement = document.createElement(`span`)

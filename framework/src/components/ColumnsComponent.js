@@ -41,10 +41,9 @@ export class ColumnsComponent extends Component{
 		
 		const columnsElement = document.createElement(`div`)
 		columnsElement.classList.add(`columns`)
-		
+
 		columnsElement.style.display = 'grid'
-		columnsElement.style.gridTemplateRows = '1fr'
-		columnsElement.style.height = '100%'
+		columnsElement.style.gridTemplateRows = '100%'
 		columnsElement.style.overflow = 'auto'
 		columnsElement.style.boxSizing = 'border-box'
 		
@@ -52,6 +51,10 @@ export class ColumnsComponent extends Component{
 		const childComponents = this._children.filter(
 			c => c._keepIf,
 		)
+		
+		columnsElement.style.gridTemplateColumns = childComponents.map(
+			c => c._size == 0 ? `max-content` : `${c._size}fr`
+		).join(` `)
 		
 		for (const childComponent of childComponents) {
 			
@@ -66,19 +69,6 @@ export class ColumnsComponent extends Component{
 			this,
 			columnsElement,
 		)
-		
-		columnsElement.style.gridTemplateColumns = childComponents.map(childComponent => {
-			const size = childComponent._size
-			if (size != 0) {
-				return `minmax(auto, ${size}fr)`
-			} else if (childComponent.constructor.name == "SpaceComponent") {
-				return '1fr'
-			} else if (childComponent.constructor.name == "ImageComponent") {
-				return 'max-content'
-			} else {
-				return 'max-content'
-			}
-		}).join(" ")
 		
 		return columnsElement
 		

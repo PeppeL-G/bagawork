@@ -13,10 +13,6 @@ export class SpaceComponent extends Component {
 		const spaceElement = document.createElement(`div`)
 		spaceElement.classList.add(`space`)
 		
-		spaceElement.style.display = 'block'
-		spaceElement.style.height = '100%'
-		spaceElement.style.boxSizing = 'border-box'
-		
 		applyAttributesToElement(
 			this,
 			spaceElement,

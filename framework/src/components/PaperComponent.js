@@ -62,8 +62,6 @@ export class PaperComponent extends Component{
 		paperElement.classList.add(`paper`)
 		
 		paperElement.style.display = 'block'
-		paperElement.style.width = '100%'
-		paperElement.style.height = '100%'
 		paperElement.style.overflow = 'hidden'
 		
 		const svgElement = document.createElementNS(

@@ -1,7 +1,8 @@
 export function applyAttributesToElement(guiComponent, htmlElement){
 	
 	const { style } = htmlElement
-	
+
+	style.boxSizing = 'border-box'
 	style.backgroundColor = guiComponent._backgroundColor
 	style.borderRadius = `${guiComponent._cornerRadius}mm`
 	

@@ -43,8 +43,7 @@ export class RowsComponent extends Component {
 		rowsElement.classList.add(`rows`)
 		
 		rowsElement.style.display = 'grid'
-		rowsElement.style.gridTemplateColumns = '1fr'
-		rowsElement.style.height = '100%'
+		rowsElement.style.gridTemplateColumns = '100%'
 		rowsElement.style.overflow = 'auto'
 		rowsElement.style.boxSizing = 'border-box'
 		
@@ -52,6 +51,10 @@ export class RowsComponent extends Component {
 		const childComponents = this._children.filter(
 			c => c._keepIf,
 		)
+		
+		rowsElement.style.gridTemplateRows = childComponents.map(
+			c => c._size == 0 ? `minmax(auto, max-content)` : `${c._size}fr`
+		).join(` `)
 		
 		for (const childComponent of childComponents) {
 			
@@ -66,19 +69,6 @@ export class RowsComponent extends Component {
 			this,
 			rowsElement,
 		)
-		
-		rowsElement.style.gridTemplateRows = childComponents.map(childComponent => {
-			const size = childComponent._size
-			if (size != 0) {
-				return `minmax(auto, ${size}fr)`
-			} else if (childComponent.constructor.name == "SpaceComponent") {
-				return '1fr'
-			} else if (childComponent.constructor.name == "ImageComponent") {
-				return 'max-content'
-			} else {
-				return 'min-content'
-			}
-		}).join(" ")
 		
 		return rowsElement
 		

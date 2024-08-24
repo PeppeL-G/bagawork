@@ -43,10 +43,7 @@ export class LayersComponent extends Component {
 		layersElement.style.display = 'grid'
 		layersElement.style.gridTemplateRows = '1fr'
 		layersElement.style.gridTemplateColumns = '1fr'
-		layersElement.style.width = '100%'
-		layersElement.style.height = '100%'
 		layersElement.style.overflow = 'auto'
-		layersElement.style.boxSizing = 'border-box'
 		
 		// Fix HTML.
 		const childComponents = this._children.filter(

@@ -142,8 +142,6 @@ If you use `aspectRatio()` without using `width()` and `height()`, then the `Box
 
 ::: tip Example
 
-Note: Resizing the screen in this example won't work correctly, since the aspect ratio is only computed correctly when the app starts (when the app runs for real on a device, the screen size won't change, so this won't be a problem in production).
-
 ::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KppvZIELjUdh8M5wxRi82RhvYSl2wYh3boopkpOMlJvi/T44br04TSK92YftI51PPK+8or2sa72huBNCY5oo7R763SV0T2CJo4Yi3d6lOMbfAEe6QW/zJSwjC/W6KFrCxmoyOfrdLdUc7RgujBFhH44cdlYLGc0Y1X/ed9uGUUVMUDvA3ja8O9r23u0dGa19rkjkUuxkWk4HH3uPQ/eLF1N8aeTzvwmxnK54/ldY0WnwxytggsyCycFZzIaQug3k4466GHG85ShNEjPidvJJKBEOpFJe+4esySq7B10HvDLJlBWQjBVZEOsLVhrfOj8lzVC2JCPpQR1ayLMESrLj2LyAVyLJCRlYNEg1/vOs4wvmDgX6XhcMk4Uid0S2Now8Ro63/Xn86oFzCulYexQTphGLinm6KRDTqDMr+MXoBhbH/1H/uOxhnYd+ajRvIWdAjvLua58AmKAdkiQXSmobsBR/OPP/4OQvZ6UxPvVnrEw2OA1NcNOjP8Nzmh9mL7e+ybpQK2YVp9+Auyzt4wgkko5MCwZ4i2P8zgzbRkTZftU9JSvjfyvyqOL53vTiW+O7nNZkQm1+dBjYNur4gKLqkUnSm0ssJ36LJY/cXCrvdlw==]
 
 :::

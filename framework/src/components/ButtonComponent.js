@@ -116,10 +116,6 @@ export class ButtonComponent extends Component{
 		const buttonElement = document.createElement(`button`)
 		buttonElement.classList.add('button')
 		
-		buttonElement.style.display = 'block'
-		buttonElement.style.height = '100%'
-		buttonElement.style.width = "100%"
-		
 		buttonElement.style.backgroundColor = `#2222220d`
 		buttonElement.style.fontWeight = `500`
 		
