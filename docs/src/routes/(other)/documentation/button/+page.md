@@ -10,7 +10,7 @@ On this page you find the documentation for the GUI Component `Button`.
 
 
 ## Introduction
-The `Button` component is a view that displays some text to the user shown as a button, and which the user can click on. Clicking on the `Button` takes the user to "the next page in the app".
+The `Button` component is a view that displays some text to the user shown as a button, and which the user can click on. Clicking on the `Button` takes the user to the next page in the app.
 
 ::: tip Example
 
@@ -45,6 +45,27 @@ If this method is not used, then the current page will be reloaded when the user
 ::: tip Example
 
 ::bagawork-project[app&link&code=StartPage-DestinationPage&baga=eNqVkVFrgzAUhf+Ku08KoWyOls03y6D0YTC2wjZmwaDXVaqJJFfWIvnvi3Xa6sOgT7m5yTn3O0kDvKogaCCRKUIAScG1dp6PYVU5eCAUqXZs3UQiokQhJ3wjruiFf6PrnboRKaRaCWc4aLsmEgYMg0wWKSoNwVcDeQrBHQPBy3bS6TowkFmmkT4guO3rT1ubLYPKeo2Undm624yAh9kDdLu5oF7V+ZR3WRNJMSOrcOOVdGiHCmNv1o51n1BTLjjlUrRO3pCJwQEC/95ncLTr/NGwDs//D2/idgXkq/zRs2SXF6lC4XZHEW2swR/4OxaJLNGhU4DppJvYY71olHfJk32rGR6uDz40euEk+nyx6KIvHvo/2mBZFRZ/9Fej/KHer7MwrQu6IvpFyPgMYbbmFwRb8vg=]
+
+:::
+
+
+
+
+
+## `stay()` - Not changing page
+Use the configuration method `stay()` to tell the `Button` component to not go to the next page when the button is clicked. This is primarily useful when you use the :docs[Updater] component together with the configuration method `.handler()` on the button.
+
+::: warning Warning!
+
+Triggering manual updates of the GUI like this tends to make your code hard to read and hard to understand how it works. If you can achieve the same result by loading the page anew, that is usually better than triggering your own manual updates.
+
+:::
+
+::: tip Example
+
+In this example, when clicking on the second `Button`, the counter will be incremented from `1` to `2`, but since the default behavior when clicking on a `Button` is to go to the next page, the page is directly after that reloaded, and `p.counter` is set to `1` in `onBefore()`.
+
+::bagawork-project[app&link&code=StartPage&baga=eNqNU8tqwzAQ/BWx9GBTY5KUHmroIcmh5FAoTQotTcDCXsemjiQkmTQY/3slvxLHhfYkabU7O7MalUCFgKCEiMcIAUQ5VYo8n+ZCEPzWyGJFzL7csq2OJFKNa02lfqF7dNw6utUSdSEZ6S9stNqyCioPEp7HKBUEnyVkMQRTDxg92E51OnjAk0Shfodg0u0/zL7aeSAM1qCyAVs1hwHhvndP2h4afpY5L5hGSR7JpAtxtsCEy7MK4Z+zpq2EtrrW/VRkfe5A9ys/Kj9KszyWyJw2Qb+J2BTJ5mJpEbh0TI8aa2NYrlN+zNh+2TR1fTsWJ5SYSFRp6Hod0KLQhqyvTYkTrpgBOCDThLKYKE1PoevbxXH91IRytE2yLqsD/wMs/E+xe5Z+NZmxmmtr2Iy26SZF0g06U+Sm7Ode+aE7QL9m8stT3bZvZToVrB35xRAv4CpjtW8IZnczD05mvX/oLLbBg8hN4cBqA3fN1dcqmcdFrsf2GptjrLknYr7ErvoBpi1Caw==]
 
 :::
 

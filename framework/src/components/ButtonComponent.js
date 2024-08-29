@@ -1,7 +1,7 @@
 import {Component} from '../Component.js'
-import { Direction } from '../index.js'
+import { Direction, Page } from '../index.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
-import { validateArgs } from '../functions/validate-args.js'
+import { throwArgError, validateArgs } from '../functions/validate-args.js'
 import { bbcodeToHtml } from '../functions/bbcode-to-html.js'
 
 export class ButtonComponent extends Component{
@@ -12,6 +12,7 @@ export class ButtonComponent extends Component{
 	_handler = null
 	_handlerArgs = []
 	_page = null
+	_stay = false
 	_useBBCode = false
 	
 	constructor(){
@@ -73,6 +74,16 @@ export class ButtonComponent extends Component{
 	
 	page(page) {
 		
+		if(this._stay){
+			
+			throwArgError(
+				this,
+				`page`,
+				`page() is called after stay() has been called. Only one of these may be called on the same Button instance.`
+			)
+			
+		}
+		
 		validateArgs(
 			this,
 			`page`,
@@ -84,12 +95,27 @@ export class ButtonComponent extends Component{
 		return this
 	}
 	
-	onAfter(a, p){
+	stay(){
 		
-		if(this.wasClicked && this._handler){
-			this._handler(...this._handlerArgs)
+		if(this._page){
+			
+			throwArgError(
+				this,
+				`stay`,
+				`stay() is called after page() has been called. Only one of these may be called on the same Button instance.`
+			)
+			
 		}
 		
+		validateArgs(
+			this,
+			`stay`,
+			[],
+			arguments,
+		)
+		
+		this._stay = true
+		return this
 	}
 	
 	createAfterDirections(){
@@ -122,10 +148,18 @@ export class ButtonComponent extends Component{
 		buttonElement.addEventListener(
 			'click',
 			() => {
-				this.wasClicked = true
-				buttonElement.dispatchEvent(new CustomEvent('moveon', {
-					bubbles: true,
-				}))
+				
+				if(this._handler){
+					this._handler(...this._handlerArgs)
+				}
+				
+				if(!this._stay){
+					this.wasClicked = true
+					buttonElement.dispatchEvent(new CustomEvent('moveon', {
+						bubbles: true,
+					}))
+				}
+				
 			},
 		)
 		

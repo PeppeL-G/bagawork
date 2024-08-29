@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added the method Button.stay()`,
+	],
 }, {
 	version: `0.0.31`,
 	date: `2024-08-24`,
