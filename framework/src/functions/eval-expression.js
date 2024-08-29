@@ -17,6 +17,8 @@ import {
 	Space,
 	Text,
 	Time,
+	Updater,
+	runUpdater,
 } from '../index.js'
 import { m } from '../variables/m.js'
 import { createPageCreator } from './create-page-creator.js'
@@ -44,6 +46,8 @@ export function evalExpression(jsExpressionAsString) {
 		Space,
 		Text,
 		Time,
+		Updater,
+		runUpdater,
 	}
 	
 	const parameters = Object.keys(variables)

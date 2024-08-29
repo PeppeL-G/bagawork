@@ -60,3 +60,7 @@ export const Rows = createComponentCreator(RowsComponent)
 
 import {SpaceComponent} from './components/SpaceComponent.js'
 export const Space = createComponentCreator(SpaceComponent)
+
+import {UpdaterComponent} from './components/UpdaterComponent.js'
+export const Updater = createComponentCreator(UpdaterComponent)
+export {runUpdater} from './components/UpdaterComponent.js'

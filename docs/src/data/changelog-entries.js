@@ -3,6 +3,8 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Added the method Button.stay()`,
+		`Added the Updater component`,
+		`Added the runUpdater() function`,
 	],
 }, {
 	version: `0.0.31`,

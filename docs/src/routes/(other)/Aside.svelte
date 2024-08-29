@@ -161,6 +161,9 @@
 			}, {
 				text: 'Text',
 				href: '/documentation/text/',
+			}, {
+				text: 'Updater',
+				href: '/documentation/updater/',
 			}],
 		}, {
 			name: 'Layouts',
@@ -203,6 +206,12 @@
 			}, {
 				text: 'p',
 				href: '/documentation/p/',
+			}],
+		}, {
+			name: 'Functions',
+			links: [{
+				text: 'runUpdater()',
+				href: '/documentation/run-updater/',
 			}],
 		}, {
 			name: 'Various',
