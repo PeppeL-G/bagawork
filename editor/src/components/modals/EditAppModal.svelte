@@ -104,6 +104,8 @@
 	margin: 0 auto;
 	background-color: aqua;
 	border: 5px solid black;
+	resize: both;
+	overflow: hidden;
 }
 
 </style>

@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Added the method Button.stay()`,
 		`Added the Updater component`,
 		`Added the runUpdater() function`,
+		`In the editor, made it possible to resize the app screen when editing app/page/template`,
 	],
 }, {
 	version: `0.0.31`,
