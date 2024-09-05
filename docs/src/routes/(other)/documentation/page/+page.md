@@ -87,7 +87,7 @@ class StartPage extends Page{
 
 ::: tip The "a" variable
 
-In your `Page` classes, you can also use the special BagaWork variable `a` to access the things you have in your `App` class. For more information, see the documentation for the :docs[app] class.
+In your `Page` classes, you can also use the special BagaWork variable `a` to access the things you have in your `App` class. For more information, see the documentation for the :docs[App] class.
 
 :::
 
@@ -95,7 +95,7 @@ In your `Page` classes, you can also use the special BagaWork variable `a` to ac
 
 
 ## `createBeforeDirections()` - Redirecting the user to another page
-The method `createBeforeDirections()` will be called directly when the user comes to the page. In it, you can return an array of :docs[direction] objects. If there exists a `Direction` object that has `if` set to `true`, the user will immediately be taken to that page, and will never see the GUI of this page (no other methods on this page will be called, not even `onBefore()`).
+The method `createBeforeDirections()` will be called directly when the user comes to the page. In it, you can return an array of :docs[Direction] objects. If there exists a `Direction` object that has `if` set to `true`, the user will immediately be taken to that page, and will never see the GUI of this page (no other methods on this page will be called, not even `onBefore()`).
 
 ::: tip Example
 
@@ -226,7 +226,7 @@ You only need to handle user input in `onAfter()` if your app's logic require's 
 
 
 # `createAfterDirections()` - Redirecting the user to another page
-The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[direction] objects, indicating which page the user should come to.
+The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[Direction] objects, indicating which page the user should come to.
 
 ::: tip Example
 

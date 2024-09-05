@@ -50,7 +50,7 @@ In other words: you don't need to do anything special to handle overflow; the `C
 
 
 ## Positioning the children
-The children in the `Columns` component are positioned to the left. If you want them to be positioned elsewhere you can insert extra :docs[space] children to "push apart" the other children.
+The children in the `Columns` component are positioned to the left. If you want them to be positioned elsewhere you can insert extra :docs[Space] children to "push apart" the other children.
 
 ::: tip Example
 
@@ -88,14 +88,14 @@ The children in the `Columns` component are positioned to the left. If you want 
 
 
 ## `child.size()` - Resizing the children
-By default, all children (except :docs[space] children, read more about this later) are wide enough to just surround their content. You can use the configuration method `size()` on the children to control how the remaining horizontal space available in the `Columns` component should be distributed among them to make them even wider (if any remaining space exists). The number you pass to it indicates how many shares of the available horizontal space the child should occupy:
+By default, all children (except :docs[Space] children, read more about this later) are wide enough to just surround their content. You can use the configuration method `size()` on the children to control how the remaining horizontal space available in the `Columns` component should be distributed among them to make them even wider (if any remaining space exists). The number you pass to it indicates how many shares of the available horizontal space the child should occupy:
 
-* `0`: the child will be wide enough to surround its content (default value for all children, except :docs[space] children)
-* `1`: the child will be wide enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 1 share of that space (default value for :docs[space] children)
+* `0`: the child will be wide enough to surround its content (default value for all children, except :docs[Space] children)
+* `1`: the child will be wide enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 1 share of that space (default value for :docs[Space] children)
 * `2`: the child will be wide enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 2 shares of that space
 * Etc.
 
-The reason :docs[space] children has the deafult size `1` is because you very often want it to have that size, but feel free to call `size()` also on :docs[space] children if you want them to have anonother size.
+The reason :docs[Space] children has the deafult size `1` is because you very often want it to have that size, but feel free to call `size()` also on :docs[Space] children if you want them to have anonother size.
 
 
 

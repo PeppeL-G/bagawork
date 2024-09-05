@@ -126,7 +126,7 @@ class StartPage extends Page{
 
 :::
 
-See the documentation for the :docs[page] class to learn which methods you can override in your `Page` classes to make them work the way you want.
+See the documentation for the :docs[Page] class to learn which methods you can override in your `Page` classes to make them work the way you want.
 
 
 

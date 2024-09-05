@@ -95,14 +95,14 @@ The children in the `Rows` component are positioned at the top. If you want them
 
 
 ## `child.size()` - Resizing the children
-By default, all children (except :docs[space] children, read more about this later) are tall enough to just surround their content. You can use the configuration method `size()` on the children to control how the remaining horizontal space available in the `Rows` component should be distributed among them to make them even taller (if any remaining space exists). The number you pass to it indicates how many shares of the available horizontal space the child should occupy:
+By default, all children (except :docs[Space] children, read more about this later) are tall enough to just surround their content. You can use the configuration method `size()` on the children to control how the remaining horizontal space available in the `Rows` component should be distributed among them to make them even taller (if any remaining space exists). The number you pass to it indicates how many shares of the available horizontal space the child should occupy:
 
-* `0`: the child will be tall enough to surround its content (default value for all children, except :docs[space] children)
-* `1`: the child will be tall enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 1 share of that space (default value for :docs[space] children)
+* `0`: the child will be tall enough to surround its content (default value for all children, except :docs[Space] children)
+* `1`: the child will be tall enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 1 share of that space (default value for :docs[Space] children)
 * `2`: the child will be tall enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 2 shares of that space
 * Etc.
 
-The reason :docs[space] children has the deafult size `1` is because you very often want it to have that size, but feel free to call `size()` also on :docs[space] children if you want them to have anonother size.
+The reason :docs[Space] children has the deafult size `1` is because you very often want it to have that size, but feel free to call `size()` also on :docs[Space] children if you want them to have anonother size.
 
 ::: tip Example
 

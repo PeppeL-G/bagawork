@@ -6,7 +6,7 @@
 On this page you find the documentation for the GUI Component `Space`.
 
 ## Introduction
-The `Space` component is a view whose sole purpose is to occupy space on the screen, so other children in :docs[rows] and :docs[columns] layouts are positioned where they should.
+The `Space` component is a view whose sole purpose is to occupy space on the screen, so other children in :docs[Rows] and :docs[Columns] layouts are positioned where they should.
 
 ::: tip Example
 

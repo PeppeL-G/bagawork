@@ -12,8 +12,8 @@ This tutorial will teach you how the different layouts in BagaWork works.
 This tutorial assumes you already know:
 
 * That the GUI component returned from `Page.createGui()` will cover the entire screen
-* How the :docs[rows] layout positions its children as rows
-* How the :docs[columns] layout positions its children as columns
+* How the :docs[Rows] layout positions its children as rows
+* How the :docs[Columns] layout positions its children as columns
 
 In this tutorial you will learn a couple more layouts you can use.
 
