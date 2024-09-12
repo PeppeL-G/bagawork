@@ -37,7 +37,7 @@ export class ColumnsComponent extends Component{
 		
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		
 		const columnsElement = document.createElement(`div`)
 		columnsElement.classList.add(`columns`)
@@ -52,14 +52,25 @@ export class ColumnsComponent extends Component{
 			c => c._keepIf,
 		)
 		
-		columnsElement.style.gridTemplateColumns = childComponents.map(
-			c => c._size == 0 ? `max-content` : `${c._size}fr`
-		).join(` `)
+		function onChildComponentsChanged(){
+			
+			columnsElement.style.gridTemplateColumns = childComponents.map(
+				c => c._size == 0 ? `max-content` : `${c._size}fr`
+			).join(` `)
+			
+			onChange?.()
+			
+		}
+		
+		onChildComponentsChanged()
 		
 		for (const childComponent of childComponents) {
 			
 			columnsElement.appendChild(
-				childComponent.createElement(),
+				childComponent.createElement(
+					frameworkApp,
+					onChildComponentsChanged,
+				),
 			)
 			
 		}

@@ -1,14 +1,12 @@
 import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
-import { pixelToMm } from '../functions/pixel-to-mm.js'
-import { PaperLine } from '../index.js'
 import { validateArgs } from '../functions/validate-args.js'
 
 export class PaperComponent extends Component{
 	
 	_showCoordinates = false
-	_width
-	_height
+	_width = 10
+	_height = 10
 	_children = []
 	
 	showCoordinates() {
@@ -44,7 +42,7 @@ export class PaperComponent extends Component{
 		
 		validateArgs(
 			this,
-			`showCoordinates`,
+			`children`,
 			flattenedChildren.map(c => `PaperChild`),
 			arguments,
 		)
@@ -56,7 +54,7 @@ export class PaperComponent extends Component{
 		return this
 	}
 	
-	createElement() {
+	createElement(frameworkApp, onChange){
 		
 		const paperElement = document.createElement(`div`)
 		paperElement.classList.add(`paper`)
@@ -68,8 +66,9 @@ export class PaperComponent extends Component{
 			'http://www.w3.org/2000/svg',
 			'svg',
 		)
-		svgElement.style.width = `100%`
-		svgElement.style.height = `100%`
+		svgElement.setAttribute(`width`, `100%`)
+		svgElement.setAttribute(`height`, `100%`)
+		svgElement.style.containerType = `size`
 		
 		paperElement.appendChild(svgElement)
 		
@@ -81,6 +80,7 @@ export class PaperComponent extends Component{
 		mouseCoordinatesTextElement.setAttribute(`y`, `2%`)
 		mouseCoordinatesTextElement.setAttribute(`text-anchor`, `end`)
 		mouseCoordinatesTextElement.setAttribute(`dominant-baseline`, `hanging`)
+		mouseCoordinatesTextElement.setAttribute(`font-size`, `16px`)
 		
 		// Fix CSS.
 		applyAttributesToElement(
@@ -88,98 +88,86 @@ export class PaperComponent extends Component{
 			paperElement,
 		)
 		
-		// Can't use svgElement.clientWidth and svgElement.clientHeight
-		// until the element has been added to DOM, so delay.
-		setTimeout(() => {
+		if(this._showCoordinates){
 			
-			const svgWidth = this._width ?? pixelToMm(
-				 svgElement.clientWidth,
-			)
-			const svgHeight = this._height ?? pixelToMm(
-				svgElement.clientHeight,
-			)
+			const svgWidth = this._width
+			const svgHeight = this._height
 			
-			// Add all children.
-			const childComponents = this._children
+			const lineWidthInPx = 1
 			
-			for (const childComponent of childComponents) {
+			const spaceBetweenVerticalLines = 100 / svgWidth
+			
+			for (let i = 0; i < svgWidth; i++){
+				
+				const rectangleElement = document.createElementNS(
+					'http://www.w3.org/2000/svg',
+					'rect',
+				)
+				
+				rectangleElement.setAttribute('x', `calc(${i * spaceBetweenVerticalLines}% - ${lineWidthInPx/2}px)`)
+				rectangleElement.setAttribute('y', `0%`)
+				rectangleElement.setAttribute('width', `${lineWidthInPx}px`)
+				rectangleElement.setAttribute('height', `100%`)
+				rectangleElement.setAttribute('fill', `black`)
 				
 				svgElement.appendChild(
-					childComponent.getElement(
-						svgWidth,
-						svgHeight,
-					),
+					rectangleElement,
 				)
 				
 			}
 			
-			if (this._showCoordinates) {
+			const spaceBetweenHorizontalLines = 100 / svgHeight
+			
+			for (let i = 0; i < svgHeight; i++) {
 				
-				const lineThicknessInMm = this._width == undefined ? 0.25 : 0.05
-				const spaceBetweenLinesInMm = this._width == undefined ? 10 : 1
-				const numberOfVerticalLines = Math.ceil(
-					svgWidth / spaceBetweenLinesInMm,
-				)
-				const numberOfHorizontalLines = Math.ceil(
-					svgHeight / spaceBetweenLinesInMm,
+				const rectangleElement = document.createElementNS(
+					'http://www.w3.org/2000/svg',
+					'rect',
 				)
 				
-				for (let i = 0; i < numberOfVerticalLines; i++) {
-					
-					const x = i * spaceBetweenLinesInMm
-					
-					const paperLineComponent = PaperLine
-						.start(x, 0)
-						.end(x, svgHeight)
-						.backgroundColor(`black`)
-						.thickness(lineThicknessInMm)
-					
-					svgElement.appendChild(
-						paperLineComponent.getElement(
-							svgWidth,
-							svgHeight,
-						),
-					)
-					
-				}
+				rectangleElement.setAttribute('x', `0%`)
+				rectangleElement.setAttribute('y', `calc(100% - ${i * spaceBetweenHorizontalLines}% - ${lineWidthInPx / 2}px)`)
+				rectangleElement.setAttribute('width', `100%`)
+				rectangleElement.setAttribute('height', `${lineWidthInPx}px`)
+				rectangleElement.setAttribute('fill', `black`)
 				
-				for (let i = 0; i < numberOfHorizontalLines; i++) {
-					
-					const y = i * spaceBetweenLinesInMm
-					
-					const paperLineComponent = PaperLine
-						.start(0, y)
-						.end(svgWidth, y)
-						.backgroundColor(`black`)
-						.thickness(lineThicknessInMm)
-					
-					svgElement.appendChild(
-						paperLineComponent.getElement(
-							svgWidth,
-							svgHeight,
-						)
-					)
-					
-				}
-				
-				svgElement.appendChild(mouseCoordinatesTextElement)
-				
-				svgElement.addEventListener('mousemove', (event) => {
-					
-					const x = (event.layerX / svgElement.clientWidth * svgWidth).toFixed(1)
-					const y = (svgHeight - (event.layerY / svgElement.clientHeight * svgHeight)).toFixed(1)
-					
-					mouseCoordinatesTextElement.textContent = `x=${x} y=${y}`
-					
-				})
-				
-				svgElement.addEventListener(`mouseleave`, () => {
-					mouseCoordinatesTextElement.textContent = ``
-				})
+				svgElement.appendChild(
+					rectangleElement,
+				)
 				
 			}
 			
-		}, 0)
+			svgElement.appendChild(mouseCoordinatesTextElement)
+			
+			svgElement.addEventListener('mousemove', (event) => {
+				
+				const x = (event.layerX / svgElement.clientWidth * svgWidth)
+				const y = (svgHeight - (event.layerY / svgElement.clientHeight * svgHeight))
+				
+				mouseCoordinatesTextElement.textContent = `x=${x.toFixed(1)} y=${y.toFixed(1)}`
+				
+			})
+			
+			svgElement.addEventListener(`mouseleave`, () => {
+				mouseCoordinatesTextElement.textContent = ``
+			})
+			
+		}
+		
+		// Add all children.
+		const childComponents = this._children
+		
+		for (const childComponent of childComponents) {
+			
+			svgElement.appendChild(
+				childComponent.createElement(
+					childComponent,
+					onChange,
+					this,
+				),
+			)
+			
+		}
 		
 		return paperElement
 		

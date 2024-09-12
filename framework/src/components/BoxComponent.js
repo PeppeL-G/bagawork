@@ -127,7 +127,7 @@ export class BoxComponent extends Component {
 		return this._child?.createAfterDirections() ?? []
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		
 		const boxElement = document.createElement(`div`)
 		boxElement.classList.add(`box`)
@@ -139,22 +139,20 @@ export class BoxComponent extends Component {
 		
 		if (this._child?._keepIf ?? false) {
 			
-			const childElement = this._child.createElement()
+			const childElement = document.createElement(`div`)
+			childElement.style.display = 'grid'
+			childElement.style.gridTemplateRows = '1fr'
+			childElement.style.gridTemplateColumns = '1fr'
+			childElement.style.height = "100%"
+			childElement.style.width = "100%"
+			
+			childElement.appendChild(
+				this._child.createElement(
+					frameworkApp,
+					onChange,
+				),
+			)
 			boxElement.appendChild(childElement)
-
-			childElement.style.width = `100%`
-			childElement.style.height = `100%`
-			
-			if(this._width != -1 && this._height != -1){
-				boxElement.style.overflow = "auto"
-			}
-			
-			if (this._width != -1) {
-				childElement.style.width = `${this._width}mm`
-			}
-			if (this._height != -1) {
-				childElement.style.height = `${this._height}mm`
-			}
 			
 			if (this._aspectRatioWidth != -1) {
 				
@@ -172,14 +170,24 @@ export class BoxComponent extends Component {
 					childElement.style.height = `auto`
 				}
 				
-				if(this._width == -1 && this._height == -1){
+				if (this._width == -1 && this._height == -1) {
 					
 					boxElement.style.containerType = "size"
 					childElement.style.width = `min(100cqw, 100cqh * var(--aspect-ratio))`
-					//childElement.style.overflow = `auto`
 					
 				}
 				
+			}
+			
+			if(this._width != -1 && this._height != -1){
+				boxElement.style.overflow = "auto"
+			}
+			
+			if (this._width != -1) {
+				childElement.style.width = `${this._width}mm`
+			}
+			if (this._height != -1) {
+				childElement.style.height = `${this._height}mm`
 			}
 			
 			if (this._top) {

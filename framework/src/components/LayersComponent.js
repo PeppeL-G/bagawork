@@ -35,7 +35,7 @@ export class LayersComponent extends Component {
 		).flat()
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		
 		const layersElement = document.createElement(`div`)
 		layersElement.classList.add(`layers`)
@@ -50,19 +50,34 @@ export class LayersComponent extends Component {
 			c => c._keepIf,
 		)
 		
+		function onChildComponentsChanged(){
+			
+			for (const childElement of layersElement.childNodes) {
+				
+				// Fix CSS for the child.
+				childElement.style.gridRow = '1'
+				childElement.style.gridColumn = '1'
+				
+			}
+			
+			onChange?.()
+			
+		}
+		
 		for (const childComponent of childComponents) {
 			
-			const childElement = childComponent.createElement()
+			const childElement = childComponent.createElement(
+				frameworkApp,
+				onChildComponentsChanged,
+			)
 			
 			layersElement.appendChild(
 				childElement,
 			)
 			
-			// Fix CSS for the child.
-			childElement.style.gridRow = '1'
-			childElement.style.gridColumn = '1'
-			
 		}
+		
+		onChildComponentsChanged()
 		
 		// Fix CSS.
 		applyAttributesToElement(

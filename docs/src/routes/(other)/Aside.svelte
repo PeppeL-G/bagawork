@@ -177,8 +177,23 @@
 				text: 'Layers',
 				href: '/documentation/layers/',
 			}, {
+				text: 'Paper',
+				href: '/documentation/paper/',
+			}, {
 				text: 'Rows',
 				href: '/documentation/rows/',
+			}],
+		}, {
+			name: 'Paper Figures',
+			links: [{
+				text: 'PaperCircle',
+				href: '/documentation/paper-circle/',
+			}, {
+				text: 'PaperLine',
+				href: '/documentation/paper-line/',
+			}, {
+				text: 'PaperRectangle',
+				href: '/documentation/paper-rectangle/',
 			}],
 		}, {
 			name: 'Classes',

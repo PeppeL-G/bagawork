@@ -139,7 +139,7 @@ export class EnterTextComponent extends Component{
 		
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		
 		const enterTextElement = document.createElement(`div`)
 		enterTextElement.classList.add(`enterText`)

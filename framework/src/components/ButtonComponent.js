@@ -137,7 +137,7 @@ export class ButtonComponent extends Component{
 		
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		
 		const buttonElement = document.createElement(`button`)
 		buttonElement.classList.add('button')

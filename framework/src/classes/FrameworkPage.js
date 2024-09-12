@@ -1,7 +1,6 @@
 import { Component } from "../Component.js"
 import { Page } from "@bagawork/framework"
 import { getState } from "../functions/get-state.js"
-import { Direction } from "./Direction.js"
 
 export class FrameworkPage{
 	
@@ -362,7 +361,9 @@ export class FrameworkPage{
 		pageElement.style.gridTemplateColumns = "1fr"
 		pageElement.style.height = "100%"
 		
-		const rootElement = this.rootGuiComponent.createElement()
+		const rootElement = this.rootGuiComponent.createElement(
+			this.frameworkApp,
+		)
 		
 		pageElement.appendChild(
 			rootElement,

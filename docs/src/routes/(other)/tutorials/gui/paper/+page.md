@@ -9,13 +9,13 @@ This tutorial will teach you how to use the `Paper` component to draw images in 
 
 
 ## Introduction
-The `Paper` component is a view that you can draw whatever you want on yourself, so it's similar to the `Image` component, but instead of specifying the URL of the image, you specify how the image should be drawn using lines, circles, rectangles, etc.
+The `Paper` component is a layout that you can draw whatever you want on yourself, so it's similar to the `Image` component, but instead of specifying the URL of the image, you specify how the image should be drawn using lines, circles, rectangles, etc.
 
 
 
 
 ## Creating a `Paper` component instance
-To create a new `Paper` component, simply write `Paper`.
+To create a new `Paper` component instance, simply write `Paper`.
 
 ::: tip Example
 
@@ -26,9 +26,11 @@ To create a new `Paper` component, simply write `Paper`.
 
 
 ## Dimensioning the `Paper`
-Often when you draw something on the paper, you expect the paper to be of a certain size, so you don't risk drawing something too big on it that doesn't fit. So, often when you use the `Paper` component, you use it in a `Box` layout, so you can give it a specific size.
+Often, you want the `Paper` to be of a certain size. That can easily be achieved by putting it in a :docs[Box] component.
 
-::: tip Example
+:::tip Example
+
+Example of a `Paper` component instance put in a :docs[Box] component instance to make it 30mm wide and 50mm tall.
 
 ::bagawork-project[app&link&code=StartPage&baga=eNrFUk1rg0AQ/SvLXKogYgyB4qWYUkoOLaUJtKEJZKvjBzG7sruShOB/71obGyUJ9tSDMuvOm/fePA9A8xy8AwQ8RPAgyKiU5Gnv5znBnUIWSqLrw4ItVPUEAqnCqaJCvdAYDbO+UQJVIRhpLqqvZQ0qobQg4lmIQoL3cYA0BG9gAaObivEbAhbwKJKo3sFzjvVc1+XSglzPayHrYZP60BLe8Dfiq0NH/WORdnWP+c7epqFKjKFj2gmmcaKMkS6DJM1Co+5d6Mk5CvuTButY8IKF9zzjwljFWs/KtOous2Xdgh14rqM97cEbOo2fGW7yTGtp+WpZ8eV6EvlhkV3xw9kYIy5+YzjhvuL2lW9l7Uwga8xNcxqgdTzNNKGt9MtY+QLJnhfke+tEJZSRwe1dY7iL1EspNuwMQbdxocaF0h5+aJ75yrSr3RisyDLT6gmbo+yHOxdQtUI/UijObbD6cets3E42D0xD/Bj/O5m3hKobWYUjiGa/nElrYwPn/MLaTaMeTW6fSe6FSacK/5LJsvwCz/O0lA==]
 
@@ -36,15 +38,22 @@ Often when you draw something on the paper, you expect the paper to be of a cert
 
 
 
+
 ## The coordinate system
 To draw something on the `Paper`, you need to specify *where* on the `Paper` it should be drawn. To specify that, you need to know how the *coordinate system* the `Paper` is using works.
 
-The `Paper` component uses a coordinate system with an `x`-axe and a `y`-axe:
+The `Paper` component uses a coordinate system with an X-axe and a Y-axe:
 
-* The `x`-axe starts at the left side of the `Paper` component (`x` = `0` at the left side) and increases towards the right
-* The `y`-axes starts at the bottom side of the `Paper` component (`y` = `0` at the bottom side) and increases towards the top
+* The X-axe:
+	* Starts at the left side of the `Paper` component (X=`0` at the left side)
+	* Increases towards the right
+	* Ends with `100` on the right side (can be configured)
+* The Y-axes:
+	* Starts at the bottom side of the `Paper` component (Y=`0` at the bottom side)
+	* Increases towards the top
+	* Ends with `100` on the top side (can be configured)
 
-1 unit in the coordinate system represents 1 millimeter on the screen (although this can be changed, learn more about that in next tutorial).
+For an example of this, see next sub-chapter.
 
 
 
@@ -53,15 +62,35 @@ The `Paper` component uses a coordinate system with an `x`-axe and a `y`-axe:
 ## Showing the coordinate system
 To show the coordinate system, call the configuraiton method `showCoordinates()` on the `Paper` component. When you call this method, the following will be drawn on the `Paper`:
 
-* Horizontal lines every 10 millimeters
-* Vertical lines every 10 millimeters
+* Some horizontal lines
+* Some vertical lines
 * The mouse's position in the upper right corner
-
 
 This is something you can use during development, but after you have fininshed writing your code, you probably want to remove the call to `showCoordinates()`, since you don't want your users to see it.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUl1LwzAU/SvhvthCKd1kIH2RbojsQREnqLjBYnP7gV1SkpRtjP53E+vqWjaZTz603DT3nHPPPd0BLUsIdxALhhBCXFClyN02KkuCG42cKWLq3ZzPtX1iiVTjTFOpH2iKjtvcaIm6kpy0F/Zr3YBqqD1IRMFQKgjfdpAzCAcecLqyil8Q8EAkiUL9AmGwr19NXS88KA1fB9mQTZtDZ/BWvx3eHnrT31Z5f+6x2PjrnOnMuQxcP8M8zbQzMmWc5QVzmt65YS5R+ioT64kQkuXcsCnH9d9p/JFKUXE2EYWQzjI1Ey5dr8G5nWV4sIFwGBiXWwgvg9bhE67KwvIdOu2Yi9THNIlYVfziUPAxJkL+BHOg/Yv/R7FWjVeJvLU7K2mM3v70ZAR9bV7OMpJItqIiXzkQnVFOBlfXreE+0iylWvEjAv3GuR5X2nj4lrkXS9e3u3F4VRSudybsFdV5uGMB2RVGiUZ5bIP2V26yGfayueEGEqX438k8Z1RfKBuOJEb9dCadjQ2C4wvrNo3OaBqewzQ8wXQ44V8yWdSfOru7Tw==]
+:::tip Example
 
+::bagawork-project[app&link&code=StartPage&baga=eNrFUl1LwzAU/SvhvthCKN1EkL5IJyJ7UEQFFScsNrcf2CUlSdnG6H83sa6uo5P55EPLTXPPPfec0w2wqoJoA4nkCBEkJdOa3KzjqiK4Mii4JrbezMTMuCdRyAw+GKbMHcvQ89sbo9DUSpDuwn1tWlADDYVUlhyVhuh1AwWHaERBsIVj/IIABZmmGs0zROG2frF180ahsvN6yHbYtD30Fu/4u+XdYW/767rY33siV8Gy4Cb3TkM/yLHIcuOd2TLJi5J7be/MTq5QBe8s+ciUrAW/lKVU3jyz+8z9QOdyeSml4oWwLNrzaYvze2ZQWEE0Dq3KNUSnYafwERdV6XC7SnviYv0xTWNel78olGKCqVQ/wexw/6L/Xi51q1Wh6OQ+VCxBuj09WsLA2Jc3jxWStazJVw7E5EyQ0fnF3KfDSGtTvRADBPuNMzOpjdXwTXMrravOG0/UZenTI2EvqI/DDQXkLIxTg2rIQfcrt9mM97K5EhYSZ/jfyTzlzJxoF44ilv1wJj3HRuGwYf2msyOaxsdMGh+YtLvhXzJ5az4BO3u7Tw==]
+
+:::
+
+
+
+## Setting the coordinate system
+That the coordinate system uses the width 100 and height 100 often only makes sense when the width and the height of the `Paper` component are the same. If they are not (as in the previous example), then the size of one unit on the X-axe is not equally big as one unit on the Y-axe, and this makes it hard to use.
+
+So, if the widht and the height of the `Paper` component are not the same, it is often usefull to change the width and height of the coordinate system to match the actual width and height of the `Paper` component. That can be done by calling the configuration method `coordinateSystem()` on the `Paper` component. Pass it two values:
+
+* The desired width of the coordinate system as a number
+* The desired height of the coordinate system as a number
+
+:::tip Example
+
+Example setting the width of the coordinate system to `30`, and the height of the coordinate system to `50`. 
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFUl1L60AQ/SvLvJjAUtKKcMmLpCLigyJXwSu3Qtfs5APT3bA7oS0l/91dc81tSpT65EPCbHbOOTPnZAeiriHeQaolQgxpJaxlN9ukrhluCJW0zNW7hVqQf1KDgvCehKE7kWMQdjdkkBqjWH/hv7YdqIWWQ6YricZC/HcHpYR4ykGJlVd8hwAHnWUW6Q/E0Uf95Or2mUPt+AbIjuy6OwwG7/X74f3hYPqrpjyce643k3UpqQhOo3BSYJkXFJy5Mi3KSgZd78Ix12gmLyJ9zY1ulLzQlTbBMnfzLF2v1kaWyvuztYQrx8WZJ7GFXl/0lzYIeUcYDlzisIF4Frn1txCfRv3qD7iqK4/bt2CwdWJfr7NENtUXq2s1x0yb/4ntaX9hzG+9tp0JBlXvw30tUuQfpwcnOCH3CpaJQbbVDXsPiFEhFJv+Ol+GfBzp/GtWakTgsHFB84bcDv9kbrWz23sTqKaqQn4k7AntcbixgLyFSUZoxhz0/3iXzewgm0vlIEmOP53MYyHoxPpwDHPqn2cycGwajRs2bDo7oml2DNPsE6b9Cb+TyXP7BtDbw48=]
+
+:::
 
 
 

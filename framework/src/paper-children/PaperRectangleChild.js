@@ -48,12 +48,17 @@ export class PaperRectangleChild extends PaperChild{
 		return this
 	}
 	
-	getElement(svgWidth, svgHeight){
+	createElement(frameworkApp, onChange, paper){
 		
 		const rectangleElement = document.createElementNS(
 			'http://www.w3.org/2000/svg',
 			'rect',
 		)
+		
+		const {
+			_width: svgWidth,
+			_height: svgHeight
+		} = paper
 		
 		const cx = (
 			this._centerX == undefined ?

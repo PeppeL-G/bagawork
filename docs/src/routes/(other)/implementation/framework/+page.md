@@ -194,6 +194,15 @@ flowchart LR
 
 
 
+## Using `FrameworkApp` as a context
+`FrameworkApp` does contain "the logic for the app" (as one can expect), but it also serves as a context that contains "global" information. Instead of giving other classes the small amount of extra information they actually need, they are given a reference to the `FrameworkApp` instance, so they can obtain whichever information they want from it themselves.
+
+An example of this are GUI components. Some of them need to use `frameworkApp.runtimeSettings.isPreview` to know if they should function the real way, or only in a preview way. But instead of giving the components only `runtimeSettings`, they receive the entire `frameworkApp` object.
+
+This architecture makes the code structure easier to understand; you can always access any information you need from the `frameworkApp` object you have access to, no matter where you write the code :D
+
+
+
 
 ### Starting the app
 To run your app, pass your `createApp()` function to a new `FrameworkApp` instance:

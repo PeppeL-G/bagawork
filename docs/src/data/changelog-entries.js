@@ -6,6 +6,11 @@ export const changelogEntries = [{
 		`Added the Updater component`,
 		`Added the runUpdater() function`,
 		`In the editor, made it possible to resize the app screen when editing app/page/template`,
+		`Changed the default coordinate system in the Paper component to 10x10`,
+		`Added the docs page PaperCircle`,
+		`Added the docs page PaperLine`,
+		`Added the docs page PaperRectangle`,
+		`Made layout components update their child elements accordingly when the children are created anew with the Updater component`,
 	],
 }, {
 	version: `0.0.31`,

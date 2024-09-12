@@ -29,6 +29,7 @@ export class UpdaterComponent extends Component {
 		)
 		
 		this._childCreator = theChildCreator
+		this.createChild()
 		return this
 		
 	}
@@ -55,7 +56,7 @@ export class UpdaterComponent extends Component {
 	}
 	
 	onBefore(){
-		this._child = this._childCreator()
+		this.createChild()
 	}
 	
 	onAfter(a, p) {
@@ -72,21 +73,40 @@ export class UpdaterComponent extends Component {
 		return this._child?.createAfterDirections(frameworkApp) ?? []
 	}
 	
-	createElement(){
+	createChild(){
+		
+		this._child = this._childCreator()
+		
+		// Copy over all child properties to this updater,
+		// so layouts that need to access child properties
+		// can access it as if this Updater is the child.
+		this._size = this._child._size
+		this._keepIf = this._child._keepIf
+		
+		return this._child
+		
+	}
+	
+	createElement(frameworkApp, onChange){
 		
 		let childElement = null
 		
 		const updateChild = () => {
 			
-			this._child = this._childCreator()
+			this._child = this.createChild()
 			
-			const newChildElement = this._child.createElement()
+			const newChildElement = this._child.createElement(
+				frameworkApp,
+				onChange,
+			)
 			
 			if (childElement){
 				childElement.parentNode.replaceChild(newChildElement, childElement)
 			}
 			
 			childElement = newChildElement
+			
+			onChange?.()
 			
 		}
 		
@@ -96,8 +116,9 @@ export class UpdaterComponent extends Component {
 			updatersByName[this._name] = updateChild
 		}
 		
-		if(this._intervalInMs != -1){
+		if(this._intervalInMs != -1 && !frameworkApp.runtimeSettings.isPreview){
 			
+			// TODO: Don't start the interval in preview mode!
 			// TODO: If error occurs in this._childCreator() in update child(),
 			// we should display those errors!
 			this._intervalId = setInterval(updateChild, this._intervalInMs)

@@ -34,32 +34,37 @@ export class PaperCircleChild extends PaperChild{
 		return this
 	}
 	
-	getElement(svgWidth, svgHeight){
+	createElement(frameworkApp, onChange, paper){
 		
 		const circleElement = document.createElementNS(
 			'http://www.w3.org/2000/svg',
 			'circle',
 		)
 		
-		const cx = (
-			this._centerX == undefined ? 
-			50 :
-			(this._centerX / svgWidth) * 100
+		const {
+			_width: svgWidth,
+			_height: svgHeight
+		} = paper
+		
+		let cx = (
+			this._centerX != undefined ?
+			this._centerX / svgWidth * 100 :
+			50
 		)
-		const cy = (
-			this._centerY == undefined ?
-			50 :
-			(this._centerY / svgHeight) * 100
+		let cy = (
+			this._centerY != undefined ?
+			100 - this._centerY / svgHeight * 100 :
+			50
 		)
-		const r = (
-			this._radius == undefined ?
-			25 : 
-			this._radius / Math.min(svgWidth, svgHeight) * 100
+		let r = (
+			this._radius != undefined ?
+			this._radius / Math.min(svgWidth, svgHeight) * 100 :
+			25
 		)
 		
-		circleElement.setAttribute('cx', `${cx}%`)
-		circleElement.setAttribute('cy', `${100 - cy}%`)
-		circleElement.setAttribute('r', `${r}%`)
+		circleElement.setAttribute(`cx`, `${cx}%`)
+		circleElement.setAttribute(`cy`, `${cy}%`)
+		circleElement.setAttribute(`r`, `${r}cqmin`)
 		circleElement.setAttribute('fill', this._backgroundColor)
 		
 		return circleElement

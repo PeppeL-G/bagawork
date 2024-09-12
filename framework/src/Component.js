@@ -142,7 +142,7 @@ export class Component{
 		]
 	}
 	
-	createElement(){
+	createElement(frameworkApp, onChange){
 		/* return HTMLElement */
 	}
 	
