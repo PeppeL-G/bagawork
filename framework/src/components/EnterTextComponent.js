@@ -144,10 +144,15 @@ export class EnterTextComponent extends Component{
 		const enterTextElement = document.createElement(`div`)
 		enterTextElement.classList.add(`enterText`)
 		
+		enterTextElement.style.display = 'block'
+		enterTextElement.style.height = '100%'
+		enterTextElement.style.width = "100%"
+		
 		const inputElement = document.createElement('input')
 		inputElement.style.display = 'block'
 		inputElement.style.boxSizing = 'border-box'
 		inputElement.style.width = '100%'
+		inputElement.style.height = '100%'
 		
 		inputElement.addEventListener('keyup', (event) => {
 			if (event.key == 'Enter') {
