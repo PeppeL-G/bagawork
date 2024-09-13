@@ -199,7 +199,7 @@ flowchart LR
 
 An example of this are GUI components. Some of them need to use `frameworkApp.runtimeSettings.isPreview` to know if they should function the real way, or only in a preview way. But instead of giving the components only `runtimeSettings`, they receive the entire `frameworkApp` object.
 
-This architecture makes the code structure easier to understand; you can always access any information you need from the `frameworkApp` object you have access to, no matter where you write the code :D
+This architecture makes the code structure easier to understand; you can always access any information you need from the `frameworkApp` object you have access to, no matter where you write the code 😀
 
 
 
