@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.36`,
+	date: `2024-09-13`,
 	changes: [
 		`Added the method Button.stay()`,
 		`Added the Updater component`,
