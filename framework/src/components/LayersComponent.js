@@ -35,7 +35,7 @@ export class LayersComponent extends Component {
 		).flat()
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const layersElement = document.createElement(`div`)
 		layersElement.classList.add(`layers`)
@@ -52,15 +52,20 @@ export class LayersComponent extends Component {
 		
 		function onChildComponentsChanged(){
 			
+			let i = 1
+			
 			for (const childElement of layersElement.childNodes) {
 				
 				// Fix CSS for the child.
 				childElement.style.gridRow = '1'
 				childElement.style.gridColumn = '1'
+				childElement.style.zIndex = i
+				
+				i++
 				
 			}
 			
-			onChange?.()
+			onUpdated?.()
 			
 		}
 		
@@ -68,6 +73,7 @@ export class LayersComponent extends Component {
 			
 			const childElement = childComponent.createElement(
 				frameworkApp,
+				this,
 				onChildComponentsChanged,
 			)
 			

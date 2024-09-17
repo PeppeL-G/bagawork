@@ -363,6 +363,8 @@ export class FrameworkPage{
 		
 		const rootElement = this.rootGuiComponent.createElement(
 			this.frameworkApp,
+			this,
+			null,
 		)
 		
 		pageElement.appendChild(

@@ -48,7 +48,7 @@ export class PaperRectangleChild extends PaperChild{
 		return this
 	}
 	
-	createElement(frameworkApp, onChange, paper){
+	createElement(frameworkApp, paper, onUpdated){
 		
 		const rectangleElement = document.createElementNS(
 			'http://www.w3.org/2000/svg',

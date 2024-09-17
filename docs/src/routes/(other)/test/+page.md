@@ -3,3 +3,4 @@ Wait, what? How did you get here? xD You won't find anything interesting here, j
 
 * [showAppInElement()](./show-app-in-element/)
 * [Update](./update/)
+* [size()](./size/)

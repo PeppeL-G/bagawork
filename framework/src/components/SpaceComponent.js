@@ -8,7 +8,7 @@ export class SpaceComponent extends Component {
 		this._size = 1
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const spaceElement = document.createElement(`div`)
 		spaceElement.classList.add(`space`)

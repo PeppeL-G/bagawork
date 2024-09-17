@@ -1,6 +1,9 @@
 import { Component } from '../Component.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
 import { validateArgs } from '../functions/validate-args.js'
+import { RowsComponent } from './RowsComponent.js'
+import { ColumnsComponent } from './ColumnsComponent.js'
+import { FrameworkPage } from '../classes/FrameworkPage.js'
 
 export class BoxComponent extends Component {
 	
@@ -127,7 +130,7 @@ export class BoxComponent extends Component {
 		return this._child?.createAfterDirections() ?? []
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const boxElement = document.createElement(`div`)
 		boxElement.classList.add(`box`)
@@ -137,7 +140,7 @@ export class BoxComponent extends Component {
 		boxElement.style.alignItems = 'center'
 		boxElement.style.justifyItems = 'center'
 		
-		if (this._child?._keepIf ?? false) {
+		if (this._child?._keepIf ?? false){
 			
 			const childElement = document.createElement(`div`)
 			childElement.style.display = 'grid'
@@ -149,7 +152,8 @@ export class BoxComponent extends Component {
 			childElement.appendChild(
 				this._child.createElement(
 					frameworkApp,
-					onChange,
+					this,
+					onUpdated,
 				),
 			)
 			boxElement.appendChild(childElement)
@@ -162,24 +166,32 @@ export class BoxComponent extends Component {
 				)
 				childElement.style.aspectRatio = `var(--aspect-ratio)`
 				
-				if (this._width == -1) {
+				if (this._width == -1){
 					childElement.style.width = `auto`
 				}
 				
-				if (this._height == -1) {
+				if (this._height == -1){
 					childElement.style.height = `auto`
 				}
 				
 				if (this._width == -1 && this._height == -1) {
-					
-					boxElement.style.containerType = "size"
-					childElement.style.width = `min(100cqw, 100cqh * var(--aspect-ratio))`
+					if (parentComponent instanceof RowsComponent) {
+						childElement.style.width = `100%`
+						childElement.style.maxWidth = `100%`
+					} else if (parentComponent instanceof ColumnsComponent) {
+						childElement.style.width = `100%`
+						childElement.style.maxWidth = `100%`
+						childElement.style.maxHeight = `100%`
+					} else if (parentComponent instanceof FrameworkPage) {
+						boxElement.style.containerType = "size"
+						childElement.style.width = `min(100cqw, 100cqh * var(--aspect-ratio))`
+					}
 					
 				}
 				
 			}
 			
-			if(this._width != -1 && this._height != -1){
+			if (this._width != -1 && this._height != -1) {
 				boxElement.style.overflow = "auto"
 			}
 			
@@ -224,6 +236,14 @@ export class BoxComponent extends Component {
 		
 		return boxElement
 		
+	}
+	
+	getRowSize(){
+		if(this._size == 0){
+			return `min-content`
+		}else{
+			return `minmax(min-content, ${this._size}fr)`
+		}
 	}
 	
 }

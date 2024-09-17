@@ -37,7 +37,7 @@ export class RowsComponent extends Component {
 		
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const rowsElement = document.createElement(`div`)
 		rowsElement.classList.add(`rows`)
@@ -52,24 +52,25 @@ export class RowsComponent extends Component {
 			c => c._keepIf,
 		)
 		
-		function onChildComponentsChanged(){
+		function onChildComponentsUpdated(){
 			
 			rowsElement.style.gridTemplateRows = childComponents.map(
-				c => c._size == 0 ? `minmax(auto, max-content)` : `${c._size}fr`
+				c => c.getRowSize(),
 			).join(` `)
 			
-			onChange?.()
+			onUpdated?.()
 			
 		}
 		
-		onChildComponentsChanged()
+		onChildComponentsUpdated()
 		
 		for (const childComponent of childComponents) {
 			
 			rowsElement.appendChild(
 				childComponent.createElement(
 					frameworkApp,
-					onChildComponentsChanged,
+					this,
+					onChildComponentsUpdated,
 				),
 			)
 			

@@ -229,7 +229,7 @@ export class EnterNumberComponent extends Component{
 		
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const enterNumberElement = document.createElement(`div`)
 		enterNumberElement.classList.add(`enterNumber`)

@@ -142,8 +142,16 @@ export class Component{
 		]
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		/* return HTMLElement */
+	}
+	
+	getRowSize(){
+		if (this._size == 0) {
+			return `minmax(min-content, max-content)`
+		} else {
+			return `minmax(min-content, ${this._size}fr)`
+		}
 	}
 	
 }

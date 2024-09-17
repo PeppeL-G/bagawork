@@ -34,7 +34,7 @@ export class PaperCircleChild extends PaperChild{
 		return this
 	}
 	
-	createElement(frameworkApp, onChange, paper){
+	createElement(frameworkApp, paper, onUpdated){
 		
 		const circleElement = document.createElementNS(
 			'http://www.w3.org/2000/svg',

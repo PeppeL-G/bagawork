@@ -87,7 +87,7 @@ export class UpdaterComponent extends Component {
 		
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		let childElement = null
 		
@@ -97,7 +97,8 @@ export class UpdaterComponent extends Component {
 			
 			const newChildElement = this._child.createElement(
 				frameworkApp,
-				onChange,
+				parentComponent,
+				onUpdated,
 			)
 			
 			if (childElement){
@@ -106,7 +107,7 @@ export class UpdaterComponent extends Component {
 			
 			childElement = newChildElement
 			
-			onChange?.()
+			onUpdated?.()
 			
 		}
 		

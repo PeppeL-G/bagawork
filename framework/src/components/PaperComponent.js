@@ -9,6 +9,11 @@ export class PaperComponent extends Component{
 	_height = 10
 	_children = []
 	
+	constructor() {
+		super()
+		this._size = 1
+	}
+	
 	showCoordinates() {
 		
 		validateArgs(
@@ -54,7 +59,7 @@ export class PaperComponent extends Component{
 		return this
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const paperElement = document.createElement(`div`)
 		paperElement.classList.add(`paper`)
@@ -162,8 +167,8 @@ export class PaperComponent extends Component{
 			svgElement.appendChild(
 				childComponent.createElement(
 					childComponent,
-					onChange,
 					this,
+					onUpdated,
 				),
 			)
 			
@@ -171,6 +176,10 @@ export class PaperComponent extends Component{
 		
 		return paperElement
 		
+	}
+	
+	getRowSize() {
+		return `${this._size}fr`
 	}
 	
 }

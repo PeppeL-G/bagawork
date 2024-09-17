@@ -92,7 +92,7 @@ export class TextComponent extends Component{
 		return this
 	}
 	
-	createElement(frameworkApp, onChange){
+	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const textElement = document.createElement('div')
 		textElement.classList.add('text')

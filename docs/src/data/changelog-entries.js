@@ -16,6 +16,7 @@ export const changelogEntries = [{
 		`Added the docs page PaperRectangle`,
 		`Made layout components update their child elements accordingly when the children are created anew with the Updater component`,
 		`Fixed a bug in the EnterText component (the height was not 100%)`,
+		`Improved how Box components are handled in Rows and Columns components`,
 	],
 }, {
 	version: `0.0.31`,
