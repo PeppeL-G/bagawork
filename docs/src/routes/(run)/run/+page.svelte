@@ -13,28 +13,41 @@
 		`style-src-elem 'self' 'unsafe-inline';`,
 	].join(` `)
 	
+	let errorOccurred = false
+	let bagaCode = ``
+	let errorObject = {}
+	
 	function showApp(screenDiv) {
 		
 		const hashStartToRemove = "#"
 		
-		const bagaCode = location.hash.substring(
+		bagaCode = location.hash.substring(
 			hashStartToRemove.length,
 		)
 		
-		const project = getDecompressedProject(bagaCode)
-		
-		const createAppCode = getCreateAppCode(
-			project.app,
-			project.pages,
-		)
-		
-		const runtimeSettings = {}
-		
-		showAppInElement(
-			createAppCode,
-			screenDiv,
-			runtimeSettings,
-		)
+		try{
+			
+			const project = getDecompressedProject(bagaCode)
+			
+			const createAppCode = getCreateAppCode(
+				project.app,
+				project.pages,
+			)
+			
+			const runtimeSettings = {}
+			
+			showAppInElement(
+				createAppCode,
+				screenDiv,
+				runtimeSettings,
+			)
+			
+		}catch(error){
+			
+			errorOccurred = true
+			errorObject = error
+			
+		}
 		
 	}
 	
@@ -47,10 +60,35 @@
 	/>
 </svelte:head>
 
-<div
-	use:showApp
-	class="screen"
-/>
+{#if errorOccurred}
+	
+	<div class="error">
+		
+		<h1>An error occurred 😢</h1>
+		<p>We're sorry, but an error occurred while trying to decompress the app provided in the URL. Therefore, the app can't be started. Most likely, some parts of the URL is missing, or maybe an extra character has been added somewhere by mistake, making it impossible to decompress the app.</p>
+		
+		<p>If you have copy-pasted the URL somewhere, maybe some parts of it has been lost. For example, Firefox for Android limits how many characters you can enter in a URL, so if you copy-paste a long URL there, Firefox will remove some of its end (causing this poor developer to spend 3-4 hours on debugging why some things didn't work on Firefox for Android... 🤣).</p>
+		
+		<p>Here is some debug information:</p>
+		
+		<dl>
+			
+			<dt>BagaCode:</dt>
+			<dd>{bagaCode}</dd>
+			
+			<dt>Error:</dt>
+			<dd>{errorObject.toString()}</dd>
+			
+		</dl>
+		
+	</div>
+	
+{:else}
+	<div
+		use:showApp
+		class="screen"
+	/>
+{/if}
 
 <style>
 	
@@ -62,6 +100,10 @@
 	:global(html, body){
 		margin: 0;
 		padding: 0;
+	}
+	
+	.error{
+		padding: 1em;
 	}
 	
 </style>
