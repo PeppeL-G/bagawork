@@ -23,5 +23,11 @@ export function applyAttributesToElement(guiComponent, htmlElement){
 		`${guiComponent._borderTop[0]   }mm ${guiComponent._borderTop[1]   } solid`
 	style.borderBottom =
 		`${guiComponent._borderBottom[0]}mm ${guiComponent._borderBottom[1]} solid`
+
+	htmlElement.style.color = guiComponent._font?._color || htmlElement.style.color
+	htmlElement.style.fontWeight = guiComponent._font?._bold ? `bold` : `normal`
+	htmlElement.style.fontStyle = guiComponent._font?._italic ? `italic` : `normal`
+	htmlElement.style.fontSize = guiComponent._font?._size != -1 ? `${guiComponent._font?._size}mm` : `inherit`
+	htmlElement.style.textDecoration = guiComponent._font?._underline ? `underline` : `normal`
 	
 }

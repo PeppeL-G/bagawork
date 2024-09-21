@@ -71,6 +71,28 @@ Use the configuration method `cornerRadius()` to tell the component how round th
 
 
 
+## `font()` - Formatting text
+Use the configuration method `font()` to tell the component how text shown on the screen, such as text set through:
+
+* `Text.text()`
+* `Text.textWithBBCode()`
+* `Button.text()`
+* Etc.
+
+Should be formatted. Pass it an instance of the :docs[Font] class, which you can configure by calling different configuration methods on it (for more information on those methods, see the documentation for the :docs[Font] class).
+
+The font assigned to a GUI component this way will be passed down to all its child components, and their child components, and so on. A child component can override the font it gets from its parent component by calling `.font()` on itself.
+
+::: tip Example
+
+::bagawork-project[app&link&code=StartPage&baga=eNrFk19LwzAUxb9KvC9roZRuIkhfpBOVPSjiBBUnNLa32zBLSpKiY/S7m1idS9fpfPKhIf/OuTe/Q1dAyxLiFWQiR4ghY1QpcrlMypLgm0aeK2LmqwmfaPtlEqnGsaZSX9Mpen5zoiXqSnKyPrC7dSOqoQ6gECxHqSB+XME8h7gfAKcLW/FDAgGIolCo7yGOvuYPZl4/BVAaP0fZmI2ahdP4uv66ebtodX9Rzdt934hXFRaCa+/cDGEmmJBeKjFPfT/MZnOWS+ReI5noW2MeajN46ai3IObaQeoHzumW1zOr0Jp9y+zOlm6Hq+/wDOAN4kFkQC0hPozWkG5xUTLzQAeWwydRL6MiySv2AyTBh1gI+Z3tRu3fEG6hGpc0w64nJhLJUlTkI0qiZ5ST/vHJBg5XeSpYteAdBdoXJ3pYafOGzzJXIvVDy8bjFWN+sKfsAdV+uq6ALMKk0Ci7CNq/oclm0MrmjBtJMsX/TuZuRnVP2XAkMdV3Z+IQ60fdwNxLR3tcGuzjNNjhtNnhXzJ5qt8B5//SeA==]
+
+:::
+
+
+
+
+
 ## `keepIf()` - Conditionally keep/remove the GUI component
 By default, all the GUI components you use will be shown. Use the configuration method `keepIf(condition)` to only keep the GUI component if the `condition` you pass to it is `true`. If the `condition` instead is `false`, the GUI component will be removed, and not used at all.
 

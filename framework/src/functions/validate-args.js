@@ -1,4 +1,5 @@
 import { Component } from "../Component.js"
+import { Font } from "../classes/Font.js"
 import { PaperChild } from "../PaperChild.js"
 
 export function validateArgs(component, methodName, expectedTypes, args) {
@@ -67,6 +68,10 @@ function getValueAsString(value){
 		return value.constructor.name.split(`Component`)[0]
 	}
 	
+	if(value instanceof Font){
+		return `Font`
+	}
+	
 	return JSON.stringify(value, null, ` `)
 	
 }
@@ -91,6 +96,10 @@ function getTypeName(value){
 	
 	if(value instanceof Component){
 		return "Component"
+	}
+	
+	if(value instanceof Font){
+		return `Font`
 	}
 	
 	if(value instanceof Function){

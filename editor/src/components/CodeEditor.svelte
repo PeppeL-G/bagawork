@@ -15,6 +15,7 @@
 	import pageTsString from '../editor-type-definitions/bagawork/Page.d.ts?raw'
 	import timeTsString from '../editor-type-definitions/bagawork/Time.ts?raw'
 	import directionTsString from '../editor-type-definitions/bagawork/Direction.ts?raw'
+	import fontTsString from '../editor-type-definitions/bagawork/Font.ts?raw'
 	
 	import componentTsString from '../editor-type-definitions/bagawork/Component.ts?raw'
 	import buttonTsString from '../editor-type-definitions/bagawork/components/Button.ts?raw'
@@ -50,6 +51,7 @@
 			{content: pageTsString},
 			{content: timeTsString},
 			{content: directionTsString},
+			{content: fontTsString},
 			
 			{content: componentTsString},
 			{content: buttonTsString},

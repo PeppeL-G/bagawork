@@ -12,6 +12,9 @@ export const Time = createClassCreator(TimeImplementation)
 import { Direction as DirectionImplementation } from './classes/Direction.js'
 export const Direction = createClassCreator(DirectionImplementation)
 
+import { Font as FontImplementation } from './classes/Font.js'
+export const Font = createClassCreator(FontImplementation)
+
 // Functions
 export { createPageCreator } from './functions/create-page-creator.js'
 export { showAppInElement } from './functions/show-app-in-element.js'

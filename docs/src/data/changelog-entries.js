@@ -1,7 +1,11 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added the class Font`,
+		`Added the method Component.font()`,
+		`Added the docs page Font`,
+	],
 }, {
 	version: `0.0.37`,
 	date: `2024-09-17`,

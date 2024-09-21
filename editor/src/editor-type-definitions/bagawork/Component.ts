@@ -77,6 +77,14 @@ abstract class Component{
 	border(thickness: number, color: string, sides: string = `tblr`) { return this }
 
 	/**
+	 * This method sets the font that should be used to format the text
+	 * shown by this component and its child components.
+	 * 
+	 * @param font The font that should be used
+	 */
+	font(font: Font) { return this }
+
+	/**
 	 * This method will remove the component if the condition you pass
 	 * to it is false. If the condition is true, the component will be
 	 * used as usual.

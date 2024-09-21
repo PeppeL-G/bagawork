@@ -204,6 +204,9 @@
 				text: 'Direction',
 				href: '/documentation/direction/',
 			}, {
+				text: 'Font',
+				href: '/documentation/font/',
+			}, {
 				text: 'Page',
 				href: '/documentation/page/',
 			}, {

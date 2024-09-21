@@ -7,6 +7,7 @@ export class Component{
 	_cornerRadius = 0
 	_showIf = true
 	_keepIf = true
+	_font = null
 	
 	backgroundColor(color){
 		
@@ -130,6 +131,20 @@ export class Component{
 		this._borderTop    = sides.includes(`t`) ? [amountInMm, color] : this._borderTop
 		this._borderBottom = sides.includes(`b`) ? [amountInMm, color] : this._borderBottom
 		return this
+	}
+	
+	font(font){
+		
+		validateArgs(
+			this,
+			`font`,
+			[`Font`],
+			arguments,
+		)
+		
+		this._font = font
+		return this
+		
 	}
 	
 	onAfter(a, p){
