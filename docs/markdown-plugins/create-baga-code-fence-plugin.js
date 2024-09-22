@@ -2,12 +2,13 @@ import { visit } from 'unist-util-visit'
 import { getCompressedProject } from '@bagawork/editor/src/functions/project-compressor.js'
 
 // Use it like this:
-// ```js baga-show-editor
+// ```js baga-show-editor-code
 // THE-CODE
 // ```
 // The extra info:
 //  - "show" means show and run the app
 //  - "editor" means show link to editor
+//  - "code" means show code
 export function createBagaCodeFencePlugin() {
 	return (tree) => {
 		visit(tree, (node, index, parent) => {
@@ -89,16 +90,20 @@ export function createBagaCodeFencePlugin() {
 						
 					}
 					
-					children.push(
-						...classCodes.map(
-							classCode => ({
-								type: 'code',
-								lang: 'js',
-								meta: null,
-								value: classCode,
-							})
+					if(node.meta?.includes(`code`)){
+						
+						children.push(
+							...classCodes.map(
+								classCode => ({
+									type: 'code',
+									lang: 'js',
+									meta: null,
+									value: classCode,
+								})
+							)
 						)
-					)
+						
+					}
 					
 					// Replace this node in the parent with new the new nodes.
 					parent.children.splice(
