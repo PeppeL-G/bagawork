@@ -44,7 +44,7 @@ export function createBagaCodeFencePlugin() {
 					)
 					
 					const appCode = classCodes.find(
-						classCode => classCode.startsWith(`class MyApp`),
+						classCode => classCode.includes(`extends App`),
 					) ?? `class MyApp extends App{
 	createStartPage(){
 		return StartPage
@@ -52,7 +52,7 @@ export function createBagaCodeFencePlugin() {
 }`
 					
 					const pageCodes = classCodes.filter(
-						classCode => !classCode.startsWith(`class MyApp`),
+						classCode => classCode.includes(`extends Page`),
 					)
 					
 					const project = {
