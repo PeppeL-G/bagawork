@@ -12,7 +12,17 @@ The `Layers` component is a layout that shows its children in front of each othe
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkMFKxDAQhl8lzGkLoeiKB3vrSQoKgntQ7EJjM3WLaRKSKWwpfXfTlq3bPSh7SWYmM/98+XsQ1kLSQ2kkQgKlEt6z5y61luGRUEvPQtznOqfSoSB8JeHoRXzhJpqqOTmk1mm2PIzVIdcDDBwqoyQ6D8lHD7WE5JaDFs24aWoHDqaqPNIbJDen+D3Ew56DDVqryVksm5MV8LJ7gR6TM+rHtr7kfRJdIIvLQ62kQ72ZH3PaBYmYwrEpMiYaRgdkn4bINEyNI3ER8b96pyZW6ylpaikV/jdCxl5qR4uLHI6QbO+2HLpw3z+crNlhY1X42sqilSup/86qVLaKrrDljK/4hRj2ww/n5MKr]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Layers.children(
+			Text.text(`I am the bottom layer.`),
+			Text.text(`I am the layer in the middle.`),
+			Text.text(`I am the top layer.`),
+		)
+	}
+}
+```
 
 :::
 
@@ -23,7 +33,17 @@ Use the configuration method `children()` to tell the `Layers` component which i
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkk9Lw0AQxb/KMBdTWIp/8GBuxYMUFAQ9WEwh2+ykCW52w+5ELSXf3U1S06aePGVmd+e93/CyR1nXGO8xs4owxkxL7+Fpt6hroG8mozyEep+YhDNHkumFpeNnuaVo1p8m7IgbZ2C86E7bxLTYCsytVuQ8xu97LBXGVwKNrDqn/jkKtHnuid8wvvytV6Fu1wLroDWZHMSWQzMBHr1H6K45oX5oynPeR7kLZPOsKLVyZKLhMuHXIDFnW0ezOYcySpcgK9hQURoFXBDobjBUkkE5+eVBwkZmH1tnG6MEeAs720AmzQWDJ4KK5ulMTOSP7++tti5KdVlROjE8OpWmb6pSKU0CvkougmU3ceL718Iy22pcYjUgHYCAPqlTtc22OBE/GBbyfKcNZbLxBD1Zt7TpqHJnDYPN/ygcYWbjzyDwG+Prm2uBu/C9vftN+JWqWoeEJklPwl34j2W+UI3mf6Q7pNivnh4h2nX7A57SCTo=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Layers.children(
+			Text.top().text(`I am behind the layer that draws a background, so you can't see me.`),
+			Text.backgroundColor(`lime`).text(`I am the layer in the middle, with a lime background.`),
+			Text.bottom().text(`You can see me even though the middle layer has a background, because I am drawn in front of the middle layer.`),
+		)
+	}
+}
+```
 
 :::
 

@@ -25,7 +25,32 @@ By default, `Mouth` is disabled and won't speak anything. To make it speak the t
 
 Example showing how to enable the `Mouth` in an app.
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVUstqwzAQ/BWxJwdU0zg0Db4U55LmUChtDi11wKq9jk0cycgySTD+90px/MqhkIukXTGzMyNVwPIc3ApCESG4EGasKMjb2ctzgieFPCqIPlc+95XgS4yFRGtyKX3F7IMoVWIjZ7+ZbptubZZQIlP4qZhU72zXAySqUnLC8UgGl1dYDTWFWGQRygLcnwrSCNwpBc4ORtkFABREHBeovsB9mDlt9Q3uYlpvKeSacARu+NZNMfLYCeh8mqLq5a/K9Fb4slQ6BVtphBWsBFGCbPTZAIOJbYZbbd27onAC13FmFM56X8xr2qhz/lPX0twh7kMcCztM0iySyK3myleG6Cr4NSUqQYmUJOJImERyFiWJRMp3L8GEtoiRySUL98Zm0xwa7fLrkYNZ3pCdxCnHfsRNNE/zx2s0z+0TbvCQZ9rl6ClH+XjFfh17UZmpOxIa6AsGv25b/wHbCA8A]
+```js baga-show-editor-code
+class MyApp extends App{
+	onBefore(){
+		a.mouth.enable()
+	}
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Button.text(`Go to TextPage`).page(TextPage)
+	}
+}
+
+class TextPage extends Page{
+	createGui(){
+		return Rows.children(
+			Text.text(`Hi there, how are you doing?`),
+			Button.text(`Back to ButtonPage`).page(StartPage),
+			Text.text(`Are you doing fine?`),
+		)
+	}
+}
+```
 
 :::
 

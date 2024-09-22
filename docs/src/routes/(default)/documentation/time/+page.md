@@ -44,7 +44,34 @@ Use the different `getXXX()` methods on the `Time` object to retrieve the differ
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVG1r2zAQ/itCDGaDMUnGYBhGcV9o+6FlNIEtNIUI+xybKpLRC60x/u+T69irHDu4H0Y/JJGeu+fu9NxdSkzyHAcljngMOMARJVKiuyLMcwSvClgskTmXG7ZR9ScSQBQsFRHqF9mB4zYWJUBpwVBnqNGqIVW48nDCaQxC4uCxxFmMg7mHGdnXGd8o2MM8SSSoPziYtee1OVdPHs5NPIvZBLttLlbhXf6u+PrSVa+yPaCfaGV+fJPgnr84bmvj7BwSLv49KfdV36+yZbjWWV+AB/4i/SjNaCyAOY1po5Y5icBrbytTm6/Ml7Pdgbo0gRw3QF/KQ8IOq7buCGcNRPQ5DTbOueNMpX3SARxnXZLiuLjiFOOC8ui5zzmA46wbro9e1GAnXpQxfaxdi47zlhBxFvd5LXoqH6WZHCRbpvcR7M6fa2Xm7BDxARIBMu2cXWtnPPyKg8XMLEOBg2+zbhFWsM+pGQ9rIawdCOXzbRLGmp5YhKNh/y/THQpABdfobV2RSglD8x9no+pccKr3bCBB37En5D3fun6tjcM0pa43kbYGOY031KBawjBRIIYUrP/xmt4ser25YoYS7uCzO/M7JeqrrJsjkMl+Nm1i57NhwWyn7xOcFlMiLUYiva/wIz15qv4Cu66BGw==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	time = Time.setNow()
+	
+	onBefore(){
+		p.time.setNow()
+	}
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`getDate(): ${p.time.getDate()}`),
+			Text.text(`getYear(): ${p.time.getYear()}`),
+			Text.text(`getMonth(): ${p.time.getMonth()}`),
+			Text.text(`getDay(): ${p.time.getDay()}`),
+			Text.text(`getClock(): ${p.time.getClock()}`),
+			Text.text(`getHour(): ${p.time.getHour()}`),
+			Text.text(`getMinute(): ${p.time.getMinute()}`),
+			Text.text(`getSecond(): ${p.time.getSecond()}`),
+			Text.text(`getMillisecond(): ${p.time.getMillisecond()}`),
+			Space,
+			Button.text(`Refresh`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -67,7 +94,22 @@ Use the different `setXXX()` methods on the `Time` object to change which time i
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU2Fr2zAQ/SviGMwCYZyMbsMwhtuN0Q8bYw10YS5E2OckVJGMdGYNxv99Ut16cYi3fBjsg23pdO/e3XtWC7KuIW2hMCVCCoWSzrHP+6yuGT4Q6tIxv25znVN4CouS8Iakpa9yjRHvT8giNVaz4SBEux7UQSegMqpE6yD90cK2hHQmQMtdYHyEgABTVQ7pO6TJ83rp192dgNrXGyH7Ytf9ZtT4wD80HzZD97TdIXvHFv4Te4IrZYr76EKw14K94SGyRGmjeZIkfDzwp2Z7POo389PFxWarSos66o9yuqllgeJ5t/BdxORf0WqN9MEXinjKXrR1HDqJh1i34hOYvsUj0FPwEHXIy0fiC3iA1I8kYA/pq2RQdIG7Wnn2kbIjMTN3f11lZaP+oKjRl1gZ+/tHOOD+d+JlFtneNOzRd0Ybqdns7fuJ8XO6MqrZ6RMEx4k5XTbkZ3ii+WJWPA7aRLpRioszYUt05+H4CYOChFlFaE8pGK5O7838yJuP2kOyNf5vZ243kl66YI5lnn3ak5Fis+S0YOOkizOS5udUmk9Umro0f/PkrvsFSoLhVA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	time = Time.setClock(5, 6, 7).setYear(2000)
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`getDate(): ${p.time.getDate()}`),
+			Text.text(`getClock(): ${p.time.getClock()}`),
+			Space,
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -96,7 +138,25 @@ No `removeXXX()` methods exist. Instead, simply pass negative numbers to the `ad
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/SviMpgNnkkyBsMwhvtB6cPKWANdmQsR1nViaktGkkmN8X+fFLVOHOzND4M92OjjnnvuPeeqBVpVELWQCoYQQVpQpci3Jq4qgi8aOVPErNuEJ9p+qUSq8V5Tqb/TLXq+u9ESdS056S/saedAHXQBZKJgKBVEv1rIGUTLADgtLeMBAgGILFOof0K0eFs/mnX3FEBl8g2QLtmt2wwK7/n74u2mr75BpVEy2pAvZJ2XGBqWO7H3/JAydkUb5X1Y+jZQi5Egd1EKKcV+MoHDH6W6qfNzkX6IvQrTXV4widxzV4m+r2iKwdtubeoPtfl5m8e+6FxF5F1bhX0b4Rb1lSHx/G7jj2HX4hR36GoG5rXFI8wdjCNP6/YHtgfwAtFqYfxsIPq46L1cY1kVJs/A04GNsXq+zWJWF3/wUvALzIQ8juAJ978TP5ZIGlGTw8QRvaOcLD9/nWg/0ZeiqEs+QnAemOiL2gwTf6W5Exs/tNp4vC4KP5gJM6MxD+ePGGQljDMzSGMK2kfrvFmdeXPNDSTe4v925mFH9XtlzZHEsE97MlBsuRgXbBj0aUbQak6m1USmqUfzN0+eut9RTRAX]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	yesterday = Time.setNow().addDays(-1)
+	today = Time.setNow()
+	tomorrow = Time.setNow().addDays(1)
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Yesterday is: ${p.yesterday.getDate()}`),
+			Text.text(`Today is: ${p.today.getDate()}`),
+			Text.text(`Tomorrow is: ${p.tomorrow.getDate()}`),
+			Space,
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -111,7 +171,44 @@ Call the method `getCopy()` to get back a new `Time` object representing the sam
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVO9r2zAQ/VduYlAbjJtkDIZhjHQbWz+sjCXQlblQ1T7H3hTJyPLSEPy/72THrp06az4M9sFGv969d+902jGe5yzYsUjFyAIWCV4U8GU7z3PAB4MyLoDGu1CGxn6RRm5wYbg2X/kKHbfZMRpNqSV0G3a1akAVqzyWKBGjLljwY8eymAVTj0m+tow1hHlMJUmB5jsLJu34hsbVrcdyijdANsEum8lAeMffibeTTr3S2SqTXMBbWGZr9InkSm0ct85M5Vtal6UQdiqVeT9cqQPIC0yUfsy7+Z+fwzVCQfERONSRVAImRTBEA+r+J0YGMgkhs5sh8xtc7u9Zc7+V5q+wJm5E9QgWCqKUS7ICjOoCgZJiCzxJiIA2Um76lAMam+0Ncu1MJ5PJYfTPSNI3CLGSZwaaKu9T8aBQcK9MSqR7V4iXy7gDh6xVTxsaEyq01agk2mO1DwUVu6/sRavs0edHD55mniVWXJP/E19NqlW5Suv1nsQO/5vrjN8L9OoTrYmbTAjgwuZG8lK1kf1A47m1kQ7Vd9bOhtZWw7b5VGaHDfNNbQo/SjMRa5TOHmkWOY/Qa2dLusu+oZ9z12oJ4OVueGc+UHzHre7cMZgtYwOpL8Jzx/dZNYg2xVFQX6g76HmPPbCA7PDYlgWvJl0jL3GdC4ozaOhBD8+LX5fJPC7F3xp5rA//udtz6omtKqF+bmxzSZi+eXck/ZBsEuVajhAcHgzNRWkohz3NlbpzfeuNY58a1zsRdoPFaTh3pEDWwnliUI85aF/spjazg9p8lASZr/B/V+aaHrqzwhZHA7Efr8nAselk3LDhodcnHJqdEml2JNKxpnmuJrfVH0qtxXQ=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	original = Time.setNow()
+	copy = null
+	notCopy = null
+	
+	onBefore(){
+		
+		// We store a copy of the time object in "copy".
+		p.copy = p.original.getCopy()
+		
+		// So changes to "copy" only affects that time object.
+		p.copy.setYear(1000)
+		
+		// Here we don't create a copy, so both "notCopy" and
+		// "original" refers to one and the same time object!
+		p.notCopy = p.original
+		
+		// So if we change the time object through the "notCopy"
+		// variable, the changes will also be shown through the
+		// "original" variable!
+		p.notCopy.setYear(2000)
+		
+	}
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`original: ${p.original.getDate()}`),
+			Text.text(`copy: ${p.copy.getDate()}`),
+			Text.text(`notCopy: ${p.notCopy.getDate()}`),
+			Space,
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -127,7 +224,30 @@ Use the different `isXXX()` methods to compare different `Time` objects:
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVO9rnEAQ/VeWoVAXRDxDaRFK8Ewo+dAf9A7SkAvcomNO4q2yu9Ic4v/e9byTrKixpZAP3u06M2/evtlnBawowK8gymMEH6KMSUm+HoKiIPiskMeS6HW14RvVPJFApnClmFA/2CNatI0ogaoUnHSB5m3dFtVQ25DkWYxCgn9fQRqDv7CBs33T8VgCNuRJIlH9At89r+/0un6wodB4RmULdtNuDOJd/458s+nYq3SPAflM1vrf0R2u9Fksz/UubLLw9PORnrOWs7LCiaxP1NTsS5n21fqZ/5ZOtEuzWCC32tBGrQoWoX3erfVBHKV/rO2RvZPKlRYukNaRJvXJu6pweqH2xZLWWzoTKJwCCg2gV/ktMckFDvI7hWbyewEUTgH9E7/vYkLHXspf8TWAwznA4/yp4SMbnsH3XG2QA/gXbmeONe6LTF8xwySGLwL5dJMEcZlNmCPnJ1HPt/RF7/93iQOB5JCX5GhhonaMa6tcjo4vzLNyzwca9BM3alkqfYZTm2/5ljqNNhYvs4zaM8vuUM6rowMDaiQMEoViSMHmK9jOxuvN5prrkuAR33oytzum3stmOILo7uMzMRRbuMOCmUkfZiR5c5C8EaQx07w2k4f6D1HXgHI=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	timeA = Time.setDate(2023, 12, 17)
+	timeB = Time.setDate(2023, 12, 17)
+	timeC = Time.setDate(2023, 12, 18)
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`timeA.isSameAs(timeB): ${p.timeA.isSameAs(p.timeB)}`),
+			Text.text(`timeA.isSameAs(timeC): ${p.timeA.isSameAs(p.timeC)}`),
+			Space,
+			Text.text(`timeA.isBefore(timeB): ${p.timeA.isBefore(p.timeB)}`),
+			Text.text(`timeA.isBefore(timeC): ${p.timeA.isBefore(p.timeC)}`),
+			Space,
+			Text.text(`timeA.isBeforeOrSameAs(timeB): ${p.timeA.isBeforeOrSameAs(p.timeB)}`),
+			Text.text(`timeA.isBeforeOrSameAs(timeC): ${p.timeA.isBeforeOrSameAs(p.timeC)}`),
+			Space,
+		)
+	}
+	
+}
+```
 
 :::
 

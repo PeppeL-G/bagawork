@@ -19,7 +19,15 @@ To create a new `Paper` component instance, simply write `Paper`.
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUsFqg0AQ/ZVlLlWQYCyF4qWYUkoOLaEJtKEJuNXRhJhd2V1pgvjvXWNio5hgTz0oM+68eW/fMweapuDmEPAQwYUgoVKSl72XpgR3Clkoia7zBVuo8gkEUoVTRYWa0BgNszpRAlUmGKkPyq9FBSqgsCDiSYhCgvuZwzoEd2gBo9uS8QABC3gUSVQf4Nqneq7rYmlBqvc1kNWycdU0hNf8tfiyaal/ztZt3ROaohh80WATC56x8JEnXBh+rIl8s3EXC3bgOrYWuQf31q4FznCbJnp5Q2hDmyc348gLs+SKQM5GGHHx6+sZ9xX5b/xbDoLVOgkFMuOIVNOUBmidupkmHCj9MnxPINnzjBxsJGpFGRneP/im1Y3UZmRb1kHQHlyoUab0HY40r9w3B6U3BsuSxLR6wuYo++FOJ2bDJM68SKHocrD8E6tsnFY2T0xDvBj/O5n3FVU3sgxHEM1+OZOGY0O727Dm0F2PIafPJufCpnOFf8lkWfwA8oekuQ==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Paper.backgroundColor(`gold`)
+	}
+	
+}
+```
 
 :::
 
@@ -32,7 +40,17 @@ Often, you want the `Paper` to be of a certain size. That can easily be achieved
 
 Example of a `Paper` component instance put in a :docs[Box] component instance to make it 30mm wide and 50mm tall.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUk1rg0AQ/SvLXKogYgyB4qWYUkoOLaUJtKEJZKvjBzG7sruShOB/71obGyUJ9tSDMuvOm/fePA9A8xy8AwQ8RPAgyKiU5Gnv5znBnUIWSqLrw4ItVPUEAqnCqaJCvdAYDbO+UQJVIRhpLqqvZQ0qobQg4lmIQoL3cYA0BG9gAaObivEbAhbwKJKo3sFzjvVc1+XSglzPayHrYZP60BLe8Dfiq0NH/WORdnWP+c7epqFKjKFj2gmmcaKMkS6DJM1Co+5d6Mk5CvuTButY8IKF9zzjwljFWs/KtOous2Xdgh14rqM97cEbOo2fGW7yTGtp+WpZ8eV6EvlhkV3xw9kYIy5+YzjhvuL2lW9l7Uwga8xNcxqgdTzNNKGt9MtY+QLJnhfke+tEJZSRwe1dY7iL1EspNuwMQbdxocaF0h5+aJ75yrSr3RisyDLT6gmbo+yHOxdQtUI/UijObbD6cets3E42D0xD/Bj/O5m3hKobWYUjiGa/nElrYwPn/MLaTaMeTW6fSe6FSacK/5LJsvwCz/O0lA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -70,7 +88,17 @@ This is something you can use during development, but after you have fininshed w
 
 :::tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUl1LwzAU/SvhvthCKN1EkL5IJyJ7UEQFFScsNrcf2CUlSdnG6H83sa6uo5P55EPLTXPPPfec0w2wqoJoA4nkCBEkJdOa3KzjqiK4Mii4JrbezMTMuCdRyAw+GKbMHcvQ89sbo9DUSpDuwn1tWlADDYVUlhyVhuh1AwWHaERBsIVj/IIABZmmGs0zROG2frF180ahsvN6yHbYtD30Fu/4u+XdYW/767rY33siV8Gy4Cb3TkM/yLHIcuOd2TLJi5J7be/MTq5QBe8s+ciUrAW/lKVU3jyz+8z9QOdyeSml4oWwLNrzaYvze2ZQWEE0Dq3KNUSnYafwERdV6XC7SnviYv0xTWNel78olGKCqVQ/wexw/6L/Xi51q1Wh6OQ+VCxBuj09WsLA2Jc3jxWStazJVw7E5EyQ0fnF3KfDSGtTvRADBPuNMzOpjdXwTXMrravOG0/UZenTI2EvqI/DDQXkLIxTg2rIQfcrt9mM97K5EhYSZ/jfyTzlzJxoF44ilv1wJj3HRuGwYf2msyOaxsdMGh+YtLvhXzJ5az4BO3u7Tw==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).showCoordinates(),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -88,7 +116,17 @@ So, if the widht and the height of the `Paper` component are not the same, it is
 
 Example setting the width of the coordinate system to `30`, and the height of the coordinate system to `50`. 
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUl1L60AQ/SvLvJjAUtKKcMmLpCLigyJXwSu3Qtfs5APT3bA7oS0l/91dc81tSpT65EPCbHbOOTPnZAeiriHeQaolQgxpJaxlN9ukrhluCJW0zNW7hVqQf1KDgvCehKE7kWMQdjdkkBqjWH/hv7YdqIWWQ6YricZC/HcHpYR4ykGJlVd8hwAHnWUW6Q/E0Uf95Or2mUPt+AbIjuy6OwwG7/X74f3hYPqrpjyce643k3UpqQhOo3BSYJkXFJy5Mi3KSgZd78Ix12gmLyJ9zY1ulLzQlTbBMnfzLF2v1kaWyvuztYQrx8WZJ7GFXl/0lzYIeUcYDlzisIF4Frn1txCfRv3qD7iqK4/bt2CwdWJfr7NENtUXq2s1x0yb/4ntaX9hzG+9tp0JBlXvw30tUuQfpwcnOCH3CpaJQbbVDXsPiFEhFJv+Ol+GfBzp/GtWakTgsHFB84bcDv9kbrWz23sTqKaqQn4k7AntcbixgLyFSUZoxhz0/3iXzewgm0vlIEmOP53MYyHoxPpwDHPqn2cycGwajRs2bDo7oml2DNPsE6b9Cb+TyXP7BtDbw48=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).coordinateSystem(30, 50).showCoordinates(),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -113,7 +151,19 @@ Use the GUI component `PaperLine` to draw a line on the `Paper` component. It ha
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUttqwkAQ/ZVlXppAkKgIJS8lllKEtpQqtKUKbpPJBeNu2N2gIvn3bkyMxkaxT31ImN3MmTmXbIGmKThb8LiP4ICXUCnJ88ZNU4JrhcyXRNfbKZuq4vEEUoVjRYV6pSEaZvlFCVSZYKT+UNzmJSiH3IKAJz4KCc7XFmIfnK4FjC6LjTsIWMCDQKL6AMfe15+6zmcWpHpeA1kOG5WHBvF6f02+OJywf8ziU95Dvu6sYl9FRt82OxHGYaSMgS69KE58o+yd6skpis439Rah4Bnz73nChTEPNZ951SuQ1e0V4ClmaO3vzKoyGw5ZsAanZ2vpG3D6di17gss00ZQb8huKXbkYBa6fJRdkczbEgItDWke7L5jyxlfyt6hxSr2DnIle2FH6ZcxdgWTDM7ILh6iIMtK9vZubVjtSe5ctmWxzrdk4VcNMaQ3VmheurS68MViWJKZ1JewT5XW4toAKC91AoWhzsPi/y2x6J9k8MA1xQ/zvZN4jqm5kEY4gevv5TBqOde12w5pNgyuaetdM6p2ZdMzwL5nM8h/yrMNM]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperLine,
+			),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -126,7 +176,20 @@ Call various configuration methods on the `PaperLine` component to change where 
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+K0M1kMMZ2CQzfDGeUUdjGWAtbWQpR7eMP4khGHzQh+L/vuE49K3VDdtULmyPrnPe8Oo98oLxtaXKgmcyBJjRruNbk2z5tWwI7AyLXBOPDSqxM/2QKuIFbw5X5wUtg3rBjFBirBBk3+q/dUNTRzqeFbHJQmiZ/DrTOaRL5VPBt3/G5hPpUFoUG85sm4Ut8j3H34NMW9ZzKQexmWDjGx/6j+X5x4v6LrU99L+UueKpzU7Gr0AsqqMvKsAWGWVU3ORtyV6jcggoeebYplbQi/ywbqdi6RD/rY64CMaYfC77WAgLdO2NR6JMIZdEaizGOMTZVnW0EaM1i77X2Y2Nh7fnnJeOJZORILmYk21psJpIvkecw8+mOJnGIMPY0uQpHEHewbRscogPEYZDqzU2R5rY5A0KKJRRS/bs/k95nMP2UT/r1mG9bnsF4nDtsGBh8sXWqgOylJc/XhZiKCxJ9/DQ5uluJ47Fboec4uokrs7QGz3Bs810i/H42TNimmbI6W3YP+rK6OUD9CNPCgJqbYP/HDWziEzbXAkvSEt6bzK+Kmw+6h6MIdn+biTOxKJwfmJu0uCApvkQpfkNp6vB/mDx0fwEQ9fMX]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperLine.start(10, 10).end(20, 20).thickness(2).backgroundColor(`blue`),
+				PaperLine.start(10, 20).end(20, 10).thickness(5).backgroundColor(`pink`),
+			),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -138,7 +201,19 @@ Use the GUI component `PaperCircle` to draw a circle on the `Paper` component. I
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUktrwkAQ/ivLXJpAkKgIJZcSpRQPLaUVWqmC22TywHU37G6oIvnv3TQajY1iTz0kzG7mm/ke2QLNMvC2EIgQwYOAUaXI48bPMoJrjTxUxNTbGZ/p8gkkUo2vmkr9TGO07OqLlqhzyUn9obwtKlABhQORYCFKBd7HFtIQvK4DnK7KjT8QcEBEkUL9Dp67r6emLuYOZGZeA1kNG1eHBvF6f02+PJywf8jTU95Dse58paFOrL5rdxJM40RbA1MGScpCq+qdmckZys4nDZaxFDkPR4IJaS1iw2ex65XI6/YdYJTKgKGzv7V3ld3wyIE1eD3XiN+A13dr4RNcZcyQbhjQ0Oyr5Tjyw5xdEC74ECMhD3kd7b5gy4v4Ur9lvWY0OMiZmIUdbV7WwpdINiInP/EQnVBOurd3C9tpRxr38hVXbb41G2d6mGujYbfmSRizS28snjNmO1fCpqiuw7UFVFroRxplm4PlH15l0zvJ5p4biB/jfyfzllB9o8pwJDHbz2fScKzrthvWbBpc0dS7ZlLvzKRjhn/JZF58A6xpxBY=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperCircle,
+			),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -150,7 +225,20 @@ Call various configuration methods on the `PaperCircle` component to change wher
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/StCL1PAGDshMPwynDJGHzbGWtjKUohqXX9QRTL6oAnB/31SnbpW6ob0aQ82V9Y95957zvUB07bF2QEXkgHOcMGp1uj7Pm9bBDsDgmnk4sNarI1/CgXUwI2hyvykFZBZf2MUGKsEGi78164HdbiLcCk5A6Vx9veAG4azNMKCbn3FZwiOsCxLDeYPzpKX+M7F3X2EW8cXIHuy6/4QND7UH5r3h5Puv9nmtO+V3MVPDTM1WSSzuIamqg1ZurCoG85In7t2zC2o+IEWj5WSVrAryaUim8r1sznmKhBD+hFw1aiCQ1yAMKBIEiHHqyhrrCapC9/QPXALm1l0liVdRmjxyrOYoOHNdkzzEs0CayK8w9k8cZrvcbZIBr1vYdtyp1WgeyB1rh+vy5xZfkZvKVZQSvW6JqPaZ9z4JZ/0WzVvWlrAMM6tKxgb9yKbXAHaS4uetwKZmgqUfv4yGj1EOnnsVugpu8LEtVlZ42Y4lvkhncdeGyIs52N/zsLuQF+GmzLIS5iX3vAJBf2P1XszP/Hmq9+RvIL/7czvmppP2pujkKv+vieBYmkyLViYtLwgaX4J0/wdpnGHH/HkvvsHHc3tBA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperCircle.center(0, 0).radius(10).backgroundColor(`blue`),
+				PaperCircle.center(15, 30).radius(3).backgroundColor(`lime`),
+			),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -162,7 +250,19 @@ Use the GUI component `PaperRectangle` to draw a rectangle on the `Paper` compon
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUktLw0AQ/ivLXEwglLRSkFwkFREPilRBxRa6JpMHbnfD7gRbSv67G9OmpkapJw8Js9n5Zr5HNsCLAoINRCpGCCAS3Bh2sw6LguGKUMaG2XozkzOqn0gjJ7wnrumOp+i4zQ1ppFJL1l7UX6sGVEHlQaJEjNpA8LKBPIZg6IHky3rjJwQ8UElikJ4g8Hf1s62ruQeFnddBNsOum0OHeLu/JV8fDthflfkh74laDd7zmDLn1HcHGeZpRs7YllGWi9hpemd2coF68Mqjt1SrUsYXSijtLFLLZ7Ht1Sjb9i1gihFxmQr0dhfutnI7NnmwgmDkW/1rCE79VvsDLgtheXc86MgOzdt1Esal+EW7khNMlN5H9mX3L85M1bv5ruy+4NFezoNdOCD7chahRrZWJftMiFHGJRuenS9crx9pDSyX0vRZ122c0aQkq2G75lZZv2tvHFkK4XpHwp7RHIfrC6i2MEwIdZ+D9U/eZDM6yOZSWkiY4n8n85hxOjF1OJrZ7T9n0nFs6Pcb1m0aH9E0OmbS6IdJXxn+JZN59QGLnMVZ]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperRectangle,
+			),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -175,7 +275,20 @@ Call various configuration methods on the `PaperRectangle` component to change w
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KODdzwBjbJTB8M5xRSi82RlvYylKIah9/UEUy+qAJwf99Up16VpKG7GoXNkfyOe97dB55B7TrINtBIUqEDApGlSLftnnXEdxo5KUiNt4t+VK7p5BINd5rKvUPWmMwG75oidpITsYPbrcfinroQ6gEK1EqyH7voC0hS0LgdO0c30ogBFFVCvUvyOL3+NHG/VMIndXzKgex22HhNT76j827xUH3N6Y97HshNtFrW+omuIpnUYNt3ehgbsOiaVkZDLlLq9yhjJ5p8VJLYXj5VTAhg1Vt+1ntcyXyMX1fcIeFprxmGBXINcogmYdk4uPCwTy10ZH6MzO4moWXiCbzUTQZRd3mkShr11PR92jmcQthA1kaWyBbyK7iEcYDrjtmB+lB8Tjk6uW2ykvDzsAQfIGVkH/v0MT7DKo78aqOR33f0QLH4zxYw0jbV7DKJZKtMOTtyhDdUE6Sz18mR/cr7XjMmqtTLP3EpV4Ybc+wt/ku7AVwswm4YWxK62zZI6rL6k4BciPMK8f+xATdXzewSQ/YXLvrktf4v8n8bKj+pBwcSaz7x0y8iSXx6YH5SfMLktJLlNIPlKYd/guTp/4Pxnj2Dg==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Box.width(30).height(50).child(
+			Paper.backgroundColor(`gold`).children(
+				PaperRectangle.center(15, 30).height(30).width(20).backgroundColor(`blue`),
+				PaperRectangle.center(15, 15).height(10).width(15).backgroundColor(`lime`),
+			),
+		)
+	}
+	
+}
+```
 
 :::
 

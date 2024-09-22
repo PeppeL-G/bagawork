@@ -63,7 +63,15 @@ To display an image in a BagaApp, use the GUI component `Image`, and pass the UR
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUk1Lw0AQ/SvLXExgSb8oSC6SikgPiqigYoWsyaQtbnaX3QlaSv67G2OrKVXqyUPCTGbevDdvsgZhDMRryHSOEEMmhXPsYpUYw/CNUOWO+Xg9UzNqnsyiILwhYelKzDEI2wpZpMoqti00X+sWVEPNodAyR+sgflzDMod4wEGJsmH8gAAHXRQO6R7i/iZ+8HH9xMH4eR1kO2zaJh3hW/6t+CbZUX9eLXd1T0vfFlVWBumCyLi413sWc/Gq7UuU6bLnyqXEVWTUPA07q3F48yrGYw4riEej0UbvLZZGeq6O7o7UxL1MiySv5C96tZpgoe2Xzd+4f9nmWr+6KFssZW5RBZ9IujEiQ77Jbj1hRP4VpIlFttIV+3CV0UIoNjg+SUO+H3mqZVWqPQS7jTOaVOR3+KS51GkYNd4EqpIy5AfCHtAdhttUwo5JWiUFod3nYPNjtrcZ7tzmTHlIMsf/vszdQtCRa45jmWf/+SYdxwb9/YZ1m8YHNA0PmTT8YdJ3hX+5yVP9Duskqfw=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Image.url(`https://bagawork.com/smiley.png`)
+	}
+	
+}
+```
 
 :::
 
@@ -71,7 +79,15 @@ If the image is bigger than the space the `Image` component has been assigned by
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUk1Lw0AQ/SvLXExgSb8oSC6SikgPiqigYoWsyaQtbnaX3QlaSv67G2OrKVXqyUPCTGbevDdvsgZhDMRryHSOEEMmhXPsYpUYw/CNUOWO+Xg9UzNqnsyiILwhYelKzDEI2wpZpMoqti00X+sWVEPNodAyR+sgflzDMod4wEGJsmH8gAAHXRQO6R7i/iZ+8HH9xMH4eR1kO2zaJh3hW/6t+CbZUX9eLXd1T0vfFlVWBumCyLi413sWc/Gq7UuU6bLnyqXEVWTUPA07q3F48yrGYw4riEej0UbvLZZGeq6O7o7UxL1MiySv5C96tZpgoe2Xzd+4f9nmWr+6KFssZW5RBZ9IujEiQ77Jbj1hRP4VpIlFttIV+3CV0UIoNjg+SUO+H3mqZVWqPQS7jTOaVOR3+KS51GkYNd4EqpIy5AfCHtAdhttUwo5JWiUFod3nYPNjtrcZ7tzmTHlIMsf/vszdQtCRa45jmWf/+SYdxwb9/YZ1m8YHNA0PmTT8YdJ3hX+5yVP9Duskqfw=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Image.url(`https://bagawork.com/smiley.png`)
+	}
+	
+}
+```
 
 :::
 

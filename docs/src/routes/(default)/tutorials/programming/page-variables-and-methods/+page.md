@@ -46,7 +46,17 @@ You obtain the value stored in a page variable the same way as you would retriev
 
 Example of an app using a page variable.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUm1LwzAQ/ivxEFwhjHUwkIJIJ6L7oIgKOtygob1uxSwpSYqO0v9uYt1cxjbmJz+05Hp5Xu651sDKEqIaUpkhRJBypjW5W8ZlSfDToMg0sed6IibGPalCZvDJMGUe2Aw7QdsxCk2lBFk33NemBTXQUMglz1BpiN5qKDKIQgqCLZziNwQoyDzXaF4h6q3OY3tuphRKy+chW7JRW3jG1/pr865Yu3eS5IIkMS9STPyZbqpie5pnS9I19tVJbpFzSU7rsus4mpMk8Cak8GnNnA8oLCHqD8KV7WdclNySe/Y9x7F+H+VxVvEDtqUYYi7Vb9ob2gfsP8oP3U3nBc8Uis4P0jyVLEW6qjZGjBWSpazId7jEzJkg4fllEtDdyCvJq4XYIbB9cWKGlbEz/MjcyyToumw6ouI8oEfCxqiPw606gReSFHFuUO1K0P2f7W76W7u5FhYSz/C/N/MyZ+ZMu+UoYtX378RLLOztDsy/NDjiUv8Ypv4epk2Hf9nJtPkCiJ+r9w==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	name = `Alice`
+	
+	createGui(){
+		return Text.text(`Hello ${p.name}!`)
+	}
+	
+}
+```
 
 :::
 
@@ -128,7 +138,29 @@ In a `Page`, you can only access the `Page` constants/variables/methods created 
 ### The final solution
 So, here's all the code for the app using a page variable, and that has two buttons to change the value stored in it.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU2Fr2zAQ/SuaGMwGYZpAoBhGccrY+mFlrIGtLIVo9rkJUyQhyazB+L/vFM1ulbrDYx/2wUa6u/fu7j27pVxrmre0VBXQnJaCW0s+HgqtCTw4kJUleG7Xcu38UxrgDm4cN+4Tv4ckDRlnwDVGkiHho10AdbRjtFaiAmNp/q2lu4rmM0Yl3/uORwhlVNW1BfeV5mf9+RbP3R2jGvkiZCC7Cpdo8KH/MLy/DNP7luQt2RRiV8Kmj2Kra0ys1DE8rKSz5+XdM8xSfR9BYDSuD7q9b3anin1WP21WbneiMiCTkFq7FY6fOXwlmw8ghCKv20DevdqkrK9aNs4p+bvucssl7n2cwCkSZk4zjFYCTKKzeM1pLH6PUQ5MpIEgjaxm9AFdOV8weqD5fDHr/VvBXgtUIPIxsq6wP67qomrEH/xTcgm1Mo8e/YvGN5qXwEYULwyQg2rI8SsjDrcns/OLJ7rHyEslmr0caXBaeCL1tUJpvTaJbIRI2UTYLdhpuD6TRiIpWdQOvRxR0P+owZv5iTfvJEKKe/jfznzZcvfGenMMwe4vexIpNjsbFywuWkwomk9hmr/A9HTCv/HkrvsFnxoNMQ==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	name = `Alice`
+	
+	setNameToAlice(){
+		p.name = `Alice`
+	}
+	
+	setNameToBob(){
+		p.name = `Bob`
+	}
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Hello ${p.name}!`),
+			Button.text(`Change name to Alice`).handler(p.setNameToAlice),
+			Button.text(`Change name to Bob`).handler(p.setNameToBob)
+		)
+	}
+	
+}
+```
 
 
 
@@ -141,7 +173,59 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 Open [this BagaWork project](/editor#eNq9VNtKw0AQ/ZVlXmwhiCl4IS8SRbQPilhBixW6JNMLbnfD7sS2lPyB/+Av+gluGlu6MUGxKiFhNrPnzGTO2SyAJwkEC4hUjBBAJLgx7HIeJgnDGaGMDbPxoid7lN+RRk7YIa7pmg+x0SwypJFSLdk6kb/NClAGmQcDJWLUBoKHBYxjCHwPJJ/kFZcQ8EANBgbpHoK9Vdy1cfboQWL5HGRB1i4WTuPr+uvm80Wp+/N0XO77Rk3NbjQai1ijbBSpHnUSHqG3Wt1ayl2yj0b/Qk3ZhMs5M7aeYVOVipjNVcqG42dkJ3zI75R+Ou43vWqqUyXSiayoWN7Yo+rO8uskJVLyo6O315fXjXJVTBWIn6O2Q26P/sSwGbtcdSJs6HmaajtdElZQFBgRxgGrEa/pONuDGQQH/qEHcwhaR/7Krrc4SYS1mmNbx6mheWoPwjgV/2DXUOPSnctjw2jEJfOPfsWdjkZXql+vQmlvF03/a8mapd9IMcpWaZRnklCHQ/z7Qd6NOO2YfJaaWf76ETrf6u9t7HMz+3WZVi2mtf8tZ2aP2TvPbjh+) and change the code in it to make the app function as shown below.
 
-::bagawork-project[app&baga=eNq1Ve1q2zAUfRUhBovBhNpttmIYwy1j64+NsRba0hQsrJsPqkhGkpcG4zfYO/QV9wiT7dqzPGsNa0dwkHx1zr26OjouMMkyHBU4FRRwhFNGlEKfd3GWIbjXwKlCZlzM+VxXTyqBaDjXROqvZAkTr4loCTqXHHWB6m3ZgEpc+nghGAWpcHRT4DXFUeBjTjZVxhqCfSwWCwX6CkcH7fjajMtbH2eGz0I2ZGfNxCq8y98VX0266pUJK/QOJT8ffjy0T2Lv7WO+Hu7qm9iqabpaMyqBT5rQXJ9nJAW/nV2YhFNt/ibJJ7FFG8J3qEm3FTmjaCdytFx/B3RCluRSyLv3ieePU50Klm/4SMbhwrker6z6neRaC/5YUb1Nb7oinDKQk2yqgEGqg6pdnt+HDROMEDnIwopM/RObg/HweYwO1qPnszqYZ38w98d2DtfZ92R0mktzqJoZHdX0QCP0qjDJqiylQz1e7+IZvf8+5k7TjwTtLUhGAM1RuhAu1OGTKBfyaC+kCz3bGz1kKI3t3OPoTfDWxzschcdBazcXsMmYMQPLdiynidXd2SKmOfuL3byUocQSav+obQ9pozsUHL+If1gy/yISt2AHa69BJU+r2xt8BppWhoNWfuAaZLyE/9/IyxXRr1XVS4kMv7uF1l6Dg946OzJzRUInJpztcXVNs27LXySB9UU=]
+```js baga-show
+class StartPage extends Page{
+	
+	stars = `🌟🌟🌟`
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`How many stars would you give BagaWork?`),
+			Space,
+			Columns.children(
+				Space,
+				Rows.children(
+					Button.text(`🌟`).handler(p.select1Star),
+					Space,
+					Button.text(`🌟🌟`).handler(p.select2Stars),
+					Space,
+					Button.text(`🌟🌟🌟`).handler(p.select3Stars),
+					Space,
+					Button.text(`🌟🌟🌟🌟`).handler(p.select4Stars),
+					Space,
+					Button.text(`🌟🌟🌟🌟🌟`).handler(p.select5Stars),
+				),
+				Space,
+			),
+			Space,
+			Text.text(`Currently selected: ${p.stars}`),
+			Space,
+		)
+	}
+	
+	select1Star(){
+		p.stars = `🌟`
+	}
+	
+	select2Stars(){
+		p.stars = `🌟🌟`
+	}
+	
+	select3Stars(){
+		p.stars = `🌟🌟🌟`
+	}
+	
+	select4Stars(){
+		p.stars = `🌟🌟🌟🌟`
+	}
+	
+	select5Stars(){
+		p.stars = `🌟🌟🌟🌟🌟`
+	}
+	
+}
+```
 
 ::::hint
 

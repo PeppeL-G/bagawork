@@ -44,7 +44,31 @@ This also goes for `false`, of course.
 
 Example of an app that uses a boolean page variable.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk2Fr2zAQhv+KdgxqgzFJxmAYRnHGKPmwMdbCWpZCNPucmCmSkM6sxvi/T6pnr07d4sJgH2x0unvvTvdIDXCtIWkgUzlCApng1rJPdao1wztCmVvm1s1Wbsl/mUFOeEnc0Be+xyDsPGSQKiPZ4PC7bSdqoY2gUCJHYyH53kCZQ7KMQPKjr3gvgQhUUVika0gW/frGrdvbCLTLN1J2yTadMWp8qD80742h+9JelEaw94xMheMjXVTl6WG+ql82zg6lyA3KoHNt6VLzDKPeunJ1YnK/YDckf93ouDPaXRhN69YVkZJ/lJuzI+Psh6pf7cL4wGUu0AQ6diPY2LWqw+dUe1dmQuar97rwAYwt9VmH0/bNus4LLiw+jvbeqfB+igPoCO4gWS0cwRqSN4uB3hUetXBDHlEcgUvtz02R5pV4hp6SayyU+XvpRp3+K4ypQVarit3fMUZurmz57vxJkB+UqI5yosBp4Am9z8pB87MJZCVEGM2U3aCdp5uGr2RakLslExP0z7Rjszph81E6SbrH/03m24HTmfVwDHPVz+c9ruViemDjoLczglZzMq2eyPSww5cwuW1/AxaEDKE=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	isGirl = true
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`isGirl = ${p.isGirl}`),
+			Space,
+			Button.text(`I'm a boy!`).handler(p.setIsBoy),
+			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+		)
+	}
+	
+	setIsBoy(){
+		p.isGirl = false
+	}
+	
+	setIsGirl(){
+		p.isGirl = true
+	}
+	
+}
+```
 
 :::
 
@@ -70,7 +94,19 @@ Using boolean values we can conditionally keep/remove GUI components using the c
 
 Example of an app that uses `keepIf()`.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVF1r2zAU/SsXvTQGYxKXwfDLcMcYeWgZa2ArSyGafd2YypLQx9oQ/N8n2akXGSekTzMY60r33nN07sF7QqUk2Z4UokSSkYJRreF2l0sJ+GqQlxrcer/ma+PfQiE1eG+oMt/oE86i/sQoNFZxGA78btsXtaSNSSVYiUqT7Nee1CXJFjHhtPGIXQmJiagqjeYnyeZv6we3bh9jIl2/oLJvtuyDgPiAP5D3wYj9V1uPeX8XLzoptjUrFfJZf7Q2K9cEgicxbmu2WSSw2tYauoRCNFJw5AZKgZpfuR3KGDwjymU1i4AacHEMWkBt4KV2Z78RrMYSqHZfS1myieJj0ORQXFGmMTqAptOg0t0bNXSpYMSAOwZU2Ig/HpOXwIXpCHQ5O2Edc89bo+vgITwg1NwFCM4fp+gZZTF60+T6LD2feo7dCTmiwEcxeSVZOncG2ZHsej6YY4WNZG6wgUkCX+T6eVnlpWVnzCH4DVZC/fP0Efa7rXMvaYGhaL1MucJO8c7CTmDKYfHx05HAYeVnwWzDJwDGiWtzY427wwHmTmyixGsz45axKL6w7AH1ZXVTA/IS5pVBNaWg/wv0s0lHs/nCXUn+hP97Mj+21FxpPxwFDv30TALFFvNpwcKkDxckpZd0Sk90Omb4npk8tn8BSewlug==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text              .text(`1. This Text component doesn't call keepIf() at all, so it will be used as usual.`),
+			Text.keepIf(false).text(`2. This Text component passes false to keepIf(), so it will be removed and not used, so you don't see this text in the app.`),
+			Text.keepIf(true) .text(`3. This Text component passes true to keepIf(), so it will be used as usual.`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -80,7 +116,32 @@ Directly passing `true` or `false` to `keepIf()` is of course not that meaningfu
 
 Example of an app that uses a boolean page variable to conditionally keep/remove a GUI component.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk2Fr2zAQhv+KJga1wYQkYzAMozhjFH/YGGthDUshmn1OTBVJSDKrMf7vO9WzG3lOm8FgH2wk6973TvecG8qUonFDM5kDjWnGmTHkU50oReDBgsgNwXWzERvrnkwDs3BtmbZf2A6CsDuxGmylBRkO3Ne2E7W0jWgheQ7a0Ph7Q8ucxouICnZwGR8lNKKyKAzYWxrP+/Ua1+1dRBX6ecrOLO02XuFD/qF4txmqL81VqTl5T6yuwL/SVVWOL/NV/jSzbF/yXIMIuqONvVYsg6jf3WCemcVXsB3MXzdq1m3abTgVuZYVYRoIIzsMerUNZ/cAKi2CXvek8rOtKmul+O2SXhzQ4YesncGeiZyDRgdsXGpWsg6fU/V5R7Lj3OERwo3tXYce9aXifQvGDfwZ7U6nwvveD+MR0QcaL+fIvabxm/nA/AYOiiMaj72HOzH3aZHkFX+GuRQrKKR+GlWv0n8FP0GcNWJ9nExisa9k8e5yewrkB8mrg5hIMA4c0fssEZrrTSAqfjQmL8jWYM7TTcOXIiksTslEB93P3bFZjth8FChJdvC/yXzbM3thHBxNMPtpJl7HFvPphvlBb88IWp7jtDzhdFzh3zC5a38BTgofkA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	isGirl = true
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`isGirl = ${p.isGirl}`),
+			Text.text(`You are a girl!`).keepIf(p.isGirl),
+			Space,
+			Button.text(`I'm a boy!`).handler(p.setIsBoy),
+			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+		)
+	}
+	
+	setIsBoy(){
+		p.isGirl = false
+	}
+	
+	setIsGirl(){
+		p.isGirl = true
+	}
+	
+}
+```
 
 :::
 
@@ -101,7 +162,33 @@ So, to check if the user is a boy, we can compare `p.isGirl` with `false` using 
 
 Example showing different texts to boys and girls.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVGFr2zAU/CvaY1AbTEgyBsMQhlNK8YeNsRbW0BSi2c+JqSIJSWY1xv99cl07kee0GQz2wUay3t07vTtcAZUSwgoSkSKEkDCqNflSRlISfDLIU03sulrztWmeRCE1eGOoMt/oFj2/PTEKTaE46Q+ar3ULqqEOIBMsRaUhvK8gTyGcBcDpvun4DIEARJZpNHcQTrv1yq7rhwCk5XOQLVncbhzhff9efLPp1ef6OleMLIhRBbpXui7y4WW+i196kuxylirkXnu0NjeSJhh0u1vbZ2Lsy9v05O8rOWk39cYfq1yJglCFhJKtLXq38SePiDLOvA73BuqnKEdAZLEgGWUaD2hX67IwRvAXtvhif2DaUZ4yVJbKjj3WS1H6r6E61QPYsXL/KABr07H2Ez5obiX/Wd2cjpV3zvXhCuAJwvnUpqaE8MO0T8wt7iWzxjrJccIS6cc4i9KCvZIYwZeYCXUIuqP0X0UnsraW1t7nXBNj50pmnz5vThl5KVix5yMNhoUD974Ka1ozG48X7Chkb8BWqM/DjZsveJQZm5KRCTa/htab+cCbK24h0Rb/tzM/dtRc6MYcRWz30544E5tNxwfmFn08o2h+DtP8BNOxwr/x5KH+DcnWNOA=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	isGirl = true
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`isGirl = ${p.isGirl}`),
+			Text.text(`You are a girl!`).keepIf(p.isGirl),
+			Text.text(`You are a boy!`).keepIf(p.isGirl == false),
+			Space,
+			Button.text(`I'm a boy!`).handler(p.setIsBoy),
+			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+		)
+	}
+	
+	setIsBoy(){
+		p.isGirl = false
+	}
+	
+	setIsGirl(){
+		p.isGirl = true
+	}
+	
+}
+```
 
 :::
 
@@ -160,7 +247,38 @@ The `==` operation can not only be used on booleans; you can use it to compare n
 
 Example showing different `Text` component based on the number in a page variable.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVG1rnEAQ/iuTJVCl9tArhVYixbSl+KGlNIE2qYHb6Hgn0V1Z1zaH+N+7G3N6e/XSawnkgzLrzDzz8jxrS2hVEb8lCU+R+CQpaF3Dp3VYVYC3Ellag7LbmMVSP4lAKvFMUiG/0CVadu+RAmUjGAwO/bXrkzrSOSTjRYqiJv6PluQp8T2HMFrqincpxCE8y2qU34nvbuwLZXdXDqkUnpHZg0X9wWh8qD80rw9j97xhEgUE4JoDfWzy3VG+8l/1LFnlRSqQWb0rlmcVTdDZnM5VlZlUL2tx3Faze/gOrFw+q4Hhksr8Jx7ZC3t2g1hFmTUEwQm49hTQJQo+FR8EexK2K4+JHpwEMDjGxL0DRLplCtf5ElhTXqM4GsHeqG7/ivWOF03JJnYWy9NGSs7uC71HtfMSmVT4K8rSAoUaM918HeF3C+zgRGwKJ2d/4Ni9YW9pMpZDvYH3cdUvAvCM4AF0Ivi5GdwpKd8Sf+4qGa+J/9IdJHyOZVUorRlSNtQb1jdRFqZN8YCEOTvFjIvx5hmNPpaaQ4Gw5g3cXTSQar3gvX67+A/qH6Tws1a63o3FmqI4mPkLrA/L23hM6jkLM8Xc1Ab1v6rnZr7DzQdNdrjEp2bm24rqi6rIEaCq7+fE2JjnTi/MDHp1QND8EKT5HqTtDv+Fk6vuNwq+awA=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 0
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`${p.counter} (it's negative!)`).keepIf(p.counter < 0),
+			Text.text(`Zero`).keepIf(p.counter == 0),
+			Text.text(`${p.counter}`).keepIf(1 <= p.counter),
+			Space,
+			Text.text(`It's a big number!`).keepIf(9 < p.counter),
+			Space,
+			Columns.children(
+				Button.text(`Decrement`).handler(p.decrement),
+				Space,
+				Button.text(`Increment`).handler(p.increment),
+			)
+		)
+	}
+	
+	decrement(){
+		p.counter -= 1
+	}
+	
+	increment(){
+		p.counter += 1
+	}
+	
+}
+```
 
 :::
 
@@ -173,7 +291,28 @@ The configuration method `keepIf()` removes the component if the argument you pa
 
 Example showing how some `Text` components "jump around" on the screen when clicking on the button.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk2Fr2zAQhv+Kdl9qM2Nil8EwK8UdY8uHjbEWtrIUKuxzYypLQjrThuD/PrlOnCo4WwqFfbCQfHrvTu8jrYFrDdkaClUiZFAIbi37usq1ZvhIKEvL3Hy9kAvqv8IgJ7wkbug7v8MgHCJkkFoj2Rjo/3aDqIMugkqJEo2F7Pca6hKyJALJm77ikwQiUFVlkX5BNtvOr928u4lAu3yeckg2HxZe42P9sfl+setetZLQsDOW+Af63Nb7R/mhHmxcLGtRGpTBEFrQpeYFRtvVlasSkxuC2y81oyUafHMbxveIel4FCftwxnS8KRpOqtQD4wbZSrXnO2H6b+Gc8YZVtcR4Jzs9IPN7vmiJlNyk+eZGl2DJZSnQBDqupTOkQUlbefiM5ILG8OjWWI+93bg6Yo/gEbJ05niuIDudjSyvsNHCme4x9TDm9n5e5WUr/sJSyQuslNldQa/R18KaD3DY041zhLlkyXuH6oC5H5VoGzlRYH/jPgflKPTeBLIVIoyOlF2jPU43TVPJvHLkphzsH+3AJt1j86mHnd/h/ybzc8npxPZwDHPVDzPxHEtm04b5m94dsSk9JlN6INPzDl/C5Kb7AxRjDuU=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 1
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Hi there!`).keepIf(1 <= p.counter),
+			Text.text(`How are you?`).keepIf(2 <= p.counter),
+			Text.text(`I am fine.`).keepIf(3 <= p.counter),
+			Space,
+			Button.text(`Next`).handler(p.increment),
+		)
+	}
+	
+	increment(){
+		p.counter += 1
+	}
+	
+}
+```
 
 :::
 
@@ -183,7 +322,28 @@ To avoid this, we want the components not shown on the screen to still occupy th
 
 Example showing how some `Text` components always occupy space on the screen, but they are not always shown.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk2Fr2zAQhv+Kdl9qM2Nil8EwLcUtpc2HjbEG2tIUKuxzbSZLQpJJQ/B/n1wnThWcNoXBPlhIPr13p/eRVkClhGQFmcgREsgY1Zr8WKZSEnwxyHNN7Hw153PTfZlCavDGUGV+0Wf0/D5iFJpGcTIEur9tL2qhDaAQLEelIXlYQZVDEgXAad1VfJVAAKIoNJo7SCab+b2dt48BSJvPUfbJpv3CaXyoPzTfLbbdi4YbVOSURO6Brppq9yi/xUKHWVmxXCH3+tDc3EiaYbBZzWyV0NjBe7quiClR4ZcnP9SlWEwLLyInp0SG66L+qEosCFVIlqI52wrjj4VTQmtSVBzDrex4j8zt+bwxRvB1mp92tAlKynOGypNhxa0hNXKzkftvSM7NEB7cGuqRr2tXB+wBvEASTyzPJSTHk4HlDGvJrOkOUwdjqv9MizRv2DssBT/HQqjtFXQa/VdY0x4Oeb1xljDlJPpuUe0x90KwpuYjBXY37nIQlkLnjccbxvzgQNk96sN04zQFTwtLbszB7tH2bOIdNpcd7PQZ/zeZ25KaI93BUcRW38/EcSyajBvmbvp2wKb4kEzxnkxvO/wMk8f2L2+iDzk=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 1
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Hi there!`).showIf(1 <= p.counter),
+			Text.text(`How are you?`).showIf(2 <= p.counter),
+			Text.text(`I am fine.`).showIf(3 <= p.counter),
+			Space,
+			Button.text(`Next`).handler(p.increment),
+		)
+	}
+	
+	increment(){
+		p.counter += 1
+	}
+	
+}
+```
 
 :::
 
@@ -200,7 +360,31 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 [This BagaWork project](/editor#eNq1UsFKw0AQ/ZVlLjawSBstlFwkipQeFLEFLabQJZm0pelu2J1gS8jFv/DkL/oJJo0pTWgUBA8JM3lv5r15JAURx+Ck4KsAwQE/Esawu50bxwy3hDIwLK9TT3pUPL5GQTgmoelBLLBjlQhppERLdgCKr1k5lEHGIVRRgNqA85LCKgCnx0GKTaG4HwEOKgwN0jM43aqe5nU24xDn+2qT5bJR2dSMH/QP5oum4X6YrJq+Jzn9nPJXZz5UKmBR4q/Z58f729yqXcJhC85l94LDDhx7YFf2JriJo3x1zWbNmWvWo9ANkugv9h7Vqzn3l6so0Cg7JeTROBY+8qo7OsHVyHYqYfuYGC2FZL3B1dzipydvVJRs5AmBJtGj64RIyW+Ze3W08hfuFM0P5AqxGr9NGaXdiPJWEmp3gf8f5NNS0JkpstQs398eYe3WXveIV0f6bYjdOmP3W1QbYc2yL/byX4o=) contains an empty page. Change the code in it, so it functions as shown below.
 
-::bagawork-project[app&baga=eNq1U1Fr2zAQ/ivavTQGYxJvhWIIwy3dyMPGWAptWQoR9jkxVSQjnWlD8H+fHCfGMnHz0PbBIPnuvu/uu0874EUB0Q4SlSJEkAhuDPu1jYuC4SuhTA2z591CLqj+Eo2ccE5c0x++wpHXREgjlVqyNlD/rZqiCiofMiVS1AaifzvIU4gmPki+qRn3JeCDyjKD9ADR+Hh+tOfqyYfC4jmVDdisuTiNt/xt8/Wl7T4387V6yeXqR64NXZdESrIpI12iO+DPMu+P9le9mCBZ5yLVKEdNaEHzgifoH28NYkCWfLS8EXnyzDb4ZekFxtLOslERnOrAC9ZcpgK1jdeJc0yUTA8x/yOZ2HTKMi4M9im73Zxk9DoLXVCvpJVqiLVV2EHoznkeYt+3YysfXiH6Nv7qwxai8Co8euUON4WwS3Q849gkNs+zLE5L8YZX3mWEOwt5WE6skW1VyfaeZWR1Z5Or78uhxd4oUW7kCYJ+Ys8Dv1UH8kzuI5o3kr0TK6/fcCNl2JPyVhLqeIWfL+T9mtOFqbXUzOIPS+jMOhl38tzI5VAkHKwJL5fn34cV66n6Dy3F9ZA=]
+```js baga-show
+class StartPage extends Page{
+	
+	isShowingFirstButton = true
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Button.text(`Click me!`).showIf(p.isShowingFirstButton).handler(p.showSecondButton),
+			Space,
+			Button.text(`Click me!`).showIf(p.isShowingFirstButton == false).handler(p.showFirstButton),
+			Space,
+		)
+	}
+	
+	showFirstButton(){
+		p.isShowingFirstButton = true
+	}
+	
+	showSecondButton(){
+		p.isShowingFirstButton = false
+	}
+	
+}
+```
 
 This app can also be implemented as two different pages, but to practice on what has been taught in this tutorial, you may only use one page.
 

@@ -12,7 +12,13 @@ As you know, you should in the `Page` method `createGui()` use GUI components fr
 
 In the app below, the root component of the page has no background color (its background is transparent), and it's the application's default background color we se. So it's hard to tell what space the root component does occupy (but it does still occupy the entire screen).
 
-::bagawork-project[link&app&code=StartPage&baga=eNpdUMFqwzAM/RWhy1owJdtuvu00dhgMlsPGUqhnK01YYhtLYS0h/z4nZWHdxbynJ0vvaUQTI+oRbXCEGm1nmOH5/BAj0EnIO4aMx8pXYhMZoVcxSV7MkTbbpVpJIhmSh1WYq1PlJ5wU1qFzlBj1x4itQ32r0Jt+3rS0o8JQ10zyhrr4xe8ZT3uFMc+6+nkZ9nQhV4bX3avpmfxx/Ti0//2WuXUn+dkcyqblhYMNfQyevEBjGHyAT2O/jikM3ingAK3ccJaSAwkBmAi+GyPA0VjKIgRrh9gS7w7b9QwKT6jvipzvjPq+WLOV1Mcue5sz7qcfT9uI3w==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Text.text(`This Text component has no background, so it's hard too see what space it occupies.`)
+	}
+}
+```
 
 :::
 
@@ -20,7 +26,13 @@ In the app below, the root component of the page has no background color (its ba
 
 In the app below, the root component of the page has an orange background color, so it's easy to see what space it occupies (the entire screen).
 
-::bagawork-project[link&app&code=StartPage&baga=eNpdUMFKw0AQ/ZVhLrYQStXb3sSDeBAEe1BMIeNm2gbTnWVngi0h/+6mxWi9vZn39s3b1yPFiK5HLzWjQ9+SKjwd72IEPhiHWiHjvgyl+cRk/GKU7Jm2PJuftqUlti4FmIhxO5RhwKHAjbQ1J0X33mNTo7suMNB+vHSSY4Gy2SjbK7rlD37LeFgXGLPXxcuz2eN5uAg83Z5Cj8Of1A9d8z/vKksXH+Q/t0m6UN9LK2lWSaKw5Wq+sEzPqtWu0ZMSvOyjBA4GO1KgAGcl/DoUoAKNXSkw6RFMBJQZvnZkoJE8ZxLE+y42rItqPvVU4AHdzTIXcER3u5w+v+J9bHP4sYT18A1irJVa]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Text.backgroundColor(`orange`).text(`This Text component has an orange background, so it's easy too see what space it occupies.`)
+	}
+}
+```
 
 :::
 
@@ -48,7 +60,17 @@ All children are as wide as the `Rows` component, and their height is by default
 
 Example of how to use the `Rows` component to position three `Text` components as rows. All GUI components are given a background color, so one easily can see the space each component occupies.
 
-::bagawork-project[link&app&code=StartPage&baga=eNp9kTFrwzAQhf+KuKU2iOC2m7bSoWQIlDZDSx2wap1jEVtSpTNJMP7vlWNqmpZkEXcnfe8eTz1I50D0UFqFIKBsZAhsdXxwjuGB0KjAYt3nJqfSoyR8JenpWW4xSU/TnDxS5w2bL8bpkJsBBg6VbRT6AOKjB61A3HIwsh03nZ4DB1tVAekNRPZTv8d62HBwUeuMnMSWU3NmeN49mx6bX66fOv3X74vdh8WnLHdbbzujHm1jfVJ4VEW6KGvdKI8mmYic1lF3QfFIiuVNy6hGVmkfiHm7j+//yThtdkXKr+ABS2vUJV5+dfI6T7X2F/FGt1ikE53O/8HhAOIui0EfQdxnc8hrbF0TQxrD3gzfTtK8Jw==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Text.text(`I'm the first row`).backgroundColor(`pink`),
+			Text.text(`I'm the second row`).backgroundColor(`aqua`),
+			Text.text(`I'm the third row`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -58,7 +80,17 @@ Note in the example above that the root component (the `Rows` component in this 
 
 This is the same example as before, but only the `Rows` component and the third child are given a background to show that the `Rows` component's background also id drawn where the children are (underneath them).
 
-::bagawork-project[link&app&code=StartPage&baga=eNqFUMFKxDAQ/ZUwF1soS9VbbuJB9iCI7kGxC43JdBtMk5BM2V1K/910q8VV0Et4M3nz5s0bQHgPfADpFAIHaUSM7P544z3DA6FVkSU8VLYiGVAQPpEI9CB2mOWnbkUBqQ+WLR9Td6zsCGMBjTMKQwT+OoBWwC8LsKKbNp3oUIBrmoj0DLz8wi8Jj9sCfNI6m5zF1nNxZnjZvZieim+u73r90++j28fVm5Dvu+B6q26dcSGrA6o6X8lWGxXQZvNERZuku6L0ZPX6omPUImt0iMSC29d58QctonRW/c+jVodP2m9XRndY5/N0vuRbwAH4VZmCOwK/LpfQNth5k46ewtuOH++1qhE=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Text.text(`I'm the first row`),
+			Text.text(`I'm the second row`),
+			Text.text(`I'm the third row`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -71,7 +103,17 @@ If the `Rows` component contains a single `Space` child, that `Space` child will
 
 Example of using `Rows` with a `Space` child.
 
-::bagawork-project[link&app&code=StartPage&baga=eNp9UMFqwzAM/RWjyxIwJdtuvo0dRg+DsfawsRTixUpr6tjGVmhLyL/PaWhYN7aLeZL1np5eD9J7ED3UTiEIqI2MkT2fHrxneCS0KrKE+9KWVAeUhCuSgV7kFrP83C0pIHXBsvlj7A6lHWDg0DijMEQQHz1oBeKWg5XtuOk8Dhxc00SkNxDFBb8nPGw4+KR1xZzEllNxZXjePZsei2+unzr90++rO8TFp6z32+A6qx6dcSGrAqoqX9Q7bVRAm02MktZJd0HpyarlTctoh6zRIRIL7pDmf8l4bfdVzi/0lZc18n/E0hV/ahndYpVP5HwOl8MRxF2RUjuBuC/mxNbYepMuHpPbDF9HZqmr]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Text.text(`I'm the first row`).backgroundColor(`pink`),
+			Space,
+			Text.text(`I'm the last row`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -81,7 +123,19 @@ If you use multiple `Space` children in `Rows`, then the remaining available spa
 
 Example of using `Rows` with two `Space` children.
 
-::bagawork-project[link&app&code=StartPage&baga=eNqVkUFLAzEQhf9KmIu7EErVW27iQXoQxPaguIWNyWwbupvEZJa2LPvfzXbpYhUFL2EymffNI68D6T2IDpTTCAJULWNkj8c77xkeCK2OLNVdYQtSASXhkmSgJ7nBLD91CwpIbbBsehi6fWF76DlUrtYYIoi3DowGcc3BymbYdBoHDq6qItILiPm5fk11v+bgE+tCOcIW4+XC8LR7Mj1cvrh+aM13v89uH2fvUu02wbVW37vahawMqMt8pram1gFtNioKWiXujNKRlYurhtEWWWVCJBbcPs3/wHhjd2XOz/Kllwr5H7CIyln9G01+tPI/NNqa8CusNg2W+ajOp6w4HEDczFMIRxC38ymAFTa+Th84BLHuPwH21cbL]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Text.text(`I'm the first row`).backgroundColor(`pink`),
+			Space,
+			Text.text(`I'm the second row`).backgroundColor(`aqua`),
+			Space,
+			Text.text(`I'm the third row`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -91,7 +145,20 @@ The `Space` component doesn't show anything, so you can't see it on the screen. 
 
 Example of using `Rows` with three `Space` children.
 
-::bagawork-project[link&app&code=StartPage&baga=eNqFUs9rwjAU/lfCu6yFIm675TZ2GB4GY3rYWIXG5FWDaZIl6VRK//elFotOnZfw8vL9gi8NMGuBNsCNQKDAFfOevO6erCW4DaiFJ3Fucp0H7pAFnAbmwhtbYpLut3lwGGqnyfDQbdtct9BmUBol0HmgXw1IAfQ+A82qzmkPhwxMWXoMH0DHh/kzzu08Axu1Tpi92KS/nAQevIfQ3eUo9Ust/+Z9Nxs/WjC+XjpTa/FslHFJ4VAU6YivpBIOddIz8jCLuqMQj6SY3FUkrJCU0vlAnNlE/JmMlXpdpNmBPrWM4znKS/WD7gh3wcYjN1pc82HfNbvts0OlOv4t3CK66P/jhJV0V9MoWWGR9ux0+AYZbIE+jGO/O6CP46HbGVZWxW66juftL39B6ZA=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Text.text(`I'm the first row`).backgroundColor(`pink`),
+			Space.backgroundColor(`silver`),
+			Text.text(`I'm the second row`).backgroundColor(`aqua`),
+			Space.backgroundColor(`yellow`),
+			Space.backgroundColor(`brown`),
+			Text.text(`I'm the third row`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -111,7 +178,17 @@ All children are as tall as the `Columns` component, and their width is by defau
 
 Example of how to use the `Columns` components. All GUI components are given a background color, so one easily can see the space they occupy.
 
-::bagawork-project[link&app&code=StartPage&baga=eNptkEFLxDAQhf9KmVMLoax6y00ExYMgbA+KXWhMprth0yQmU9il9L+bbrG42kuYmcz35vEGEN4DH0A6hcBBGhFj9nK+9z7DE6FVMUv1UNuaZEBBuCUR6FXsMS8u05oCUh9stnxM07G2I4wMWmcUhgj8YwCtgN8wsKKbLl3WgYFr24j0BnzzU7+netwx8EnripzFnufmyvByezE9Nb9cP/X6r98HZ/rOxvJTyOM+uN6qNHEhbwKqpijlQRsV0OYzVFOVpEtKT9486hAp7fxDvbbHpmAryBals2qNEV+9WGeqgw6riNEdNsVMFEvcDE7AbzcpxzPwu82SYYWdNymDKcvd+A1SJ7F7]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`red`).children(
+			Text.text(`First`).backgroundColor(`pink`),
+			Text.text(`Second`).backgroundColor(`aqua`),
+			Text.text(`Third`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
@@ -120,13 +197,33 @@ Just as with the `Rows` component, you can insert extra `Space` children to push
 
 ::: tip Example
 
-::bagawork-project[link&app&code=StartPage&baga=eNptUMFqwzAM/ZWgUwImdNvNt7HDGHQw1h42lkI8W0lNHdvYCrSE/PuchoZ168VIz3pPT28A4T3wAaRTCBykETFmr6dH7zM8EloVs1QPla1IBhSEGxKB3kSLeXFGKwpIfbDZ8jGhY2VHGBk0zigMEfjXAFoBv2NgRTdtOo8DA9c0EekD+OpSf6Z63DHwSeuKOYu9zM2V4WX3Ynpqfrl+7vVfv0/O9J2N5beQhza43qqEuJDXAVVdlHKvjQpo85lU0TZJl5SevF5jQ2nkH9Nre6gLdmFsvJDIbvDfdbu/KWB0h3UxM4olRwZH4PerFNAJ+MNqCWeLnTfpuCmk3fgD6jGi4g==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`red`).children(
+			Text.text(`Left`).backgroundColor(`pink`),
+			Space,
+			Text.text(`Right`).backgroundColor(`lime`)
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Example
 
-::bagawork-project[link&app&code=StartPage&baga=eNplUMFqwzAM/ZWgUwImZNvNt9HD2GEwaA8tcyGerbShiW1sBVpC/n1OQ82yXYzek/Xek0aQzgEfQVmNwEF1MoTs4/bqXIZXQqNDFutRGEHKoyTckvT0KU+YF3dWkEcavMlSY2YnYSaYGDS20+gD8K8RWg38iYGR/ex0/w4MbNMEpD3w6lEfYj0dGbiotZpcxN4XsAqcvFPoGfxK/Ta0f/NubDf0JpTfUl1O3g5GR8b6vPao66JU57bTHk2+DAnaOqmQPdAuGpUUn7zeoCFchv5pudZc6oKtNBZQpDMxuAJ/ruL+N+AvVdp9h73rYvb5BsfpB2qqlsE=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`red`).children(
+			Space,
+			Text.text(`Centered`).backgroundColor(`pink`),
+			Space
+		)
+	}
+}
+```
 
 :::
 
@@ -140,7 +237,26 @@ So far you might not be that impressed. Not many applications have a GUI consist
 
 Example of how to combine the `Rows` component and the `Columns` component to create a layout with a bottom navigation view (learn how to make it functional later).
 
-::bagawork-project[link&app&code=StartPage&baga=eNqVkj1rwzAQQP+KuKU2iJCPTVvpUDKUliZDSx2wIl8SEVkSktwkGP/3yjExSeOhXcTdSXr3kK4Gbi2wGoQpEBgIxb0nL6dHawkeA+rCkxjXmc6CcMgDLgJ34Y1vMUnP1Sw4DJXTpN9oq02mG2gobIwq0HlgXzXIAtiEguZl2+l8HCiYzcZj+AA2vsSfMW5WFGxk3dzsYPMuuRHue/fSbXJl/VzJ377v5uBHay72W2cqXTwZZVySOyzydCR2UhUOddLdyMLCcoH0ki1jl1GIS5LPH0oSdkhKLjURRsfuIQLuuFbqfZ7SYV48U5V6wEbJEod0fgNulF5tkEaTyZDGNj7hlcZfONMhjpfqG90/SbMh0tqZg74HXdK0C9J+qCgcgU3HcVpOwGbjflKWWFoVf7qdmFXzA+OGB7M=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Space,
+			Text.text(`I'm the main content`).backgroundColor(`pink`),
+			Space,
+			Columns.backgroundColor(`lime`).children(
+				Space,
+				Text.text(`Option 1`).backgroundColor(`gold`),
+				Space,
+				Text.text(`Option 2`).backgroundColor(`silver`),
+				Space,
+				Text.text(`Option 3`).backgroundColor(`brown`),
+				Space
+			)
+		)
+	}
+}
+```
 
 :::
 
@@ -157,11 +273,35 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 The code in [this BagaWork project](/editor#eNq1kVFLwzAQx79KvBc7KKObDKQvUofoHhRxgzncYLG5bWVZUpKUrY5+d9NVy1pafdGHlEvv/ve/++UINI7BP0IoGYIPIadak8c0iGOCB4OCaWLj41zMTX5ChdTg2FBlnukanU6RMQpNogQpE/nfrBBlkLmwkpyh0uC/HSFi4PdcEHSXO54k4IJcrTSaV/C973hm42zhQmz7VZRFs1FxqQxe+pfD55fa9PdJVJ/7Re51N9xEnCkUTpGam4lt0jX24ywfkHO57HTfabhdK5kINpRcKmepkC07boNiqOhH2qTg0Q6bJVOpOLto0qS5/b5UdSp4XTiA3/cstxT8K69kNsFdzO2+FXYVXIHejlYBS/jfMRvHNMSm5QKFJJUJOb0dMRsqSO/65gxEVWkXT3aiwaBeODe3iTFSfNk8ybOWv9TOUP9Q3Aw7cwuU/RrKO2FQBWv8f5DTDTWXOmepiO3fjrCya887q6tmBm2ZfqumP2hxrcFaZJ9YNJZ5) currently displays a page looking like this:
 
-::bagawork-project[app&baga=eNq1kVFLwzAQx79KvBc7KKObDKQvUofoHhRxgzncYLG5bWVZUpKUrY5+d9NVy1pafdGHlEvv/ve/++UINI7BP0IoGYIPIadak8c0iGOCB4OCaWLj41zMTX5ChdTg2FBlnukanU6RMQpNogQpE/nfrBBlkLmwkpyh0uC/HSFi4PdcEHSXO54k4IJcrTSaV/C973hm42zhQmz7VZRFs1FxqQxe+pfD55fa9PdJVJ/7Re51N9xEnCkUTpGam4lt0jX24ywfkHO57HTfabhdK5kINpRcKmepkC07boNiqOhH2qTg0Q6bJVOpOLto0qS5/b5UdSp4XTiA3/cstxT8K69kNsFdzO2+FXYVXIHejlYBS/jfMRvHNMSm5QKFJJUJOb0dMRsqSO/65gxEVWkXT3aiwaBeODe3iTFSfNk8ybOWv9TOUP9Q3Aw7cwuU/RrKO2FQBWv8f5DTDTWXOmepiO3fjrCya887q6tmBm2ZfqumP2hxrcFaZJ9YNJZ5]
+```js baga-show
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Hello`).backgroundColor(`red`),
+			Text.text(`Crazy`).backgroundColor(`lime`),
+			Text.text(`World!`).backgroundColor(`yellow`),
+		)
+	}
+	
+}
+```
 
 Your task is to change the code, so the page instead looks like this:
 
-::bagawork-project[app&baga=eNq1kV1LwzAUhv9KPDduUMZWGUhvpA7RXSjiBnPYwWJztpVlSUlStjr6301XLWtpFQQvWk7ynvd8PDkCjWPwjhBKhuBByKnW5DH145jgwaBgmtj4GIjA5F+okBqcGKrMM11jp1soRqFJlCClkN9mhSmDzIGV5AyVBu/tCBEDb+CAoLu848kCDsjVSqN5Ba//Hc9tnC0ciG29irMoNi4OlcHL/uXw+aE2/X0S1eceSZ7shO6Fm4gzhaJTqIGZ2jo9Y3+d5QNyLpfd3jsNt2slE8GsS6rOUiFbdp0Gx0jRj7TJwaMdNltmUnF20eRJ8/b70tWtEHbgAJ7bt+hS8K76JbYp7mJuV67gqxDz9Xa88lnC/4LtRe4bmE1iGmLTcr5CksqEnJ6PmA0VZHB9cwai6mx9lHpiYG4TY6T4avMkz0r+kjtH/UNyM+zMKVC6NZR3wqDy1/j/IGcbai51zlIRW78dYWXXQf8sr6oM2xS31eMOW7rWYC2yT347l68=]
+```js baga-show
+class StartPage extends Page{
+	
+	createGui(){
+		return Columns.children(
+			Text.text(`Hello`).backgroundColor(`red`),
+			Text.text(`Crazy`).backgroundColor(`lime`),
+			Text.text(`World!`).backgroundColor(`yellow`),
+		)
+	}
+	
+}
+```
 
 ::::hint
 
@@ -175,7 +315,18 @@ Just changing the root GUI component to another GUI component should do it. But 
 
 The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
 
-::bagawork-project[app&baga=eNq1kVFLwzAQx79KuBdbKGObDKQv0onIHhRRQYcbLDbXrSxNSnJljtHvbrq6sdZNRfChIZe7//3vft0Az3MINxBrgRBCLLm17HYd5TnDd0IlLHP3zURNqPpig5zwkbihez5Hz68zZJAKo9g+Ub2WtaiEMoBES4HGQvi6gVRA2AtA8axy3EogAJ0kFukFwu7uPnb3chpA7vo1lHWzUR00Bt/774evgtb0N0XanvtBr2znjcfLudGFEldaauPNDIqZ34kXqRQGlVcrJvSY8xiDXfTknDrkDm821EQ6Y9ULi3WWa4WK2CqlBZOYEOMynSsUrKruuM5fDNcopV65TFXu+Z8efgNmAO8Q9ruO0hrC8+6e0BNmuXTbNUg14ER2OUoiUcg/E/o9isggW+uCbf8UowVXrHdxOfOD40q3f5GpIwbtwgkNCwdZfdrc6YOWP9SO0X5TfBx2GdQo+y2U14rQRHP8f5DPC05ntmJpmOt/GmFj1173oK6ZGZzK9E9q+oMTri1Y0/IDAHKPhw==]
+```js baga-show
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.backgroundColor(`red`).children(
+			Space,
+			Text.text(`Bottom Text component with left aligned text.`).backgroundColor(`yellow`).left(),
+		)
+	}
+	
+}
+```
 
 ::::hint
 
@@ -189,7 +340,26 @@ Hmm... Doesn't the GUI look like two `Rows`? With the first row being some `Spac
 
 The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
 
-::bagawork-project[app&baga=eNq1U99LwzAQ/lfCvbhCGVuHIH2RKiJ7mIgKKm7Q2N62YpqU5KqO0f/d1Oo0tR0i+NByP/LdXb7vsgVeFBBuIVEpQgiJ4Maw2SYqCoavhDI1zNrbuZxT/SUaOeE1cU2XfIUDr8mQRiq1ZLtEHa0aUAWVD0slUtQGwoctZCmEYx8kz+uO7xDwQS2XBukOwtGnfW/tauFDYes5yKbYtHGcwXf9d8PXTmv68zJrz32qRJlLM0zWmUg1ykGTndOVeumIzum64An6X/6N7Tck+xvEU8KcjWNv+MiTp5VWpUxteaUHscY09vaAgi6QyHLci5p0oTYohHpxcO7IXxk3/q36jGeSJUpaIomFXlcbk4ln1HF3Mc9ZAh9eIQxGVt0NhJPRTtkbzAthVXEUdkSNzNN0GaWl+Iuy3QL23jnSyDaqZO8bxmjNJRsfHcd9bPXuzc8NOSmJlPxoc6H2SNM6e4/mFzp6rRfXUBm0qDyzYupohf9P5O2a04GpudTM1u+n0LnrePTtnJs57MsEvZjg8FebWS2qNx9P07w=]
+```js baga-show
+class StartPage extends Page{
+	
+	createGui(){
+		return Columns.children(
+			Rows.children(
+				Space,
+				Text.text(`Item 1`).backgroundColor(`red`),
+				Text.text(`Item 2`).backgroundColor(`lime`),
+				Text.text(`Item 3`).backgroundColor(`yellow`),
+				Space,
+			),
+			Space,
+			Text.text(`Main content :)`).backgroundColor(`silver`),
+			Space,
+		)
+	}
+	
+}
+```
 
 ::::hint
 

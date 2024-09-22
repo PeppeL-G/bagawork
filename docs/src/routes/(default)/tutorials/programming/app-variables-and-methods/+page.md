@@ -42,7 +42,25 @@ To obtain the value from an app variable, you write the same code as for obtaini
 
 Example of an app using an app variable.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNrFUmFrwjAQ/SvZMZiFICoIUhijjrH5YWNMYZMpNLRXlcWkJClTSv/7UmudERX3aR8a7pJ79969aw4sTcHPIZIxgg8RZ1qT53WQpgRXBkWsiY3ziZiY8hNsieSWhAFfRBjWt5FCZnBomDKvbIYNr6o3Ck2mBNk9lLdFBSqgoJBIHqPS4H/msIjBb1MoCayODQQoyCTRaD7Ab9Xx2MbFlEJq+znIqtmgSpxxdvy7kcokd9U/ZotD3SNb3jT2aIRPyLkk1zlrlgKLq9BzZqGwsrS9LoU1+J1uuxY4wmXKbXNHqKMt0F+DJIgzfkagFH1MpPr1dY/7jPw3+a2b0XzBY4WisUWaYcoipHW2N2KgkKxlRjY2EjNngrR7d6FHjyPvJc+W4gjBYeHE9DNjZ9jSvMjQa5beNETGuUcvhI1RX4arXzzHJCmCxKA65mD5J1a76Rzs5kFYSDDD/97M+5yZG10uRxHLfnonjmPt1nHD3KLuBUWdSzp1TnTaV/iXnUyLH5d5q+g=]
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	name = `Alice`
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Text.text(`Hello ${a.name}!`)
+	}
+	
+}
+```
 
 :::
 
@@ -52,7 +70,56 @@ As you can see in the example above, we can use the special `a` variable in your
 
 Example of an app that stores a name in an app variable, and that can be changed by calling different page methods by clicking on buttons.
 
-::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNrFVF1r2zAU/SuaGCwGYerQQGcYwylj68PKWANbWQrW7OsmTJGMLNMG4/++q6j2otQJfgjsIUGW78c595zrhvKypHFDM5UDjWkmeFWRr9ukLAk8G5B5RfDcLOXS2J/kGyAfSJqIdQZpd5tp4AbuDNfmG3+ESeDijQZTa0n6F/a2dUktbRktlMhBVzT+1dB1TuOIUdsAcexSKKOqKCowP2l80Z3v8dw+MFpiPS/TFbtxDx6dvn9PyT40PvrP9foQ93f1VIXZai1yDXLiXi3NAouEBv8m6RcQQpG3DQ8t7PZNGrAual4bo+RL3PWKS+xug9IgtMgn7uoWbyyWLi/wJsToM5K5mjG6pfF0FrXMkZ2eIusXPgvju5JnwAb47/EiRpGnFTcf92bg510rUW/kQPnDwIPhOau9jK2XMgixdy5AT8oQXWH5LtQuNGAjC8/V73FlMfB40WG6+0IujQ+wH7qzjb9Or3Ow+0CGBf/aLJfvI2eWy1m3IwvYlALV9nbFc0xS/bkpkrwWJ3ZEyTkUSv/D7mE9l58SDWSrarIzNzEoBYmuzu+oW9XpLmshRvvlHqpxecGgCZRMCoPGGpig/Rj2q+1p80liSvII/1uZH7ja7yorjibY/bgm3sSii+GB+UGzEUHTMZWmRyodX8zTmjy0fwHGSZXZ]
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	name = `Alice`
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Hello ${a.name}!`),
+			Button.text(`Change name`).page(ChangeNamePage),
+		)
+	}
+	
+}
+
+class ChangeNamePage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Change name to what?`),
+			Space,
+			Columns.children(
+				Space,
+				Button.text(`Alice`).page(StartPage).handler(p.setNameToAlice),
+				Space,
+				Button.text(`Bob`).page(StartPage).handler(p.setNameToBob),
+				Space,
+			),
+			Space,
+		)
+	}
+	
+	setNameToAlice(){
+		a.name = `Alice`
+	}
+	
+	setNameToBob(){
+		a.name = `Bob`
+	}
+	
+}
+```
 
 :::
 
@@ -65,7 +132,60 @@ A page method can only be used in the `Page` that created the page method. If yo
 
 Example of an app that stores a name in an app variable, and that can be changed by calling different app methods by clicking on buttons.
 
-::bagawork-project[app&link&code=MyApp-StartPage-ChangeNamePage&baga=eNrFlG9r2zAQxr+KJgazwZg6NNAZRnHK2PpiZayBrSwFa/a5CVMkI8u0wfi79xTNXpQ4rQeBvbDRn7vHuufnU0NZWdK4oZnMgcY046yqyJdNUpYEnjSIvCI4bhZioc0j2BrIB5ImfJVB2q1mCpiGW82U/soewPNtvFagayVIv2FW2y6pAn2DanO51epzWHj4jcOcmfw1kIGru/EtbQNaSJ6Dqmj8s6GrnMZRQE041ro9Fg2oLArU/UHjs258h+P2PqAlntnJtGLXduJY1tfY22YmjevQp3q17803+ViF2XLFcwXCs1sLPUeRUOPLSz8D55K8bWyV7ZvUD7qo25Jl0M9mtdZS/Mm6WjKBZzEpqR+aOjy7ZOwzJ/tXFaIlsUD8EFdzDspjocvQH6ViIA1q4Ean4DsUA/qEhl9MA7qh8WQatYEFMnkJiFvuSai4Tu0w2qvwccn05VFOV5LXazEgvx+4Z2Pn/hZm/7uNofGKsAUyQnYH0KHocLkDIM/fRxbk+bTrsTmsS44knF5zaCbV7+siyWv+Qo9JMYNCqr9XiXN1nIp1ooBsZE22Px7RaBOJLk5P+0Z2TETN+WiWd1CNyxvqNGNhUmiEPuCguUz7tnPYfBSYkjzA/ybzHdvuXWXgKIJfvxx3U0Znw4a5QdMRQZMxSpMjSsea5jUm9+0zBqXRWQ==]
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	name = `Alice`
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+	setNameToAlice(){
+		a.name = `Alice`
+	}
+	
+	setNameToBob(){
+		a.name = `Bob`
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Hello ${a.name}!`),
+			Space,
+			Button.text(`Change name`).page(ChangeNamePage),
+			Space,
+			Button.text(`Change name to Alice`).handler(a.setNameToAlice),
+			Button.text(`Change name to Bob`).handler(a.setNameToBob),
+		)
+	}
+	
+}
+
+class ChangeNamePage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Change name to what?`),
+			Space,
+			Columns.children(
+				Space,
+				Button.text(`Alice`).page(StartPage).handler(a.setNameToAlice),
+				Space,
+				Button.text(`Bob`).page(StartPage).handler(a.setNameToBob),
+				Space,
+			),
+			Space,
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -80,7 +200,80 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 Open [this BagaWork project](/editor#eNq9VFFq4zAQvYqYn41BhMTd0q5/iluWbT92WbaFNmwKFvbECXUkI8mbhuAb7B16xR6hUpway9g0H0kxNiPPzJvR0xttgOU5BBuIRYIQQJwxpcjPdZjnBJ818kQRY2+mfKrtG0tkGm81k/o3S3HgVR4tUReSk9ph/5ZVUgklhZnIEpQKgr8bWCQQjClwtrQVtylAQcxmCvUDBKN3e2Ls8pFCbvCczArsplo4jdf16+btotX9j2LR7vuPWKlhPF9kiUQ+qFxTfZuzGOn76s5ADrX5DKJrsSJLxtdEmXqKrESRJWQtCpIu/iG5ZCm7F/LpIvJoN9SVyIol76jYDpzq7s7sc1loLfiuo9eX/y+RN7RUDSwJEhO7c482M9rYHRiHxDk01jHw9sBs2i569/F6jvYpPEPwdXRCYQ2Bf+6XtJKx/5GMd50cV8gTo1mFGcYak6AhVxvSFd8vaYflqznjKTZ53Q6l10vQ2bezHUH1xN/hMs/MJp3Jd1gK1dPNLEyK7BMmPpS4HfDtkRFt9kfG5wcZcIe4XyLql1srdoIq+libXusmrtXnUPmda5Rhiscn8n7O9BdluZTE4O8pqPGoEed6Tvs8fm+OfxrtM7rlY/kG9yyrTA==) and change the code in it to make the app function as shown below.
 
-::bagawork-project[app&baga=eNq9Ve1q2zAUfRWhP7PBhMRJaGcowy1j64+NsRa6sBQsrBsn1LGMJC8Nxm+wd+gr7hEm2YlreTYx6zqCg+R7z7nSuR/OMUlT7OU4ZBSwh8OYCIE+7f00RfAoIaECqXW+TJZSP0ISLtAFCn49/Xw6PsHRGnIgEm6Uj/xCIrDsCic5yIwnqDbot0VNCTGEcqKNNYCMjEBBB8DVANGH6ENNT6L6kLNByD70fDC6zVDgwsErFlPgAnvfc7yh2Js4OCFbnbBSU+xgtloJkN+wNz6uF2pd3Ds4VYIbyIrsutoYea8TVOdeb3IzvR+yTTuxX9lOjML1JqYcEqsyLeVNSkJwjrtbRTmS6s8KPrId2pJkjyoRdiyLKdqzDEWbH4AuSUTuGH94F9hON9UVi7Nt0hGx7biU3SfTv8tMSpYcTlSKbo+0VJYWgQPVN7dHa5LQGLilEvZcprbTJGqH7KAeTF8V9V/xD44xfVmMwXFmL48zONb8j1jNtRm1u6pso+Uc/Ii92Xjq4D323HO3cKrucU91z+GEr9s/C9Uq1b2Beo0u0S4d/odh09dNRgaulLIRNDUv54HdK9LZ27ODSPWwuYVtGquLGkPHUMoXD9crn2bxfxg2PodytpRpQ1LdD03O/8lsMYT7zIL+kmv5LkAEp+vTbn0E6go0pHyfSOB+BK8v5N2ayDdCa8mR4u+X0LjrZNzwMy3zPovbi3HnwZD2Le6L33SKZWI=]
+```js baga-show
+class MyApp extends App{
+	
+	stars = `🌟🌟🌟`
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+	select1Star(){
+		a.stars = `🌟`
+	}
+	
+	select2Stars(){
+		a.stars = `🌟🌟`
+	}
+	
+	select3Stars(){
+		a.stars = `🌟🌟🌟`
+	}
+	
+	select4Stars(){
+		a.stars = `🌟🌟🌟🌟`
+	}
+	
+	select5Stars(){
+		a.stars = `🌟🌟🌟🌟🌟`
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`How many stars would you give BagaWork?`),
+			Space,
+			Columns.children(
+				Space,
+				Rows.children(
+					Button.text(`🌟`).page(StarredPage).handler(a.select1Star),
+					Space,
+					Button.text(`🌟🌟`).page(StarredPage).handler(a.select2Stars),
+					Space,
+					Button.text(`🌟🌟🌟`).page(StarredPage).handler(a.select3Stars),
+					Space,
+					Button.text(`🌟🌟🌟🌟`).page(StarredPage).handler(a.select4Stars),
+					Space,
+					Button.text(`🌟🌟🌟🌟🌟`).page(StarredPage).handler(a.select5Stars),
+				),
+				Space,
+			),
+			Space,
+		)
+	}
+	
+}
+
+class StarredPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`You selected:`),
+			Text,
+			Text.text(a.stars),
+			Space,
+			Button.text(`Change`).page(StartPage)
+		)
+	}
+	
+}
+```
 
 ::::hint
 

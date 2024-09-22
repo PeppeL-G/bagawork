@@ -11,7 +11,32 @@ This tutorial will teach you what page constants in BagaWork are, and show you w
 ## The problem
 To understand the usefulness of page constants, let's first go though a page in app that could benefit from using a page constant, but that doesn't use it. Such a page is the page shown below.
 
-::bagawork-project[app&link&code=InfoPage&baga=eNrFVG2L00AQ/ivDfjGBEPpCQfJFcnJKQeT0euhhD7oms83iZjfsTto7S/+7m6ZVUxOtfvFDwszuzDMvz5PsGK8qluxYZnJkCcsUdw7mWpi0qgAfCXXuwNu7pV5S82QWOeEtcUs3fI1B2N6QRaqtPqQ2583hvs3Zs33EhFE5WseSTzsmc5aMI6Z52ZQ8QLGIGSEc0keWjE72vbf3DxGrPF4nswWbt84vnTflv7feOGe9v67ledfvzdbFWSFVblEH7dWSFh4kJv8KVg0u8M+mJkgtFbVdhdEp7LbiGUY9SW0kSAccirrkOl6FsUJBwVly7ORXDEbxaBb24SwKBK7dFi2QAfLekt0pkqUfBt7V6EgaDUbAGykwOgTcabnx6/Ye1zlce/uJCqnXSwZb7sCZEg/+cRpQyK3G/B8bfGVsDjcWBWbUjLs2JgdhpWcAtpKKY5W2Gd8dblCD4xvMjzfPHCjf+1D5oxd2RBWxR8//bBaxJ5ZMp9OTUhZYVspvpqOYjkhS92Uu0rxWNCwVo69QGPtD3z/V/msh/UYhCE+mhoOePXFcw/j5i0FtvTSqLnVPgfPAJV3V5Gc4lnlr/GKb3QS6ViqMLky7R3dZXthDULPCVBDavg02v4SWm8kZN9fap6Rr/N/MfCg4eVV6ciz46sOcdDY2HvUvrBs0uyBocgnSZABp6KP5EycP+2+lnDB4]
+```js baga-show-editor-code
+class InfoApp extends App{
+	
+	createStartPage(){
+		return InfoPage
+	}
+	
+}
+
+class InfoPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Info about Arthur`),
+			Space,
+			Text.text(`Arthur is a human.`).left(),
+			Space.size(0.05),
+			Text.text(`The answer to the "Ultimate Question of Life, the Universe, and Everything" was something Arthur learned.`).left(),
+			Space.size(0.05),
+			Text.text(`Ford Prefect is good friend with Arthur, and he even saved Arthur's life.`).left(),
+			Space,
+		)
+	}
+	
+}
+```
 
 As you can see on the page, the name `Arthur` is written at multiple places. This works, but there are some drawbacks with writing the same value over and over again at multiple different places like this:
 
@@ -97,7 +122,34 @@ In a `Page`, you can only access the `Page` constants created on that page. For 
 ## The final solution
 So, here's the code for the page using a constant, instead of harding the name at multiple places. Notice how easy it is to change name to `Alice` in the code; you just need to change it at the place where we create the `NAME` constant!
 
-::bagawork-project[app&link&code=InfoPage&baga=eNrFVG2Lm0AQ/ivDUqiCSF4IFKEUr6Ql0B7XXo72qAfZxjEu1V3ZHZPLBf9713hJaqo07Zd+UGbceebtedYd40XBgh1bqhhZwJYZNwZmMlFhUQA+EsrYgLV3kYyofpYaOeEtcU03fIWO25yQRiq13EPr7/XHqsFUrPJYorIYtWHBtx0TMQuGHpM8r0vuUzGPqSQxSF9ZMDjY99auHjxW2HwtZJNs1ji/dV6XP7ZeO8fer8OPU3gNi1BTWupFe6T3pTgf5rPaGH+ZiizWKJ3mKKK5ze2TfTmLuhzw76okeLEr/Dp/tXC9Q+RtwZfodeCOwSAMcEjLnEt/4foZJuSc4X0jntAZ+IOJ25VqniJwaTaogRSQ9SJ2l5HI7UjwqURDQklQCXwQCXr7gDsp1pYL63EZw9TaW0qFXEUMNtyAUTnu/dNMkCHXEuN/7PGd0jHcaExwSfXEK6ViSLSwDMFGUHoq1LRke8Q1SjB8jfHp8KWBzA7R18Sz57ak57FHq5LJxGNbFozH44Oe5pgXmV1RS1ctKYXmxywJ4zKjfkEpeYWJ0qdb8Evtv9ZVr1pCjbBVJexVbxnkEoav3vTq7K3Kylx2FDgPjOiqJDvDc5lrZRdb78aRZZa53oWwezSX4dwOguoVhgmh7tpg/eNouBmdcTOVFhKu8H8z8yXlZFVpydFgq/dz0trYcNC9sHbQ5IKg0SWZRj2Z+i7Nnzh5qH4Cggs6eQ==]
+```js baga-show-editor-code
+class InfoApp extends App{
+	
+	createStartPage(){
+		return InfoPage
+	}
+	
+}
+
+class InfoPage extends Page{
+	
+	NAME = `Arthur`
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Info about ${p.NAME}`),
+			Space,
+			Text.text(`${p.NAME} is a human.`).left(),
+			Space.size(0.05),
+			Text.text(`The answer to the "Ultimate Question of Life, the Universe, and Everything" was something ${p.NAME} learned.`).left(),
+			Space.size(0.05),
+			Text.text(`Ford Prefect is good friend with ${p.NAME}, and he even saved ${p.NAME}'s life.`).left(),
+			Space,
+		)
+	}
+	
+}
+```
 
 
 
@@ -109,7 +161,33 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 The code in [this BagaWork project](/editor#eNq1UmGL2kAQ/SvDUqjCEtRyUAKlxDs5LGhLT2iPetQlmWjoOht2J3hB8t+7Ma1nctpeP/RDwiYzb968t28vVJ6LcC9ik6AIRayVczArozwHfGSkxIE/75e05PqJLSrGO1aWP6k19vpNhS1yYQnu0DfwLHMuM1Q31NWqAVeikiI1OkHrRPhtL7JEhEMpSG1r5sNMIYVJU4f8VYSD3+d7f64epMj9vBayGTZtPloCnu1xFFN/HNVEt5P54vs8mk3gHaw++EUcjA0lq7bc2yLrCv1sdi6IN5lOLFKvKS154VkC9q/e6gaVhVf7PHjiqOSqH2hMudeXpwh5Bj6FjckReJM58Fu5WkKaUQKlKWCHWsvu8AA+Uoyg1iojCaawEBtiWwIhet0eF8C1/6NihpkhLHMkKiE11rMgJMgq0y54+Yo3BsgwaGQoHCRmR893evm0MTqGXeY26CTMurh+K0dSPIpwNPABKUX4ZnAMxwK3ufb31QpJKxeR+zFNo6TQfDkU/3jnd7mK8ZyiyOLhtg4h9R4rguHb96snK9rIa6OLLZ0h6DYueVwwG/pFMzcnI//Se4/uD83nza5kY+WoY+WEGG20xv9v5JeN4teHBFsfb7xsYUvrcHDS165cXaqMLmJGVxdYO2Y9VD8B6GfnMg==) contains a page that looks like this:
 
-::bagawork-project[app&baga=eNq1UmGL2kAQ/SvDUqjCEtRyUAKlxDs5LGhLT2iPetQlmWjoOht2J3hB8t+7Ma1nctpeP/RDwiYzb968t28vVJ6LcC9ik6AIRayVczArozwHfGSkxIE/75e05PqJLSrGO1aWP6k19vpNhS1yYQnu0DfwLHMuM1Q31NWqAVeikiI1OkHrRPhtL7JEhEMpSG1r5sNMIYVJU4f8VYSD3+d7f64epMj9vBayGTZtPloCnu1xFFN/HNVEt5P54vs8mk3gHaw++EUcjA0lq7bc2yLrCv1sdi6IN5lOLFKvKS154VkC9q/e6gaVhVf7PHjiqOSqH2hMudeXpwh5Bj6FjckReJM58Fu5WkKaUQKlKWCHWsvu8AA+Uoyg1iojCaawEBtiWwIhet0eF8C1/6NihpkhLHMkKiE11rMgJMgq0y54+Yo3BsgwaGQoHCRmR893evm0MTqGXeY26CTMurh+K0dSPIpwNPABKUX4ZnAMxwK3ufb31QpJKxeR+zFNo6TQfDkU/3jnd7mK8ZyiyOLhtg4h9R4rguHb96snK9rIa6OLLZ0h6DYueVwwG/pFMzcnI//Se4/uD83nza5kY+WoY+WEGG20xv9v5JeN4teHBFsfb7xsYUvrcHDS165cXaqMLmJGVxdYO2Y9VD8B6GfnMg==]
+```js baga-show
+class MyApp extends App{
+	
+	createStartPage(){
+		return SecretMissionPage
+	}
+	
+}
+
+class SecretMissionPage extends Page{
+	
+	AGENT_NAME = `James Bond`
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Dear ${p.AGENT_NAME},`).left(),
+			Text,
+			Text.text(`I hope this message find you well, ${p.AGENT_NAME}. Once again, our contry needs you. Contact Moneypenny for the details.`).left(),
+			Text,
+			Text.text(`Do not let us down, ${p.AGENT_NAME}.`).left(),
+			Text,
+			Text.text(`Best wishes, M`).left(),
+		)
+	}
+	
+}
+```
 
 As you can see, the page's GUI contains the name `James Bond` at multiple places. This name is currently stored in a page constant, and the GUI code refers to that page constant each needs to display the name. All seems good!
 
@@ -117,7 +195,33 @@ However, to improve security and anonymousity among the agents, it has now been 
 
 Change the code so the GUI displays `007` instead of `James Bond`. When you're done, it should look as shown below.
 
-::bagawork-project[app&baga=eNq1UmGLm0AQ/SvDUmgCi5iUo0UoxbsLRz6YlibQHs3RLDpG6WZXdkdyEvzvXWObi15srx/6QVmdeW/mvX0HJoqCBQcW6wRZwGIprIWoCosC8JFQJRbc+bBWa2qe2KAgXJIw9ElscTRuK2SQSqNgia6BotzaXKumoanWLbhmNWeplgkay4JvB5YnLJhwpsSumXzkZJzpNLVIX1ng/z7fu3P9wFnh+DrIlmzefnQEPNvjJKb5OKkJ72aL1fdFGM3gPWx8/+2mq/OuzPsKP+u99eIsl4lBNWpLa1o5eo/ca7S5RWHg1aHwnshrvhl7ElMajfk5gl+AzyHTBQJluYUdWtvsnuYqgUqXsEcpeZ/cg48qRhBbkSsOujQQa0WmAoXoBDucBzfuj4gJIq2wKlCpClJt3BSEBEnk0novX/FWg9IEEglKC4neq+c7vZztGi3BPrcZWg5RHzfuBIizRxZMfZeMigVv/FMqVrgrpLuvTjo6gQjtj3kaJqWk4TT8450vCxHjJUWhweNtHdPpPBYKJu8+bJ6s6CJvtCx36sKAfuOarksirX6NWegzyr/03qP9Q/Nls2veWjntWTlThCbc4v838ksm6PUxwcbFG4ct7Gid+Gd93crVUGU6iJleDUztmfVQ/wSoAuQ2]
+```js baga-show
+class MyApp extends App{
+	
+	createStartPage(){
+		return SecretMissionPage
+	}
+	
+}
+
+class SecretMissionPage extends Page{
+	
+	AGENT_NAME = `007`
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Dear ${p.AGENT_NAME},`).left(),
+			Text,
+			Text.text(`I hope this message find you well, ${p.AGENT_NAME}. Once again, our contry needs you. Contact Moneypenny for the details.`).left(),
+			Text,
+			Text.text(`Do not let us down, ${p.AGENT_NAME}.`).left(),
+			Text,
+			Text.text(`Best wishes, M`).left(),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -128,7 +232,33 @@ The code in [this BagaWork project](/editor#eNq1UlFr2zAQ/iuHXpaAMElGYfhlOO0YGWQb
 
 Your task is to rewrite the code so `James Bond` is put in a page constant, and in the GUI code refer to that constant whenever it needs to display the name. When you have done that, change the value in the page constant to `007` instead. When you're done, it should look as shown below.
 
-::bagawork-project[app&baga=eNq1UmGLm0AQ/SvDUmgCi5iUo0UoxbsLRz6YlibQHs3RLDpG6WZXdkdyEvzvXWObi15srx/6QVmdeW/mvX0HJoqCBQcW6wRZwGIprIWoCosC8JFQJRbc+bBWa2qe2KAgXJIw9ElscTRuK2SQSqNgia6BotzaXKumoanWLbhmNWeplgkay4JvB5YnLJhwpsSumXzkZJzpNLVIX1ng/z7fu3P9wFnh+DrIlmzefnQEPNvjJKb5OKkJ72aL1fdFGM3gPWx8/+2mq/OuzPsKP+u99eIsl4lBNWpLa1o5eo/ca7S5RWHg1aHwnshrvhl7ElMajfk5gl+AzyHTBQJluYUdWtvsnuYqgUqXsEcpeZ/cg48qRhBbkSsOujQQa0WmAoXoBDucBzfuj4gJIq2wKlCpClJt3BSEBEnk0novX/FWg9IEEglKC4neq+c7vZztGi3BPrcZWg5RHzfuBIizRxZMfZeMigVv/FMqVrgrpLuvTjo6gQjtj3kaJqWk4TT8450vCxHjJUWhweNtHdPpPBYKJu8+bJ6s6CJvtCx36sKAfuOarksirX6NWegzyr/03qP9Q/Nls2veWjntWTlThCbc4v838ksm6PUxwcbFG4ct7Gid+Gd93crVUGU6iJleDUztmfVQ/wSoAuQ2]
+```js baga-show
+class MyApp extends App{
+	
+	createStartPage(){
+		return SecretMissionPage
+	}
+	
+}
+
+class SecretMissionPage extends Page{
+	
+	AGENT_NAME = `007`
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Dear ${p.AGENT_NAME},`).left(),
+			Text,
+			Text.text(`I hope this message find you well, ${p.AGENT_NAME}. Once again, our contry needs you. Contact Moneypenny for the details.`).left(),
+			Text,
+			Text.text(`Do not let us down, ${p.AGENT_NAME}.`).left(),
+			Text,
+			Text.text(`Best wishes, M`).left(),
+		)
+	}
+	
+}
+```
 
 :::
 

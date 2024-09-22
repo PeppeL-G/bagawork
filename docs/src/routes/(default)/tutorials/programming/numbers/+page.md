@@ -38,7 +38,22 @@ Just as strings (and all datatypes), number values can be stored in constant and
 
 Example of an app that creates a page constant that stores a number.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk19r2zAUxb/KRQwab8bU6doFwxjOyEoe+oc0axOWsmj2dROmSJ4k0wbj7z6pbtwoOCN92oPNlaXfvT7n2CWheU6ikiQiRRKRhFGl4GId5zngk0aeKjB1OeMzba9v8e3VaDge/Lz8ftEfjOAzhJ82e4lEqvFGU6mv6QN2vJrSEnUhOTQb9mlVQxWpfJIJlqJUJPpRkmVKotAnnK7s2zwjxCciyxTqCYmON/XU1NW9T3LTzyHrZsN64Yhq5jfC7KJRNjFaPtpiaoquq+m8WO6qGYlHFSSLJUsl8k69NdNj0zrQ5taZ0wjelXkwqeADhLBUgH8KykALOA3mnt9C/NoibDGtHOxsD5Y02Ps2rPeKeY7zPnkyJvWMpWsSnYRnGzvHuMqZEe3Y6jgZq9/DLE4L9g87Be9jJuTrV7A1+8223uQ0wTbtsURYiwKeQwe9oBzC3pctn1zyq2DFircM2D040/1CGw0vYy7F3AusNx1eMOb5B2JTVIdxbQFZC+NMo2xz0P43dTbdnWwG3CDxA/7vZO4WVB8pG44EM31/Jo5j4XG7Ye6h0wMOdQ/p1N3TafsN35LJffUXjUfliA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	X = 4
+	Y = 2
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`a: ${p.X} + 1 is equal to 5.`),
+			Text.text(`b: ${p.X} + ${p.Y} is equal to 6.`),
+			Text.text(`c: ${p.X} * ${p.Y} is equal to 8.`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -95,7 +110,23 @@ You can use these mathematical operations anywhere in your JavaScript code you c
 
 Example of an app with some mathematical expressions.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/SsXMVjcGVNnX8VQhjOykYe2I83ahKYsmn3dhCmSJ8mswfi/T4obLzJOSZ/2YHOlq3Ouzjl2SWiek6gkiUiRRCRhVCm42MR5DviokacKTF3O+Vzb50t8czUeTYY/Lr9fDIZjOIfw466XSKQarzWV+ht9wJ5Xo7REXUgOTcPuVjWoIpVPMsFSlIpEdyVZpSQKfcLp2t5mCyE+EVmmUE9JdLqrZ6au7n2SGz4HWZON6oUjqpnfCLOLRtnUaHlni5kVBW8gdHV9LVZtRWPxRwXJcsVSibxXt+Z6YugDbV69BY22TH1YKcDfBWWgBbwqt3tVsPD8DszPyJzIg1nVATTbz0GTGjq10CeONn5qWrZxgCFtGE4OM5y0GDwnUJ88Gu/PTFIbEr0NP+xSmuA6Z8ZHJy0noFj9GmVxWrBnUhJ8gJmQ/z6uvdkvTuo6pwl22RBLhI0oYPstgV5SDuHZpz3LXORnwYo17xjQPjjXg0IbDU9jLsXCC6w3PV4w5vlHwmaojsN1BWQtjDONsstB+zvW2fRb2Qy5gcQP+L+TuV1S/VrZcCSY6YczcRwLT7sNcw+9P+JQ/xim/gGm/Ru+JJP76i8iUf8j]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	X = 4
+	Y = 1 + 1
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`a: 1 + 2 is equal to ${1 + 2}.`),
+			Text.text(`b: ${p.Y} + 2 is equal to ${p.Y + 2}.`),
+			Text.text(`c: ${p.X} + ${p.Y} is equal to ${p.X + p.Y}.`),
+			Text.text(`d: ${p.X} * ${p.Y} is equal to ${p.X * p.Y}.`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -106,7 +137,23 @@ Just as in ordinary math, you can use multiple mathematical operations at the sa
 
 Example of an app using two mathematical operations at the same time.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU2Fr2zAQ/SuHKMzujKldthXDGM7IRj60G2napSxl0exzE6ZIniSzBuP/PjleXCvYJf20DxaS7t47vXvnktA8J1FJEpEiiUjCqFJwuY3zHPBRI08VmH254Atdf5/i2y/TyWz84+rmcjSewnsI3u1jiUSq8VpTqb/SB3TcBqUl6kJyaAP1bdWAKlJ5JBMsRalI9L0k65REgUc43dSv2UGIR0SWKdRzEp3t93dmX917JDd8FrIhmzQHS1RbvxVWH1plc6MltKV8LtaHIqbij/KT1ZqlErnThBZ6Zhh9bRZnSSMI4DWE5juHtQL8XVAGWsBJ2d5X/tL1erA/G+xJmfvzaoDAhJ6jSKIn+OHGJmuI2nWIMN3rOR3Qczr8GIzA2SW5PehOpIN3reHwyKPx8cK4viXRefB27/gMNzkzBlnOW2bH6tcki9OCPeO44CPMhHwa1E7tF4/AdU4T7GtCLBG2ooDdXIJeUQ7BxYdOw2zkR8GKDe8pcJi40KNCGw3/ylyJpevXvXF4wZjrHQm7Q3Ucrs+guoVxplH2dbD+tRtvwgNvxtxA4gf83858W1H9StXmSDDVhz2xOhac9TfMTnpzRFJ4DFM4wNR94Us8ua/+AoxaEBo=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	X = 2
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`a: 1 + 2 + 3 is equal to ${1 + 2 + 3}.`),
+			Text.text(`b: 1 + ${p.X} + 3 is equal to ${1 + p.X + 3}.`),
+			Text.text(`c: ${p.X} + ${p.X} + ${p.X} is equal to ${p.X + p.X + p.X}.`),
+			Text.text(`d: 1 + 2 * 3 is equal to ${1 + 2 * 3}.`),
+			Text.text(`e: (1 + 2) * 3 is equal to ${(1 + 2) * 3}.`),
+		)
+	}
+	
+}
+```
 
 :::
 
@@ -118,7 +165,29 @@ Just as for strings, we can use `p.theVariableName = 123` to store a new number 
 
 Example of an app that increments the number stored in a variable by `1` each time a button is clicked.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVGFr2zAQ/SuHGMxmxq0zthVDGG7pRj60G2m2rixlUexzIyrLRpbThpD/Psmq3SikI/20QBI5d+/p7t27rAmtKhKvSVpmSGKSclrXcLFKqgrwUaHIatDn9VRMlXl/SX5+G48m538uf1ycno9hCNGnLpZKpAqvFJXqO71Dz7coJVE1UkAfML9uLGhDNgHJS56hrEn8e01YRuIoIIIWppoWQgJS5nmN6heJj7vzjT5vbgNSaT4HaclG9sFpqr+/b8w89J2lZSMUStOR29DXhu22Mi4f6jBdMJ5JFJ4NTdVE84ZKf3izyQKhI1xSyeicI7Aa0kZqhOIreLOuwqeMTTjzg47ktFGqFE80I6FLKDSgI5v54YKKjKP0qpB10TMb9C2Hv6XvVO0m9a0cHcH1AgWottSiakyt+IipPtT6V1Otli8ApuCBcR73sCiEMwuAvgd4B1EA8xXkTNbqOde8dP4YlWS4RHubFQFEU8w1koktGi9qU1oWUKywiHkrSisgZ+k9Zr5zweC5oIcFVTAlynwtKW9wSkxpBqqpzWkIg1deoemvVClNHlWdVpmlB89h20vkdGhZnxseuho6uxGQR23jE236FYnfRx87w0+wqLh2pmN8x+tJfT/Kk6zh/zB8KU4x1231jnB880rvX1U0xWDPJiRat1XZQLuWRkEB0cnnLcO7yLOSN4XYc8Fu4s6mXJZ6NYw2nmg494MDYTdYH4brIu5ylSLJt3dq55/NzmawM5tzM+vkDv/3ZK61m9/WZjgS9O0vz8RRLDreL5ib9OGApMEhTIMXmLYrfM1Mbjd/AaqZfIE=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 1
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`The counter variable is currently ${p.counter}.`),
+			Button.text(`Increment counter`).handler(p.incrementCounter)
+		)
+	}
+	
+	incrementCounter(){
+		// When the computer executes this code, it will:
+		// 1. Compute p.counter + 1, by first:
+		//     1. Retrieve the current number in p.counter (1 the first time the button is clicked)
+		//     2. Compute what "that value" + 1 is (1 + 1 = 2 the first time the button is clicked)
+		// 2. Store that computed value (2 the first the button is clicked) in p.counter
+		p.counter = p.counter + 1
+	}
+	
+}
+```
 
 :::
 
@@ -162,7 +231,25 @@ There exists shortcut syntax in JavaScript one can use to increment/decrement a 
 
 The same app as before, but uses the shortcut syntax for increament the number stored in a variable instead.
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KEIPZzLh1xrZiGMMp2chFu5FmH2Upi2IfN2ayZPTR1Rj/98lV7EYmHenVLmwkn/O+Ouc8coNJVeG4wSnPAMc4pURKdFEnVYXgXgHLJDLrZsVWqns+Jt8+L+bL2a/LrxfT2QK9R9G7PpYKIAquFBHqC7kFz7cqJUBpwdAQ6L62VtTiNsA5pxkIieOfDS4yHEcBZqTsqnmQ4ADzPJegfuD4tF9fm3V7E+DK+DlKaza3G6ep4fyhsW4zdJZyzRSIriO3oU+6GLey4H9kmG4Lmglgng2t1NL4hsq8vPVyC6g3vCOiIBsKqJAo1cIoFK3Ri6YKdxltuPaD3mSqleJsZzNnpoTSCHqztR9uCcsoCK8Kiz56boO+9fD35rtS46ShlZMT9GivTL1MlxtTrlRcQIYKhoYC0aZGUWhljx9f7SY1oAzwvZn6mWFU4/h19Lbns4SyomaQDicHTSJ/z/Mk0/QffDibQm5KGxpw2nwmqquKpBAcAJcIQDXX6OEWmbEQhqKzD3t8XOU5p7pkBw4YJ47AXnJDspuNxzSlfnCk7Brkcbo+4t4FzpJ8/wqMfkTLZjJiM+tgJ7fwv8l83xL1UnZwBDKnP83EmVh0enhgbtKbI5ImxzhNnnDar/A5TG7av6mfDC8=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 1
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`The counter variable is currently ${p.counter}.`),
+			Button.text(`Increment counter`).handler(p.incrementCounter)
+		)
+	}
+	
+	incrementCounter(){
+		// Increment the number stored in p.counter by 1.
+		p.counter += 1
+	}
+	
+}
+```
 
 :::
 
@@ -176,11 +263,61 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 [This BagaWork project](/editor#eNq1klFrwkAMx7/KkZdZ1ol2G0hfRjfG8GFjTGGTVejRpiqrd+UuZUrpd19rp/OKFRn4cJBc/snlfkkOPE3BzSGUEYILYcK1Zs9rL00ZrghFpFlp577wqTqhQk44Iq7olc+wY9URUkiZEmwXqG6LOqmAwoZYJhEqDe5nDosI3L4Ngi+rFzcpYIOMY430AW5va09Ku5jakJb1jMy62LB2jMZ37++ar5xG90/Zotn3m/zW3XC+SCKFolOHfBqlPER76z3IJFuKA7Km0Kf7jEiKLpVNdIKrwLLbpeNS8yvsHRUaNS+PSP8i+/eWMREbVuDe9K5tWIPrDJwt5jEu06REZOA2CHv6axh7UZacC/MeEE8hW8uMbcbNaM4F6w/ugsMf/P+AXuTp4CeoT0BvNda/Ruk0UD4KQuXN8Pwg3+ecLnTFUrGyfjtC46/9/YU0I7dtEac1x7kNTtnMYlr8AODZqeQ=) contains a page looking like this:
 
-::bagawork-project[app&baga=eNq1klFrwkAMx7/KkZdZ1ol2G0hfRjfG8GFjTGGTVejRpiqrd+UuZUrpd19rp/OKFRn4cJBc/snlfkkOPE3BzSGUEYILYcK1Zs9rL00ZrghFpFlp577wqTqhQk44Iq7olc+wY9URUkiZEmwXqG6LOqmAwoZYJhEqDe5nDosI3L4Ngi+rFzcpYIOMY430AW5va09Ku5jakJb1jMy62LB2jMZ37++ar5xG90/Zotn3m/zW3XC+SCKFolOHfBqlPER76z3IJFuKA7Km0Kf7jEiKLpVNdIKrwLLbpeNS8yvsHRUaNS+PSP8i+/eWMREbVuDe9K5tWIPrDJwt5jEu06REZOA2CHv6axh7UZacC/MeEE8hW8uMbcbNaM4F6w/ugsMf/P+AXuTp4CeoT0BvNda/Ruk0UD4KQuXN8Pwg3+ecLnTFUrGyfjtC46/9/YU0I7dtEac1x7kNTtnMYlr8AODZqeQ=]
+```js baga-show
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Columns.children(
+				Space,
+				Button.text(`-`),
+				Space,
+				Text.text(`0`),
+				Space,
+				Button.text(`+`),
+				Space,
+			),
+			Space,
+		)
+	}
+	
+}
+```
 
 Change the code in it, so it works as shown below.
 
-::bagawork-project[app&baga=eNq1U2FL6zAU/SvhIrhiV7Y+BSmIVHk8/KCICu+JHTS0d27YJSG5RUfpfzddXV3KpvLED4EkN+fec889qYArBVEFmcwRIsgKbgy7XMZKMXwhFLlhdl8lIqFmZRo54S1xTdf8EQdeGyGNVGrBukBzW7egGmofprLIURuIHiqY5xCNfRB80VRcQcAHOZ0apH8Qjdb7e7uvJz4om89Btsku2oNDvKvfkW8O7+xlKQg1O2Ejt6E/5bzfyo18NkE2mxe5RjFoQwndKp6hvz6dy6JciC3P+g8TOiuJpAjI8hqkw9QLZlzkBeqBCnK0JBYobLoVPc/fnebO4t+S7FUqeGuoTj/COKUPnNJz8dXS75HNe29jzgn1G+kk7Yiy4QkbO5g+gy2YAxdTW7O8QHQ4+uXDEqLwOFyb5A4XqrDTdMzi+CM2TxfTOC+Lj0zyHUdszCfWyJayZCuzMrKis/HxabpdyP/30pX8+vDv0aSfj9jrfd5WyrAn5e9mNvEj/ryQf2ec9k2jpWY2/24JnV7Ho413buRoVyTciQmP0s9/gBVrUr8C3pPxrw==]
+```js baga-show
+class StartPage extends Page{
+	
+	counter = 0
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Columns.children(
+				Space,
+				Button.text(`-`).handler(p.decrementCounter),
+				Space,
+				Text.text(`${p.counter}`),
+				Space,
+				Button.text(`+`).handler(p.incrementCounter),
+				Space,
+			),
+			Space,
+		)
+	}
+	
+	decrementCounter(){
+		p.counter -= 1
+	}
+	
+	incrementCounter(){
+		p.counter += 1
+	}
+	
+}
+```
 
 ::::hint
 

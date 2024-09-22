@@ -14,7 +14,57 @@ Imagine you should build an app that functions as in the example below (no matte
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage-SumPage1-SumPage2-SumPage3&baga=eNqdk01vgkAQhv/KOidNiREooiQ94KGthzZN9dCmmEhgUFPcJcsSNYb/3gUEEfthPZDMsvvOPPPu7B7cKAJrDx7zESzwQjeOydPOjiKCW4HUj4mM9w51hMfRFTgRLhcv7gLbnfyvIziKhFNCcUNqm9le6tAUUgUCFvrIY7A+9rDywVIVoO46q5cLQAEWBDGKN7B6Zfwu41QpzmvH8+gx6t/n+X6WzRSIJMRJwYJhXCxOuq2gq46zRa3lh2TVbPaVbeKut1yFPkfaLrYcMUqEYLQrZJ72fLJkGxIna8ICopIbos073YyqPUnWWQG1o/yp06XOaOi0C3QDqVMbOr3UHa9Gga20o2cosANLH+o1v3+x64D/D7em8uiBMneC3BF93sDQjUGOoZpmiWHUMbQGhh1/PsuZsBfuip6jZB+jIwwYPw7qoWARXAL7iGHIWhVpmdYOBPLvsh5a0Yxe4WivmuD+BY5q1zmaz4h0dNB01LjtFxiDylHzAgz9Oox85CTG8Oxi+8V89VWzfJhTXEehzHjyQJu3Ow5sPwnFdTT5zRGxRI6tGlA6S78AXNqs4g==]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Button.text(`Show sum of 1 + 2`).page(SumPage1),
+			Button.text(`Show sum of 3 + 5`).page(SumPage2),
+			Button.text(`Show sum of 8 + 1`).page(SumPage3),
+		)
+	}
+}
+
+class SumPage1 extends Page{
+	createGui(){
+		return Text.text(`1 + 2 = 3`)
+	}
+}
+
+class AskNameAgain extends Page{
+	
+	onBefore(){
+		
+	}
+	
+	createGui(){
+		return Text.text(`Hello!`)
+	}
+	
+	onAfter(){
+		
+	}
+	
+}
+
+class SumPage2 extends Page{
+	createGui(){
+		return Text.text(`3 + 5 = 8`)
+	}
+}
+
+class SumPage3 extends Page{
+	createGui(){
+		return Text.text(`8 + 1 = 9`)
+	}
+}
+```
 
 :::
 
@@ -94,7 +144,50 @@ So, using this new knowledge, we can improve our first sample app using page arg
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage-SumPage&baga=eNqVU01vozAU/Cuu1QOoCAUQUorUAz3sbg+tVpsctiqVguCRoAUb2Q+lFeK/rwnBcejX7gHJz2bmzcyzO5o2DY06mvEcaESzKpWS3L/GTUPgBYHlkqh1l7AEMwEpwgpTgT/TLVj2YTdBAdgKRhjsiXE4nPUJ62nv0IJXOQhJo6eOljmNPIeytB76HQDUobwoJOBvGi2m9aNa9874v3/6HzLO8m8Hvo9hzw5tlIizhqOGu7E4c6tFa8dDYVj+3pZzs7/4XrrZrqxyAcwajxK8bRE5c1HxWJvVju+JbGvCC+KRK+JvbHdQZa3aemhgO1/CAgULZzC3ggLXIGorsF1RbndjEdr/wLdUfN6HfEuTz9N8p0k69EWltwgd+kqj4DowxvNJumObt9mqYcVi29bAUOp4Gy2H3BBv2tOy1KZ/lPPecNTdkHgwe0MMpitiUJyNca1UHXO67E6IXkGGWoN6RXjZKeJ+M4sjuJ7iWE5xhGYc/iyOWP55UFc53qYle5vJ8HF2CwUXp/elDX96Iw0rP6Cq+IVWOtHGBYJ4j/VoxQ8Xo5WFfkFrqJtK9Tt7SXM/d0WctxX+x+uZayW4AwEXRrb9c/8XvxqYtw==]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Button.text(`Show sum of 1 + 2`).page(SumPage),
+			Button.text(`Show sum of 3 + 5`).page(SumPage.leftTerm(3).rightTerm(5)),
+			Button.text(`Show sum of 8 + 1`).page(SumPage.leftTerm(8).rightTerm(1)),
+		)
+	}
+}
+
+class SumPage extends Page{
+	setArguments(){
+		p.leftTerm = 1
+		p.rightTerm = 2
+	}
+	createGui(){
+		const sum = p.leftTerm + p.rightTerm
+		return Text.text(`${p.leftTerm} + ${p.rightTerm} = ${sum}`)
+	}
+}
+
+class AskNameAgain extends Page{
+	
+	onBefore(){
+		
+	}
+	
+	createGui(){
+		return Text.text(`Hello!`)
+	}
+	
+	onAfter(){
+		
+	}
+	
+}
+```
 
 :::
 

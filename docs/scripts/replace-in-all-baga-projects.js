@@ -1,44 +1,68 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { getCompressedProject, getDecompressedProject } from '../../editor/src/functions/project-compressor.js'
+import { getDecompressedProject } from '../../editor/src/functions/project-compressor.js'
 
 // Run from this folder:
 // node replace-in-all-baga-projects.js
 
 /*
-// Rows( -> Rows.children(
-const find = /(Text|Button|Rows|Columns|Space)\(/g
-const replacer = (match, componentName) => {
-	if(["Text", "Button"].includes(componentName)){
-		return `${componentName}.text(`
-	} else if (componentName == `Space`) {
-		return `${componentName}.child(`
-	} else {
-		return `${componentName}.children(`
-	}
-}
+::bagawork-project[app&link&code=StartPage-DestinationPage&baga=eNqVkVFrgzAUhf+Ku08KoWyOls03y6D0YTC2wjZmwaDXVaqJJFfWIvnvi3Xa6sOgT7m5yTn3O0kDvKogaCCRKUIAScG1dp6PYVU5eCAUqXZs3UQiokQhJ3wjruiFf6PrnboRKaRaCWc4aLsmEgYMg0wWKSoNwVcDeQrBHQPBy3bS6TowkFmmkT4guO3rT1ubLYPKeo2Undm624yAh9kDdLu5oF7V+ZR3WRNJMSOrcOOVdGiHCmNv1o51n1BTLjjlUrRO3pCJwQEC/95ncLTr/NGwDs//D2/idgXkq/zRs2SXF6lC4XZHEW2swR/4OxaJLNGhU4DppJvYY71olHfJk32rGR6uDz40euEk+nyx6KIvHvo/2mBZFRZ/9Fej/KHer7MwrQu6IvpFyPgMYbbmFwRb8vg=]
 */
 
 /*
-// Rows...)(\n -> Rows...).children(\n
-const find = /(Text|Button|Rows|Columns|Space)(.*)\)\(/g
-const replacer = (match, componentName, things) => {
-	if(["Text", "Button"].includes(componentName)){
-		return `${componentName}${things}).text(`
-	} else if (componentName == `Space`) {
-		return `${componentName}${things}).child(`
-	} else {
-		return `${componentName}${things}).children(`
-	}
-}
+// ```js baga-show-editor
+// THE-CODE
+// ```
 */
 
-const find = /(Hello), (World)!/g
-const replacer = (match, hello, world) => {
-	return `${hello.toLowerCase()}, ${world.toLowerCase()}!`
+const defaultAppCode = `class MyApp extends App{
+	createStartPage(){
+		return StartPage
+	}
+}`
+
+const findExpression = /::bagawork-project\[(.*)]/g
+const replacer = (match, info) => {
+	
+	const attributes = Object.fromEntries(
+		info.split(`&`).map(
+			s => s.split(`=`, 2),
+		).map(
+			([n, v]) => [n, v || true]
+		)
+	)
+	
+	const project = getDecompressedProject(attributes.baga)
+	
+	const infoParts = [`baga`]
+	
+	if(attributes.app){
+		infoParts.push(`show`)
+	}
+	
+	if (attributes.link){
+		infoParts.push(`editor`)
+	}
+	
+	const newCode = `
+${project.app.code == defaultAppCode ? `` : project.app.code}
+
+${project.pages.map(
+	p => p.code,
+).join(`\n\n`)}
+	`.trim()
+	
+	const newContent = `
+\`\`\`js ${infoParts.join(`-`)}
+${newCode}
+\`\`\`
+`.trim()
+	
+	return newContent
+	
 }
 
-const rootFolderPath = '../src/routes'
+const rootFolderPath = '../src/routes/'
 
 const entryPaths = fs.readdirSync(rootFolderPath, {
 	recursive: true,
@@ -52,41 +76,9 @@ for (const entryPath of entryPaths){
 		
 		const fileContent = fs.readFileSync(filePath, {encoding: 'utf8'})
 		
-		// baga=eNq...g==]
-		const findCodeRegExp = /baga=([^\]]+)/g
-		
-		const codeReplacer = (match, bagaCode) => {
-			
-			const project = getDecompressedProject(bagaCode)
-			
-			project.app.code = project.app.code.replaceAll(
-				find,
-				replacer,
-			)
-			
-			for (const page of project.pages) {
-				page.code = page.code.replaceAll(
-					find,
-					replacer,
-				)
-			}
-			
-			for (const pageTemplate of project.pageTemplates) {
-				pageTemplate.code = pageTemplate.code.replaceAll(
-					find,
-					replacer,
-				)
-			}
-			
-			const newBagaCode = getCompressedProject(project)
-			
-			return `baga=${newBagaCode}`
-			
-		}
-		
 		const newFileContent = fileContent.replaceAll(
-			findCodeRegExp,
-			codeReplacer,
+			findExpression,
+			replacer,
 		)
 		
 		fs.writeFileSync(filePath, newFileContent)

@@ -7,66 +7,182 @@ This page is used to test that `size()` works as it should in `Rows` and `Column
 
 ::: tip Test 1
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVF1r2zAU/SuaXmaDCY1HYPPLcMcYfWg31sJW5kI06yoxUSRPH7Qh+L9Pih03cj6WvqwPQtdX5+je3HOUNSZ1jbM1LiUFnOGSE63R9SqvawRPBgTVyMXrQhSmVEAM3BqizDcygyjeZAujwFglUH/gs00hGtwkmElOQWmc/VrjiuJsnGBBlr7SBo4TLBnTYH7i7GIb37u4eUhw7e4KmO1lV+1H0HBfu2/af+x0/cVWw36/y0c9+k3KxUxJK+gnyaWKpgroNB7VhNJKzKJJPCrnFacKRNSSC3PnSuzzeLUERzTuMJp6yDROTjNWwLl8DDhIU9YtxHYW1V0KMer3Pcwzscv5gDrwqOP2eNYl3O5Q/2yS/LHk2M+6tMZI0Z19Xbw5cYT+4+rbiHsjJvgJZ+m7NMErt08+bN11B8uaO3cELguMlevFFcup5Ufc5ZcUl8Cken4QXd02OO2/PXfd1qSEUJR2irkCtJIWbd4AMnMi0Pj9x52Zh0ynn12KAwWGwIFYN3Jjf/e8heU8Ts6k3YM+jzcUZzvCnBlQhybo/0ZabdKBNp+Fo+QzeG1lfsyJeau9OAq56sc1CSY2vjg8sBA0OQOUnnNTeuSm3Q5foslD8xck7zQd]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`lime`).text(`Text`),
+			Text.backgroundColor(`yellow`).text(`Text sdf sdf sd fsd fsd fsd dsf sd fs fdsd f sdf sd fsd fsd f sdf sdf s fsd fs s fdfds. dsf sddf sd fsdf dsf sdf dfs `),
+			Text.backgroundColor(`aqua`).text(`Text`),
+			Button.text(`Ok!`),
+			Button.text(`Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok!`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 2
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFVN9r2zAQ/ldUvcwGExqPwOaX4ZYx+tBtrIWtzIWo1ikxUSRPP2iz4P99cuy4luN06VMfhM6n77s73X3yFpOyxMkW55ICTnDOidboepOWJYInA4Jq5OxtJjKTKyAGbgxR5jtZQBDuvJlRYKwSqDuovVUmKlxFmElOQWmc/N7iguJkGmFB1nWmHRxHWDKmwfzCyfnevnN2dR/h0sXymE2wq+bDK7jL3RVdf/Sq/mKLYb0/5KOePJB8tVDSCnopuVTBXAGdh5OSUFqIRTALJ/my4FSBCBpyZm5dikMeL9bgiMYdBvMaMg+jPePCGiNFe/ZtddY7Gg+2Ac7lowuni78QTPthkaasXYj1FtWtCzFa7weYZ2Lrqw3qwJOW2+FZ63C7Qx3ewy/K3Qe9xfpvE8kfS8YnEnYKjfATTuL3cYQ3bp993MvuFtYld7Lx5OcpLtWrK5ZSy4/Irl5SXACT6vmltHkb42VhHsjupiQ5+FdurpYqQBtp0e5xILMkAk0/fOq1x2e67ti1GEkwBA50+1Xu3oV798JyHkYn0u5An8YbDmffwpQZUGMdrP8vzWziwWw+C0dJF/DWk/m5JOadroejkMt+fCZex6bn4w3zQbMTQPEpkeIjkfoVvmYm99U/Hf47CQ==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`lime`).text(`Text`),
+			Button.text(`Ok!`),
+			Text.backgroundColor(`yellow`).size(1).text(`Text sdf sdf sd fsd fsd fsd dsf sd fs fdsd f sdf sd fsd fsd f sdf sdf s fsd fs s fdfds. dsf sddf sd fsdf dsf sdf dfs `),
+			Button.size(1).text(`Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! `),
+			Text.backgroundColor(`aqua`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 3
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11LwzAU/SvhvthCGFtloH2RKiI+KKKCihUWm9utmCU1H+gY/e+m6zbt1sl88iH0JrnnnnvPSefAyhLiOWSKI8SQCWYMuZolZUnw06Lkhvh4nsrUZhqZxTvLtL1hYwzCxWlqNVqnJVlf1KdVKiuoKORKcNQG4uc5FBziAQXJpjXTIh0oqDw3aB8h7q/iJx9XLxRKX6uFbIpdNptWw2vuddP15kfXF67Y7PdWfZjeK8vexlo5yc+UUDoYaeSjsFcyzgs5DoZhL5sUgmuUQQNO7b2n2MaJYooeaP1lMKpTRiFdIe5KliH9Hc/eHevGh2s9KXxCHB1GFGb+OzxeiXSP01L4IVtitfRJzNtlnnAndohULyVPMVf629clbxP8LuOWSB0jN6MlGslMObKwktgJk2RwdLJTLK+Om8oOgs3E1J4662dY0lyrhYv+lUonREj3hD2h2Q+3ac5KwiS3qLsUrP+Gxptow5tz6SHJGP/bmYcJswemNkcTz77bk5Zig363YO2k4R5J0T6Voh2Vfnb4F09eqi9cp9It]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`lime`).text(`Text`),
+			Space,
+			Text.backgroundColor(`aqua`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 4
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUk1Lw0AQ/SvLXExgKTZS0FwkiogHRVRQMULX7KQtbneX/UBLyX9309hoYiv15CHJzGZm3rz3dglMa0iXUCiOkEIhmLXkcpFpTfDdoeSWhHiZy9wVBpnDW8eMu2YTjOLVae4MOm8kaX/Up1UuK6golEpwNBbSpyXMOKRDCpLNa6RVOVBQZWnRPUC6v44fQ1w9U9BhVqezGXbRJJ2FW+x26Tr5tvW5n/X3vVFvdvDCiteJUV7yUyWUicYG+TgeaMb5TE6iUTwopjPBDcqoac4DjEbzs/FFeBzHtKmKWw0ovEOaHCQUFuE7OloTu8O5FmGxDsEOp8y+XpQZ92ILsfpR8gRLZb68+MRtgt+p/yB2q1mBdJ3dBcCBC69onBkkC+XJSn7ipkyS4eFxS7bfGQTxc7kBoF+YuxPvAodPmCu1Uj7cLOmFiOmObY9od+vrm7OWMCsdmk0K1je48SbpeXMmQ0s2wf925n7K3J6tzTEkoG/3pKPYcH+zYN2i0Q5FyS6Tki2Tvm/4F0+eqw9D37XM]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Paper.backgroundColor(`blue`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 5
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUk1P4zAQ/SvWXEgkK6JBldhcUEAIcQCtFqQFEaSaeNJGuLblD0G3yn9fp6FZEtpV97SHJDPOzLx573kNTGvI1lAqjpBBKZi15GaVa03w3aHkloR4XcjClQaZwzvHjPvO5hjFm9PCGXTeSNL/aE+bQjbQUKiU4GgsZE9rqDlkEwqSLVukTTlQUFVl0T1AdryNH0PcPFPQYdagsxt23SWDhXvsfuk2+bT1la/H+/5QbzZ5YeXr3Cgv+YUSykQzg3wWJ5pxXst5NI2TclELblBGXXMRYDSaxNa/MJrEXwe8CI+zmHbVca8FhXfI0pOUwip8p9+2BO9xqUVYcEB0wC23r9dVzr3YQ7B9lDzHSpk/nnzgdsHfJfhC8E6zEuk2uw+AiQuvaJYbJCvlycYG4hZMksnpWU923BkE8Uu5A2BcWLhz7wKHD5hbtXEg3DDphYjpgW2PaA/rG5uzlTCvHJpdCrY3ufMmHXlzKUNLPsf/7czPBXNHtjXHkIC+35OBYpPj3YINi6YHFKWHTEr3TPq84b948tz8BjJpuDc=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Paper.size(1).backgroundColor(`blue`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 6
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11LwzAU/SvhvthCGa4y0L5IFZE9KKKCihUWm9ttLEtiPtAx+t9N122uWyfzyYfQm+See+49J50DVQqSOeSSISSQc2oMuZmlShH8siiYIT6eZyKzuUZq8cFSbe/oEINwcZpZjdZpQdYX1WmZiRLKCArJGWoDyescxgySbgSCTiumRTpEIIvCoH2G5HgVv/i4fItA+VoNZF2sX28aDa+5101Xm42ur914u997+Wk67zSfDLV0gl1KLnUw0MgGYUdRxsZiGPTCTj4ac6ZRBDU4s4+eYhc3Q87lp4dafx0MqqRBGK0wd1Sh3gW9c4cbWe2V6Yej7XXDtdIRfEESn8QRzPy3d7aS7xGnivvxGzI2lEvNpF+kzPE98lVLigsspP5xfMlbB78LvCPfg6I5NkeuR0s1kpl0ZGEysSMqSPf0fEOeJtKr46aihWA7MbMXzvoZljS3cuGvf7/CcR5GB8Je0ByG2zZnJWFaWNRtClb/Se1NvOXNlfCQdIj/7czTiNojU5mjiWff70lDse5xu2DNpN4BSfEhleI9lTY7/Isnb+U3DTHcNA==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`yellow`).text(`Text`),
+			Paper.backgroundColor(`blue`),
+			Text.backgroundColor(`aqua`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 7
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk11r2zAUhv+KODe1wYTGJbD6prhjjF5slLawlroQzTpOTBRJ0wdNCP7vlePEjRN7ZFe7MD6Szqv36DzSBqhSkGwglwwhgZxTY8iPdaoUwZVFwQzx8SYTmc01UouPlmp7T2cYhNvZzGq0TgvSLtSzVSYqqCIoJGeoDSSvGygZJOMIBF3WTtt0iEAWhUH7DMnlPn7xcfUWgfJ7dZTNZnfNoFNw690WXQ8Oqv7uyuN6H+S7Gf2m+WKmpRPsq+RSB1ONbBqOFGWsFLNgEo7yecmZRhE04sw+eYtT3Ro5l+9eav1yMK2TpmG019zK1amEl0s88LraebVGQ1aqFIsho8+oX0v/ONqvDVtsEawgia/iCNb+P7nes3jCpeK+lx0mHQypWdwVKXN8gEX9SXGLhdSf12fn2wR/p3XC4lHRHLtHbo6WaiRr6cj2xhA7p4KMv9wcNKqr9N1xS9FjcJzoUTrrz7Cz+Sm3AP1jEI7zMDpT9oLmPN0xnH0L08Ki7utg/egaNvERm2/CS9IZ/m8yv+bUXpgajibefZhJp2Pjy/6GdZMmZyTF5+wUD+x0WOG/MHmrPgDM9Pg+]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`yellow`).text(`Text`),
+			Box.backgroundColor(`lime`).padding(3).child(
+				Text.backgroundColor(`pink`).text(`Text`),
+			),
+			Text.backgroundColor(`aqua`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 8
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFU11r2zAU/SvivswGEWqPwOaX4Y4x+rAx2sJW5kI06zoxVSRNHzQh+L9PjhM3TpyRPvXB+Eq6556rc642wLSGbAOl4ggZlIJZS76tc60JrhxKbkmIN4UsXGmQObxzzLgfbI5RvN0tnEHnjST9QbvbFLKBhkKlBEdjIfu9gZpDllCQbNkybdOBgqoqi+4XZFf7+CHEzSMFHWoNkF2xm24xaLjn7ptuFwddf/X1cb+36tlO/rDyaW6Ul/yzEspEM4N8Fk8047yW82gaT8pFLbhBGXXgwt0HilPcGoVQzwHqwnE0a5NmMd1jrtXqFCLqJQYAsxpLd8tcraKEkmRH2fPtGEfrvkTjXbG/no33FPcuUVhBlr5PKazDf/pxL/09LrUI0g0sGKie26ebKudenJG+/ZS8xkqZl2nZ8XbB/805kf5OsxKHV+6ulhska+XJdkCIWzBJkg+fDoQaIoM6filHCI4Tg3PehTvsaL6r7WyE2ZdeiJheCHtAexnu2Jy9hHnl0Iwp2L6xzpv0yJsvMkDyOb61Mz8XzL2zrTmGBPbzngwUS67GBRsmTS9ISi+plJ6pdNjhazx5bP4B6hXxUQ==]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`red`).padding(5).children(
+			Text.backgroundColor(`yellow`).text(`Text`),
+			Box.backgroundColor(`lime`).aspectRatio(1, 1).child(
+				Text.text(`Text`),
+			),
+			Text.backgroundColor(`aqua`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 9
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFUsGK2zAQ/RV1LrVBhNhLoOtLcUopObQsSaC71AvW2uPERJGMNKYJwf9eOd646zSB7KkHo5Fm3sy893wAUVUQHSDTOUIEmRTWsu/7uKoY7ghVbpmLD4lKKDMoCBckDD2IFXr+8TUhg1QbxfpE+9okqoGGQ6FljsZC9OsAZQ5RwEGJbTvpWA4cdFFYpEeIxqf4ycXNM4fK9Rogu2az7jJYuJ/dL91e3mz9rS7P953q3ehFZJuV0bXKv2ipjZcazFN/JGyFGc0FldoLOAv8UbYuZe51+ISWbsq/WFlu0YHJJb10uUZ2BLHSsjbzIfU7uN/rw2EHUXgXcti7c3J/Ir3EbSXd0gPyA76x3cyKOK/lFdLtp9UUC23++vQ6twuuyjLXv21H16DqGS8qkSEf8O94xgbZXtfsaA2jtVAs+PQ59fllpJOq3qoLA84LE5rW5Di8jvmhnbKtNp6qpfT5jbAntLfhThl/IJJWcUFoLinY/t2dN+GZN1+Vg8Qr/N/O/FwL+mhbcwxz0697MlAsGF8WbFg0uaEovKVTeKXT2w3f48lz8wdSq77T]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Box.backgroundColor(`red`).aspectRatio(1, 1).child(
+			Text.backgroundColor(`lime`).text(`The child is lime!`)
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 10
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk11vmzAUhv+K55uBZKHCVmnjZqLTNPVi09RW2qpRCRcfCKpjW7ZRk0X899khkJCSKrvaBcIf5z3vOeeBDaZK4XSDS8kAp7jk1Bj0bZ0phWBlQTCD3HqTi9yWGqiFW0u1/UFrCMLtaW412FYLNF740y4XHe4IriRnoA1Of29ww3AaEyzo0jttwzHBsqoM2F84vRjW927dPRCsXK6Jsk923W8mBY/eY9F+c1D117Y5rvdGPptIUcYaUQfvw6hcNJxpEEEflds7lyt6pOVTrWUr2GfJpQ4KDawII+vugsJHFCEZBFdyFZnmDwRx+FJXu+KdkBoFpb2htpFBTFC88x1NT9nyZgl73wWgrQw1BvmbN0U4JNiXM59oDZzL5/kWwhEdwSucJu8Sgtfufflx4HEHS8XdPCdcJigy83RdZazlJ3j4R4orqKTef0I7337xOrEXmG4VLWHadN9apgGtZYu2Xw2yCypQ/OHTAa+p0s2nXYoZg+NAB7q1roedzXfphulnE4iW85CcKbsHc57uGM4wwqyyoOcm6H+8nk1yxOaLcJKshv9N5ueC2rfGw9HIuZ9mMplYfDE/sGnQ5RlByTmZkhOZDiv8FyYP3V8QgvgR]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.padding(4).children(
+			Text.backgroundColor(`red`).text(`Text`),
+			Box.size(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
+				Text.backgroundColor(`lime`).text(`The child is lime!`)
+			),
+			Text.backgroundColor(`yellow`).text(`Text`),
+		)
+	}
+}
+```
 
 :::
 
 ::: tip Test 11
 
-::bagawork-project[app&link&code=StartPage&baga=eNrFk1Fr2zAQx7+KppfZIEztrbD5ZbhjjD5sjLawlrlgzTo7pookJJkmC/7uk+LYiZMYsqc9GEvW/e9/dz95g6lSON3gUjLAKS45NQZ9W2dKIVhZEMwgt97kIrelBmrh3lJtf9AagnD7NbcabKsFGg/81y4XHe4IriRnoA1Of21ww3AaEyzo0jttwzHBsqoM2EecXg3rJ7funglWLtdE2Se77TeTgkfvsWi/Oaj6a9sc1/tZ8nYpTKQoY42og/dhVC4azjSIoA/M7YNLF/2m5UutZSuYk0gdFBpYEUbWnQWFjyhCMghu5CoyzR8I4vBUV7v6nZAaBaW9o7aRQUxQvPMdTedsebOEve8C0FaGGoP8yZsiHBLsyzmfaA2cy9fzLYQjPYJXOE3eJQSv3fv644DkAZaKu5FO0ExoZObltspYy2eQ+EeKG6ik3t+inW+/mIV2J1/NKaZ7RUuYNt23lmlAa9mi7cVBdkEFij98OuA1VQ5X4sTgONCBbq3rYWfzXbph+tkEouU8JBfKnsBcpjuGM4wwqyzocxP0/17PJjli80U4SVbD/ybzc0HtW+PhaOTc55lMJhZfnR/YNOj6gqDkkkzJTKbDCv+FyXP3F3s++Uc=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.padding(4).children(
+			Text.backgroundColor(`red`).text(`Text`),
+			Box.size(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
+				Text.backgroundColor(`lime`).text(`The child is lime!`)
+			),
+			Text.backgroundColor(`yellow`).text(`Text`),
+		)
+	}
+}
+```
 
 :::

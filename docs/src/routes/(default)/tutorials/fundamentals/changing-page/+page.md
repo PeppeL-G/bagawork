@@ -17,7 +17,16 @@ To tell the `Button` which text it should display, use the configuration method 
 
 Example of how to show a `Button` on a page (note: nothing special should happen when you click on the button in this example).
 
-::bagawork-project[link&app&code=StartPage&baga=eNpdUE1LxDAQ/StxTi2UUvWWm15kD4JoD4pdaGin20KbhGSKu4T8dxOz22WFJLz5evNeHAitgTvoVI/AoZuFtez19KQ1wyOh7C0L2DWyoXg7g4Lwg4ShN3HALE8VMkirkWwrxKxPQx58AYOaezQW+LeDqQd+X4AUS9z4NwIFqGGwSJ/Aqwv+CtjvC9CB72Yyke1ScCN827+Jj4G7Kn9Zp/+a39WPLbtxmnuDMkulhupAUFJ4srYeJ8vCoRGvC8o2Ly69zyuRkufuHRMLEyzl7to8NeXnD/HB6RH4QxVcnoA/VpvDGhc9B4XR6d7/AsASjnE=]
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Text.text(`This is the StartPage.`),
+			Button.text(`I am a Button!`)
+		)
+	}
+}
+```
 
 :::
 
@@ -47,11 +56,73 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 The code in [this BagaWork project](/editor#eNq1lG1r2zAQgP/KTV+WgAlxXrbEX4ZbttFBy2gLXVkK0exz7EWWjCSvCcH/fZIdZ3aok8FWsM2d7lWPddoRmmXE25FAhEg8EjCqFFxv/SwD3GjkoQIj7xZ8oe0bSKQa7zSV+itdYa9fWbREnUsOB4NdLaqgghQOiQQLUSrifd+RJCSe6xBOU1uxDCEOEVGkUH8j3rCWH41cPDkkM/lakVWyq0ppNX6of2jeKrs/nX/Ok+Oeb8WzGgRxwkKJvFeZFvreJBho8+ktr5Hny75TWy5yrQXf226RhvBFrHHZH9g+e3bB6rbuqZhPNNDNGKs3Y/p7goVBszEbnYwdsiXe2J0XTgVidApEs41/ZnGX0QCdF8hcRbAVOTxTrkELWKE2skwd+JkrDSthF3WMEAjJUYKISi0WuUIHfmBAjQCJfqtgPoQQVxJRWReJbxrAm+WPsEwn70os7vtpjWV8DktN+vWwPMTIwWe4odz0ARfIGCT8F3KNYUlAI8MsFtywMI85DWNIE6WMNaCMKYikSOEyzoM13AgpEzX4WxyzEsdkNq8H5x7TjJldtQaoxcRX66vID3PWQeV/kvElliem/EEGBeXgzj50bG6hLwXLU/5CgWPHowm7EY2UZ3wfUZ1wPh7H+kI7jGAL5Ufzh6W/wtcH+RBTOzaGpQSTvxtha6/usOsec6ddllFnzGh65lTuYT0VvwFgEUj7) contains 3 pages. It works like this:
 
-::bagawork-project[app&baga=eNq1lG1r2zAQgP/KTV+WgAlxXrbEX4ZbttFBy2gLXVkK0exz7EWWjCSvCcH/fZIdZ3aok8FWsM2d7lWPddoRmmXE25FAhEg8EjCqFFxv/SwD3GjkoQIj7xZ8oe0bSKQa7zSV+itdYa9fWbREnUsOB4NdLaqgghQOiQQLUSrifd+RJCSe6xBOU1uxDCEOEVGkUH8j3rCWH41cPDkkM/lakVWyq0ppNX6of2jeKrs/nX/Ok+Oeb8WzGgRxwkKJvFeZFvreJBho8+ktr5Hny75TWy5yrQXf226RhvBFrHHZH9g+e3bB6rbuqZhPNNDNGKs3Y/p7goVBszEbnYwdsiXe2J0XTgVidApEs41/ZnGX0QCdF8hcRbAVOTxTrkELWKE2skwd+JkrDSthF3WMEAjJUYKISi0WuUIHfmBAjQCJfqtgPoQQVxJRWReJbxrAm+WPsEwn70os7vtpjWV8DktN+vWwPMTIwWe4odz0ARfIGCT8F3KNYUlAI8MsFtywMI85DWNIE6WMNaCMKYikSOEyzoM13AgpEzX4WxyzEsdkNq8H5x7TjJldtQaoxcRX66vID3PWQeV/kvElliem/EEGBeXgzj50bG6hLwXLU/5CgWPHowm7EY2UZ3wfUZ1wPh7H+kI7jGAL5Ufzh6W/wtcH+RBTOzaGpQSTvxtha6/usOsec6ddllFnzGh65lTuYT0VvwFgEUj7]
+```js baga-show
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Text.text(`Menu`),
+			Button.text(`Read Joke`).page(ReadJokePage),
+			Button.text(`Read Fact`).page(ReadFactPage),
+		)
+	}
+}
+
+class ReadJokePage extends Page{
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`If you want to get warm, just go to the corner of the house, because it's 90 degrees there!`),
+			Space,
+		)
+	}
+}
+
+class ReadFactPage extends Page{
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris.`),
+			Space,
+		)
+	}
+}
+```
 
 That is, the first page contains buttons that leads to the other two pages, but the other two pages contains no buttons, so they are dead ends. That's no good! Your task is to add "Back" buttons to these two pages, so they work as shown below.
 
-::bagawork-project[app&baga=eNq1lG1r2zAQgP/KTV+WgAlxXtbEX4pTttFBy2gLXVkK0exz7EWWjCSvCcH/fZJdZ3GI08EWsM2dTvfiR3faEpplxNuSQIRIPBIwqhTcbPwsA1xr5KECI2/nfK7tG0ikGu81lforXWKnW1m0RJ1LDjuDXS0qp4IUDokEC1Eq4n3fkiQknusQTlObsXQhDhFRpFB/I16/lp+MXDw7JDPxGp5VsOtKaRS+y78r3irbP5V/zpPDmu/Ei+oFccJCibxTmeb6wQToafPpLG6Q54uuU1tmudaCv9rukIbwRaxw0e3ZOjt2weo27ymfTzTQ+z5W3/fpvhIsDJq1+dHR0CEb4g3daeFUIAanQOyX8c8s7jMaoHOEzHUEG5HDC+UatIAlaiPL1IGfudKwFHZRxwiBkBwliKjUYpErdOAHBtQIkOj3CqZ9CHEpEZXdIvHdHvBm+gbKGQ1WNcXd2XePEhyPPpQE3YtxTXD4FsH6UM5H8DFGDj7DNeWmDpghY5DwX8g1hiUsjQyzWHCDzTymcYaQJkoZa0AZUxBJkcJVnAcruBVSJqp3BnKTktxoMq3H8QHTjBkAjbFs4PPV6jryw5y1APyfEH2JZR+WZ2moUQ7u5LKVw5VgecqPJDjceIDsVuyFfGPvE6oTmw+HvL4md4PdQPnRNIP0l3h+kI8xtcNoWEow8S//rpXcftvt6I7bLINWn8G4JesBrOfiN+xeaJ8=]
+```js baga-show
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Text.text(`Menu`),
+			Button.text(`Read Joke`).page(ReadJokePage),
+			Button.text(`Read Fact`).page(ReadFactPage),
+		)
+	}
+}
+
+class ReadJokePage extends Page{
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`If you want to get warm, just go to the corner of the house, because it's 90 degrees there!`),
+			Space,
+			Button.text(`Back`).page(StartPage)
+		)
+	}
+}
+
+class ReadFactPage extends Page{
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris.`),
+			Space,
+			Button.text(`Back`).page(StartPage)
+		)
+	}
+}
+```
 
 :::
 

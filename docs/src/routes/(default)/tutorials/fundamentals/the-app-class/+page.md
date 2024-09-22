@@ -50,7 +50,41 @@ When the user starts your BagaWork app, the method named `createStartPage()` wil
 
 Example showing a BagaWork app consisting of two pages, and how the app class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
 
-::bagawork-project[link&app&code=MyApp-FirstPage-SecondPage&baga=eNq9klFLwzAQx79KvKcWwqjKFPOmDw4fBHF7UJywmF5dsUtCcsON0u9u0q4bHTJ8EtrmLsf/7p9fU4O0FkQNyuQIAlQlvWeP21trGW4Ide5ZiOu5nlN8lUNJOCXp6El+YpJ2FXJIa6fZfel8W4i7TSdqoOFQmCpH50G81VDmIM45aLmKE9tewMEUhUd6AZH18WuIm3cONvQbKLtmD10yML6fvzcfkyP3k3V57PvZfPuRWpZV7lAnXWlOUysV8j6bhZYjCp9kMVuWnoWHlsiKOJJFj2eLlP8uvVsTGb0TTwwj00o9KqPzVrtIR3FJpu1WNN33SgcoOWxAXGSB0RbEZZY1vKMyPkXl0PT/sAzO9kcsH1J99WwOWHs0+397gsz45npH5qq/OTNc2SocL96g9+YHEXYJng==]
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	createStartPage(){
+		return FirstPage
+	}
+	
+}
+
+class FirstPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`This is the first page!`),
+			Space,
+			Button.text(`Go to the second page`).page(SecondPage),
+		)
+	}
+	
+}
+
+class SecondPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`This is the second page`),
+			Space,
+			Button.text(`Go back to the first page`).page(FirstPage),
+		)
+	}
+	
+}
+```
 
 :::
 

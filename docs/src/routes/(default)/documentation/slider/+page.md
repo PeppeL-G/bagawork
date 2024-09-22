@@ -10,7 +10,19 @@ The `Slider` component is a view in which the user can select a number in an int
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkMFqwzAMhl/F6JSCCWnLDvUtp9HDYNAeWpZCTayMMMcxtkJTgt+9Tku7ZLddrF+S9etDA0hrQQxQtgpBQKml9+zjmlvLsCc0yrOoh8IUVDqUhDuSjj7lNyaLe7Ugh9Q5wwxe2KQ59kJhAgQOVasVOg/ia4BagVhyMLIZ990HgENbVR7pACJ76mPU4cTBRrfZ5MNs+0hm2K/tL/QxmbC/d/Vf6p2uo1va1CbJFmkj+2SZZb/wHHoQq/WKwzXGt82TaI+N1dFxRjaDyf3PtspVp+kfNPv4NaX4JOfz5IKncAPqYpIr]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Slider.min(0).max(100)
+	}
+}
+```
 
 :::
 
@@ -22,7 +34,19 @@ By default, the initial number will be the one between the minimum and maximum n
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkMFqwzAMhl/F6OSCKWvXHuZbTqWHwaA9bDSFmlgpoY5jbIWlBL/7nJZ2yW67SL8s6deHe1DOgeyhaDSChMKoENj7NXOOYUdodWBJ97nNqfCoCHekPH2oM/LZ7TUnj9R6yyx+s1Fz6MXcRogCysZo9AHkoYdKg1wIsKoe7t0WQEBTlgHpE+TLQ38lHY8CXHKbbN7Ntvdigv28/kQfihH7pq3+Uu9Mldz4ajavK8sXKamOr3/pBXQgl69LAdeU128PpD3WziTLCdqEJguXbZnp1tA/cPZpdE4p8NNp9IXH+ANdrpJV]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Slider(4).min(1).max(5)
+	}
+}
+```
 
 :::
 
@@ -34,7 +58,19 @@ By default, the user can only select integer numbers between the minimum and max
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkE1rwzAMhv9K0CkBY/pBDvMtp9HDYNAeNpZCTayUMMcxtkJTgv/7nJZ2yW672K8s69UjjSCtBTFC1SkEAZWW3idv18LaBAdCo3wS9ViakiqHknBP0tG7PGOa3V5Lcki9M4nBSzJLTrlQmgCBQd1phc6D+BqhUSDWDIxsp363AmDQ1bVH+gCxeujPqMORgY1ui8q72e4eLLCf3Z/oUzBjf+2bv9R73UQ33jYmXWfcE9p0xfOMt3JI898hGAwgNtsNg2u885cH2QFbq6PzgnABVfjvXV2oXtM/qA7xK6d4pKfTbJPH8ANaMpSe]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Slider.min(1).step(0.5).max(5)
+	}
+}
+```
 
 :::
 
@@ -89,7 +125,19 @@ If you want to store the number the user has selected in `Slider` in the current
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVj8FqwzAMhl/F6OSCCWnGDvMtp9HDYNAyNpZCTKwMM8fxbIelBL/7nJZ2yW67WL8k69enCYS1wCdoeonAodHCe/J0Kq0lOAY00pOkp8pUoXEoAu6DcOFZfCDdnKtVcBgGZ4jBb7Jozr1YmQiRQdtric4Df59ASeBbBkZ0877zADDo29ZjeAWeX/Vb0vHIwCa31eTFbHdJVti37Tf0OVmwPw7qL/Veq+SWdcrQbb7JOjHSIk/CvghHa/VV/x7CYARe3BUMTineP1zpDthZndxXlCuw0n/u2lIOOvyD7JC+ZiE9tF5AxGP8AbR8lg8=]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Slider.min(10).max(200).pVar(`iq`)
+	}
+}
+```
 
 :::
 
@@ -99,7 +147,19 @@ If you instead want to store it in the `App`, use the configuration method `aVar
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVj8FqwzAMhl8l6OSACWnGDvMtp9HDYNBSNpZCTKwMM8dxbYelBL/7nJZ2yW67WL8k69enCbgxwCZoeoHAoFHcueTlXBqT4OhRC5dEPVW68o1F7nHnufWv/BNJeqlW3qIfrE40fieL5twLlQ4QKLS9EmgdsI8JpAC2oaB5N++7DACFvm0d+jdg+U2/Rx2OFEx0W01ezbbXZIV9335Hn5MF+/Mg/1LvlIxuWSc12aRZx0dS5Hma8QO3pJan+vcOCiOw4qGgcI7x8ekGt8fOqGi+glxxle5r25ZiUP4fYPv4NfPxIfUCIhzDDy7JldA=]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Slider.min(1).max(200).aVar(`iq`)
+	}
+}
+```
 
 :::
 
@@ -109,6 +169,21 @@ If you want to do something more complicated than just storing the number the us
 
 ::: tip Example
 
-::bagawork-project[app&link&code=StartPage&baga=eNqVkcFqwzAMhl/F0ykBE9qOHRbYILuUHjbG2sPGUqgXK2uYYwdboSkh7z63Wdqmt50s6bekT1ILoqogbiEzEiGGTAnn2PM+qSqGDaGWjnm7TXVKmUVBuCRh6VV8YxAeoylZpNpqpnHHLsSD1qW6g45DbpRE6yD+bKGQEE85aFEe+h0TgIPJc4f0DvFksD+83a05VL7aKLMvtuidEfap+wn94Fywz+vimvrN7FyUbQslLeqgl1JaqsL3iMpCB9MwKkUTTGeTMNoKLRXawKHCjFC+1OUXWvbwyIQP01U8DPlQ76kmMjoizxVs5uZmM0jnNXFoIJ7dzjjs/Xt3P8y+wrJSnn20g9HYiftZ5ImsFf1j7pX/+sezubjVuvsFFq25Ew==]
+```js baga-show-editor-code
+class MyApp extends App{
+	createStartPage(){
+		return new StartPage()
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Rows.children(
+			Slider.min(1).max(120).handler(selectedNumber => alert(selectedNumber)),
+			Button.text(`Go!`),
+		)
+	}
+}
+```
 
 :::

@@ -47,7 +47,31 @@ So, the proper solution to this problem is to use the `onBefore()` method in you
 
 Example of an app that uses `App.onBefore()` to correctly initialize a constant.
 
-::bagawork-project[app&link&code=MyApp-StartPage&baga=eNpdkMFqwzAMhl9FiMFaFtJsZZfADttl7FAYtGMNa6FuorSGxA62urYEv/vshaTrDjafZEn+9bcomgbTFnNdEKaYV8JamJ2fmwboxKQKC57blVpxOEt4gscAmYdpgPnHzGMCkwl87mW+B6kkS1GBOtRbMnAk2MlvAtYQSgtNVt0y1IKZTARWqpxAMhxlVcG2K1Y+YSHXxlDO/SCpQKsXKrWh0TjuBV1SnUYWcadIxEu483cW0q4vzw0JpjkLw+9id+kyxAejYHj40+TQRVjqqiBjMf1qURaY3keoRB0c+23BCHVZWuIlpknPmWe3jrDx8646u2FvXXBl/PD/YH4I2mv1rwf5X/fCl8fsr9HmpvWbO796gMx5JwJ4T9xmfLVVhCdMHxIv94zpNBmkLqhuKv9NkLx2P0yeueU=]
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	X = 5
+	Y = 3
+	SUM = 0 // Which initial number we give to SUM doesn't matter, since it will be given its correct number in onBefore().
+	
+	onBefore(){
+		a.SUM = a.X + a.Y
+	}
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Text.text(`${a.X} + ${a.Y} = ${a.SUM}`)
+	}
+	
+}
+```
 
 :::
 
@@ -62,7 +86,32 @@ The special method `onBefore()` in your `Page` classes works very similar to `Ap
 
 Example of an app that uses `Page.onBefore()` to update how many times the user has visited that page.
 
-::bagawork-project[app&link&code=StartPage-Page2&baga=eNrFU+9rnEAQ/VeWodCTLqK2gSCEYkoJ+dAfNCHt0QvcRsecRHdld01ziP97djXa03rhSj7kg7LrzLx5895YAytLCGuIRYIQQpwzpciXbVSWBB808kQRc65XfKXtE0tkGi80k/o7u8WF00W0RF1JToaA/dp0RQ00FFKRJygVhL9ryBIIfQqcFbZjWwIURJoq1L8g9Prz0pybawqlwRtVdmDn3WVEfOg/kLeXgT2vihuU39KrTGVakRPi9RHBTzEV8u9ApTtJfndC/J2peinOqmwqwg/xR7nxJssTiXzRhVb60jBytXkt1ktRkQ27R3JvoTEhepMpYsckb+pp44borEDlrh3aQ51W2hB+AjsTRIt2zGDtuBZk0V76dGdkBYUHCAPPaLyF8L3nNbRTNXhO1RZvXtG9Ikw53rD4zhIdHOrJDh9miB598J+IBv0iXGJR5qblaCFGbCN1d55GSZU/swj/2P0SZy9KFiOd8TmSSLbG61ZYYzLjxD/+uGPkuPKTyKuCzzSYJk424KvoteRVnjv0wLIlqsPq5jbJShilGuWcgvaPH9Zq5M1nbkqiW3xtZ35umH6rrDmSmO77PRkp5nvzgo2Tjg5ICg5BCvYg7TL8H0+um0e+KiPj]
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	numberOfVisits = 0
+	
+	onBefore(){
+		p.numberOfVisits += 1
+	}
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`You have visited this page ${p.numberOfVisits} times.`),
+			Button.text(`Go to Page2`).page(Page2),
+		)
+	}
+	
+}
+
+class Page2 extends Page{
+	
+	createGui(){
+		return Button.text(`Go back to StartPage`).page(StartPage)
+	}
+	
+}
+```
 
 :::
 
@@ -78,7 +127,27 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 [This BagaWork project](/editor#eNq9kttKw0AQhl9lnRtbWEobLZTclCiiRTxgC1psoUsyaYPJbtidYEvIu5s0NjahVW/0YsNM5p/Tt5uCiGOwU3CVh2CDGwpj2N3GiWOGa0LpGZbb6UzOqDiuRkE4JqHpUSyx1S4jpJESLVkVKP5mZVIGGQdfhR5qA/ZrCoEHdo+DFFHRcZsCHJTvG6QXsLs7e5rb2ZxDnNerZZbFRqVTG7zqXw1fOI3pr5OgOfeTejcddxWEnkbZKkMzGsfCRb7zJnnJDuWf1uIGw1BxJgMXGSkWIRLbqORk0T6oDr6kBrFQMrEUgdzX13tdJERKfuY/3Fa6do0rhzXY590zDhuwrYG1gzXBKA7zRWvQapwc8zbyHS8J/wGWo8uVt5fGaCUk6w2GR1e/VGESyQMNmsIGpXu1V/IH7RTNN+LDsDNeorQaKK8koXaW+Pcgn1eCTk3BUufvB4e/ez297p6uHukfi1hHc6z+ka4NWPPsA0PKkeM=) contains a page that should display the message `Hello, nice to meet you!` the first time the user comes to the page, and all times after that, it should display the message `Hi, nice to see you again!`. Currently, it always displays both of the messages. Change the code so it works as it should, as shown below.
 
-::bagawork-project[app&baga=eNq1Uu9LwzAQ/VfifXHDMNaqMIpDqogO8Qc60OGEhfa6FbskJCk6Rv93U2vXtaz6RT+05HJ37969lzUwKcFbQyBCBA+ChGlNbla+lAQ/DPJQE3teT/nU5F+gkBl8NEyZezbHTrfIGIUmVZxsEvltVjRlkFGIRBKi0uC9rCEOwXMocLbMJ361AAURRRrNM3j98jyx5+yVgrR4tc4CbFQENeKb+RvyeVCxFyk3qMiQ9Msrwc8wEqraRPbKqoMhcbb2KJe/TOPm2g/iXfeCRZyECnmnSE3No2QB0jIaW0Y9Y3+d2RUmiaCExwESI8gS0ZCVSPdm3d4bohxFnYrE0JLo7gSJKwSNmAMQNmcx34JxyAnZQFUodWJnqbEqfKPeXc/Kum7NQwof4B31DymswHMHbmnMGJcysarUDKp54uu3UeSHafKTMX+krK8KIb4eCDELxokzOJ21rX4uknTJdwxoFjZUuhVbkL/UTlD/ULxb7IwWUroNKS9yH/05/r+QTwtm9nWupbKvCtslrO3q9Lfq6pnjtozb2uMet0xtiPWafQK3Frdm]
+```js baga-show
+class StartPage extends Page{
+	
+	counter = 0
+	
+	onBefore(){
+		p.counter += 1
+	}
+	
+	createGui(){
+		return Rows.children(
+			Space,
+			Text.text(`Hello, nice to meet you!`).keepIf(p.counter == 1),
+			Text.text(`Hi, nice to see you again!`).keepIf(1 < p.counter),
+			Space,
+			Button.text(`OK`),
+		)
+	}
+	
+}
+```
 
 This app can also be implemented as two different pages, but to practice on what has been taught in this tutorial, you may only use one page.
 
