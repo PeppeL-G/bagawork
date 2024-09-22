@@ -11,7 +11,7 @@ import { getClassName } from '@bagawork/editor/src/functions/get-class-name.js'
 //     StartPage, MyApp and AboutPage should be shown (in that order)
 //  - "link" means show link to editor
 //  - "baga" should contain the code for the app in BAGA format
-export function createBagaworkProjectPlugin() {
+export function createBagaworkProjectLeafPlugin() {
 	return (tree) => {
 		visit(tree, (node) => {
 			if (node.type == 'leafDirective' && node.name == 'bagawork-project') {

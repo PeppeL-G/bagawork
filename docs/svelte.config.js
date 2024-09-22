@@ -3,7 +3,8 @@ import { mdsvex } from 'mdsvex'
 import remarkParsePlugin from 'remark-parse'
 import remarkDirectivePlugin from 'remark-directive'
 import customContainerPlugin from "remark-custom-container/dist/esm/index.js"
-import { createBagaworkProjectPlugin } from './markdown-plugins/create-bagawork-project-plugin.js'
+import { createBagaworkProjectLeafPlugin } from './markdown-plugins/create-bagawork-project-leaf-plugin.js'
+import { createBagaCodeFencePlugin } from './markdown-plugins/create-baga-code-fence-plugin.js'
 import { createOnlineEditorPlugin } from './markdown-plugins/create-online-editor-plugin.js'
 import rehypeExternalLinks from 'rehype-external-links'
 import { createDocsPlugin } from './markdown-plugins/create-docs-plugin.js'
@@ -27,7 +28,8 @@ const config = {
 				customContainerPlugin,
 				remarkParsePlugin,
 				remarkDirectivePlugin,
-				createBagaworkProjectPlugin,
+				createBagaworkProjectLeafPlugin,
+				createBagaCodeFencePlugin,
 				createOnlineEditorPlugin,
 				createDocsPlugin,
 				createHintPlugin,
