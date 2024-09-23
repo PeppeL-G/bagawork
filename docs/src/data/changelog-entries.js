@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added the method Component.font()`,
 		`Added the docs page Font`,
 		`Made EnterText.handler() and EnterText.store() run on every input change`,
+		`Made EnterNumber.handler() and EnterNumber.store() run on every input change`,
 	],
 }, {
 	version: `0.0.37`,

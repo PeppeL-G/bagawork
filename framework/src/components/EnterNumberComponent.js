@@ -303,6 +303,20 @@ export class EnterNumberComponent extends Component{
 			
 			this.enteredNumber = parseFloat(inputElement.value)
 			
+			const number = (
+				this.enteredNumber == `` || isNaN(this.enteredNumber) ?
+					this._defaultNumber :
+					this.enteredNumber
+			)
+			
+			if(this._store){
+				this._store[this._storeName] = number
+			}
+			
+			if(this._handler){
+				this._handler(number, ...this._handlerArgs)
+			}
+			
 		})
 		
 		enterNumberElement.appendChild(inputElement)
