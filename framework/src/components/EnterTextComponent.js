@@ -163,7 +163,17 @@ export class EnterTextComponent extends Component{
 		})
 		
 		inputElement.addEventListener('input', (event) => {
+			
 			this.enteredText = inputElement.value
+			
+			if(this._store){
+				this._store[this._storeName] = this.enteredText
+			}
+			
+			if(this._handler){
+				this._handler(this.enteredText, ...this._handlerArgs)
+			}
+			
 		})
 		
 		enterTextElement.appendChild(inputElement)
