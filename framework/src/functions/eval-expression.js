@@ -22,6 +22,7 @@ import {
 	runUpdater,
 } from '../index.js'
 import { m } from '../variables/m.js'
+import { speaker } from '../variables/speaker.js'
 import { createPageCreator } from './create-page-creator.js'
 
 export function evalExpression(jsExpressionAsString) {
@@ -46,6 +47,7 @@ export function evalExpression(jsExpressionAsString) {
 		PaperRectangle,
 		Rows,
 		Space,
+		speaker,
 		Text,
 		Time,
 		Updater,

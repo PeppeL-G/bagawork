@@ -224,6 +224,9 @@
 			}, {
 				text: 'p',
 				href: '/documentation/p/',
+			}, {
+				text: 'speaker',
+				href: '/documentation/speaker/',
 			}],
 		}, {
 			name: 'Functions',

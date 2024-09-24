@@ -29,6 +29,7 @@
 	import imageTsString from '../editor-type-definitions/bagawork/components/Image.ts?raw'
 	
 	import mTsString from '../editor-type-definitions/bagawork/m.ts?raw'
+	import speakerTsString from '../editor-type-definitions/bagawork/speaker.ts?raw'
 	
 	let monacoEditor
 	
@@ -65,6 +66,7 @@
 			{content: imageTsString},
 			
 			{content: mTsString},
+			{content: speakerTsString},
 			
 		])
 		
