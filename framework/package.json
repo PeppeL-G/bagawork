@@ -1,6 +1,6 @@
 {
   "name": "@bagawork/framework",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Contains the core functionally for creating BagaWork apps.",
   "main": "src/index.js",
   "files": [
