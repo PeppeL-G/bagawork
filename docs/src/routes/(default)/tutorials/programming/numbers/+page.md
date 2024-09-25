@@ -173,7 +173,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`The counter variable is currently ${p.counter}.`),
-			Button.text(`Increment counter`).handler(p.incrementCounter)
+			Button.text(`Increment counter`).onClick(p.incrementCounter)
 		)
 	}
 	
@@ -239,7 +239,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`The counter variable is currently ${p.counter}.`),
-			Button.text(`Increment counter`).handler(p.incrementCounter)
+			Button.text(`Increment counter`).onClick(p.incrementCounter)
 		)
 	}
 	
@@ -297,11 +297,11 @@ class StartPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`-`).handler(p.decrementCounter),
+				Button.text(`-`).onClick(p.decrementCounter),
 				Space,
 				Text.text(`${p.counter}`),
 				Space,
-				Button.text(`+`).handler(p.incrementCounter),
+				Button.text(`+`).onClick(p.incrementCounter),
 				Space,
 			),
 			Space,

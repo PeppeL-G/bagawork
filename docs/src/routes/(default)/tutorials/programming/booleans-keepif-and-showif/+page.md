@@ -54,8 +54,8 @@ class StartPage extends Page{
 			Space,
 			Text.text(`isGirl = ${p.isGirl}`),
 			Space,
-			Button.text(`I'm a boy!`).handler(p.setIsBoy),
-			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+			Button.text(`I'm a boy!`).onClick(p.setIsBoy),
+			Button.text(`I'm a girl!`).onClick(p.setIsGirl),
 		)
 	}
 	
@@ -127,8 +127,8 @@ class StartPage extends Page{
 			Text.text(`isGirl = ${p.isGirl}`),
 			Text.text(`You are a girl!`).keepIf(p.isGirl),
 			Space,
-			Button.text(`I'm a boy!`).handler(p.setIsBoy),
-			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+			Button.text(`I'm a boy!`).onClick(p.setIsBoy),
+			Button.text(`I'm a girl!`).onClick(p.setIsGirl),
 		)
 	}
 	
@@ -174,8 +174,8 @@ class StartPage extends Page{
 			Text.text(`You are a girl!`).keepIf(p.isGirl),
 			Text.text(`You are a boy!`).keepIf(p.isGirl == false),
 			Space,
-			Button.text(`I'm a boy!`).handler(p.setIsBoy),
-			Button.text(`I'm a girl!`).handler(p.setIsGirl),
+			Button.text(`I'm a boy!`).onClick(p.setIsBoy),
+			Button.text(`I'm a girl!`).onClick(p.setIsGirl),
 		)
 	}
 	
@@ -262,9 +262,9 @@ class StartPage extends Page{
 			Text.text(`It's a big number!`).keepIf(9 < p.counter),
 			Space,
 			Columns.children(
-				Button.text(`Decrement`).handler(p.decrement),
+				Button.text(`Decrement`).onClick(p.decrement),
 				Space,
-				Button.text(`Increment`).handler(p.increment),
+				Button.text(`Increment`).onClick(p.increment),
 			)
 		)
 	}
@@ -303,7 +303,7 @@ class StartPage extends Page{
 			Text.text(`How are you?`).keepIf(2 <= p.counter),
 			Text.text(`I am fine.`).keepIf(3 <= p.counter),
 			Space,
-			Button.text(`Next`).handler(p.increment),
+			Button.text(`Next`).onClick(p.increment),
 		)
 	}
 	
@@ -334,7 +334,7 @@ class StartPage extends Page{
 			Text.text(`How are you?`).showIf(2 <= p.counter),
 			Text.text(`I am fine.`).showIf(3 <= p.counter),
 			Space,
-			Button.text(`Next`).handler(p.increment),
+			Button.text(`Next`).onClick(p.increment),
 		)
 	}
 	
@@ -368,9 +368,9 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Button.text(`Click me!`).showIf(p.isShowingFirstButton).handler(p.showSecondButton),
+			Button.text(`Click me!`).showIf(p.isShowingFirstButton).onClick(p.showSecondButton),
 			Space,
-			Button.text(`Click me!`).showIf(p.isShowingFirstButton == false).handler(p.showFirstButton),
+			Button.text(`Click me!`).showIf(p.isShowingFirstButton == false).onClick(p.showFirstButton),
 			Space,
 		)
 	}

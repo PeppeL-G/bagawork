@@ -8,8 +8,8 @@ export class EnterNumberComponent extends Component{
 	_number = ``
 	_defaultNumber = 0
 	_placeholder = ``
-	_handler = null
-	_handlerArgs = []
+	_onChangeFunction = null
+	_onChangeArguments = []
 	_store = null
 	_storeName = ``
 	_page = null
@@ -73,24 +73,26 @@ export class EnterNumberComponent extends Component{
 		return this
 	}
 	
-	handler(handler, ...handlerArgs) {
+	onChange(onChangeFunction, ...onChangeArguments) {
 		
 		let args = (
 			arguments.length == 0 ?
 				[] :
-				[handler]
+				[onChangeFunction]
 		)
 		
 		validateArgs(
 			this,
-			`handler`,
+			`onChange`,
 			[`Function`],
 			args,
 		)
 		
-		this._handler = handler
-		this._handlerArgs = handlerArgs
+		this._onChangeFunction = onChangeFunction
+		this._onChangeArguments = onChangeArguments
+		
 		return this
+		
 	}
 	
 	store(store, name) {
@@ -184,9 +186,10 @@ export class EnterNumberComponent extends Component{
 			this._store[this._storeName] = number
 		}
 		
-		if(this._handler){
-			this._handler(number, ...this._handlerArgs)
-		}
+		this._onChangeFunction?.(
+			number,
+			...this._onChangeArguments,
+		)
 		
 	}
 	
@@ -313,9 +316,10 @@ export class EnterNumberComponent extends Component{
 				this._store[this._storeName] = number
 			}
 			
-			if(this._handler){
-				this._handler(number, ...this._handlerArgs)
-			}
+			this._onChangeFunction?.(
+				number,
+				...this._onChangeArguments,
+			)
 			
 		})
 		

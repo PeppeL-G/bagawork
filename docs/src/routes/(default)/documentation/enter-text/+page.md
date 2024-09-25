@@ -175,8 +175,16 @@ class GreetingPage extends Page{
 
 :::
 
-## `handler()` - Handling the entered text
-Use the configuration method `handler()` to tell the `EnterText` component which method to call to handle the entered text. The method will be passed the entered text as an argument. 
+## `onChange()` - Handling the entered text
+Use the configuration method `onChange()` to tell the `EnterText` component which method to call to handle the entered text. This method will be called each time the user makes a change in the `EnterText` component, such as:
+
+* Writes a character in it
+* Removes a character from it
+* Paste text in it
+* Removes all text in it
+* Etc.
+
+Your method will also be passed the entered text as an argument. 
 
 ::: tip Example
 
@@ -197,7 +205,7 @@ class StartPage extends Page{
 		return Rows.children(
 			Text.size(1).text(`What's your name?`),
 			Columns.children(
-				EnterText.size(1).handler(p.handleEnteredName).page(GreetingPage),
+				EnterText.size(1).onChange(p.handleEnteredName).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)

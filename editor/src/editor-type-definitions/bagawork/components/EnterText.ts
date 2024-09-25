@@ -47,11 +47,18 @@ const EnterText = (() => new (
 		store(theObject: Object, theName: string) { return this };
 		
 		/**
-		 * This method indicates a function/method to call with the entered text when the user goes to next page.
+		 * This method indicates which method that should be called when the
+		 * user changes the text in the `EnterText` component. Your method
+		 * will be passed the entered text and any extra arguments passed
+		 * to `onChange()`.
 		 * 
-		 * @param theHandler The function/method to be called with the entered text
+		 * @param onChangeMethod The method to be called with the entered text changes
+		 * @param onChangeArguments Any extra arguments
 		 */
-		handler(theHandler: (enteredText: string) => void){ return this };
+		onChange(
+			onChangeMethod: (enteredNumber: number) => void,
+			...onChangeArguments: any[]
+		) { return this };
 		
 	}
 	

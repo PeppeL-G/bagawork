@@ -265,8 +265,16 @@ class GreetingPage extends Page{
 
 
 
-## `handler()` - Handling the entered number
-Use the configuration method `handler()` to tell the `EnterNumber` component which method to call to handle the entered number. The method will be passed the entered number as an argument. 
+## `onChange()` - Handling the entered number
+Use the configuration method `onChange()` to tell the `EnterNumber` component which method to call to handle the entered number. This method will be called each time the user makes a change in the `EnterNumber` component, such as:
+
+* Writes a digit in it
+* Removes a digit from it
+* Paste a number in it
+* Removes all digits in it
+* Etc.
+
+Your method will also be passed the entered number as an argument. 
 
 ::: tip Example
 
@@ -288,7 +296,7 @@ class StartPage extends Page{
 		return Rows.children(
 			Text.size(1).text(`How many years old are you?`),
 			Columns.children(
-				EnterNumber.size(1).handler(p.handleEnteredAge).page(GreetingPage),
+				EnterNumber.size(1).onChange(p.handleEnteredAge).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)

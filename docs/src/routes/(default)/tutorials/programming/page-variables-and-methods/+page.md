@@ -82,7 +82,7 @@ class MyPage extends Page{
 
 The method in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method should reflect what the code in the method does, so `setNameToBob()` is a very good name in this case, since that's precisely what the code in the method does.
 
-To tell the computer that the code in the method `setNameToBob()` should be executed when the user clicks on a button, we need to call the configuration method `handler()` on the button, and pass it the method as an argument (i.e. write `p.setNameToBob` between the parentheses):
+To tell the computer that the code in the method `setNameToBob()` should be executed when the user clicks on a button, we need to call the configuration method `onClick()` on the button, and pass it the method as an argument (i.e. write `p.setNameToBob` between the parentheses):
 
 ```js
 class StartPage extends Page{
@@ -96,7 +96,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`Hello ${p.name}!`),
-			Button.text(`Change name to Bob`).handler(p.setNameToBob)
+			Button.text(`Change name to Bob`).onClick(p.setNameToBob)
 		)
 	}
 	
@@ -105,18 +105,18 @@ class StartPage extends Page{
 
 ::: warning Note!
 
-When passing a method as an argument (as we do when we use `Button.handler()`), you should not write the parentheses after the method name.
+When passing a method as an argument (as we do when we use `Button.onClick()`), you should not write the parentheses after the method name.
 
 So the following is correct:
 
 ```js
-Button.handler(p.setNameToBob)
+Button.onClick(p.setNameToBob)
 ```
 
 And the following is incorrect:
 
 ```js
-Button.handler(p.setNameToBob())
+Button.onClick(p.setNameToBob())
 ```
 
 :::
@@ -154,8 +154,8 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`Hello ${p.name}!`),
-			Button.text(`Change name to Alice`).handler(p.setNameToAlice),
-			Button.text(`Change name to Bob`).handler(p.setNameToBob)
+			Button.text(`Change name to Alice`).onClick(p.setNameToAlice),
+			Button.text(`Change name to Bob`).onClick(p.setNameToBob)
 		)
 	}
 	
@@ -186,15 +186,15 @@ class StartPage extends Page{
 			Columns.children(
 				Space,
 				Rows.children(
-					Button.text(`🌟`).handler(p.select1Star),
+					Button.text(`🌟`).onClick(p.select1Star),
 					Space,
-					Button.text(`🌟🌟`).handler(p.select2Stars),
+					Button.text(`🌟🌟`).onClick(p.select2Stars),
 					Space,
-					Button.text(`🌟🌟🌟`).handler(p.select3Stars),
+					Button.text(`🌟🌟🌟`).onClick(p.select3Stars),
 					Space,
-					Button.text(`🌟🌟🌟🌟`).handler(p.select4Stars),
+					Button.text(`🌟🌟🌟🌟`).onClick(p.select4Stars),
 					Space,
-					Button.text(`🌟🌟🌟🌟🌟`).handler(p.select5Stars),
+					Button.text(`🌟🌟🌟🌟🌟`).onClick(p.select5Stars),
 				),
 				Space,
 			),

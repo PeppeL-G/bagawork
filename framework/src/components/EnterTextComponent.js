@@ -7,8 +7,8 @@ export class EnterTextComponent extends Component{
 	
 	_text = ``
 	_placeholder = ``
-	_handler = null
-	_handlerArgs = []
+	_onChangeFunction = null
+	_onChangeArguments = []
 	_store = null
 	_storeName = ``
 	_page = null
@@ -43,24 +43,26 @@ export class EnterTextComponent extends Component{
 		return this
 	}
 	
-	handler(handler, ...handlerArgs) {
+	onChange(onChangeFunction, ...onChangeArguments) {
 		
 		let args = (
 			arguments.length == 0 ?
 				[] :
-				[handler]
+				[onChangeFunction]
 		)
 		
 		validateArgs(
 			this,
-			`handler`,
+			`onChange`,
 			[`Function`],
 			args,
 		)
 		
-		this._handler = handler
-		this._handlerArgs = handlerArgs
+		this._onChangeFunction = onChangeFunction
+		this._onChangeArguments = onChangeArguments
+		
 		return this
+		
 	}
 	
 	store(store, name) {
@@ -109,9 +111,10 @@ export class EnterTextComponent extends Component{
 			this._store[this._storeName] = this.enteredText
 		}
 		
-		if(this._handler){
-			this._handler(this.enteredText, ...this._handlerArgs)
-		}
+		this._onChangeFunction?.(
+			this.enteredText,
+			...this.onChangeArguments,
+		)
 		
 	}
 	

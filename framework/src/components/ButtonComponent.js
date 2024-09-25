@@ -9,8 +9,8 @@ export class ButtonComponent extends Component{
 	wasClicked = false
 	
 	_text = ``
-	_handler = null
-	_handlerArgs = []
+	_onClickFunction = null
+	_onClickArguments = []
 	_page = null
 	_stay = false
 	_useBBCode = false
@@ -52,24 +52,26 @@ export class ButtonComponent extends Component{
 		
 	}
 	
-	handler(handler, ...handlerArgs) {
+	onClick(onClickFunction, ...onClickArguments) {
 		
-		let args = (
+		const args = (
 			arguments.length == 0 ?
 			[] :
-			[handler]
+			[onClickFunction]
 		)
 		
 		validateArgs(
 			this,
-			`handler`,
+			`onClick`,
 			[`Function`],
 			args,
 		)
 		
-		this._handler = handler
-		this._handlerArgs = handlerArgs
+		this._onClickFunction = onClickFunction
+		this._onClickArguments = onClickArguments
+		
 		return this
+		
 	}
 	
 	page(page) {
@@ -149,15 +151,18 @@ export class ButtonComponent extends Component{
 			'click',
 			() => {
 				
-				if(this._handler){
-					this._handler(...this._handlerArgs)
-				}
+				this._onClickFunction?.(
+					...this._onClickArguments,
+				)
 				
 				if(!this._stay){
+					
 					this.wasClicked = true
+					
 					buttonElement.dispatchEvent(new CustomEvent('moveon', {
 						bubbles: true,
 					}))
+					
 				}
 				
 			},

@@ -1,7 +1,11 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Renamed Button.handler() to Button.onClick()`,
+		`Renamed EnterNumber.handler() to EnterNumber.onChange()`,
+		`Renamed EnterText.handler() to EnterText.onChange()`,
+	],
 }, {
 	version: `0.0.38`,
 	date: `2024-09-24`,

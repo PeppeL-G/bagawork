@@ -165,7 +165,7 @@ class StartPage extends Page{
 
 In the example above, the number the user has selected will be stored in `a.iq`.
 
-If you want to do something more complicated than just storing the number the user has selected, use the configuration method `handler()` to specify a function that will be called to handle the number the user has selected. In the example below, try selecting a number, and then click the `Button`.
+If you want to do something more complicated than just storing the number the user has selected, use the configuration method `onChange()` to specify a function that will be called to handle the number the user has selected. In the example below, try selecting a number, and then click the `Button`.
 
 ::: tip Example
 
@@ -179,7 +179,7 @@ class MyApp extends App{
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Slider.min(1).max(120).handler(selectedNumber => alert(selectedNumber)),
+			Slider.min(1).max(120).onChange(selectedNumber => alert(selectedNumber)),
 			Button.text(`Go!`),
 		)
 	}

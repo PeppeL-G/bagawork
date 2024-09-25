@@ -141,7 +141,7 @@ class StartPage extends Page{
 			Space,
 			Updater.name(`refresh`).childCreator(p.createTextShowingClock),
 			Space,
-			Button.text(`Refresh`).stay().handler(p.handleButtonClick)
+			Button.text(`Refresh`).stay().onClick(p.handleButtonClick)
 		)
 	}
 	

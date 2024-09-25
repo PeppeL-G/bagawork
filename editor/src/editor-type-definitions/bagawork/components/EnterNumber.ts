@@ -94,12 +94,18 @@ const EnterNumber = (() => new (
 		defaultNumber(theNumber: number) { return this };
 		
 		/**
-		 * This method indicates a function/method to call with the entered
-		 * number when the user goes to next page.
+		 * This method indicates which method that should be called when the
+		 * user changes the number in the `EnterNumber` component. Your method
+		 * will be passed the entered number and any extra arguments passed
+		 * to `onChange()`.
 		 * 
-		 * @param theHandler The function/method to be called with the entered text
+		 * @param onChangeMethod The method to be called with the entered number changes
+		 * @param onChangeArguments Any extra arguments
 		 */
-		handler(theHandler: (enteredNumber: string) => void){ return this };
+		onChange(
+			onChangeMethod: (enteredNumber: string) => void,
+			...onChangeArguments: any[]
+		){ return this };
 		
 	}
 	

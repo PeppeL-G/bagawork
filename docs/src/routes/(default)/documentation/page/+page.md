@@ -259,8 +259,8 @@ class AskQuestionPage extends Page{
 		return Rows.children(
 			Text.text(`Do you know the answer to this question?`),
 			Columns.children(
-				Button.text(`Yes`).handler(p.onYesAnswer),
-				Button.text(`No` ).handler(p.onNoAnswer),
+				Button.text(`Yes`).onClick(p.onYesAnswer),
+				Button.text(`No` ).onClick(p.onNoAnswer),
 			),
 		)
 	}

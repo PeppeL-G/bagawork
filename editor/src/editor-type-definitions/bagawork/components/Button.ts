@@ -27,14 +27,16 @@ const Button = (() => new (
 		page(thePage: Page){ return this };
 		
 		/**
-		 * This method indicates which function/method to call when the user
-		 * clicks on the button (which function/method that should *handle*
-		 * the click).
+		 * This method indicates which method that should be called when the
+		 * user clicks the `Button`. You can also pass it additional arguments,
+		 * and these will be passed to your `onClickMethod()` when the `Button`
+		 * is clicked.
 		 * 
-		 * @param theClickHandler The function/method to be called when the
+		 * @param onClickMethod The method to be called when the
 		 * button is clicked
+		 * @param onClickArguments The optional arguments
 		 */
-		handler(clickHandler: () => void){ return this };
+		onClick(onClickMethod: () => void, ...onClickArguments: any[]){ return this };
 		
 	}
 	

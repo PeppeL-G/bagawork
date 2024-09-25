@@ -87,7 +87,7 @@ class StartPage extends Page{
 			Rows.backgroundColor(`lime`).children(
 				Space,
 				Text.text(`This is the ordinary GUI.`),
-				Button.text(`Show alert!`).handler(p.showAlert),
+				Button.text(`Show alert!`).onClick(p.showAlert),
 				Space,
 			),
 			
@@ -97,7 +97,7 @@ class StartPage extends Page{
 				Rows.size(1).backgroundColor(`white`).children(
 					Text.text(`Alert!`),
 					Text.text(`Here is the alert message...`),
-					Button.text(`Close`).handler(p.hideAlert),
+					Button.text(`Close`).onClick(p.hideAlert),
 				),
 				Space,
 			)

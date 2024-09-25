@@ -80,7 +80,7 @@ class DestinationPage extends Page{
 
 
 ## `stay()` - Not changing page
-Use the configuration method `stay()` to tell the `Button` component to not go to the next page when the button is clicked. This is primarily useful when you use the :docs[Updater] component together with the configuration method `.handler()` on the button.
+Use the configuration method `stay()` to tell the `Button` component to not go to the next page when the button is clicked. This is primarily useful when you use the :docs[Updater] component together with the configuration method `.onClick()` on the button.
 
 ::: warning Warning!
 
@@ -105,8 +105,8 @@ class StartPage extends Page{
 		
 		return Rows.children(
 			Updater.childCreator(p.createTextShowingCounter).name(`refresh`),
-			Button.text(`Increment and stay`).stay().handler(p.incrementCounter),
-			Button.text(`Increment`).handler(p.incrementCounter),
+			Button.text(`Increment and stay`).stay().onClick(p.incrementCounter),
+			Button.text(`Increment`).onClick(p.incrementCounter),
 		)
 		
 	}
@@ -128,8 +128,8 @@ class StartPage extends Page{
 
 
 
-## `handler()` - Handling clicks
-Use the configuration method `handler()` to tell the `Button` component which method to call when the user clicks on the button. Pass it a reference to the method (e.g. `a.theMethodName` or `p.theMethodName`, depending on what you have named your method and if you wrote it in your `App` class or `Page` class).
+## `onClick()` - Handling clicks
+Use the configuration method `onClick()` to tell the `Button` component which method to call when the user clicks on the button. Pass it a reference to the method (e.g. `a.theMethodName` or `p.theMethodName`, depending on what you have named your method and if you wrote it in your `App` class or `Page` class).
 
 ::: tip Example
 
@@ -141,12 +141,39 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`You have clicked the button ${p.numberOfButtonClicks} times.`),
-			Button.text(`Click me!`).handler(p.incrementNumberOfButtonClicks),
+			Button.text(`Click me!`).onClick(p.incrementNumberOfButtonClicks),
 		)
 	}
 	
 	incrementNumberOfButtonClicks(){
 		p.numberOfButtonClicks += 1
+	}
+	
+}
+```
+
+:::
+
+You can also pass `onClick()` additional arguments, which then will be passed to your method when the button is clicked.
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	counter = 0
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Counter is ${p.counter}.`),
+			Button.text(`-1`).onClick(p.changeCounter, -1),
+			Button.text(`+1`).onClick(p.changeCounter, 1),
+			Button.text(`+5`).onClick(p.changeCounter, 5),
+		)
+	}
+	
+	changeCounter(amount){
+		p.counter += amount
 	}
 	
 }

@@ -73,7 +73,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`${p.number}`),
-			Button.text(`New random number`).handler(p.randomizeNumber),
+			Button.text(`New random number`).onClick(p.randomizeNumber),
 		)
 	}
 	
@@ -107,7 +107,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`${p.number}`),
-			Button.text(`New random number`).handler(p.randomizeNumber),
+			Button.text(`New random number`).onClick(p.randomizeNumber),
 		)
 	}
 	

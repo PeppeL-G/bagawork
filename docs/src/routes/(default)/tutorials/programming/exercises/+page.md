@@ -19,11 +19,11 @@ class StartPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`-`).handler(p.decrement),
+				Button.text(`-`).onClick(p.decrement),
 				Space,
 				Text.text(`${p.x}`),
 				Space,
-				Button.text(`+`).handler(p.increment),
+				Button.text(`+`).onClick(p.increment),
 				Space,
 			),
 			Space,
@@ -86,10 +86,10 @@ class CounterPage extends Page{
 			Text.text(`${p.counter}`).size(1),
 			Columns.size(1).children(
 				Rows.size(1).children(
-					Button.text(`-`).size(1).handler(p.decrementCounter),
-					Button.text(`Reset`).size(1).handler(p.resetCounter),
+					Button.text(`-`).size(1).onClick(p.decrementCounter),
+					Button.text(`Reset`).size(1).onClick(p.resetCounter),
 				),
-				Button.text(`+`).size(1).handler(p.incrementCounter),
+				Button.text(`+`).size(1).onClick(p.incrementCounter),
 			),
 		)
 	}

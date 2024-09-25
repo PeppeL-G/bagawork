@@ -101,9 +101,9 @@ class ChangeNamePage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`Alice`).page(StartPage).handler(p.setNameToAlice),
+				Button.text(`Alice`).page(StartPage).onClick(p.setNameToAlice),
 				Space,
-				Button.text(`Bob`).page(StartPage).handler(p.setNameToBob),
+				Button.text(`Bob`).page(StartPage).onClick(p.setNameToBob),
 				Space,
 			),
 			Space,
@@ -159,8 +159,8 @@ class StartPage extends Page{
 			Space,
 			Button.text(`Change name`).page(ChangeNamePage),
 			Space,
-			Button.text(`Change name to Alice`).handler(a.setNameToAlice),
-			Button.text(`Change name to Bob`).handler(a.setNameToBob),
+			Button.text(`Change name to Alice`).onClick(a.setNameToAlice),
+			Button.text(`Change name to Bob`).onClick(a.setNameToBob),
 		)
 	}
 	
@@ -175,9 +175,9 @@ class ChangeNamePage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`Alice`).page(StartPage).handler(a.setNameToAlice),
+				Button.text(`Alice`).page(StartPage).onClick(a.setNameToAlice),
 				Space,
-				Button.text(`Bob`).page(StartPage).handler(a.setNameToBob),
+				Button.text(`Bob`).page(StartPage).onClick(a.setNameToBob),
 				Space,
 			),
 			Space,
@@ -241,15 +241,15 @@ class StartPage extends Page{
 			Columns.children(
 				Space,
 				Rows.children(
-					Button.text(`🌟`).page(StarredPage).handler(a.select1Star),
+					Button.text(`🌟`).page(StarredPage).onClick(a.select1Star),
 					Space,
-					Button.text(`🌟🌟`).page(StarredPage).handler(a.select2Stars),
+					Button.text(`🌟🌟`).page(StarredPage).onClick(a.select2Stars),
 					Space,
-					Button.text(`🌟🌟🌟`).page(StarredPage).handler(a.select3Stars),
+					Button.text(`🌟🌟🌟`).page(StarredPage).onClick(a.select3Stars),
 					Space,
-					Button.text(`🌟🌟🌟🌟`).page(StarredPage).handler(a.select4Stars),
+					Button.text(`🌟🌟🌟🌟`).page(StarredPage).onClick(a.select4Stars),
 					Space,
-					Button.text(`🌟🌟🌟🌟🌟`).page(StarredPage).handler(a.select5Stars),
+					Button.text(`🌟🌟🌟🌟🌟`).page(StarredPage).onClick(a.select5Stars),
 				),
 				Space,
 			),

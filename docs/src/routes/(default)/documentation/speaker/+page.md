@@ -16,7 +16,7 @@ The `speaker` variable contains an object used for playing something on the devi
 class StartPage extends Page{
 	
 	createGui(){
-		return Button.text(`Say something!`).handler(p.speak)
+		return Button.text(`Say something!`).onClick(p.speak)
 	}
 	
 	speak(){
@@ -49,7 +49,7 @@ Example showing how to make the speaker speak some words when a :docs[Button] is
 class StartPage extends Page{
 	
 	createGui(){
-		return Button.text(`Say something!`).handler(p.speak)
+		return Button.text(`Say something!`).onClick(p.speak)
 	}
 	
 	speak(){
@@ -76,7 +76,7 @@ Example showing how to make the speaker speak some words when a :docs[Button] is
 class StartPage extends Page{
 	
 	createGui(){
-		return Button.text(`Say something!`).handler(p.speak)
+		return Button.text(`Say something!`).onClick(p.speak)
 	}
 	
 	speak(){
@@ -223,7 +223,7 @@ class StartPage extends Page{
 			),
 			
 			voices.map(
-				v => Button.text(`${v.name} (${v.languageCode})`).stay().handler(p.speak, v),
+				v => Button.text(`${v.name} (${v.languageCode})`).stay().onClick(p.speak, v),
 			),
 			
 		)
