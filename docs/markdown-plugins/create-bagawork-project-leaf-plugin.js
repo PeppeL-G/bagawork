@@ -3,14 +3,14 @@ import { getDecompressedProject } from '@bagawork/editor/src/functions/project-c
 import { getClassName } from '@bagawork/editor/src/functions/get-class-name.js'
 
 // Use it like this:
-// ::bagawork-project[link&app&code=StartPage&baga=eNp1UM...8ok4=]
+// ::bagawork-project[editor&show&code=StartPage&url=http://localhost:8080/editor/#eNp1UM...8ok4=]
 // The query string parameters:
-//  - "app" means show the app
+//  - "show" means show the app
 //  - "code" means show the code for app and all pages
 //  - "code=StartPage-MyApp-AboutPage" means that only the code for
 //     StartPage, MyApp and AboutPage should be shown (in that order)
-//  - "link" means show link to editor
-//  - "baga" should contain the code for the app in BAGA format
+//  - "editor" means show link to editor
+//  - "link" should contain the link to the bagawork project in the editor
 export function createBagaworkProjectLeafPlugin() {
 	return (tree) => {
 		visit(tree, (node) => {
@@ -21,7 +21,7 @@ export function createBagaworkProjectLeafPlugin() {
 					type: 'leafDirective',
 					name: 'bagawork-project',
 					attributes: {},
-					children: [ { type: 'text', value: 'link&app&code=StartPage&baga=eNp1UM...8ok4=', position: [Object] } ],
+					children: [ { type: 'text', value: 'editor&show&code=StartPage&url=#http://localhost:8080/editor/#eNp1UM...8ok4=', position: [Object] } ],
 					position: {
 						start: { line: 8, column: 1, offset: 128 },
 						end: { line: 8, column: 41, offset: 168 }
@@ -41,17 +41,19 @@ export function createBagaworkProjectLeafPlugin() {
 						),
 					}))
 					
-					const bagaCode = params.find(p => p.name == 'baga').value
+					const bagaCode = params.find(
+						p => p.name == 'url',
+					).value.split(`http://localhost:8080/editor/#`)[1]
 					
 					const project = getDecompressedProject(bagaCode)
 					
 					const children = params.filter(
-						p => ["app", "code", "link"].includes(p.name)
+						p => ["show", "code", "editor"].includes(p.name)
 					).map(p => {
 						
 						switch (p.name){
 							
-							case 'app':
+							case 'show':
 								return createShowAppNode(project)
 							
 							case 'code':
@@ -88,7 +90,7 @@ export function createBagaworkProjectLeafPlugin() {
 									
 								}
 							
-							case 'link':
+							case 'editor':
 								return createLinkToEditorNode(bagaCode)
 							
 							default:

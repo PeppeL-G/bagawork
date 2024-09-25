@@ -65,7 +65,7 @@ When a page needs to show its GUI to the user, the method `createGui(){ }` in th
 
 Example showing JavaScript code for how to create two different pages with different GUIs.
 
-::bagawork-project[link&code=AboutMePage-AboutSwedenPage&baga=eNqdkt9rwjAQx/+V271MoYg/5kvf3MOGDzJBHzamYGyuWohJSVJUSv/3JUatPzY2Bk25NHf5fr69K5HlOcYlJooTxpgIZgyM9oM8B9pZktyAi8uZnFm/Ek3M0sQybcdsRY1mOLGabKElDJaqsCPyR/57FcoqrCJMleCkDcafJWYc406Ekm285uE2jFClqSH7jnH7FH+4uIpCfrfOp0RJ/nK47+eyeYS5w7gSDAzDsLlyfAF+9u03ZW36tchu7U5dasu6V2MxBLaBMVnSD4vm0Xvl6HaOvO3I9hj32mczvV9ZJlviJP/PE+ofDaSCrSAzsBQFAZMc9iSE2rZuKftHyk7/TPl0Sdm9ofQ0Q/lm16RDK+45/VLymVKl60m5mIu/OZmuHb17GPh+QibBaYLywhDw6j9+0hykrhHfSZ5a0q9bchyUKW1y4WD8wMyrL5PCEUs=]
+::bagawork-project[editor&code=AboutMePage-AboutSwedenPage&url=http://localhost:8080/editor/#eNqdkt9rwjAQx/+V271MoYg/5kvf3MOGDzJBHzamYGyuWohJSVJUSv/3JUatPzY2Bk25NHf5fr69K5HlOcYlJooTxpgIZgyM9oM8B9pZktyAi8uZnFm/Ek3M0sQybcdsRY1mOLGabKElDJaqsCPyR/57FcoqrCJMleCkDcafJWYc406Ekm285uE2jFClqSH7jnH7FH+4uIpCfrfOp0RJ/nK47+eyeYS5w7gSDAzDsLlyfAF+9u03ZW36tchu7U5dasu6V2MxBLaBMVnSD4vm0Xvl6HaOvO3I9hj32mczvV9ZJlviJP/PE+ofDaSCrSAzsBQFAZMc9iSE2rZuKftHyk7/TPl0Sdm9ofQ0Q/lm16RDK+45/VLymVKl60m5mIu/OZmuHb17GPh+QibBaYLywhDw6j9+0hykrhHfSZ5a0q9bchyUKW1y4WD8wMyrL5PCEUs=]
 
 The GUI in the pages above will just contain some text. To specify that, we add the method `createGui(){ }`, and:
 
