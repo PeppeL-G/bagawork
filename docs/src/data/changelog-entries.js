@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Renamed Button.handler() to Button.onClick()`,
 		`Renamed EnterNumber.handler() to EnterNumber.onChange()`,
 		`Renamed EnterText.handler() to EnterText.onChange()`,
+		`Added the method Font.strikethrough()`,
 	],
 }, {
 	version: `0.0.38`,

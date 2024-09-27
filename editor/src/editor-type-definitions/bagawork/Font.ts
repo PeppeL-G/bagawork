@@ -37,6 +37,11 @@ const Font = (() => new (
 		size(sizeInMm: number) { return this };
 		
 		/**
+		 * This methods makes the text show as a line through it.
+		 */
+		strikethrough() { return this };
+		
+		/**
 		 * This methods makes the text show as underlined.
 		 */
 		underline() { return this };

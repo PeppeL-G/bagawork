@@ -6,6 +6,7 @@ export class Font{
 	_color = ``
 	_italic = false
 	_underline = false
+	_strikethrough = false
 	_size = -1
 	
 	bold(){
@@ -74,6 +75,20 @@ export class Font{
 		)
 		
 		this._underline = true
+		return this
+		
+	}
+	
+	strikethrough(){
+		
+		validateArgs(
+			this,
+			"strikethrough",
+			[],
+			arguments,
+		)
+		
+		this._strikethrough = true
 		return this
 		
 	}

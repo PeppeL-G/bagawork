@@ -101,6 +101,24 @@ class StartPage extends Page{
 
 
 
+## `strikethrough()` - Making the text strikethroughed
+Use the configuration method `strikethrough()` to make the text strikethroughed.
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Text.font(Font.strikethrough()).text(`Here is some text!`)
+	}
+}
+```
+
+:::
+
+
+
+
 ## `underline()` - Making the text underlined
 Use the configuration method `underline()` to make the text underlined.
 
