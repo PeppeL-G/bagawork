@@ -2,7 +2,7 @@ import { getClassName } from "./get-class-name.js"
 
 // The generated code will look like this:
 const code = `
-function createApp({a, p}){
+function createApp({a, p, log}){
 	
 	const StartPage = createPageCreator('StartPage', class extends Page{
 		// ...
@@ -95,7 +95,7 @@ export function getCreateAppCode(
 	)
 
 	let createAppCode = `
-function createApp({a, p}){
+function createApp({a, p, log}){
 	
 	${pageCodes.join(`\n\n`)}
 	

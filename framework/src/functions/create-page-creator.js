@@ -6,10 +6,10 @@ export function createPageCreator(pageName, Page){
 		}
 	})
 	
-	// All pages start with this proxy, but as soon as
-	// it's used to set a page argument, create a new one.
+	// All references to this page starts with this proxy, but as
+	// soon as it's used to set a page argument, create a new one.
 	const sharedPageCreator = new Proxy(Page, {
-		// E.g. Text.hello
+		// E.g. StartPage.hello
 		get(target, prop, receiver){
 			
 			switch(prop){

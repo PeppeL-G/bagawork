@@ -10,30 +10,64 @@
 	import { onDestroy } from 'svelte'
 	import EditAppModal from './EditAppModal.svelte'
 	import EditStateModal from './EditStateModal.svelte'
-	import DebugModal from './DebugModal.svelte'
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
+	import { fade } from 'svelte/transition'
 	
 	$: page = $pages.find(p => p.id == pageId)
 	
 	let showEditAppModal = false
-	let showDebugModal = false
 	let showEditStateModal = false
 	let forceRestartAppKey = Math.random()
 	
+	const secondaryTabNames = [`Menu`, `Log`]
+	let selectedSecondaryTabName = secondaryTabNames[0]
+	let showFrameworkLogItems = false
+	
 	let appState = null
+	let loggedItems = []
+	
 	const runtimeSettings = {
 		onStateChange(newState){
 			appState = newState
 		},
+		onLog(type, value){
+			loggedItems.push({
+				type,
+				value,
+			})
+			loggedItems = loggedItems
+		},
+		onError(errorMessage){
+			loggedItems.push({
+				type: `error`,
+				value: errorMessage,
+			})
+			loggedItems = loggedItems
+		},
 	}
+	
+	$: logItemsToShow = (
+		showFrameworkLogItems ?
+		loggedItems :
+		loggedItems.filter(
+			i => i.type != `framework`,
+		)
+	)
 	
 	let codeEditor
 	
-	function save(){
+	async function save(){
+		
+		loggedItems = []
+		
+		// When restarting, wait a little, so the log is empty and scrollTop=0.
+		await new Promise(r => setTimeout(r, 1))
+		
 		const newCode = codeEditor.getCode()
 		page.code = newCode
 		$pages = $pages
 		forceRestartAppKey = Math.random()
+		
 	}
 	
 	function remove(){
@@ -56,6 +90,30 @@
 	onDestroy(() => {
 		save()
 	})
+	
+	function scrollTo(node, enable){
+		
+		function update(enable){
+			if(enable){
+				
+				if(node.parentNode.parentNode.parentNode.scrollTop != 0){
+					
+					node.scrollIntoView({
+						behavior: `smooth`,
+						block: `start`,
+					})
+					
+				}
+			}
+		}
+		
+		update(enable)
+		
+		return {
+			update,
+		}
+		
+	}
 	
 </script>
 
@@ -89,38 +147,70 @@
 			
 		</div>
 		
-		<div class="menu-child">
+		<div class="secondary-child">
 			
-			<div class="title">Menu</div>
+			<div class="tab-names">
+				{#each secondaryTabNames as tabName}
+					<button
+						class:isSelected={selectedSecondaryTabName == tabName}
+						on:click={() => selectedSecondaryTabName = tabName}
+					>{tabName}</button>
+				{/each}
+			</div>
 			
-			<ul>
-				<li>
-					<button
-						on:click={() => (save(), showDebugModal = true)}
-					>
-						Debug
-					</button>
-				</li>
-				<li>
-					<button
-						on:click={() => (save(), showEditAppModal = true)}
-					>
-						Edit app
-					</button>
-				</li>
-				<li>
-					<button
-						on:click={() => (save(), showEditStateModal = true)}
-					>
-						Edit state
-					</button>
-				</li>
-				<li>
-					<button on:click={remove}>
-						Delete page
-					</button>
-				</li>
-			</ul>
+			{#if selectedSecondaryTabName == `Menu`}
+				
+				<div class="tab-menu">
+					
+					<ul>
+						<li>
+							<button
+								on:click={() => (save(), showEditAppModal = true)}
+							>
+								Edit app
+							</button>
+						</li>
+						<li>
+							<button
+								on:click={() => (save(), showEditStateModal = true)}
+							>
+								Edit state
+							</button>
+						</li>
+						<li>
+							<button on:click={remove}>
+								Delete page
+							</button>
+						</li>
+					</ul>
+				</div>
+				
+			{:else if selectedSecondaryTabName == `Log`}
+				
+				<div class="tab-log">
+					
+					<div class="settings">
+						Show framework log:
+						<input type="checkbox" bind:checked={showFrameworkLogItems}>
+					</div>
+					
+					<div class="items">
+						
+						{#each logItemsToShow as item, i}
+							<div
+								class="item {item.type}"
+								in:fade={{delay: 100}}
+								use:scrollTo={logItemsToShow.length-1 == i}
+							>
+								{item.value}
+							</div>
+						{/each}
+					
+					</div>
+					
+				</div>
+				
+			{/if}
 			
 		</div>
 		
@@ -137,13 +227,6 @@
 {#if showEditAppModal}
 	<EditAppModal
 		bind:showModal={showEditAppModal}
-	/>
-{/if}
-
-{#if showDebugModal}
-	<DebugModal
-		bind:showModal={showDebugModal}
-		{pageId}
 	/>
 {/if}
 
@@ -164,7 +247,7 @@
 	border-radius: 1em;
 	display: grid;
 	grid-template-columns: auto 1fr;
-	grid-template-rows: 1fr auto;
+	grid-template-rows: auto 1fr;
 	align-items: center;
 	height: 100%;
 	overflow: auto;
@@ -175,6 +258,7 @@
 		grid-row: 1;
 		grid-column: 1;
 		padding: 0.5em;
+		margin-bottom: 1em;
 		
 		& .app-component{
 			margin: 0 auto;
@@ -190,37 +274,98 @@
 			& button{
 				display: block;
 				margin: 0 auto;
-				margin-top: 1em;
+				margin-top: 0.5em;
 			}
 			
 		}
 		
 	}
 	
-	& .menu-child{
+	& .secondary-child{
 		
 		grid-row: 2;
 		grid-column: 1;
-		text-align: center;
 		padding: 0.5em;
+		height: 100%;
+		max-height: 100%;
+		overflow: auto;
+		background-color: silver;
+		border-radius: 1em;
+		margin: 1em;
 		
-		& .title{
-			font-weight: bold;
-			text-decoration: underline;
-			margin-top: 1em;
-			font-size: 1.25em;
+		& .tab-names{
+			
+			text-align: center;
+			
+			& > button{
+				
+				font-size: 1.25em;
+				
+				&.isSelected{
+					font-weight: bold;
+					text-decoration: underline;
+					margin-top: 0.25em;
+				}
+				
+			}
+			
 		}
 		
-		& ul{
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
+		& .tab-menu{
 			
-			& li{
-				margin-block: 0.5em;
+			text-align: center;
+			
+			& ul{
 				
-				&:last-child{
-					margin-bottom: 0;
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				
+				& li{
+					margin-block: 0.5em;
+					
+					&:last-child{
+						margin-bottom: 0;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& .tab-log{
+			
+			& .settings{
+				margin: 0.25em;
+				text-align: center;
+			}
+			
+			& > .items{
+				
+				font-family: 'Courier New', Courier, monospace;
+				
+				& .item{
+					
+					margin: 0.5em 0.25em;
+					padding: 0.25em;
+					border-radius: 3px;
+					word-wrap: break-word;
+					white-space: pre-wrap;
+					font-size: 90%;
+					
+					&.user{
+						background-color: whitesmoke;
+					}
+					
+					&.framework{
+						background-color: beige;
+					}
+					
+					&.error{
+						background-color: pink;
+					}
+					
 				}
 				
 			}

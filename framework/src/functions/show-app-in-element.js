@@ -3,7 +3,7 @@ import { FrameworkApp } from '../classes/FrameworkApp.js'
 export async function showAppInElement(
 	createApp,
 	screenElement,
-	runtimeSettings=null,
+	runtimeSettings={},
 ){
 	
 	// Wait for voices to load (stupid Chrome...).

@@ -31,6 +31,8 @@
 	import mTsString from '../editor-type-definitions/bagawork/m.ts?raw'
 	import speakerTsString from '../editor-type-definitions/bagawork/speaker.ts?raw'
 	
+	import logTsString from '../editor-type-definitions/bagawork/functions/log.ts?raw'
+	
 	let monacoEditor
 	
 	async function showEditor(editorContainer){
@@ -67,6 +69,8 @@
 			
 			{content: mTsString},
 			{content: speakerTsString},
+			
+			{content: logTsString},
 			
 		])
 		

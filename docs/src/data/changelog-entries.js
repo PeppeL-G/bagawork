@@ -6,6 +6,10 @@ export const changelogEntries = [{
 		`Renamed EnterNumber.handler() to EnterNumber.onChange()`,
 		`Renamed EnterText.handler() to EnterText.onChange()`,
 		`Added the method Font.strikethrough()`,
+		`Removed debugging functionality`,
+		`Added the function log()`,
+		`Added the docs page log()`,
+		`Added a log panel in the editor`,
 	],
 }, {
 	version: `0.0.38`,

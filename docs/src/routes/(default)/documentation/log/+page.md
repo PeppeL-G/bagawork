@@ -1,0 +1,55 @@
+<script>
+	import ViewApp from '$lib/ViewApp.svelte'
+</script>
+
+# `log()`
+On this page you find the documentation for the function `log()`.
+
+
+## Introduction
+The `log()` function can be useful to use during development. Using it, you can log various values in your app while it is running, which can help you debug errors in it.
+
+::: warning Only useful in the editor!
+
+You can only view the logged values in our :online-editor.
+
+:::
+
+::: tip Example
+
+You have to run the app in the editor to be able to see the logged messages in the *Log* panel there.
+
+```js baga-editor-code
+class StartPage extends Page{
+	
+	clickCounter = 0
+	
+	onBefore(){
+		log(`onBefore() is now executing!`)
+	}
+	
+	createGui(){
+		
+		log(`createGui() is now executing!`)
+		
+		return Button.text(`${p.clickCounter}`).onClick(p.incrementCounter)
+		
+	}
+	
+	incrementCounter(){
+		
+		log(`Click on counter button!`)
+		
+		log(p)
+		
+		p.clickCounter += 1
+		
+		log(p)
+		
+	}
+	
+	
+}
+```
+
+:::

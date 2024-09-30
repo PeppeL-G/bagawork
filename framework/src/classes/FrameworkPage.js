@@ -20,10 +20,10 @@ export class FrameworkPage{
 		
 	}
 	
-	async createPageInstance() {
+	createPageInstance() {
 		
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
@@ -31,7 +31,7 @@ export class FrameworkPage{
 			
 			const { Page, args } = this.Page.proxyGetPageAndArgs
 			
-			this.page = new Page()
+			this.page = new Page() // TODO: Instead of initializing (can error), create empty object?
 			this.restoreState()
 			Object.assign(
 				this.page,
@@ -40,42 +40,8 @@ export class FrameworkPage{
 			
 		}else{
 			
-			if(okToContinue){
-				
-				// Add debug step listeners to all methods.
-				for(const key of Object.getOwnPropertyNames(this.Page.prototype)){
-					
-					const value = this.Page.prototype[key]
-					
-					if(typeof value == "function" && !Page.prototype.hasOwnProperty(key)){
-						this.Page.prototype[key] = (...args) => {
-							
-							okToContinue(
-								`${this.Page.proxyName}.${value.name}()`,
-								true,
-							)
-							
-							try{
-								return value.apply(this.page, args)
-							}catch(error){
-								onError(
-									`Error in ${this.Page.proxyName}.${value.name}()`,
-								)
-								debugger
-							}
-							
-						}
-					}
-					
-				}
-				
-			}
-			
-			okToContinue && await okToContinue(
-				`new ${this.Page.proxyName}`
-			)
-			
 			try {
+				onLog(`framework`, `Initializing variables in ${this.Page.proxyName}...`)
 				const { Page, args } = this.Page.proxyGetPageAndArgs
 				this.page = new Page()
 				Object.assign(
@@ -84,46 +50,44 @@ export class FrameworkPage{
 				)
 			} catch (error) {
 				onError(
-					`An error ocurred while creating the ${this.Page.proxyName} instance: ${error}.`,
+					`An error ocurred while initializing variables in ${this.Page.proxyName}: ${error}.`,
 				)
-				debugger
 				return
 			}
+			
+			onLog(`framework`, `Initializing variables in ${this.Page.proxyName} ✅`)
 			
 		}
 		
 	}
 	
-	async loadFromState(){
+	loadFromState(){
 		
 		this.page = Object.create(this.Page.prototype)
 		this.restoreState()
-		await this.initializeTheRest()
+		this.initializeTheRest()
 		
 	}
 
-	async createBeforeDirections() {
+	createBeforeDirections() {
 		
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
 		if(this.Page.prototype.hasOwnProperty('createBeforeDirections')){
 			
-			okToContinue && await okToContinue(
-				`${this.Page.proxyName}.createBeforeDirections()`,
-			)
-			
 			let createdBeforeDirections
 			
 			try {
+				onLog(`framework`, `Calling ${this.Page.proxyName}.createBeforeDirections()...`)
 				createdBeforeDirections = this.page.createBeforeDirections()
+				onLog(`framework`, `${this.Page.proxyName}.createBeforeDirections() ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.createBeforeDirections(): ${error}.`,
 				)
-				debugger
 				return
 			}
 			
@@ -137,34 +101,30 @@ export class FrameworkPage{
 
 	}
 
-	async createAfterDirections() {
+	createAfterDirections() {
 
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
 		if (this.Page.prototype.hasOwnProperty('createAfterDirections')) {
-			
-			okToContinue && await okToContinue(
-				`${this.Page.proxyName}.createAfterDirections()`,
-			)
 
 			let createdAfterDirections
 
 			try {
+				onLog(`framework`, `Calling ${this.Page.proxyName}.createAfterDirections()...`)
 				createdAfterDirections = this.page.createAfterDirections()
+				onLog(`framework`, `${this.Page.proxyName}.createAfterDirections() ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.createAfterDirections(): ${error}.`,
 				)
-				debugger
 				return
 			}
-
+			
 			// TODO: Check that createdAfterDirections is an array with
 			// Direction instances.
-
 			this.afterDirections.push(
 				...createdAfterDirections,
 			)
@@ -189,26 +149,23 @@ export class FrameworkPage{
 		)
 	}
 	
-	async runOnBefore() {
-
+	runOnBefore() {
+		
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
 		if (this.Page.prototype.hasOwnProperty('onBefore')) {
 			
-			okToContinue && await okToContinue(
-				`${this.Page.proxyName}.onBefore()`,
-			)
-			
 			try {
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onBefore()...`)
 				this.page.onBefore()
+				onLog(`framework`, `${this.Page.proxyName}.onBefore() ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.onBefore(): ${error}.`,
 				)
-				debugger
 				return
 			}
 			
@@ -216,29 +173,26 @@ export class FrameworkPage{
 		
 	}
 	
-	async runOnUpdate(){
+	runOnUpdate(){
 		
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
 		if(this.Page.prototype.hasOwnProperty('onUpdate')){
 			
-			okToContinue && await okToContinue(
-				`${this.Page.proxyName}.onUpdate()`,
-			)
-			
-			try{
+			try {
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onUpdate()...`)
 				this.page.onUpdate(
 					this.frameworkApp.runtimeSettings.state.pages[this.Page.proxyName],
 					this.frameworkApp.runtimeSettings.state.version,
 				)
-			}catch(error){
+				onLog(`framework`, `${this.Page.proxyName}.onUpdate() ✅`)
+			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.onUpdate(): ${error}.`,
 				)
-				debugger
 				return
 			}
 			
@@ -247,44 +201,39 @@ export class FrameworkPage{
 	}
 	
 	// This initializes the rest that wasn't initialized in createPageInstance.
-	async initializeTheRest() {
+	initializeTheRest() {
 
 		const {
-			okToContinue,
+			onLog,
 			onError,
 			onPageShow,
 		} = this.frameworkApp.runtimeSettings
 		
-		okToContinue && await okToContinue(
-			`${this.Page.proxyName}.createGui()`,
-		)
-		
 		if(!this.Page.prototype.hasOwnProperty('createGui')){
 			onError(
-				`Error in ${this.Page.proxyName}: Must implement createGui().`
+				`Error: ${this.Page.proxyName}.createGui() is missing!`
 			)
-			debugger
 			return
 		}
 		
 		try {
+			onLog(`framework`, `Calling ${this.Page.proxyName}.createGui()...`)
 			this.rootGuiComponent = this.page.createGui()
 		} catch (error) {
 			onError(
 				`Error in ${this.Page.proxyName}.createGui(): ${error}.`,
 			)
-			debugger
 			return
 		}
 		
 		if (!(this.rootGuiComponent instanceof Component)) {
-			debugger
 			onError(
 				`Error in ${this.Page.proxyName}.createGui(): must return a GUI component.`,
 			)
-			debugger
 			return
 		}
+		
+		onLog(`framework`, `${this.Page.proxyName}.createGui() ✅`)
 		
 		onPageShow()
 		
@@ -295,10 +244,10 @@ export class FrameworkPage{
 		
 	}
 	
-	async runOnAfter(){
+	runOnAfter(){
 		
 		const {
-			okToContinue,
+			onLog,
 			onError,
 		} = this.frameworkApp.runtimeSettings
 		
@@ -306,17 +255,14 @@ export class FrameworkPage{
 		
 		if (this.Page.prototype.hasOwnProperty('onAfter')) {
 			
-			okToContinue && await okToContinue(
-				`${this.Page.proxyName}.onAfter()`,
-			)
-			
-			try{
+			try {
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onAfter()...`)
 				this.page.onAfter()
+				onLog(`framework`, `${this.Page.proxyName}.onAfter() ✅`)
 			}catch(error){
 				onError(
 					`Error in ${this.Page.proxyName}.onAfter(): ${error}.`,
 				)
-				debugger
 				return
 			}
 			

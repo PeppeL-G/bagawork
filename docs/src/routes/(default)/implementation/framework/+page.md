@@ -27,7 +27,7 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 		Text,
 	} from '@bagawork/framework'
 
-	export function createApp({a, p}){
+	export function createApp({a, p, log}){
 		
 		class MyApp extends App{
 			createStartPage(){
@@ -131,7 +131,7 @@ Set `runtimeSettings.version` to the current version of the app, and the framewo
 
 
 #### Listening for errors
-Set `runtimeSettings.onError` to `(errorMessage) => console.log(errorMessage)` to listen for when the code in the app crashes. When a crash occurs, the app will also display the error message on the screen. 
+Set `runtimeSettings.onError` to `(errorMessage) => console.log(errorMessage)` to listen for when the code in the app crashes. When an error occurs, the app will also display the error message on the screen. 
 
 
 
@@ -140,10 +140,8 @@ Set `runtimeSettings.isPreview` to `true` for `Page.onBeforeDirections()` not ta
 
 
 
-#### Debugging
-Set `runtimeSettings.okToContinue` to `` async (nextToExecute = `Step description`, continuesImmediately=false) => Promise.resolve() `` to make the app run in debug mode. This way, the function you provide will be called each time the app runs a step (described by `nextToExecute`), and your function should return back a promise that should be resolved when it's time to run that step.
-
-Some things the debugger can't wait for (like when the user call her own App/Page function (since those aren't async)), and for those steps, `continuesImmediately` will be `true`, and the promise you return back won't be used, but the current step will be executed immediately. 
+#### Logging
+Set `runtimeSettings.onLog` to `(type, value) => console.log(type, value)` to make the app log messages. ``type = `framework` `` means that it's the framework that logged the message, ``type = `user` `` means that the app creator logged the message by calling the :docs[log] function.
 
 
 

@@ -231,6 +231,9 @@
 		}, {
 			name: 'Functions',
 			links: [{
+				text: 'log()',
+				href: '/documentation/log/',
+			}, {
 				text: 'runUpdater()',
 				href: '/documentation/run-updater/',
 			}],
