@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<!--
+			Favicon generated with:
+			https://realfavicongenerator.net/
+		-->
+		<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+		<link rel="manifest" href="../favicons/site.webmanifest">
+		<link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="../favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="../favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+		<link href="../_app/immutable/assets/2.DIlgFH-0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.B9bNT9w7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.DSRFDE18.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.A6NgnmbN.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.CHfggXAQ.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.Byj_tTGH.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.RhpFAqIa.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/each.Dj-HqST8.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/changelog-entries.BI4kzhwv.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.ChKrtj4v.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/57.DUynzR_Y.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-3c5oy2"><div class="publicAnnouncement svelte-3c5oy2"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-3c5oy2"><nav class="svelte-oeac2t"><div class="section svelte-oeac2t"><a href="/" class="svelte-oeac2t" data-svelte-h="svelte-1xi8gtf">BagaWork</a></div> <div class="section svelte-oeac2t"><a href="/documentation/" target="" class="svelte-oeac2t">Documentation </a><a href="/tutorials/" target="" class="svelte-oeac2t">Tutorials </a><a href="/examples/" target="" class="svelte-oeac2t">Examples </a><a href="/editor/" target="_blank" class="svelte-oeac2t">Editor </a><a href="/implementation/" target="" class="svelte-oeac2t isCurrent isSubCurrent">Implementation </a><a href="/contact/" target="" class="svelte-oeac2t">Contact </a></div> <div class="section svelte-oeac2t"><a class="version svelte-oeac2t" href="/changelog/">v0.0.39</a></div> </nav></div> <aside class="svelte-3c5oy2"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">npm packages</div> <div class="links svelte-12md48y"><a href="/implementation/framework/" class="svelte-12md48y">@bagawork/framework </a><a href="/implementation/editor/" class="svelte-12md48y">@bagawork/editor </a></div> </div> </aside></aside> <main class="svelte-3c5oy2"><h1 data-svelte-h="svelte-19ecati">Implementation</h1> <p data-svelte-h="svelte-1wdr6zg">On these pages you can learn how BagaWork is implemented, and what you need to do to run BagaWork apps or our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a> on your own website.</p> <div class="remark-container warning" data-svelte-h="svelte-vfci5h"><div class="remark-container__title">Are you lost?</div><p>These Implementation pages are only intended for those who want to learn how BagaWork (the framework) is implemented, and for those those who want to run BagaWork apps or our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a> on their own website. Those creating BagaWork apps through our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a> won&#39;t find anything interesting on these Implementation pages.</p></div> <h2 data-svelte-h="svelte-1jm9eg4">npm packages</h2> <p data-svelte-h="svelte-1uesh6m">The BagaWork framework is implemented as two different <a href="https://www.npmjs.com/" rel="nofollow" target="_blank">npm</a> packages:</p> <ul data-svelte-h="svelte-1epn0vb"><li><a href="/implementation/framework">@bagawork/framework</a> contains the things needed to run a BagaWork app</li> <li><a href="/implementation/editor">@bagawork/editor</a> contains a <a href="https://svelte.dev" rel="nofollow" target="_blank">Svelte</a> component one can use to run our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a></li></ul> <p data-svelte-h="svelte-fhw3mf">They all follow the <a href="https://semver.org/" rel="nofollow" target="_blank">SemVer</a> versioning convention, and they all use the same version number, i.e. when the version number of one package is updated, the other one is updated to the same one version number, even if nothing has changed in it. So if you use both of these packages, always use the same version number in them!</p> <p data-svelte-h="svelte-6wvqj4">Changes made in each version is documented on the <a href="../changelog/">Changelog</a> page.</p> <h2 data-svelte-h="svelte-12749zs">Source code</h2> <p data-svelte-h="svelte-132nm3d">The source code for all @bagawork packages is available in the Git repository <a href="https://github.com/PeppeL-G/bagawork" rel="nofollow" target="_blank">https://github.com/PeppeL-G/bagawork</a>.</p></main> <div class="footer svelte-3c5oy2"><footer class="svelte-d9hz5y">Copyright Peter L-G 2024 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_c7h7fd = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.B9bNT9w7.js"),
+						import("../_app/immutable/entry/app.A6NgnmbN.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 57],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
