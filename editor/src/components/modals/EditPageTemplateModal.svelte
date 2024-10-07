@@ -7,15 +7,12 @@
 	import { editorSettings, app, pageTemplates, pages } from '../../stores.js'
 	import Modal from './Modal.svelte'
 	import { onDestroy } from 'svelte'
-	import EditAppModal from './EditAppModal.svelte'
 	import ViewApp from '../ViewApp.svelte'
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	
 	let pageTemplate
 	
 	$: pageTemplate = $pageTemplates.find(pt => pt.id == pageTemplateId)
-	
-	let showEditAppModal = false
 	
 	let codeEditor
 	
@@ -79,13 +76,6 @@
 			/>
 		</div>
 		
-		<button
-			class="edit-app-button"
-			on:click={() => (save(), showEditAppModal = true)}
-		>
-			Edit app
-		</button>
-		
 		<div class="buttons-row">
 			<button on:click={remove}>
 				Delete this page template
@@ -95,12 +85,6 @@
 		
 	</div>
 </Modal>
-
-{#if showEditAppModal}
-	<EditAppModal
-		bind:showModal={showEditAppModal}
-	/>
-{/if}
 
 <style>
 
@@ -134,17 +118,6 @@
 		margin-top: 1em;
 	}
 	
-}
-
-.edit-app-button{
-	grid-row: 1;
-	grid-column: 3;
-	z-index: 1000000;
-	background-color: lime;
-	border-radius: 0.5em;
-	padding: 0.5em;
-	transform: translate(1em, -1em);
-	font-weight: bold;
 }
 
 .code-editor{

@@ -3,28 +3,62 @@
 	export let showModal
 	export let pageId
 	
-	import CodeEditor from '../CodeEditor.svelte'
 	import ViewApp from '../ViewApp.svelte'
 	import { editorSettings, app, pages } from '../../stores.js'
 	import Modal from './Modal.svelte'
-	import { onDestroy } from 'svelte'
-	import EditAppModal from './EditAppModal.svelte'
-	import EditStateModal from './EditStateModal.svelte'
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
-	import { fade } from 'svelte/transition'
+	import TabLog from './edit-page-components/TabLog.svelte'
+	import TabMenu from './edit-page-components/TabMenu.svelte'
+	import CodeEditorForPageAndApp from '../CodeEditorForPageAndApp.svelte'
+	import MonacoLoader from '../MonacoLoader.svelte'
+	import TabModes from './edit-page-components/TabModes.svelte'
+	import CodeEditorForState from '../CodeEditorForState.svelte'
 	
 	$: page = $pages.find(p => p.id == pageId)
 	
-	let showEditAppModal = false
-	let showEditStateModal = false
 	let forceRestartAppKey = Math.random()
+	let appState
 	
-	const secondaryTabNames = [`Menu`, `Log`]
+	const secondaryTabNames = [`Menu`, `Mode`, `Log`]
 	let selectedSecondaryTabName = secondaryTabNames[0]
-	let showFrameworkLogItems = false
 	
-	let appState = null
 	let loggedItems = []
+	let codeEditorForPageAndApp = null
+	let codeEditorForState = null
+	
+	const tabMenuItems = [{
+		text: `Delete`,
+		onClick(){
+			
+			if(!confirm("Do you really want to delete this page?")){
+				return
+			}
+			
+			const pageIndex = $pages.findIndex(
+				p => p.id == pageId
+			)
+			
+			$pages.splice(pageIndex, 1)
+			$pages = $pages
+			
+			showModal = false
+			
+		},
+	} ,{
+		text: `Close`,
+		onClick(){
+			showModal = false
+		},
+	}]
+	
+	const tabModes = [{
+		name: `Code`,
+		explanation: `In the CODE mode you can edit the code for the selected page and the app. Your changes to the code will be saved when you close this modal or click on the RESTART button.`,
+	}, {
+		name: `State`,
+		explanation: `In the STATE mode you can view the state of your app (the values of all the variables). You can also change the state and then click on the RESTART WITH STATE button to restart the app with the new state, instead of starting it from scratch.`,
+	}]
+	let selectedMode = tabModes[0]
 	
 	const runtimeSettings = {
 		onStateChange(newState){
@@ -44,74 +78,55 @@
 			})
 			loggedItems = loggedItems
 		},
+		state: null,
+		version: 1,
 	}
 	
-	$: logItemsToShow = (
-		showFrameworkLogItems ?
-		loggedItems :
-		loggedItems.filter(
-			i => i.type != `framework`,
-		)
-	)
+	// This is a function, so the HTML-code doesn't re-render
+	// when it uses runtimeSettings (so the app only restarts)
+	// when forceRestartAppKey changes value.
+	function getRuntimeSettings(){
+		return runtimeSettings
+	}
 	
-	let codeEditor
-	
-	async function save(){
+	async function restart(){
 		
 		loggedItems = []
 		
-		// When restarting, wait a little, so the log is empty and scrollTop=0.
+		// Wait a little, so the log is empty and scrollTop=0
+		// before we run the app and add more log items.
 		await new Promise(r => setTimeout(r, 1))
 		
-		const newCode = codeEditor.getCode()
-		page.code = newCode
-		$pages = $pages
+		runtimeSettings.state = null
+		runtimeSettings.version = 1
+		
+		codeEditorForPageAndApp.save()
+		
 		forceRestartAppKey = Math.random()
 		
 	}
 	
-	function remove(){
+	async function restartWithState(){
 		
-		if(!confirm("Really delete?")){
-			return
+		loggedItems = []
+		
+		// Wait a little, so the log is empty and scrollTop=0
+		// before we run the app and add more log items.
+		await new Promise(r => setTimeout(r, 1))
+		
+		runtimeSettings.state = codeEditorForState.getModifiedState()
+		
+		// Apply some logic to enable update triggers
+		// by changing the version in the state.
+		const oldVersion = appState.version
+		const newVersion = runtimeSettings.state.version
+		
+		if(oldVersion != newVersion){
+			runtimeSettings.state.version = oldVersion
+			runtimeSettings.version = newVersion
 		}
 		
-		const pageIndex = $pages.findIndex(
-			p => p.id == pageId
-		)
-		
-		$pages.splice(pageIndex, 1)
-		$pages = $pages
-		
-		showModal = false
-		
-	}
-	
-	onDestroy(() => {
-		save()
-	})
-	
-	function scrollTo(node, enable){
-		
-		function update(enable){
-			if(enable){
-				
-				if(node.parentNode.parentNode.parentNode.scrollTop != 0){
-					
-					node.scrollIntoView({
-						behavior: `smooth`,
-						block: `start`,
-					})
-					
-				}
-			}
-		}
-		
-		update(enable)
-		
-		return {
-			update,
-		}
+		forceRestartAppKey = Math.random()
 		
 	}
 	
@@ -134,15 +149,22 @@
 							$pages,
 							page,
 						)}
-						{runtimeSettings}
+						runtimeSettings={getRuntimeSettings()}
 					/>
 				{/key}
 			</div>
 			
 			<div class="preview-buttons">
-				<button on:click={save}>
-					Restart
-				</button>
+				
+				{#if selectedMode.name == `State`}
+					<button on:click={restartWithState}>
+						Restart with state
+					</button>
+				{:else}
+					<button on:click={restart}>
+						Restart
+					</button>
+				{/if}
 			</div>
 			
 		</div>
@@ -152,90 +174,54 @@
 			<div class="tab-names">
 				{#each secondaryTabNames as tabName}
 					<button
-						class:isSelected={selectedSecondaryTabName == tabName}
 						on:click={() => selectedSecondaryTabName = tabName}
-					>{tabName}</button>
+						disabled={selectedSecondaryTabName == tabName}
+					>
+						{tabName}
+					</button>
 				{/each}
 			</div>
 			
 			{#if selectedSecondaryTabName == `Menu`}
-				
-				<div class="tab-menu">
-					
-					<ul>
-						<li>
-							<button
-								on:click={() => (save(), showEditAppModal = true)}
-							>
-								Edit app
-							</button>
-						</li>
-						<li>
-							<button
-								on:click={() => (save(), showEditStateModal = true)}
-							>
-								Edit state
-							</button>
-						</li>
-						<li>
-							<button on:click={remove}>
-								Delete page
-							</button>
-						</li>
-					</ul>
-				</div>
-				
+				<TabMenu
+					items={tabMenuItems}
+				/>
+			{:else if selectedSecondaryTabName == `Mode`}
+				<TabModes
+					modes={tabModes}
+					selectedMode={selectedMode}
+					onSelectedChange={ m => selectedMode = m }
+				/>
 			{:else if selectedSecondaryTabName == `Log`}
-				
-				<div class="tab-log">
-					
-					<div class="settings">
-						Show framework log:
-						<input type="checkbox" bind:checked={showFrameworkLogItems}>
-					</div>
-					
-					<div class="items">
-						
-						{#each logItemsToShow as item, i}
-							<div
-								class="item {item.type}"
-								in:fade={{delay: 100}}
-								use:scrollTo={logItemsToShow.length-1 == i}
-							>
-								{item.value}
-							</div>
-						{/each}
-					
-					</div>
-					
-				</div>
-				
+				<TabLog
+					{loggedItems}
+				/>
 			{/if}
 			
 		</div>
 		
 		<div class="code-editor-child">
-			<CodeEditor
-				code={page.code}
-				bind:this={codeEditor}
-			/>
+			<MonacoLoader let:monaco>
+				
+				{#if selectedMode.name == `Code`}
+					<CodeEditorForPageAndApp
+						{pageId}
+						{monaco}
+						bind:this={codeEditorForPageAndApp}
+					/>
+				{:else if selectedMode.name == `State`}
+					<CodeEditorForState
+						state={appState}
+						{monaco}
+						bind:this={codeEditorForState}
+					/>
+				{/if}
+				
+			</MonacoLoader>
 		</div>
 		
 	</div>
 </Modal>
-
-{#if showEditAppModal}
-	<EditAppModal
-		bind:showModal={showEditAppModal}
-	/>
-{/if}
-
-{#if showEditStateModal}
-	<EditStateModal
-		bind:showModal={showEditStateModal}
-		initialState={appState}
-	/>
-{/if}
 
 <style>
 
@@ -246,7 +232,7 @@
 	background-color: aqua;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: min-content 1fr;
 	grid-template-rows: auto 1fr;
 	align-items: center;
 	height: 100%;
@@ -300,73 +286,7 @@
 			& > button{
 				
 				font-size: 1.25em;
-				
-				&.isSelected{
-					font-weight: bold;
-					text-decoration: underline;
-					margin-top: 0.25em;
-				}
-				
-			}
-			
-		}
-		
-		& .tab-menu{
-			
-			text-align: center;
-			
-			& ul{
-				
-				list-style-type: none;
-				padding: 0;
-				margin: 0;
-				
-				& li{
-					margin-block: 0.5em;
-					
-					&:last-child{
-						margin-bottom: 0;
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-		& .tab-log{
-			
-			& .settings{
-				margin: 0.25em;
-				text-align: center;
-			}
-			
-			& > .items{
-				
-				font-family: 'Courier New', Courier, monospace;
-				
-				& .item{
-					
-					margin: 0.5em 0.25em;
-					padding: 0.25em;
-					border-radius: 3px;
-					word-wrap: break-word;
-					white-space: pre-wrap;
-					font-size: 90%;
-					
-					&.user{
-						background-color: whitesmoke;
-					}
-					
-					&.framework{
-						background-color: beige;
-					}
-					
-					&.error{
-						background-color: pink;
-					}
-					
-				}
+				margin-top: 0.25em;
 				
 			}
 			

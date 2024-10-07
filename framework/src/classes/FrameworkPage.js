@@ -55,7 +55,7 @@ export class FrameworkPage{
 				return
 			}
 			
-			onLog(`framework`, `Initializing variables in ${this.Page.proxyName} ✅`)
+			onLog(`framework`, `Initializing variables in ${this.Page.proxyName}... ✅`)
 			
 		}
 		
@@ -83,7 +83,7 @@ export class FrameworkPage{
 			try {
 				onLog(`framework`, `Calling ${this.Page.proxyName}.createBeforeDirections()...`)
 				createdBeforeDirections = this.page.createBeforeDirections()
-				onLog(`framework`, `${this.Page.proxyName}.createBeforeDirections() ✅`)
+				onLog(`framework`, `Calling ${this.Page.proxyName}.createBeforeDirections()... ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.createBeforeDirections(): ${error}.`,
@@ -115,7 +115,7 @@ export class FrameworkPage{
 			try {
 				onLog(`framework`, `Calling ${this.Page.proxyName}.createAfterDirections()...`)
 				createdAfterDirections = this.page.createAfterDirections()
-				onLog(`framework`, `${this.Page.proxyName}.createAfterDirections() ✅`)
+				onLog(`framework`, `Calling ${this.Page.proxyName}.createAfterDirections()... ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.createAfterDirections(): ${error}.`,
@@ -161,7 +161,7 @@ export class FrameworkPage{
 			try {
 				onLog(`framework`, `Calling ${this.Page.proxyName}.onBefore()...`)
 				this.page.onBefore()
-				onLog(`framework`, `${this.Page.proxyName}.onBefore() ✅`)
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onBefore()... ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.onBefore(): ${error}.`,
@@ -188,7 +188,7 @@ export class FrameworkPage{
 					this.frameworkApp.runtimeSettings.state.pages[this.Page.proxyName],
 					this.frameworkApp.runtimeSettings.state.version,
 				)
-				onLog(`framework`, `${this.Page.proxyName}.onUpdate() ✅`)
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onUpdate()... ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.Page.proxyName}.onUpdate(): ${error}.`,
@@ -233,7 +233,7 @@ export class FrameworkPage{
 			return
 		}
 		
-		onLog(`framework`, `${this.Page.proxyName}.createGui() ✅`)
+		onLog(`framework`, `Calling ${this.Page.proxyName}.createGui()... ✅`)
 		
 		onPageShow()
 		
@@ -258,7 +258,7 @@ export class FrameworkPage{
 			try {
 				onLog(`framework`, `Calling ${this.Page.proxyName}.onAfter()...`)
 				this.page.onAfter()
-				onLog(`framework`, `${this.Page.proxyName}.onAfter() ✅`)
+				onLog(`framework`, `Calling ${this.Page.proxyName}.onAfter()... ✅`)
 			}catch(error){
 				onError(
 					`Error in ${this.Page.proxyName}.onAfter(): ${error}.`,

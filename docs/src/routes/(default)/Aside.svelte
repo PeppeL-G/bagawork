@@ -246,6 +246,9 @@
 				text: 'Configuration Methods',
 				href: '/documentation/configuration-methods/',
 			}, {
+				text: 'State',
+				href: '/documentation/state/',
+			}, {
 				text: 'Text Symbols',
 				href: '/documentation/text-symbols/',
 			}],

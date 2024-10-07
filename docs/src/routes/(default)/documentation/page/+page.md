@@ -300,7 +300,7 @@ You only need to handle user input in `onAfter()` if your app's logic require's 
 
 
 
-# `createAfterDirections()` - Redirecting the user to another page
+## `createAfterDirections()` - Redirecting the user to another page
 The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[Direction] objects, indicating which page the user should come to.
 
 ::: tip Example
@@ -441,3 +441,14 @@ class AboutPage extends Page{
 ```
 
 :::
+
+
+
+
+## `onUpdate()` - Updating the state of the page
+When the user starts running a new version of your app with a page state from an older version of the app, `Page.onUpdate()` will be called, in which you can handle the update. `onUpdate()` will be passed two values:
+
+* `oldP`, which contains the stored page variables
+* `oldVersion`, which contains the old version of the app the user ran before
+
+For more information, see :docs[State].

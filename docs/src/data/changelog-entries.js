@@ -10,6 +10,8 @@ export const changelogEntries = [{
 		`Added the function log()`,
 		`Added the docs page log()`,
 		`Added a log panel in the editor`,
+		`Reworked the GUI in the editor`,
+		`Improved documentation on state and update`,
 	],
 }, {
 	version: `0.0.38`,

@@ -6,16 +6,13 @@
 	}
 
 	import MainMenuModal from "./modals/MainMenuModal.svelte";
-	import EditAppModal from "./modals/EditAppModal.svelte";
 	import EditFolderModal from "./modals/EditFolderModal.svelte";
 	import Folder from "./Folder.svelte";
-	import { app, folders } from "../stores.js";
-	import { getClassName } from "../functions/get-class-name.js";
+	import { folders } from "../stores.js";
 
 	let selectedFolderId = $folders[0].id;
 
 	let showMainMenuModal = false;
-	let showEditAppModal = false;
 	let showEditFolderModal = false;
 
 	// When deleting a folder, change selectedFolderId to an existing one.
@@ -47,13 +44,6 @@
 	</div>
 
 	<div class="header">
-		<button
-			class="editAppButton"
-			on:click={() => showEditAppModal = true}
-		>
-			{getClassName($app.code)}
-		</button>
-
 		<div class="folder-titles">
 			{#each $folders as folder (folder.id)}
 				<button
@@ -81,10 +71,6 @@
 
 {#if showMainMenuModal}
 	<MainMenuModal bind:showModal={showMainMenuModal} options={mainMenuOptions} />
-{/if}
-
-{#if showEditAppModal}
-	<EditAppModal bind:showModal={showEditAppModal} />
 {/if}
 
 {#if showEditFolderModal}
@@ -115,17 +101,6 @@
 		border-top: none;
 		border-right: none;
 		border-bottom-left-radius: 1em;
-	}
-
-	.header > button {
-		font-weight: bold;
-		padding: 0.5em;
-		display: inline-block;
-		color: black;
-	}
-	
-	.header > .editAppButton{
-		background-color: lime;
 	}
 
 	.header .folder-titles {

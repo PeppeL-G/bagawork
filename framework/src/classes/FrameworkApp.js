@@ -54,15 +54,17 @@ export class FrameworkApp{
 	// (when we have detected voices, microphone, etc.).
 	start() {
 		
-		this.createAppInstance()
+		const {
+			state,
+			onLog,
+			onError
+		} = this.runtimeSettings
+		
+		this.createClasses()
 		
 		if(this.errorMessage){
 			return
 		}
-		
-		const {
-			state
-		} = this.runtimeSettings
 		
 		if(state){
 			
@@ -75,6 +77,18 @@ export class FrameworkApp{
 			return
 			
 		}
+		
+		try {
+			onLog(`framework`, `Initializing variables in ${this.App.name}...`)
+			this.app = new this.App()
+		} catch (error) {
+			onError(
+				`Error ocurred while initializing variables in ${this.App.name}: ${error}.`,
+			)
+			return
+		}
+		
+		onLog(`framework`, `Initializing variables in ${this.App.name}... ✅`)
 		
 		this.runOnBefore()
 		
@@ -92,7 +106,7 @@ export class FrameworkApp{
 		
 	}
 	
-	createAppInstance() {
+	createClasses() {
 		
 		const {
 			onError,
@@ -111,7 +125,7 @@ export class FrameworkApp{
 				return
 			}
 			
-			onLog(`framework`, `Parsing the code  ✅`)
+			onLog(`framework`, `Parsing the code... ✅`)
 			
 		}
 		
@@ -188,22 +202,10 @@ export class FrameworkApp{
 			return
 		}
 		
-		onLog(`framework`, `Creating classes ✅`)
+		onLog(`framework`, `Creating classes... ✅`)
 		
 		this.App = createAppResult.App
 		this.Pages = createAppResult.Pages
-		
-		try {
-			onLog(`framework`, `Initializing variables in ${this.App.name}...`)
-			this.app = new this.App()
-		} catch (error) {
-			onError(
-				`Error ocurred while initializing variables in ${this.App.name}: ${error}.`,
-			)
-			return
-		}
-		
-		onLog(`framework`, `Initializing variables in ${this.App.name} ✅`)
 		
 	}
 	
@@ -217,11 +219,10 @@ export class FrameworkApp{
 		if (this.App.prototype.hasOwnProperty('onBefore')) {
 			
 			try {
-				onLog(`framework`, `Calling ${this.App.name}.onBefore()... ✅`)
+				onLog(`framework`, `Calling ${this.App.name}.onBefore()...`)
 				this.app.onBefore()
-				onLog(`framework`, `${this.App.name}.onBefore() ✅`)
+				onLog(`framework`, `Calling ${this.App.name}.onBefore()... ✅`)
 			} catch (error) {
-				onLog(`framework`, `${this.App.name}.onBefore()...`)
 				onError(
 					`Error in ${this.App.name}.onBefore(): ${error}.`,
 				)
@@ -236,22 +237,44 @@ export class FrameworkApp{
 	update() {
 		
 		const {
+			version,
 			state,
+			onLog,
+			onError,
 		} = this.runtimeSettings
+		
+		onLog(`framework`, `Update from version ${state.version} to version ${version} detected!`)
+		
+		try {
+			onLog(`framework`, `Initializing variables in ${this.App.name}...`)
+			this.app = new this.App()
+			onLog(`framework`, `Initializing variables in ${this.App.name}... ✅`)
+		} catch (error) {
+			onError(
+				`Error ocurred while initializing variables in ${this.App.name}: ${error}.`,
+			)
+			return
+		}
+		
+		onLog(`framework`, `Copying over values in app variables that exist in both versions from the old version to the new version...`)
+		
+		const appVariables = getCopyWithRestoredClassInstances(state.app)
 		
 		let PageToLoadAfterUpdate = null
 		
-		for (const stateKey of Object.keys(state.app)) {
-
-			if (this.app.hasOwnProperty(stateKey)) {
-
-				if (!constantNameRegExp.test(stateKey)) {
-					this.app[stateKey] = state.app[stateKey]
+		for (const appVariableName of Object.keys(appVariables)) {
+			
+			if (this.app.hasOwnProperty(appVariableName)) {
+				
+				if(!constantNameRegExp.test(appVariableName)){
+					this.app[appVariableName] = appVariables[appVariableName]
 				}
-
+				
 			}
-
+			
 		}
+		
+		onLog(`framework`, `Copying over values in app variables that exist in both versions from the old version to the new version... ✅`)
 
 		PageToLoadAfterUpdate = this.runOnUpdate()
 
@@ -302,7 +325,7 @@ export class FrameworkApp{
 					this.runtimeSettings.state.app,
 					this.runtimeSettings.state.version,
 				)
-				onLog(`framework`, `${this.App.name}.onUpdate() ✅`)
+				onLog(`framework`, `Calling${this.App.name}.onUpdate()... ✅`)
 			} catch (error) {
 				onError(
 					`Error in ${this.App.name}.onUpdate(): ${error}.`,
@@ -327,6 +350,7 @@ export class FrameworkApp{
 		
 		const {
 			state,
+			onLog,
 		} = this.runtimeSettings
 		
 		for (const pageName of Object.keys(state.pages)) {
@@ -334,6 +358,8 @@ export class FrameworkApp{
 			if (this.Pages.hasOwnProperty(pageName)){
 				
 				this.pageStates[pageName] = {}
+				
+				onLog(`framework`, `Copying over values in page variables that exist in both versions from the old version to the new version in ${pageName}...`)
 				
 				this.frameworkPage = new FrameworkPage(
 					this,
@@ -355,6 +381,8 @@ export class FrameworkApp{
 					
 				}
 				
+				onLog(`framework`, `Copying over values in page variables that exist in both versions from the old version to the new version in ${pageName}... ✅`)
+				
 				this.frameworkPage.runOnUpdate()
 				this.frameworkPage.rememberState()
 				
@@ -368,9 +396,18 @@ export class FrameworkApp{
 		
 		const {
 			state,
+			onLog,
+			onError,
 		} = this.runtimeSettings
 		
+		onLog(`framework`, `Restoring app and page variables from state... ✅`)
+		
 		try{
+			
+			this.app = Object.setPrototypeOf(
+				{},
+				this.App.prototype,
+			)
 			
 			Object.assign(
 				this.app,
@@ -388,7 +425,7 @@ export class FrameworkApp{
 			
 		}catch(error){
 			
-			this.onError(`Error occurred when trying to restore the state: ${error}`)
+			onError(`Error occurred when trying to restore the state: ${error}`)
 			return
 			
 		}
@@ -439,7 +476,7 @@ export class FrameworkApp{
 			return
 		}
 		
-		onLog(`framework`, `${this.App.name}.createStartPage() ✅`)
+		onLog(`framework`, `Calling ${this.App.name}.createStartPage()... ✅`)
 		onLog(
 			`framework`,
 			`(note: when previewing a page in the editor, ${this.App.name}.createStartPage() is overwritten to always return the page you are previewing, and not the one you have actually specified in ${this.App.name}.createStartPage())`,
