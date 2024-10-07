@@ -1,5 +1,5 @@
 import { visit } from 'unist-util-visit'
-import { getDecompressedProject } from '@bagawork/editor/src/functions/project-compressor.js'
+import { getDecompressedProject, getCompressedProject } from '@bagawork/editor/src/functions/project-compressor.js'
 import { getClassName } from '@bagawork/editor/src/functions/get-class-name.js'
 
 // Use it like this:
@@ -47,6 +47,9 @@ export function createBagaworkProjectLeafPlugin() {
 					
 					const project = getDecompressedProject(bagaCode)
 					
+					delete project.editorSettings
+					delete project.pageTemplates
+					
 					const children = params.filter(
 						p => ["show", "code", "editor"].includes(p.name)
 					).map(p => {
@@ -91,7 +94,7 @@ export function createBagaworkProjectLeafPlugin() {
 								}
 							
 							case 'editor':
-								return createLinkToEditorNode(bagaCode)
+								return createLinkToEditorNode(project)
 							
 							default:
 								console.error("Unknown query string parameter in ::bagawork-project: " + p.name +".")
@@ -135,9 +138,9 @@ function createCodeNode(code) {
 	}
 }
 
-function createLinkToEditorNode(bagaCode) {
+function createLinkToEditorNode(project) {
 	return {
 		type: 'html',
-		value: `<a target="_blank" href="/editor#${bagaCode}" title="Open in our Online Editor">Open in Online Editor</a>`,
+		value: `<a target="_blank" href="/editor#${getCompressedProject(project)}" title="Open in our Online Editor">Open in Online Editor</a>`,
 	}
 }
