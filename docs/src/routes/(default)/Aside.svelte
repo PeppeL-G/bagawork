@@ -118,6 +118,9 @@
 		}, {
 			name: 'GUIs',
 			links: [{
+				text: 'Horizontal Scrolling',
+				href: '/examples/guis/horizontal-scrolling/'
+			}, {
 				text: 'Modal',
 				href: '/examples/guis/modal/'
 			}, {

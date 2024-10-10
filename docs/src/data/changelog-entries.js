@@ -2,6 +2,7 @@ export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
 	changes: [
+		`Docs: Added the example GUI Horizontal Scrolling`,
 		`Editor: Improved the GUI in edit page modal`,
 	],
 }, {
