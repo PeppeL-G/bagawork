@@ -9,22 +9,20 @@
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	import TabLog from './edit-page-components/TabLog.svelte'
 	import TabMenu from './edit-page-components/TabMenu.svelte'
-	import CodeEditorForPageAndApp from '../CodeEditorForPageAndApp.svelte'
+	import CodeEditorForPageAndApp from './edit-page-components/CodeEditorForPageAndApp.svelte'
 	import MonacoLoader from '../MonacoLoader.svelte'
-	import TabModes from './edit-page-components/TabModes.svelte'
-	import CodeEditorForState from '../CodeEditorForState.svelte'
 	
 	$: page = $pages.find(p => p.id == pageId)
 	
 	let forceRestartAppKey = Math.random()
 	let appState
 	
-	const secondaryTabNames = [`Menu`, `Mode`, `Log`]
+	const secondaryTabNames = [`Menu`, `Log`]
 	let selectedSecondaryTabName = secondaryTabNames[0]
 	
 	let loggedItems = []
 	let codeEditorForPageAndApp = null
-	let codeEditorForState = null
+	let editorMode = ``
 	
 	const tabMenuItems = [{
 		text: `Delete`,
@@ -50,15 +48,6 @@
 			showModal = false
 		},
 	}]
-	
-	const tabModes = [{
-		name: `Code`,
-		explanation: `In the CODE mode you can edit the code for the selected page and the app. Your changes to the code will be saved when you close this modal or click on the RESTART button.`,
-	}, {
-		name: `State`,
-		explanation: `In the STATE mode you can view the state of your app (the values of all the variables). You can also change the state and then click on the RESTART WITH STATE button to restart the app with the new state, instead of starting it from scratch.`,
-	}]
-	let selectedMode = tabModes[0]
 	
 	const runtimeSettings = {
 		onStateChange(newState){
@@ -103,6 +92,7 @@
 		codeEditorForPageAndApp.save()
 		
 		forceRestartAppKey = Math.random()
+		appState = null
 		
 	}
 	
@@ -114,7 +104,7 @@
 		// before we run the app and add more log items.
 		await new Promise(r => setTimeout(r, 1))
 		
-		runtimeSettings.state = codeEditorForState.getModifiedState()
+		runtimeSettings.state = codeEditorForPageAndApp.getModifiedState()
 		
 		// Apply some logic to enable update triggers
 		// by changing the version in the state.
@@ -127,7 +117,16 @@
 		}
 		
 		forceRestartAppKey = Math.random()
+		appState = null
 		
+	}
+	
+	function getNoneReactiveCreateAppCode(){
+		return getCreateAppCode(
+			$app,
+			$pages,
+			page,
+		)
 	}
 	
 </script>
@@ -144,11 +143,7 @@
 			>
 				{#key forceRestartAppKey}
 					<ViewApp
-						createAppCode={getCreateAppCode(
-							$app,
-							$pages,
-							page,
-						)}
+						createAppCode={getNoneReactiveCreateAppCode()}
 						runtimeSettings={getRuntimeSettings()}
 					/>
 				{/key}
@@ -156,15 +151,16 @@
 			
 			<div class="preview-buttons">
 				
-				{#if selectedMode.name == `State`}
-					<button on:click={restartWithState}>
-						Restart with state
-					</button>
-				{:else}
+				{#if editorMode == `code`}
 					<button on:click={restart}>
 						Restart
 					</button>
+				{:else if editorMode == `state`}
+					<button on:click={restartWithState}>
+						Restart with state
+					</button>
 				{/if}
+				
 			</div>
 			
 		</div>
@@ -186,12 +182,6 @@
 				<TabMenu
 					items={tabMenuItems}
 				/>
-			{:else if selectedSecondaryTabName == `Mode`}
-				<TabModes
-					modes={tabModes}
-					selectedMode={selectedMode}
-					onSelectedChange={ m => selectedMode = m }
-				/>
 			{:else if selectedSecondaryTabName == `Log`}
 				<TabLog
 					{loggedItems}
@@ -203,19 +193,13 @@
 		<div class="code-editor-child">
 			<MonacoLoader let:monaco>
 				
-				{#if selectedMode.name == `Code`}
-					<CodeEditorForPageAndApp
-						{pageId}
-						{monaco}
-						bind:this={codeEditorForPageAndApp}
-					/>
-				{:else if selectedMode.name == `State`}
-					<CodeEditorForState
-						state={appState}
-						{monaco}
-						bind:this={codeEditorForState}
-					/>
-				{/if}
+				<CodeEditorForPageAndApp
+					{pageId}
+					{monaco}
+					state={appState}
+					bind:this={codeEditorForPageAndApp}
+					onEditorModeChanged={(em) => editorMode = em}
+				/>
 				
 			</MonacoLoader>
 		</div>
