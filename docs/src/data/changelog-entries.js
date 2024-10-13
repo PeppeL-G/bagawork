@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Docs: Added the example GUI Horizontal Scrolling`,
 		`Editor: Improved the GUI in edit page modal`,
+		`Framework: Fixed bug occurring when Rows.children() hasn't been called`,
 	],
 }, {
 	version: `0.0.39`,

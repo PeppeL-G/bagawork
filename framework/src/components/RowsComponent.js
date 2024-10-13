@@ -4,7 +4,7 @@ import { validateArgs } from '../functions/validate-args.js'
 
 export class RowsComponent extends Component {
 	
-	_children
+	_children = []
 	
 	children(...children) {
 		
