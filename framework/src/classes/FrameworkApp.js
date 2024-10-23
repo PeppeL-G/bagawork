@@ -583,6 +583,10 @@ export class FrameworkApp{
 		appElement.style.height = '100%'
 		appElement.style.backgroundColor = 'aqua'
 		
+		if(this.runtimeSettings.isPreview){
+			appElement.setAttribute(`inert`, ``)
+		}
+		
 		const updateGui = () => {
 			
 			appElement.innerHTML = ``

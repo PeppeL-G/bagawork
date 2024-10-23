@@ -283,13 +283,9 @@
 					on:click|stopPropagation={() => { showEditPageModal = true; selectedPageId = page.id }}
 				>
 					
-					<div class="disabled-page">
-						<ViewSinglePageFrameworkApp
-							{frameworkApp}
-						/>
-					</div>
-					
-					<div class="overlay"></div>
+					<ViewSinglePageFrameworkApp
+						{frameworkApp}
+					/>
 					
 				</div>
 				
@@ -368,7 +364,7 @@
 	it needs to be at the bottom. */
 }
 
-.page-container .page .disabled-page{
+.page-container .page{
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -376,7 +372,7 @@
 	top: 0;
 }
 
-.page-container .page .overlay{
+.page-container .page{
 	width: 100%;
 	height: 100%;
 	position: absolute;
