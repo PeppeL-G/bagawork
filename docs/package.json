@@ -1,6 +1,6 @@
 {
 	"name": "@bagawork/docs",
-	"version": "0.0.41",
+	"version": "0.0.42",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -9,7 +9,7 @@
 		"deploy": "node ./scripts/deploy.js"
 	},
 	"dependencies": {
-		"@bagawork/editor": "^0.0.41",
+		"@bagawork/editor": "^0.0.42",
 		"@sveltejs/kit": "^2.3.2",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"mdsvex": "^0.11.0",

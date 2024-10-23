@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.42`,
+	date: `2024-10-23`,
 	changes: [
 		`Framework: Added the method App.createIcon()`,
 		`Framework: Added the runtimeSetting onIconCreated()`,
