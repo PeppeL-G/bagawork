@@ -6,7 +6,8 @@
 
 <footer>
 	Copyright Peter L-G {year} |
-	<a href="/motivation">Motivation</a>
+	<a href="/motivation">Motivation</a> |
+	<a href="/glossary">Glossary</a>
 </footer>
 
 <style>

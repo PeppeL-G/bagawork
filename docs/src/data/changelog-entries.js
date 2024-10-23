@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Editor: Improved the GUI in edit page modal`,
 		`Framework: Fixed bug occurring when Rows.children() hasn't been called`,
 		`Editor: Added type definitions for Box`,
+		`Docs: Added the page glossary`,
 	],
 }, {
 	version: `0.0.39`,
