@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Framework: Fixed bug occurring when Rows.children() hasn't been called`,
 		`Editor: Added type definitions for Box`,
 		`Docs: Added the page glossary`,
+		`Docs: Added categories to changelog entries`,
 	],
 }, {
 	version: `0.0.39`,
