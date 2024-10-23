@@ -6,11 +6,11 @@ On this page you will find the meaning of various technological words that are g
 
 
 ## BagaLand
-The name of the website [bagaland.com](bagaland.com), on which you can create an account and store your BagaWork apps online, and make them accessible to others, as well as installable on most smartphones. Apps here will also remember their states between runs, so if the user closes the app and then opens it again, it will resume running just as the user left it!
+The name of the website [bagaland.com](https://bagaland.com), on which you can create an account and store your BagaWork apps online, and make them accessible to others, as well as installable on most smartphones. Apps here will also remember their states between runs, so if the user closes the app and then opens it again, it will resume running just as the user left it!
 
 
 ## BagaWork
-A framework programmers can use to implement small and simple apps in JavaScript very easily. On its website, [bagawork.com](bagawork.com) (this website), you will find:
+A framework programmers can use to implement small and simple apps in JavaScript very easily. On its website, [bagawork.com](https://bagawork.com) (this website), you will find:
 
 * The documentation for how the BagaWork framework works
 * Tutorials that teaches you how to build apps in the BagaWork framework
