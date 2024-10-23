@@ -8,6 +8,7 @@ export const changelogEntries = [{
 		`Editor: Added the "Icon" tab to preview the created app icon`,
 		`Docs: Added docs for App.createIcon()`,
 		`Docs: Added docs for for runtimeSettings.onIconCreated()`,
+		`Docs: On the run app page, use the app icon as the favicon`,
 	],
 }, {
 	version: `0.0.41`,

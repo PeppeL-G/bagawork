@@ -34,7 +34,19 @@
 				project.pages,
 			)
 			
-			const runtimeSettings = {}
+			const runtimeSettings = {
+				onIconCreated(iconAsSvgString){
+					
+					let link = document.querySelector(`link[rel='icon']`)
+					
+					link.type = "image/svg+xml"
+					
+					link.href = `data:image/svg+xml;charset=utf-8,${
+						encodeURIComponent(iconAsSvgString)
+					}`
+					
+				}
+			}
 			
 			showAppInElement(
 				createAppCode,
