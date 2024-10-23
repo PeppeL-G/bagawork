@@ -120,11 +120,17 @@ Example of how `createIcon()` can be implemented.
 
 ```js baga-editor-code
 class MyApp extends App{
+	
 	createIcon(){
 		return Paper.backgroundColor(`gold`).children(
 			PaperCircle.backgroundColor(`red`).radius(5),
 		)
 	}
+	
+	createStartPage(){
+		return StartPage
+	}
+	
 }
 
 class StartPage extends Page{
