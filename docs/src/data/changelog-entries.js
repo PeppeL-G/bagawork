@@ -19,10 +19,6 @@ export const changelogEntries = [{
 }, {
 	version: `0.0.41`,
 	date: `2024-10-23`,
-	changes: [],
-}, {
-	version: `0.0.40`,
-	date: `2024-10-23`,
 	changes: [
 		`Docs: Added the example GUI Horizontal Scrolling`,
 		`Editor: Improved the GUI in edit page modal`,
@@ -30,6 +26,12 @@ export const changelogEntries = [{
 		`Editor: Added type definitions for Box`,
 		`Docs: Added the page glossary`,
 		`Docs: Added categories to changelog entries`,
+	],
+}, {
+	version: `0.0.40`,
+	date: `2024-10-23`,
+	changes: [
+		`Failed to publish`,
 	],
 }, {
 	version: `0.0.39`,
