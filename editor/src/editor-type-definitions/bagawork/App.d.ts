@@ -17,6 +17,15 @@ declare class App {
 	onBefore(): void;
 	
 	/**
+	 * This method is called directly when your app starts. In this
+	 * method you can create and return a Paper component that will
+	 * be used as the icon of your app. If your app is installed on
+	 * a smartphone, it will for example be used as the icon the
+	 * user should click on to start your app.
+	 */
+	createIcon(): Paper
+	
+	/**
 	 * This method will be called after onBefore() has been called.
 	 * In this method, you should send back the first page that should
 	 * be shown to the user.

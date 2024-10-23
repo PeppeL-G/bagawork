@@ -121,6 +121,10 @@ Set `runtimeSettings.state` to `JSON.parse(localStorage['state'] ?? '""') || nul
 
 
 
+#### Obtaining the app icon
+Set `runtimeSettings.onIconCreated` to a function to obtain the icon created by `App.createIcon()`. You will be passed the icon as a string containing SVG code.
+
+
 
 #### Dealing with updates
 If a state has been stored, and the app then starts with that state running in a new version of the app, an update in the app needs to happen (the `onUpdate()` methods in the app needs to be called, etc.).

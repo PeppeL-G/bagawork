@@ -102,6 +102,49 @@ You only need to initialize the global state if your app needs one. Some simple 
 
 
 
+
+## `createIcon()` - Creating an icon
+The method `createIcon()` will be called directly when the app starts. In it, you can create and return a :docs[Paper] component that will be used as the icon of your app. If your app is installed on a smartphone, it will for example be used as the icon the user should click on to start your app, and if your app runs in a tab in a web browser, the icon will be shown in the corner of the tab.
+
+The icon will always have a square size (width=height).
+
+::: tip Previewing in the online editor
+
+In our online editor, you can preview the app icon by clicking on a page, and then look in the `Icon` tab.
+
+:::
+
+::: tip Example
+
+Example of how `createIcon()` can be implemented.
+
+```js baga-editor-code
+class MyApp extends App{
+	createIcon(){
+		return Paper.backgroundColor(`gold`).children(
+			PaperCircle.backgroundColor(`red`).radius(5),
+		)
+	}
+}
+
+class StartPage extends Page{
+	createGui(){
+		return Text.text(`In the code editor, click on the "Icon" tab, and you will see the created icon!`)
+	}
+}
+```
+
+:::
+
+::: tip Not needed?
+
+You only need to implement `createIcon()` if you want your app to have its own icon. 
+
+:::
+
+
+
+
 ## `createStartPage()` - Creating the start page
 After `onBefore()` has been called, `createStartPage()` will be called. In this method, you should create and send back an instance of the `Page` class that should first be shown to the user. This method you must implement, otherwise your app won't know which `Page` to show when it starts, and the app will crash.
 

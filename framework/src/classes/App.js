@@ -4,6 +4,10 @@ export class App{
 		
 	}
 	
+	createIcon(){
+		
+	}
+	
 	createStartPage(){
 		
 	}

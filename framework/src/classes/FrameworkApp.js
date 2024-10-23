@@ -4,6 +4,7 @@ import { App } from './App.js'
 import { Page } from './Page.js'
 import { evalExpression } from '../functions/eval-expression.js'
 import { getCopyWithRestoredClassInstances } from '../functions/get-copy-with-restored-class-instances.js'
+import { PaperComponent } from '../components/PaperComponent.js'
 
 const defaultRuntimeSettings = {
 	isPreview: false,
@@ -11,6 +12,7 @@ const defaultRuntimeSettings = {
 	onError: null, // (errorMessage) => {},
 	onLog: (type, value) => {},
 	onStateChange: (newState) => {},
+	onIconCreated: (svgString) => {},
 	state: null,
 	version: 1,
 }
@@ -54,29 +56,28 @@ export class FrameworkApp{
 	// (when we have detected voices, microphone, etc.).
 	start() {
 		
-		const {
-			state,
-			onLog,
-			onError
-		} = this.runtimeSettings
-		
 		this.createClasses()
 		
 		if(this.errorMessage){
 			return
 		}
 		
-		if(state){
-			
-			if(state.version < this.runtimeSettings.version){
-				this.update()
-			}else{
-				this.restoreFromState()
-			}
-			
-			return
-			
+		if(!this.runtimeSettings.state){
+			this.startFromScratch()
+		}else if(this.runtimeSettings.state.version < this.runtimeSettings.version){
+			this.update()
+		}else{
+			this.restoreFromState()
 		}
+		
+	}
+	
+	startFromScratch(){
+		
+		const {
+			onLog,
+			onError,
+		} = this.runtimeSettings
 		
 		try {
 			onLog(`framework`, `Initializing variables in ${this.App.name}...`)
@@ -90,15 +91,17 @@ export class FrameworkApp{
 		
 		onLog(`framework`, `Initializing variables in ${this.App.name}... ✅`)
 		
+		this.runCreateIcon()
+		
 		this.runOnBefore()
 		
-		if(this.errorMessage){
+		if (this.errorMessage) {
 			return
 		}
 		
 		const StartPage = this.runCreateStartPage()
 		
-		if(!StartPage){
+		if (!StartPage) {
 			return
 		}
 		
@@ -275,27 +278,33 @@ export class FrameworkApp{
 		}
 		
 		onLog(`framework`, `Copying over values in app variables that exist in both versions from the old version to the new version... ✅`)
-
+		
 		PageToLoadAfterUpdate = this.runOnUpdate()
-
+		
 		if (this.errorMessage) {
 			return
 		}
-
+		
+		this.updatePages()
+		
 		if (
 			!PageToLoadAfterUpdate &&
 			!this.Pages.hasOwnProperty(state.currentPageName)
 		) {
-
+			
 			PageToLoadAfterUpdate = this.runCreateStartPage()
-
+			
 			if (this.errorMessage) {
 				return
 			}
-
+			
 		}
-
-		this.updatePages()
+		
+		this.runCreateIcon()
+		
+		if(this.errorMessage){
+			return
+		}
 		
 		this.frameworkPage = new FrameworkPage(
 			this,
@@ -416,18 +425,24 @@ export class FrameworkApp{
 			
 			this.pageStates = getCopyWithRestoredClassInstances(state.pages)
 			
-			this.frameworkPage = new FrameworkPage(
-				this,
-				this.Pages[state.currentPageName],
-			)
-			
-			this.frameworkPage.loadFromState()
-			
 		}catch(error){
 			
 			onError(`Error occurred when trying to restore the state: ${error}`)
 			return
 			
+		}
+		
+		this.frameworkPage = new FrameworkPage(
+			this,
+			this.Pages[state.currentPageName],
+		)
+		
+		this.frameworkPage.loadFromState()
+		
+		this.runCreateIcon()
+		
+		if(this.errorMessage){
+			return
 		}
 		
 		this.runtimeSettings.onStateChange(
@@ -568,6 +583,51 @@ export class FrameworkApp{
 				app: this.app,
 				pages: this.pageStates,
 			}),
+		)
+		
+	}
+	
+	runCreateIcon(){
+		
+		const {
+			onLog,
+			onError,
+		} = this.runtimeSettings
+		
+		if(!this.App.prototype.hasOwnProperty('createIcon')){
+			return
+		}
+		
+		let paperIcon = null
+		
+		try {
+			onLog(`framework`, `Calling ${this.App.name}.createIcon()...`)
+			paperIcon = this.app.createIcon()
+		} catch (error) {
+			onError(
+				`Error in ${this.App.name}.createIcon(): ${error}.`,
+			)
+			return
+		}
+		
+		if(!paperIcon){
+			onError(
+				`Error in ${this.App.name}.createIcon(): Does currently not return a value at all. Must return an instance of the GUI component Paper that comes from BagaWork.`,
+			)
+			return
+		}
+		
+		if(!(paperIcon instanceof PaperComponent)){
+			onError(
+				`Error in ${this.App.name}.createIcon(): The returned value must be an instance of the Paper component that comes from BagaWork.`,
+			)
+			return
+		}
+		
+		onLog(`framework`, `Calling ${this.App.name}.createIcon()... ✅`)
+		
+		this.runtimeSettings.onIconCreated(
+			paperIcon.getAsSvgString(),
 		)
 		
 	}

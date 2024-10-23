@@ -93,6 +93,10 @@ export class PaperComponent extends Component{
 			paperElement,
 		)
 		
+		if(this._backgroundColor){
+			svgElement.style.backgroundColor = this._backgroundColor
+		}
+		
 		if(this._showCoordinates){
 			
 			const svgWidth = this._width
@@ -176,6 +180,12 @@ export class PaperComponent extends Component{
 		
 		return paperElement
 		
+	}
+	
+	getAsSvgString(){
+		return new XMLSerializer().serializeToString(
+			this.createElement().firstChild,
+		)
 	}
 	
 	getRowSize() {

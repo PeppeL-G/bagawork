@@ -1,7 +1,14 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Framework: Added the method App.createIcon()`,
+		`Framework: Added the runtimeSetting onIconCreated()`,
+		`Editor: Added type definitions for App.createIcon()`,
+		`Editor: Added the "Icon" tab to preview the created app icon`,
+		`Docs: Added docs for App.createIcon()`,
+		`Docs: Added docs for for runtimeSettings.onIconCreated()`,
+	],
 }, {
 	version: `0.0.41`,
 	date: `2024-10-23`,

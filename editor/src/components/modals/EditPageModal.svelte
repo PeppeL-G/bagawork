@@ -9,6 +9,7 @@
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	import TabLog from './edit-page-components/TabLog.svelte'
 	import TabMenu from './edit-page-components/TabMenu.svelte'
+	import TabIcon from './edit-page-components/TabIcon.svelte'
 	import CodeEditorForPageAndApp from './edit-page-components/CodeEditorForPageAndApp.svelte'
 	import MonacoLoader from '../MonacoLoader.svelte'
 	
@@ -16,8 +17,9 @@
 	
 	let forceRestartAppKey = Math.random()
 	let appState
+	let iconAsSvgString = ``
 	
-	const secondaryTabNames = [`Menu`, `Log`]
+	const secondaryTabNames = [`Menu`, `Log`, `Icon`]
 	let selectedSecondaryTabName = secondaryTabNames[0]
 	
 	let loggedItems = []
@@ -67,6 +69,9 @@
 			})
 			loggedItems = loggedItems
 		},
+		onIconCreated(theIconAsSvgString){
+			iconAsSvgString = theIconAsSvgString
+		},
 		state: null,
 		version: 1,
 	}
@@ -93,6 +98,7 @@
 		
 		forceRestartAppKey = Math.random()
 		appState = null
+		iconAsSvgString = ``
 		
 	}
 	
@@ -118,6 +124,7 @@
 		
 		forceRestartAppKey = Math.random()
 		appState = null
+		iconAsSvgString = ``
 		
 	}
 	
@@ -185,6 +192,10 @@
 			{:else if selectedSecondaryTabName == `Log`}
 				<TabLog
 					{loggedItems}
+				/>
+			{:else if selectedSecondaryTabName == `Icon`}
+				<TabIcon
+					{iconAsSvgString}
 				/>
 			{/if}
 			
