@@ -64,7 +64,7 @@ export class PaperCircleChild extends PaperChild{
 		
 		circleElement.setAttribute(`cx`, `${cx}%`)
 		circleElement.setAttribute(`cy`, `${cy}%`)
-		circleElement.setAttribute(`r`, `${r}cqmin`)
+		circleElement.setAttribute(`r`, `${r}%`)
 		circleElement.setAttribute('fill', this._backgroundColor)
 		
 		return circleElement

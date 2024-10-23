@@ -73,7 +73,6 @@ export class PaperComponent extends Component{
 		)
 		svgElement.setAttribute(`width`, `100%`)
 		svgElement.setAttribute(`height`, `100%`)
-		svgElement.style.containerType = `size`
 		
 		paperElement.appendChild(svgElement)
 		

@@ -78,6 +78,22 @@ class StartPage extends Page{
 
 :::
 
+::: warning Note!
+
+If your coordinate system is not uniformed (i.e. one unit in the X-direction is not equally big as one unit in the Y-direction), then the line will be drawn with a thickness slightly different from the one you have provided it with, to make the line look like a line with the given thickness in both the X-direction and Y-direction.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Paper.coordinateSystem(10, 10).showCoordinates().backgroundColor(`orange`).children(
+			PaperLine.thickness(1),
+		)
+	}
+}
+```
+
+:::
+
 
 
 

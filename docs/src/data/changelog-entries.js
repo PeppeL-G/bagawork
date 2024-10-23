@@ -9,6 +9,8 @@ export const changelogEntries = [{
 		`Docs: Added docs for App.createIcon()`,
 		`Docs: Added docs for for runtimeSettings.onIconCreated()`,
 		`Docs: On the run app page, use the app icon as the favicon`,
+		`Framework: Changed how PaperCircle.radius() and PaperLine.thickness() work so they can be implemented without CSS (to make app icons work outside web browsers)`,
+		`Docs: Updated the docs for PaperCircle.radius() and PaperLine.thickness()`,
 	],
 }, {
 	version: `0.0.41`,

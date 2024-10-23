@@ -92,7 +92,7 @@ export class PaperLineChild extends PaperChild{
 		lineElement.setAttribute('y1', `${y1}%`)
 		lineElement.setAttribute('x2', `${x2}%`)
 		lineElement.setAttribute('y2', `${y2}%`)
-		lineElement.setAttribute('stroke-width', `${thickness}cqmin`)
+		lineElement.setAttribute('stroke-width', `${thickness}%`)
 		lineElement.setAttribute('stroke', this._backgroundColor)
 		lineElement.setAttribute('stroke-linecap', `round`)
 		
