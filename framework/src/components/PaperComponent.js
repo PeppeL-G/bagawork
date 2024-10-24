@@ -182,9 +182,15 @@ export class PaperComponent extends Component{
 	}
 	
 	getAsSvgString(){
+		
+		const svgElement = this.createElement().firstChild
+		
+		svgElement.setAttribute(`viewBox`, `0 0 100 100`)
+		
 		return new XMLSerializer().serializeToString(
-			this.createElement().firstChild,
+			svgElement,
 		)
+		
 	}
 	
 	getRowSize() {
