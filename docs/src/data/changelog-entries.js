@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.43`,
+	date: `2024-10-24`,
 	changes: [
 		`Gave created app icons an SVG viewBox to specify they are squared`,
 	],
