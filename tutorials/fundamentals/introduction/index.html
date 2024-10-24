@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../../favicon.ico">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="../../../_app/immutable/assets/2.DIlgFH-0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.BDZ5ZTTe.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/entry.Cl35jZVa.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.DsUTx0kP.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.Cnh3HYw3.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.CUPj9ZTK.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.wQiTZQXl.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/each.BCiS_dJw.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/changelog-entries.D4PbNg6S.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.BrPJfAgF.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/72.COVvklqB.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-3c5oy2"><div class="publicAnnouncement svelte-3c5oy2"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-3c5oy2"><nav class="svelte-oeac2t"><div class="section svelte-oeac2t"><a href="/" class="svelte-oeac2t" data-svelte-h="svelte-1xi8gtf">BagaWork</a></div> <div class="section svelte-oeac2t"><a href="/documentation/" target="" class="svelte-oeac2t">Documentation </a><a href="/tutorials/" target="" class="svelte-oeac2t  isSubCurrent">Tutorials </a><a href="/examples/" target="" class="svelte-oeac2t">Examples </a><a href="/editor/" target="_blank" class="svelte-oeac2t">Editor </a><a href="/implementation/" target="" class="svelte-oeac2t">Implementation </a><a href="/contact/" target="" class="svelte-oeac2t">Contact </a></div> <div class="section svelte-oeac2t"><a class="version svelte-oeac2t" href="/changelog/">v0.0.43</a></div> </nav></div> <aside class="svelte-3c5oy2"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Fundamentals</div> <div class="links svelte-12md48y"><a href="/tutorials/fundamentals/introduction/" class="svelte-12md48y isCurrent">1. Introduction </a><a href="/tutorials/fundamentals/pages/" class="svelte-12md48y">2. Pages </a><a href="/tutorials/fundamentals/configuring-gui-components/" class="svelte-12md48y">3. Configuring GUI Components </a><a href="/tutorials/fundamentals/positioning-gui-components/" class="svelte-12md48y">4. Positioning GUI Components </a><a href="/tutorials/fundamentals/changing-page/" class="svelte-12md48y">5. Changing Page </a><a href="/tutorials/fundamentals/sizing-gui-components/" class="svelte-12md48y">6. Sizing GUI Components </a><a href="/tutorials/fundamentals/the-app-class/" class="svelte-12md48y">7. The App Class </a><a href="/tutorials/fundamentals/exercises/" class="svelte-12md48y">8. Exercises </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Programming</div> <div class="links svelte-12md48y"><a href="/tutorials/programming/page-constants/" class="svelte-12md48y">1. Page Constants </a><a href="/tutorials/programming/app-constants/" class="svelte-12md48y">2. App Constants </a><a href="/tutorials/programming/page-variables-and-methods/" class="svelte-12md48y">3. Page Variables &amp; Methods </a><a href="/tutorials/programming/app-variables-and-methods/" class="svelte-12md48y">4. App Variables &amp; Methods </a><a href="/tutorials/programming/numbers/" class="svelte-12md48y">5. Numbers </a><a href="/tutorials/programming/booleans-keepif-and-showif/" class="svelte-12md48y">6. Booleans, keepIf() &amp; showIf() </a><a href="/tutorials/programming/on-before/" class="svelte-12md48y">7. onBefore() </a><a href="/tutorials/programming/exercises/" class="svelte-12md48y">8. Exercises </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">GUI</div> <div class="links svelte-12md48y"><a href="/tutorials/gui/formatting-text-with-bbcode/" class="svelte-12md48y">1. Formatting Text with BBCode </a><a href="/tutorials/gui/styling/" class="svelte-12md48y">2. Styling </a><a href="/tutorials/gui/layouts/" class="svelte-12md48y">3. Layouts </a><a href="/tutorials/gui/images/" class="svelte-12md48y">4. Images </a><a href="/tutorials/gui/paper/" class="svelte-12md48y">5. Paper </a><a href="/tutorials/gui/dynamically-sized-paper/" class="svelte-12md48y">6. Dynamically Sized Paper </a></div> </div> </aside></aside> <main class="svelte-3c5oy2"><h1 data-svelte-h="svelte-agcqyt">1. Introduction</h1> <p data-svelte-h="svelte-1dkdt33">This tutorial will teach you what BagaWork is, and some basic information about it. No fun, but good-to-know knowledge.</p> <h2 data-svelte-h="svelte-mtw2d2">Framework</h2> <p data-svelte-h="svelte-jhtukr">Creating an app from scratch (meaning you write <em>all</em> code yourself) is very hard and very, very time consuming (there&#39;s a lot of code to write). Therefor, some programmers create <em>frameworks</em> other programmers (such as you) can use to more easily create new apps. <em>BagaWork</em> is such a framework.</p> <p data-svelte-h="svelte-8lqf46">So, why use BagaWork to create your apps, and not one of the other frameworks that exist? Truth to be told, BagaWork is a very bad choice for professional apps, such as Spotify, Netflix, Microsoft Word, etc. Instead of being a suitable framework for those type of apps, BagaWork has been designed to be a very good choice and easy to use for people that have never programmed before, so they can get started and create small and useful apps by themselves as they learn and become better at programming (most frameworks for professional apps are very hard for beginners to use).</p> <div class="remark-container warning" data-svelte-h="svelte-8vedlf"><div class="remark-container__title">Warning</div><p>Although BagaWork has been designed to be as easy to use as possible, that does not mean it will be easy to learn and use; programming is hard 😎</p></div> <h2 data-svelte-h="svelte-jj9vf4">Language</h2> <p data-svelte-h="svelte-1inaumi">BagaWork is built on a programming language called <em>JavaScript</em>. Therefore your own BagaWork apps also need to be written in JavaScript, and therefor you need to know/learn JavaScript.</p> <p data-svelte-h="svelte-8nsd9v">These tutorials have primarily been designed to teach you how to use BagaWork, and not JavaScript, but they will try to teach you the parts of JavaScript you need to know as they are used. But you won&#39;t become an expert JavaScript programmer after having read these tutorials.</p> <h2 data-svelte-h="svelte-1p0v32w">Coding</h2> <p data-svelte-h="svelte-1eg9q9b">The simplest way to write the code for your BagaWork apps is by using our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a>. It contains all the functionality you need for writing the code for your app and to run it directly in your web browser. It also allows you to save the code for your app in a special format called <code>baga</code> as a file on your own computer (so you later can open it in the editor again), as well as sharing your code with others through links.</p> <h2 data-svelte-h="svelte-1lyzefc">Hosting</h2> <p data-svelte-h="svelte-86rn7b">When you&#39;re done creating your BagaWork app, you can use our website <a href="https://bagaland.com" rel="nofollow" target="_blank">Bagaland</a> to host it. That way, anyone can run your app in their web browser, and they can even install it on smartphones/tablets.</p> <h2 data-svelte-h="svelte-p2uhy5">That&#39;s it!</h2> <p data-svelte-h="svelte-1n7644d">Great work! 🥳 Now that you have a basic understanding of what BagaWork is you should be ready to learn how to implement apps in BagaWork, starting with <a href="../pages/">Tutorial 2. Pages</a>.</p></main> <div class="footer svelte-3c5oy2"><footer class="svelte-d9hz5y">Copyright Peter L-G 2024 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> |
+	<a href="/glossary" data-svelte-h="svelte-1ftqd2z">Glossary</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_67lhwb = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.BDZ5ZTTe.js"),
+						import("../../../_app/immutable/entry/app.DsUTx0kP.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 72],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
