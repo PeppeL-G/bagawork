@@ -93,7 +93,19 @@ export class PaperComponent extends Component{
 		)
 		
 		if(this._backgroundColor){
-			svgElement.style.backgroundColor = this._backgroundColor
+			
+			const backgroundRect = document.createElementNS(
+				'http://www.w3.org/2000/svg',
+				'rect',
+			)
+			backgroundRect.setAttribute('x', `0%`)
+			backgroundRect.setAttribute('y', `0%`)
+			backgroundRect.setAttribute('width', `100%`)
+			backgroundRect.setAttribute('height', `100%`)
+			backgroundRect.setAttribute('fill', this._backgroundColor)
+			
+			svgElement.appendChild(backgroundRect)
+			
 		}
 		
 		if(this._showCoordinates){
