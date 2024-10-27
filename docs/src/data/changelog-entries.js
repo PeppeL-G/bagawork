@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.44`,
+	date: `2024-10-27`,
 	changes: [
 		`Fixed bug where background color of Paper component in app icons don't always show`,
 	],
