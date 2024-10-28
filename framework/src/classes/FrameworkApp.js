@@ -13,6 +13,7 @@ const defaultRuntimeSettings = {
 	onLog: (type, value) => {},
 	onStateChange: (newState) => {},
 	onIconCreated: (svgString) => {},
+	onHardResetRequest: () => {}, // Only internal in the framework.
 	state: null,
 	version: 1,
 }
@@ -498,6 +499,51 @@ export class FrameworkApp{
 		)
 		
 		return StartPage
+
+	}
+	
+	runCreateErrorRecoveringPage() {
+		
+		const {
+			onLog,
+			onError,
+		} = this.runtimeSettings
+		
+		let ErrorRecoveringPage = null
+		
+		if (!this.App.prototype.hasOwnProperty('createErrorRecoveringPage')) {
+			onLog(`framework`, `${this.App.name}.createErrorRecoveringPage() doesn't exist, so uses ${this.App.name}.createStartPage() instead.`)
+			ErrorRecoveringPage = this.runCreateStartPage()
+		}else{
+			
+			try {
+				onLog(`framework`, `Calling ${this.App.name}.createErrorRecoveringPage()...`)
+				ErrorRecoveringPage = this.app.createErrorRecoveringPage()
+			} catch (error) {
+				onError(
+					`Error in ${this.App.name}.createErrorRecoveringPage(): ${error}.`,
+				)
+				return
+			}
+			
+			if (!ErrorRecoveringPage) {
+				onError(
+					`Error in ${this.App.name}.createErrorRecoveringPage(): Does currently not return a value at all. Must return a class that inherits from the Page class that comes from BagaWork.`,
+				)
+				return
+			}
+			
+			if (!(ErrorRecoveringPage.prototype instanceof Page)) {
+				onError(
+					`Error in ${this.App.name}.createErrorRecoveringPage(): The returned value must be a class that inherits from the Page class that comes from BagaWork.`,
+				)
+				return
+			}
+			
+			onLog(`framework`, `Calling ${this.App.name}.createErrorRecoveringPage()... ✅`)
+		}
+		
+		return ErrorRecoveringPage
 		
 	}
 	
@@ -652,8 +698,78 @@ export class FrameworkApp{
 			appElement.innerHTML = ``
 			
 			if (this.errorMessage) {
-				appElement.innerText = this.errorMessage
-			}else{
+				
+				const errorPageRootElement = document.createElement(`div`)
+				errorPageRootElement.style.boxSizing = `border-box`
+				errorPageRootElement.style.padding = `1em`
+				errorPageRootElement.style.height = `100%`
+				errorPageRootElement.style.overflow = `auto`
+				errorPageRootElement.innerHTML = `
+					<h1 style="margin: 0;">Error! 😭</h1>
+					
+					<p>Oh, no... The following error occurred in the app:</p>
+					
+					<blockquote style="font-style: italic;"></blockquote>
+					
+					<p>We are truly sorry for this. Hopefully we can take the app back to a state where it will run again, but the same error will probably still occur until the developer of the app has fixed the problem. So if clicking the button below takes you back here, you can wait until the developer of the app has released a new version of it that doesn't contain the problem, and then clicking on the button below will hopefully make the app work fine again 😃</p>
+					
+					<button>
+						Try to make the app run again
+					</button>
+					
+					<p>You also have the option to do a hard reset. A hard reset means that you delete all the data in the app, and then you start running it from scratch again. But if you do this, all your progress in the app will be lost. So only do this if you can live with that.</p>
+					
+					<button>
+						Delete all data and start the app from scratch
+					</button>
+					
+				`
+				errorPageRootElement.querySelector(`blockquote`).innerText = this.errorMessage
+				
+				errorPageRootElement.querySelectorAll(`button`)[0].addEventListener(
+					`click`,
+					() => {
+						
+						this.errorMessage = ``
+						
+						let ErrorRecoveringPage = null
+						
+						try{
+							ErrorRecoveringPage = this.runCreateErrorRecoveringPage()
+						}catch(error){
+							
+							const errorNode = document.createElement(`p`)
+							errorNode.innerText = `Nope, sorry, that didn't work 🙁`
+							
+							errorPageRootElement.replaceChild(
+								errorNode,
+								errorPageRootElement.querySelectorAll(`button`)[0],
+							)
+							
+							return
+							
+						}
+						
+						this.loadPage(
+							ErrorRecoveringPage,
+						)
+						updateGui()
+						
+					}
+				)
+				
+				errorPageRootElement.querySelectorAll(`button`)[1].addEventListener(
+					`click`,
+					() => {
+						this.runtimeSettings.onHardResetRequest()
+					}
+				)
+				
+				appElement.replaceChildren(
+					errorPageRootElement,
+				)
+				
+			} else {
 				appElement.appendChild(
 					this.frameworkPage.createElement(),
 				)

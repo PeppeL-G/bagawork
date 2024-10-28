@@ -180,6 +180,198 @@ See the documentation for the :docs[Page] class to learn which methods you can o
 
 
 
+## `createErrorRecoveringPage()` - Handle errors
+When the user runs your app and an error occurs, your app will crash, and a GUI from the framework will be shown to the user with a message that explains why the app crashed, and what the user can do about it.
+
+One of the options presented to the user is to try running the app again. Most likely, the app will only crash when it tries to show/run the page that crashed, and hopefully the user will still be able to use the other pages in the app without problems until the you have released a new version of the app that doesn't crash on that page anymore.
+
+If the user choses the option to try running the app again, then `App.createStartPage()` will be called, and the page returned from that method will be shown to the user. If you want to show another page to the user, then you can implement `App.createErrorRecoveringPage()`, and return the page you want to show to the user there.
+
+::: tip Example
+
+Example of an app that doesn't use `createErrorRecoveringPage()`, and instead uses `createStartPage()` when the app crashes and the user wants to try running it again.
+
+Notice that when the counter gets to `3`, you can still restart the app and use the `ClockPage`, but going to the `CounterPage` again after that will always make the app crash.
+
+```js baga-show-editor-code
+class MyApp extends App{
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Thank you for using my app, I hope you enjoy using it!`),
+			Button.text(`Go!`).page(MenuPage),
+		)
+	}
+	
+}
+
+class MenuPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Menu`),
+			Button.text(`Counter`).page(CounterPage),
+			Button.text(`Clock`).page(ClockPage),
+		)
+	}
+	
+}
+
+class CounterPage extends Page{
+	
+	counter = 0
+	
+	createGui(){
+		
+		// Just to try error handling, we will on purpose
+		// have code that crashes when counter is 3.
+		if(p.counter == 3){
+			log(nonExistingVariable) // Will crash, since that variable doesn't exist.
+		}
+		
+		return Rows.children(
+			Text.text(`Counter is ${p.counter}.`),
+			Button.text(`+1`).onClick(p.incrementCounter),
+			Button.text(`Back`).page(MenuPage),
+		)
+		
+	}
+	
+	incrementCounter(){
+		p.counter += 1
+	}
+	
+}
+
+class ClockPage extends Page{
+	
+	createGui(){
+		
+		const now = Time.setNow()
+		
+		return Rows.children(
+			Text.text(now.getClock()),
+			Button.text(`Back`).page(MenuPage),
+		)
+		
+	}
+	
+}
+```
+
+:::
+
+::: tip Example
+
+This is the same app as above, but in it we have also specified that `createErrorRecoveringPage()` should return `MenuPage`, so the user comes to the `MenuPage` after the app has crashed, and doesn't need to view the `StartPage` again.
+
+```js baga-show-editor
+class MyApp extends App{
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+	createErrorRecoveringPage(){
+		return MenuPage
+	}
+	
+}
+
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Thank you for using my app, I hope you enjoy using it!`),
+			Button.text(`Go!`).page(MenuPage),
+		)
+	}
+	
+}
+
+class MenuPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Menu`),
+			Button.text(`Counter`).page(CounterPage),
+			Button.text(`Clock`).page(ClockPage),
+		)
+	}
+	
+}
+
+class CounterPage extends Page{
+	
+	counter = 0
+	
+	createGui(){
+		
+		// Just to try error handling, we will on purpose
+		// have code that crashes when counter is 3.
+		if(p.counter == 3){
+			log(nonExistingVariable) // Will crash, since that variable doesn't exist.
+		}
+		
+		return Rows.children(
+			Text.text(`Counter is ${p.counter}.`),
+			Button.text(`+1`).onClick(p.incrementCounter),
+			Button.text(`Back`).page(MenuPage),
+		)
+		
+	}
+	
+	incrementCounter(){
+		p.counter += 1
+	}
+	
+}
+
+class ClockPage extends Page{
+	
+	createGui(){
+		
+		const now = Time.setNow()
+		
+		return Rows.children(
+			Text.text(now.getClock()),
+			Button.text(`Back`).page(MenuPage),
+		)
+		
+	}
+	
+}
+```
+
+```js
+class MyApp extends App{
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+	createErrorRecoveringPage(){
+		return MenuPage
+	}
+	
+}
+```
+
+:::
+
+
+
+
+
+
 ## `onUpdate()` - Updating the state of the app
 When the user starts running a new version of your app with a state from an older version of the app, `App.onUpdate()` will be called, in which you can handle the update. `onUpdate()` will be passed two values:
 

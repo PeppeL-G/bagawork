@@ -12,4 +12,8 @@ export class App{
 		
 	}
 	
+	createErrorRecoveringPage(){
+		return this.createStartPage()
+	}
+	
 }

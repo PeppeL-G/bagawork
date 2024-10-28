@@ -32,4 +32,17 @@ declare class App {
 	 */
 	createStartPage(): Page;
 	
+	/**
+	 * If your app crashes when your user runs it, then an error message
+	 * will be shown to the user, explaining that the app has crashed.
+	 * The user will also be given the option to continue running the app
+	 * by loading another page. If the user wants to do that, then this
+	 * method will be called, and the page you return here is the page that
+	 * will be shown to the user.
+	 * 
+	 * If you don't implement this method, then the page returned from
+	 * createStartPage() will be used as the error recovering page.
+	 */
+	createErrorRecoveringPage(): Page;
+	
 }

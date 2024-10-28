@@ -20,21 +20,36 @@ export async function showAppInElement(
 		
 	}))
 	
-	const frameworkApp = new FrameworkApp(
-		createApp,
-		runtimeSettings,
-	)
-	
-	frameworkApp.start()
-	
-	if(!screenElement.shadowRoot){
-		screenElement.attachShadow({
-			mode: "open",
-		})
+	const internalRuntimeSettings = {
+		...runtimeSettings
 	}
 	
-	screenElement.shadowRoot.replaceChildren(
-		frameworkApp.createElement(),
-	)
+	internalRuntimeSettings.onHardResetRequest = () => {
+		delete internalRuntimeSettings.state
+		startApp()
+	}
+	
+	startApp()
+	
+	function startApp(){
+		
+		const frameworkApp = new FrameworkApp(
+			createApp,
+			internalRuntimeSettings,
+		)
+		
+		frameworkApp.start()
+		
+		if(!screenElement.shadowRoot){
+			screenElement.attachShadow({
+				mode: "open",
+			})
+		}
+		
+		screenElement.shadowRoot.replaceChildren(
+			frameworkApp.createElement(),
+		)
+		
+	}
 	
 }

@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Added App.createErrorRecoveringPage(), and documentation and similar for that`,
+	],
 }, {
 	version: `0.0.44`,
 	date: `2024-10-27`,
