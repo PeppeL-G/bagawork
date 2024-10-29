@@ -5,6 +5,12 @@
 # `PaperCircle`
 On this page you find the documentation for the paper figure `PaperCircle`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `PaperCircle` figure. `PaperCircle` also supports the configuration methods described on the page :docs[PaperFigure].
+
+:::
+
 
 
 
@@ -20,31 +26,6 @@ class StartPage extends Page{
 		return Box.aspectRatio(10, 10).child(
 			Paper.coordinateSystem(10, 10).backgroundColor(`orange`).children(
 				PaperCircle,
-			)
-		)
-	}
-}
-```
-
-:::
-
-
-
-
-
-## `backgroundColor()` - Setting the background color
-Use the configuration method `backgroundColor()` to tell the `PaperCircle` figure which color it should have. Pass it the name of the color in English as a string, such as `` `red` ``, or `` `blue` ``.
-
-If you don't call `backgroundColor()`, `` `black` `` will be used as the default color.
-
-::: tip Example
-
-```js baga-show-editor-code
-class StartPage extends Page{
-	createGui(){
-		return Box.aspectRatio(10, 10).child(
-			Paper.coordinateSystem(10, 10).showCoordinates().backgroundColor(`orange`).children(
-				PaperCircle.backgroundColor(`red`),
 			)
 		)
 	}

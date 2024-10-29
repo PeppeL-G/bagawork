@@ -189,6 +189,9 @@
 		}, {
 			name: 'Paper Figures',
 			links: [{
+				text: 'PaperFigure',
+				href: '/documentation/paper-figure/',
+			}, {
 				text: 'PaperCircle',
 				href: '/documentation/paper-circle/',
 			}, {

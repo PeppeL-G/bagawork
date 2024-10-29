@@ -50,10 +50,7 @@ export class PaperRectangleChild extends PaperChild{
 	
 	createElement(frameworkApp, paper, onUpdated){
 		
-		const rectangleElement = document.createElementNS(
-			'http://www.w3.org/2000/svg',
-			'rect',
-		)
+		const rectElement = super.createElement(`rect`)
 		
 		const {
 			_width: svgWidth,
@@ -83,13 +80,13 @@ export class PaperRectangleChild extends PaperChild{
 		const left = cx - width / 2
 		const top = cy + height / 2
 		
-		rectangleElement.setAttribute('x', `${left}%`)
-		rectangleElement.setAttribute('y', `${100 - top}%`)
-		rectangleElement.setAttribute('width', `${width}%`)
-		rectangleElement.setAttribute('height', `${height}%`)
-		rectangleElement.setAttribute('fill', this._backgroundColor)
+		rectElement.setAttribute('x', `${left}%`)
+		rectElement.setAttribute('y', `${100 - top}%`)
+		rectElement.setAttribute('width', `${width}%`)
+		rectElement.setAttribute('height', `${height}%`)
+		rectElement.setAttribute('fill', this._backgroundColor)
 		
-		return rectangleElement
+		return rectElement
 		
 	}
 	

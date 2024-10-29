@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added App.createErrorRecoveringPage(), and documentation and similar for that`,
 		`Removed the Image component (will be added again when network permissions have been added in the future)`,
+		`Added the method PaperFigure.onClick(), and documentation and similar for that`,
 	],
 }, {
 	version: `0.0.44`,

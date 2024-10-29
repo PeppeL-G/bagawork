@@ -52,10 +52,7 @@ export class PaperLineChild extends PaperChild{
 	
 	createElement(frameworkApp, paper, onUpdated){
 		
-		const lineElement = document.createElementNS(
-			'http://www.w3.org/2000/svg',
-			'line',
-		)
+		const lineElement = super.createElement(`line`)
 		
 		const {
 			_width: svgWidth,

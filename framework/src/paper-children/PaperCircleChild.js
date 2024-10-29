@@ -36,10 +36,7 @@ export class PaperCircleChild extends PaperChild{
 	
 	createElement(frameworkApp, paper, onUpdated){
 		
-		const circleElement = document.createElementNS(
-			'http://www.w3.org/2000/svg',
-			'circle',
-		)
+		const circleElement = super.createElement(`circle`)
 		
 		const {
 			_width: svgWidth,
