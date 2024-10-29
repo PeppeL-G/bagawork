@@ -5,6 +5,12 @@
 # 4. Images
 This tutorial will teach you how to display images in your BagaWork app.
 
+::: warning TEMPORARILY DISABLED!!!
+
+Until network permissions have been implemented, the :docs[Image] component won't be supported.
+
+:::
+
 
 
 

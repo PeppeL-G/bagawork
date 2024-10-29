@@ -73,10 +73,10 @@
 			}, {
 				text: '3. Layouts',
 				href: '/tutorials/gui/layouts/',
-			}, {
+			}, /*{
 				text: '4. Images',
 				href: '/tutorials/gui/images/',
-			}, {
+			}, */{
 				text: '5. Paper',
 				href: '/tutorials/gui/paper/',
 			}, {
@@ -155,10 +155,10 @@
 			}, {
 				text: 'EnterText',
 				href: '/documentation/enter-text/',
-			}, {
+			}, /*{
 				text: 'Image',
 				href: '/documentation/image/',
-			}, {
+			},*/ {
 				text: 'Space',
 				href: '/documentation/space/',
 			}, {

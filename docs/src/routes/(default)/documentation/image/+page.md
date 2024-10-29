@@ -5,6 +5,13 @@
 # `Image`
 On this page you find the documentation for the GUI Component `Image`.
 
+::: warning TEMPORARILY DISABLED!!!
+
+Until network permissions have been implemented, this component won't be supported.
+
+:::
+
+
 
 
 ## Introduction

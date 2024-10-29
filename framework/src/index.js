@@ -25,8 +25,8 @@ import { createComponentCreator } from './functions/create-component-creator.js'
 import {ButtonComponent} from './components/ButtonComponent.js'
 export const Button = createComponentCreator(ButtonComponent)
 
-import { ImageComponent } from './components/ImageComponent.js'
-export const Image = createComponentCreator(ImageComponent)
+//import { ImageComponent } from './components/ImageComponent.js'
+//export const Image = createComponentCreator(ImageComponent)
 
 import {PaperComponent} from './components/PaperComponent.js'
 export const Paper = createComponentCreator(PaperComponent)
