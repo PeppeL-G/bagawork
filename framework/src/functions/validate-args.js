@@ -1,35 +1,46 @@
-import { Component } from "../Component.js"
 import { Font } from "../classes/Font.js"
-import { PaperChild } from "../PaperChild.js"
 
-export function validateArgs(component, methodName, expectedTypes, args) {
+export function validateArgs(
+	component,
+	methodName,
+	expectedGeneralTypeNames,
+	args
+){
 	
 	args = Array.from(args)
 	
-	if (expectedTypes.length != args.length) {
+	if (expectedGeneralTypeNames.length != args.length) {
 		
 		throwArgError(
 			component,
 			methodName,
 			`passed it ${args.length} arguments,
-			but it must be passed ${expectedTypes.length} arguments.
-			You passed it (${args.map(a => getValueAsString(a)).join(`, `)}),
-			and it has to be passed (${expectedTypes.join(`, `)})`
+			but it must be passed ${expectedGeneralTypeNames.length} arguments.
+			You passed it (${args.map(a => getSpecificTypeName(a)).join(`, `)}),
+			and it has to be passed (${expectedGeneralTypeNames.join(`, `)})`
 		)
 		
 	}
 	
-	for (const [i, expectedType] of expectedTypes.entries()) {
+	for (const [i, expectedTypeName] of expectedGeneralTypeNames.entries()) {
 		
 		const arg = args[i]
-		const actualType = getTypeName(arg)
+		const specificTypeName = getSpecificTypeName(arg)
 		
-		if(actualType != expectedType){
+		// The Updater component is responsible for checking
+		// the type of its child when it creates the child.
+		if(specificTypeName == `Updater`){
+			continue;
+		}
+		
+		const generalTypeName = getGeneralTypeName(arg)
+		
+		if(generalTypeName != expectedTypeName){
 			
 			throwArgError(
 				component,
 				methodName,
-				`as argument ${i + 1} you passed it a ${actualType} value (${getValueAsString(arg)}), but it must be a ${expectedType}`
+				`as argument ${i + 1} you passed it a ${generalTypeName} value (${specificTypeName}), but it must be a ${expectedTypeName}`
 			)
 			
 		}
@@ -46,13 +57,13 @@ export function throwArgError(component, methodName, errorMessage) {
 	
 }
 
-function getValueAsString(value){
+export function getSpecificTypeName(value){
 	
-	if(value == null){
+	if(value === null){
 		return `null`
 	}
 	
-	if(value == undefined){
+	if(value === undefined){
 		return `undefined`
 	}
 	
@@ -60,12 +71,8 @@ function getValueAsString(value){
 		return value.proxyName
 	}
 	
-	if(value instanceof PaperChild){
-		return value.constructor.name.split("Child")[0]
-	}
-	
-	if(value instanceof Component){
-		return value.constructor.name.split(`Component`)[0]
+	if(value.getSpecificTypeName?.()){
+		return value.getSpecificTypeName()
 	}
 	
 	if(value instanceof Font){
@@ -76,13 +83,13 @@ function getValueAsString(value){
 	
 }
 
-function getTypeName(value){
+function getGeneralTypeName(value){
 	
-	if(value == null){
+	if(value === null){
 		return "null"
 	}
 	
-	if(value == undefined){
+	if(value === undefined){
 		return "undefined"
 	}
 	
@@ -90,12 +97,8 @@ function getTypeName(value){
 		return "Page"
 	}
 	
-	if(value instanceof PaperChild){
-		return "PaperChild"
-	}
-	
-	if(value instanceof Component){
-		return "Component"
+	if(value?.getGeneralTypeName?.()){
+		return value.getGeneralTypeName()
 	}
 	
 	if(value instanceof Font){

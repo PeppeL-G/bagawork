@@ -48,7 +48,7 @@ export class PaperComponent extends Component{
 		validateArgs(
 			this,
 			`children`,
-			flattenedChildren.map(c => `PaperChild`),
+			flattenedChildren.map(c => `PaperFigure`),
 			arguments,
 		)
 		

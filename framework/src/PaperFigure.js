@@ -1,6 +1,6 @@
 import { validateArgs } from "./functions/validate-args.js"
 
-export class PaperChild{
+export class PaperFigure{
 	
 	_backgroundColor = `black`
 	_onClickFunction = null
@@ -58,6 +58,14 @@ export class PaperChild{
 		
 		return element
 		
+	}
+	
+	getGeneralTypeName(){
+		return `PaperFigure`
+	}
+	
+	getSpecificTypeName(){
+		return this.constructor.name.split("Figure")[0]
 	}
 	
 }

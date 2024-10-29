@@ -1,7 +1,7 @@
 import { validateArgs } from "../functions/validate-args.js"
-import { PaperChild } from "../PaperChild.js"
+import { PaperFigure } from "../PaperFigure.js"
 
-export class PaperCircleChild extends PaperChild{
+export class PaperCircleFigure extends PaperFigure {
 	
 	_radius
 	_centerX

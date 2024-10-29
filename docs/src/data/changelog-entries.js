@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Added App.createErrorRecoveringPage(), and documentation and similar for that`,
 		`Removed the Image component (will be added again when network permissions have been added in the future)`,
 		`Added the method PaperFigure.onClick(), and documentation and similar for that`,
+		`Made the Updater component also work as a child in the Paper component`,
 	],
 }, {
 	version: `0.0.44`,

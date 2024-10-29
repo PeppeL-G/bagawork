@@ -31,14 +31,14 @@ export const Button = createComponentCreator(ButtonComponent)
 import {PaperComponent} from './components/PaperComponent.js'
 export const Paper = createComponentCreator(PaperComponent)
 
-import { PaperCircleChild } from './paper-children/PaperCircleChild.js'
-export const PaperCircle = createComponentCreator(PaperCircleChild)
+import { PaperCircleFigure } from './paper-figures/PaperCircleFigure.js'
+export const PaperCircle = createComponentCreator(PaperCircleFigure)
 
-import { PaperLineChild } from './paper-children/PaperLineChild.js'
-export const PaperLine = createComponentCreator(PaperLineChild)
+import { PaperLineFigure } from './paper-figures/PaperLineFigure.js'
+export const PaperLine = createComponentCreator(PaperLineFigure)
 
-import { PaperRectangleChild } from './paper-children/PaperRectangleChild.js'
-export const PaperRectangle = createComponentCreator(PaperRectangleChild)
+import { PaperRectangleFigure } from './paper-figures/PaperRectangleFigure.js'
+export const PaperRectangle = createComponentCreator(PaperRectangleFigure)
 
 import {TextComponent} from './components/TextComponent.js'
 export const Text = createComponentCreator(TextComponent)

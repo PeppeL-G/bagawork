@@ -169,4 +169,12 @@ export class Component{
 		}
 	}
 	
+	getGeneralTypeName(){
+		return `Component`
+	}
+	
+	getSpecificTypeName(){
+		return this.constructor.name.split(`Component`)[0]
+	}
+	
 }

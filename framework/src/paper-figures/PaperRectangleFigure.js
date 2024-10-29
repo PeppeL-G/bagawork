@@ -1,7 +1,7 @@
-import { PaperChild } from "../PaperChild.js"
+import { PaperFigure } from "../PaperFigure.js"
 import { validateArgs } from "../functions/validate-args.js"
 
-export class PaperRectangleChild extends PaperChild{
+export class PaperRectangleFigure extends PaperFigure {
 	
 	_width
 	_height

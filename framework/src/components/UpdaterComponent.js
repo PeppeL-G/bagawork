@@ -1,5 +1,5 @@
 import { Component } from '../Component.js'
-import { validateArgs } from '../functions/validate-args.js'
+import { getSpecificTypeName, validateArgs } from '../functions/validate-args.js'
 
 const updatersByName = {}
 
@@ -19,6 +19,8 @@ export class UpdaterComponent extends Component {
 	
 	_child = null
 	
+	_parent = null
+	
 	childCreator(theChildCreator) {
 		
 		validateArgs(
@@ -29,7 +31,7 @@ export class UpdaterComponent extends Component {
 		)
 		
 		this._childCreator = theChildCreator
-		this.createChild()
+		this._child = theChildCreator()
 		return this
 		
 	}
@@ -55,27 +57,40 @@ export class UpdaterComponent extends Component {
 		
 	}
 	
-	onBefore(){
-		this.createChild()
-	}
-	
 	onAfter(a, p) {
 		clearInterval(this._intervalId)
 		delete updatersByName[this._name]
-		this._child?.onAfter(a, p)
+		this._child?.onAfter?.(a, p)
 	}
 	
 	createBeforeDirections() {
-		return this._child?.createBeforeDirections() ?? []
+		return this._child?.createBeforeDirections?.() ?? []
 	}
 	
 	createAfterDirections(frameworkApp) {
-		return this._child?.createAfterDirections(frameworkApp) ?? []
+		return this._child?.createAfterDirections?.(frameworkApp) ?? []
 	}
 	
-	createChild(){
+	createChild(frameworkApp){
 		
 		this._child = this._childCreator()
+		
+		// Validate the type of the child.
+		const childExpectedGeneralTypeName = (
+			this._parent.getSpecificTypeName() == `Paper` ?
+			`PaperFigure` :
+			`Component`
+		)
+		
+		if(this._child?.getGeneralTypeName?.() != childExpectedGeneralTypeName){
+			
+			frameworkApp.runtimeSettings.onError(
+				`On Updater you called childCreator() and passed it a method, but the method you passed it returned a value of wrong type. This Updater component is used as a child in a ${this._parent.getSpecificTypeName()} component, so the method you pass it must return a ${childExpectedGeneralTypeName}, but it did return a ${getSpecificTypeName(this._child)}.`,
+			)
+			
+			return
+			
+		}
 		
 		// Copy over all child properties to this updater,
 		// so layouts that need to access child properties
@@ -87,17 +102,27 @@ export class UpdaterComponent extends Component {
 		
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parent, onUpdated){
 		
 		let childElement = null
+		this._parent = parent
 		
 		const updateChild = () => {
 			
-			this._child = this.createChild()
+			this._child = this.createChild(frameworkApp)
+			
+			if(frameworkApp.errorMessage){
+				
+				// Dummy value to be sent back. Doesn't matter which,
+				// because the app will log an error message.
+				childElement = document.createElement(`div`)
+				return
+				
+			}
 			
 			const newChildElement = this._child.createElement(
 				frameworkApp,
-				parentComponent,
+				parent,
 				onUpdated,
 			)
 			
