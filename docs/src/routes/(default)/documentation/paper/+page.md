@@ -127,7 +127,7 @@ All *paper figures* starts with the name `Paper` to differentiate them from the 
 
 ::: tip Example
 
-```js baga-show
+```js baga-show-editor-code
 class StartPage extends Page{
 	
 	createGui(){
@@ -136,6 +136,56 @@ class StartPage extends Page{
 			PaperCircle.backgroundColor(`lime`),
 			PaperLine.backgroundColor(`aqua`),
 		)
+	}
+	
+}
+```
+
+:::
+
+
+
+
+## `onClick()` - Handling clicks
+Call the configuration method `onClick()` to specify a method that should be called when the user clicks somewhere on the `Paper` component. Your method will be passed two numbers:
+
+* The X coordinate of the click
+* The Y coordinate of the click
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	lastClickX = -1
+	lastClickY = -1
+	
+	createGui(){
+		return Rows.children(
+			Updater.name(`updateText`).childCreator(p.createText),
+			Space,
+			Box.aspectRatio(10, 10).child(
+				Paper
+					.backgroundColor(`orange`)
+					.coordinateSystem(10, 10)
+					.showCoordinates()
+					.onClick(p.handleClick),
+			),
+			Space,
+		)
+	}
+	
+	createText(){
+		return Text.text(`lastClickX: ${p.lastClickX}, lastClickY: ${p.lastClickY}`)
+	}
+	
+	handleClick(x, y){
+		
+		p.lastClickX = x
+		p.lastClickY = y
+		
+		runUpdater(`updateText`)
+		
 	}
 	
 }

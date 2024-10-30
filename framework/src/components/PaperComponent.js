@@ -8,6 +8,7 @@ export class PaperComponent extends Component{
 	_width = 10
 	_height = 10
 	_children = []
+	_onClickFunction = null
 	
 	constructor() {
 		super()
@@ -59,6 +60,21 @@ export class PaperComponent extends Component{
 		return this
 	}
 	
+	onClick(onClickFunction) {
+		
+		validateArgs(
+			this,
+			`onClick`,
+			[`Function`],
+			arguments,
+		)
+		
+		this._onClickFunction = onClickFunction
+		
+		return this
+		
+	}
+	
 	createElement(frameworkApp, parentComponent, onUpdated){
 		
 		const paperElement = document.createElement(`div`)
@@ -75,6 +91,27 @@ export class PaperComponent extends Component{
 		svgElement.setAttribute(`height`, `100%`)
 		
 		paperElement.appendChild(svgElement)
+		
+		if(this._onClickFunction){
+			
+			svgElement.addEventListener(`click`, (event) => {
+				
+				const rect = event.target.getBoundingClientRect()
+				
+				const svgX = event.clientX - rect.left
+				const svgY = event.clientY - rect.top
+				
+				const percentageX = svgX / svgElement.clientWidth
+				const percentageY = svgY / svgElement.clientHeight
+				
+				const coordinateX = percentageX * this._width
+				const coordinateY = this._height - percentageY * this._height
+				
+				this._onClickFunction(coordinateX, coordinateY)
+				
+			})
+			
+		}
 		
 		const mouseCoordinatesTextElement = document.createElementNS(
 			'http://www.w3.org/2000/svg',

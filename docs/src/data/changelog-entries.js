@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Removed the Image component (will be added again when network permissions have been added in the future)`,
 		`Added the method PaperFigure.onClick(), and documentation and similar for that`,
 		`Made the Updater component also work as a child in the Paper component`,
+		`Added the method Paper.onClick(), and documentation and similar for that`,
 	],
 }, {
 	version: `0.0.44`,
