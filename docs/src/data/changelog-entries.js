@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Added the method PaperFigure.onClick(), and documentation and similar for that`,
 		`Made the Updater component also work as a child in the Paper component`,
 		`Added the method Paper.onClick(), and documentation and similar for that`,
+		`Fixed so PaperCircle.radius() works when running in web browsers and when running outside web browsers and the Paper is squared (i.e. for app icons)`,
 	],
 }, {
 	version: `0.0.44`,
