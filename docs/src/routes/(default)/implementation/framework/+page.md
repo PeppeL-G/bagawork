@@ -83,18 +83,23 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 			// a web browser like this, but you get the idea.
 			import { showAppInElement } from '@bagawork/framework'
 			
-			document.addEventListener('DOMContentLoaded', function(){
+			document.addEventListener('DOMContentLoaded', async function(){
 				
 				const screenElement = document.querySelector('#screen')
 				
 				// Read more about runtimeSettings further down.
 				const runtimeSettings = {}
 				
-				showAppInElement(
+				const stopApp = await showAppInElement(
 					createApp,
 					screenElement,
 					runtimeSettings,
 				)
+				
+				// stopApp is a function you should call when you want everything
+				// in the app (such as updaters) to stop running. This is only
+				// needed when your app should run a shorter amount of time
+				// then the page showing it.
 				
 			})
 			

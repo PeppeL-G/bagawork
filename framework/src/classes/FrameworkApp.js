@@ -48,6 +48,7 @@ export class FrameworkApp{
 		
 		this.runtimeSettings.onError = (errorMessage) => {
 			this.errorMessage = errorMessage
+			this.stop()
 			oldOnError?.(errorMessage)
 		}
 		
@@ -590,6 +591,7 @@ export class FrameworkApp{
 			onLog,
 		} = this.runtimeSettings
 		
+		this.frameworkPage.stopUpdaters()
 		this.frameworkPage.runOnAfter()
 		
 		this.frameworkPage.refreshAfterDirections()
@@ -616,6 +618,10 @@ export class FrameworkApp{
 			
 		}
 		
+	}
+	
+	stop(){
+		this.frameworkPage.stopUpdaters()
 	}
 	
 	getState(){

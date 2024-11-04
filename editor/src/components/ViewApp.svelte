@@ -7,9 +7,11 @@
 	
 	function showApp(screenDiv, args){
 		
-		function update({createAppCode, runtimeSettings}){
+		let stopApp = null
+		
+		async function update({createAppCode, runtimeSettings}){
 			
-			showAppInElement(
+			stopApp = await showAppInElement(
 				createAppCode,
 				screenDiv,
 				runtimeSettings
@@ -21,6 +23,10 @@
 		
 		return {
 			update,
+			destroy(){
+				console.log(stopApp)
+				stopApp?.()
+			}
 		}
 		
 	}

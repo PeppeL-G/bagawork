@@ -24,12 +24,14 @@ export async function showAppInElement(
 		...runtimeSettings
 	}
 	
+	let frameworkApp = null
+	
 	internalRuntimeSettings.onHardResetRequest = () => {
 		delete internalRuntimeSettings.state
-		startApp()
+		frameworkApp = startApp()
 	}
 	
-	startApp()
+	frameworkApp = startApp()
 	
 	function startApp(){
 		
@@ -50,6 +52,12 @@ export async function showAppInElement(
 			frameworkApp.createElement(),
 		)
 		
+		return frameworkApp
+		
+	}
+	
+	return function stopApp(){
+		frameworkApp.stop()
 	}
 	
 }

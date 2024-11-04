@@ -144,10 +144,11 @@ export class UpdaterComponent extends Component {
 		
 		if(this._intervalInMs != -1 && !frameworkApp.runtimeSettings.isPreview){
 			
-			// TODO: Don't start the interval in preview mode!
-			// TODO: If error occurs in this._childCreator() in update child(),
-			// we should display those errors!
 			this._intervalId = setInterval(updateChild, this._intervalInMs)
+			
+			frameworkApp.frameworkPage.currentlyRunningIntervalIds.push(
+				this._intervalId,
+			)
 			
 		}
 		

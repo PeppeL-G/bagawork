@@ -10,6 +10,7 @@ export class FrameworkPage{
 	beforeDirections = []
 	rootGuiComponent = null
 	afterDirections = []
+	currentlyRunningIntervalIds = []
 	
 	// The constructor only initializes so beforeDirections can be used.
 	// The rest is initialized in initializeTheRest().
@@ -209,6 +210,8 @@ export class FrameworkPage{
 			onPageShow,
 		} = this.frameworkApp.runtimeSettings
 		
+		this.currentlyRunningIntervalIds = []
+		
 		if(!this.Page.prototype.hasOwnProperty('createGui')){
 			onError(
 				`Error: ${this.Page.proxyName}.createGui() is missing!`
@@ -295,6 +298,12 @@ export class FrameworkPage{
 			pageState,
 		)
 		
+	}
+	
+	stopUpdaters(){
+		for(const intervalId of this.currentlyRunningIntervalIds){
+			clearInterval(intervalId)
+		}
 	}
 	
 	createElement(){

@@ -9,6 +9,8 @@ export const changelogEntries = [{
 		`Added the method Paper.onClick(), and documentation and similar for that`,
 		`Fixed so PaperCircle.radius() scales to an ellipse if the coordinate system is not uniformed`,
 		`Added the PaperGroup figure, and documentation and similar for that`,
+		`showAppInElement() now returns a stop() function one can call to stop the app from running (such as stopping Updaters in it to run)`,
+		`Updaters now stops running when an error in the app occurs`,
 	],
 }, {
 	version: `0.0.44`,
