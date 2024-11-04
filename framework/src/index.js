@@ -40,6 +40,9 @@ export const PaperLine = createComponentCreator(PaperLineFigure)
 import { PaperRectangleFigure } from './paper-figures/PaperRectangleFigure.js'
 export const PaperRectangle = createComponentCreator(PaperRectangleFigure)
 
+import { PaperGroupFigure } from './paper-figures/PaperGroupFigure.js'
+export const PaperGroup = createComponentCreator(PaperGroupFigure)
+
 import {TextComponent} from './components/TextComponent.js'
 export const Text = createComponentCreator(TextComponent)
 

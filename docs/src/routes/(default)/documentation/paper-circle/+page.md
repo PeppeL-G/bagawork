@@ -60,7 +60,7 @@ class StartPage extends Page{
 
 ::: warning Note!
 
-If your coordinate system is not uniformed (i.e. one unit in the X-direction is not equally big as one unit in the Y-direction), then the circle will be drawn with a radius slightly different from the one you have provided it with, to make the circle look like a circle (and not an ellipse) and still have a radius as close to the provided radius in both the X-direction and Y-direction.
+If your coordinate system is not uniformed (i.e. one unit in the X-direction is not equally big as one unit in the Y-direction), then the circle will look like an ellipse.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -71,6 +71,8 @@ class StartPage extends Page{
 	}
 }
 ```
+
+To prevent situations like this, always put your :docs[Paper] component in a :docs[Box] component with the same aspect ratio as the size of the coordinate system, so you are sure one unit in the X-direction is equally big as one unit in the Y-direction.
 
 :::
 

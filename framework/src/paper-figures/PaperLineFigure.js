@@ -50,46 +50,28 @@ export class PaperLineFigure extends PaperFigure {
 		return this
 	}
 	
-	createElement(frameworkApp, paper, onUpdated){
+	createElement(frameworkApp, parent, onUpdated){
 		
 		const lineElement = super.createElement(`line`)
 		
 		const {
-			_width: svgWidth,
-			_height: svgHeight,
-		} = paper
+			_coordinatesWidth: parentWidth,
+			_coordinatesHeight: parentHeight,
+		} = parent
 		
-		let x1 = (
-			this._startX != undefined ?
-			this._startX / svgWidth * 100 :
-			25
-		)
-		let y1 = (
-			this._startY != undefined ?
-			100 - this._startY / svgHeight * 100 :
-			75
-		)
-		let x2 = (
-			this._endX != undefined ?
-			this._endX / svgWidth * 100 :
-			75
-		)
-		let y2 = (
-			this._endY != undefined ?
-			100 - this._endY / svgHeight * 100 :
-			25
-		)
+		let startX = this._startX ?? parentWidth * 0.25
+		let startY = this._startY ?? parentHeight * 0.25
+		let endX = this._endX ?? parentWidth * 0.75
+		let endY = this._endY ?? parentHeight * 0.75
 		let thickness = (
-			this._thickness != undefined ?
-			this._thickness :
-			0.1
-		) / Math.min(svgWidth, svgHeight) * 100
+			this._thickness ?? Math.min(parentWidth, parentHeight) * 0.01
+		)
 		
-		lineElement.setAttribute('x1', `${x1}%`)
-		lineElement.setAttribute('y1', `${y1}%`)
-		lineElement.setAttribute('x2', `${x2}%`)
-		lineElement.setAttribute('y2', `${y2}%`)
-		lineElement.setAttribute('stroke-width', `${thickness}%`)
+		lineElement.setAttribute('x1', `${startX}`)
+		lineElement.setAttribute('y1', `${parentHeight - startY}`)
+		lineElement.setAttribute('x2', `${endX}`)
+		lineElement.setAttribute('y2', `${parentHeight - endY}`)
+		lineElement.setAttribute('stroke-width', `${thickness}`)
 		lineElement.setAttribute('stroke', this._backgroundColor)
 		lineElement.setAttribute('stroke-linecap', `round`)
 		

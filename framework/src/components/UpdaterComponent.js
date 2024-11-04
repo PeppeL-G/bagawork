@@ -77,7 +77,7 @@ export class UpdaterComponent extends Component {
 		
 		// Validate the type of the child.
 		const childExpectedGeneralTypeName = (
-			this._parent.getSpecificTypeName() == `Paper` ?
+			[`Paper`, `PaperGroup`].includes(this._parent.getSpecificTypeName()) ?
 			`PaperFigure` :
 			`Component`
 		)

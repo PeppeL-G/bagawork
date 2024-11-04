@@ -198,6 +198,9 @@
 				text: 'PaperLine',
 				href: '/documentation/paper-line/',
 			}, {
+				text: 'PaperGroup',
+				href: '/documentation/paper-group/',
+			}, {
 				text: 'PaperRectangle',
 				href: '/documentation/paper-rectangle/',
 			}],

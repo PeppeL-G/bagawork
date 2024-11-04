@@ -41,14 +41,14 @@ export class PaperFigure{
 		
 	}
 	
-	createElement(elementName){
+	createElement(elementName, addClickListener=true){
 		
 		const element = document.createElementNS(
 			`http://www.w3.org/2000/svg`,
 			elementName,
 		)
 		
-		if(this._onClickFunction){
+		if(this._onClickFunction && addClickListener){
 			element.addEventListener(`click`, () => {
 				this._onClickFunction(
 					...this._onClickArguments,
