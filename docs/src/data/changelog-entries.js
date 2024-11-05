@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.45`,
+	date: `2024-11-05`,
 	changes: [
 		`Added App.createErrorRecoveringPage(), and documentation and similar for that`,
 		`Removed the Image component (will be added again when network permissions have been added in the future)`,
