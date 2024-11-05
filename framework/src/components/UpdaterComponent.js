@@ -31,7 +31,6 @@ export class UpdaterComponent extends Component {
 		)
 		
 		this._childCreator = theChildCreator
-		this._child = theChildCreator()
 		return this
 		
 	}
@@ -73,7 +72,28 @@ export class UpdaterComponent extends Component {
 	
 	createChild(frameworkApp){
 		
-		this._child = this._childCreator()
+		try{
+			this._child = this._childCreator()
+		}catch(error){
+			
+			let updaterName = `an Updater with no name`
+			
+			if(this._intervalInMs){
+				updaterName = `an Updater with the interval ${this._intervalInMs}ms`
+			}
+			
+			if(this._name){
+				updaterName = `an updater with the name "${this._name}"`
+			}
+			
+			frameworkApp.runtimeSettings.onError(
+				`Error occurred in the function passed to childCreator() ("${this._childCreator.name}()") called by ${updaterName}: ${error}.`,
+			)
+			
+			return
+			
+		}
+		
 		
 		// Validate the type of the child.
 		const childExpectedGeneralTypeName = (
