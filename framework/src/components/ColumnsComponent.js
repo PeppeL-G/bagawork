@@ -4,6 +4,8 @@ import { validateArgs } from '../functions/validate-args.js'
 
 export class ColumnsComponent extends Component{
 	
+	_specificTypeName = `Columns`
+	
 	_children = []
 	
 	children(...children) {

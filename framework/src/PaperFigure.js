@@ -2,6 +2,9 @@ import { validateArgs } from "./functions/validate-args.js"
 
 export class PaperFigure{
 	
+	_generalTypeName = `PaperFigure`
+	_specificTypeName = `PaperFigure`
+	
 	_backgroundColor = `black`
 	_onClickFunction = null
 	_onClickArguments = []
@@ -58,14 +61,6 @@ export class PaperFigure{
 		
 		return element
 		
-	}
-	
-	getGeneralTypeName(){
-		return `PaperFigure`
-	}
-	
-	getSpecificTypeName(){
-		return this.constructor.name.split("Figure")[0]
 	}
 	
 }

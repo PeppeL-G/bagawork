@@ -4,6 +4,8 @@ import { validateArgs } from '../functions/validate-args.js'
 
 export class LayersComponent extends Component {
 	
+	_specificTypeName = `Layers`
+	
 	_children = []
 	
 	children(...children) {

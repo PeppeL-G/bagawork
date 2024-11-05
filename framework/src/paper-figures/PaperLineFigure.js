@@ -3,6 +3,8 @@ import { validateArgs } from "../functions/validate-args.js"
 
 export class PaperLineFigure extends PaperFigure {
 	
+	_specificTypeName = `PaperLine`
+	
 	_thickness
 	_startX
 	_startY

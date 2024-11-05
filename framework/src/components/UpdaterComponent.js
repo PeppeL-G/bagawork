@@ -12,6 +12,8 @@ export function runUpdater(theName){
 
 export class UpdaterComponent extends Component {
 	
+	_specificTypeName = `Updater`
+	
 	_childCreator = () => null
 	_intervalInMs = -1
 	_intervalId = -1
@@ -97,15 +99,15 @@ export class UpdaterComponent extends Component {
 		
 		// Validate the type of the child.
 		const childExpectedGeneralTypeName = (
-			[`Paper`, `PaperGroup`].includes(this._parent.getSpecificTypeName()) ?
+			[`Paper`, `PaperGroup`].includes(this._parent._specificTypeName) ?
 			`PaperFigure` :
 			`Component`
 		)
 		
-		if(this._child?.getGeneralTypeName?.() != childExpectedGeneralTypeName){
+		if(this._child?._generalTypeName != childExpectedGeneralTypeName){
 			
 			frameworkApp.runtimeSettings.onError(
-				`On Updater you called childCreator() and passed it a method, but the method you passed it returned a value of wrong type. This Updater component is used as a child in a ${this._parent.getSpecificTypeName()} component, so the method you pass it must return a ${childExpectedGeneralTypeName}, but it did return a ${getSpecificTypeName(this._child)}.`,
+				`On Updater you called childCreator() and passed it a method, but the method you passed it returned a value of wrong type. This Updater component is used as a child in a ${this._parent._specificTypeName} component, so the method you pass it must return a ${childExpectedGeneralTypeName}, but it did return a ${getSpecificTypeName(this._child)}.`,
 			)
 			
 			return

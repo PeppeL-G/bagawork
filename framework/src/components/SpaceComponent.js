@@ -3,6 +3,8 @@ import {applyAttributesToElement} from '../functions/apply-props-to-element.js'
 
 export class SpaceComponent extends Component {
 	
+	_specificTypeName = `Space`
+	
 	constructor(){
 		super()
 		this._size = 1

@@ -3,6 +3,8 @@ import { validateArgs } from "../functions/validate-args.js"
 
 export class PaperRectangleFigure extends PaperFigure {
 	
+	_specificTypeName = `PaperRectangle`
+	
 	_width
 	_height
 	_centerX

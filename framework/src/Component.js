@@ -2,6 +2,9 @@ import { throwArgError, validateArgs } from "./functions/validate-args.js"
 
 export class Component{
 	
+	_generalTypeName = `Component`
+	_specificTypeName = `Component`
+	
 	_backgroundColor = `transparent`
 	_size = 0
 	_cornerRadius = 0
@@ -167,14 +170,6 @@ export class Component{
 		} else {
 			return `minmax(min-content, ${this._size}fr)`
 		}
-	}
-	
-	getGeneralTypeName(){
-		return `Component`
-	}
-	
-	getSpecificTypeName(){
-		return this.constructor.name.split(`Component`)[0]
 	}
 	
 }

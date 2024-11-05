@@ -1,10 +1,12 @@
 import {Component} from '../Component.js'
-import { Direction, Page } from '../index.js'
+import { Direction } from '../index.js'
 import { applyAttributesToElement } from '../functions/apply-props-to-element.js'
 import { throwArgError, validateArgs } from '../functions/validate-args.js'
 import { bbcodeToHtml } from '../functions/bbcode-to-html.js'
 
 export class ButtonComponent extends Component{
+	
+	_specificTypeName = `Button`
 	
 	wasClicked = false
 	

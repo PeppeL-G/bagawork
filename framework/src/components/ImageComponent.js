@@ -4,6 +4,8 @@ import { validateArgs } from '../functions/validate-args.js'
 
 export class ImageComponent extends Component {
 	
+	_specificTypeName = `Image`
+	
 	_url = ``
 	
 	url(url) {

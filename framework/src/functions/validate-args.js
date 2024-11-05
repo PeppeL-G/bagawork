@@ -51,7 +51,7 @@ export function validateArgs(
 
 export function throwArgError(component, methodName, errorMessage) {
 	
-	const componentName = component.constructor.name.split("Component")[0]
+	const componentName = component._specificTypeName
 	
 	throw `On ${componentName} you called ${methodName}() and ${errorMessage}`
 	
@@ -71,8 +71,8 @@ export function getSpecificTypeName(value){
 		return value.proxyName
 	}
 	
-	if(value.getSpecificTypeName?.()){
-		return value.getSpecificTypeName()
+	if(value?._specificTypeName){
+		return value._specificTypeName
 	}
 	
 	if(value instanceof Font){
@@ -97,8 +97,8 @@ function getGeneralTypeName(value){
 		return "Page"
 	}
 	
-	if(value?.getGeneralTypeName?.()){
-		return value.getGeneralTypeName()
+	if(value?._generalTypeName){
+		return value._generalTypeName
 	}
 	
 	if(value instanceof Font){

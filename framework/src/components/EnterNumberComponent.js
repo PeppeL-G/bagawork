@@ -5,6 +5,8 @@ import { validateArgs } from '../functions/validate-args.js'
 
 export class EnterNumberComponent extends Component{
 	
+	_specificTypeName = `EnterNumber`
+	
 	_number = ``
 	_defaultNumber = 0
 	_placeholder = ``

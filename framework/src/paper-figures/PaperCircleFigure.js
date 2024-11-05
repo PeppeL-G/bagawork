@@ -3,6 +3,8 @@ import { PaperFigure } from "../PaperFigure.js"
 
 export class PaperCircleFigure extends PaperFigure {
 	
+	_specificTypeName = `PaperCircle`
+	
 	_radius
 	_centerX
 	_centerY

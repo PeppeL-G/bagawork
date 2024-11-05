@@ -5,6 +5,8 @@ import { bbcodeToHtml } from '../functions/bbcode-to-html.js'
 
 export class TextComponent extends Component{
 	
+	_specificTypeName = `Text`
+	
 	_text = ``
 	_left = false
 	_right = false

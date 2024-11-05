@@ -5,6 +5,8 @@ import { PaperGroupFigure } from '../paper-figures/PaperGroupFigure.js'
 
 export class PaperComponent extends Component{
 	
+	_specificTypeName = `Paper`
+	
 	_paperGroup
 	
 	constructor() {

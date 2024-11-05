@@ -3,6 +3,8 @@ import { PaperFigure } from "../PaperFigure.js"
 
 export class PaperGroupFigure extends PaperFigure {
 	
+	_specificTypeName = `PaperGroup`
+	
 	_width = null
 	_height = null
 	_coordinatesWidth = 10
@@ -112,7 +114,7 @@ export class PaperGroupFigure extends PaperFigure {
 		svgElement.setAttribute(`class`, `paper-group`)
 		svgElement.setAttribute(`preserveAspectRatio`, `none`)
 		
-		if(parent.getSpecificTypeName() == `Paper`){
+		if(parent._specificTypeName == `Paper`){
 			
 			svgElement.setAttribute(`width`, `100%`)
 			svgElement.setAttribute(`height`, `100%`)

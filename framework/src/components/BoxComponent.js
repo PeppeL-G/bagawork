@@ -7,6 +7,8 @@ import { FrameworkPage } from '../classes/FrameworkPage.js'
 
 export class BoxComponent extends Component {
 	
+	_specificTypeName = `Box`
+	
 	_width = -1
 	_height = -1
 	_left = false
