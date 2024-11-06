@@ -621,7 +621,7 @@ export class FrameworkApp{
 	}
 	
 	stop(){
-		this.frameworkPage.stopUpdaters()
+		this.frameworkPage?.stopUpdaters?.()
 	}
 	
 	getState(){

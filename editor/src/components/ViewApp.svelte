@@ -24,7 +24,6 @@
 		return {
 			update,
 			destroy(){
-				console.log(stopApp)
 				stopApp?.()
 			}
 		}
