@@ -155,6 +155,9 @@
 			}, {
 				text: 'EnterText',
 				href: '/documentation/enter-text/',
+			}, {
+				text: 'Html',
+				href: '/documentation/html/',
 			}, /*{
 				text: 'Image',
 				href: '/documentation/image/',

@@ -28,6 +28,9 @@ export const Button = createComponentCreator(ButtonComponent)
 //import { ImageComponent } from './components/ImageComponent.js'
 //export const Image = createComponentCreator(ImageComponent)
 
+import { HtmlComponent } from './components/HtmlComponent.js'
+export const Html = createComponentCreator(HtmlComponent)
+
 import {PaperComponent} from './components/PaperComponent.js'
 export const Paper = createComponentCreator(PaperComponent)
 
