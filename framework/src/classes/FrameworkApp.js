@@ -775,10 +775,22 @@ export class FrameworkApp{
 					errorPageRootElement,
 				)
 				
-			} else {
+				return
+				
+			}
+			
+			
+			try{
+				
 				appElement.appendChild(
 					this.frameworkPage.createElement(),
 				)
+				
+			}catch(errorMessage){
+				
+				this.errorMessage = errorMessage
+				updateGui()
+				
 			}
 			
 		}
