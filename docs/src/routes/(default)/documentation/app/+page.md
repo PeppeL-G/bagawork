@@ -7,10 +7,10 @@ On this page you find the documentation for the `App` class.
 
 
 ## Introduction
-The `App` class represents your entire app. It is used to:
+The `App` class represents your entire app. It is mainly used to:
 
-* Keep track of the app's global state through the app's instance variables (known as *app variables*)
 * Create the first page shown to the user
+* Keep track of the app's global state through the app's instance variables (known as *app variables*)
 
 You should create your own class inheriting from `App` and in which you override some methods to give your own app the specific behavior you want it to have, as shown below.
 
@@ -25,6 +25,12 @@ class MyApp extends App{
 	// the specific behavior you want it to have.
 }
 ```
+
+:::
+
+::: tip Online Editor
+
+In our :online-editor, you can click on a page, and then click on the `MyApp` tab to view and edit the code for your `App` class.
 
 :::
 
@@ -76,15 +82,18 @@ class MyApp extends App{
 	TERM_1 = 5
 	TERM_2 = 4
 	
-	// We want the sum variable to contain the sum of TERM_1 and TERM_2.
-	// However, the "a" variable can only be used in methods, so we can't
-	// write sum = a.TERM_1 + a.TERM_2 here. So instead, we initialize
-	// the sum to a dummy value (0 in this case)...
+	// We want the sum variable to contain the sum of
+	// TERM_1 and TERM_2. However, the "a" variable can
+	// only be used in methods in the App class, so we
+	// can't write sum = a.TERM_1 + a.TERM_2 here. So
+	// instead, we initialize the sum to a dummy value
+	// (0 in this case)...
 	sum = 0
 	
 	onBefore(){
 		
-		// ...and in this method we assigns sum its correct value.
+		// ...and in this method we assign
+		// the sum its correct value.
 		a.sum = a.TERM_1 + a.TERM_2
 		
 	}
@@ -104,13 +113,16 @@ You only need to initialize the global state if your app needs one. Some simple 
 
 
 ## `createIcon()` - Creating an icon
-The method `createIcon()` will be called directly when the app starts. In it, you can create and return a :docs[Paper] component that will be used as the icon of your app. If your app is installed on a smartphone, it will for example be used as the icon the user should click on to start your app, and if your app runs in a tab in a web browser, the icon will be shown in the corner of the tab.
+The method `createIcon()` will be called directly when the app starts. In it, you can create and return a :docs[Paper] component that will be used as the icon of your app. The icon of your app will not be shown in your app's GUI, but at other places, such as:
 
-The icon will always have a square size (width=height).
+* When your app runs in a tab in web browser, the app icon will be shown as the icon of the tab
+* When your app is installed on a smartphone, the app icon will be shown as the icon the user should click on to start your app
+
+The icon will always have a squared size (width=height).
 
 ::: tip Previewing in the online editor
 
-In our online editor, you can preview the app icon by clicking on a page, and then look in the `Icon` tab.
+In our :online-editor, you can preview the app icon by clicking on a page, and then look in the `Icon` tab.
 
 :::
 
@@ -144,7 +156,7 @@ class StartPage extends Page{
 
 ::: tip Not needed?
 
-You only need to implement `createIcon()` if you want your app to have its own icon. 
+You only need to implement `createIcon()` if you want your app to have its own icon. If you don't implement, a default icon will be used instead.
 
 :::
 
@@ -152,7 +164,13 @@ You only need to implement `createIcon()` if you want your app to have its own i
 
 
 ## `createStartPage()` - Creating the start page
-After `onBefore()` has been called, `createStartPage()` will be called. In this method, you should create and send back an instance of the `Page` class that should first be shown to the user. This method you must implement, otherwise your app won't know which `Page` to show when it starts, and the app will crash.
+After `onBefore()` has been called, `createStartPage()` will be called. In this method, you should create and send back an instance of the `Page` class that should first be shown to the user. You must implement this method, otherwise your app won't know which `Page` to show when it starts, and the app will crash as soon as the user tries to start it.
+
+::: warning Note!
+
+In our :online-editor, `createStartPage()` is never used. Each time you preview a page, the framework overrides your implementation of `createStartPage()` with its own implementation that returns the page you are previewing. So you have to try running the app for real to be sure that your implementation of `createStartPage()` works.
+
+:::
 
 ::: tip Example
 
@@ -175,17 +193,17 @@ class StartPage extends Page{
 
 :::
 
-See the documentation for the :docs[Page] class to learn which methods you can override in your `Page` classes to make them work the way you want.
+See the documentation for the :docs[Page] class to learn which methods you can override in your `Page` classes to make the page work the way you want.
 
 
 
 
-## `createErrorRecoveringPage()` - Handle errors
-When the user runs your app and an error occurs, your app will crash, and a GUI from the framework will be shown to the user with a message that explains why the app crashed, and what the user can do about it.
+## `createErrorRecoveringPage()` - Handling errors
+When the user runs your app and an une expected error occurs in your code, your app will crash, and a GUI from the framework will be shown to the user with a message that explains why the app crashed, and what the user can do about it.
 
-One of the options presented to the user is to try running the app again. Most likely, the app will only crash when it tries to show/run the page that crashed, and hopefully the user will still be able to use the other pages in the app without problems until the you have released a new version of the app that doesn't crash on that page anymore.
+One of the options presented to the user is to try running the app again. Most likely, the app will only crash when it tries to show/run the page that crashed, and hopefully the user will still be able to use the other pages in the app without problems until you have released a new version of the app that doesn't crash on that page anymore.
 
-If the user choses the option to try running the app again, then `App.createStartPage()` will be called, and the page returned from that method will be shown to the user. If you want to show another page to the user, then you can implement `App.createErrorRecoveringPage()`, and return the page you want to show to the user there.
+If the user choses the option to try running the app again, then `App.createStartPage()` will be called, and the page returned from that method will be shown to the user. If you instead want to show another page to the user, you can implement `App.createErrorRecoveringPage()`, and return the page you want to show to the user there.
 
 ::: tip Example
 
@@ -231,7 +249,7 @@ class CounterPage extends Page{
 	
 	createGui(){
 		
-		// Just to try error handling, we will on purpose
+		// To try error handling, we will on purpose
 		// have code that crashes when counter is 3.
 		if(p.counter == 3){
 			log(nonExistingVariable) // Will crash, since that variable doesn't exist.
@@ -315,7 +333,7 @@ class CounterPage extends Page{
 	
 	createGui(){
 		
-		// Just to try error handling, we will on purpose
+		// To try error handling, we will on purpose
 		// have code that crashes when counter is 3.
 		if(p.counter == 3){
 			log(nonExistingVariable) // Will crash, since that variable doesn't exist.
@@ -376,7 +394,7 @@ class MyApp extends App{
 When the user starts running a new version of your app with a state from an older version of the app, `App.onUpdate()` will be called, in which you can handle the update. `onUpdate()` will be passed two values:
 
 * `oldA`, which contains the stored app variables
-* `oldVersion`, which contains the old version of the app the user ran before
+* `oldVersion`, which contains the old version number of the app the user ran before
 
 The page shown to the user after the update is by default the same page the user was on before the update. If that page doesn't exist in the new version of the app, then the page returned by `App.createStartPage()` will be shown. If you don't want this default update behavior, you can return a page from `onUpdate()`, and that page will be shown to the user.
 

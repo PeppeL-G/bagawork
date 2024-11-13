@@ -16,6 +16,8 @@ The BagaWork framework is implemented as two different [npm](https://www.npmjs.c
 
 They all follow the [SemVer](https://semver.org/) versioning convention, and they all use the same version number, i.e. when the version number of one package is updated, the other one is updated to the same one version number, even if nothing has changed in it. So if you use both of these packages, always use the same version number in them!
 
+The version of BagaWork shown in the upper right corner on this website is the latest released version of BagaWork.
+
 Changes made in each version is documented on the [Changelog](../changelog/) page.
 
 

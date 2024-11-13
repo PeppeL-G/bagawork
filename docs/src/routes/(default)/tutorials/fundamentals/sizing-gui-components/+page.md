@@ -10,7 +10,13 @@ This tutorial will teach you how you can change size of GUI components.
 ## Positioning children
 First, some quick repetition.
 
-The child components in `Rows` are as wide as the `Rows` component, and their height are just tall enough to surround their content, and the children are positioned at the top of `Rows`. To position the child components elsewhere in `Rows`, you can insert extra `Space` components in `Rows` to push apart the children. The `Space` children will share the remaining space available in `Rows` evenly among themselves.
+The child components in `Rows` are:
+
+* As wide as the `Rows` component
+* Just heigh enough to surround their content
+* Positioned at the top of `Rows` (by default)
+
+To position the child components elsewhere in `Rows`, you can insert extra `Space` components in `Rows` to push apart the children. The `Space` children will share the remaining space available in `Rows` evenly among themselves.
 
 It works the same for the `Columns` component, but the children are instead positioned as columns, and not as rows.
 
@@ -26,7 +32,7 @@ class StartPage extends Page{
 			Space.backgroundColor(`pink`),
 			Text.text(`Second`).backgroundColor(`yellow`),
 			Space.backgroundColor(`purple`),
-			Button.text(`To columns`).page(ColumnsPage)
+			Button.text(`To columns`).page(ColumnsPage),
 		)
 	}
 }
@@ -38,7 +44,7 @@ class ColumnsPage extends Page{
 			Space.backgroundColor(`pink`),
 			Text.text(`Second`).backgroundColor(`yellow`),
 			Space.backgroundColor(`purple`),
-			Button.text(`To Rows`).page(StartPage)
+			Button.text(`To Rows`).page(StartPage),
 		)
 	}
 }
@@ -51,7 +57,7 @@ class ColumnsPage extends Page{
 ## Sizing children
 It's not only `Space` children that can grab some shares of the remaining available space; any child component used in `Rows` and `Columns` can grab some of the remaining available space. But it's only the `Space` children that grabs it by default, and by default they grab equally much of it. But all this can be changed with the configuration method `.size()` on the children. Let's go through how this works in detail.
 
-First, let us ignore the `Space` children, and instead focus on all other children, such as `Text` and `Button`.
+First, let us ignore the `Space` children, and instead focus on all other children, such as `Text` and `Button` components.
 
 By default, all children in `Rows` will be just tall enough to surround their content. If you want them to also grab some of the remaining available space, you can call the method `.size()` on the child, and pass it a number indicating how many shares of the remaining available space it should also occupy. 
 
@@ -59,7 +65,7 @@ By default, all children in `Rows` will be just tall enough to surround their co
 
 A few examples.
 
-::bagawork-project[editor&app&code=FirstPage-SecondPage-ThirdPage-FourthPage&url=http://localhost:8080/editor/#eNqtlU1v2zAMhv8KoZMNeEY+nM71bRvQYocNw5LDhqVAFFuJtTmSIclLsyD/vZT80bhIsqLIJTYp8iXNB6H2hJYlSfYklRkjCUkLqjV82X0oS2CPholMA77v52JuUsWoYVNDlflG18zznXduFDOVEnDHlXYH1nuYiwM5BGQli4wpTZJfe8IzkgwDIujGVnI6JCBytdLM/CDJuzhurZ9o3YwPDwEpUa+XXQt+ro1e0139rnFrHHV+X/GXPX+XWx2mOS8yxYRXH83NDAVCgz/eohNd+EHveEnTP2slK5F9koVU3kKxbOE3WV+lYCBXYHIGrTrkTKFFiwJCzf/h+ALQEqzdhVCM+F1pA8a6mZDVOgcjQVfKlbKCXEEqBX6gCY96+lgZI0VT/l66JIZxGZSu+dA+vKlz2c/x60S/YxWQR5KMRjcB2ZEkiseHoB75+NLIn/WuOfNn1ZdDd3Mb+peHP8u5BvuKc9qUSEIY2FJhNAxB53bEDRnFNpQLLtZA/1JOi2XBQJc0ZSFMuUgZBqGSFcNgKYpdDQpN2ipquWG1qA6Ao5cjtzUzDiuWQZc3BFkZazTltX+ZG1ZVfWwz6zlPLYpvHbXRZNRSiy5R6+SuCa0TPc1sMHg7tcGgGdzVwL2OG9ZtyXUt/IfdSlbK5D14d851nt7725Ze3NKbXFxznd5V91ynepJf9GZ60evZzfC4niksWSG35/+1mM9rgYJ2Am6dOvJHPbRcI5s+aXo5sTjbzdKDaXd/n2V7G5xGORzE7f6ctJfXjG3KAqHYS+zh8AR7qJ63]
+::bagawork-project[show&editor&app&code=FirstPage-SecondPage-ThirdPage-FourthPage&url=http://localhost:8080/editor/#eNqtlU1v2zAMhv8KoZMNeEY+nC71bRvQYocNw5LDhqVAFFuJtTmSIclLuyD/vZQcuXGRekWRS2xS5EuaD0LtCa0qku5JJnNGUpKVVGv48vChqoDdGyZyDfi+X4iFyRSjhs0MVeYb3bAgdN6FUczUSsANV9odWO9hIQ7kEJG1LHOmNEl/7QnPSTqMiKBbW8npkIjI9Voz84Ok76ZTb/1E62p8uItIhXqd7Ebwc2N0mm7rt41b46Tz25o/7/m73Ok4K3iZKyaC5mhh5igQG/wJlq3oMow6xyua/dkoWYv8kyylCpaK5cvwmPVVCgZyDaZg4NWhYAotWpYQa/4PxxeBlmDtNoRixO9aGzDWzYSsNwUYCbpWrpQV5AoyKfADTXzS08faGCmO5W+lS2IYl0Plmo/tI5g5l/0cnxm2sCJyT9LR6CoiDyRNpuND1Mx83DfzJ8FLDv1J9fnU3eCGYf/05wXXYF9xUNsKUQgDOyqMhiHows74iEaxLeWCiw3Qv5TTclUy0BXNWAwzLjKGQahkxTBYivKhIYUm9YpablkjqiPg6OUIbsOM44pl0BUMQdbGGsfyOuwHh1VVl9vcenqwJdNrh200GXlsSR+2Vu+S1FrR89AGg7djGwyOk7sYudeBw7oeXdvCf+CtZa1M0aF341w9+N5fe3xTj2/Su+lawYuuulb1LMDkzfiS18Ob43EzVFixUu5e/t9iPm8EStoKuI3q0J/04MEmNn1y7OXM7vS7pUPTrv8uTH8hvMByOJj6FTrxF9icbasSqdiL7O7wCOz7n2c=]
 
 :::
 
@@ -241,3 +247,5 @@ You need more <code>.size(1)</code>. Add as many as you can. And then add some m
 
 ## That's it!
 Good work, now you know how to change the size of GUI components! 🥳 Using `Rows` and `Columns` with `.size()` on the children is enough to create almost any layout you want.
+
+The last thing to learn in the Fundamental section is the tutorial [Fundamentals 7. The App Class](../the-app-class/). Then you will actually know everything needed to be able to start creating small apps 🙂

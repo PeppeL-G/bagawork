@@ -5,6 +5,15 @@
 # `EnterText`
 On this page you find the documentation for the GUI Component `EnterText`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `EnterText` component. The `EnterText` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
+
+
+
 ## Introduction
 The `EnterText` component is a view in which the user can enter some text. If the user presses the Enter key (`↵`) in the component, the app will progress to the next page.
 
@@ -25,7 +34,7 @@ class StartPage extends Page{
 
 
 ## `text()` - Setting an initial text
-Use the configuration method `text()` to give the `EnterText` an initial text it should contain initially. Pass the text as a string.
+Use the configuration method `text()` to give the `EnterText` a text it should contain from the start. Pass the text as a string.
 
 ::: tip Example
 
@@ -43,9 +52,11 @@ class StartPage extends Page{
 
 
 ## `placeholder()` - Setting a placeholder text
-Use the configuration method `placeholder()` to show a text in the `EnterText` component when it's empty. Try typing some text in the example below, and see that the placeholder text disappears. If you then delete what you have typed, the placeholder text will be shown again.
+Use the configuration method `placeholder()` to show a text in the `EnterText` component when it's empty. 
 
 ::: tip Example
+
+Try typing some text in the example below, and see that the placeholder text disappears. If you then delete what you have typed, the placeholder text will be shown again.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -69,7 +80,7 @@ Use the configuration method `pageIfEqual()` to specify a `Page` the user should
 
 You can call this method multiple times.
 
-Use the configuration method `page()` to specify which `Page` the user should come to if she hasn't entered any text that matches any of the texts passed to `pageIfEquals()`.
+Use the configuration method `page()` to specify which `Page` the user should come to if she has entered a text that's not equal to any of the texts passed to `pageIfEquals()`.
 
 ::: tip Example
 
@@ -133,7 +144,7 @@ class EmptyNamePage extends Page{
 
 
 ## `store()` - Storing the entered text
-Use the configuration method `store()` to store the text the user entered in an object (for example in `a` or `p`). Pass it two values:
+Use the configuration method `store()` to store the text the user has entered in an object (for example in `a` or `p`). Pass it two values:
 
 1. The object in which the entered text should be stored (e.g. `a` or `p`)
 2. The name of the variable in the object where the entered text should be stored
@@ -184,7 +195,7 @@ Use the configuration method `onChange()` to tell the `EnterText` component whic
 * Removes all text in it
 * Etc.
 
-Your method will also be passed the entered text as an argument. 
+Your method will also be passed the entered text as an argument, and additional arguments passed to `onChange()` will also be passed to the method you pass to `onChange()`.
 
 ::: tip Example
 

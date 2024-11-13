@@ -5,6 +5,13 @@
 # `Columns`
 On this page you find the documentation for the GUI Component `Columns`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Columns` component. The `Columns` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
+
 
 
 ## Introduction
@@ -54,7 +61,7 @@ class StartPage extends Page{
 
 :::
 
-Any child that is `null` or `undefined` will not be used.
+If you pass `null` or `undefined` as a child, these values will be ignored.
 
 If the width of all children together is greater than the width of the `Columns` component, the `Columns` component will become scrollable, so the user can scroll the children horizontally. Try resizing the screen for the app in the example below to see how it works.
 

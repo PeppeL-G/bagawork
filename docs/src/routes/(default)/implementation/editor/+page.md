@@ -8,10 +8,8 @@ The npm package `@bagawork/editor` is a library implementing our :online-editor.
 
 * `@bagawork/editor/src/components/LoadEditor.svelte` is a Svelte component one can use to show our :online-editor
 * `@bagawork/editor/src/functions/compressor.js` exports two functions:
-	* `getCompressedProject(project)` to get a project created in the Editor as a compressed string (project → [JSON](https://tc39.es/ecma262/#sec-json.stringify) → [pako](https://www.npmjs.com/package/pako) → [Base64](https://www.npmjs.com/package/js-base64)) known as the *Baga* format
+	* `getCompressedProject(project)` to get a project created in the Editor as a compressed string (project → [JSON](https://tc39.es/ecma262/#sec-json.stringify) → [pako](https://www.npmjs.com/package/pako) → [Base64](https://www.npmjs.com/package/js-base64)) known as the *BagaCode*
 	* `getDecompressedProject(compressedProjectString)` to decompress a project compressed with the previous function (Base64 → pako → JSON → project)
-* `@bagawork/editor/src/functions/project-to-app-creator.js` exports one function:
-	* `projectToAppCreator(project)` to get a `createApp()` function from a project
 
 
 
@@ -22,6 +20,8 @@ The npm package `@bagawork/editor` is a library implementing our :online-editor.
 	<script>
 		import LoadEditor from '@bagawork/editor/components/LoadEditor.svelte'
 		
+		// The onClick() functions will receive the BagaCode
+		// of the project at the time the button is clicked.
 		const mainMenuOptions = [{
 			text: "Text option 1",
 			onClick(bagaCode){ alert("Click on text option 1") },
@@ -33,9 +33,16 @@ The npm package `@bagawork/editor` is a library implementing our :online-editor.
 	</script>
 	
 	<div class="editor">
+		
+		<!--
+			Both props are optional. If you don't provide any
+			BagaCode, the editor will load a default project.
+		--->
 		<LoadEditor
 			{mainMenuOptions}
+			bagaCode="Optional BagaCode"
 		/>
+		
 	</div>
 	
 	<style>
@@ -47,4 +54,4 @@ The npm package `@bagawork/editor` is a library implementing our :online-editor.
 		
 	</style>
 	```
-3. The `LoadEditor` itself will check if the hash part of the current URL contains a project that has been compressed using `getCompressedProject(project)` (i.e. a project in Baga format), and if so decompress and show that project in the Editor
+

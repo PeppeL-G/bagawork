@@ -5,6 +5,15 @@
 # `EnterNumber`
 On this page you find the documentation for the GUI Component `EnterNumber`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `EnterNumber` component. The `EnterNumber` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
+
+
+
 ## Introduction
 The `EnterNumber` component is a view in which the user can enter a number. If the user presses the Enter key (`↵`) in the component, the app will progress to the next page.
 
@@ -25,7 +34,7 @@ class StartPage extends Page{
 
 
 ## `number()` - Setting an initial number
-Use the configuration method `number()` to give the `EnterNumber` a number it will contain initially.
+Use the configuration method `number()` to give the `EnterNumber` component a number it will contain from the start.
 
 ::: tip Example
 
@@ -43,9 +52,11 @@ class StartPage extends Page{
 
 
 ## `placeholder()` - Setting a placeholder text
-Use the configuration method `placeholder()` to show a text in the `EnterNumber` component when no number is shown. Try typing some digits in the example below, and see that the placeholder text disappears. If you then delete the digits you typed, the placeholder text will be shown again.
+Use the configuration method `placeholder()` to show a text in the `EnterNumber` component when no number is shown. 
 
 ::: tip Example
+
+Try typing some digits in this example, and you will see that the placeholder text disappears. If you then delete the digits you typed, the placeholder text will be shown again.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -67,6 +78,8 @@ Use the configuration method `decimals()` to indicate how many decimals the ente
 * `1` to allow at most 1 decimal, e.g. `123`, `123.4` and `0.6`
 * `2` to allow at most 2 decimals, e.g. `123`, `123.4`, `123.45` and `1.23`
 * Etc.
+
+If you don't call this method, then there will be no upper limit on the number of decimals that may be entered.
 
 ::: tip Example
 
@@ -274,7 +287,7 @@ Use the configuration method `onChange()` to tell the `EnterNumber` component wh
 * Removes all digits in it
 * Etc.
 
-Your method will also be passed the entered number as an argument. 
+Your method will also be passed the entered number as an argument, and additional arguments passed to `onChange()` will also be passed to the method you pass to `onChange()`.
 
 ::: tip Example
 
@@ -298,7 +311,7 @@ class StartPage extends Page{
 			Columns.children(
 				EnterNumber.size(1).onChange(p.handleEnteredAge).page(GreetingPage),
 				Button.text(`⇨`),
-			)
+			),
 		)
 	}
 	

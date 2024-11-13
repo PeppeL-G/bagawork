@@ -14,7 +14,7 @@ On this page you find the documentation for the GUI Component `Updater`.
 
 
 ## Introduction
-By default, the GUI can only be changed by taking the user to another page (including to the same page), such as when the user clicks on a :docs[Button]. But, with the `Updater` component, you can update a part of the GUI on the current page whenever you want, without taking the user to another page. 
+By default, the GUI can only be changed by taking the user to another page (including to the same page the user currently is on), such as when the user clicks on a :docs[Button]. But, with the `Updater` component, you can update a part of the GUI on the current page whenever you want, without taking the user to another page. 
 
 ::: tip Example
 
@@ -119,7 +119,7 @@ Use the configuration method `name()` to give your `Updater` component instance 
 
 ::: warning Warning!
 
-Triggering manual updates of the GUI like this tends to make your code hard to read and hard to understand how it works. If you can achieve the same result by loading the page anew, that is usually better to do than triggering your own manual updates.
+Triggering manual updates of the GUI like this tends to make your code hard to read and hard to understand how it works. If you can implement the same functionality by loading the page anew, that is usually better to do than triggering your own manual updates.
 
 :::
 
@@ -131,7 +131,7 @@ A click on a :docs[Button] does by default take the user to the next page. If yo
 
 ::: tip Example
 
-In this example, the displayed time is only updated when you click on the `Button`.
+In this example, the displayed time is only updated when you click on the `Button` without reloading the entire page.
 
 ```js baga-show-editor-code
 class StartPage extends Page{

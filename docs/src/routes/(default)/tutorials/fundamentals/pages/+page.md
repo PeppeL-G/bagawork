@@ -10,7 +10,7 @@ A BagaWork app consists of different *pages*. Each page has its own Graphical Us
 
 ::: tip Online Editor
 
-In our :online-editor you can very easily see a preview of the GUI of all the pages in your app, as well as lines between them indicating how the user can navigate between them. Try clicking on a page there, and you will see the code for the page, as well as an interactive preview of the page.
+In our :online-editor you can very easily see a preview of the GUI of all the pages in your app, as well as lines between them indicating how the user can navigate between them. Try clicking on a page there, and you will see the code for that page, as well as an interactive preview of the page.
 
 :::
 
@@ -21,7 +21,7 @@ When you want to create a new page in your BagaWork app, you should create your 
 
 ::: tip Example
 
-Example showing JavaScript code for how to create your own page class called `MyPage`.
+The code below shows how to create your own page class called `MyPage` in JavaScript.
 
 ```js
 class MyPage extends Page{
@@ -43,7 +43,9 @@ class StartPage extends Page{
 
 If you have never programmed before, you are probably wondering *what the heck do all these words and curly brackets in the code above actually mean?!* But don't worry about that; just accept that this is the code that we have to write to create a new class that extends the `Page` class.
 
-You know, a sentence in English starts with a capital letter and ends with a period, question mark, or exclamation mark (`.`, `?` or `!`), etc. Just as those rules exist in the English language (called grammar), we have rules in all programming languages (called syntax), and we must follow the syntax of the language we write our code in. So the code above is simply the code we have to write to create a new class extending the `Page` class in JavaScript. There is really nothing strange with it; just accept that this is the code we have to write 🙂
+You know, a sentence in English starts with a capital letter and ends with a period, question mark, or exclamation mark (`.`, `?` or `!`), etc. Just as those rules exist in the English language (called grammar), we have rules in all programming languages (called syntax), and we must follow the syntax of the language we write our code in.
+
+So the code above is simply the code we have to write to create a new class extending the `Page` class in JavaScript. There is really nothing strange with it; just accept that this is the code we have to write 🙂
 
 :::
 
@@ -56,10 +58,10 @@ In our :online-editor you can create a new page simply by clicking anywhere on t
 :::
 
 ## Tailoring a page
-You of course don't want all of your pages to look and function the same; some should maybe have buttons, others should display some text, etc. Therefor, your own page classes need to contain different descriptions of how they should work. You indicate these differences by adding different pre-named *methods* to your page classes, and then you *implement* the methods differently in your different page classes.
+You of course don't want all of your pages to look and function the same. Some should maybe have buttons, others should display some text, etc. Therefor, your own page classes need to contain different descriptions of how they should work. You indicate these differences by adding different pre-named *methods* to your page classes, and then you *implement* the methods differently in your different page classes.
 
 ### Tailoring the GUI
-When a page needs to show its GUI to the user, the method `createGui(){ }` in the page class will be called. When it is called, the code you write in the method will be executed. In this method you should create and send back the page's GUI.
+When a page needs to show its GUI to the user, the method `createGui(){ }` in the page class will be called. When it is called, the code you write in the method between the curly brackets `{` and `}` will be executed. In this method you should create and send back the page's GUI.
 
 ::: tip Example
 
@@ -85,7 +87,7 @@ If you have never programmed before, the code and the description of the code ab
 
 ::: tip Online Editor
 
-In our :online-editor you can simply click on a page to show the code for it. After you have modified the code, the changes will be saved automatically, but you might want to click on the `Refresh Preview` button to see the result of your new code.
+In our :online-editor you can simply click on a page to show the code for it. After you have modified the code, the changes will be saved automatically, but you might want to click on the `Restart` button to see the result of your new code.
 
 :::
 
@@ -127,11 +129,11 @@ class StartPage extends Page{
 
 ::::hint
 
-When you add a new page, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like as shown above.
+When you add a new page from a page template, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like as shown above.
 
 ::::
 
 :::
 
 ## That's it!
-Now you should know the role of pages in BagaWork apps, good work! 🥳 When you are ready to learn some more, continue with [Tutorial 3. Configuring GUI Components](../configuring-gui-components/) 🙂
+Now you should know the role of pages in BagaWork apps, good work! 🥳 When you are ready to learn some more, continue with the tutorial [Fundamentals 3. Configuring GUI Components](../configuring-gui-components/) 🙂

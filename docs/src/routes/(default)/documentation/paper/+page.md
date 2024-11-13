@@ -5,12 +5,28 @@
 # `Paper`
 On this page you find the documentation for the GUI Component `Paper`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Paper` component. The `Paper` component also supports the configuration methods described on the page :docs[Component].
+
+:::
 
 
 
 
 ## Introduction
 The `Paper` component is a layout that you yourself specify what it should look like by drawing figures on it, such as lines, circles and rectangles. See the sub-menu `Paper Figures` to learn more about which figures that can be drawn.
+
+::: warning Note!
+
+The `Paper` component is not an ordinary GUI layout:
+
+* It **can only** contain *paper figures*, such as :docs[PaperLine] and :docs[PaperCircle]
+* It **can not** contain ordinary GUI components, such as :docs[Text] and :docs[Button]
+
+All *paper figures* starts with the name `Paper` to differentiate them from the ordinary GUI components. Also note that *paper figures* can only be used in the `Paper` component, and never in any ordinary GUI layout.
+
+:::
 
 ::: tip Example
 
@@ -57,7 +73,7 @@ Use the configuation method `showCoordinates()` to tell the `Paper` component th
 * Show some lines to visualize the coordinate system
 * Show the coordinates of the mouse in its upper right corner when you move the mouse over the `Paper` component
 
-This method is very useful to call when you are developing your app, and then you remove it just before you publish your app, so your real users won't see the coordinate system.
+This method is very useful to call when you are developing your app, and then you remove the call to it just before you publish your app, so your real users  will never see the coordinate system.
 
 ::: tip Example
 
@@ -76,6 +92,11 @@ class StartPage extends Page{
 
 ## `coordinateSystem()` - Setting the coordinate system
 Use the configuation method `coordinateSystem()` to specify the coordinate system that should be used to position the figures that should be drawn on the `Paper` component. By default, it's `10` units wide and `10` units high, but using this method you can set it to something else.
+
+Pass it two numbers:
+
+* The width of the coordinate system
+* The height of the coordinate system
 
 ::: tip Example
 
@@ -102,6 +123,8 @@ class StartPage extends Page{
 	}
 }
 ```
+
+That the X and Y units are of the same size is often very important for the figures drawn on it to look good.
 
 :::
 

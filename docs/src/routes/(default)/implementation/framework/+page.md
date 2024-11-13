@@ -9,13 +9,15 @@ On this page you find the documentation for the npm package `@bagawork/framework
 
 
 ## Introduction
-The npm package `@bagawork/framework` contains the various framework classes, components and functions that is needed to run a BagaWork app. Checkout the [Documentation](/documentation) pages to learn how most of these works (that page only contains the documentation for the public things, the package also contains some things that are only used internally).
+The npm package `@bagawork/framework` contains the various framework classes, components and functions that is needed to run a BagaWork app. Checkout the [Documentation](/documentation) pages to learn how most of these works. That page does mostly contain the documentation for the public things in the package, and this page contains the documentation for the rest.
 
 
 
 
 
 ## Quick start
+The easiest way to create a BagaWork app is by creating it in our :online-editor, and then to run it yourself you obtain the BagaCode for it, and then pass it as the first argument to `showAppInElement()` below (instead of the `createApp` function), but to show that you can create your own BagaWork app without our editor, the code below contains an example of that.
+
 1. `npm install @bagawork/framework`
 2. 
 	```js
@@ -25,6 +27,7 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 		createPageCreator, 
 		Page,
 		Text,
+		// And everything else you want to use...
 	} from '@bagawork/framework'
 
 	export function createApp({a, p, log}){
@@ -35,6 +38,11 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 			}
 		}
 		
+		// Pages can't be created as documented on this website.
+		// They have to be created as shown below. But the editor
+		// rewrites it to this for you, so for people creating
+		// apps through the editor don't need to do it this
+		// complicated way.
 		const StartPage = createPageCreator(`StartPage`, class extends Page{
 			createGui(){
 				return Button.text(`View greeting`).page(GreetingPage)
@@ -75,12 +83,14 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 		</style>
 		<script type="module">
 			
-			// The file exporting your createApp() function, or write the
-			// createApp() function directly in this <script> element.
+			// The file exporting your createApp() function, or
+			// write the createApp() function directly in this
+			// <script> element.
 			import { createApp } from './create-app.js'
 			
-			// Can't import showAppInElement from the package directly in
-			// a web browser like this, but you get the idea.
+			// Can't import showAppInElement() from the package
+			// directly in a web browser like this, but you get
+			// the idea.
 			import { showAppInElement } from '@bagawork/framework'
 			
 			document.addEventListener('DOMContentLoaded', async function(){
@@ -96,10 +106,11 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 					runtimeSettings,
 				)
 				
-				// stopApp is a function you should call when you want everything
-				// in the app (such as updaters) to stop running. This is only
-				// needed when your app should run a shorter amount of time
-				// then the page showing it.
+				// stopApp is a function you should call when you
+				// want everything in the app (such as updaters) to
+				// stop running. This is only needed when your app
+				// should run a shorter amount of time then the
+				// page showing it.
 				
 			})
 			
@@ -110,7 +121,6 @@ The npm package `@bagawork/framework` contains the various framework classes, co
 	</body>
 	</html>
 	```
-
 
 
 
@@ -127,30 +137,37 @@ Set `runtimeSettings.state` to `JSON.parse(localStorage['state'] ?? '""') || nul
 
 
 #### Obtaining the app icon
-Set `runtimeSettings.onIconCreated` to a function to obtain the icon created by `App.createIcon()`. You will be passed the icon as a string containing SVG code.
+Set `runtimeSettings.onIconCreated` to a function to obtain the icon created by `App.createIcon()`. You will be passed the icon as a string containing SVG code. This function will be called directly when the app starts (and nothing goes wrong).
 
 
 
 #### Dealing with updates
 If a state has been stored, and the app then starts with that state running in a new version of the app, an update in the app needs to happen (the `onUpdate()` methods in the app needs to be called, etc.).
 
-Set `runtimeSettings.version` to the current version of the app, and the framework will perform the update (call the `onUpdate` methods in the app, etc.) if this version is higher than the version of the app stored in the state.
+Set `runtimeSettings.version` to the current version of the app, and the framework will perform the update (call the `onUpdate` methods in the app, etc.) if this version is higher than the version of the app stored in the `state`.
 
 
 
 
 #### Listening for errors
-Set `runtimeSettings.onError` to `(errorMessage) => console.log(errorMessage)` to listen for when the code in the app crashes. When an error occurs, the app will also display the error message on the screen. 
+Set `runtimeSettings.onError` to `(errorMessage) => console.log(errorMessage)` to listen for when the code in the app crashes. When an error occurs, the app will also display the error message on the screen and stop running the app, and also give the user the option to restart the app from scratch (with no state), or try resume running the app by loading another page.
 
 
 
 #### Previewing
-Set `runtimeSettings.isPreview` to `true` for `Page.onBeforeDirections()` not take effect (will probably only be used by the editor).
+Set `runtimeSettings.isPreview` to `true` for:
+
+* `Page.onBeforeDirections()` not to take effect
+* Updaters with intervals to not run
+* The speaker to not play anything
+* Etc.
+
+Most likely, it's only the previewing of pages in the editor that will use this option.
 
 
 
 #### Logging
-Set `runtimeSettings.onLog` to `(type, value) => console.log(type, value)` to make the app log messages. ``type = `framework` `` means that it's the framework that logged the message, ``type = `user` `` means that the app creator logged the message by calling the :docs[log] function.
+Set `runtimeSettings.onLog` to `(type, value) => console.log(type, value)` to make the app log messages. ``type = `framework` `` means that it's the framework that logged the message, and ``type = `user` `` means that the app creator logged the message by calling the :docs[log] function.
 
 
 
@@ -177,7 +194,7 @@ sequenceDiagram
 	createApp(environment)->>Framework: Returns App
 </Mermaid>
 
-Setting up the environment for `createApp()` is not straight forward, since the `p` property needs to be updated to contain the current page in the app. To make that happen, the environment is actually implemented as a JS proxy that intercepts property access and send back the correct value, but to the one implementing the `createApp()` function it can be seen as a JS object that always contains up-to-date values.
+Setting up the environment for `createApp()` is not straight forward, since the `p` property needs to be updated to contain the current page in the app. To make that happen, the environment is actually implemented as a JS proxy that intercepts property access and sends back the correct value, but to the one implementing the `createApp()` function it can be seen as a JS object that always contains up-to-date values.
 
 
 
@@ -186,8 +203,8 @@ Setting up the environment for `createApp()` is not straight forward, since the 
 ### FrameworkApp & FrameworkPage VS App & Page
 To hide framework implementation details as much as possible from the ones implementing BagaWork apps, `App` and `Page` contains no framework logic:
 
-* The logic for `App` is implemented in `FrameworkApp` (it has access to the `App` that should be used, and an instance of it)
-* The logic for `Page` is implemented in `FrameworkPage` (it has a access to the currently shown `Page`, and an instance of it)
+* The logic for `App` is implemented in `FrameworkApp` (`FrameworkApp` has access to the `App` that should be used, and an instance of it)
+* The logic for `Page` is implemented in `FrameworkPage` (`FrameworkPage` has access to the currently shown `Page`, and an instance of it)
 
 BagaWork then uses `FrameworkApp` and `FrameworkPage`, and they in turn use the provided `App` and `Page` classes when they need to get some info from them. 
 
@@ -197,16 +214,16 @@ flowchart LR
 	Framework -- Uses --> FrameworkPage -- Uses --> Page
 </Mermaid>
 
-`FrameworkApp` and `FrameworkPage` also have access to each other.
+`FrameworkApp` and `FrameworkPage` also have access to each other, and `FrameworkApp` acts as the main entry point.
 
 
 
 ## Using `FrameworkApp` as a context
 `FrameworkApp` does contain "the logic for the app" (as one can expect), but it also serves as a context that contains "global" information. Instead of giving other classes the small amount of extra information they actually need, they are given a reference to the `FrameworkApp` instance, so they can obtain whichever information they want from it themselves.
 
-An example of this are GUI components. Some of them need to use `frameworkApp.runtimeSettings.isPreview` to know if they should function the real way, or only in a preview way. But instead of giving the components only `runtimeSettings`, they receive the entire `frameworkApp` object.
+An example of this are GUI components. Some of them need to use `frameworkApp.runtimeSettings.isPreview` to know if they should function the real way, or only in a preview way. But instead of giving the components only the value in `runtimeSettings.isPreview`, they receive the entire `frameworkApp` object.
 
-This architecture makes the code structure easier to understand; you can always access any information you need from the `frameworkApp` object you have access to, no matter where you write the code 😀
+This architecture makes the code structure easier to understand; you can always access any information you need from the `frameworkApp` object you have access to, no matter where you are in the code (kind of).
 
 
 
@@ -219,11 +236,11 @@ const runtimeSettings = {}
 const frameworkApp = new FrameworkApp(createApp, runtimeSettings)
 ```
 
-You can read more about the runtime settings you can use further down on this page.
+It is also possible to pass a string that contains the BagaCode for the app created through our editor as the `createApp()` function.
 
-It is also possible to pass a string that contains JS code that evaluates to the `createApp()` function instead of passing it the `createApp()` function directly.
+Then simply call `frameworkApp.createElement()` to obtain an HTML element you can use to display the app, and after that, the app will run on its own!
 
-Then simply call `frameworkApp.start()` to make the machinery start! The figure below shows the order methods are invoked when starting the app for the first time.
+The figure below shows the order methods are invoked when starting the app for the first time.
 
 <Mermaid>
 sequenceDiagram
@@ -231,6 +248,7 @@ sequenceDiagram
 	participant App
 	participant FrameworkPage
 	participant Page
+	FrameworkApp->>App: createIcon()
 	FrameworkApp->>App: onBefore()
 	FrameworkApp->>App: createStartPage()
 	App->>Page: Creates

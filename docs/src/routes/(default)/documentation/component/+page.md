@@ -2,13 +2,16 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# Configuration Methods
-On this page you find the documentation for configuration methods than can be used on all GUI components.
+# Component
+On this page you find the documentation for the configuration methods than can be used on all GUI components (*Views* and *Layouts*).
+
+
+
 
 ## `backgroundColor()` - Setting the background color
-Indicates which background color the GUI component should have. Possible values:
+Use the configuration method `backgroundColor()` to tell the component which background color it should. Pass it the background color as a string containing the name of the color in English, such as `` `red` `` or `` `blue` ``.
 
-* A string containing the name of a color in English, such as `` `red` `` or `` `blue` ``
+If you don't call `backgroundColor()`, the component will not have any background color.
 
 ::: tip Example
 
@@ -36,7 +39,7 @@ Use the configuration method `border(thickness, color, sides)` to tell the compo
 The border will only be applied on the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
 
 This configuration method can be called multiple times to give
-different sides different type of borders.
+different sides of the component different type of borders.
 
 The parameters:
 
@@ -97,14 +100,6 @@ Use the configuration method `cornerRadius()` to tell the component how round th
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	createGui(){
@@ -133,19 +128,11 @@ Use the configuration method `font()` to tell the component how text shown on th
 
 Should be formatted. Pass it an instance of the :docs[Font] class, which you can configure by calling different configuration methods on it (for more information on those methods, see the documentation for the :docs[Font] class).
 
-The font assigned to a GUI component this way will be passed down to all its child components, and their child components, and so on. A child component can override the font it gets from its parent component by calling `.font()` on itself.
+The font assigned to a GUI component this way will be passed down to all its child components, and their child components, and so on. A child component can override the font it gets from its parent component by calling `.font()` on itself and pass it another font.
 
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	createGui(){
@@ -171,20 +158,12 @@ By default, all the GUI components you use will be shown. Use the configuration 
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	randomNumberBetween0And1 = 0
 	
 	onBefore(){
-		p.randomNumberBetween0And1 = Math.random()
+		p.randomNumberBetween0And1 = m.randomFloat(0, 1)
 	}
 	
 	createGui(){
@@ -211,7 +190,7 @@ Use the configuration method `padding(amount, sides)` to tell the component how 
 
 The padding will only be applied to the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
 
-This configuration method can be called multiple times to give different sides different amounts of padding.
+This configuration method can be called multiple times to give different sides of the component different amounts of padding.
 
 The parameters:
 
@@ -229,14 +208,6 @@ If `sides` is not provided, the padding will be applied to all sides
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	createGui(){
@@ -254,14 +225,6 @@ class StartPage extends Page{
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	createGui(){
@@ -290,14 +253,6 @@ By default, all the GUI components you use will be shown. Use the configuration 
 ::: tip Example
 
 ```js baga-show-editor-code
-class MyApp extends App{
-	
-	createStartPage(){
-		return StartPage
-	}
-	
-}
-
 class StartPage extends Page{
 	
 	randomNumberBetween0And1 = 0

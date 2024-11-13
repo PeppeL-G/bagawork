@@ -83,3 +83,12 @@
 	
 	
 {/each}
+
+<style>
+	
+	table{
+		font-size: 150%;
+		margin-left: 1em;
+	}
+	
+</style>

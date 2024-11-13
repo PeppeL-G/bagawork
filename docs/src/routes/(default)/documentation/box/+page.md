@@ -5,6 +5,11 @@
 # `Box`
 On this page you find the documentation for the GUI Component `Box`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Box` component. The `Box` component also supports the configuration methods described on the page :docs[Component].
+
+:::
 
 
 
@@ -110,6 +115,13 @@ class StartPage extends Page{
 
 :::
 
+::: tip Tip!
+
+A better name on this method is probably `childWidth()`, since it sets the width of the child component, and not the width of the `Box` component, but to keep the code shorter, the name `width()` is used.
+
+:::
+
+
 
 
 ## `left()` - Left aligning the box
@@ -166,6 +178,12 @@ class StartPage extends Page{
 	}
 }
 ```
+
+:::
+
+::: tip Tip!
+
+A better name on this method is probably `childHeight()`, since it sets the height of the child component, and not the height of the `Box` component, but to keep the code shorter, the name `height()` is used.
 
 :::
 
@@ -247,5 +265,11 @@ class StartPage extends Page{
 	}
 }
 ```
+
+:::
+
+::: tip Tip!
+
+A better name on this method is probably `childAspectRatio()`, since it sets the aspect ratio of the child component, and not of the `Box` component, but to keep the code shorter, the name `aspectRatio()` is used.
 
 :::

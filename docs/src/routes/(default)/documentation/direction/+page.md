@@ -27,14 +27,18 @@ To indicate when/if this direction should be used, call the configuration method
 Direction.when(true)
 ```
 
+Usually, you don't pass it `true`, but an expression that will evaluate to `true`/`false` depending on what values your app/page variables have.
+
 To indicate which page the user should come to when this direction is used, call the configuration method `page()`, and pass it the page, e.g.:
 
 ```js
 Direction.when(true).page(ThePage)
 ```
 
-To instruct the editor which text to show, call the configuration method `text()`, and pass it the text, e.g.:
+To instruct our :online-editor which text to show, call the configuration method `text()`, and pass it the text, e.g.:
 
 ```js
 Direction.when(true).page(ThePage).text(`This is shown in the editor`)
 ```
+
+For example of how to use `Direction`, see :docs[Page].`createAfterDirections()`.

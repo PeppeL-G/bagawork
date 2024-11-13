@@ -2,14 +2,21 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-
 # BBCode
-On this page you find the documentation for how to format text in your BagaWork apps using BBCode.
+On this page you find the documentation for how to style text in your BagaWork apps using BBCode.
+
+::: tip Font is an alternative
+
+BBCode is used to style smaller parts of a text. If you want to style all text in a GUI component, you're usually better of using :docs[Font].
+
+:::
+
 
 
 
 ## Introduction
-Various GUI components display text on the screen, such as the :docs[Text] component and the :docs[Button] component (using the configuration method `textWithBBCod()` instead of `text()`). That text can contain BBCode, which are instructions about how the text should be formatted. You will find the BBCode tags BagaWork supports on this page.
+Various GUI components display text on the screen, such as the :docs[Text] component and the :docs[Button] component. That text can be styled using BBCode if you set the text with the configuration methods `textWithBBCode()` instead of `text()`.
+
 
 
 

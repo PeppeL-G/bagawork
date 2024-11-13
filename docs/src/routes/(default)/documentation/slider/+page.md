@@ -5,6 +5,15 @@
 # `Slider`
 On this page you find the documentation for the GUI Component `Slider`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Slider` component. The `Slider` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
+
+
+
 ## Introduction
 The `Slider` component is a view in which the user can select a number in an interval. The configuration methods `min()` and `max()` specifies the interval.
 

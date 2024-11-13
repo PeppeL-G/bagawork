@@ -5,6 +5,12 @@
 # `Image`
 On this page you find the documentation for the GUI Component `Image`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Image` component. The `Image` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
 ::: warning TEMPORARILY DISABLED!!!
 
 Until network permissions have been implemented, this component won't be supported.

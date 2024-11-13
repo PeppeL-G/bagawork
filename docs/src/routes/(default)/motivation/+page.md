@@ -11,32 +11,32 @@ When teaching programming to beginners, there are kind of two different approach
 
 > Start teaching the basics (numbers, strings, variables, arrays, conditional statements, loops, etc.), and then introduce higher level stuff, such as implementing graphical user interfaces (GUIs).
 
-This approach sounds very logical and introduces things in a very pedagogical order. However, there exists one big downside with this approach: many students find the basics of programming very boring and hard to learn (much abstract thinking is needed), so they lose motivation to learn it, never get any good at it, and might even entirely give up on learning it. That's not good!
+This approach is very sensible and introduces things in a very logical order. However, there exists one big downside with this approach: many students find the basics of programming very boring and hard to learn (much abstract thinking is needed), so they lose motivation to learn it, never get any good at it, and might even entirely give up on learning programming. That's not good!
 
 *Teaching Approach 2* is kind of the opposite:
 
 > Start teaching high level stuff, such as implementing GUIs, and then introduce the basics along the way.
 
-This approach can give students an easier and more fun start, and keep them motivated to learn more. For example, initially a students might get the exercise to first design a GUI using pen and paper (which involves no programming at all), and then implement it with code in a programming language and a GUI framework (which involves very little programming). And GUIs are not something abstract; students can easily see how their code relates to the GUI they can see on their screens, so it's easy to understand what affects one change in the code will have.
+This approach can give students an easier and more fun start, and keep them motivated to learn more. For example, initially a students might get the exercise to first design a GUI using pen and paper (which involves no programming at all), and then implement it with code in a programming language and a GUI framework (which involves very little programming). And GUIs are not something abstract; students can easily see the result of their code because it is visually there on the screen! 
 
-However, the downside with Teaching Approach 2 is that students don't learn much programming at all in the beginning. Instead, they mostly only learn how to use a specific GUI framework, which usually isn't very valuable for them to know in the long run. But if they later can use this knowledge to learn the basics in programming in an easier and more fun way, it can definitely be a valid approach for teaching and learning programming.
+However, the downside with Teaching Approach 2 is that students do not learn much programming at all in the beginning. Instead, they mostly only learn how to use a specific GUI framework, which usually isn't very valuable for them to know in the long run. But if they later can use this knowledge to learn the basics in programming in an easier and more fun way, it can definitely be a valid approach for teaching and learning programming!
 
-Unfortunately, most GUI frameworks are not primarily designed to be easy to use, but primarily designed to run fast on computers. This is desirable for professional apps, but it does make the frameworks harder to use than they need to be, and is therefor a big drawback with Teaching Approach 2. Not only because the frameworks are harder to learn for the students, but also because they are harder to teach for the teachers, who in elementary schools often have very little experience of programming themselves.
+Unfortunately, most GUI frameworks are not primarily designed to be easy to use, but to run fast on computers. This is desirable for professional apps, but it does make the frameworks harder to use than they need to be, and is therefor a big drawback with Teaching Approach 2. Not only because the frameworks are harder to learn for the students, but also because they are harder for teachers to teach. And in elementary school the teachers themselves are rarely any programming experts, so having a simple framework is very valuable.
 
-Most professional GUI frameworks are also very big, so it's hard to learn and know all there is to know about them. So, as a teacher it can be hard to help a student who suddenly has started to use a part of the framework the teacher has never heard of before. And how can the teacher in a good way inform the students about which parts of the framework they are allowed to use/can get help with? It's simply problematic. In addition to that, many of these frameworks are also poorly documented, or has a documentation written in such a way that it's hard for beginners to understand it.
+Most professional GUI frameworks are also very big, so it's hard to learn and know all there is to know about them. So, as a teacher it can be hard to help a student who suddenly has started to use a part of the framework the teacher has never heard of before. And how can the teacher in a good way inform the students about which parts of the framework they are allowed to use/can get help with? It's simply problematic. In addition to that, many of these frameworks are also poorly documented, or has a documentation written in a way that very hard for beginners to understand.
 
-It would simply be good to have a way of creating apps that has been designed to be as easy as possible to use for both for students and teachers. *BagaWork* is such a framework/platform. And even though it hasn't been designed for good performance, many fun, cool and useful apps implemented in it still run fine one ordinary smartphones.
+It would simply be good to have a way of creating apps that has been designed to be as easy as possible to use for both students and teachers. *BagaWork* is such a framework/platform. And even though it hasn't been designed for good performance, many fun, cool and useful apps implemented in it will still run fine one ordinary smartphones (but perhaps drain the battery a bit more than necessary 😅).
 
 Here is a short list of what the primary focus has been when designing BagaWork, and how it has been realized:
 
 1. Making it easy to get started:
-	* Just visit our :online-editor in a web browser
+	* Just visit our :online-editor in a web browser (on a laptop/computer)
 	* Our online editor is already populated with a small app showing the basics
 2. Making it easy to learn:
 	* The framework is built on an architecture that is easy to understand:
 		* One `App` class and multiple `Page` classes
-		* One `Page` at a time is shown on the screen
-		* The GUI on the user's screen is changed by going to next `Page`
+		* One page at a time is shown on the screen
+		* The GUI on the user's screen is changed by going to next page
 	* The editor shows previews of the pages and navigation between them, so no/little abstract thinking is required (one can visually see the result of the code)
 	* The classes in the framework:
 		* Are easy to use:
@@ -51,7 +51,7 @@ Here is a short list of what the primary focus has been when designing BagaWork,
 		* Contain many examples, and these are also editable by the students, making it very easy to test how things work
 3. Making it easy to teach:
 	* The framework is small, so not much to teach (for a GUI framework)
-	* The code editor supports type hinting, so when showing something in the editor, one doesn't need to remember how to spell names 100% correct, and it also shows documentation, so one can quickly look up things one has forgotten
+	* The code editor supports type hinting, so when showing something in the editor, the teacher doesn't need to remember how to spell names 100% correct, and it also shows documentation, so one can quickly look up things one has forgotten
 4. Making it easy to get help:
 	* If a page contains an error, the other pages in the editor are still previewable, making it obvious which page the error is in, which makes debugging and fixing the code much easier for both students and teachers
 	* When students need help, they can easily share their code with others by copy-pasting links containing the code

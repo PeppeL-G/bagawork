@@ -15,13 +15,14 @@ You can use the `Time` class to create an object that represents a specific poin
 To create a new `Time` object, simply write `Time`. This way, you obtain a `Time` object representing the time `0001-01-01 00:00:00`. Below you can see the names for the different parts a `Time` object consists of.
 
 ```
-   Date     Clock  
-┝━━━━━━━━┥ ┝━━━━━━┥
-0001-01-01 00:00:00
-┝━━┥ ┝┥ ┝┥ ┝┥ ┝┥ ┝┥
-Year │  │ Hour │  │
-  Month │  Minute │
-       Day     Second
+        Date     Clock
+     ┣━━━━━━━━┫ ┣━━━━━━┫
+     0001-01-01 00:00:00.000
+     ┣━━┛ ┣┛ ┣┛ ┗┫ ┗┫ ┗┫ ┗━┫
+ Year┛    ┃  ┃   ┃  ┃  ┃   ┗Millisecond
+     Month┛  ┃   ┃  ┃  ┗Second
+          Day┛   ┃  ┗Minute
+                 ┗Hour
 ```
 
 Often, you want to obtain the time that happen to be when your code is running. Call the method `setNow()` on your `Time` object to change the time in it to the time that happened to be when the computer calls `setNow()`.
@@ -30,17 +31,17 @@ Often, you want to obtain the time that happen to be when your code is running. 
 
 
 ## Retrieving parts from a `Time` object
-Use the different `getXXX()` methods on the `Time` object to retrieve the different parts. The methods ending with `AsString()` returns a string, the other ones return a number.
+Use the different `getXXX()` methods on the `Time` object to retrieve the different parts. The methods `getDate()` and `getClock()` returns a string, the other ones return a number.
 
-* `getDate()` to get the date parts of the time (year, month and day of month) as a string
-* `getClock()` to get the clock parts (hour, minute and second) of the time as a string
-* `getYear()` to get the year
-* `getMonth()` to get the month
-* `getDay()` to get the day
-* `getHour()` to get the hour
-* `getMinute()` to get the minute
-* `getSecond()` to get the second
-* `getMillisecond()` to get the millisecond
+* `getDate()` returns the date parts of the time (year, month and day of month) as a string
+* `getClock()` returns the clock parts (hour, minute and second) of the time as a string
+* `getYear()` returns the year
+* `getMonth()` returns the month
+* `getDay()` returns the day
+* `getHour()` returns the hour
+* `getMinute()` returns the minute
+* `getSecond()` returns the second
+* `getMillisecond()` returns the millisecond
 
 ::: tip Example
 
@@ -78,19 +79,19 @@ class StartPage extends Page{
 
 
 
-## Changing a `Time` object
-Use the different `setXXX()` methods on the `Time` object to change which time it should represent. All `setXXX()` methods return the `Time` object itself, so method calls are chainable, just as they are for GUI components. Use:
+## Setting a `Time` object
+Use the different `setXXX()` methods on the `Time` object to change which time it should represent. All `setXXX()` methods return the `Time` object itself, so method calls are chainable, just as they are for GUI components. For the methods that need numbers from you (such as which year to set the date to), pass them as arguments.
 
-* `setNow()` to populate the time object with the time that happen to be when the call to `setNow()` is executed by the computer
-* `setDate()` to set the year, month and day of month
-* `setClock()` to set the hour, minute and second
-* `setYear()` to set the year
-* `setMonth()` to set the month
-* `setDay()` to set the day of month
-* `setHour()` to set the hour
-* `setMinute()` to set the minute
-* `setSecond()` to set the second
-* `setMillisecond()` to set the millisecond
+* `setNow()` populates the time object with the time that happen to be when the call to `setNow()` is executed by the computer
+* `setDate()` sets the year, month and day of month
+* `setClock()` sets the hour, minute and second
+* `setYear()` sets the year
+* `setMonth()` sets the month
+* `setDay()` sets the day of month
+* `setHour()` sets the hour
+* `setMinute()` sets the minute
+* `setSecond()` sets the second
+* `setMillisecond()` sets the millisecond
 
 ::: tip Example
 
@@ -113,7 +114,17 @@ class StartPage extends Page{
 
 :::
 
-There are also several `addXXX()` methods avaialble to add seconds, minutes, hours, etc. to the `Time` object:
+::: warning Watch out!
+
+The `setXXX()` methods are not always intuitive to use. For example, if you have a `Time` object representing the date `2023-01-31` and you set the month to `2`, then that would represent the date `2023-02-31`, which doesn't exist. In these cases, some logic is applied by BagaWork to find a logical valid date close to `2023-02-31`.
+
+:::
+
+
+
+
+## Changing a `Time` object
+There are also several `addXXX()` methods available to add seconds, minutes, hours, etc. to the `Time` object:
 
 * `addMilliseconds()` to add a some number of milliseconds to the `Time` object
 * `addSeconds()` to add a some number of seconds to the `Time` object
@@ -128,7 +139,6 @@ There are also several `addXXX()` methods avaialble to add seconds, minutes, hou
 No `removeXXX()` methods exist. Instead, simply pass negative numbers to the `addXXX()` methods to remove time, e.g. `addHours(-1)` to remove one hour from the `Time` object.
 
 :::
-
 
 ::: warning Watch out!
 
@@ -183,16 +193,18 @@ class StartPage extends Page{
 		// We store a copy of the time object in "copy".
 		p.copy = p.original.getCopy()
 		
-		// So changes to "copy" only affects that time object.
+		// So changes to "copy" only affects that time
+		// object.
 		p.copy.setYear(1000)
 		
-		// Here we don't create a copy, so both "notCopy" and
-		// "original" refers to one and the same time object!
+		// Here we don't create a copy, so both "notCopy"
+		// and "original" refers to one and the same time
+		// object!
 		p.notCopy = p.original
 		
-		// So if we change the time object through the "notCopy"
-		// variable, the changes will also be shown through the
-		// "original" variable!
+		// So if we change the time object through the
+		// "notCopy" variable, the changes will also be
+		// shown through the "original" variable!
 		p.notCopy.setYear(2000)
 		
 	}
@@ -218,9 +230,9 @@ class StartPage extends Page{
 ## Comparing `Time` objects
 Use the different `isXXX()` methods to compare different `Time` objects:
 
-* `timeA.isSameAs(timeB)` to check if the `Time` objects `timeA` and `timeB` represent the same point in time
-* `timeA.isBefore(timeB)` to check if the `Time` object `timeA` represents a time that happen before the `Time` object `timeB` represents
-* `timeA.isBeforeOrSameAs(timeB)` to check if the `Time` object `timeA` represents a time that happen before or at the same time the `Time` object `timeB` represents
+* `timeA.isSameAs(timeB)` to check if the `Time` object `timeA` represents the same point in time as the time object `timeB`
+* `timeA.isBefore(timeB)` to check if the `Time` object `timeA` represents a point in time that happens before the point in time represented by `Time` object `timeB`
+* `timeA.isBeforeOrSameAs(timeB)` to check if the `Time` object `timeA` represents a point in time time that happens before or at the same time the point in time represented by the `Time` object `timeB`
 
 ::: tip Example
 
@@ -262,6 +274,6 @@ You can also use:
 
 ::: warning == does not work!
 
-You cannot use `timeA == timeB` to check if they represent the same point in time, because in JavaScript, the `==` operator always checks if the objects refer to the same object instance.
+You cannot use `timeA == timeB` to check if two time objects represent the same point in time, because in JavaScript, the `==` operator always checks if the objects refer to the same object instance.
 
 :::

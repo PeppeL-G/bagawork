@@ -27,7 +27,7 @@ To create the page's GUI, you use the different GUI Components BagaWork contains
 * The GUI Component stored in the `Button` variable displays a button
 * And so on...
 
-So, to build a GUI, you must learn which the different GUI components that exist in BagaWork are. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
+So, to build a GUI, you must learn which the different GUI components are that exist in BagaWork. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by only reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
 
 ## Creating a new instance of a GUI component
 To use a GUI Component, create a new instance of it by simply writing the name of the constant that stores the GUI Component you want to use. For example, to use the `Text` GUI Component, simply write `Text`. Easy as that! 🙂
@@ -41,7 +41,7 @@ As an example, to tell a `Text` component which text it should display, you call
 
 ::: tip Strings in JavaScript
 
-In JavaScript, strings can not only be created with two `` ` `` characters, but also with two `"` characters (*double quotes*) or two `'` characters (*single quotes*). All three code pieces below have the same meaning for the computer.
+In JavaScript, strings can not only be created with two `` ` `` characters, but also with two `"` characters (*double quotes*) or two `'` characters (*single quotes*). All three code pieces below have the same meaning to the computer.
 
 ```js
 Text.text(`Hello, world!`)
@@ -104,7 +104,13 @@ Text.top().left().text(`This text is left and top aligned!`)
 Text.top().text(`This text is left and top aligned!`).left()
 ```
 
-`left()` and `top()` are examples of configuration methods only the `Text` component have. But some configuration methods can be used on any component. An example of that is the configuration method called `.backgroundColor()`, which you can use to tell the component that it should have a background color (instead of having transparent background, which is the default). To tell it which color to use for the background, you pass it the name of a color in English as a string, such as `` `red` `` or  `` `blue` ``.
+`left()` and `top()` are examples of configuration methods only the `Text` component have. But some configuration methods can be used on any component. An example of that is the configuration method called `.backgroundColor()`, which you can use to tell the component that it should have a background color. To tell it which color to use for the background, you pass it the name of a color in English as a string, such as `` `red` `` or  `` `blue` ``.
+
+::: tip The Text component is transparent by default
+
+If you look at the previous example, you are probably thinking that the `Text` component has <span style="background-color: aqua; color: black; font-weight: bold;">aqua</span> as the default background color, because that's what you see, but the background color you see is actually the default background color for the app itself, and not the `Text` component. The `Text` components default background color is transparent.
+
+:::
 
 ::: tip Example
 
@@ -121,7 +127,7 @@ class StartPage extends Page{
 :::
 
 ## Indenting the code
-When you call many configuration methods on a component, the line of code tends to become quite long, which can make it hard to read. In JavaScript, you can often insert line breaks to make the code span multiple lines instead, and the indentation (white-space characters (spaces and tabs) to the left of the code) doesn't matter. Using indentation can make your code easier to read. Feel free to write the code the way you like the most!
+When you call many configuration methods on a component, the line of code tends to become quite long, which can make it hard to read. In JavaScript, you can often insert line breaks to make the code span multiple lines instead, and the indentation (white-space characters (spaces and tabs) to the left of the code) doesn't matter to the computer, but can make the more readable for us humans. Feel free to write your code the way you think make it the easiest to read.
 
 ::: tip Example
 
@@ -184,9 +190,9 @@ class StartPage extends Page{
 ```js
 class StartPage extends Page{
 	createGui(){
-		// Note: this will unfortunately not work; the start of the
-		// value you return must be written to the right of return
-		// (on the same line)!
+		// Note: this will unfortunately not work; the
+		// start of the value you return must be written
+		// to the right of return (on the same line)!
 		return
 			Text.text(`This text is shown to the user!`)
 				.right()
@@ -261,6 +267,6 @@ When you add a new page, it will already contain some code for the GUI. You can 
 :::
 
 ## That's it!
-Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learnt. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them do create more complex and useful GUIs (a GUI showing consisting of a single GUI component is usually not that useful). 
+Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learnt. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them to create more complex and useful GUIs (a GUI consisting of a single GUI component is usually not that useful). 
 
-Continue with [Tutorial 4. Positioning GUI Components](../positioning-gui-components/) when you are ready.
+Continue with the tutorial [Fundamentals 4. Positioning GUI Components](../positioning-gui-components/) when you are ready.

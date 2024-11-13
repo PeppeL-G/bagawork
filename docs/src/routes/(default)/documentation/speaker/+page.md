@@ -37,7 +37,7 @@ Use the method `speak()` to instruct the speaker to speak some words to the user
 
 ::: warning Might not always work!
 
-The speaker will only work if the web browser the user is using supports it, and the volume on the user's device can't be set to `0` (then no one will hear it).
+The speaker will only work if the web browser the user is using supports the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
 
 :::
 
@@ -110,12 +110,13 @@ const voiceObject = {
 }
 ```
 
+* `languageCode` is of the format `LANGUAGE-COUNTRY`. For example, `en-US` means *English as they speak it in the United States*. [This webpage](https://gist.github.com/Josantonius/b455e315bc7f790d14b136d61d9ae469) contains the code for different languages and countries
 * `rate` can be decreased/increased to make the voice speak slower/faster
 * `pitch` can be decreased/increased to lower/raise the pitch of the voice
 
 ::: warning Different devices = different voices!
 
-Different devices support different voices, so the voices that are supported on your device are not necesarilly supported on devices your users have. Which voices that are available are primarily determined by:
+Different devices support different voices, so the voices that are supported on your device are not necessarily supported on devices your users have. Which voices that are available are primarily determined by:
 
 * Which operating system (Windows, Max, Linux, etc.) the device is using
 * Which web browser (Firefox, Chrome, Safari, Edge, etc. ) that is used to run the BagaWork app
@@ -157,7 +158,7 @@ class StartPage extends Page{
 
 
 ## `getVoicesByLanguageCode()` - Obtaining supported voices in a language
-Use the method `getVoicesByLanguageCode()` to obtain an array of voices that are for a specific language. Pass it the language code as a string, such as ``  `sv` `` for Swedish, or `` `en` `` for English.
+Use the method `getVoicesByLanguageCode()` to obtain an array of voices that are for a specific language. Pass it the language code as a string, such as ``  `sv` `` for Swedish, or `` `en` `` for English. [This webpage](https://gist.github.com/Josantonius/b455e315bc7f790d14b136d61d9ae469) shows the code for different languages and countries.
 
 ::: tip Example
 
@@ -222,9 +223,13 @@ class StartPage extends Page{
 				EnterNumber.number(p.pitch).store(p, `pitch`),
 			),
 			
-			voices.map(
-				v => Button.text(`${v.name} (${v.languageCode})`).stay().onClick(p.speak, v),
-			),
+			Box.size(1).child(
+				Rows.children(
+					voices.map(
+						v => Button.text(`${v.name} (${v.languageCode})`).stay().onClick(p.speak, v),
+					),
+				),
+			)
 			
 		)
 		

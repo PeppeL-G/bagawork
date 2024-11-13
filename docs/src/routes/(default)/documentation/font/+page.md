@@ -5,6 +5,22 @@
 # `Font`
 On this page you find the documentation for the `Font` class.
 
+::: tip Using the Font class
+
+The `Font` you create with this class can be passed to a component's configuration method `font()`. The font you pass to it will then be applied to the text in:
+
+* That component, and
+* That component's child components, and
+* Those component's child components, etc.
+
+:::
+
+::: tip BBCode is an alternative
+
+You can also use :docs[bbcode] to style text. BBCode is suitable to use when you want to style parts of a text in a component, such as a specific word, or a specific sentence in a text with multiple sentences, etc.
+
+:::
+
 
 ## Introduction
 The `Font` class represents information about how text should be formatted, such as:

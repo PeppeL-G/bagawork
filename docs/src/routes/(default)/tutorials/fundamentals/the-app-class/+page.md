@@ -8,7 +8,7 @@ This tutorial will teach you the basics about the `App` class.
 
 
 ## App structure
-As you should know by now, a BagaWork app consists of different pages. However, that is not enough for a BagaWork app to work. For example, the computer would have no idea about which of your pages that should be shown to the user first (when the app starts), so something more is needed. Therefor, a BagaWork app also consists of an `App` class.
+As you should know by now, a BagaWork app consists of different pages. However, that is actually not enough for a BagaWork app to work. For example, the computer would have no idea about which of your pages that should be shown to the user when the app starts, so something more is needed. Therefor, a BagaWork app also consists of an `App` class to provide this extra type of information to the computer.
 
 
 
@@ -32,19 +32,19 @@ class MyApp extends App{
 
 ::: tip Online Editor
 
-In our :online-editor, the app class has already been created for you, and you can view and change the code for it by clicking on the `MyApp` button in the editor.
+In our :online-editor, the `App` class has already been created for you, and you can view and change the code for it by clicking on a page and then on the `MyApp` button at the top of the editor.
 
 :::
 
 You can name your own app class whatever you want, but remember that all classes in your app need to have a unique name, so you can't have a page class with the same name as your app class.
 
-To specify how your own app class should work, you override some predefined methods in it (it works the same way as you override methods in the `Page` class, but the `App` class has other methods you can override). 
+To specify how your own app class should work, you override some predefined methods in it. It all works the same way as you override methods in the `Page` class, but the `App` class has other methods you can override. 
 
 
 
 
 ## Creating the Start Page
-When the user starts your BagaWork app, the method named `createStartPage()` will be called in your `App` class. In this method, you should return back the page that should be shown to the user directly when the app starts.
+When the user starts your BagaWork app, the method named `createStartPage()` in your `App` class will be called. In this method, you should return back the page that should be shown to the user directly when the app starts.
 
 ::: tip Example
 
@@ -95,7 +95,7 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 ::: exercise Exercise 1
 
-When opening [this BagaWork project](/editor#eNq1UsFqg0AQ/ZXtXBpBgloCxUuxpZQcWkoTaEsNZNExSs2u7I40Qfz3rjEJUWJLDz0oM755b948rIAXBfgVRDJG8CHKudbscRsUBcMNoYg1M3UVipCaJ1LICWfEFT3zFY6sFiGFVCrBjkDztW5JNdQ2JDKPUWnwPyrIYvBdGwRfNxt3FLBBJolGegPfOdTvpq4XNhRGr8NsxaZt0zHerHaPxpuu5/yhzPqe52Z8TOY1Ws7TTLNsL3OxtDpX2LAB33OMvS34V87R2hzXRW6kOxY7rgL9OU2CuMx30fzR3ov80uMozfJYoRi1UEizgkdoH7qTEwKFbCtLtouIUcoFc69vlpZ9nnkn83ItzizoD4Z0WxJJsV/zJE8kf5l9R/3D8AGxer9MG6XXi/JeEKpghf8f5GvK6VI3WSpm9Icj7NzqOidzXWQyhHiDHG8ysLUX1qL+BtD7XAA=) in the editor, it correctly displays a preview of `Page1` in the app. But, if you click on the `MyApp` button and preview the app, you can see that something is wrong: `MyApp.createStartPage()` tries to send back `StartPage`, which doesn't exist! So, when trying to run the app for real, it will crash as soon as it starts running. Fix this problem (please ^^).
+When opening [this BagaWork project](/editor#eNq1UsFqg0AQ/ZXtXBpBgloCxUuxpZQcWkoTaEsNZNExSs2u7I40Qfz3rjEJUWJLDz0oM755b948rIAXBfgVRDJG8CHKudbscRsUBcMNoYg1M3UVipCaJ1LICWfEFT3zFY6sFiGFVCrBjkDztW5JNdQ2JDKPUWnwPyrIYvBdGwRfNxt3FLBBJolGegPfOdTvpq4XNhRGr8NsxaZt0zHerHaPxpuu5/yhzPqe52Z8TOY1Ws7TTLNsL3OxtDpX2LAB33OMvS34V87R2hzXRW6kOxY7rgL9OU2CuMx30fzR3ov80uMozfJYoRi1UEizgkdoH7qTEwKFbCtLtouIUcoFc69vlpZ9nnkn83ItzizoD4Z0WxJJsV/zJE8kf5l9R/3D8AGxer9MG6XXi/JeEKpghf8f5GvK6VI3WSpm9Icj7NzqOidzXWQyhHiDHG8ysLUX1qL+BtD7XAA=) in the editor, it correctly displays a preview of `Page1` in the app. But, if you view the code for `MyApp.createStartPage()` you can see that it tries to send back the page named `StartPage`, which doesn't exist! So, if you would try to run this app for real (and not only previewing it in the editor), then it would will crash as soon as it starts running, and complain that it can't find the page `StartPage`. Fix this problem (please ^^).
 
 ::::hint
 
@@ -114,4 +114,6 @@ Which you should do depends simply depends on if you prefer to have the first pa
 
 
 ## That's it!
-Woho! Now you also know the basics of how to use the `App` class! 🥳 The app class is often used for more things than just indicating which the start page is, but you will learn more about that later.
+Woho! Now you also know the basics of how to use the `App` class! 🥳 The `App` class can also be used for more things than just indicating which the start page is, but you will learn more about these things later.
+
+Now you are done learning everything the Fundamentals part of the the tutorials were intended to teach you. To double check that you have learned everything you were meant to learn, try to complete exercises in [Fundamental 8. Exercises](../exercises/).

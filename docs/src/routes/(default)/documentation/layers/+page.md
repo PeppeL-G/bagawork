@@ -5,6 +5,13 @@
 # `Layers`
 On this page you find the documentation for the GUI Component `Layers`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Layers` component. The `Layers` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
+
 
 
 ## Introduction
@@ -47,4 +54,4 @@ class StartPage extends Page{
 
 :::
 
-Any child that is `null` or `undefined` will not be used.
+If you pass `null` or `undefined` as a child, these values will be ignored.

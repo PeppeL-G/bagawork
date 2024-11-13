@@ -5,6 +5,12 @@
 # `Html`
 On this page you find the documentation for the GUI Component `Html`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Html` component. The `Html` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
 ::: warning Warning!
 
 **Beginners in programming are not expected to use this GUI component!**
@@ -13,11 +19,11 @@ The `Html` component is a very advanced component to use. To be able to use it, 
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)
-* [JavaScript and DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+* [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
 These technologies are not taught on this website.
 
-Much functionality of a BagaWork app can be implemented using the other BagaWork GUI components. The `Html` component is only available to satisfy the exceptional cases where an experienced programmer with knowledge of the three mentioned technologies wants to create something more advanced than can be implemented using the existing BagaWork components.
+Most functionalities in BagaWork apps can be implemented using the other BagaWork GUI components. The `Html` component is only available to satisfy the few exceptional cases where an experienced programmer with knowledge of the three mentioned technologies wants to create something more advanced than can be implemented using the existing BagaWork GUI components.
 
 :::
 
@@ -37,7 +43,7 @@ Example showing what the `HTML` component can look like when shown on the screen
 class StartPage extends Page{
 	
 	createGui(){
-		return Html.elementCreator(p.createHtmlHeader)
+		return Html.backgroundColor(`yellow`).elementCreator(p.createHtmlHeader)
 	}
 	
 	createHtmlHeader(){
@@ -46,7 +52,6 @@ class StartPage extends Page{
 		// be implemented using the BagaWork components Rows and
 		// Text, but let's keep it simple ^^
 		const div = document.createElement(`div`)
-		div.style.backgroundColor = `yellow`
 		
 		const h1 = document.createElement(`h1`)
 		h1.innerText = `This is an HTML <h1> element!`
@@ -74,20 +79,19 @@ Use the configuration method `elementCreator()` to tell the `Html` component whi
 
 ::: tip Example
 
+This is a bit bad example, because this functionality in this app can be implemented using the BagaWork components :docs[Rows] and :docs[Text], but let's keep the example simple 😅
+
 ```js baga-show-editor-code
 class StartPage extends Page{
 	
 	createGui(){
-		return Html.elementCreator(p.createHtmlHeader)
+		return Html.backgroundColor(`yellow`).elementCreator(p.createHtmlHeader)
 	}
 	
 	createHtmlHeader(){
 		
-		// This is a bad example, because this functionality
-		// can be implemented using the BagaWork components
-		// Rows and Text, but let's keep it simple ^^
+		
 		const div = document.createElement(`div`)
-		div.style.backgroundColor = `yellow`
 		
 		const h1 = document.createElement(`h1`)
 		h1.innerText = `This is an HTML <h1> element!`

@@ -3,7 +3,7 @@
 </script>
 
 # `PaperFigure`
-On this page you find the documentation for the configuration methods that all paper figure (:docs[PaperCircle], :docs[PaperLine], etc.) supports.
+On this page you find the documentation for the configuration methods that all paper figures (:docs[PaperCircle], :docs[PaperLine], etc.) supports.
 
 
 
@@ -39,7 +39,7 @@ class StartPage extends Page{
 
 
 ## `onClick()` - Handling clicks
-Use the configuration method `onClick()` to tell the `Button` component which method to call when the user clicks on the button. Pass it a reference to the method (e.g. `a.theMethodName` or `p.theMethodName`, depending on what you have named your method and if you wrote it in your `App` class or `Page` class).
+Use the configuration method `onClick()` to tell the paper figure which method to call when the user clicks on it. Pass it a reference to the method (e.g. `a.theMethodName` or `p.theMethodName`, depending on what you have named your method and if you wrote it in your `App` class or `Page` class).
 
 ::: tip Example
 

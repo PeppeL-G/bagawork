@@ -147,6 +147,9 @@
 		'documentation': [{
 			name: 'Views',
 			links: [{
+				text: 'Component',
+				href: '/documentation/component/',
+			}, {
 				text: 'Button',
 				href: '/documentation/button/',
 			}, {
@@ -254,9 +257,6 @@
 			links: [{
 				text: 'BBCode',
 				href: '/documentation/bbcode/',
-			}, {
-				text: 'Configuration Methods',
-				href: '/documentation/configuration-methods/',
 			}, {
 				text: 'State',
 				href: '/documentation/state/',

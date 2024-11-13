@@ -5,6 +5,12 @@
 # `Text`
 On this page you find the documentation for the GUI Component `Text`.
 
+::: tip More configuration methods
+
+This webpage only contains descriptions of the configuration methods that are specific to the `Text` component. The `Text` component also supports the configuration methods described on the page :docs[Component].
+
+:::
+
 
 
 
@@ -37,6 +43,24 @@ Use the configuration method `text()` to tell the `Text` component which text it
 class StartPage extends Page{
 	createGui(){
 		return Text.text(`Here is some text!`)
+	}
+}
+```
+
+:::
+
+
+
+
+## `textWithBBCode()` - Setting styled text
+Use the configuration method `textWithBBCode()` to tell the `Text` component which text it should show on the screen and that also can be styled with :docs[bbcode] tags. Pass the text as a string.
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Text.textWithBBCode(`Here is some [b]bold text[/b]!`)
 	}
 }
 ```

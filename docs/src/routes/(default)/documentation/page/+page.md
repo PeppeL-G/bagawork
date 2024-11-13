@@ -8,9 +8,9 @@ On this page you find the documentation for the `Page` class.
 
 
 ## Introduction
-Your app consists of different pages. One page at a time will be shown to the user, so each page has its own graphical user interface (GUI). The user can interact with the GUI in a page (for example by clicking on a button in it). After the user has interacted with the GUI on the page, the app will take the user to the next page and show the GUI of that one instead, and so on.
+Your app consists of different pages. One page at a time will be shown to the user, so each page has its own graphical user interface (GUI). The user can interact with the GUI in a page (for example by clicking on a :docs[Button] in it). After the user has interacted with the GUI on the page, the app will take the user to the next page and show the GUI of that one instead, and so on.
 
-To add a page to your app, create your own class that extends the `Page` class, and override some methods there to give your own `Page` class the specific behavior you want it to have. You can name your own `Page` classes whatever you want, but they need to have unique names within your app.
+To add a page to your app, create your own class that extends the `Page` class, and override some methods there to give your own `Page` class the specific behavior you want it to have. You can name your own `Page` classes whatever you want, but they all need to have unique names within your app.
 
 ::: tip Example
 
@@ -47,6 +47,12 @@ class GameOverPage extends Page{
 
 :::
 
+::: tip Online Editor
+
+In our :online-editor, you can click on existing page to view and modify the code for it, or you can click on the grid-background to create a new page.
+
+:::
+
 
 
 
@@ -68,9 +74,9 @@ Example of a page with:
 ```js
 class StartPage extends Page{
 	
-	THE_CONSTANT_NAME = "The constant value"
+	THE_CONSTANT_NAME = `The constant value`
 	
-	theVariableName = "The variable value"
+	theVariableName = `The variable value`
 	
 	theMethodName(){
 		
@@ -87,7 +93,7 @@ class StartPage extends Page{
 
 ::: tip The "a" variable
 
-In your `Page` classes, you can also use the special BagaWork variable `a` to access the things you have in your `App` class. For more information, see the documentation for the :docs[App] class.
+In your `Page` classes, you can also use the special BagaWork variable :docs[a] to access the things you have in your :docs[App] class. For more information, see the documentation for the :docs[App] class.
 
 :::
 
@@ -95,7 +101,7 @@ In your `Page` classes, you can also use the special BagaWork variable `a` to ac
 
 
 ## `createBeforeDirections()` - Redirecting the user to another page
-The method `createBeforeDirections()` will be called directly when the user comes to the page. In it, you can return an array of :docs[Direction] objects. If there exists a `Direction` object that has `if` set to `true`, the user will immediately be taken to that page, and will never see the GUI of this page (no other methods on this page will be called, not even `onBefore()`).
+The method `createBeforeDirections()` will be called directly when the user comes to the page. In it, you can return an array of :docs[Direction] objects. If there exists a `Direction` object that has `when()` set to `true`, the user will immediately be taken to that page, and will never see the GUI of this page (no other methods on this page will be called, not even `onBefore()`).
 
 ::: tip Example
 
@@ -114,7 +120,7 @@ class StartPage extends Page{
 	}
 	
 	createGui(){
-		return Text.text(`This GUI will only be used in the preview, the user will never see it in the app.`)
+		return Text.text(`This GUI will only be used in the preview, the user will never see it in the app, because there will always be a before direction that is true in this case.`)
 	}
 	
 }
@@ -146,7 +152,7 @@ class UnluckyPage extends Page{
 
 ::: tip Not needed?
 
-You only need to implement `createBeforeDirections()` if you need it.
+You only need to implement `createBeforeDirections()` if you need it. Most pages will not need it, and can simply leave the method empty, or not have it at all.
 
 :::
 
@@ -212,14 +218,18 @@ After `onBefore()` has been called, `createGui()` will be called. In this method
 
 Example showing how to use `Page.createGui()`.
 
-```js
-class AskQuestionPage extends Page{
+```js baga-show-editor-code
+class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`Do you know the answer to this question?`),
+			Space,
 			Columns.children(
-				Button.text(`Yes`).page(YesPage),
-				Button.text(`No` ).page(NoPage),
+				Space,
+				Button.text(`No` ),
+				Space,
+				Button.text(`Yes`),
+				Space,
 			),
 		)
 	}
@@ -230,7 +240,7 @@ class AskQuestionPage extends Page{
 
 ::: tip The size of the root component
 
-The root component in your GUI (the `Rows` component in the example above) will always be as wide and high as the screen itself.
+The root component in your GUI (the `Rows` component in the example above) will always be as wide and high as the screen itself/the portion of the screen your app is shown in.
 
 :::
 
@@ -252,7 +262,7 @@ Example showing how to use `Page.onAfter()`.
 ```js
 class AskQuestionPage extends Page{
 	
-	startTimeInMs = Date.now()
+	startTime = Time.setNow()
 	answer = ``
 	
 	createGui(){
@@ -279,11 +289,15 @@ class AskQuestionPage extends Page{
 		const timeToAnswerInMs = endTimeInMs - p.startTimeInMs
 		
 		if(10000 < timeToAnswerInMs){
-			// Took more than 10 seconds to answer (too long), handle that here.
+			// Took more than 10 seconds to answer,
+			// so maybe we want to handle that
+			// as a special case here.
 		}else if(p.answer == `yes`){
-			// The user clicked on the yes-button within 10 seconds, handle that here.
+			// The user clicked on the yes-button
+			// within 10 seconds, handle that here.
 		}else{
-			// The user clicked on the no-button within 10 seconds, handle that here.
+			// The user clicked on the no-button
+			// within 10 seconds, handle that here.
 		}
 		
 	}
@@ -302,6 +316,8 @@ You only need to handle user input in `onAfter()` if your app's logic require's 
 
 ## `createAfterDirections()` - Redirecting the user to another page
 The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[Direction] objects, indicating which page the user should come to.
+
+If you don't implement this method, or if non of the :docs[Direction] objects you create has `when()` set to `true`, then BagaWork will start checking if any of the GUI components on the page has indicated which page the user should come to (`Button.page()`, `EnterText.pageIfEqual()`, `EnterNumber.pageIfLower()`, etc.). If no GUI component has indicated which page to come to, the current page will simply be reloaded.
 
 ::: tip Example
 
@@ -355,7 +371,7 @@ class UnluckyPage extends Page{
 
 ::: tip Not needed?
 
-You only need to implement `createAfterDirections()` if you need it.
+You only need to implement `createAfterDirections()` if you need it. Most pages will not need it, and can simply leave this method empty, or not have it all.
 
 :::
 
@@ -364,11 +380,7 @@ You only need to implement `createAfterDirections()` if you need it.
 
 
 ## Referring to a page
-Sometimes you need to refer to a page you have created. For example, when the user clicks on a :docs[button], you might want to take the user to the page you have created named `AboutPage`. To tell the `Button` that the user should come to that page when the `Button` is clicked, you call the configuration method `page()` on the `Button`, and you pass it the page the user should come to. To obtain that page, simply write the name you have given your page, e.g.:
-
-```js
-Button.page(AboutPage)
-```
+Sometimes you need to refer to a page you have created. For example, when the user clicks on a :docs[Button], you might want to take the user to the page you have created named `AboutPage`. To tell the `Button` that the user should come to that page when the `Button` is clicked, you call the configuration method `page()` on the `Button`, and you pass it the page the user should come to. To obtain that page, simply write the name you have given your page, e.g. `Button.page(AboutPage)`.
 
 ::: tip Example
 
@@ -427,6 +439,9 @@ class StartPage extends Page{
 class AboutPage extends Page{
 	
 	// These will get their values from page arguments.
+	// If no page arguments are provided, these default
+	// values will be used. You can see that in the editor
+	// when previewing this page.
 	name = `DEFAULT_NAME`
 	age = -1
 	
@@ -446,9 +461,11 @@ class AboutPage extends Page{
 
 
 ## `onUpdate()` - Updating the state of the page
-When the user starts running a new version of your app with a page state from an older version of the app, `Page.onUpdate()` will be called, in which you can handle the update. `onUpdate()` will be passed two values:
+When the user starts running a new version of your app with a page state from an older version of the app, `Page.onUpdate()` will be called. In it, you can implement your own custom update logic if you want.
+
+`onUpdate()` will be passed two values:
 
 * `oldP`, which contains the stored page variables
-* `oldVersion`, which contains the old version of the app the user ran before
+* `oldVersion`, which contains the old version number of the app the user ran before
 
 For more information, see :docs[State].

@@ -10,12 +10,12 @@ As you know, you should in the `Page` method `createGui()` use GUI components fr
 
 ::: tip Example
 
-In the app below, the root component of the page has no background color (its background is transparent), and it's the application's default background color we se. So it's hard to tell what space the root component does occupy (but it does still occupy the entire screen).
+In the app below, the root component of the page has no background color (its background is transparent), and it's the application's default background color (<span style="background-color: aqua; color: black; font-weight: bold;">aqua</span>) we se. So it's hard to tell what space the root component does occupy (but it does still occupy the entire screen).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Text.text(`This Text component has no background, so it's hard too see what space it occupies.`)
+		return Text.text(`This Text component has no background color, so it's hard too see what space it occupies.`)
 	}
 }
 ```
@@ -40,11 +40,11 @@ class StartPage extends Page{
 
 
 ## Using multiple GUI components
-*But if `createGui()` can send back only one GUI component, how can I use multiple GUI components?* Well, there exists some GUI components whose sole purpose it to contain and position other GUI components on the screen. These GUI components are called *layouts*, and the GUI components they contain are called *children*.
+*But if `createGui()` can send back only one GUI component, how can I use multiple GUI components?* Well, there exists some GUI components whose sole purpose is to contain and position other GUI components on the screen. These GUI components are called *layouts*, and the GUI components they contain are called *children*.
 
 By using a layout, `createGui()` can send back only one GUI component (the layout), but that GUI component can in turn contain other GUI components. And when the layout component is shown on the screen, it will position and show the child components it contains on the screen too. This way we can build a GUI consisting of multiple GUI components!
 
-Let's go through some of the layouts we can use.
+Let's go through some of the layouts we can use in BagaWork.
 
 ## The `Rows` component
 The GUI component called `Rows` is a layout that positions its children as rows:
@@ -54,7 +54,7 @@ The GUI component called `Rows` is a layout that positions its children as rows:
 * The third child is positioned below the second child
 * And so on...
 
-All children are as wide as the `Rows` component, and their height is by default just big enough to surround their content. The `Rows` component's children should be passed as individual arguments to the configuration method `children()` (separate the arguments (the children) by `,` (comma)).
+All children are as wide as the `Rows` component, and their height is by default just big enough to surround their content. The `Rows` component's children should be passed as individual arguments to the configuration method `children()` (separate them by `,` (comma)).
 
 ::: tip Example
 
@@ -74,11 +74,11 @@ class StartPage extends Page{
 
 :::
 
-Note in the example above that the root component (the `Rows` component in this case) occupies the entire screen, including the part occupied by the children, although it doesn't look like that. The children are drawn on top of the `Rows` component, so their' background is covering the background of the `Rows` component, so therefore we can't see the background of the `Rows` component where the children are positioned in this example.
+Note, in the example above that the root component (the `Rows` component in this case) occupies the entire screen, including the parts occupied by its children, although it doesn't look like that. The children are drawn on top of the `Rows` component, so their' background is covering the background of the `Rows` component, so therefore we can't see the background of the `Rows` component where the children are positioned in this example.
 
 ::: tip Example
 
-This is the same example as before, but only the `Rows` component and the third child are given a background to show that the `Rows` component's background also id drawn where the children are (underneath them).
+This is the same example as before, but only the `Rows` component and the third child are given a background color to show that the `Rows` component's background also is drawn where the children are (underneath them).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -91,6 +91,39 @@ class StartPage extends Page{
 	}
 }
 ```
+
+:::
+
+
+::: tip Comma between arguments
+
+When you pass multiple arguments to a method, the arguments have to be separated by a comma, as shown below:
+
+```js
+Rows.children(Text.text(`a`), Text.text(`b`), Text.text(`c`))
+```
+
+This code can become more readable by writing it on multiple lines instead:
+
+```js
+Rows.children(
+	Text.text(`a`),
+	Text.text(`b`), 
+	Text.text(`c`)
+)
+```
+
+When the code is written like this, some people find it strange that the last argument doesn't end with a `,` (comma). But do you know what? It is actually OK to write a `,` (comma) after the last argument too, so it is possible to write this code like this:
+
+```js
+Rows.children(
+	Text.text(`a`),
+	Text.text(`b`), 
+	Text.text(`c`),
+)
+```
+
+When each argument is written on their own line like this, one usually adds that extra comma after the last argument. From here on, our examples will do that too, and we recommend you to do the same in your code.
 
 :::
 
@@ -109,7 +142,7 @@ class StartPage extends Page{
 		return Rows.backgroundColor(`red`).children(
 			Text.text(`I'm the first row`).backgroundColor(`pink`),
 			Space,
-			Text.text(`I'm the last row`).backgroundColor(`lime`)
+			Text.text(`I'm the last row`).backgroundColor(`lime`),
 		)
 	}
 }
@@ -117,7 +150,7 @@ class StartPage extends Page{
 
 :::
 
-If you use multiple `Space` children in `Rows`, then the remaining available space of the `Rows` component will be divided evenly among the `Space` children.
+If you use multiple `Space` children in `Rows`, then the remaining available space of the `Rows` component will be split evenly among the `Space` children.
 
 ::: tip Example
 
@@ -139,7 +172,7 @@ class StartPage extends Page{
 
 :::
 
-The `Space` component doesn't show anything, so you can't see it on the screen. But if you give it a background color, you can easily see what space it occupies. While developing, it's a very good idea to give each component a unique color, so you can easily see what space it occupies.
+The `Space` component doesn't show anything, so you can't see it on the screen. But if you give it a background color, you can easily see what space it occupies. While developing, it can be a good idea to give all your components a unique background color, so you can easily see what space they occupy.
 
 ::: tip Example
 
@@ -172,7 +205,7 @@ The GUI component called `Columns` is a layout that positions its children as co
 * The third child is positioned to the right of the second child
 * And so on...
 
-All children are as tall as the `Columns` component, and their width is by default just big enough to surround their content. The `Columns` component's children should be passed as individual arguments to the configuration method `children()` (separate the children/arguments by `,` (comma)).
+All children are as tall as the `Columns` component, and their width is by default just big enough to surround their content. The `Columns` component's children should be passed as individual arguments to the configuration method `children()` (separate them by `,` (comma)).
 
 ::: tip Example
 
@@ -246,11 +279,11 @@ class StartPage extends Page{
 			Space,
 			Columns.backgroundColor(`lime`).children(
 				Space,
-				Text.text(`Option 1`).backgroundColor(`gold`),
+				Text.text(`Home`).backgroundColor(`gold`),
 				Space,
-				Text.text(`Option 2`).backgroundColor(`silver`),
+				Text.text(`About`).backgroundColor(`silver`),
 				Space,
-				Text.text(`Option 3`).backgroundColor(`brown`),
+				Text.text(`Contact`).backgroundColor(`brown`),
 				Space
 			)
 		)
@@ -321,7 +354,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`red`).children(
 			Space,
-			Text.text(`Bottom Text component with left aligned text.`).backgroundColor(`yellow`).left(),
+			Text.text(`Text component with left aligned text. And yellow background, of course.`).backgroundColor(`yellow`).left(),
 		)
 	}
 	
@@ -363,7 +396,7 @@ class StartPage extends Page{
 
 ::::hint
 
-Hmm... What does the root component look like? Does the GUI seem to consists of `Rows`, or `Columns`? After you have figured that out, you can hopefully figure out the rest too. Hopefully ^^
+Oh, this is a tough one... Well, let's see... What does the root component look like? Doesn't that look like 4 columns? And the first column consists of 5 rows?
 
 ::::
 
@@ -375,4 +408,4 @@ Hmm... What does the root component look like? Does the GUI seem to consists of 
 ## That's it!
 Good work, now you have learned the basics about using layouts and building more fancy GUIs! 🥳 It takes some practice before you're good at seeing GUIs as rows and columns, but you actually don't need much more than this to create a wide variety of layouts. Just look at your web browser; all GUI components in it are arranged as rows and columns!
 
-Excited about to learn some more? Then continue with [Tutorial 5. Changing Page](../changing-page/).
+Excited about learning some more? Then continue with the tutorial [Fundamentals 5. Changing Page](../changing-page/).
