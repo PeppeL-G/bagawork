@@ -612,6 +612,7 @@ export class FrameworkApp{
 			// No after direction is true. Then simply send
 			// the user to the current page the user is on.
 			onLog(`framework`, `Got no true after direction, so reloads the current page.`)
+			this.frameworkPage.Page.proxyClearArgs
 			this.loadPage(
 				this.frameworkPage.Page,
 			)

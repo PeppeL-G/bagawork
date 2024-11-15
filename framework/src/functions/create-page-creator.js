@@ -54,6 +54,10 @@ function createRealPageCreator(Page){
 				case 'prototype':
 					return Page.prototype
 				
+				case 'proxyClearArgs':
+					args = {}
+					return
+				
 				case 'proxyGetPageAndArgs':
 					return {
 						Page,

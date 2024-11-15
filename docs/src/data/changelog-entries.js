@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changes: [
 		`Added the component Html, and documentation and similar for that`,
 		`A lot of small text improvements all over the website`,
+		`When the same page is implicitly reloaded, don't pass along the args the page was loaded with before`,
 	],
 }, {
 	version: `0.0.46`,
