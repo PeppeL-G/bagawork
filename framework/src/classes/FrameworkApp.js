@@ -783,9 +783,13 @@ export class FrameworkApp{
 			
 			try{
 				
-				appElement.appendChild(
-					this.frameworkPage.createElement(),
-				)
+				const pageElement = this.frameworkPage.createElement()
+				
+				if(!this.errorMessage){
+					appElement.replaceChildren(
+						pageElement,
+					)
+				}
 				
 			}catch(errorMessage){
 				
