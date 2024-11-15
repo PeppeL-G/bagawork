@@ -54,17 +54,6 @@ export class LayersComponent extends Component {
 		
 		let i = 1
 		
-		for (const childElement of layersElement.childNodes) {
-			
-			// Fix CSS for the child.
-			childElement.style.gridRow = '1'
-			childElement.style.gridColumn = '1'
-			childElement.style.zIndex = i
-			
-			i++
-			
-		}
-		
 		for (const childComponent of childComponents) {
 			
 			const childElement = childComponent.createElement(
@@ -72,9 +61,15 @@ export class LayersComponent extends Component {
 				this,
 			)
 			
+			childElement.style.gridRow = '1'
+			childElement.style.gridColumn = '1'
+			childElement.style.zIndex = i
+			
 			layersElement.appendChild(
 				childElement,
 			)
+			
+			i++
 			
 		}
 		
