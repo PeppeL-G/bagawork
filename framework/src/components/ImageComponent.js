@@ -21,7 +21,7 @@ export class ImageComponent extends Component {
 		return this
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const imageElement = document.createElement(`img`)
 		imageElement.classList.add(`image`)

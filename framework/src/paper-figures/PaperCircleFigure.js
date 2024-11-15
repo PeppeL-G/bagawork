@@ -36,7 +36,7 @@ export class PaperCircleFigure extends PaperFigure {
 		return this
 	}
 	
-	createElement(frameworkApp, paperGroup, onUpdated){
+	createElement(frameworkApp, paperGroup){
 		
 		const circleElement = super.createElement(`ellipse`)
 		

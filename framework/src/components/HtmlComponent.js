@@ -23,7 +23,7 @@ export class HtmlComponent extends Component{
 		
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		if(!this._elementCreator){
 			

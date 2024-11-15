@@ -39,13 +39,13 @@ export class RowsComponent extends Component {
 		
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const rowsElement = document.createElement(`div`)
 		rowsElement.classList.add(`rows`)
 		
-		rowsElement.style.display = 'grid'
-		rowsElement.style.gridTemplateColumns = '100%'
+		rowsElement.style.display = 'flex'
+		rowsElement.style.flexDirection = 'column'
 		rowsElement.style.overflow = 'auto'
 		rowsElement.style.boxSizing = 'border-box'
 		
@@ -54,26 +54,15 @@ export class RowsComponent extends Component {
 			c => c._keepIf,
 		)
 		
-		function onChildComponentsUpdated(){
-			
-			rowsElement.style.gridTemplateRows = childComponents.map(
-				c => c.getRowSize(),
-			).join(` `)
-			
-			onUpdated?.()
-			
-		}
-		
-		onChildComponentsUpdated()
-		
 		for (const childComponent of childComponents) {
 			
+			const childElement = childComponent.createElement(
+				frameworkApp,
+				this,
+			)
+			
 			rowsElement.appendChild(
-				childComponent.createElement(
-					frameworkApp,
-					this,
-					onChildComponentsUpdated,
-				),
+				childElement,
 			)
 			
 		}

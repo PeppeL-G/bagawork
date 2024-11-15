@@ -108,7 +108,7 @@ export class PaperGroupFigure extends PaperFigure {
 		return this
 	}
 	
-	createElement(frameworkApp, parent, onUpdated){
+	createElement(frameworkApp, parent){
 		
 		const svgElement = super.createElement(`svg`, false)
 		svgElement.setAttribute(`class`, `paper-group`)
@@ -159,7 +159,7 @@ export class PaperGroupFigure extends PaperFigure {
 		
 		for(const paperChild of this._children){
 			svgElement.appendChild(
-				paperChild.createElement(frameworkApp, this, onUpdated),
+				paperChild.createElement(frameworkApp, this),
 			)
 		}
 		

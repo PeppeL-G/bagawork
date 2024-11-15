@@ -132,7 +132,7 @@ export class BoxComponent extends Component {
 		return this._child?.createAfterDirections() ?? []
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const boxElement = document.createElement(`div`)
 		boxElement.classList.add(`box`)
@@ -155,7 +155,6 @@ export class BoxComponent extends Component {
 				this._child.createElement(
 					frameworkApp,
 					this,
-					onUpdated,
 				),
 			)
 			boxElement.appendChild(childElement)
@@ -238,14 +237,6 @@ export class BoxComponent extends Component {
 		
 		return boxElement
 		
-	}
-	
-	getRowSize(){
-		if(this._size == 0){
-			return `min-content`
-		}else{
-			return `minmax(min-content, ${this._size}fr)`
-		}
 	}
 	
 }

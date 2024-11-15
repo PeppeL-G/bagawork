@@ -124,7 +124,7 @@ export class UpdaterComponent extends Component {
 		
 	}
 	
-	createElement(frameworkApp, parent, onUpdated){
+	createElement(frameworkApp, parent){
 		
 		let childElement = null
 		this._parent = parent
@@ -145,16 +145,14 @@ export class UpdaterComponent extends Component {
 			const newChildElement = this._child.createElement(
 				frameworkApp,
 				parent,
-				onUpdated,
 			)
 			
 			if (childElement){
 				childElement.parentNode.replaceChild(newChildElement, childElement)
+				parent.onChildUpdated(this._child, newChildElement)
 			}
 			
 			childElement = newChildElement
-			
-			onUpdated?.()
 			
 		}
 		

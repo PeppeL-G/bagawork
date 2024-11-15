@@ -1,7 +1,10 @@
-export function applyAttributesToElement(guiComponent, htmlElement){
+export function applyAttributesToElement(
+	guiComponent,
+	htmlElement,
+){
 	
 	const { style } = htmlElement
-
+	
 	style.boxSizing = 'border-box'
 	style.backgroundColor = guiComponent._backgroundColor
 	style.borderRadius = `${guiComponent._cornerRadius}mm`
@@ -33,5 +36,10 @@ export function applyAttributesToElement(guiComponent, htmlElement){
 		(guiComponent._font?._underline ? `underline ` : ``) +
 		(guiComponent._font?._strikethrough ? `line-through ` : ``)
 	)
+	
+	// This is for children in Rows and Columns
+	style.flexGrow = `${guiComponent._size}`
+	style.flexShrink = 0
+	style.flexBasis = `auto`
 	
 }

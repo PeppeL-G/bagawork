@@ -94,7 +94,7 @@ export class TextComponent extends Component{
 		return this
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const textElement = document.createElement('div')
 		textElement.classList.add('text')

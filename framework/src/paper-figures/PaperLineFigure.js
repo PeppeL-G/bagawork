@@ -52,7 +52,7 @@ export class PaperLineFigure extends PaperFigure {
 		return this
 	}
 	
-	createElement(frameworkApp, parent, onUpdated){
+	createElement(frameworkApp, parent){
 		
 		const lineElement = super.createElement(`line`)
 		

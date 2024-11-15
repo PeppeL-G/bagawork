@@ -37,7 +37,7 @@ export class LayersComponent extends Component {
 		).flat()
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const layersElement = document.createElement(`div`)
 		layersElement.classList.add(`layers`)
@@ -52,22 +52,16 @@ export class LayersComponent extends Component {
 			c => c._keepIf,
 		)
 		
-		function onChildComponentsChanged(){
+		let i = 1
+		
+		for (const childElement of layersElement.childNodes) {
 			
-			let i = 1
+			// Fix CSS for the child.
+			childElement.style.gridRow = '1'
+			childElement.style.gridColumn = '1'
+			childElement.style.zIndex = i
 			
-			for (const childElement of layersElement.childNodes) {
-				
-				// Fix CSS for the child.
-				childElement.style.gridRow = '1'
-				childElement.style.gridColumn = '1'
-				childElement.style.zIndex = i
-				
-				i++
-				
-			}
-			
-			onUpdated?.()
+			i++
 			
 		}
 		
@@ -76,7 +70,6 @@ export class LayersComponent extends Component {
 			const childElement = childComponent.createElement(
 				frameworkApp,
 				this,
-				onChildComponentsChanged,
 			)
 			
 			layersElement.appendChild(
@@ -85,8 +78,6 @@ export class LayersComponent extends Component {
 			
 		}
 		
-		onChildComponentsChanged()
-		
 		// Fix CSS.
 		applyAttributesToElement(
 			this,
@@ -94,6 +85,14 @@ export class LayersComponent extends Component {
 		)
 		
 		return layersElement
+		
+	}
+	
+	onChildUpdated(newChildComponent, newChildElement){
+		
+		newChildElement.style.gridRow = '1'
+		newChildElement.style.gridColumn = '1'
+		newChildElement.style.zIndex = Array.from(newChildElement.parentNode.children).indexOf(newChildElement) + 1
 		
 	}
 	

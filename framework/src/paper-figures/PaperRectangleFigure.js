@@ -50,7 +50,7 @@ export class PaperRectangleFigure extends PaperFigure {
 		return this
 	}
 	
-	createElement(frameworkApp, paperGroup, onUpdated){
+	createElement(frameworkApp, paperGroup){
 		
 		const rectElement = super.createElement(`rect`)
 		

@@ -39,13 +39,13 @@ export class ColumnsComponent extends Component{
 		
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const columnsElement = document.createElement(`div`)
 		columnsElement.classList.add(`columns`)
-
-		columnsElement.style.display = 'grid'
-		columnsElement.style.gridTemplateRows = '100%'
+		
+		columnsElement.style.display = 'flex'
+		columnsElement.style.flexDirection = 'row'
 		columnsElement.style.overflow = 'auto'
 		columnsElement.style.boxSizing = 'border-box'
 		
@@ -54,25 +54,12 @@ export class ColumnsComponent extends Component{
 			c => c._keepIf,
 		)
 		
-		function onChildComponentsUpdated(){
-			
-			columnsElement.style.gridTemplateColumns = childComponents.map(
-				c => c.getRowSize(),
-			).join(` `)
-			
-			onUpdated?.()
-			
-		}
-		
-		onChildComponentsUpdated()
-		
 		for (const childComponent of childComponents) {
 			
 			columnsElement.appendChild(
 				childComponent.createElement(
 					frameworkApp,
 					this,
-					onChildComponentsUpdated,
 				),
 			)
 			

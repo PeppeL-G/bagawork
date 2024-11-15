@@ -92,7 +92,7 @@ export class PaperComponent extends Component{
 		
 	}
 	
-	createElement(frameworkApp, parentComponent, onUpdated){
+	createElement(frameworkApp, parentComponent){
 		
 		const paperElement = document.createElement(`div`)
 		paperElement.classList.add(`paper`)
@@ -104,7 +104,6 @@ export class PaperComponent extends Component{
 		const svgElement = this._paperGroup.createElement(
 			frameworkApp,
 			this,
-			onUpdated,
 		)
 		
 		paperElement.appendChild(svgElement)
@@ -127,10 +126,6 @@ export class PaperComponent extends Component{
 			svgElement,
 		)
 		
-	}
-	
-	getRowSize() {
-		return `${this._size}fr`
 	}
 	
 }
