@@ -142,6 +142,13 @@ const Duration = (() => new (
 		 */
 		isShorterThanOrEquallyLongAs(otherDuration: Duration) { return true };
 		
+		/**
+		 * This method returns a string that contains the length of
+		 * the duration expressed in the English language.
+		 * @returns A string with the duration expressed in English
+		 */
+		getAsString(){ return `` }
+		
 	}
 	
 ))()
