@@ -277,3 +277,32 @@ You can also use:
 You cannot use `timeA == timeB` to check if two time objects represent the same point in time, because in JavaScript, the `==` operator always checks if the objects refer to the same object instance.
 
 :::
+
+
+
+
+##  `getDurationTo()` - Getting the duration between times
+Use the method `getDurationTo()` to obtain a :docs[Duration] object representing the amount of time between two `Time` objects (pass the other `Time` object as argument).
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		
+		const eventStartTime = Time.setNow()
+		const eventStopTime = Time.setNow().addHours(1).addMinutes(90)
+		
+		const eventDuration = eventStartTime.getDurationTo(eventStopTime)
+		
+		return Rows.children(
+			Text.text(`The event lasts ${eventDuration.getAsString()}.`),
+		)
+		
+	}
+	
+}
+```
+
+:::

@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`A lot of small text improvements all over the website`,
 		`When the same page is implicitly reloaded, don't pass along the args the page was loaded with before`,
 		`Added the class Duration, and documentation and similar for that`,
+		`Added the method Time.getDurationTo(), and documentation and similar for that`,
 	],
 }, {
 	version: `0.0.46`,

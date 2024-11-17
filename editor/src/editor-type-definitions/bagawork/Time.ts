@@ -202,6 +202,15 @@ const Time = (() => new (
 		 */
 		addMilliseconds(milliseconds) { return this };
 		
+		/**
+		 * This method returns a `Duration` that represents the amount
+		 * of time between this `Time` and the `Time` object you pass
+		 * it.
+		 * @param otherTime The `Time` object to compute the `Duration` to
+		 * @returns The Duration between the two times
+		 */
+		getDurationTo(otherTime: Time): Duration { }
+		
 	}
 	
 ))()

@@ -1,3 +1,5 @@
+import { Duration } from "./Duration.js"
+
 const startOfTimeTimestampInMs = -62135600008000
 
 export class Time{
@@ -171,6 +173,18 @@ export class Time{
 	addYears(years) {
 		this.date.setFullYear(this.date.getFullYear() + years)
 		return this
+	}
+	
+	getDurationTo(otherTime){
+		
+		const duration = new Duration()
+		
+		duration.addMilliseconds(
+			Math.abs(this.date - otherTime.date),
+		)
+		
+		return duration
+		
 	}
 	
 }
