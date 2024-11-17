@@ -219,6 +219,9 @@
 				text: 'Direction',
 				href: '/documentation/direction/',
 			}, {
+				text: 'Duration',
+				href: '/documentation/duration/',
+			}, {
 				text: 'Font',
 				href: '/documentation/font/',
 			}, {

@@ -9,6 +9,9 @@ import { createClassCreator } from './functions/create-class-creator.js'
 import { Time as TimeImplementation } from './classes/Time.js'
 export const Time = createClassCreator(TimeImplementation)
 
+import { Duration as DurationImplementation } from './classes/Duration.js'
+export const Duration = createClassCreator(DurationImplementation)
+
 import { Direction as DirectionImplementation } from './classes/Direction.js'
 export const Direction = createClassCreator(DirectionImplementation)
 
