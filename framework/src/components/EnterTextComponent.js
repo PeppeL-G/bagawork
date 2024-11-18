@@ -160,11 +160,19 @@ export class EnterTextComponent extends Component{
 		inputElement.style.height = '100%'
 		
 		inputElement.addEventListener('keyup', (event) => {
-			if (event.key == 'Enter') {
+			
+			if(event.key == 'Enter'){
+				
+				if(frameworkApp.errorMessage){
+					return
+				}
+				
 				enterTextElement.dispatchEvent(new CustomEvent('moveon', {
 					bubbles: true,
 				}))
+				
 			}
+			
 		})
 		
 		inputElement.addEventListener('input', (event) => {
@@ -175,8 +183,22 @@ export class EnterTextComponent extends Component{
 				this._store[this._storeName] = this.enteredText
 			}
 			
-			if(this._handler){
-				this._handler(this.enteredText, ...this._handlerArgs)
+			if(this._onChangeFunction){
+					
+				try{
+					this._onChangeFunction(
+						this.enteredText,
+						...this._onChangeArguments,
+					)
+				}catch(error){
+					
+					frameworkApp.runtimeSettings.onError(
+						`Error in the method ${this._onChangeFunction.name}() passed to EnterText.onChange(): ${error.toString()}`
+					)
+					return
+					
+				}
+				
 			}
 			
 		})

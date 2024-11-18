@@ -323,7 +323,7 @@ export class EnterNumberComponent extends Component{
 				this._store[this._storeName] = number
 			}
 			
-			if(this._onClickFunction){
+			if(this._onChangeFunction){
 					
 				try{
 					this._onChangeFunction(
