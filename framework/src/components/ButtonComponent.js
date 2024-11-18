@@ -153,9 +153,22 @@ export class ButtonComponent extends Component{
 			'click',
 			() => {
 				
-				this._onClickFunction?.(
-					...this._onClickArguments,
-				)
+				if(this._onClickFunction){
+					
+					try{
+						this._onClickFunction(
+							...this._onClickArguments,
+						)
+					}catch(error){
+						
+						frameworkApp.runtimeSettings.onError(
+							`Error in the method ${this._onClickFunction.name}() passed to Button.onClick(): ${error.toString()}`
+						)
+						return
+						
+					}
+					
+				}
 				
 				if(!this._stay){
 					
