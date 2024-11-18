@@ -37,9 +37,4 @@ export function applyAttributesToElement(
 		(guiComponent._font?._strikethrough ? `line-through ` : ``)
 	)
 	
-	// This is for children in Rows and Columns
-	style.flexGrow = `${guiComponent._size}`
-	style.flexShrink = 0
-	style.flexBasis = `auto`
-	
 }

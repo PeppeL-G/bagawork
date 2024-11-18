@@ -12,6 +12,8 @@ export class Component{
 	_keepIf = true
 	_font = null
 	
+	_onChildUpdated = null
+	
 	backgroundColor(color){
 		
 		validateArgs(
@@ -164,8 +166,8 @@ export class Component{
 		/* return HTMLElement */
 	}
 	
-	onChildUpdated(childComponent, childElement){
-		
+	getSize(){
+		return this._size
 	}
 	
 }

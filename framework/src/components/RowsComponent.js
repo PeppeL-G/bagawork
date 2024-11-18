@@ -44,8 +44,7 @@ export class RowsComponent extends Component {
 		const rowsElement = document.createElement(`div`)
 		rowsElement.classList.add(`rows`)
 		
-		rowsElement.style.display = 'flex'
-		rowsElement.style.flexDirection = 'column'
+		rowsElement.style.display = 'grid'
 		rowsElement.style.overflow = 'auto'
 		rowsElement.style.boxSizing = 'border-box'
 		
@@ -66,6 +65,18 @@ export class RowsComponent extends Component {
 			)
 			
 		}
+		
+		this._onChildUpdated = () => {
+			rowsElement.style.gridTemplateRows = childComponents.map(
+				c => (
+					c.getSize() == 0 ?
+					`max-content` :
+					`minmax(max-content, ${c.getSize()}fr)`
+				)
+			).join(` `)
+		}
+		
+		this._onChildUpdated()
 		
 		// Fix CSS.
 		applyAttributesToElement(

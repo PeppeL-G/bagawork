@@ -149,7 +149,7 @@ export class UpdaterComponent extends Component {
 			
 			if (childElement){
 				childElement.parentNode.replaceChild(newChildElement, childElement)
-				parent.onChildUpdated(this._child, newChildElement)
+				parent._onChildUpdated?.()
 			}
 			
 			childElement = newChildElement
@@ -174,6 +174,10 @@ export class UpdaterComponent extends Component {
 		
 		return childElement
 		
+	}
+	
+	getSize(){
+		return this._child.getSize()
 	}
 	
 }

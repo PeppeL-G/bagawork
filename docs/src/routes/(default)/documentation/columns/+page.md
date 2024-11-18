@@ -186,28 +186,59 @@ class StartPage extends Page{
 
 
 ## `child.size()` - Resizing the children
-By default, all children (except :docs[Space] children, read more about this later) are wide enough to just surround their content. You can use the configuration method `size()` on the children to control how the remaining horizontal space available in the `Columns` component should be distributed among them to make them even wider (if any remaining space exists). The number you pass to it indicates how many shares of the available horizontal space the child should occupy:
-
-* `0`: the child will be wide enough to surround its content (default value for all children, except :docs[Space] children)
-* `1`: the child will be wide enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 1 share of that space (default value for :docs[Space] children)
-* `2`: the child will be wide enough to surround its content, but if more space is available in the `Columns` component, the child will also occupy 2 shares of that space
-* Etc.
-
-The reason :docs[Space] children has the deafult size `1` is because you very often want it to have that size, but feel free to call `size()` also on :docs[Space] children if you want them to have anonother size.
-
-
+By default, all children (except :docs[Space] children, read more about this later) are wide enough to just surround their content, as shown below.
 
 ::: tip Example
-
-Resize the screen for the app, and note how the size for the first and last child changes because they use the configuration method `size()`.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.children(
+		return Columns.backgroundColor(`yellow`).children(
+			Text.text(`Col 1`).backgroundColor(`lime`),
+			Text.text(`Col 2`).backgroundColor(`aqua`),
+			Text.text(`Col 3`).backgroundColor(`gold`),
+		)
+	}
+}
+```
+
+:::
+
+If there is space left over in the `Columns` component after the children has become wide enough to contain their content, you can use the configuration method `size()` on the children to instruct them to grow wider and grab parts of this left over space. The number you pass to `size()` indicates how wide the component should be in relation to the other components, and then the left over space will be divided among the children based on this relation.
+
+::: tip Example
+
+Resize the screen for the app (only works on laptops/computers), and notice how the size of the children changes.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`yellow`).children(
 			Text.text(`Col 1`).backgroundColor(`lime`).size(1),
 			Text.text(`Col 2`).backgroundColor(`aqua`),
-			Text.text(`Col 3`).backgroundColor(`gold`).size(3),
+			Text.text(`Col 3`).backgroundColor(`gold`).size(2),
+		)
+	}
+}
+```
+
+:::
+
+All children will have `size()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `size()` also on :docs[Space] children if you want it to be something else.
+
+::: tip Example
+
+Resize the screen for the app, and notice how the size of the children changes.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`yellow`).children(
+			Space.backgroundColor(`red`), // This component has size(1) by default.
+			Text.text(`Col 1`).backgroundColor(`lime`).size(1),
+			Text.text(`Col 2`).backgroundColor(`aqua`),
+			Space.size(2).backgroundColor(`silver`),
+			Text.text(`Col 3`).backgroundColor(`gold`).size(2),
 		)
 	}
 }

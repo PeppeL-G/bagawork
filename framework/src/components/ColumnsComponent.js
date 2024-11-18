@@ -44,8 +44,7 @@ export class ColumnsComponent extends Component{
 		const columnsElement = document.createElement(`div`)
 		columnsElement.classList.add(`columns`)
 		
-		columnsElement.style.display = 'flex'
-		columnsElement.style.flexDirection = 'row'
+		columnsElement.style.display = 'grid'
 		columnsElement.style.overflow = 'auto'
 		columnsElement.style.boxSizing = 'border-box'
 		
@@ -64,6 +63,18 @@ export class ColumnsComponent extends Component{
 			)
 			
 		}
+		
+		this._onChildUpdated = () => {
+			columnsElement.style.gridTemplateColumns = childComponents.map(
+				c => (
+					c.getSize() == 0 ?
+					`max-content` :
+					`minmax(max-content, ${c.getSize()}fr)`
+				)
+			).join(` `)
+		}
+		
+		this._onChildUpdated()
 		
 		// Fix CSS.
 		applyAttributesToElement(
