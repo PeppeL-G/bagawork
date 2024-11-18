@@ -253,11 +253,16 @@ export class EnterNumberComponent extends Component{
 		
 		inputElement.addEventListener('keyup', (event) => {
 			
-			if (event.key == 'Enter') {
+			if(event.key == 'Enter'){
+				
+				if(frameworkApp.errorMessage){
+					return
+				}
+				
 				enterNumberElement.dispatchEvent(new CustomEvent('moveon', {
 					bubbles: true,
 				}))
-				return
+				
 			}
 			
 		})
@@ -318,10 +323,23 @@ export class EnterNumberComponent extends Component{
 				this._store[this._storeName] = number
 			}
 			
-			this._onChangeFunction?.(
-				number,
-				...this._onChangeArguments,
-			)
+			if(this._onClickFunction){
+					
+				try{
+					this._onChangeFunction(
+						number,
+						...this._onChangeArguments,
+					)
+				}catch(error){
+					
+					frameworkApp.runtimeSettings.onError(
+						`Error in the method ${this._onChangeFunction.name}() passed to EnterNumber.onChange(): ${error.toString()}`
+					)
+					return
+					
+				}
+				
+			}
 			
 		})
 		

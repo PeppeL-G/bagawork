@@ -3,7 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Improved the docs for Page.onAfter()`,
-		`Display error message if an error occurs in a method passed to Button.onClick()`,
+		`Display error message if an error occurs in a method passed to Button.onClick() and EnterNumber.onChange()`,
 	],
 }, {
 	version: `0.0.47`,
