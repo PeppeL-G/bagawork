@@ -110,7 +110,7 @@ export class PaperGroupFigure extends PaperFigure {
 	
 	createElement(frameworkApp, parent){
 		
-		const svgElement = super.createElement(`svg`, false)
+		const svgElement = super.createElement(frameworkApp, `svg`, false)
 		svgElement.setAttribute(`class`, `paper-group`)
 		svgElement.setAttribute(`preserveAspectRatio`, `none`)
 		
@@ -178,11 +178,28 @@ export class PaperGroupFigure extends PaperFigure {
 				const coordinateX = percentageX * this._coordinatesWidth
 				const coordinateY = this._coordinatesHeight - percentageY * this._coordinatesHeight
 				
-				this._onClickFunction(
-					coordinateX,
-					coordinateY,
-					...this._onClickArguments,
-				)
+				try{
+				
+					this._onClickFunction(
+						coordinateX,
+						coordinateY,
+						...this._onClickArguments,
+					)
+					
+				}catch(error){
+					
+					const componentName = (
+						parent._specificTypeName == `Paper` ?
+						`Paper` :
+						`PaperGroup`
+					)
+					
+					frameworkApp.runtimeSettings.onError(
+						`Error in the method ${this._onClickFunction.name}() passed to ${componentName}.onClick(): ${error.toString()}`,
+					)
+					return
+					
+				}
 				
 			})
 			

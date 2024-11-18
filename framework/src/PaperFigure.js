@@ -44,7 +44,7 @@ export class PaperFigure{
 		
 	}
 	
-	createElement(elementName, addClickListener=true){
+	createElement(frameworkApp, elementName, addClickListener=true){
 		
 		const element = document.createElementNS(
 			`http://www.w3.org/2000/svg`,
@@ -52,11 +52,26 @@ export class PaperFigure{
 		)
 		
 		if(this._onClickFunction && addClickListener){
+			
 			element.addEventListener(`click`, () => {
-				this._onClickFunction(
-					...this._onClickArguments,
-				)
+				
+				try{
+					
+					this._onClickFunction(
+						...this._onClickArguments,
+					)
+				
+				}catch(error){
+					
+					frameworkApp.runtimeSettings.onError(
+						`Error in the method ${this._onClickFunction.name}() passed to ${this._specificTypeName}.onClick(): ${error.toString()}`,
+					)
+					return
+					
+				}
+				
 			})
+			
 		}
 		
 		return element

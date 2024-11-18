@@ -54,7 +54,7 @@ export class PaperLineFigure extends PaperFigure {
 	
 	createElement(frameworkApp, parent){
 		
-		const lineElement = super.createElement(`line`)
+		const lineElement = super.createElement(frameworkApp, `line`)
 		
 		const {
 			_coordinatesWidth: parentWidth,

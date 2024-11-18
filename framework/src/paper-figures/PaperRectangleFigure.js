@@ -52,7 +52,7 @@ export class PaperRectangleFigure extends PaperFigure {
 	
 	createElement(frameworkApp, paperGroup){
 		
-		const rectElement = super.createElement(`rect`)
+		const rectElement = super.createElement(frameworkApp, `rect`)
 		
 		const {
 			_coordinatesWidth: parentWidth,

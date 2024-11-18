@@ -38,7 +38,7 @@ export class PaperCircleFigure extends PaperFigure {
 	
 	createElement(frameworkApp, paperGroup){
 		
-		const circleElement = super.createElement(`ellipse`)
+		const circleElement = super.createElement(frameworkApp, `ellipse`)
 		
 		const {
 			_coordinatesWidth: svgWidth,
