@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Improved the docs for Page.onAfter()`,
+	],
 }, {
 	version: `0.0.47`,
 	date: `2024-11-17`,

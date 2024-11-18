@@ -269,26 +269,23 @@ class AskQuestionPage extends Page{
 		return Rows.children(
 			Text.text(`Do you know the answer to this question?`),
 			Columns.children(
-				Button.text(`Yes`).onClick(p.onYesAnswer),
-				Button.text(`No` ).onClick(p.onNoAnswer),
+				Button.text(`Yes`).onClick(p.onAnswer, `yes`),
+				Button.text(`No` ).onClick(p.onAnswer, `no`),
 			),
 		)
 	}
 	
-	onYesAnswer(){
-		p.answer = `yes`
-	}
-	
-	onNoAnswer(){
-		p.answer = `no`
+	onAnswer(yesOrNo){
+		p.answer = yesOrNo
 	}
 	
 	onAfter(){
 		
-		const endTimeInMs = Date.now()
-		const timeToAnswerInMs = endTimeInMs - p.startTimeInMs
+		const timeTakenToAnswer = p.startTime.getDurationTo(
+			Date.setNow(),
+		)
 		
-		if(10000 < timeToAnswerInMs){
+		if(10 < timeTakenToAnswer.getTotalSeconds()){
 			// Took more than 10 seconds to answer,
 			// so maybe we want to handle that
 			// as a special case here.
@@ -301,6 +298,7 @@ class AskQuestionPage extends Page{
 		}
 		
 	}
+	
 }
 ```
 
