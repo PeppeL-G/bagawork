@@ -43,15 +43,10 @@ Example showing what the `HTML` component can look like when shown on the screen
 class StartPage extends Page{
 	
 	createGui(){
-		return Html.backgroundColor(`yellow`).elementCreator(p.createHtmlHeader)
+		return Html.backgroundColor(`yellow`).initializer(p.initializeHtmlElement)
 	}
 	
-	createHtmlHeader(){
-		
-		// This is a bad example, because this functionality can
-		// be implemented using the BagaWork components Rows and
-		// Text, but let's keep it simple ^^
-		const div = document.createElement(`div`)
+	initializeHtmlElement(htmlElement){
 		
 		const h1 = document.createElement(`h1`)
 		h1.innerText = `This is an HTML <h1> element!`
@@ -60,10 +55,7 @@ class StartPage extends Page{
 		p.innerText = `This is an HTML <p> element!`
 		p.style.backgroundColor = `red`
 		
-		div.appendChild(h1)
-		div.appendChild(p)
-		
-		return div
+		htmlElement.append(h1, p)
 		
 	}
 	
@@ -74,8 +66,8 @@ class StartPage extends Page{
 
 
 
-## `elementCreator()` - Setting the element creator
-Use the configuration method `elementCreator()` to tell the `Html` component which method it should call to obtain the HTML element that should be visualized on the screen where the `Html` component is used.
+## `initializer()` - Initializing the HTML element
+Use the configuration method `initializer()` to tell the `Html` component which method it should call to initialize the HTML element. The method will receive the HTML element (a `<div>` element) as the first argument.
 
 ::: tip Example
 
@@ -85,13 +77,10 @@ This is a bit bad example, because this functionality in this app can be impleme
 class StartPage extends Page{
 	
 	createGui(){
-		return Html.backgroundColor(`yellow`).elementCreator(p.createHtmlHeader)
+		return Html.backgroundColor(`yellow`).initializer(p.initializeHtmlElement)
 	}
 	
-	createHtmlHeader(){
-		
-		
-		const div = document.createElement(`div`)
+	initializeHtmlElement(htmlElement){
 		
 		const h1 = document.createElement(`h1`)
 		h1.innerText = `This is an HTML <h1> element!`
@@ -100,10 +89,7 @@ class StartPage extends Page{
 		p.innerText = `This is an HTML <p> element!`
 		p.style.backgroundColor = `red`
 		
-		div.appendChild(h1)
-		div.appendChild(p)
-		
-		return div
+		htmlElement.append(h1, p)
 		
 	}
 	

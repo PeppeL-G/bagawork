@@ -7,15 +7,17 @@ const Html = (() => new (
 	class Html extends Component{
 		
 		/**
-		 * This method sets the component's HTML creator method.
-		 * That method will be called when this component should
-		 * be shown on the screen, and in it you should create
-		 * and send back the HTML element to be shown (which can
-		 * contain other HTML elements, etc.).
+		 * This method sets the component's HTML initializer.
+		 * The initializer is a function that will be called
+		 * when the HTML component is shown on the screen,
+		 * and it receives the HTML element shows as the
+		 * HTML component as an argument, and you can do
+		 * whatever you want with it to make it show whatever
+		 * you want it to show
 		 * 
-		 * @param theElementCreator The method to be called to create the HTML element to be shown in this component
+		 * @param theInitializer The method to be called to initialize the HTML element shown as the HTML component
 		 */
-		elementCreator(theElementCreator: () => HTMLElement){ return this };
+		initializer(theInitializer: (HTMLElement) => void){ return this };
 		
 	}
 	

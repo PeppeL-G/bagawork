@@ -6,18 +6,18 @@ export class HtmlComponent extends Component{
 	
 	_specificTypeName = `Html`
 	
-	_elementCreator = null
+	_initializer = null
 	
-	elementCreator(theElementCreator){
+	initializer(theInitializer){
 		
 		validateArgs(
 			this,
-			`elementCreator`,
+			`initializer`,
 			[`Function`],
 			arguments,
 		)
 		
-		this._elementCreator = theElementCreator
+		this._initializer = theInitializer
 		
 		return this
 		
@@ -25,29 +25,31 @@ export class HtmlComponent extends Component{
 	
 	createElement(frameworkApp, parentComponent){
 		
-		if(!this._elementCreator){
+		if(!this._initializer){
 			
-			throw `Error in Html component: the configuration method elementCreator() has never been called.`
+			throw `Error in Html component: the configuration method initializer() has never been called.`
 			
 		}
 		
-		let htmlElement = null
-		
-		try{
-			htmlElement = this._elementCreator()
-		}catch(error){
-			throw `Error in the element creator passed to Html.elementCreator(): ${error}.`
-		}
-		
-		if(!(htmlElement instanceof HTMLElement)){
-			throw `Error in the element creator passed to Html.elementCreator(): The element creator did not return a value that is an instance of HTMLElement.`
-		}
+		let htmlElement = document.createElement(`div`)
 		
 		// Fix CSS.
 		applyAttributesToElement(
 			this,
 			htmlElement,
 		)
+		
+		// Delay calling the initializer until the HTML
+		// element has been inserted into the DOM.
+		setTimeout(() => {
+			
+			try{
+				this._initializer(htmlElement)
+			}catch(error){
+				frameworkApp.onError(`Error in the element initializer passed to Html.initializer(): ${error}.`)
+			}
+			
+		}, 0)
 		
 		return htmlElement
 		
