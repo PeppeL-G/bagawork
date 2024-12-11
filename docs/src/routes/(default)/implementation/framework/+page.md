@@ -30,7 +30,7 @@ The easiest way to create a BagaWork app is by creating it in our :online-editor
 		// And everything else you want to use...
 	} from '@bagawork/framework'
 
-	export function createApp({a, p, log}){
+	export function createApp({a, p, log, setTimeout, setInterval}){
 		
 		class MyApp extends App{
 			createStartPage(){

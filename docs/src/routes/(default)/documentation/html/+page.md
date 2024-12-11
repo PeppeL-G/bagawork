@@ -77,7 +77,9 @@ This is a bit bad example, because this functionality in this app can be impleme
 class StartPage extends Page{
 	
 	createGui(){
-		return Html.backgroundColor(`yellow`).initializer(p.initializeHtmlElement)
+		return Html
+			.backgroundColor(`yellow`)
+			.initializer(p.initializeHtmlElement)
 	}
 	
 	initializeHtmlElement(htmlElement){
@@ -90,6 +92,60 @@ class StartPage extends Page{
 		p.style.backgroundColor = `red`
 		
 		htmlElement.append(h1, p)
+		
+	}
+	
+}
+```
+
+:::
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Html
+			.backgroundColor(`yellow`)
+			.initializer(p.initializeHtmlElement)
+	}
+	
+	initializeHtmlElement(htmlElement){
+		
+		const canvas = document.createElement(`canvas`)
+		
+		canvas.width = htmlElement.clientWidth
+		canvas.height = htmlElement.clientHeight
+		
+		htmlElement.append(canvas)
+		
+		// BagaWork intercepts calls to setInterval() and
+		// setTimeout() and automatically stops them when
+		// an error occurs or when going to next page.
+		setInterval(
+			p.paintCircle,
+			1000,
+			canvas,
+		)
+		
+	}
+	
+	paintCircle(canvas){
+		
+		const width = canvas.clientWidth
+		const height = canvas.clientHeight
+		
+		const context = canvas.getContext(`2d`)
+		
+		const x = m.randomInt(0, width)
+		const y = m.randomInt(0, height)
+		const radius = 10
+		
+		context.fillStyle = `red`
+		context.beginPath()
+		context.arc(x, y, radius, 0, Math.PI * 2)
+		context.fill()
 		
 	}
 	

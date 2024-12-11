@@ -46,7 +46,7 @@ export class HtmlComponent extends Component{
 			try{
 				this._initializer(htmlElement)
 			}catch(error){
-				frameworkApp.onError(`Error in the element initializer passed to Html.initializer(): ${error}.`)
+				frameworkApp.runtimeSettings.onError(`Error when running the initializer function passed to Html.initializer(): ${error}.`)
 			}
 			
 		}, 0)

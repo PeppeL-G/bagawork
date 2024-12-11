@@ -35,6 +35,9 @@ export class FrameworkApp{
 	
 	runtimeSettings = {}
 	
+	intervalIds = []
+	timeoutIds = []
+	
 	constructor(createApp, runtimeSettings={}){
 		
 		const oldOnError = runtimeSettings.onError
@@ -185,6 +188,60 @@ export class FrameworkApp{
 			}),
 			log(value){
 				onLog(`user`, JSON.stringify(value, null, `  `))
+			},
+			setInterval: (...theArgs) => {
+				
+				const [func, delay, ...funcArgs] = theArgs
+				
+				const runFunc = () => {
+					try{
+						func(...funcArgs)
+					}catch(error){
+						this.runtimeSettings.onError(
+							`Error occurred when calling function passed to setInterval(): ${error}`,
+						)
+					}
+				}
+				
+				if(!this.runtimeSettings.isPreview){
+					
+					this.intervalIds.push(
+						setInterval(
+							runFunc,
+							delay,
+							...funcArgs,
+						)
+					)
+					
+				}
+				
+			},
+			setTimeout: (...theArgs) => {
+				
+				const [func, delay, ...funcArgs] = theArgs
+				
+				const runFunction = () => {
+					try{
+						func(...funcArgs)
+					}catch(error){
+						this.runtimeSettings.onError(
+							`Error occurred when calling function passed to setTimeout(): ${error}`,
+						)
+					}
+				}
+				
+				if(!this.runtimeSettings.isPreview){
+					
+					this.timeoutIds.push(
+						setTimeout(
+							runFunction,
+							delay,
+							...funcArgs,
+						)
+					)
+					
+				}
+				
 			},
 		}
 		
@@ -591,7 +648,7 @@ export class FrameworkApp{
 			onLog,
 		} = this.runtimeSettings
 		
-		this.frameworkPage.stopUpdaters()
+		this.stop()
 		this.frameworkPage.runOnAfter()
 		
 		this.frameworkPage.refreshAfterDirections()
@@ -623,6 +680,21 @@ export class FrameworkApp{
 	
 	stop(){
 		this.frameworkPage?.stopUpdaters?.()
+		this.stopAndClearTimeoutsAndIntervals()
+	}
+	
+	stopAndClearTimeoutsAndIntervals(){
+		
+		for(const timeoutId of this.timeoutIds){
+			clearTimeout(timeoutId)
+		}
+		this.timeoutIds = []
+		
+		for(const intervalId of this.intervalIds){
+			clearInterval(intervalId)
+		}
+		this.intervalIds = []
+		
 	}
 	
 	getState(){

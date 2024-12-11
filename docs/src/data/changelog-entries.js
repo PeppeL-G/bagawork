@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Improved the docs for Page.onAfter()`,
 		`Display error message if an error occurs in a method passed to Button.onClick(), EnterNumber.onChange(), EnterText.onChange(), Paper.onClick(), PaperFigure.onClick() and PaperGroup.onClick()`,
 		`Removed Html.elementCreator(), and added Html.initializer()`,
+		`The framework will automatically stop timeouts and intervals when an error occurs or when loading a new page`,
 	],
 }, {
 	version: `0.0.47`,
