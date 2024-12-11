@@ -12,10 +12,16 @@
 			project.pages,
 		)
 		
+		let stopApp = null
+		
 		showAppInElement(
 			createAppCode,
 			screenElement,
-		)
+		).then(s => stopApp = s)
+		
+		return {
+			destroy: stopApp,
+		}
 		
 	}
 	
