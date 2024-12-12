@@ -205,13 +205,17 @@ export class FrameworkApp{
 				
 				if(!this.runtimeSettings.isPreview){
 					
-					this.intervalIds.push(
-						setInterval(
-							runFunc,
-							delay,
-							...funcArgs,
-						)
+					const intervalId = setInterval(
+						runFunc,
+						delay,
+						...funcArgs,
 					)
+					
+					this.intervalIds.push(
+						intervalId,
+					)
+					
+					return intervalId
 					
 				}
 				
@@ -232,13 +236,17 @@ export class FrameworkApp{
 				
 				if(!this.runtimeSettings.isPreview){
 					
-					this.timeoutIds.push(
-						setTimeout(
-							runFunction,
-							delay,
-							...funcArgs,
-						)
+					const timeoutId = setTimeout(
+						runFunction,
+						delay,
+						...funcArgs,
 					)
+					
+					this.timeoutIds.push(
+						timeoutId,
+					)
+					
+					return timeoutId
 					
 				}
 				
