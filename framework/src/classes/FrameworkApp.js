@@ -4,6 +4,7 @@ import { App } from './App.js'
 import { Page } from './Page.js'
 import { evalExpression } from '../functions/eval-expression.js'
 import { getCopyWithRestoredClassInstances } from '../functions/get-copy-with-restored-class-instances.js'
+import { PaperFigure } from '../PaperFigure.js'
 import { PaperComponent } from '../components/PaperComponent.js'
 
 const defaultRuntimeSettings = {
@@ -731,11 +732,11 @@ export class FrameworkApp{
 			return
 		}
 		
-		let paperIcon = null
+		let paperFigureIcon = null
 		
 		try {
 			onLog(`framework`, `Calling ${this.App.name}.createIcon()...`)
-			paperIcon = this.app.createIcon()
+			paperFigureIcon = this.app.createIcon()
 		} catch (error) {
 			onError(
 				`Error in ${this.App.name}.createIcon(): ${error}.`,
@@ -743,24 +744,27 @@ export class FrameworkApp{
 			return
 		}
 		
-		if(!paperIcon){
+		if(!paperFigureIcon){
 			onError(
-				`Error in ${this.App.name}.createIcon(): Does currently not return a value at all. Must return an instance of the GUI component Paper that comes from BagaWork.`,
+				`Error in ${this.App.name}.createIcon(): Does currently not return a value at all. Must return an instance of a paper figure that comes from BagaWork.`,
 			)
 			return
 		}
 		
-		if(!(paperIcon instanceof PaperComponent)){
+		if(!(paperFigureIcon instanceof PaperFigure)){
 			onError(
-				`Error in ${this.App.name}.createIcon(): The returned value must be an instance of the Paper component that comes from BagaWork.`,
+				`Error in ${this.App.name}.createIcon(): The returned value must be an instance of a paper figure that comes from BagaWork.`,
 			)
 			return
 		}
 		
 		onLog(`framework`, `Calling ${this.App.name}.createIcon()... ✅`)
 		
+		const paper = new PaperComponent()
+		paper.children(paperFigureIcon)
+		
 		this.runtimeSettings.onIconCreated(
-			paperIcon.getAsSvgString(),
+			paper.getAsSvgString(),
 		)
 		
 	}

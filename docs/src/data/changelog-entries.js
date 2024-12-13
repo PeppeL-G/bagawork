@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Removed Html.elementCreator(), and added Html.initializer()`,
 		`The framework will automatically stop timeouts and intervals when an error occurs or when loading a new page`,
 		`Added type definitions for the Paper component and the different paper figures to the editor`,
+		`Changed App.createIcon(), so it should now return a PaperFigure, and not a Paper component`,
 	],
 }, {
 	version: `0.0.47`,

@@ -113,7 +113,7 @@ You only need to initialize the global state if your app needs one. Some simple 
 
 
 ## `createIcon()` - Creating an icon
-The method `createIcon()` will be called directly when the app starts. In it, you can create and return a :docs[Paper] component that will be used as the icon of your app. The icon of your app will not be shown in your app's GUI, but at other places, such as:
+The method `createIcon()` will be called directly when the app starts. In it, you can create and return a paper figure that will be used as the icon of your app. The icon of your app will not be shown in your app's GUI, but at other places, such as:
 
 * When your app runs in a tab in web browser, the app icon will be shown as the icon of the tab
 * When your app is installed on a smartphone, the app icon will be shown as the icon the user should click on to start your app
@@ -134,8 +134,11 @@ Example of how `createIcon()` can be implemented.
 class MyApp extends App{
 	
 	createIcon(){
-		return Paper.backgroundColor(`gold`).children(
-			PaperCircle.backgroundColor(`red`).radius(5),
+		return PaperGroup.backgroundColor(`lime`).coordinateSystem(10, 10).children(
+			PaperCircle.backgroundColor(`yellow`).radius(5).center(5, 5),
+			PaperCircle.backgroundColor(`black`).radius(1).center(3, 7),
+			PaperCircle.backgroundColor(`black`).radius(1).center(7, 7),
+			PaperLine.backgroundColor(`red`).thickness(0.5).start(3, 3).end(7, 3),
 		)
 	}
 	
@@ -147,7 +150,7 @@ class MyApp extends App{
 
 class StartPage extends Page{
 	createGui(){
-		return Text.text(`In the code editor, click on the "Icon" tab, and you will see the created icon!`)
+		return Text.text(`In the code editor, click on the "Icon" tab, and you will see the created app icon!`)
 	}
 }
 ```
@@ -156,7 +159,7 @@ class StartPage extends Page{
 
 ::: tip Not needed?
 
-You only need to implement `createIcon()` if you want your app to have its own icon. If you don't implement, a default icon will be used instead.
+You only need to implement `createIcon()` if you want your app to have its own icon. If you don't implement it, a default icon will be used instead.
 
 :::
 
