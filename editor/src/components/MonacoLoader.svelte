@@ -22,10 +22,13 @@
 				`../editor-type-definitions/**`,
 				{
 					eager: true,
-					query: `?raw`
+					query: `raw`,
+					import: `default`,
 				},
 			),
 		)
+		
+		console.log(typeDefinitionFiles)
 		
 		monaco.languages.typescript.javascriptDefaults.setExtraLibs(
 			typeDefinitionFiles.map(
