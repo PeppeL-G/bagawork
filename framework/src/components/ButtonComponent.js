@@ -148,6 +148,7 @@ export class ButtonComponent extends Component{
 		
 		buttonElement.style.backgroundColor = `#2222220d`
 		buttonElement.style.fontWeight = `500`
+		buttonElement.style.font = `inherit` // To make the button inherit font() from ancestors.
 		
 		buttonElement.addEventListener(
 			'click',
