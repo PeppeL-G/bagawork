@@ -22,7 +22,7 @@
 				`../editor-type-definitions/**`,
 				{
 					eager: true,
-					as: `raw`
+					query: `?raw`
 				},
 			),
 		)
