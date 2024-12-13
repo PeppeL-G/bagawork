@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.48`,
+	date: `2024-12-13`,
 	changes: [
 		`Improved the docs for Page.onAfter()`,
 		`Display error message if an error occurs in a method passed to Button.onClick(), EnterNumber.onChange(), EnterText.onChange(), Paper.onClick(), PaperFigure.onClick() and PaperGroup.onClick()`,
