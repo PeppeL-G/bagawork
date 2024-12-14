@@ -37,7 +37,7 @@ export function getCachedFrameworkApp(
 	const frameworkPage = new FrameworkApp(createAppCode, runtimeSettings)
 	frameworkPage.start()
 	
-	cachedFrameworkApps[createAppCode] = frameworkPage
+	cachedFrameworkApps.set(createAppCode, frameworkPage)
 	
 	return frameworkPage
 	
