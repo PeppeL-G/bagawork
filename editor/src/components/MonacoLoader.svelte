@@ -28,8 +28,6 @@
 			),
 		)
 		
-		console.log(typeDefinitionFiles)
-		
 		monaco.languages.typescript.javascriptDefaults.setExtraLibs(
 			typeDefinitionFiles.map(
 				typeDefinition => ({
