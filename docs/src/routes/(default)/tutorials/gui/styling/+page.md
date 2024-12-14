@@ -37,6 +37,8 @@ class StartPage extends Page{
 ## Padding
 Sometimes you might want to add some space between the edge of a component and its content. For example, in the app below, you might want the yellow `Text` component to be a little bit taller than it is.
 
+::: tip Example
+
 ```js baga-show-editor-code
 class StartPage extends Page{
 	
@@ -50,6 +52,8 @@ class StartPage extends Page{
 	
 }
 ```
+
+:::
 
 You can make it taller by giving it a `size()`, but it's also possible to make it taller by giving it some padding on the top side and bottom side. *Padding* is simply some amount of space between the components edge and its content. Call the configuration method `padding()` to give the component some padding, and pass it:
 
