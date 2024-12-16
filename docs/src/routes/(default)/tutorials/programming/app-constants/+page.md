@@ -27,7 +27,7 @@ class MenuPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`InfoApp`),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`Select what you want to read more about.`).left(),
 			Space,
 			Columns.children(
@@ -164,7 +164,7 @@ class MenuPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(a.APP_NAME),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`Select what you want to read more about.`).left(),
 			Space,
 			Columns.children(

@@ -11,7 +11,7 @@ export class PaperComponent extends Component{
 	
 	constructor() {
 		super()
-		this._size = 1
+		this._grow = 1
 		this._paperGroup = new PaperGroupFigure()
 	}
 	

@@ -83,13 +83,13 @@ class CounterPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Text.text(`${p.counter}`).size(1),
-			Columns.size(1).children(
-				Rows.size(1).children(
-					Button.text(`-`).size(1).onClick(p.decrementCounter),
-					Button.text(`Reset`).size(1).onClick(p.resetCounter),
+			Text.text(`${p.counter}`).grow(1),
+			Columns.grow(1).children(
+				Rows.grow(1).children(
+					Button.text(`-`).grow(1).onClick(p.decrementCounter),
+					Button.text(`Reset`).grow(1).onClick(p.resetCounter),
 				),
-				Button.text(`+`).size(1).onClick(p.incrementCounter),
+				Button.text(`+`).grow(1).onClick(p.incrementCounter),
 			),
 		)
 	}

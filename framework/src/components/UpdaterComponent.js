@@ -117,7 +117,7 @@ export class UpdaterComponent extends Component {
 		// Copy over all child properties to this updater,
 		// so layouts that need to access child properties
 		// can access it as if this Updater is the child.
-		this._size = this._child._size
+		this._grow = this._child._grow
 		this._keepIf = this._child._keepIf
 		
 		return this._child
@@ -176,8 +176,8 @@ export class UpdaterComponent extends Component {
 		
 	}
 	
-	getSize(){
-		return this._child.getSize()
+	getGrow(){
+		return this._child.getGrow()
 	}
 	
 }

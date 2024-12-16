@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Fixed bug where Button components didn't inherit font() from ancestors`,
 		`Renamed Font.size() to Font.sizeMm()`,
 		`Added Font.sizeSw()`,
+		`Renames Component.size() to Component.grow()`,
 	],
 }, {
 	version: `0.0.48`,

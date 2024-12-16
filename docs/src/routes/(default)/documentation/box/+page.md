@@ -40,7 +40,7 @@ class StartPage extends Page{
 ## `child()` - Setting the child
 Use the configuration method `child()` to tell the `Box` component which (optional) child it should have. 
 
-If the `Box` component has been given a size (for example by being the root layout, or by being used as a child in :docs[Rows] or :docs[Columns] and been given a `size()`, etc.), then it's child will by default get the same size as the `Box` component itself (except its padding).
+If the `Box` component has been given a size (for example by being the root layout, or by being used as a child in :docs[Rows] or :docs[Columns] and been given a `grow()`, etc.), then it's child will by default get the same size as the `Box` component itself (except its padding).
 
 ::: tip Example
 
@@ -63,7 +63,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space.backgroundColor(`pink`),
-			Box.size(1).padding(5).backgroundColor(`red`).child(
+			Box.grow(1).padding(5).backgroundColor(`red`).child(
 				Text.backgroundColor(`lime`).text(`The child is lime!`)
 			),
 			Space.backgroundColor(`gold`),

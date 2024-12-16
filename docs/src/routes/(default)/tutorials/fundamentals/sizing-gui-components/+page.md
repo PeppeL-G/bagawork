@@ -55,21 +55,21 @@ class ColumnsPage extends Page{
 
 
 ## Sizing children
-It's not only `Space` children that can grab some shares of the remaining available space; any child component used in `Rows` and `Columns` can grab some of the remaining available space. But it's only the `Space` children that grabs it by default, and by default they grab equally much of it. But all this can be changed with the configuration method `.size()` on the children. Let's go through how this works in detail.
+It's not only `Space` children that can grab some of the remaining available space; any child in `Rows` and `Columns` can grab some of the remaining available space. But it's only the `Space` children that grabs it by default, and by default they all grab equally much of it. But all this can be changed with the configuration method `.grow()` on the children. Let's go through how this works in detail.
 
 First, let us ignore the `Space` children, and instead focus on all other children, such as `Text` and `Button` components.
 
-By default, all children in `Rows` will be just tall enough to surround their content. If you want them to also grab some of the remaining available space, you can call the method `.size()` on the child, and pass it a number indicating how many shares of the remaining available space it should also occupy. 
+By default, all children in `Rows` will be just tall enough to surround their content. If you want them to grow tallwr by grabbing some of the remaining available space, you can call the method `.grow()` on the child, and pass it a number indicating how tall the child should be in relation to other children that have also called `.grow()`. 
 
 ::: tip Examples
 
 A few examples.
 
-::bagawork-project[show&editor&app&code=FirstPage-SecondPage-ThirdPage-FourthPage&url=http://localhost:8080/editor/#eNqtlU1v2zAMhv8KoZMNeEY+nC71bRvQYocNw5LDhqVAFFuJtTmSIclLuyD/vZQcuXGRekWRS2xS5EuaD0LtCa0qku5JJnNGUpKVVGv48vChqoDdGyZyDfi+X4iFyRSjhs0MVeYb3bAgdN6FUczUSsANV9odWO9hIQ7kEJG1LHOmNEl/7QnPSTqMiKBbW8npkIjI9Voz84Ok76ZTb/1E62p8uItIhXqd7Ebwc2N0mm7rt41b46Tz25o/7/m73Ok4K3iZKyaC5mhh5igQG/wJlq3oMow6xyua/dkoWYv8kyylCpaK5cvwmPVVCgZyDaZg4NWhYAotWpYQa/4PxxeBlmDtNoRixO9aGzDWzYSsNwUYCbpWrpQV5AoyKfADTXzS08faGCmO5W+lS2IYl0Plmo/tI5g5l/0cnxm2sCJyT9LR6CoiDyRNpuND1Mx83DfzJ8FLDv1J9fnU3eCGYf/05wXXYF9xUNsKUQgDOyqMhiHows74iEaxLeWCiw3Qv5TTclUy0BXNWAwzLjKGQahkxTBYivKhIYUm9YpablkjqiPg6OUIbsOM44pl0BUMQdbGGsfyOuwHh1VVl9vcenqwJdNrh200GXlsSR+2Vu+S1FrR89AGg7djGwyOk7sYudeBw7oeXdvCf+CtZa1M0aF341w9+N5fe3xTj2/Su+lawYuuulb1LMDkzfiS18Ob43EzVFixUu5e/t9iPm8EStoKuI3q0J/04MEmNn1y7OXM7vS7pUPTrv8uTH8hvMByOJj6FTrxF9icbasSqdiL7O7wCOz7n2c=]
+::bagawork-project[show&editor&app&code=FirstPage-SecondPage-ThirdPage-FourthPage&url=http://localhost:8080/editor/#eNrNlcGO2jAQhl9l5FMiRQgC20Ju3Uq76qFVVTi0KithkoG4NXZkO2URyrvXdkgguzS9cNgLeMae35P/UyZHQouCJEeSygxJQlJOtYbPhw9FAfhsUGQa7Pq4FEuTKqQG54Yq85VuMQh9dmkUmlIJeGBK+w2XrZaiIlVENpJnqDRJfh4Jy0gyioigO3eT1yERkZuNRvOdJLNm/YMk41H1FJHCinVKa7VPddDpuL287doFF20/luxlw9/kXg/SnPFMoQjqraVZWIGBsT/BqhVdhVFne03T31slS5F9lFyqYKUwW4Wnqi9SIMgNmByhUYcclY0o5zCwhfsgjEBLcHF7hNoTv0ptwLg0ClluczASdKn8VU6QKUilsA9oBhc93ZfGSHG6/lH6IrTnMih88wP3F8x9yj1OUxm2pCLyTJI4nkbkQJLJu3EV1Z6P+zw/C97S9LPqS9e9caOw3/1FzjS4pTVqV1gUwkBOtfceM2g0YM5EitZSe9oVWFZS8ENNw4b0dZVFxgzsmYWzRePZnSgr3FEmmNgC/UMZp2uOoAua4n8g2dtVl9HCZXoQTaYzjyi+ixtEkz5Erd4tCbWi1wENh7dA5FTeBKSNLJXJO5QefKoH0/tZg2naYLrrnV6t4E3HV6t6FVR8A0zxBSSEtXcP1sjl/spLF9Ukz2oe09rW7plVsOf95KP6ldgVRM2L3EHl5nWXVDPB/wFqNJxNTjNv1nxxFrgruLXcfXmeqr8SaYMT]
 
 :::
 
-The special thing with the `Space` component is that it has the size `1` by default (it has been made like this because that's often how one wants to use it), while all other components has the size `0` by default (which means they will be just big enough to surround their content).
+The special thing with the `Space` component is that it has the grow set to `1` by default (it has been made like this because that's often how one wants to use it), while all other components has the grow set to `0` by default (which means they will be just big enough to surround their content).
 
 So when you use the `Space` component like this:
 
@@ -80,7 +80,7 @@ Space
 It has the same functionality as being used like this:
 
 ```js
-Space.size(1)
+Space.grow(1)
 ```
 
 ::: tip Example
@@ -90,7 +90,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space.backgroundColor(`yellow`),
-			Text.size(1).backgroundColor(`red`).text(`I occupy one third of the space.`),
+			Text.grow(1).backgroundColor(`red`).text(`I grow to one third of the space.`),
 			Space.backgroundColor(`pink`),
 		)
 	}
@@ -99,7 +99,7 @@ class StartPage extends Page{
 
 :::
 
-You can still call `.size()` on `Space` if you want it to claim another amount of shares of the remaning available space.
+You can still call `.grow()` on `Space` if you want it to claim another amount of shares of the remaning available space.
 
 ::: tip Example
 
@@ -108,8 +108,8 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space.backgroundColor(`yellow`),
-			Text.size(1).backgroundColor(`red`).text(`I occupy one fifth of the space.`),
-			Space.size(3).backgroundColor(`pink`),
+			Text.grow(1).backgroundColor(`red`).text(`I grow to one fifth of the space.`),
+			Space.grow(3).backgroundColor(`pink`),
 		)
 	}
 }
@@ -156,7 +156,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Text.text(`The App Title`),
-			Text.text(`The main content`).backgroundColor(`lime`).size(1),
+			Text.text(`The main content`).backgroundColor(`lime`).grow(1),
 			Columns.children(
 				Space,
 				Button.text(`Home`),
@@ -174,7 +174,7 @@ class StartPage extends Page{
 
 ::::hint
 
-A carefully chosen `.size(1)` should do the trick. But on which component?
+A carefully chosen `.grow(1)` should do the trick. But on which component?
 
 ::::
 
@@ -188,14 +188,14 @@ The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIG
 class StartPage extends Page{
 	
 	createGui(){
-		return Rows.size(1).children(
+		return Rows.grow(1).children(
 			Columns.children(
-				Text.text(`A`).size(1).backgroundColor(`red`),
-				Text.text(`B`).size(1).backgroundColor(`lime`),
+				Text.text(`A`).grow(1).backgroundColor(`red`),
+				Text.text(`B`).grow(1).backgroundColor(`lime`),
 			),
 			Columns.children(
-				Text.text(`C`).size(1).backgroundColor(`yellow`),
-				Text.text(`D`).size(1).backgroundColor(`silver`),
+				Text.text(`C`).grow(1).backgroundColor(`yellow`),
+				Text.text(`D`).grow(1).backgroundColor(`silver`),
 			),
 		)
 	}
@@ -207,7 +207,7 @@ class StartPage extends Page{
 
 Hmm... Is that GUI conisting of two `Rows` that contain two `Columns` each? Or two `Columns` that contain two `Rows` each? Hmm... Seems impossible to tell... Wait, does that mean any of the two approaches will work?
 
-And remember, `.size()` can be called on any child component in `Rows` and `Columns`. So if `Columns` is being used as a child in `Rows`, you can call `.size()` on that `Columns` component!
+And remember, `.grow()` can be called on any child component in `Rows` and `Columns`. So if `Columns` is being used as a child in `Rows`, you can call `.grow()` on that `Columns` component!
 
 ::::
 
@@ -222,13 +222,13 @@ class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Columns.size(1).children(
-				Text.text(`A`).size(1).backgroundColor(`red`),
-				Text.text(`B`).size(1).backgroundColor(`lime`),
+			Columns.grow(1).children(
+				Text.text(`A`).grow(1).backgroundColor(`red`),
+				Text.text(`B`).grow(1).backgroundColor(`lime`),
 			),
-			Columns.size(1).children(
-				Text.text(`C`).size(1).backgroundColor(`yellow`),
-				Text.text(`D`).size(1).backgroundColor(`silver`),
+			Columns.grow(1).children(
+				Text.text(`C`).grow(1).backgroundColor(`yellow`),
+				Text.text(`D`).grow(1).backgroundColor(`silver`),
 			),
 		)
 	}
@@ -238,7 +238,7 @@ class StartPage extends Page{
 
 ::::hint
 
-You need more <code>.size(1)</code>. Add as many as you can. And then add some more. Ehh... No, scratch that last sentence 😅
+You need more <code>.grow(1)</code>. Add as many as you can. And then add some more. Ehh... No, scratch that last sentence 😅
 
 ::::
 
@@ -246,6 +246,6 @@ You need more <code>.size(1)</code>. Add as many as you can. And then add some m
 
 
 ## That's it!
-Good work, now you know how to change the size of GUI components! 🥳 Using `Rows` and `Columns` with `.size()` on the children is enough to create almost any layout you want.
+Good work, now you know how to change the size of GUI components! 🥳 Using `Rows` and `Columns` with `.grow()` on the children is enough to create almost any layout you want.
 
 The last thing to learn in the Fundamental section is the tutorial [Fundamentals 7. The App Class](../the-app-class/). Then you will actually know everything needed to be able to start creating small apps 🙂

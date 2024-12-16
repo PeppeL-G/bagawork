@@ -7,7 +7,7 @@ On this page you find the documentation for the GUI Component `Updater`.
 
 ::: warning Note!
 
-`Updater` is not an ordinary GUI component. It can be created the same way as a GUI component, but it is not part of the GUI itself. Instead, it is used to dynamically create a child component, and it is the child component that is part of the GUI. So you can't call configuration methods like `.size()` or `.backgroundColor()` on the `Updater` component. Do that on the child component it creates instead.
+`Updater` is not an ordinary GUI component. It can be created the same way as a GUI component, but it is not part of the GUI itself. Instead, it is used to dynamically create a child component, and it is the child component that is part of the GUI. So you can't call configuration methods like `.grow()` or `.backgroundColor()` on the `Updater` component. Do that on the child component it creates instead.
 
 :::
 

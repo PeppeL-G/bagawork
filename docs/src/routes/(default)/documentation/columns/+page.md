@@ -185,7 +185,7 @@ class StartPage extends Page{
 
 
 
-## `child.size()` - Resizing the children
+## `child.grow()` - Making the children wider
 By default, all children (except :docs[Space] children, read more about this later) are wide enough to just surround their content, as shown below.
 
 ::: tip Example
@@ -204,7 +204,7 @@ class StartPage extends Page{
 
 :::
 
-If there is space left over in the `Columns` component after the children has become wide enough to contain their content, you can use the configuration method `size()` on the children to instruct them to grow wider and grab parts of this left over space. The number you pass to `size()` indicates how wide the component should be in relation to the other components, and then the left over space will be divided among the children based on this relation.
+If there is space left over in the `Columns` component after the children has become wide enough to contain their content, you can use the configuration method `grow()` on the children to instruct them to grow wider and grab parts of this left over space. The number you pass to `grow()` indicates how wide the child should be in relation to the other children, and then the left over space will be divided among the children based on this relation.
 
 ::: tip Example
 
@@ -214,9 +214,9 @@ Resize the screen for the app (only works on laptops/computers), and notice how 
 class StartPage extends Page{
 	createGui(){
 		return Columns.backgroundColor(`yellow`).children(
-			Text.text(`Col 1`).backgroundColor(`lime`).size(1),
+			Text.text(`Col 1`).backgroundColor(`lime`).grow(1),
 			Text.text(`Col 2`).backgroundColor(`aqua`),
-			Text.text(`Col 3`).backgroundColor(`gold`).size(2),
+			Text.text(`Col 3`).backgroundColor(`gold`).grow(2),
 		)
 	}
 }
@@ -224,7 +224,7 @@ class StartPage extends Page{
 
 :::
 
-All children will have `size()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `size()` also on :docs[Space] children if you want it to be something else.
+All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
 
 ::: tip Example
 
@@ -234,11 +234,11 @@ Resize the screen for the app, and notice how the size of the children changes.
 class StartPage extends Page{
 	createGui(){
 		return Columns.backgroundColor(`yellow`).children(
-			Space.backgroundColor(`red`), // This component has size(1) by default.
-			Text.text(`Col 1`).backgroundColor(`lime`).size(1),
+			Space.backgroundColor(`red`), // This component has grow(1) by default.
+			Text.text(`Col 1`).backgroundColor(`lime`).grow(1),
 			Text.text(`Col 2`).backgroundColor(`aqua`),
-			Space.size(2).backgroundColor(`silver`),
-			Text.text(`Col 3`).backgroundColor(`gold`).size(2),
+			Space.grow(2).backgroundColor(`silver`),
+			Text.text(`Col 3`).backgroundColor(`gold`).grow(2),
 		)
 	}
 }

@@ -141,10 +141,10 @@ EnterNumber
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`How many years old are you?`),
+			Text.grow(1).text(`How many years old are you?`),
 			Columns.children(
 				EnterNumber
-					.size(1)
+					.grow(1)
 					.pageIfLower(0, InvalidAgePage)
 					.pageIfEqual(0, KidPage)
 					.pageIfBetween(0, 18, KidPage)
@@ -210,9 +210,9 @@ class MyApp extends App{
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`How many years old are you?`),
+			Text.grow(1).text(`How many years old are you?`),
 			Columns.children(
-				EnterNumber.size(1).store(a, `age`).page(GreetingPage),
+				EnterNumber.grow(1).store(a, `age`).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)
@@ -254,9 +254,9 @@ class MyApp extends App{
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`How many years old are you?`),
+			Text.grow(1).text(`How many years old are you?`),
 			Columns.children(
-				EnterNumber.size(1).defaultNumber(10).store(a, `age`).page(GreetingPage),
+				EnterNumber.grow(1).defaultNumber(10).store(a, `age`).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)
@@ -307,9 +307,9 @@ class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`How many years old are you?`),
+			Text.grow(1).text(`How many years old are you?`),
 			Columns.children(
-				EnterNumber.size(1).onChange(p.handleEnteredAge).page(GreetingPage),
+				EnterNumber.grow(1).onChange(p.handleEnteredAge).page(GreetingPage),
 				Button.text(`⇨`),
 			),
 		)

@@ -2,8 +2,8 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# `size()`
-This page is used to test that `size()` works as it should in `Rows` and `Columns`.
+# `grow()`
+This page is used to test that `grow()` works as it should in `Rows` and `Columns`.
 
 ::: tip Test 1
 
@@ -31,8 +31,8 @@ class StartPage extends Page{
 		return Rows.backgroundColor(`red`).padding(5).children(
 			Text.backgroundColor(`lime`).text(`Text`),
 			Button.text(`Ok!`),
-			Text.backgroundColor(`yellow`).size(1).text(`Text sdf sdf sd fsd fsd fsd dsf sd fs fdsd f sdf sd fsd fsd f sdf sdf s fsd fs s fdfds. dsf sddf sd fsdf dsf sdf dfs `),
-			Button.size(1).text(`Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! `),
+			Text.backgroundColor(`yellow`).grow(1).text(`Text sdf sdf sd fsd fsd fsd dsf sd fs fdsd f sdf sd fsd fsd f sdf sdf s fsd fs s fdfds. dsf sddf sd fsdf dsf sdf dfs `),
+			Button.grow(1).text(`Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! Ok! `),
 			Text.backgroundColor(`aqua`).text(`Text`),
 		)
 	}
@@ -77,7 +77,7 @@ class StartPage extends Page{
 class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`red`).padding(5).children(
-			Paper.size(1).backgroundColor(`blue`),
+			Paper.grow(1).backgroundColor(`blue`),
 		)
 	}
 }
@@ -158,7 +158,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.padding(4).children(
 			Text.backgroundColor(`red`).text(`Text`),
-			Box.size(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
+			Box.grow(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
 				Text.backgroundColor(`lime`).text(`The child is lime!`)
 			),
 			Text.backgroundColor(`yellow`).text(`Text`),
@@ -176,7 +176,7 @@ class StartPage extends Page{
 	createGui(){
 		return Columns.padding(4).children(
 			Text.backgroundColor(`red`).text(`Text`),
-			Box.size(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
+			Box.grow(1).backgroundColor(`gold`).aspectRatio(1, 1).child(
 				Text.backgroundColor(`lime`).text(`The child is lime!`)
 			),
 			Text.backgroundColor(`yellow`).text(`Text`),

@@ -7,7 +7,7 @@ export class SpaceComponent extends Component {
 	
 	constructor(){
 		super()
-		this._size = 1
+		this._grow = 1
 	}
 	
 	createElement(frameworkApp, parentComponent){

@@ -6,7 +6,7 @@ export class Component{
 	_specificTypeName = `Component`
 	
 	_backgroundColor = `transparent`
-	_size = 0
+	_grow = 0
 	_cornerRadius = 0
 	_showIf = true
 	_keepIf = true
@@ -28,16 +28,16 @@ export class Component{
 		
 	}
 	
-	size(size) {
+	grow(grow) {
 		
 		validateArgs(
 			this,
-			"size",
+			"grow",
 			["number"],
 			arguments,
 		)
 		
-		this._size = size
+		this._grow = grow
 		return this
 	}
 	
@@ -166,8 +166,8 @@ export class Component{
 		/* return HTMLElement */
 	}
 	
-	getSize(){
-		return this._size
+	getGrow(){
+		return this._grow
 	}
 	
 }

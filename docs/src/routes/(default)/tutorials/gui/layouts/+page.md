@@ -94,7 +94,7 @@ class StartPage extends Page{
 			// And the alert in front of it (if it should be shown).
 			Rows.showIf(p.isAlertShowing == true).children(
 				Space,
-				Rows.size(1).backgroundColor(`white`).children(
+				Rows.grow(1).backgroundColor(`white`).children(
 					Text.text(`Alert!`),
 					Text.text(`Here is the alert message...`),
 					Button.text(`Close`).onClick(p.hideAlert),

@@ -64,7 +64,7 @@ The image will always be drawn at the center of the `Image` component. Try resiz
 
 
 ## Resizing the image
-The `Image` will occupy the space given to it by the layout it's in (or the entire screen if the `Image` is the root component). If the layout hasn't given it a specific size (for example when using the `Image` component as a child in a :docs[Rows] or :docs[Columns] layout without calling `size()`), it will have the same size as the image itself.
+The `Image` will occupy the space given to it by the layout it's in (or the entire screen if the `Image` is the root component). If the layout hasn't given it a specific size (for example when using the `Image` component as a child in a :docs[Rows] or :docs[Columns] layout without calling `grow()`), it will have the same size as the image itself.
 
 
 ::: tip Example

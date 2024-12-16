@@ -55,7 +55,7 @@ class StartPage extends Page{
 
 :::
 
-You can make it taller by giving it a `size()`, but it's also possible to make it taller by giving it some padding on the top side and bottom side. *Padding* is simply some amount of space between the components edge and its content. Call the configuration method `padding()` to give the component some padding, and pass it:
+You can make it taller by giving it a `grow()`, but it's also possible to make it taller by giving it some padding on the top side and bottom side. *Padding* is simply some amount of space between the components edge and its content. Call the configuration method `padding()` to give the component some padding, and pass it:
 
 1. The number of millimeters padding you want the component to have
 2. A string indicating which sides of the component the padding should be added to:

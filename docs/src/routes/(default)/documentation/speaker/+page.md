@@ -136,10 +136,10 @@ class StartPage extends Page{
 			voices.map(
 				v => [
 					Columns.backgroundColor(`white`).cornerRadius(4).padding(1).children(
-						Text.size(2).text(v.name),
-						Text.size(2).text(v.languageCode),
-						Text.size(1).text(v.rate.toString()),
-						Text.size(1).text(v.pitch.toString()),
+						Text.grow(2).text(v.name),
+						Text.grow(2).text(v.languageCode),
+						Text.grow(1).text(v.rate.toString()),
+						Text.grow(1).text(v.pitch.toString()),
 					),
 					Box.height(2),
 				]
@@ -173,10 +173,10 @@ class StartPage extends Page{
 			voices.map(
 				v => [
 					Columns.backgroundColor(`white`).cornerRadius(4).padding(1).children(
-						Text.size(2).text(v.name),
-						Text.size(2).text(v.languageCode),
-						Text.size(1).text(v.rate.toString()),
-						Text.size(1).text(v.pitch.toString()),
+						Text.grow(2).text(v.name),
+						Text.grow(2).text(v.languageCode),
+						Text.grow(1).text(v.rate.toString()),
+						Text.grow(1).text(v.pitch.toString()),
 					),
 					Box.height(2),
 				]
@@ -223,7 +223,7 @@ class StartPage extends Page{
 				EnterNumber.number(p.pitch).store(p, `pitch`),
 			),
 			
-			Box.size(1).child(
+			Box.grow(1).child(
 				Rows.children(
 					voices.map(
 						v => Button.text(`${v.name} (${v.languageCode})`).stay().onClick(p.speak, v),

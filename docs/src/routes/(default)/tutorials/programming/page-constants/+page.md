@@ -27,9 +27,9 @@ class InfoPage extends Page{
 			Text.text(`Info about Arthur`),
 			Space,
 			Text.text(`Arthur is a human.`).left(),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`The answer to the "Ultimate Question of Life, the Universe, and Everything" was something Arthur learned.`).left(),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`Ford Prefect is good friend with Arthur, and he even saved Arthur's life.`).left(),
 			Space,
 		)
@@ -140,9 +140,9 @@ class InfoPage extends Page{
 			Text.text(`Info about ${p.NAME}`),
 			Space,
 			Text.text(`${p.NAME} is a human.`).left(),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`The answer to the "Ultimate Question of Life, the Universe, and Everything" was something ${p.NAME} learned.`).left(),
-			Space.size(0.05),
+			Space.grow(0.05),
 			Text.text(`Ford Prefect is good friend with ${p.NAME}, and he even saved ${p.NAME}'s life.`).left(),
 			Space,
 		)

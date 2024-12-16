@@ -206,7 +206,7 @@ class StartPage extends Page{
 
 
 
-## `child.size()` - Resizing the children
+## `child.grow()` - Making the children taller
 By default, all children (except :docs[Space] children, read more about this later) are tall enough to just surround their content, as shown below.
 
 ::: tip Example
@@ -225,7 +225,7 @@ class StartPage extends Page{
 
 :::
 
-If there is space left over in the `Rows` component after the children has become tall enough to contain their content, you can use the configuration method `size()` on the children to instruct them to grow taller and grab parts of this left over space. The number you pass to `size()` indicates how tall the component should be in relation to the other components, and then the left over space will be divided among the children based on this relation.
+If there is space left over in the `Rows` component after the children has become tall enough to contain their content, you can use the configuration method `grow()` on the children to instruct them to grow taller and grab parts of this left over space. The number you pass to `grow()` indicates how tall the child should be in relation to the other children, and then the left over space will be divided among the children based on this relation.
 
 ::: tip Example
 
@@ -235,9 +235,9 @@ Resize the screen for the app (only works on laptops/computers), and notice how 
 class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`yellow`).children(
-			Text.text(`I have size(1), so I might grow taller than my content`).backgroundColor(`lime`).size(1),
+			Text.text(`I have grow(1), so I might grow taller than my content`).backgroundColor(`lime`).grow(1),
 			Text.text(`I will be as tall as my content`).backgroundColor(`aqua`),
-			Text.text(`I have size(2), so I will be twice as tall as size(1) (if there is room for it)`).backgroundColor(`gold`).size(2),
+			Text.text(`I have grow(2), so I will be twice as tall as grow(1) (if there is room for it)`).backgroundColor(`gold`).grow(2),
 		)
 	}
 }
@@ -245,7 +245,7 @@ class StartPage extends Page{
 
 :::
 
-All children will have `size()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `size()` also on :docs[Space] children if you want it to be something else.
+All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
 
 ::: tip Example
 
@@ -255,11 +255,11 @@ Resize the screen for the app, and notice how the size of the children changes.
 class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`yellow`).children(
-			Space.backgroundColor(`red`), // This component has size(1) by default.
-			Text.text(`I have size(1)`).backgroundColor(`lime`).size(1),
-			Text.text(`I have no size()`).backgroundColor(`aqua`),
-			Space.size(2).backgroundColor(`silver`),
-			Text.text(`I have size(2)`).backgroundColor(`gold`).size(2),
+			Space.backgroundColor(`red`), // This component has grow(1) by default.
+			Text.text(`I have grow(1)`).backgroundColor(`lime`).grow(1),
+			Text.text(`I have no grow()`).backgroundColor(`aqua`),
+			Space.grow(2).backgroundColor(`silver`),
+			Text.text(`I have grow(2)`).backgroundColor(`gold`).grow(2),
 		)
 	}
 }

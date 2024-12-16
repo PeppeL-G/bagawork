@@ -88,10 +88,10 @@ Use the configuration method `page()` to specify which `Page` the user should co
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`Which is your favorite name?`),
+			Text.grow(1).text(`Which is your favorite name?`),
 			Columns.children(
 				EnterText
-					.size(1)
+					.grow(1)
 					.page(NormalNamePage)
 					.pageIfEqual(`Peter`, BeautifulNamePage)
 					.pageIfEqual(`Gargamel`, UglyNamePage)
@@ -165,9 +165,9 @@ class MyApp extends App{
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`What's your name?`),
+			Text.grow(1).text(`What's your name?`),
 			Columns.children(
-				EnterText.size(1).store(a, `name`).page(GreetingPage),
+				EnterText.grow(1).store(a, `name`).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)
@@ -214,9 +214,9 @@ class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Text.size(1).text(`What's your name?`),
+			Text.grow(1).text(`What's your name?`),
 			Columns.children(
-				EnterText.size(1).onChange(p.handleEnteredName).page(GreetingPage),
+				EnterText.grow(1).onChange(p.handleEnteredName).page(GreetingPage),
 				Button.text(`⇨`),
 			)
 		)
