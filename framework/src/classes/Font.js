@@ -8,6 +8,7 @@ export class Font{
 	_underline = false
 	_strikethrough = false
 	_size = -1
+	_sizeUnit = ``
 	
 	bold(){
 		
@@ -51,16 +52,33 @@ export class Font{
 		
 	}
 	
-	size(size){
+	sizeMm(size){
 		
 		validateArgs(
 			this,
-			"size",
+			"sizeMm",
 			["number"],
 			arguments,
 		)
 		
 		this._size = size
+		this._sizeUnit = `mm`
+		return this
+		
+	}
+	
+	sizeSw(size){
+		
+		validateArgs(
+			this,
+			"sizeSw",
+			["number"],
+			arguments,
+		)
+		
+		this._size = size
+		this._sizeUnit = `vw`
+		
 		return this
 		
 	}

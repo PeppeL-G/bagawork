@@ -3,6 +3,8 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Fixed bug where Button components didn't inherit font() from ancestors`,
+		`Renamed Font.size() to Font.sizeMm()`,
+		`Added Font.sizeSw()`,
 	],
 }, {
 	version: `0.0.48`,

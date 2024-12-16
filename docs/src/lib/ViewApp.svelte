@@ -1,39 +1,25 @@
 <script>
+	
 	export let project
 	
+	import ViewApp from "@bagawork/editor/src/components/ViewApp.svelte"
 	import { getCreateAppCode } from '@bagawork/editor/src/functions/get-create-app-code.js'
-	import { showAppInElement } from '@bagawork/framework'
 	import { browser } from '$app/environment'
-	
-	function showApp(screenElement) {
-		
-		const createAppCode = getCreateAppCode(
-			project.app,
-			project.pages,
-		)
-		
-		let stopApp = null
-		
-		showAppInElement(
-			createAppCode,
-			screenElement,
-		).then(s => stopApp = s)
-		
-		return {
-			destroy: stopApp,
-		}
-		
-	}
 	
 </script>
 
-{#if browser}
-	<div
-		use:showApp
-		class="screen"
-		translate="no"
-	/>
-{/if}
+<div class="screen" translate="no">
+	{#if browser}
+		<ViewApp
+			createAppCode={
+				getCreateAppCode(
+					project.app,
+					project.pages,
+				)
+			}
+		/>
+	{/if}
+</div>
 
 <style>
 	.screen {

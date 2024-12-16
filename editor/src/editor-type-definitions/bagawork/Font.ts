@@ -30,11 +30,18 @@ const Font = (() => new (
 		italic(){ return this };
 		
 		/**
-		 * This method sets the size the text should have (how tall it should be).
+		 * This method sets the size the text should have (how tall it should be) in millimeters.
 		 * 
 		 * @param sizeInMm The size of the text in millimeters
 		 */
-		size(sizeInMm: number) { return this };
+		sizeMm(sizeInMm: number) { return this };
+		
+		/**
+		 * This method sets the size the text should have (how tall it should be) as number of percentages of the width of the screen (sw = screen width).
+		 * 
+		 * @param sizeInSw The size of the text in sw units
+		 */
+		sizeSw(sizeInSw: number) { return this };
 		
 		/**
 		 * This methods makes the text show as a line through it.

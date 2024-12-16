@@ -75,9 +75,12 @@ The easiest way to create a BagaWork app is by creating it in our :online-editor
 		<title>My App</title>
 		<style>
 			
-			#screen{
-				width: 100px;
-				height: 300px;
+			/* Make the body element cover the entire screen. */
+			html, body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
 			}
 			
 		</style>
@@ -95,7 +98,7 @@ The easiest way to create a BagaWork app is by creating it in our :online-editor
 			
 			document.addEventListener('DOMContentLoaded', async function(){
 				
-				const screenElement = document.querySelector('#screen')
+				const screenElement = document.body
 				
 				// Read more about runtimeSettings further down.
 				const runtimeSettings = {}
@@ -117,12 +120,11 @@ The easiest way to create a BagaWork app is by creating it in our :online-editor
 		</script>
 	</head>
 	<body>
-		<div id="screen"></div>
 	</body>
 	</html>
 	```
 
-
+A BagaWork app is expected to run in an element with the same size as the entire webpage. The reason for this is because it internally uses the `vw` unit, and that one only works as expected if the BagaWork app has the same size on the screen as the webpage itself. If you want to have a BagaWork app running on a small part of a webpage, then run the BagaWork app in an `<iframe>`.
 
 
 ### Runtime settings
