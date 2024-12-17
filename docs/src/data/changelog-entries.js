@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changes: [],
+}, {
+	version: `0.0.49`,
+	date: `2024-12-17`,
 	changes: [
 		`Fixed bug where Button components didn't inherit font() from ancestors`,
 		`Renamed Font.size() to Font.sizeMm()`,
