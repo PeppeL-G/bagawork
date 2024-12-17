@@ -6,14 +6,30 @@ abstract class Component{
 	
 	/**
 	 * This method is only useful to call when the component is used as a
-	 * direct child in a Rows/Columns layout. It sets the amount of shares
-	 * of the remaining available space this child component should be
-	 * assigned by the Rows/Columns layout.
+	 * child in a Rows/Columns layout.
 	 * 
-	 * @param numberOfShares The number of shares of the remaining
-	 * available space this child component should occupy
+	 * If the children in the Rows/Columns layout don't occupy all the
+	 * space in the layout, then you can call this method on the children
+	 * to allow them to grow bigger. Pass it a number indicating the
+	 * preferred relative size/ratio they should have, and then the children
+	 * will grow bigger to try to honor this.
+	 * 
+	 * All children will use `0` as default, except the Space component,
+	 * which uses `1` as default.
+	 * 
+	 * @param preferredRelativeSize A number indicating how big this child should be relative to the other children
 	 */
-	size(numberOfShares: number){ return this };
+	grow(preferredRelativeSize: number){ return this };
+	
+	/**
+	 * This method is the same as `grow()` (so read the documentation for
+	 * that one), but this method will also make sure that the child never
+	 * grow bigger than the relative size you assign it. If the child's
+	 * content don't fit within this size, then the child becomes scrollable.
+	 * 
+	 * @param preferredRelativeSize A number indicating how big this child should be relative to the other children
+	 */
+	growMax(preferredRelativeSize: number){ return this };
 	
 	/**
 	 * This method sets the background color the GUI component will have.

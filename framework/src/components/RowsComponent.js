@@ -68,11 +68,20 @@ export class RowsComponent extends Component {
 		
 		this._onChildUpdated = () => {
 			rowsElement.style.gridTemplateRows = childComponents.map(
-				c => (
-					c.getGrow() == 0 ?
-					`max-content` :
-					`minmax(max-content, ${c.getGrow()}fr)`
-				)
+				c => {
+					
+					const childGrow = c.getGrow()
+					const childGrowMax = c.getGrowMax()
+					
+					if(childGrowMax){
+						return `${childGrow}fr`
+					}else if(childGrow == 0){
+						return `max-content`
+					}else{
+						return `minmax(max-content, ${childGrow}fr)`
+					}
+					
+				}
 			).join(` `)
 		}
 		

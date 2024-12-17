@@ -7,6 +7,7 @@ export class Component{
 	
 	_backgroundColor = `transparent`
 	_grow = 0
+	_growMax = false
 	_cornerRadius = 0
 	_showIf = true
 	_keepIf = true
@@ -38,6 +39,20 @@ export class Component{
 		)
 		
 		this._grow = grow
+		return this
+	}
+	
+	growMax(grow) {
+		
+		validateArgs(
+			this,
+			"growMax",
+			["number"],
+			arguments,
+		)
+		
+		this._grow = grow
+		this._growMax = true
 		return this
 	}
 	
@@ -168,6 +183,10 @@ export class Component{
 	
 	getGrow(){
 		return this._grow
+	}
+	
+	getGrowMax(){
+		return this._growMax
 	}
 	
 }

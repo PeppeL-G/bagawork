@@ -180,4 +180,8 @@ export class UpdaterComponent extends Component {
 		return this._child.getGrow()
 	}
 	
+	getGrowMax(){
+		return this._child.getGrowMax()
+	}
+	
 }

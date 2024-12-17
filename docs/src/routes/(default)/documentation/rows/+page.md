@@ -266,3 +266,42 @@ class StartPage extends Page{
 ```
 
 :::
+
+
+
+
+## `child.growMax()` - Making the children wider
+`child.growMax()` will set the child's height only from the left over space (if there is some) and the preferred size it should have relative to the other children. Its two main differences from `child.grow()` are:
+
+* The child will only be shown on the screen if some left over space exist (otherwise it will get the height `0`)
+* If the child's content don't fit within the space it has been assigned, it will become scrollable
+
+::: tip Example
+
+Compare the first example (using `growMax()`) with the second example (using `grow()`). Also make the app screen smaller for the first example, and you will see that `Row 2` totally disappears when there is no room for it.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`yellow`).children(
+			Text.text(`Row 1`).backgroundColor(`lime`),
+			Text.growMax(1).text(`Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2`).backgroundColor(`aqua`),
+			Text.text(`Row 3`).backgroundColor(`gold`),
+		)
+	}
+}
+```
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Rows.backgroundColor(`yellow`).children(
+			Text.text(`Row 1`).backgroundColor(`lime`),
+			Text.grow(1).text(`Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2 Row 2`).backgroundColor(`aqua`),
+			Text.text(`Row 3`).backgroundColor(`gold`),
+		)
+	}
+}
+```
+
+:::

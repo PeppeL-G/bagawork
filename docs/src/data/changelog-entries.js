@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Renamed Font.size() to Font.sizeMm()`,
 		`Added Font.sizeSw()`,
 		`Renamed Component.size() to Component.grow()`,
+		`Added Component.growMax()`,
 	],
 }, {
 	version: `0.0.48`,
