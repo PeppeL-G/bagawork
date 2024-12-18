@@ -15,7 +15,7 @@ This webpage only contains descriptions of the configuration methods that are sp
 
 
 ## Introduction
-The `Box` component is a layout that can have an optional child with a specific width and height specified by you in millimeters. So if you ever want to give a GUI component a specific width and height, just use it as a child in a `Box` component.
+The `Box` component is a layout that can have an optional child with a specific width and height specified by you. So if you ever want to give a GUI component a specific width and height, just use it as a child in a `Box` component.
 
 The `Box` component will by default be sized per the GUI layout you use it in or cover the entire screen if it's the root GUI component. But its child component can be smaller than that.
 
@@ -99,14 +99,14 @@ class StartPage extends Page{
 
 
 ## `width()` - Setting the width
-Use the configuration method `width()` to tell the `Box` component how many millimeters wide its child should be. Pass it the width as a number.
+Use the configuration method `width()` to tell the `Box` component how wide its child should be. Pass it the width as a number. See also :docs[Units].
 
 ::: tip Example
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(20).child(
+		return Box.backgroundColor(`red`).padding(1).width(33.33).child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -132,7 +132,7 @@ If you use the configuration method `width()`, the child will by default be cent
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(20).left().child(
+		return Box.backgroundColor(`red`).padding(1).width(33.33).left().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -153,7 +153,7 @@ If you use the configuration method `width()`, the child will by default be cent
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(20).right().child(
+		return Box.backgroundColor(`red`).padding(1).width(33.33).right().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -165,14 +165,14 @@ class StartPage extends Page{
 
 
 ## `height()` - Setting the height
-Use the configuration method `height()` to tell the `Box` component how many millimeters tall its child should be. Pass it the height as a number.
+Use the configuration method `height()` to tell the `Box` component how tall its child should be. Pass it the height as a number.  See also :docs[Units].
 
 ::: tip Example
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(20).child(
+		return Box.backgroundColor(`red`).padding(1).height(50).child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -198,7 +198,7 @@ If you use the configuration method `height()`, the child will by default be cen
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(20).top().child(
+		return Box.backgroundColor(`red`).padding(1).height(50).top().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -219,7 +219,7 @@ If you use the configuration method `height()`, the child will by default be cen
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(20).bottom().child(
+		return Box.backgroundColor(`red`).padding(1).height(50).bottom().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -243,8 +243,8 @@ Instead of giving the `Box` component an explicit width and height, you can use 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(30).aspectRatio(1, 2).child(
-			Text.backgroundColor(`lime`).text(`Width is 30mm, the aspect ratio is 1:2 (i.e. the height should be twice as big as the width), so the height is computed as 60mm.`)
+		return Box.backgroundColor(`red`).padding(1).width(50).aspectRatio(1, 2).child(
+			Text.backgroundColor(`lime`).text(`Width is 50sw, the aspect ratio is 1:2 (i.e. the height should be twice as big as the width), so the height is computed as 100sw.`)
 		)
 	}
 }

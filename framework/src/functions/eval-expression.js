@@ -27,6 +27,7 @@ import {
 import { m } from '../variables/m.js'
 import { speaker } from '../variables/speaker.js'
 import { createPageCreator } from './create-page-creator.js'
+import { mm } from './mm.js'
 
 export function evalExpression(jsExpressionAsString) {
 	
@@ -45,6 +46,7 @@ export function evalExpression(jsExpressionAsString) {
 		//Image,
 		Layers,
 		m,
+		mm,
 		Page,
 		Paper,
 		PaperLine,

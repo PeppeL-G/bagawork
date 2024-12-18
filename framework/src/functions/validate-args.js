@@ -101,6 +101,10 @@ function getGeneralTypeName(value){
 		return value._generalTypeName
 	}
 	
+	if(value instanceof Number){
+		return `number`
+	}
+	
 	if(value instanceof Font){
 		return `Font`
 	}

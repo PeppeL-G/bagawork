@@ -266,6 +266,9 @@
 			}, {
 				text: 'Text Symbols',
 				href: '/documentation/text-symbols/',
+			}, {
+				text: 'Units',
+				href: '/documentation/units/',
 			}],
 		}],
 		

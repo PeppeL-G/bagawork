@@ -41,7 +41,7 @@ abstract class Component{
 	/**
 	 * This method sets the corner radius the GUI component will have.
 	 * 
-	 * @param radius The radius of the corner in millimeter
+	 * @param radius The radius of the corner
 	 */
 	cornerRadius(radius: number){ return this };
 	
@@ -55,7 +55,6 @@ abstract class Component{
 	 * different sides different amounts of padding.
 	 * 
 	 * @param amount The amount of padding the component should have
-	 * in millimeters
 	 * @param sides A string indicating which sides of the component
 	 * the padding should be applied to. Write:
 	 * 
@@ -77,7 +76,7 @@ abstract class Component{
 	 * This configuration method can be called multiple times to give
 	 * different sides different borders.
 	 * 
-	 * @param thickness The thickness of the border in millimeters
+	 * @param thickness The thickness of the border
 	 * @param color The color of the border in English, such as `red`
 	 * @param sides A string indicating which sides of the component
 	 * the border should be added to. Write:

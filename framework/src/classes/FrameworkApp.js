@@ -779,6 +779,7 @@ export class FrameworkApp{
 		appElement.style.display = 'block'
 		appElement.style.height = '100%'
 		appElement.style.backgroundColor = 'aqua'
+		appElement.style.fontSize = `8vw`
 		
 		if(this.runtimeSettings.isPreview){
 			appElement.setAttribute(`inert`, ``)

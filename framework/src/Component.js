@@ -1,3 +1,4 @@
+import { getNumberWithUnit } from "./functions/get-number-with-unit.js"
 import { throwArgError, validateArgs } from "./functions/validate-args.js"
 
 export class Component{
@@ -8,7 +9,7 @@ export class Component{
 	_backgroundColor = `transparent`
 	_grow = 0
 	_growMax = false
-	_cornerRadius = 0
+	_cornerRadius = `0vw`
 	_showIf = true
 	_keepIf = true
 	_font = null
@@ -65,7 +66,7 @@ export class Component{
 			arguments,
 		)
 		
-		this._cornerRadius = cornerRadius
+		this._cornerRadius = getNumberWithUnit(cornerRadius)
 		return this
 	}
 	
@@ -95,15 +96,15 @@ export class Component{
 		return this
 	}
 	
-	_paddingLeft = 0
-	_paddingRight = 0
-	_paddingTop = 0
-	_paddingBottom = 0
+	_paddingLeft = `0vw`
+	_paddingRight = `0vw`
+	_paddingTop = `0vw`
+	_paddingBottom = `0vw`
 	
-	padding(amountInMm, sides = `lrtb`) {
+	padding(amount, sides = `lrtb`) {
 		
 		if(arguments.length == 1){
-			return this.padding(amountInMm, sides)
+			return this.padding(amount, sides)
 		}
 		
 		validateArgs(
@@ -117,22 +118,31 @@ export class Component{
 			throwArgError(this, "padding", `as the second argument, you passed it ${JSON.stringify(sides)}, but it may only contain the letters l, r, t and b`)
 		}
 		
-		this._paddingLeft   = sides.includes(`l`) ? amountInMm : this._paddingLeft
-		this._paddingRight  = sides.includes(`r`) ? amountInMm : this._paddingRight
-		this._paddingTop    = sides.includes(`t`) ? amountInMm : this._paddingTop
-		this._paddingBottom = sides.includes(`b`) ? amountInMm : this._paddingBottom
+		if(sides.includes(`l`)){
+			this._paddingLeft = getNumberWithUnit(amount)
+		}
+		if(sides.includes(`r`)){
+			this._paddingRight = getNumberWithUnit(amount)
+		}
+		if(sides.includes(`t`)){
+			this._paddingTop = getNumberWithUnit(amount)
+		}
+		if(sides.includes(`b`)){
+			this._paddingBottom = getNumberWithUnit(amount)
+		}
+		
 		return this
 	}
 	
-	_borderLeft   = [0, `black`]
-	_borderRight  = [0, `black`]
-	_borderTop    = [0, `black`]
-	_borderBottom = [0, `black`]
+	_borderLeft   = `0vw solid black`
+	_borderRight  = `0vw solid black`
+	_borderTop    = `0vw solid black`
+	_borderBottom = `0vw solid black`
 	
-	border(amountInMm, color, sides = `lrtb`) {
+	border(thickness, color, sides = `lrtb`) {
 		
 		if (arguments.length == 2) {
-			return this.border(amountInMm, color, sides)
+			return this.border(thickness, color, sides)
 		}
 		
 		validateArgs(
@@ -146,10 +156,19 @@ export class Component{
 			throwArgError(this, "border", `as the third argument, you passed it ${JSON.stringify(sides)}, but it may only contain the letters l, r, t and b`)
 		}
 		
-		this._borderLeft   = sides.includes(`l`) ? [amountInMm, color] : this._borderLeft
-		this._borderRight  = sides.includes(`r`) ? [amountInMm, color] : this._borderRight
-		this._borderTop    = sides.includes(`t`) ? [amountInMm, color] : this._borderTop
-		this._borderBottom = sides.includes(`b`) ? [amountInMm, color] : this._borderBottom
+		if(sides.includes(`l`)){
+			this._borderLeft = `${getNumberWithUnit(thickness)} solid ${color}`
+		}
+		if(sides.includes(`r`)){
+			this._borderRight = `${getNumberWithUnit(thickness)} solid ${color}`
+		}
+		if(sides.includes(`t`)){
+			this._borderTop = `${getNumberWithUnit(thickness)} solid ${color}`
+		}
+		if(sides.includes(`b`)){
+			this._borderBottom = `${getNumberWithUnit(thickness)} solid ${color}`
+		}
+		
 		return this
 	}
 	

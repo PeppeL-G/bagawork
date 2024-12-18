@@ -114,7 +114,7 @@ class StartPage extends Page{
 
 
 ## The `Box` layout
-Sometimes you might want your GUI Component to have a specific width and height. Then you should use the `Box` layout. Unlike the `Rows`, `Columns` and `Layers` layouts, the `Box` layout can only have one child, and that child will have the specific size you specify by calling the configuration methods `width()` and `height()` on the `Box` layout (pass them the size expressed in number of millimeters). Pass it it's child by calling the configuration method `child()`.
+Sometimes you might want your GUI Component to have a specific width and height. Then you should use the `Box` layout. Unlike the `Rows`, `Columns` and `Layers` layouts, the `Box` layout can have only one child, and that child will have the specific size you specify by calling the configuration methods `width()` and `height()` on the `Box` layout (pass them the size expressed as a number). Pass it it's child by calling the configuration method `child()`.
 
 ::: tip Example
 
@@ -136,9 +136,9 @@ class StartPage extends Page{
 
 :::
 
-The `Box` will by default have the size given to it by its parent layout, so you only need to call `width()` and `height()` if you want the `Box` to have a specific number of millimeters size specified by you.
+The `Box` will by default have the size given to it by its parent layout, so you only need to call `width()` and `height()` if you want the `Box` to have a specific size specified by you.
 
-Further more, it is also possible to use the configuration method `aspectRatio()` to set it's width/height based on the other one it has. For example, using `aspectRatio(3, 1)` means that the width should be 3 times as big as its height, so if you also use `height(15)`, it would get the width 45 millimeters.
+Further more, it is also possible to use the configuration method `aspectRatio()` to set it's width/height based on the other one it has. For example, using `aspectRatio(3, 1)` means that the width should be 3 times as big as its height, so if you also use `height(15)`, it would get the width `45`.
 
 ::: tip Example
 
@@ -191,7 +191,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Text.text(`There is 10 millimeters extra...`),
+			Text.text(`There is 10 extra...`),
 			Box.height(10),
 			Text.text(`...space between these two texts!`),
 			Space,

@@ -31,9 +31,9 @@ const Box = (() => new (
 		child(theChild: Component){ return this };
 		
 		/**
-		 * This method sets the height the child should have in millimeters.
+		 * This method sets the height the child should have.
 		 * 
-		 * @param theHeight The width the child should have in millimeters
+		 * @param theHeight The height the child should have
 		 */
 		height(theHeight: number) { return this };
 		
@@ -59,9 +59,9 @@ const Box = (() => new (
 		top() { return this }
 		
 		/**
-		 * This method sets the width the child should have in millimeters.
+		 * This method sets the width the child should have.
 		 * 
-		 * @param theWidth The width the child should have in millimeters
+		 * @param theWidth The width the child should have
 		 */
 		width(theWidth: number){ return this };
 		

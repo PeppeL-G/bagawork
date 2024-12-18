@@ -38,7 +38,7 @@ Often, you want the `Paper` to be of a certain size. That can easily be achieved
 
 :::tip Example
 
-Example of a `Paper` component instance put in a :docs[Box] component instance to make it 30mm wide and 50mm tall.
+Example of a `Paper` component instance put in a :docs[Box] component instance to make it 30 wide and 50 tall.
 
 ```js baga-show-editor-code
 class StartPage extends Page{

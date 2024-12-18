@@ -1,4 +1,5 @@
 import { validateArgs } from "../functions/validate-args.js"
+import { getNumberWithUnit } from "../functions/get-number-with-unit.js"
 
 export class Font{
 	
@@ -7,8 +8,7 @@ export class Font{
 	_italic = false
 	_underline = false
 	_strikethrough = false
-	_size = -1
-	_sizeUnit = ``
+	_size = `inherit`
 	
 	bold(){
 		
@@ -52,33 +52,16 @@ export class Font{
 		
 	}
 	
-	sizeMm(size){
+	size(size){
 		
 		validateArgs(
 			this,
-			"sizeMm",
+			"size",
 			["number"],
 			arguments,
 		)
 		
-		this._size = size
-		this._sizeUnit = `mm`
-		return this
-		
-	}
-	
-	sizeSw(size){
-		
-		validateArgs(
-			this,
-			"sizeSw",
-			["number"],
-			arguments,
-		)
-		
-		this._size = size
-		this._sizeUnit = `vw`
-		
+		this._size = getNumberWithUnit(size)
 		return this
 		
 	}

@@ -1,7 +1,14 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Made the sw unit the default unit for numbers that uses mm/sw`,
+		`Added the mm() function`,
+		`Removed Font.sizeMm()`,
+		`Removed Font.sizeSw()`,
+		`Added Font.size()`,
+		`Added the Units docs page`,
+	],
 }, {
 	version: `0.0.49`,
 	date: `2024-12-17`,

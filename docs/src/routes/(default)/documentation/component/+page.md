@@ -43,9 +43,9 @@ different sides of the component different type of borders.
 
 The parameters:
 
-* `thickness` - A number indicating how many millimeters thick the border should be
-* `color` - The English name of a color the border should have, e.g.  `` `blue` ``
-* `sides` - A string indicating which sides of the component the bord should be added to. Write:
+* `thickness` - A number indicating how thick the border should be (for more information, see :docs[Units])
+* `color` - The English name of a color the border should have, e.g. `` `blue` ``
+* `sides` - A string indicating which sides of the component the border should be added to. Write:
 	* `t` in the string to add it to the **T**op side
 	* `b` in the string to add it to the **B**ottom side
 	* `l` in the string to add it to the **L**eft side
@@ -63,7 +63,7 @@ class StartPage extends Page{
 		return Text
 			.backgroundColor(`red`)
 			.border(5, `blue`)
-			.text(`This component has a 5mm thick blue border on all sides.`)
+			.text(`This component has a 5 thick blue border on all sides.`)
 	}
 	
 }
@@ -195,7 +195,6 @@ This configuration method can be called multiple times to give different sides o
 The parameters:
 
 * `amount` - The amount of padding the component should have
-in millimeters
 * `sides` - A string indicating which sides of the component the padding should be applied to. Write:
 	* `t` in the string to include the **T**op side
 	* `b` in the string to include the **B**ottom side
@@ -214,7 +213,7 @@ class StartPage extends Page{
 		return Text
 			.backgroundColor(`red`)
 			.padding(15)
-			.text(`This component has 15mm padding on all sides.`)
+			.text(`This component has 15 padding on all sides.`)
 	}
 	
 }
@@ -233,7 +232,7 @@ class StartPage extends Page{
 			.padding(20, `tb`)
 			.padding(10, `lr`)
 			.top()
-			.text(`This component has 20mm padding on the top side and bottom side, and 10mm padding on the left and right side.`)
+			.text(`This component has 20 padding on the top side and bottom side, and 10 padding on the left and right side.`)
 	}
 	
 }

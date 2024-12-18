@@ -4,13 +4,14 @@ import { validateArgs } from '../functions/validate-args.js'
 import { RowsComponent } from './RowsComponent.js'
 import { ColumnsComponent } from './ColumnsComponent.js'
 import { FrameworkPage } from '../classes/FrameworkPage.js'
+import { getNumberWithUnit } from '../functions/get-number-with-unit.js'
 
 export class BoxComponent extends Component {
 	
 	_specificTypeName = `Box`
 	
-	_width = -1
-	_height = -1
+	_width = ``
+	_height = ``
 	_left = false
 	_right = false
 	_top = false
@@ -28,7 +29,7 @@ export class BoxComponent extends Component {
 			arguments,
 		)
 		
-		this._width = width
+		this._width = getNumberWithUnit(width)
 		return this
 	}
 	
@@ -41,7 +42,7 @@ export class BoxComponent extends Component {
 			arguments,
 		)
 		
-		this._height = height
+		this._height = getNumberWithUnit(height)
 		return this
 	}
 	
@@ -167,15 +168,15 @@ export class BoxComponent extends Component {
 				)
 				childElement.style.aspectRatio = `var(--aspect-ratio)`
 				
-				if (this._width == -1){
+				if (this._width == ``){
 					childElement.style.width = `auto`
 				}
 				
-				if (this._height == -1){
+				if (this._height == ``){
 					childElement.style.height = `auto`
 				}
 				
-				if (this._width == -1 && this._height == -1) {
+				if (this._width == `` && this._height == ``) {
 					if (parentComponent instanceof RowsComponent) {
 						childElement.style.width = `100%`
 						childElement.style.maxWidth = `100%`
@@ -192,15 +193,15 @@ export class BoxComponent extends Component {
 				
 			}
 			
-			if (this._width != -1 && this._height != -1) {
+			if (this._width != `` && this._height != ``) {
 				boxElement.style.overflow = "auto"
 			}
 			
-			if (this._width != -1) {
-				childElement.style.width = `${this._width}mm`
+			if (this._width != ``) {
+				childElement.style.width = this._width
 			}
-			if (this._height != -1) {
-				childElement.style.height = `${this._height}mm`
+			if (this._height != ``) {
+				childElement.style.height = this._height
 			}
 			
 			if (this._top) {
@@ -220,11 +221,11 @@ export class BoxComponent extends Component {
 		
 		if(!this._child){
 			
-			if (this._width != -1) {
-				boxElement.style.width = `${this._width}mm`
+			if (this._width != ``) {
+				boxElement.style.width = this._width
 			}
-			if (this._height != -1) {
-				boxElement.style.height = `${this._height}mm`
+			if (this._height != ``) {
+				boxElement.style.height = this._height
 			}
 			
 		}

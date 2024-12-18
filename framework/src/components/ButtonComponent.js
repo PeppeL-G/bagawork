@@ -20,9 +20,9 @@ export class ButtonComponent extends Component{
 	constructor(){
 		super()
 		this.backgroundColor(`#e7e7e7`)
-		this.border(0.5, `black`)
-		this.cornerRadius(2)
-		this.padding(1, `tb`).padding(2, `lr`)
+		this.border(0.8, `black`)
+		this.cornerRadius(5)
+		this.padding(2.5, `t`).padding(1.5, `b`).padding(4, `lr`)
 	}
 	
 	text(text) {
