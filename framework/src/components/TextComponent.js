@@ -104,6 +104,7 @@ export class TextComponent extends Component{
 		textElement.style.overflow = 'auto'
 		
 		const contentElement = document.createElement(`span`)
+		contentElement.style.maxWidth = `100%`
 		contentElement.style.maxHeight = `100%`
 		
 		// Fix HTML.
