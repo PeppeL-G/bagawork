@@ -29,7 +29,7 @@ abstract class Component{
 	 * 
 	 * @param preferredRelativeSize A number indicating how big this child should be relative to the other children
 	 */
-	growMax(preferredRelativeSize: number){ return this };
+	growShrink(preferredRelativeSize: number){ return this };
 	
 	/**
 	 * This method sets the background color the GUI component will have.

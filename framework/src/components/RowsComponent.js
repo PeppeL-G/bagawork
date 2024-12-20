@@ -71,9 +71,9 @@ export class RowsComponent extends Component {
 				c => {
 					
 					const childGrow = c.getGrow()
-					const childGrowMax = c.getGrowMax()
+					const childGrowShrink = c.getGrowShrink()
 					
-					if(childGrowMax){
+					if(childGrowShrink){
 						return `${childGrow}fr`
 					}else if(childGrow == 0){
 						return `max-content`

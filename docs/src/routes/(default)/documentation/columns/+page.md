@@ -249,35 +249,99 @@ class StartPage extends Page{
 
 
 
-## `child.growMax()` - Making the children wider
-`child.growMax()` will set the child's width only from the left over space (if there is some) and the preferred size it should have relative to the other children. Its two main differences from `child.grow()` are:
-
-* The child will only be shown on the screen if some left over space exist (otherwise it will get the width `0`)
-* If the child's content don't fit within the space it has been assigned, it will become scrollable
+## `child.growShrink()` - Making the children wider or thinner
+`child.growShrink()` works the same way as `child.grow()` when there is much space left over in the parent layout (both methods indicate the child may grow bigger if there's room for that), but when there is no/little space left over in the parent layout, then this method indicates the child may shrink and let the child content become scrollable.
 
 ::: tip Example
 
-Compare the first example (using `growMax()`) with the second example (using `grow()`). Also make the app screen smaller for the first example, and you will see that `Col 2` totally disappears when there is no room for it.
+In this example, we use `grow()` on a child, so you can compare how it differs from `growShrink()` in the next example.
+
+Try making the height of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 2` never becomes shorter than its content, and the scroll is added to the root component (the `Columns` component).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).children(
+		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
 			Text.text(`Col 1`).backgroundColor(`lime`),
-			Text.growMax(1).text(`Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2`).backgroundColor(`aqua`),
+			Text.grow(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 			Text.text(`Col 3`).backgroundColor(`gold`),
 		)
 	}
 }
 ```
 
+:::
+
+::: tip Example
+
+This code is the same as in the previous example, but we use `growShrink()` instead of `grow()`.
+
+Try making the height of the app screen below shorter, and you will see that the height of `Col 2` shrinks, and its content becomes scrollable.
+
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).children(
+		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
 			Text.text(`Col 1`).backgroundColor(`lime`),
-			Text.grow(1).text(`Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2 Col 2`).backgroundColor(`aqua`),
+			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 			Text.text(`Col 3`).backgroundColor(`gold`),
+		)
+	}
+}
+```
+
+:::
+
+::: tip Example
+
+In this example, we use `grow()` on two children, so you can compare how it differs from `growShrink()` in the next example.
+
+Try making the height of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 1` and `Col 2` never becomes shorter than their content, and the scroll is added to the root component (the `Cols` component).
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+			Text.grow(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
+			Text.grow(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
+		)
+	}
+}
+```
+
+:::
+
+::: tip Example
+
+This code is the same as in the previous example, but we use `growShrink()` instead of `grow()`.
+
+Try making the height of the app screen below shorter, and you will see that the height of `Col 1` `Col 2` shrinks, and its content becomes scrollable.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+			Text.growShrink(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
+			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
+		)
+	}
+}
+```
+
+:::
+
+::: tip Example
+
+This code is the same as in the two previous examples, but we use `grow()` on one child, and `growShrink()` on the other child.
+
+Try making the height of the app screen below shorter, and you will see that the height of `Col 1` never becomes smaller than its content, and `Col 2` shrinks, and its content becomes scrollable.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+			Text.grow(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
+			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 		)
 	}
 }

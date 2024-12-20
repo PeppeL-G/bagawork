@@ -9,6 +9,7 @@ export const changelogEntries = [{
 		`Added Font.size()`,
 		`Added the Units docs page`,
 		`Fixed a bug where the Text component didn't show all of its text if it overflowed`,
+		`Renamed Component.growMax() to Component.growShrink()`,
 	],
 }, {
 	version: `0.0.49`,

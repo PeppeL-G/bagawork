@@ -8,7 +8,7 @@ export class Component{
 	
 	_backgroundColor = `transparent`
 	_grow = 0
-	_growMax = false
+	_growShrink = false
 	_cornerRadius = `0vw`
 	_showIf = true
 	_keepIf = true
@@ -43,17 +43,17 @@ export class Component{
 		return this
 	}
 	
-	growMax(grow) {
+	growShrink(grow) {
 		
 		validateArgs(
 			this,
-			"growMax",
+			"growShrink",
 			["number"],
 			arguments,
 		)
 		
 		this._grow = grow
-		this._growMax = true
+		this._growShrink = true
 		return this
 	}
 	
@@ -204,8 +204,8 @@ export class Component{
 		return this._grow
 	}
 	
-	getGrowMax(){
-		return this._growMax
+	getGrowShrink(){
+		return this._growShrink
 	}
 	
 }
