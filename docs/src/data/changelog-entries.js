@@ -8,6 +8,7 @@ export const changelogEntries = [{
 		`Removed Font.sizeSw()`,
 		`Added Font.size()`,
 		`Added the Units docs page`,
+		`Fixed a bug where the Text component didn't show all of its text if it overflowed`,
 	],
 }, {
 	version: `0.0.49`,
