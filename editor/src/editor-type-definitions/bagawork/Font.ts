@@ -30,11 +30,11 @@ const Font = (() => new (
 		italic(){ return this };
 		
 		/**
-		 * This method sets the size the text should have (how tall it should be).
+		 * This method sets the size the text should have (how tall it should be). The default unit is sw. Use the mm() function to use millimeters instead.
 		 * 
 		 * @param size The size of the text
 		 */
-		sizeMm(size: number) { return this };
+		size(size: number) { return this };
 		
 		/**
 		 * This methods makes the text show as a line through it.
