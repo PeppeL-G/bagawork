@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Changed BagaWork apps' default background color to white`,
+		`Added smartphone frames around screens running BagaWork apps on the docs website`,
 	],
 }, {
 	version: `0.0.50`,
