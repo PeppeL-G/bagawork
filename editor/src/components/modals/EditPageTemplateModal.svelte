@@ -9,7 +9,8 @@
 	import ViewApp from '../ViewApp.svelte'
 	import { getCreateAppCode } from '../../functions/get-create-app-code.js'
 	import MonacoLoader from '../MonacoLoader.svelte'
-	import { getClassName } from '../../functions/get-class-name.js';
+	import { getClassName } from '../../functions/get-class-name.js'
+	import SmartphoneFrame from '../SmartphoneFrame.svelte'
 	
 	const pageTemplate = $pageTemplates.find(
 		pt => pt.id == pageTemplateId,
@@ -130,20 +131,24 @@
 		
 		<div class="preview-section">
 			
-			<div
-				class="app-component"
-				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
-				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
-			>
-				{#key forceAppRestartKey}
-					<ViewApp
-						createAppCode={getCreateAppCode(
-							$app,
-							$pages,
-							{code: pageTemplate.code},
-						)}
-					/>
-				{/key}
+			<div class="app-component">
+				<SmartphoneFrame>
+					<div
+						class="screen"
+						style:width="{$editorSettings.codeScreen.widthInMm}mm"
+						style:height="{$editorSettings.codeScreen.heightInMm}mm"
+					>
+						{#key forceAppRestartKey}
+							<ViewApp
+								createAppCode={getCreateAppCode(
+									$app,
+									$pages,
+									{code: pageTemplate.code},
+								)}
+							/>
+						{/key}
+					</div>
+				</SmartphoneFrame>
 			</div>
 			
 			<div class="preview-buttons">
@@ -189,7 +194,7 @@
 	border-radius: 1em;
 	gap: 0.5em;
 	display: grid;
-	grid-template-columns: auto 1fr ;
+	grid-template-columns: auto minmax(0, 1fr);
 	grid-template-rows: auto 1fr;
 	align-items: center;
 	height: 100%;
@@ -240,10 +245,7 @@
 	height: 100%;
 }
 
-.app-component{
-	margin: 0 auto;
-	background-color: aqua;
-	border: 5px solid black;
+.screen{
 	resize: both;
 	overflow: hidden;
 }

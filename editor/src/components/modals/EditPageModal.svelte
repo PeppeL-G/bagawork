@@ -12,6 +12,7 @@
 	import TabIcon from './edit-page-components/TabIcon.svelte'
 	import CodeEditorForPageAndApp from './edit-page-components/CodeEditorForPageAndApp.svelte'
 	import MonacoLoader from '../MonacoLoader.svelte'
+	import SmartphoneFrame from '../SmartphoneFrame.svelte'
 	
 	$: page = $pages.find(p => p.id == pageId)
 	
@@ -143,17 +144,21 @@
 		
 		<div class="preview-child">
 			
-			<div
-				class="app-component"
-				style:width={`${$editorSettings.codeScreen.widthInMm}mm`}
-				style:height={`${$editorSettings.codeScreen.heightInMm}mm`}
-			>
-				{#key forceRestartAppKey}
-					<ViewApp
-						createAppCode={getNoneReactiveCreateAppCode()}
-						runtimeSettings={getRuntimeSettings()}
-					/>
-				{/key}
+			<div class="app-component">
+				<SmartphoneFrame>
+					<div
+						width="{$editorSettings.codeScreen.widthInMm}mm"
+						height="{$editorSettings.codeScreen.heightInMm}mm"
+						class="screen"
+					>
+						{#key forceRestartAppKey}
+							<ViewApp
+								createAppCode={getNoneReactiveCreateAppCode()}
+								runtimeSettings={getRuntimeSettings()}
+							/>
+						{/key}
+					</div>
+				</SmartphoneFrame>
 			</div>
 			
 			<div class="preview-buttons">
@@ -227,7 +232,7 @@
 	background-color: aqua;
 	border-radius: 1em;
 	display: grid;
-	grid-template-columns: min-content 1fr;
+	grid-template-columns: min-content minmax(0, 1fr);
 	grid-template-rows: auto 1fr;
 	align-items: center;
 	height: 100%;
@@ -241,10 +246,7 @@
 		padding: 0.5em;
 		margin-bottom: 1em;
 		
-		& .app-component{
-			margin: 0 auto;
-			background-color: aqua;
-			border: 5px solid black;
+		& .screen{
 			resize: both;
 			overflow: hidden;
 		}

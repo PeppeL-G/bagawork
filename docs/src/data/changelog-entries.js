@@ -4,6 +4,8 @@ export const changelogEntries = [{
 	changes: [
 		`Changed BagaWork apps' default background color to white`,
 		`Added smartphone frames around screens running BagaWork apps on the docs website`,
+		`Added smartphone frames around screens in the editor`,
+		`Fixed problem with the code editor becoming too wide when resizing the screen in the editor`,
 	],
 }, {
 	version: `0.0.50`,
