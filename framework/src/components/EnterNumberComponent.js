@@ -245,6 +245,7 @@ export class EnterNumberComponent extends Component{
 		
 		const inputElement = document.createElement('input')
 		inputElement.type = `text`
+		inputElement.setAttribute(`size`, `1`)
 		inputElement.style.display = 'block'
 		inputElement.style.width = '100%'
 		inputElement.style.height = '100%'

@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added smartphone frames around screens running BagaWork apps on the docs website`,
 		`Added smartphone frames around screens in the editor`,
 		`Fixed problem with the code editor becoming too wide when resizing the screen in the editor`,
+		`Made the default width of EnterText and EnterNumber smaller`,
 	],
 }, {
 	version: `0.0.50`,

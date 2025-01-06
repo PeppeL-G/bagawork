@@ -154,6 +154,7 @@ export class EnterTextComponent extends Component{
 		enterTextElement.style.width = "100%"
 		
 		const inputElement = document.createElement('input')
+		inputElement.setAttribute(`size`, `1`)
 		inputElement.style.display = 'block'
 		inputElement.style.boxSizing = 'border-box'
 		inputElement.style.width = '100%'
