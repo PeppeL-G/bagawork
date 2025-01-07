@@ -27,7 +27,7 @@ If you want, <a href="/run#eNrVWltv47gV/iuMUCAOoAqW7w7aBju702labKbYZDEdNAuElmiJa
 
 ## How to create an app?
 We have developed an :online-editor you can use to create your BagaWork apps in. However, instead of using the online editor on this website (the documentation website for BagaWork), you probably want to create an account at our [BagaLand](https://bagaland.com/) website, where you can also save your apps online and let other users install them on their devices.
-]
+
 ---
 
 ## How to install an app?
