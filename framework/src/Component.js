@@ -96,10 +96,10 @@ export class Component{
 		return this
 	}
 	
-	_paddingLeft = `0vw`
-	_paddingRight = `0vw`
-	_paddingTop = `0vw`
-	_paddingBottom = `0vw`
+	_paddingLeft = `0mm`
+	_paddingRight = `0mm`
+	_paddingTop = `0mm`
+	_paddingBottom = `0mm`
 	
 	padding(amount, sides = `lrtb`) {
 		
@@ -134,10 +134,10 @@ export class Component{
 		return this
 	}
 	
-	_borderLeft   = `0vw solid black`
-	_borderRight  = `0vw solid black`
-	_borderTop    = `0vw solid black`
-	_borderBottom = `0vw solid black`
+	_borderLeft   = `0mm solid black`
+	_borderRight  = `0mm solid black`
+	_borderTop    = `0mm solid black`
+	_borderBottom = `0mm solid black`
 	
 	border(thickness, color, sides = `lrtb`) {
 		

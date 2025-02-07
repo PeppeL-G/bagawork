@@ -1,8 +1,8 @@
-export function mm(number){
+export function sw(number){
 	
 	const numberWithUnit = new Number(number)
 	
-	numberWithUnit.unit = `mm`
+	numberWithUnit.unit = `vw`
 	
 	return numberWithUnit
 	

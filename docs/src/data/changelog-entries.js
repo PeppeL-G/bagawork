@@ -7,6 +7,7 @@ export const changelogEntries = [{
 		`Added smartphone frames around screens in the editor`,
 		`Fixed problem with the code editor becoming too wide when resizing the screen in the editor`,
 		`Made the default width of EnterText and EnterNumber smaller`,
+		`Made the mm unit the default unit for numbers that uses mm/sw`,
 	],
 }, {
 	version: `0.0.50`,

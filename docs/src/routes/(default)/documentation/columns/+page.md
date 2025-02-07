@@ -261,7 +261,7 @@ Try making the height of the app screen below shorter, and you will see that the
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+		return Columns.backgroundColor(`yellow`).children(
 			Text.text(`Col 1`).backgroundColor(`lime`),
 			Text.grow(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 			Text.text(`Col 3`).backgroundColor(`gold`),
@@ -281,7 +281,7 @@ Try making the height of the app screen below shorter, and you will see that the
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+		return Columns.backgroundColor(`yellow`).children(
 			Text.text(`Col 1`).backgroundColor(`lime`),
 			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 			Text.text(`Col 3`).backgroundColor(`gold`),
@@ -301,7 +301,7 @@ Try making the height of the app screen below shorter, and you will see that the
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+		return Columns.backgroundColor(`yellow`).children(
 			Text.grow(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
 			Text.grow(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 		)
@@ -320,7 +320,7 @@ Try making the height of the app screen below shorter, and you will see that the
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+		return Columns.backgroundColor(`yellow`).children(
 			Text.growShrink(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
 			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 		)
@@ -339,7 +339,7 @@ Try making the height of the app screen below shorter, and you will see that the
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Columns.backgroundColor(`yellow`).font(Font.size(mm(4))).children(
+		return Columns.backgroundColor(`yellow`).children(
 			Text.grow(1).text(`Col 1 Col 1`).backgroundColor(`lime`),
 			Text.growShrink(1).text(`Col 2 Col 2`).backgroundColor(`aqua`),
 		)
