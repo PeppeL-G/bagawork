@@ -36,6 +36,7 @@
 	.device-wrapper{
 		
 		text-align: center;
+		margin: 0.5em 0;
 		
 		& .device{
 			
@@ -75,8 +76,14 @@
 				padding: 0.5em;
 				
 				& > span{
+					
 					flex: 1;
 					cursor: default;
+					
+					&:nth-child(2){
+						flex: 0;
+					}
+					
 				}
 				
 			}

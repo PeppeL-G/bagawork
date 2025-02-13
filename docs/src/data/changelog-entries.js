@@ -9,6 +9,7 @@ export const changelogEntries = [{
 		`Made the default width of EnterText and EnterNumber smaller`,
 		`Made the mm unit the default unit for numbers that uses mm/sw`,
 		`Changed the "open link in new tab" symbol on links`,
+		`Improved the look of the device frame on the docs website`,
 	],
 }, {
 	version: `0.0.50`,
