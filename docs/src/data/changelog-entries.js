@@ -10,6 +10,7 @@ export const changelogEntries = [{
 		`Made the mm unit the default unit for numbers that uses mm/sw`,
 		`Changed the "open link in new tab" symbol on links`,
 		`Improved the look of the device frame on the docs website`,
+		`Fixed bug causing EnterText.onChange() to crash in Page.onAfter()`,
 	],
 }, {
 	version: `0.0.50`,

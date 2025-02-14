@@ -115,7 +115,7 @@ export class EnterTextComponent extends Component{
 		
 		this._onChangeFunction?.(
 			this.enteredText,
-			...this.onChangeArguments,
+			...this._onChangeArguments,
 		)
 		
 	}
