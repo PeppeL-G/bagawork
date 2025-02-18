@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../../favicon.ico">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="../../../_app/immutable/assets/2.Cc0q3LI5.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/ViewApp.D1tK9Ush.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/ViewApp.BmseSdrE.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.DfGQzRaj.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/entry.BXzytorx.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.4nlP2jWE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.BXVnRmkj.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.BdJJj93C.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.BcGDvMWD.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/each.BaX_zf8z.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/changelog-entries.B0H6TqSg.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.-tGz_jaI.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/46.rQCP-SmA.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/ViewApp.qg7AIhJt.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/ViewApp.D5WliJPM.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.Gu5gcrKE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/get-create-app-code.D0qjuaK3.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-e9cs16"><div class="publicAnnouncement svelte-e9cs16"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-e9cs16"><nav class="svelte-f9itgq"><a href="/" class="title svelte-f9itgq" data-svelte-h="svelte-r9hply">BagaWork</a> <div class="links svelte-f9itgq"><a href="/documentation/" target="" class="svelte-f9itgq">Documentation</a><a href="/tutorials/" target="" class="svelte-f9itgq">Tutorials</a><a href="/examples/" target="" class="svelte-f9itgq  isSubCurrent">Examples</a><a href="/editor/" target="_blank" class="svelte-f9itgq">Editor</a><a href="/implementation/" target="" class="svelte-f9itgq">Implementation</a><a href="/contact/" target="" class="svelte-f9itgq">Contact</a> <a class="version svelte-f9itgq" href="/changelog/">v0.0.52</a></div> </nav></div> <aside class="svelte-e9cs16"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Apps</div> <div class="links svelte-12md48y"><a href="/examples/apps/hello-world/" class="svelte-12md48y">Hello, World! </a><a href="/examples/apps/book/" class="svelte-12md48y isCurrent">Book </a><a href="/examples/apps/contacts/" class="svelte-12md48y">Contacts </a><a href="/examples/apps/counter/" class="svelte-12md48y">Counter </a><a href="/examples/apps/glossaries/" class="svelte-12md48y">Glossaries </a><a href="/examples/apps/personal-website/" class="svelte-12md48y">Personal Website </a><a href="/examples/apps/power-point-presentation/" class="svelte-12md48y">Power Point Presentation </a><a href="/examples/apps/multiplication-table/" class="svelte-12md48y">Multiplication Table </a><a href="/examples/apps/quiz/" class="svelte-12md48y">Quiz </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">GUIs</div> <div class="links svelte-12md48y"><a href="/examples/guis/horizontal-scrolling/" class="svelte-12md48y">Horizontal Scrolling </a><a href="/examples/guis/modal/" class="svelte-12md48y">Modal </a><a href="/examples/guis/navigation-bar/" class="svelte-12md48y">Navigation Bar </a><a href="/examples/guis/navigation-drawer/" class="svelte-12md48y">Navigation Drawer </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Games</div> <div class="links svelte-12md48y"><a href="/examples/games/21-sticks/" class="svelte-12md48y">21 Sticks </a><a href="/examples/games/tic-tac-toe/" class="svelte-12md48y">Tic Tac Toe </a><a href="/examples/games/chess/" class="svelte-12md48y">Chess </a></div> </div> </aside></aside> <main class="svelte-e9cs16"><h1 data-svelte-h="svelte-119rxel">Book</h1> <p data-svelte-h="svelte-1wrp8ki">This example shows how to create an app that functions as a book, where the user can go to different pages in the book by clicking on buttons.</p> <div><div class="device-wrapper svelte-1r3wtoi"><div class="device"><div class="camera" data-svelte-h="svelte-3qmnnw">◎︎</div> <div class="screen" translate="no"></div> <div class="buttons" data-svelte-h="svelte-1yd6kf5"><span>◁</span> <span>○︎</span> <span>□</span></div></div> </div><a target="_blank" href="/editor#eNq1lc1um0AQx19lupcaiaIaO7HNLckhrdSqURyprUokr2H4UGEX7S4llsU156qP2CfpAsHCjj9S170gdnd2Zvj/ZpgloVlGnCXxuI/EIV5CpYSPi4ssA3xQyHwJ+n3pMld5AqnCqaJC3dAQe0a96yqBKhcMrvgPFNVBtVu6rCSlSQKe+Cgkcb4tSewTp28SRtMqUu2HmIQHgUT1hTgju118Jc54Ut6bJNPe1u427t43i7WUV9FXaVeLTt7XebyZ8S0vpOVFceILZL3myFXTjHpotqs77c5S+tGb3UUIUnGxADrnuYJLGtLPXHyfGdus5wu4wSxD+PDmumOx7n19dcWTPGVbUto0dNVlrhRnT6FqKeEWqR+zcGZYlWy96vP7hrnLxfaMjBU7kzxoJGOTLLTW41FpNgzsfQzqkP+sf0fDT8xDyDPOgIKKUzRBRSgQCir1TiZ4KGiaooAi4vqI52GkoA6nhQCZ0iSBXGKQJ6DLXNb3FOcQUeFDwAXMMYwZ0wVq7US0B8oahN+PP1vpV7W4W/61z+zP9hluRPnVBWwbz4BuILTHk5rh8KzfMhwcYjg4JcML5ms0VL2WFTwINDEsdNfAgudANcxcVrAYL16dksGGOnv1Hxyt//Cg/uO3TQ8Nh5NW/+Eh/e1T6j/V5Y5NU6APUSyBFwySWKmkS6NCBCn1EWIFSGWMwoJ3+qLuIWwIdqyr3ml/f9apsfVfiM0+GtvgILazs/Fm25wfwjb8v6NHe37WIVYoeNHr1PmxI6QaHqCBxuwvfmIvmiGTyehpiJyX9+UfKXAI7Q==" title="Open in our Online Editor" data-svelte-h="svelte-1ji56fk">Open in Online Editor</a><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createStartPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> CoverPage
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">CoverPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Space<span class="token punctuation">,</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">The story about BagaWork</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">by Peppe L-G</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Start Reading</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Page1</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Once upon a time, there was a programmer who thought creating small useful apps was too hard for beginners.</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">←</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>CoverPage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">1</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">→</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Page2</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">So he created his own little framework that made it easier. He called that framework for BagaWork.</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">←</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">2</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">→</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page3<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Page3</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">And that's the framework you are using now!</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">←</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">3</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">→</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>Page4<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Page4</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Space<span class="token punctuation">,</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">The end!</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Read again</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>CoverPage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div></main> <div class="footer svelte-e9cs16"><footer class="svelte-d9hz5y">Copyright Peter L-G 2025 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> |
+	<a href="/glossary" data-svelte-h="svelte-1ftqd2z">Glossary</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_1c823r3 = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.DfGQzRaj.js"),
+						import("../../../_app/immutable/entry/app.4nlP2jWE.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 46],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

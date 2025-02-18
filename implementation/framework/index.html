@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../favicon.ico">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="../../_app/immutable/assets/2.Cc0q3LI5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DfGQzRaj.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BXzytorx.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.4nlP2jWE.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.BXVnRmkj.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.BdJJj93C.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.BcGDvMWD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/each.BaX_zf8z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/changelog-entries.B0H6TqSg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.-tGz_jaI.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/65.COCsNp7h.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/65.c7fD0vwE.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-e9cs16"><div class="publicAnnouncement svelte-e9cs16"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-e9cs16"><nav class="svelte-f9itgq"><a href="/" class="title svelte-f9itgq" data-svelte-h="svelte-r9hply">BagaWork</a> <div class="links svelte-f9itgq"><a href="/documentation/" target="" class="svelte-f9itgq">Documentation</a><a href="/tutorials/" target="" class="svelte-f9itgq">Tutorials</a><a href="/examples/" target="" class="svelte-f9itgq">Examples</a><a href="/editor/" target="_blank" class="svelte-f9itgq">Editor</a><a href="/implementation/" target="" class="svelte-f9itgq  isSubCurrent">Implementation</a><a href="/contact/" target="" class="svelte-f9itgq">Contact</a> <a class="version svelte-f9itgq" href="/changelog/">v0.0.52</a></div> </nav></div> <aside class="svelte-e9cs16"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">npm packages</div> <div class="links svelte-12md48y"><a href="/implementation/framework/" class="svelte-12md48y isCurrent">@bagawork/framework </a><a href="/implementation/editor/" class="svelte-12md48y">@bagawork/editor </a></div> </div> </aside></aside> <main class="svelte-e9cs16"><h1 data-svelte-h="svelte-knyhib">@bagawork/framework</h1> <p data-svelte-h="svelte-uythq7">On this page you find the documentation for the npm package <code>@bagawork/framework</code> (<a href="https://www.npmjs.com/package/@bagawork/framework" rel="nofollow" target="_blank">link to npm</a>).</p> <h2 data-svelte-h="svelte-1ukekoe">Introduction</h2> <p data-svelte-h="svelte-fvsrp8">The npm package <code>@bagawork/framework</code> contains the various framework classes, components and functions that is needed to run a BagaWork app. Checkout the <a href="/documentation">Documentation</a> pages to learn how most of these works. That page does mostly contain the documentation for the public things in the package, and this page contains the documentation for the rest.</p> <h2 data-svelte-h="svelte-1gfrdv3">Quick start</h2> <p data-svelte-h="svelte-ni97b6">The easiest way to create a BagaWork app is by creating it in our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a>, and then to run it yourself you obtain the BagaCode for it, and then pass it as the first argument to <code>showAppInElement()</code> below (instead of the <code>createApp</code> function), but to show that you can create your own BagaWork app without our editor, the code below contains an example of that.</p> <ol><li data-svelte-h="svelte-ihx6qk"><code>npm install @bagawork/framework</code></li> <li><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>
+	App<span class="token punctuation">,</span>
+	Button<span class="token punctuation">,</span>
+	createPageCreator<span class="token punctuation">,</span> 
+	Page<span class="token punctuation">,</span>
+	Text<span class="token punctuation">,</span>
+	<span class="token comment">// And everything else you want to use...</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@bagawork/framework'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createApp</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span>a<span class="token punctuation">,</span> p<span class="token punctuation">,</span> log<span class="token punctuation">,</span> setTimeout<span class="token punctuation">,</span> setInterval<span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+		<span class="token function">createStartPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> StartPage
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token comment">// Pages can't be created as documented on this website.</span>
+	<span class="token comment">// They have to be created as shown below. But the editor</span>
+	<span class="token comment">// rewrites it to this for you, so for people creating</span>
+	<span class="token comment">// apps through the editor don't need to do it this</span>
+	<span class="token comment">// complicated way.</span>
+	<span class="token keyword">const</span> StartPage <span class="token operator">=</span> <span class="token function">createPageCreator</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">StartPage</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Page<span class="token punctuation">&#123;</span>
+		<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">View greeting</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>GreetingPage<span class="token punctuation">)</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">const</span> GreetingPage <span class="token operator">=</span> <span class="token function">createPageCreator</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">GreetingPage</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Page<span class="token punctuation">&#123;</span>
+		<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Hello, world!</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">App</span><span class="token operator">:</span> MyApp<span class="token punctuation">,</span>
+		<span class="token literal-property property">Pages</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+			StartPage<span class="token punctuation">,</span>
+			GreetingPage<span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></li> <li><pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>My App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+		
+		<span class="token comment">/* Make the body element cover the entire screen. */</span>
+		<span class="token selector">html, body</span><span class="token punctuation">&#123;</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+			<span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+			<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+		
+		<span class="token comment">// The file exporting your createApp() function, or</span>
+		<span class="token comment">// write the createApp() function directly in this</span>
+		<span class="token comment">// &lt;script> element.</span>
+		<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createApp <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./create-app.js'</span>
+		
+		<span class="token comment">// Can't import showAppInElement() from the package</span>
+		<span class="token comment">// directly in a web browser like this, but you get</span>
+		<span class="token comment">// the idea.</span>
+		<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> showAppInElement <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@bagawork/framework'</span>
+		
+		document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			
+			<span class="token keyword">const</span> screenElement <span class="token operator">=</span> document<span class="token punctuation">.</span>body
+			
+			<span class="token comment">// Read more about runtimeSettings further down.</span>
+			<span class="token keyword">const</span> runtimeSettings <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+			
+			<span class="token keyword">const</span> stopApp <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">showAppInElement</span><span class="token punctuation">(</span>
+				createApp<span class="token punctuation">,</span>
+				screenElement<span class="token punctuation">,</span>
+				runtimeSettings<span class="token punctuation">,</span>
+			<span class="token punctuation">)</span>
+			
+			<span class="token comment">// stopApp is a function you should call when you</span>
+			<span class="token comment">// want everything in the app (such as updaters) to</span>
+			<span class="token comment">// stop running. This is only needed when your app</span>
+			<span class="token comment">// should run a shorter amount of time then the</span>
+			<span class="token comment">// page showing it.</span>
+			
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+		
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></li></ol> <p data-svelte-h="svelte-122otig">A BagaWork app is expected to run in an element with the same size as the entire webpage. The reason for this is because it internally uses the <code>vw</code> unit, and that one only works as expected if the BagaWork app has the same size on the screen as the webpage itself. If you want to have a BagaWork app running on a small part of a webpage, then run the BagaWork app in an <code>&lt;iframe&gt;</code>.</p> <h3 data-svelte-h="svelte-dkq79t">Runtime settings</h3> <h4 data-svelte-h="svelte-30zz0y">Saving and restoring the state</h4> <p data-svelte-h="svelte-1tot6wm">Each time the app changes which page to show to the user, the app&#39;s internal state (app variables, page variables, etc.) might have been changed. If you want the user to be able to close the app and later start it again with the same state as it had as when the user closed the app, you need to store the state the app had when it was closed, and then start the app with that stored state.</p> <p data-svelte-h="svelte-1j5wjzh">Set <code>runtimeSettings.onStateChange</code> to <code>(newState) =&gt; localStorage[&#39;state&#39;] = JSON.stringify(newState)</code> to listen for when the app changes page and store the new state of the app in JSON format in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" rel="nofollow" target="_blank">localStorage</a>.</p> <p data-svelte-h="svelte-5i2pjt">Set <code>runtimeSettings.state</code> to <code>JSON.parse(localStorage[&#39;state&#39;] ?? &#39;&quot;&quot;&#39;) || null</code> to start the app with the state (potentially) stored in <code>localStorage</code>.</p> <h4 data-svelte-h="svelte-1c5bkpa">Obtaining the app icon</h4> <p data-svelte-h="svelte-aqbb71">Set <code>runtimeSettings.onIconCreated</code> to a function to obtain the icon created by <code>App.createIcon()</code>. You will be passed the icon as a string containing SVG code. This function will be called directly when the app starts (and nothing goes wrong).</p> <h4 data-svelte-h="svelte-1kzo6rm">Dealing with updates</h4> <p data-svelte-h="svelte-4oncf1">If a state has been stored, and the app then starts with that state running in a new version of the app, an update in the app needs to happen (the <code>onUpdate()</code> methods in the app needs to be called, etc.).</p> <p data-svelte-h="svelte-9bfp9p">Set <code>runtimeSettings.version</code> to the current version of the app, and the framework will perform the update (call the <code>onUpdate</code> methods in the app, etc.) if this version is higher than the version of the app stored in the <code>state</code>.</p> <h4 data-svelte-h="svelte-b2qfq3">Listening for errors</h4> <p data-svelte-h="svelte-11h7dq6">Set <code>runtimeSettings.onError</code> to <code>(errorMessage) =&gt; console.log(errorMessage)</code> to listen for when the code in the app crashes. When an error occurs, the app will also display the error message on the screen and stop running the app, and also give the user the option to restart the app from scratch (with no state), or try resume running the app by loading another page.</p> <h4 data-svelte-h="svelte-106804e">Previewing</h4> <p data-svelte-h="svelte-1tllxkz">Set <code>runtimeSettings.isPreview</code> to <code>true</code> for:</p> <ul data-svelte-h="svelte-1f26re4"><li><code>Page.onBeforeDirections()</code> not to take effect</li> <li>Updaters with intervals to not run</li> <li>The speaker to not play anything</li> <li>Etc.</li></ul> <p data-svelte-h="svelte-1umcsd8">Most likely, it&#39;s only the previewing of pages in the editor that will use this option.</p> <h4 data-svelte-h="svelte-6appt1">Logging</h4> <p data-svelte-h="svelte-1qt6eg8">Set <code>runtimeSettings.onLog</code> to <code>(type, value) =&gt; console.log(type, value)</code> to make the app log messages. <code>type = `framework`</code> means that it&#39;s the framework that logged the message, and <code>type = `user`</code> means that the app creator logged the message by calling the <a href="/documentation/log/" title="Open the documentation for log.">log</a> function.</p> <h2 data-svelte-h="svelte-1n41y8e">Implementation details</h2> <p data-svelte-h="svelte-1exmdwk">A BagaWork app is implemented as a function (referred to as the <code>createApp()</code> function) that returns the <code>App</code> class that should be used, together with all the <code>Pages</code> that are used. The reason for this design is so that the <code>App</code> and <code>Page</code> classes can have access to the BagaWork variables <code>a</code> and <code>p</code>. For an example, see the <em>Quick start</em> code above.</p> <h3 data-svelte-h="svelte-1per3kw"><code>createApp(environment)</code></h3> <p data-svelte-h="svelte-159nfgb">When the app should be created, the framework will call the <code>createApp()</code> function and pass it an environment, which is a plain JS object with the following properties:</p> <ul data-svelte-h="svelte-1hyyhj8"><li><code>a</code> is a reference to the <code>App</code> instance</li> <li><code>p</code> is a reference to the currently shown <code>Page</code> instance</li></ul> <div class="mermaid">sequenceDiagram
+	participant Framework
+	participant createApp(environment)
+	Framework-&gt;&gt;Framework: Creates environment
+	Framework-&gt;&gt;createApp(environment): createApp(environment)
+	createApp(environment)-&gt;&gt;createApp(environment): Creates App and all Page classes
+	createApp(environment)-&gt;&gt;Framework: Returns App</div> <p data-svelte-h="svelte-1w1mktf">Setting up the environment for <code>createApp()</code> is not straight forward, since the <code>p</code> property needs to be updated to contain the current page in the app. To make that happen, the environment is actually implemented as a JS proxy that intercepts property access and sends back the correct value, but to the one implementing the <code>createApp()</code> function it can be seen as a JS object that always contains up-to-date values.</p> <h3 data-svelte-h="svelte-1r6ztof">FrameworkApp &amp; FrameworkPage VS App &amp; Page</h3> <p data-svelte-h="svelte-1vhdnad">To hide framework implementation details as much as possible from the ones implementing BagaWork apps, <code>App</code> and <code>Page</code> contains no framework logic:</p> <ul data-svelte-h="svelte-4qd6xd"><li>The logic for <code>App</code> is implemented in <code>FrameworkApp</code> (<code>FrameworkApp</code> has access to the <code>App</code> that should be used, and an instance of it)</li> <li>The logic for <code>Page</code> is implemented in <code>FrameworkPage</code> (<code>FrameworkPage</code> has access to the currently shown <code>Page</code>, and an instance of it)</li></ul> <p data-svelte-h="svelte-lxwk98">BagaWork then uses <code>FrameworkApp</code> and <code>FrameworkPage</code>, and they in turn use the provided <code>App</code> and <code>Page</code> classes when they need to get some info from them.</p> <div class="mermaid">flowchart LR
+	Framework -- Uses --&gt; FrameworkApp -- Uses --&gt; App
+	Framework -- Uses --&gt; FrameworkPage -- Uses --&gt; Page</div> <p data-svelte-h="svelte-2uroiq"><code>FrameworkApp</code> and <code>FrameworkPage</code> also have access to each other, and <code>FrameworkApp</code> acts as the main entry point.</p> <h2 data-svelte-h="svelte-1f2416i">Using <code>FrameworkApp</code> as a context</h2> <p data-svelte-h="svelte-er9qvp"><code>FrameworkApp</code> does contain &quot;the logic for the app&quot; (as one can expect), but it also serves as a context that contains &quot;global&quot; information. Instead of giving other classes the small amount of extra information they actually need, they are given a reference to the <code>FrameworkApp</code> instance, so they can obtain whichever information they want from it themselves.</p> <p data-svelte-h="svelte-twpy9z">An example of this are GUI components. Some of them need to use <code>frameworkApp.runtimeSettings.isPreview</code> to know if they should function the real way, or only in a preview way. But instead of giving the components only the value in <code>runtimeSettings.isPreview</code>, they receive the entire <code>frameworkApp</code> object.</p> <p data-svelte-h="svelte-1nes0jk">This architecture makes the code structure easier to understand; you can always access any information you need from the <code>frameworkApp</code> object you have access to, no matter where you are in the code (kind of).</p> <h3 data-svelte-h="svelte-16vorbs">Starting the app</h3> <p data-svelte-h="svelte-1fwo764">To run your app, pass your <code>createApp()</code> function to a new <code>FrameworkApp</code> instance:</p> <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">const</span> runtimeSettings <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> frameworkApp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FrameworkApp</span><span class="token punctuation">(</span>createApp<span class="token punctuation">,</span> runtimeSettings<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-sloen3">It is also possible to pass a string that contains the BagaCode for the app created through our editor as the <code>createApp()</code> function.</p> <p data-svelte-h="svelte-56yq9e">Then simply call <code>frameworkApp.createElement()</code> to obtain an HTML element you can use to display the app, and after that, the app will run on its own!</p> <p data-svelte-h="svelte-dg1i0a">The figure below shows the order methods are invoked when starting the app for the first time.</p> <div class="mermaid">sequenceDiagram
+	participant FrameworkApp
+	participant App
+	participant FrameworkPage
+	participant Page
+	FrameworkApp-&gt;&gt;App: createIcon()
+	FrameworkApp-&gt;&gt;App: onBefore()
+	FrameworkApp-&gt;&gt;App: createStartPage()
+	App-&gt;&gt;Page: Creates
+	App-&gt;&gt;FrameworkApp: startPage
+	FrameworkApp-&gt;&gt;FrameworkApp: loadPage(startPage)
+	Note over FrameworkApp: Start loadPage(page)
+	FrameworkApp-&gt;&gt;FrameworkPage: Create page
+	FrameworkPage-&gt;&gt;Page: createBeforeDirections()
+	FrameworkApp-&gt;&gt;FrameworkPage: getFirstTrueBeforeDirection()
+	FrameworkPage-&gt;&gt;FrameworkApp: null or direction
+	alt Got direction
+		FrameworkApp-&gt;&gt;FrameworkApp: loadPage(direction.getPage())
+		FrameworkApp-&gt;&gt;FrameworkApp: return
+	end
+	FrameworkApp-&gt;&gt;FrameworkPage: runOnBefore()
+	FrameworkPage-&gt;&gt;Page: onBefore()
+	FrameworkApp-&gt;&gt;FrameworkPage: initializeTheRest()
+	FrameworkPage-&gt;&gt;Page: page.createGui(), ...
+	Note over FrameworkApp: End loadPage(page)
+	FrameworkApp-&gt;&gt;FrameworkApp: Wait until someone calls moveOn()
+	Note over FrameworkApp: Start moveOn()
+	FrameworkApp-&gt;&gt;FrameworkPage: runOnAfter
+	FrameworkPage-&gt;&gt;Page: onAfter
+	FrameworkApp-&gt;&gt;FrameworkPage: getFirstTrueAfterDirection()
+	alt Got direction
+		FrameworkApp-&gt;&gt;FrameworkApp: loadPage(direction.getPage())
+	else Get no direction
+		FrameworkApp-&gt;&gt;FrameworkApp: loadPage(currentPage)
+	end
+	Note over FrameworkApp: End moveOn()</div></main> <div class="footer svelte-e9cs16"><footer class="svelte-d9hz5y">Copyright Peter L-G 2025 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> |
+	<a href="/glossary" data-svelte-h="svelte-1ftqd2z">Glossary</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_1c823r3 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.DfGQzRaj.js"),
+						import("../../_app/immutable/entry/app.4nlP2jWE.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 65],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

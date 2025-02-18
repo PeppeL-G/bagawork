@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../../favicon.ico">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="../../../_app/immutable/assets/2.Cc0q3LI5.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/ViewApp.D1tK9Ush.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/ViewApp.BmseSdrE.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.DfGQzRaj.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/entry.BXzytorx.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.4nlP2jWE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.BXVnRmkj.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.BdJJj93C.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.BcGDvMWD.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/each.BaX_zf8z.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/changelog-entries.B0H6TqSg.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.-tGz_jaI.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/47.BSih6z0y.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/ViewApp.qg7AIhJt.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/ViewApp.D5WliJPM.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.Gu5gcrKE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/get-create-app-code.D0qjuaK3.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-e9cs16"><div class="publicAnnouncement svelte-e9cs16"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-e9cs16"><nav class="svelte-f9itgq"><a href="/" class="title svelte-f9itgq" data-svelte-h="svelte-r9hply">BagaWork</a> <div class="links svelte-f9itgq"><a href="/documentation/" target="" class="svelte-f9itgq">Documentation</a><a href="/tutorials/" target="" class="svelte-f9itgq">Tutorials</a><a href="/examples/" target="" class="svelte-f9itgq  isSubCurrent">Examples</a><a href="/editor/" target="_blank" class="svelte-f9itgq">Editor</a><a href="/implementation/" target="" class="svelte-f9itgq">Implementation</a><a href="/contact/" target="" class="svelte-f9itgq">Contact</a> <a class="version svelte-f9itgq" href="/changelog/">v0.0.52</a></div> </nav></div> <aside class="svelte-e9cs16"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Apps</div> <div class="links svelte-12md48y"><a href="/examples/apps/hello-world/" class="svelte-12md48y">Hello, World! </a><a href="/examples/apps/book/" class="svelte-12md48y">Book </a><a href="/examples/apps/contacts/" class="svelte-12md48y isCurrent">Contacts </a><a href="/examples/apps/counter/" class="svelte-12md48y">Counter </a><a href="/examples/apps/glossaries/" class="svelte-12md48y">Glossaries </a><a href="/examples/apps/personal-website/" class="svelte-12md48y">Personal Website </a><a href="/examples/apps/power-point-presentation/" class="svelte-12md48y">Power Point Presentation </a><a href="/examples/apps/multiplication-table/" class="svelte-12md48y">Multiplication Table </a><a href="/examples/apps/quiz/" class="svelte-12md48y">Quiz </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">GUIs</div> <div class="links svelte-12md48y"><a href="/examples/guis/horizontal-scrolling/" class="svelte-12md48y">Horizontal Scrolling </a><a href="/examples/guis/modal/" class="svelte-12md48y">Modal </a><a href="/examples/guis/navigation-bar/" class="svelte-12md48y">Navigation Bar </a><a href="/examples/guis/navigation-drawer/" class="svelte-12md48y">Navigation Drawer </a></div> </div><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">Games</div> <div class="links svelte-12md48y"><a href="/examples/games/21-sticks/" class="svelte-12md48y">21 Sticks </a><a href="/examples/games/tic-tac-toe/" class="svelte-12md48y">Tic Tac Toe </a><a href="/examples/games/chess/" class="svelte-12md48y">Chess </a></div> </div> </aside></aside> <main class="svelte-e9cs16"><h1 data-svelte-h="svelte-e6lo79">Contacts</h1> <p data-svelte-h="svelte-lx8f1j">This example shows how to create an app that keep tracks of information about your friends.</p> <div><div class="device-wrapper svelte-1r3wtoi"><div class="device"><div class="camera" data-svelte-h="svelte-3qmnnw">◎︎</div> <div class="screen" translate="no"></div> <div class="buttons" data-svelte-h="svelte-1yd6kf5"><span>◁</span> <span>○︎</span> <span>□</span></div></div> </div><a target="_blank" href="/editor#eNrdV39r2zAQ/SpCDOIw19T50bSGLG3abhRGKOsYK23Biq0kpolkbGVJCf7uk2zLkRzXLWn+GIOm2HeS7unuvZO1gSgMobOBHvUxdKA3R3EMLilhyGPxRRgCvGaY+DHgz5tH8sjEz8v9oA8eMiMLfAfYZvY8CaKYjdACO8C9mAcednMHX1yzx5RIF16gYM7tSNjPUe61PLqQI8IZJXi0XIxxxMfZrXb2l7kTEyhAWhVAhnRcAYNbK0CM6fh8nHpqANh2q9Vqt7cAnmR6fDzHDOdJHL7c+EbgN3N4yJLJs+JQ7NLI7JpnEhD/hvh4bXig/wV4VuCDfh/wVUw5Wua6mQaXkaeYjXjB8tA8sAwbYbaMCDCUIIgZR3ZzINYeDMBxE3wGtrYY8v18IaMCfbiMZ8ZGwhFZR9Zu+AKvWgq3sCqV2BplFbYWPfPSnuh79yKMGL5jKGK3aIrLWy8cyqQEJiac0LmPoxg6DxsY+NCxTUg4JC6GdAo0IZ1MYsx+c1e3I9/uoXNkd5MnE4Z8TW12tuBN9qLpqsBQqEq8bPQdfFsGBfbsP895zABRM8uVV5VudVa+7x90xYvFaxmQqdFtWt4smPsRJgXv0gHTiK4Mu8Kr1XyBQsXBgQl2DpeMcaEwjsRwP208qyh1AsSrrHHiNi2RK+NXgFc5ZrF9TkBDMLy5JUtO6/ShMF7S+XJB4iqIdyHysDJbg/SZx6XkkmvtmdN/S+oczbUfsBIaLdMKrGaF5hLOjzWv9PGJCV+g02mdJmbGhHYdE0o5qOaDUH2mybfZkdco5YXWR/QWEopE78OSmuz/5ODzXH8VpQdCPo6rlnNI19Yq8NmMc8ysmplD3nJnN+vvxfAdfQyC5Ov+CK7TBrZf9LT57R/6VnRKQLJWuR8CpdlW4dC1VoNKE+EQec9S/0UXVHHUSvgqPVDl/Cv1eJWaDcsdpHZBIXr39QZQWqxG9912J9P9SU/qvlOn+1Kw/0/37+HcNWE4SmfLY+eVHmDFjEZYOkzQKFyNA/SHA0AtesUOUulpfLCNHABk1lJ2EKbmxmFazQFQqm1nB6vibLzdlDSp36E/uObLQ5N6hcB7Z8epwO2zlhR4t07gO83p35e4UtOLCIMXugTxMn9YIcIAoyC70gA2wwUc/m1XFmyiGIvPvoH70cNjRN9bwDcb/z2Od4+h4vMwtLSrW/0JULrnKXek3ftfUZsyuXopuU5Oe8lT8heu2Z2y" title="Open in our Online Editor" data-svelte-h="svelte-x8p6ri">Open in Online Editor</a><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">ContactsApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><span class="token punctuation">&#123;</span>
+	
+	contacts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Alice</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Aliceson</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">alice@aliceson.com</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">phoneNumber</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">123123123</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Bob</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Bobson</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">bob@bobson.com</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">phoneNumber</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">111222333</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">]</span>
+	
+	<span class="token function">deleteContactById</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>
+			a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=></span> c<span class="token punctuation">.</span>id <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">getNextContactId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">?.</span>id <span class="token operator">??</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">addContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">id</span><span class="token operator">:</span> a<span class="token punctuation">.</span><span class="token function">getNextContactId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+			<span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+			<span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+			<span class="token literal-property property">phoneNumber</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">createStartPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> StartPage
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">StartPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">const</span> nextContactId <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">getNextContactId</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Rows<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+					<span class="token parameter">c</span> <span class="token operator">=></span> Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>c<span class="token punctuation">.</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>c<span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>ViewContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				<span class="token punctuation">)</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">+</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>addContact<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>EditContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>nextContactId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">ViewContactPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	
+	id <span class="token operator">=</span> <span class="token number">1</span>
+	
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">const</span> contact <span class="token operator">=</span> a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=></span> c<span class="token punctuation">.</span>id <span class="token operator">==</span> p<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+		
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">First name:</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>firstName<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Last name:</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Email:</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>email<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Phone number:</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>phoneNumber<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Back</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>StartPage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Delete</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>DeleteContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Edit</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>EditContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">EditContactPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	
+	id <span class="token operator">=</span> <span class="token number">1</span>
+	
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">const</span> contact <span class="token operator">=</span> a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=></span> c<span class="token punctuation">.</span>id <span class="token operator">==</span> p<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+		
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">First name</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				EnterText<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>firstName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>contact<span class="token punctuation">,</span> <span class="token string">'firstName'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Last name</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				EnterText<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>contact<span class="token punctuation">,</span> <span class="token string">'lastName'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Email</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				EnterText<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>email<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>contact<span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Phone number</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Box<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				EnterText<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>contact<span class="token punctuation">.</span>phoneNumber<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>contact<span class="token punctuation">,</span> <span class="token string">'phoneNumber'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Save</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>ViewContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre><pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">DeleteContactPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span><span class="token punctuation">&#123;</span>
+	
+	id <span class="token operator">=</span> <span class="token number">1</span>
+	
+	<span class="token function">createGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		
+		<span class="token keyword">const</span> contact <span class="token operator">=</span> a<span class="token punctuation">.</span>contacts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=></span> c<span class="token punctuation">.</span>id <span class="token operator">==</span> p<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+		
+		<span class="token keyword">return</span> Rows<span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+			Text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Are you sure you want to delete the contact </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>contact<span class="token punctuation">.</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>contact<span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">?</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			Space<span class="token punctuation">,</span>
+			Columns<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">No</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>ViewContactPage<span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				Space<span class="token punctuation">,</span>
+				Button<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">&#96;</span><span class="token string">Yes</span><span class="token template-punctuation string">&#96;</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>StartPage<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>deleteContact<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+	<span class="token function">deleteContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		a<span class="token punctuation">.</span><span class="token function">deleteContactById</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div></main> <div class="footer svelte-e9cs16"><footer class="svelte-d9hz5y">Copyright Peter L-G 2025 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> |
+	<a href="/glossary" data-svelte-h="svelte-1ftqd2z">Glossary</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_1c823r3 = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.DfGQzRaj.js"),
+						import("../../../_app/immutable/entry/app.4nlP2jWE.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 47],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

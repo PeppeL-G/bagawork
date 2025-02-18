@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BagaWork</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="../../favicon.ico">
+		<meta name="theme-color" content="#ffffff">
+		
+		<link href="../../_app/immutable/assets/2.Cc0q3LI5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DfGQzRaj.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BXzytorx.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.B0TnBjPs.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.CBcONjAz.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.4nlP2jWE.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.BXVnRmkj.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.BdJJj93C.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.BcGDvMWD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/each.BaX_zf8z.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/changelog-entries.B0H6TqSg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.-tGz_jaI.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/64.CVRFIiyJ.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="layout svelte-e9cs16"><div class="publicAnnouncement svelte-e9cs16"><div class="publicAnnouncement danger svelte-1b45vgo" data-svelte-h="svelte-1cydixr"><strong>Note</strong>: This is a pre-release of BagaWork. Many things will likely change before the first stable release.
+</div></div> <div class="nav svelte-e9cs16"><nav class="svelte-f9itgq"><a href="/" class="title svelte-f9itgq" data-svelte-h="svelte-r9hply">BagaWork</a> <div class="links svelte-f9itgq"><a href="/documentation/" target="" class="svelte-f9itgq">Documentation</a><a href="/tutorials/" target="" class="svelte-f9itgq">Tutorials</a><a href="/examples/" target="" class="svelte-f9itgq">Examples</a><a href="/editor/" target="_blank" class="svelte-f9itgq">Editor</a><a href="/implementation/" target="" class="svelte-f9itgq  isSubCurrent">Implementation</a><a href="/contact/" target="" class="svelte-f9itgq">Contact</a> <a class="version svelte-f9itgq" href="/changelog/">v0.0.52</a></div> </nav></div> <aside class="svelte-e9cs16"><aside><div class="group svelte-12md48y"><div class="group-name svelte-12md48y">npm packages</div> <div class="links svelte-12md48y"><a href="/implementation/framework/" class="svelte-12md48y">@bagawork/framework </a><a href="/implementation/editor/" class="svelte-12md48y isCurrent">@bagawork/editor </a></div> </div> </aside></aside> <main class="svelte-e9cs16"><h1 data-svelte-h="svelte-1505x28">@bagawork/editor</h1> <p data-svelte-h="svelte-1rhyvep">On this page you find the documentation for the npm package <code>@bagawork/editor</code> (<a href="https://www.npmjs.com/package/@bagawork/editor" rel="nofollow" target="_blank">link to npm</a>).</p> <h2 data-svelte-h="svelte-1ukekoe">Introduction</h2> <p data-svelte-h="svelte-7xf10v">The npm package <code>@bagawork/editor</code> is a library implementing our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a>. A <em>project</em> in the Editor is a JS object that contains all information the Editor needs to know about the BagaWork app implemented in it.</p> <ul data-svelte-h="svelte-1v8fma1"><li><code>@bagawork/editor/src/components/LoadEditor.svelte</code> is a Svelte component one can use to show our <a target="_blank" href="/editor" title="Open our Online Editor">Online Editor</a></li> <li><code>@bagawork/editor/src/functions/compressor.js</code> exports two functions:<ul><li><code>getCompressedProject(project)</code> to get a project created in the Editor as a compressed string (project → <a href="https://tc39.es/ecma262/#sec-json.stringify" rel="nofollow" target="_blank">JSON</a> → <a href="https://www.npmjs.com/package/pako" rel="nofollow" target="_blank">pako</a> → <a href="https://www.npmjs.com/package/js-base64" rel="nofollow" target="_blank">Base64</a>) known as the <em>BagaCode</em></li> <li><code>getDecompressedProject(compressedProjectString)</code> to decompress a project compressed with the previous function (Base64 → pako → JSON → project)</li></ul></li></ul> <h2 data-svelte-h="svelte-1gfrdv3">Quick start</h2> <ol><li data-svelte-h="svelte-1ffqwwj"><code>npm install @bagawork/editor</code></li> <li>In a Svelte component, to show the <code data-svelte-h="svelte-b6cdfd">LoadEditor</code> component:<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> LoadEditor <span class="token keyword">from</span> <span class="token string">'@bagawork/editor/components/LoadEditor.svelte'</span>
+	
+	<span class="token comment">// The onClick() functions will receive the BagaCode</span>
+	<span class="token comment">// of the project at the time the button is clicked.</span>
+	<span class="token keyword">const</span> mainMenuOptions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">"Text option 1"</span><span class="token punctuation">,</span>
+		<span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">bagaCode</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Click on text option 1"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">"Text option 2"</span><span class="token punctuation">,</span>
+		<span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">bagaCode</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Click on text option 2"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">/* ... */</span><span class="token punctuation">]</span>
+	
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>editor<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	
+	<span class="token comment">&lt;!--
+		Both props are optional. If you don't provide any
+		BagaCode, the editor will load a default project.
+	---></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LoadEditor</span>
+		<span class="token attr-name">&#123;mainMenuOptions&#125;</span>
+		<span class="token attr-name">bagaCode</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Optional BagaCode<span class="token punctuation">"</span></span>
+	<span class="token punctuation">/></span></span>
+	
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	
+	<span class="token selector">.editor</span><span class="token punctuation">&#123;</span>
+		<span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+		<span class="token property">height</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></li></ol></main> <div class="footer svelte-e9cs16"><footer class="svelte-d9hz5y">Copyright Peter L-G 2025 |
+	<a href="/motivation" data-svelte-h="svelte-10nr0t7">Motivation</a> |
+	<a href="/glossary" data-svelte-h="svelte-1ftqd2z">Glossary</a> </footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_1c823r3 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.DfGQzRaj.js"),
+						import("../../_app/immutable/entry/app.4nlP2jWE.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 64],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
