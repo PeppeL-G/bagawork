@@ -46,6 +46,7 @@
 	main{
 		padding: 1em;
 		overflow-x: hidden;
+		max-width: 40em;
 	}
 	
 	@media (min-width: 50em){

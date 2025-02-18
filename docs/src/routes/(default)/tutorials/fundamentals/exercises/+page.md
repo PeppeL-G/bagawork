@@ -3,11 +3,11 @@
 </script>
 
 # 8. Exercises
-Great work! Now you know the basics of how to create a BagaWork app that contains a static GUI (static GUI means that the GUI in each page looks the same each time the user comes to that page). Below you find examples of apps you can create with what you have learned so far. Try to implement them as exercises! Or, even better, come up with your own similar apps, and implement them 😃
+Great work! Now you know the basics of how to create a BagaWork app that contains a static GUI (static GUI means that the GUI on each page looks the same each time the user comes to that page). Below you find examples of apps you can create with what you have learned so far. Try to implement them as exercises! Or even better, try to come up with your own similar apps, and implement them instead 😃
 
-If you want to compare your implementation with our's, or if you need to take a peak on our implementation to get started, feel free to do so, but try to complete as much as possible on your own (that's how you learn).
+If you want to compare your implementation with ours, or if you need to take a peak at our implementations to get started, feel free to do so, but try to complete as much as possible on your own (when you struggle, you learn!).
 
-When you want to start implement the apps below, just click on the `Editor` link in the main menu above to start a new BagaWork project. There you can also download your BagaWork project and save it in a file on your computer, and later load it into the editor again from that file.
+When you want to start implement the apps below, just click on the `Editor` link in the main menu above to start a new BagaWork project. There you can also download your BagaWork project and save it in a file on your computer, and later load it into the editor again from that file if you want.
 
 ::: exercise Book Exercise
 

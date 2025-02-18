@@ -7,7 +7,7 @@ On this page you find the documentation for the paper figure `PaperCircle`.
 
 ::: tip More configuration methods
 
-This webpage only contains descriptions of the configuration methods that are specific to the `PaperCircle` figure. `PaperCircle` also supports the configuration methods described on the page :docs[PaperFigure].
+This webpage only contains descriptions of the configuration methods that are specific to the `PaperCircle` figure. The `PaperCircle` figure also supports the configuration methods described on the page :docs[PaperFigure].
 
 :::
 

@@ -20,17 +20,17 @@
 
 <nav>
 	
-	<div class="section">
-		<a
-			href="/"
-			class:isCurrent={$page.url.pathname == "/"}
-			class:isSubCurrent={$page.url.pathname == "/"}
-		>
-			BagaWork
-		</a>
-	</div>
+	<a
+		href="/"
+		class="title"
+		class:isCurrent={$page.url.pathname == "/"}
+		class:isSubCurrent={$page.url.pathname == "/"}
+	>
+		BagaWork
+	</a>
 	
-	<div class="section">
+	<div class="links">
+		
 		{#each links as {text, href, target}}
 			<a
 				{href}
@@ -38,12 +38,9 @@
 				class:isCurrent={$page.url.pathname == href}
 				class:isSubCurrent={$page.url.pathname.startsWith(href)}
 			>
-				{text}
-			</a>
+				{text}</a>
 		{/each}
-	</div>
 	
-	<div class="section">
 		<a
 			class="version"
 			href="/changelog/"
@@ -52,6 +49,7 @@
 		>
 			v{lastChangelogEntry.version}
 		</a>
+		
 	</div>
 	
 </nav>
@@ -60,45 +58,34 @@
 	
 	nav{
 		display: grid;
-		grid-template-columns: 20em 1fr auto;
+		grid-template-columns: 20em 1fr;
 		border-bottom: 1px solid black;
 		align-items: center;
 	}
 	
-	.section:nth-child(1){
+	.title{
 		font-size: 1.75em;
 		padding: 0.5em;
-		justify-self: left;
+		text-align: center;
 	}
 	
-	.section:nth-child(2){
-		justify-self: left;
-		line-height: 2.5em;
-	}
-	
-	.section:nth-child(3){
-		justify-self: right;
+	.links{
+		display: flex;
+		flex-wrap: wrap;
 	}
 	
 	.version{
 		text-align: right;
-		padding: 0.5em 1em;
 		display: block;
+		flex: 1 0 auto;
+		align-content: right;
 	}
 	
 	@media (max-width: 50em) {
 		
 		nav{
-			grid-template-columns: 1fr;
-			grid-template-rows: auto auto auto;
-		}
-		
-		.section:nth-child(1){
-			justify-self: center;
-		}
-		
-		.section:nth-child(2){
-			justify-self: center;
+			grid-template-columns: 100%;
+			grid-template-rows: auto auto;
 		}
 		
 	}

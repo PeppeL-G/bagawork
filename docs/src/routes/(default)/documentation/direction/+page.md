@@ -14,7 +14,15 @@ The `Direction` class represents a possible navigation from one `Page` to anothe
 
 A `Page` usually contains multiple `Direction`s, and when the user has interacted with the `Page` (for example clicked on a `Button`), the first `Direction` in the `Page` whose `when` is `true` will be used to transition to the `page` in that `Direction`.
 
-## Creating a `Direction`
+When you use configuration methods such as:
+
+* `Button.page()`
+* `EnterText.pageIfEqual()`
+* `EnterNumber.pageIfLower()`
+
+Then these methods will internally create `Direction` objects for you, but you if you want you can create your own custom `Direction` objects in methods such as `Page.createAfterDirections()`.
+
+## Creating a custom `Direction`
 To create a new `Direction` object, simply write:
 
 ```js
@@ -29,7 +37,7 @@ Direction.when(true)
 
 Usually, you don't pass it `true`, but an expression that will evaluate to `true`/`false` depending on what values your app/page variables have.
 
-To indicate which page the user should come to when this direction is used, call the configuration method `page()`, and pass it the page, e.g.:
+To indicate which page the user should come to when this `Direction` is used, call the configuration method `page()`, and pass it the page, e.g.:
 
 ```js
 Direction.when(true).page(ThePage)

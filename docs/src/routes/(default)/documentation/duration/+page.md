@@ -166,8 +166,17 @@ class StartPage extends Page{
 
 :::
 
+::: tip Tips!
+
+You can also use:
+
+* `durationA < durationB` instead of `durationA.isShorterThan(durationB)`
+* `durationA <= durationB` instead of `durationA.isShorterThanOrEquallyLongAs(durationB)`
+
+:::
+
 ::: warning == does not work!
 
-You cannot use `durationA == durationB` to check if two `Duration` objects are equally long, because in JavaScript, the `==` operator on objects always checks if the two objects are the same object.
+You cannot use `durationA == durationB` to check if two `Duration` objects are equally long, because in JavaScript, the `==` operator on objects always checks if the two objects are the same object instance, and not if the objects contains similar values.
 
 :::

@@ -53,7 +53,7 @@ class StartPage extends Page{
 
 
 
-## `text()` - Setting styled text
+## `textWithBBCode()` - Setting styled text
 Use the configuration method `textWithBBCode()` to tell the `Text` component which text it should show on the screen and that also can be styled with :docs[bbcode] tags. Pass the text as a string. The text will always be centered in the `Button`.
 
 ::: tip Example
@@ -75,7 +75,7 @@ class StartPage extends Page{
 ## `page()` - Going to another page
 Use the configuration method `page()` to tell the `Button` component which page the user should come to when clicking on the button. Pass the page as an argument.
 
-If this method is not used, then the current page will be reloaded when the user clicks on the button.
+If this method is not used, the current page will be reloaded when the user clicks on the button.
 
 ::: tip Example
 
@@ -162,7 +162,7 @@ Use the configuration method `stay()` to tell the `Button` component to not go t
 
 ::: warning Warning!
 
-Triggering manual updates of the GUI like this tends to make your code hard to read and hard to understand how it works. If you can achieve the same result by loading the page anew, that is usually better than triggering your own manual updates like this.
+Triggering manual updates of the GUI like this with the `Updater` component tends to make your code hard to read and hard to understand how it works. If you can achieve the same functionality by loading the page anew, that is usually better than triggering your own manual updates like this.
 
 :::
 

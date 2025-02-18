@@ -103,22 +103,6 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`yellow`).children(
 			Text.text(`Row 1`).backgroundColor(`lime`),
-			Text.text(`Row 2`).backgroundColor(`aqua`),
-			Text.text(`Row 3`).backgroundColor(`gold`),
-		)
-	}
-}
-```
-
-:::
-
-::: tip Example
-
-```js baga-show-editor-code
-class StartPage extends Page{
-	createGui(){
-		return Rows.backgroundColor(`yellow`).children(
-			Text.text(`Row 1`).backgroundColor(`lime`),
 			Space,
 			Text.text(`Row 2`).backgroundColor(`aqua`),
 			Space,
@@ -229,15 +213,15 @@ If there is space left over in the `Rows` component after the children has becom
 
 ::: tip Example
 
-Resize the screen for the app (only works on laptops/computers), and notice how the size of the children changes.
+Resize the screen for the app, and notice how the size of the children changes.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`yellow`).children(
-			Text.text(`I have grow(1), so I might grow taller than my content`).backgroundColor(`lime`).grow(1),
+			Text.grow(1).text(`I have grow(1), so I might grow taller than my content`).backgroundColor(`lime`),
 			Text.text(`I will be as tall as my content`).backgroundColor(`aqua`),
-			Text.text(`I have grow(2), so I will be twice as tall as grow(1) (if there is room for it)`).backgroundColor(`gold`).grow(2),
+			Text.grow(2).text(`I have grow(2), so I will be twice as tall as grow(1) (if there is room for it)`).backgroundColor(`gold`),
 		)
 	}
 }
@@ -245,7 +229,7 @@ class StartPage extends Page{
 
 :::
 
-All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
+All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. Feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
 
 ::: tip Example
 
@@ -256,10 +240,10 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.backgroundColor(`yellow`).children(
 			Space.backgroundColor(`red`), // This component has grow(1) by default.
-			Text.text(`I have grow(1)`).backgroundColor(`lime`).grow(1),
+			Text.grow(1).text(`I have grow(1)`).backgroundColor(`lime`),
 			Text.text(`I have no grow()`).backgroundColor(`aqua`),
 			Space.grow(2).backgroundColor(`silver`),
-			Text.text(`I have grow(2)`).backgroundColor(`gold`).grow(2),
+			Text.grow(2).text(`I have grow(2)`).backgroundColor(`gold`),
 		)
 	}
 }
@@ -271,7 +255,13 @@ class StartPage extends Page{
 
 
 ## `child.growShrink()` - Making the children taller or shorter
-`child.growShrink()` works the same way as `child.grow()` when there is much space left over in the parent layout (both methods indicate the child may grow bigger if there's room for that), but when there is no/little space left over in the parent layout, then this method indicates the child may shrink and let the child content become scrollable.
+`child.growShrink()` works the same way as `child.grow()` when there is much space left over in the parent layout (both methods indicate the child may grow bigger if there's room for that), but when there is no/little space left over in the parent layout, then this method indicates the child may shrink and let the child content become scrollable (instead of the `Rows` component becoming scrollable).
+
+::: warning Note!
+
+You can not use both `grow()` and `growShrink()` on one and the same child, but only one of the configuration methods.
+
+:::
 
 ::: tip Example
 
@@ -336,7 +326,7 @@ class StartPage extends Page{
 
 This code is the same as in the previous example, but we use `growShrink()` instead of `grow()`.
 
-Try making the height of the app screen below shorter, and you will see that the height of `Row 1` `Row 2` shrinks, and its content becomes scrollable.
+Try making the height of the app screen below shorter, and you will see that the height of `Row 1` and `Row 2` shrinks, and their content becomes scrollable.
 
 ```js baga-show-editor-code
 class StartPage extends Page{

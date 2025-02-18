@@ -16,9 +16,9 @@ For example, in an app that plays music, the user can usually create her own pla
 
 
 ## How to create page variables
-Instead of hardcoding values in the code, you in previous tutorials learned that you could put those values in page constants (or app constants) instead. The idea with page variables is the very same, but with the different that after a page variable has been created an assigned its value, it can later store another value, for example when the user clicks on a `Button`.
+Instead of hardcoding values in the code, you did in previous tutorials learn that you could put those values in page constants (or app constants) instead. The idea with page variables is the very same, but the different is that after a page variable has been created and assigned its value, it can later store another value in the page variable, for example when the user clicks on a `Button`.
 
-Page variables are created the same way as page constants, but we use `thisNamingConvention` for app variables instead of `THIS_NAMING_CONVENTION` (which is only used for constants).
+Page variables are created the same way as page constants, but we use `thisNamingConvention` for the variables instead of `THIS_NAMING_CONVENTION` (which is only used for constants).
 
 In the code below you find an example of how to create the following page variables:
 
@@ -60,7 +60,7 @@ class StartPage extends Page{
 
 :::
 
-But the benefit with variables over constants is that they can also change value while the app is running. If we would want to store the name `Bob` in the page variable `name` while the app is running we would write the code `` p.name = `Bob` ``. Easy as that!
+As has been said, the benefit with variables over constants is that they can change value when the app is running. If we would want to store the name `Bob` in the page variable `name` after the app has started we just need to ask the computer to execute the code `` p.name = `Bob` ``. Easy as that!
 
 However, a very good question is *where* we should write the code `` p.name = `Bob` ``. And it all depends on *when* we want the app to change the name to `Bob`. Very often, it is when the user has interacted with the GUI somehow, for example have clicked on a button, so let's go through how to make that happen.
 
@@ -80,7 +80,7 @@ class MyPage extends Page{
 }
 ```
 
-The method in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method should reflect what the code in the method does, so `setNameToBob()` is a very good name in this case, since that's precisely what the code in the method does.
+The method in the example above is named `setNameToBob()`, but you can name it whatever you want. However, to get code that is easy to read, the name of the method needs to reflect what the code in the method does, so `setNameToBob()` is a very good name in this case, since that's precisely what the code in the method does.
 
 To tell the computer that the code in the method `setNameToBob()` should be executed when the user clicks on a button, we need to call the configuration method `onClick()` on the button, and pass it the method as an argument (i.e. write `p.setNameToBob` between the parentheses):
 
@@ -113,7 +113,7 @@ So the following is correct:
 Button.onClick(p.setNameToBob)
 ```
 
-And the following is incorrect:
+And the following is wrong:
 
 ```js
 Button.onClick(p.setNameToBob())
@@ -123,7 +123,7 @@ Button.onClick(p.setNameToBob())
 
 ::: tip Remember!
 
-In the code above, we haven't told BagaWork which page the user should come to when the button is clicked (we haven't used the configuration method `page()` on the `Button`), so when the user clicks the button, the current page will be reloaded (after the click handler (`setNameToBob`) has been executed).
+In the code above, we haven't told BagaWork which page the user should come to when the button is clicked (we haven't used the configuration method `page()` on the `Button`), so when the user clicks the button, the current page will be reloaded (after the click handler (`setNameToBob()`) has been executed).
 
 :::
 
@@ -137,6 +137,8 @@ In a `Page`, you can only access the `Page` constants/variables/methods created 
 
 ### The final solution
 So, here's all the code for the app using a page variable, and that has two buttons to change the value stored in it.
+
+::: tip
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -161,6 +163,8 @@ class StartPage extends Page{
 	
 }
 ```
+
+:::
 
 
 
@@ -239,4 +243,4 @@ Add one page variable to keep track of which the selected stars are (start with 
 
 
 ## That's it!
-Congratulation, now you know how to use page variables and page methods too! 🥳 But your `App` class can have its own variables and methods too, let's take a look at how those works next.
+Congratulation, now you know how to use page variables and page methods too! 🥳 But your `App` class can have its own variables and methods too, let's take a look at how those works next in the tutorial [Programming 4. App Variables & Methods](../app-variables-and-methods/).

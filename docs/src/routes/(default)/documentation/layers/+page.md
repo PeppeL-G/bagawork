@@ -19,7 +19,7 @@ The `Layers` component is a layout that shows its children in front of each othe
 
 ::: tip Example
 
-```js baga-show-editor-code
+```js baga-show
 class StartPage extends Page{
 	createGui(){
 		return Layers.children(
@@ -37,6 +37,22 @@ class StartPage extends Page{
 
 ## `children()` - Setting the children
 Use the configuration method `children()` to tell the `Layers` component which its child components should be. Pass it the child components as individual arguments (as many/few as you want).
+
+::: tip Example
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Layers.children(
+			Text.text(`I am the bottom layer.`),
+			Text.text(`I am the layer in the middle.`),
+			Text.text(`I am the top layer.`),
+		)
+	}
+}
+```
+
+:::
 
 ::: tip Example
 

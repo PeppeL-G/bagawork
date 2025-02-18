@@ -190,21 +190,23 @@ class StartPage extends Page{
 	
 	onBefore(){
 		
-		// We store a copy of the time object in "copy".
+		// We store a copy of the
+		// time object in "copy".
 		p.copy = p.original.getCopy()
 		
-		// So changes to "copy" only affects that time
-		// object.
+		// So changes to "copy" only
+		// affects that time object.
 		p.copy.setYear(1000)
 		
-		// Here we don't create a copy, so both "notCopy"
-		// and "original" refers to one and the same time
-		// object!
+		// Here we don't create a copy, so
+		// both "notCopy" and "original" refers
+		// to one and the same time object!
 		p.notCopy = p.original
 		
-		// So if we change the time object through the
-		// "notCopy" variable, the changes will also be
-		// shown through the "original" variable!
+		// So if we change the time object
+		// through the "notCopy" variable, the
+		// changes will also be shown through
+		// the "original" variable!
 		p.notCopy.setYear(2000)
 		
 	}

@@ -6,11 +6,11 @@
 This tutorial will teach you how to use pages in BagaWork.
 
 ## App structure
-A BagaWork app consists of different *pages*. Each page has its own Graphical User Interface (GUI), and one page at a time is shown to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and the app will show the GUI of that page instead, and so on.
+A BagaWork app consists of different *pages*. Each page has its own Graphical User Interface (GUI), and one page at a time will be shown to the user. When the user has interacted with the page (for example clicked on a button in its GUI), the user will come to the next page, and the app will show the GUI of that page instead, and so on.
 
 ::: tip Online Editor
 
-In our :online-editor you can very easily see a preview of the GUI of all the pages in your app, as well as lines between them indicating how the user can navigate between them. Try clicking on a page there, and you will see the code for that page, as well as an interactive preview of the page.
+In our :online-editor you can very easily see a preview of the GUI of all the pages in your app, as well as lines between them indicating how the user can navigate between them. Try clicking on a page there, and you will see the code for that page, as well as an interactive preview of the app where that page is shown.
 
 :::
 
@@ -67,7 +67,19 @@ When a page needs to show its GUI to the user, the method `createGui(){ }` in th
 
 Example showing JavaScript code for how to create two different pages with different GUIs.
 
-::bagawork-project[editor&code=AboutMePage-AboutSwedenPage&url=http://localhost:8080/editor/#eNqdkt9rwjAQx/+V271MoYg/5kvf3MOGDzJBHzamYGyuWohJSVJUSv/3JUatPzY2Bk25NHf5fr69K5HlOcYlJooTxpgIZgyM9oM8B9pZktyAi8uZnFm/Ek3M0sQybcdsRY1mOLGabKElDJaqsCPyR/57FcoqrCJMleCkDcafJWYc406Ekm285uE2jFClqSH7jnH7FH+4uIpCfrfOp0RJ/nK47+eyeYS5w7gSDAzDsLlyfAF+9u03ZW36tchu7U5dasu6V2MxBLaBMVnSD4vm0Xvl6HaOvO3I9hj32mczvV9ZJlviJP/PE+ofDaSCrSAzsBQFAZMc9iSE2rZuKftHyk7/TPl0Sdm9ofQ0Q/lm16RDK+45/VLymVKl60m5mIu/OZmuHb17GPh+QibBaYLywhDw6j9+0hykrhHfSZ5a0q9bchyUKW1y4WD8wMyrL5PCEUs=]
+```js baga-editor-code
+class AboutPeterPage extends Page{
+	createGui(){
+		return Text.text(`I am Peter, and I am a boy!`)
+	}
+}
+
+class AboutSwedenPage extends Page{
+	createGui(){
+		return Text.text(`Sweden's flag is blue and yellow.`)
+	}
+}
+```
 
 The GUI in the pages above will just contain some text. To specify that, we add the method `createGui(){ }`, and:
 
@@ -81,7 +93,7 @@ The GUI in the pages above will just contain some text. To specify that, we add 
 
 ::: warning Don't freak out!
 
-If you have never programmed before, the code and the description of the code above might seem very complicated, but you don't really need to remember all the details how of it works. For now, it's enough for you to just know that you can use `` Text.text(`Hello`) `` to create a `Text` GUI Component that displays the text `Hello` to the user. Easy as that! 🙂
+If you have never programmed before, the code and the description of the code above might seem very complicated, but you don't really need to remember all the details how of this works now. For now, it's enough for you to just know that you can use `` Text.text(`Hello`) `` to create a `Text` GUI Component that displays the text `Hello` to the user. Easy as that! 🙂
 
 :::
 
@@ -129,7 +141,7 @@ class StartPage extends Page{
 
 ::::hint
 
-When you add a new page from a page template, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like as shown above.
+When you add a new page from a page template, it will already contain some code for the GUI. You can simply delete most of that code, and then write your own code to make the page look like the one shown above.
 
 ::::
 

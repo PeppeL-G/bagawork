@@ -3,7 +3,7 @@
 </script>
 
 # State
-On this page you find information on how the framework handles the state in a BagaWork app, and how you can customize it.
+On this page you find information on how the state in a BagaWork app is handled, and how you can customize it.
 
 
 
@@ -24,7 +24,7 @@ As the user runs the app, the state will change (e.g. app and page variables wil
 ## Viewing the state
 In our :online-editor, you can easily view the state of your app by clicking on a page, and then on the `State` tab in the upper right corner.
 
-The state is in the editor shown as JSON code. JSON is a quite simple data format, and it works very similar to the most common values in JavaScript.
+In our Online Editor, the state is shown as JSON code. JSON is a quite simple data format, and it works very similar to the most common values in JavaScript.
 
 ::: tip Example
 
@@ -78,9 +78,9 @@ But in JSON, you must use two `"` characters.
 
 
 ## Storing the state
-If your BagaWork app is running on a website that **does not support** storing the app's state on the user's computer, then each time the user starts the app, it will use a new empty state. An example of such a website is this website ([bagawork.com](https://bagawork.com/)). bagawork.com is hosted on [GitHub Pages](https://pages.github.com/), and therefor it can't function as an app hosting server, so it can only be used to quickly share apps for testing/debugging. Apps running on such websites can't remember information between runs.
+If your BagaWork app is running on a website that **does not support** storing the app's state on the user's computer, then each time the user starts the app, it will initialize a new state from scratch to use. An example of such a website is this website ([bagawork.com](https://bagawork.com/)). bagawork.com is hosted on [GitHub Pages](https://pages.github.com/), and therefor it can't function as an app hosting server, so it can only be used to quickly share apps for testing/debugging. Apps running on such websites can't remember information between runs.
 
-If your BagaWork app on the other hand is running on a website that **does support** storing the app's state on the user's computer (e.g. using the web browser's [Web Storage](https://en.wikipedia.org/wiki/Web_storage) functionality), then each time the app loads a page, its state will be stored, and if the user then closes the app and later opens it again, it will resume using the state that was stored, instead of using a new empty state. An example of such a website is [bagaland.com](https://baggaland.com/). Try running an app hosted there, and you can see this in action.
+If your BagaWork app on the other hand is running on a website that **does support** storing the app's state on the user's computer, then each time the app loads a page, its state will be stored, and if the user then closes the app and later opens it again, it will resume using the state that was stored, instead of initializing a new state from scratch. An example of such a website is [bagaland.com](https://baggaland.com/). Try running, close and then re-open an app hosted there, and you can see this in action.
 
 If you host your app on a website that stores the state between runs, there is  one thing you need to remember: not all values can be stored! Ordinary values like:
 
@@ -90,7 +90,7 @@ If you host your app on a website that stores the state between runs, there is  
 * Arrays
 * Etc.
 
-Can be stored without problem. But, for example, functions can't be stored; you can't have an app variable that stores an object that contains a function. If you try to do something like that, then when the user later tries to resume running the app, that function will not exist.
+Can be stored without problem. But, for example, functions can't be stored; you can't have an app variable that stores an object that contains a function. If you try to do something like that, then when the user later tries to resume running the app, that function will not exist!
 
 
 
@@ -110,7 +110,7 @@ In our :online-editor, where you view the state of the app running, you can also
 ## Updating apps
 When you release a new version of your app, you might have to think about the state your app has stored on the computers where it has run, and adapt it to the new version of your app.
 
-For example, when a user has run version `1` of your app, then the state stored on that user's computer might contain an app variable named `counter` with the value `5`, but in version `2` of your app you have renamed that app variable to `clickCounter`. When that user then runs version `2` of your app, BagaWork has no idea that the app variable `counter` in the stored state should be assigned to the app variable `clickCounter` in the new version of the app, and you need to write some additional code to make this happen.
+For example, when a user has run version `1` of your app, then the state stored on that user's computer might contain an app variable named `counter` with the value `5`, but in version `2` of your app you have renamed that app variable to `clickCounter`. When that user then runs version `2` of your app, BagaWork has no idea that the app variable `counter` in the stored state should be assigned to the app variable `clickCounter` in the new version of the app, and you need to write some additional code yourself to make this happen.
 
 So, when releasing a new version of your app, it's important to gracefully perform the update, so users that have been using an old version of the app and has a state of the old version stored on their computers won't get any problems when they start running the new version of your app with that old state. To handle this, `App.onUpdate()` exists.
 
@@ -120,7 +120,7 @@ A user that uses your app for the first time will always start using the latest 
 
 :::
 
-There are three things you need to think about when updating a BagaApp:
+There are three things you need to think about when updating a BagaWork app:
 
 * Which page the user currently is on
 * Which app variables your old and new versions have
@@ -142,10 +142,13 @@ Example of code that would use the default update behavior for the user's curren
 class MyApp extends App{
 	
 	createStartPage(){
-		// Return the same old start page here, or another one if you want.
+		// Return the same old start page here,
+		// or another one if you want.
 	}
 	
-	// You don't need to implement onUpdate() at all if you want the default update behavior.
+	// You don't need to implement onUpdate()
+	// at all if you want the default update
+	// behavior.
 	
 }
 ```
@@ -206,7 +209,7 @@ class MyApp extends App{
 // This is the new version of the app.
 class MyApp extends App{
 	
-	// "city" is delete.
+	// "city" is deleted.
 	isBoy = true
 	age = 10 // This one is added.
 	
@@ -223,7 +226,7 @@ In the new version of the app:
 
 :::
 
-If you need to apply some additional logic when updating, you can implement that in `onUpdate()`. When `onUpdate()` is called, it will receive the old app variables in a parameter called `oldA`, and you can use that to read out their values from it. The default update behavior for app variables has applied before `onUpdate()` is called.
+If you need to apply some additional logic when updating, you can implement that in `onUpdate()`. When `onUpdate()` is called, it will receive the old app variables in a parameter called `oldA`, and you can use that to read out their values from it. The default update behavior for the app variables will have been applied before `onUpdate()` is called.
 
 ::: tip Example
 
@@ -244,18 +247,20 @@ class MyApp extends App{
 // This is the new version of the app.
 class MyApp extends App{
 	
-	// Instead of calling the app variable for "city",
-	// we want to call it "cityName" in this new version,
-	// but we want old users to have the same value it
-	// stored as when they ran the old version of the app
-	// the last time...
+	// Instead of calling the app variable for
+	// "city", we want to call it "cityName" in
+	// this new version, but we want old users
+	// to have the same value it stored as when
+	// they ran the old version of the app the
+	// last time...
 	cityName = "Stockholm"
 	
 	onUpdate(oldA){
 		
-		// ...so in here, we must read out the value of
-		// the "city" variable from the old app, and store
-		// it in the new "cityName" variable instead.
+		// ...so in here, we must read out the
+		// value of the "city" variable from the
+		// old app, and store it in the new
+		// "cityName" variable instead.
 		a.cityName = oldA.city
 		
 	}
@@ -267,7 +272,7 @@ class MyApp extends App{
 
 :::
 
-What's been described above is the general logic you need to think about when updating your app to a newer version. BUT, it can be a little bit more complicated than this. For example, you might have:
+What's been described above is the general logic you need to think about when updating your app to a newer version, BUT it can be a little bit more complicated than this. For example, you might have:
 
 * First released the first version of your app (version `1`)
 * And then released a new version of your app (version `2`)
@@ -301,15 +306,18 @@ class MyApp extends App{
 		
 		if(oldVersion == 1){
 			
-			// Write code dealing with updates from version 1 here.
+			// Write code dealing with updates
+			// from version 1 here.
 			
 		}else if(oldVersion == 2){
 			
-			// Write code dealing with updates from version 2 here.
+			// Write code dealing with updates
+			// from version 2 here.
 			
 		}else if(oldVersion == 3){
 			
-			// Write code dealing with updates from version 3 here.
+			// Write code dealing with updates
+			// from version 3 here.
 			
 		}
 		
@@ -324,7 +332,7 @@ class MyApp extends App{
 
 ::: tip Example
 
-Here is a bit more complicated and realistic example. This app is about keeping track of information about your friends. In the first version, only the friends names were registered, so the `App` class looked like this:
+Here is a bit more complicated and realistic example. This app is about keeping track of information about your friends. In the first version, only the friends' names were registered, so the `App` class looked like this:
 
 ```js
 // Version 1.
@@ -355,19 +363,20 @@ class FriendsApp extends App{
 	
 	onUpdate(oldA, oldVersion){
 		
-		// Since this is version 2, the only previous
-		// version the user can have used is version 1,
-		// so we don't need to check oldVersion, but it
-		// can be good to do anyway (consistency).
+		// Since this is version 2, the only
+		// previous version the user can have
+		// used is version 1, so we don't need
+		// to check oldVersion, but it can be
+		// good to do anyway (consistency).
 		if(oldVersion == 1){
 			
-			a.friends = oldA.friends.map(a.createFriendObject)
+			a.friends = oldA.friends.map(a.createFriendFromV1)
 			
 		}
 		
 	}
 	
-	createFriendObject(friendName){
+	createFriendFromV1(friendName){
 		return {
 			name: friendName,
 			age: 0, // All old friends gets age 0 by default.
@@ -396,18 +405,19 @@ class FriendsApp extends App{
 		if(oldVersion == 1){
 			
 			// Same as before.
-			a.friends = oldA.friends.map(a.createFriendObject)
+			a.friends = oldA.friends.map(a.createFriendFromV1)
 			
 		}else if(oldVersion == 2){
 			
-			a.friends = oldA.friends.map(a.createFriendObject2)
+			a.friends = oldA.friends.map(a.createFriendFromV2)
 			
 		}
 		
 	}
 	
-	// This one is used when updating from version 1.
-	createFriendObject(friendName){
+	// This one is used when
+	// updating from version 1.
+	createFriendFromV1(friendName){
 		return {
 			name: friendName,
 			age: 0, // All old friends gets age 0 by default.
@@ -415,8 +425,9 @@ class FriendsApp extends App{
 		}
 	}
 	
-	// This one is used when updating from version 2.
-	createFriendObject2(friend){
+	// This one is used when
+	// updating from version 2.
+	createFriendFromV2(friend){
 		return {
 			name: friend.name,
 			age: friend.age,
@@ -432,11 +443,11 @@ class FriendsApp extends App{
 ### Updating the page states
 After `App.onUpdate()` has been called, it's time to update the data in your pages.
 
-The default update behavior for the page variables is very similar to app variables. For each page stored in the state:
+The default update behavior for the page variables is very similar to app variables; for each page stored in the state that also exists in the new version of the app:
 
-1. Create all page variables with their default values they should have according to the new version of your app
+1. Create all page variables with the default values they should have according to the new version of your app
 2. For each page variable that exists both in the stored state and in the new version of the page:
-	* Copy over the value from the stored state to the page variable in the app
+	* Copy over the value from the stored state to the page variable in the page
 
 If you need some additional update logic in your pages, you can add the `onUpdate()` method to them too. It will be called with two arguments:
 

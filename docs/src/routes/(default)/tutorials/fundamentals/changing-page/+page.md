@@ -3,13 +3,13 @@
 </script>
 
 # 5. Changing Page
-This tutorial will teach you how to take the user to another page when she interacts with the GUI on the page currently shown to them.
+This tutorial will teach you how to take the user to another page when they interact with the GUI on the page currently shown to them.
 
 ## Multiple pages
-An app who's GUI always look the same is usually not that fun. Therefore, most BagaWork apps consists of multiple different pages, and when we want to change the GUI shown to the user in the app, we simply take the user to another page in the app, and show the GUI of that page instead. Simple as that!
+An app with a GUI that always look the same is usually not that fun. Therefore, most BagaWork apps consists of multiple different pages, and when we want to change the GUI shown to the user in the app, we simply take the user to another page in the app, and show the GUI of that page instead. Simple as that!
 
 ## Going to another page
-To take the user to another page in the app, the user usually needs to interact with the GUI on the page somehow. The simplest example of this is by clicking on a button. For that purpose, BagaWork has the `Button` component.
+To take the user to another page in the app, the user usually needs to interact with the GUI on the page somehow. The simplest example of this is by clicking on a button. For that purpose, BagaWork has the `Button` component, which is a GUI component that looks like a button and takes the user to the next page in the app when the user clicks on it.
 
 To tell the `Button` which text it should display, use the configuration method `text()`, and pass it the text it should contain as a string.
 
@@ -140,6 +140,6 @@ class ReadFactPage extends Page{
 :::
 
 ## That's it!
-Good work, now you know how to navigate between the pages in your app! 🥳 But know that the `Button` component is just one way to take the user to another page; there exists more ways you can use. Learn more about these in future tutorials.
+Good work, now you know how to navigate between pages in your app! 🥳 But do know that the `Button` component is just one way to take the user to another page; there exists other ways you can use too. Learn more about these in future tutorials.
 
 When you are ready, continue with the tutorial [Fundamentals 6. Sizing GUI Components](../sizing-gui-components/).

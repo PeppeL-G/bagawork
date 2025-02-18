@@ -6,7 +6,7 @@
 This tutorial will teach you the basics of how to create and configure GUI components in your pages.
 
 ## `Page.createGui()`
-As you learned in the previous tutorial, all your `Page` classes should contain a method called `createGui()`. This method will be called (when a method is *called*, the code in it will be executed) when the page needs to display its GUI on the screen, and in this method you should create and return the page's GUI.
+As you learned in the previous tutorial, all your `Page` classes should contain a method called `createGui()`. This method will be called (when a method is *called*, the computer will start to execute the code in it) when the page needs to display its GUI on the screen, and in this method you should create and return the page's GUI.
 
 ::: tip Example
 
@@ -20,24 +20,38 @@ class StartPage extends Page{
 
 :::
 
-## GUI Components
-To create the page's GUI, you use the different GUI Components BagaWork contains. They are stored in different pre-defined constants whose name reflect what they do, such as:
+## GUI components
+To create the page's GUI, you use the different GUI components BagaWork contains. They are stored in different pre-defined variables whose names reflect what they do, such as:
 
-* The GUI Component stored in the `Text` variable displays text
-* The GUI Component stored in the `Button` variable displays a button
+* The GUI component stored in the `Text` variable displays text
+* The GUI component stored in the `Button` variable displays a button
 * And so on...
 
-So, to build a GUI, you must learn which the different GUI components are that exist in BagaWork. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by only reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
+So, to build a GUI, you must learn the different GUI components BagaWork contains. They are all mentioned on the [Documentation](/documentation/) page, but learning how to use them by only reading the documentation can be a bit tricky for beginners, so therefore we have these tutorials, which will give you a gentler introduction to how to use them. 
 
 ## Creating a new instance of a GUI component
-To use a GUI Component, create a new instance of it by simply writing the name of the constant that stores the GUI Component you want to use. For example, to use the `Text` GUI Component, simply write `Text`. Easy as that! 🙂
+To use a GUI component, create a new instance of it by simply writing the name of the variable that stores the GUI component you want to use. For example, to use the `Text` GUI component, simply write `Text`. Easy as that! 🙂
+
+::: tip Example
+
+Note: In this example we haven't told the `Text` component which text it should display, and therefor the screen is still blank.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	createGui(){
+		return Text
+	}
+}
+```
+
+:::
 
 ## Configuring a GUI component instance
-However, most GUI Components require additional information from you to be useful. For example, the `Text` GUI Component needs to know which text it should display.
+However, most GUI components require additional information from you to be useful. For example, the `Text` GUI component needs to know which text it should display.
 
-To pass additional information to a GUI Component, you call *configuration methods* on it, and (if needed) you pass it the additional information as one  or more arguments to the configuration method.
+To pass additional information to a GUI component, you call *configuration methods* on it, and (if needed) you pass it the additional information as one  or more arguments to the configuration method.
 
-As an example, to tell a `Text` component which text it should display, you call its configuration method `text()`, and you pass it the text it should display as a string (created by two `` ` `` characters), for example `` Text.text(`This string contains the text that should be displayed.`) ``. For an example of this, see the previous example (the first one on this page).
+As an example, to tell a `Text` component which text it should display, you call its configuration method `text()`, and you pass it the text it should display as a string (created by two `` ` `` characters), for example `` Text.text(`This string contains the text that should be displayed.`) ``. For an example of this, see the first example on this page.
 
 ::: tip Strings in JavaScript
 
@@ -57,7 +71,7 @@ To make it as easy as possible for you, we will only use the `` ` `` character t
 
 :::
 
-Different components have different configuration methods you can use. For example, the `Text` component has a configuration method named `left()` you can call to tell it that it should left align the text it displays (it is centered by default). This configuration method receives no arguments (but it's still required to write the parentheses).
+Different components have different configuration methods you can use. For example, the `Text` component has a configuration method named `left()` you can use to tell it that it should left align the text it displays (it is centered by default). This configuration method receives no arguments (but it's still required to write the parentheses).
 
 ::: tip Example
 
@@ -105,12 +119,6 @@ Text.top().text(`This text is left and top aligned!`).left()
 ```
 
 `left()` and `top()` are examples of configuration methods only the `Text` component have. But some configuration methods can be used on any component. An example of that is the configuration method called `.backgroundColor()`, which you can use to tell the component that it should have a background color. To tell it which color to use for the background, you pass it the name of a color in English as a string, such as `` `red` `` or  `` `blue` ``.
-
-::: tip The Text component is transparent by default
-
-If you look at the previous example, you are probably thinking that the `Text` component has <span style="background-color: aqua; color: black; font-weight: bold;">aqua</span> as the default background color, because that's what you see, but the background color you see is actually the default background color for the app itself, and not the `Text` component. The `Text` components default background color is transparent.
-
-:::
 
 ::: tip Example
 
@@ -190,9 +198,10 @@ class StartPage extends Page{
 ```js
 class StartPage extends Page{
 	createGui(){
-		// Note: this will unfortunately not work; the
-		// start of the value you return must be written
-		// to the right of return (on the same line)!
+		// Note: this will unfortunately not
+		// work; the start of the value you
+		// return must be written to the right
+		// of return (on the same line)!
 		return
 			Text.text(`This text is shown to the user!`)
 				.right()
@@ -245,7 +254,7 @@ Hmm... What were the names of the configuration methods to make the text appear 
 
 ::: exercise Exercise 2
 
-The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look like the the page shown below.
 
 ```js baga-show
 class StartPage extends Page{
@@ -267,6 +276,6 @@ When you add a new page, it will already contain some code for the GUI. You can 
 :::
 
 ## That's it!
-Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learnt. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them to create more complex and useful GUIs (a GUI consisting of a single GUI component is usually not that useful). 
+Now you know how to create and configure GUI components! 🥳 That wasn't that hard, was it? But much remains to be learned. You have only seen a few examples of how to use the `Text` component and some configuration methods you can call to configure it, but BagaWork contains many more components you can use, and many other configuration methods you can call too. The hard part will be to learn which these components and configuration methods are, and how you can combine them to create more complex and useful GUIs (a GUI consisting of a single GUI component is usually not that useful). 
 
 Continue with the tutorial [Fundamentals 4. Positioning GUI Components](../positioning-gui-components/) when you are ready.

@@ -108,8 +108,8 @@ Use the configuration method `size()` to specify how tall the text should be. Pa
 class StartPage extends Page{
 	createGui(){
 		return Rows.children(
-			Text.font(Font.size(10)).text(`Here is some text!`),
-			Text.font(Font.size(mm(10))).text(`Here is some text!`),
+			Text.font(Font.size(8)).text(`Here is some text!`),
+			Text.font(Font.size(sw(12))).text(`Here is some text!`),
 		)
 	}
 }

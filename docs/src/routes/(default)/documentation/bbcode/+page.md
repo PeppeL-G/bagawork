@@ -7,7 +7,7 @@ On this page you find the documentation for how to style text in your BagaWork a
 
 ::: tip Font is an alternative
 
-BBCode is used to style smaller parts of a text. If you want to style all text in a GUI component, you're usually better of using :docs[Font].
+BBCode is used to style smaller parts of a text. If you want to style all text in a GUI component, you're often better off using :docs[Font].
 
 :::
 
@@ -116,7 +116,7 @@ class StartPage extends Page{
 
 
 ## [color] - Changing the color of the text
-To change the color of the text, surround the text with `[color=THE_COLOR]` and `[/color]`, where `THE_COLOR` is the english name of the color the text should have, such as `red` or `blue`.
+To change the color of the text, surround the text with `[color=THE_COLOR]` and `[/color]`, where `THE_COLOR` is the name of the color in English the text should have, such as `red` or `blue`.
 
 ::: tip Example
 

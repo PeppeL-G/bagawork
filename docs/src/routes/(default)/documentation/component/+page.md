@@ -11,7 +11,7 @@ On this page you find the documentation for the configuration methods than can b
 ## `backgroundColor()` - Setting the background color
 Use the configuration method `backgroundColor()` to tell the component which background color it should. Pass it the background color as a string containing the name of the color in English, such as `` `red` `` or `` `blue` ``.
 
-If you don't call `backgroundColor()`, the component will not have any background color.
+If you don't call `backgroundColor()`, the component will not have any background color at all (the background will be transparent).
 
 ::: tip Example
 
@@ -38,13 +38,12 @@ Use the configuration method `border(thickness, color, sides)` to tell the compo
 
 The border will only be applied on the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
 
-This configuration method can be called multiple times to give
-different sides of the component different type of borders.
+This configuration method can be called multiple times on one and the same component to give the different sides of the component different type of borders.
 
 The parameters:
 
 * `thickness` - A number indicating how thick the border should be (for more information, see :docs[Units])
-* `color` - The English name of a color the border should have, e.g. `` `blue` ``
+* `color` - A string containing the English name of a color the border should have, such as `` `blue` ``
 * `sides` - A string indicating which sides of the component the border should be added to. Write:
 	* `t` in the string to add it to the **T**op side
 	* `b` in the string to add it to the **B**ottom side
@@ -63,7 +62,7 @@ class StartPage extends Page{
 		return Text
 			.backgroundColor(`red`)
 			.border(5, `blue`)
-			.text(`This component has a 5 thick blue border on all sides.`)
+			.text(`This component has a 5mm thick blue border on all sides.`)
 	}
 	
 }
@@ -119,16 +118,16 @@ class StartPage extends Page{
 
 
 ## `font()` - Formatting text
-Use the configuration method `font()` to tell the component how text shown on the screen, such as text set through:
+Use the configuration method `font()` to tell the component how the text in the component should be shown on the screen, such as text set through:
 
 * `Text.text()`
 * `Text.textWithBBCode()`
 * `Button.text()`
 * Etc.
 
-Should be formatted. Pass it an instance of the :docs[Font] class, which you can configure by calling different configuration methods on it (for more information on those methods, see the documentation for the :docs[Font] class).
+Pass it an instance of the :docs[Font] class, which you can configure by calling different configuration methods on it. For more information on those methods, see the documentation for the :docs[Font] class.
 
-The font assigned to a GUI component this way will be passed down to all its child components, and their child components, and so on. A child component can override the font it gets from its parent component by calling `.font()` on itself and pass it another font.
+The font assigned to a GUI component this way will be passed down to all its child components, and their child components, and so on. You can make a child component override the font it gets from its parent component by calling `.font()` on the child component and pass it another font.
 
 ::: tip Example
 
@@ -190,7 +189,7 @@ Use the configuration method `padding(amount, sides)` to tell the component how 
 
 The padding will only be applied to the sides of the component indicated by the `sides` parameter, or all sides if no value for that parameter is provided.
 
-This configuration method can be called multiple times to give different sides of the component different amounts of padding.
+This configuration method can be called multiple times on one and the same component to give different sides of the component different amounts of padding.
 
 The parameters:
 
@@ -213,7 +212,7 @@ class StartPage extends Page{
 		return Text
 			.backgroundColor(`red`)
 			.padding(15)
-			.text(`This component has 15 padding on all sides.`)
+			.text(`This component has 15mm padding on all sides.`)
 	}
 	
 }
@@ -232,7 +231,7 @@ class StartPage extends Page{
 			.padding(20, `tb`)
 			.padding(10, `lr`)
 			.top()
-			.text(`This component has 20 padding on the top side and bottom side, and 10 padding on the left and right side.`)
+			.text(`This component has 20mm padding on the top side and bottom side, and 10mm padding on the left and right side.`)
 	}
 	
 }
@@ -257,7 +256,7 @@ class StartPage extends Page{
 	randomNumberBetween0And1 = 0
 	
 	onBefore(){
-		p.randomNumberBetween0And1 = Math.random()
+		p.randomNumberBetween0And1 = m.randomFloat(0, 1)
 	}
 	
 	createGui(){

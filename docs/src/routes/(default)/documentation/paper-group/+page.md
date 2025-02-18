@@ -9,7 +9,7 @@ On this page you find the documentation for the paper figure `PaperGroup`.
 
 
 ## Introduction
-`PaperGroup` is a paper figure that can contain other paper figures. These other paper figures will be affected by the position and the size of the `PaperGroup` figure, making it perfect for grouping relevant paper children together, and to scale them to different sizes.
+`PaperGroup` is a paper figure that can contain other paper figures. These other paper figures will be affected by the position and the size of the `PaperGroup` figure, making it perfect for grouping relevant paper figures together, and to scale them the same way.
 
 ::: tip Example
 
@@ -76,7 +76,7 @@ class StartPage extends Page{
 
 
 ## `showCoordinates()` - Showing the coordinate system
-Use the configuration method `showCoordinates()` to tell the `PaperGroup` figure to visualize its coordinate system. This can be very handy during development, but not something one typically use in a final application.
+Use the configuration method `showCoordinates()` to tell the `PaperGroup` figure to visualize its coordinate system. This can be very handy during development, but not something one typically use the final version of the application.
 
 ::: tip Example
 
@@ -257,7 +257,7 @@ class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Updater.name(`updateText`).childCreator(p.createText),
+			Updater.name(`textUpdater`).childCreator(p.createText),
 			Space,
 			Box.aspectRatio(10, 10).child(
 				Paper
@@ -279,7 +279,12 @@ class StartPage extends Page{
 	}
 	
 	createText(){
-		return Text.text(`lastClickX: ${p.lastClickX}, lastClickY: ${p.lastClickY}`)
+		return Rows.children(
+			Text.text(`lastClickX:`),
+			Text.text(`${p.lastClickX}`),
+			Text.text(`lastClickY:`),
+			Text.text(`${p.lastClickY}`),
+		)
 	}
 	
 	handleClick(x, y){
@@ -287,7 +292,7 @@ class StartPage extends Page{
 		p.lastClickX = x
 		p.lastClickY = y
 		
-		runUpdater(`updateText`)
+		runUpdater(`textUpdater`)
 		
 	}
 	

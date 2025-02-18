@@ -7,7 +7,7 @@ On this page you find the documentation for the GUI Component `Updater`.
 
 ::: warning Note!
 
-`Updater` is not an ordinary GUI component. It can be created the same way as a GUI component, but it is not part of the GUI itself. Instead, it is used to dynamically create a child component, and it is the child component that is part of the GUI. So you can't call configuration methods like `.grow()` or `.backgroundColor()` on the `Updater` component. Do that on the child component it creates instead.
+`Updater` is not an ordinary GUI component. It can be created the same way as any other GUI component, but it is not part of the GUI itself. Instead, it is used to dynamically create a child component, and it is the child component that is part of the GUI. So you can't call configuration methods like `.grow()` or `.backgroundColor()` on the `Updater` component. Do that on the child component it creates instead.
 
 :::
 
@@ -53,7 +53,7 @@ The function you pass to `childCreator()` will be called immediately when the us
 
 ::: tip Example
 
-In this example, the method passed to `childCreator()` is only called when the user directly comes to to the page, so the usefulness of the `Updater` component is not shown, but it demonstrated how one can use `childCreator()`.
+In this example, the method passed to `childCreator()` is only called when the user directly comes to to the page, so the usefulness of the `Updater` component is not shown, but it demonstrates how one can use `childCreator()`.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -115,7 +115,7 @@ class StartPage extends Page{
 
 
 ## `name()` - Manually triggering updates
-Use the configuration method `name()` to give your `Updater` component instance a name. You can then call the function `runUpdater()` and pass it the same name whenever you want the `Updater` to update its GUI.
+Use the configuration method `name()` to give your `Updater` component instance a name. You can then call the function `runUpdater()` and pass it the same name whenever you want the `Updater` to update its GUI. Pass the name as a string.
 
 ::: warning Warning!
 
@@ -139,7 +139,7 @@ class StartPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Updater.name(`refresh`).childCreator(p.createTextShowingClock),
+			Updater.name(`clockUpdater`).childCreator(p.createTextShowingClock),
 			Space,
 			Button.text(`Refresh`).stay().onClick(p.handleButtonClick)
 		)
@@ -154,7 +154,7 @@ class StartPage extends Page{
 	}
 	
 	handleButtonClick(){
-		runUpdater(`refresh`)
+		runUpdater(`clockUpdater`)
 	}
 	
 }

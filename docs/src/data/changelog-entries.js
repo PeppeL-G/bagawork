@@ -11,6 +11,7 @@ export const changelogEntries = [{
 		`Changed the "open link in new tab" symbol on links`,
 		`Improved the look of the device frame on the docs website`,
 		`Fixed bug causing EnterText.onChange() to crash in Page.onAfter()`,
+		`Proofread and improved most pages a little bit on the docs website`,
 	],
 }, {
 	version: `0.0.50`,

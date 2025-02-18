@@ -53,7 +53,7 @@ class StartPage extends Page{
 
 
 ## Coordinate system
-The coordinate system that is used to position the figures to be drawn on the `Paper` component consists of two axes:
+The coordinate system that is used to position the figures to be drawn on the `Paper` component consists of two axes (see the next sub-chapter for a visualization of this):
 
 * The X-axe:
 	* Starts with `0` on the left side of the `Paper` component
@@ -64,7 +64,6 @@ The coordinate system that is used to position the figures to be drawn on the `P
 	* Increases toward the top
 	* Ends (by default) with `10` on the top side of the `Paper` component
 
-See the next sub-chapter for an example of this.
 
 
 ## `showCoordinates()` - Showing the coordinate system
@@ -73,7 +72,11 @@ Use the configuation method `showCoordinates()` to tell the `Paper` component th
 * Show some lines to visualize the coordinate system
 * Show the coordinates of the mouse in its upper right corner when you move the mouse over the `Paper` component
 
-This method is very useful to call when you are developing your app, and then you remove the call to it just before you publish your app, so your real users  will never see the coordinate system.
+::: tip Tip!
+
+`showCoordinates()` is very useful to use while you are developing your app, and then you remove the call to it just before you publish your app, so your real users will never see the coordinate system.
+
+:::
 
 ::: tip Example
 

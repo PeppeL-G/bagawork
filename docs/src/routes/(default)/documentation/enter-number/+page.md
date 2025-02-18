@@ -15,13 +15,12 @@ This webpage only contains descriptions of the configuration methods that are sp
 
 
 ## Introduction
-The `EnterNumber` component is a view in which the user can enter a number. If the user presses the Enter key (`↵`) in the component, the app will progress to the next page.
+The `EnterNumber` component is a view in which the user can enter a number. If the user presses the Enter key (`↵`) when the component has focus, the app will progress to the next page.
 
 ::: tip Example
 
 In this example, the GUI consists of only the `EnterNumber` component, so it covers the entire screen.
 
-```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
 		return EnterNumber
@@ -74,12 +73,12 @@ class StartPage extends Page{
 ## `decimals()` - Setting maximum number of decimals
 Use the configuration method `decimals()` to indicate how many decimals the entered number may contain. Pass it:
 
-* `0` to allow no decimals, e.g. allow numbers like `123` and `55` (i.e. only integers)
+* `0` to allow no decimals, e.g. allow only numbers like `123` and `55` (i.e. only integers)
 * `1` to allow at most 1 decimal, e.g. `123`, `123.4` and `0.6`
 * `2` to allow at most 2 decimals, e.g. `123`, `123.4`, `123.45` and `1.23`
 * Etc.
 
-If you don't call this method, then there will be no upper limit on the number of decimals that may be entered.
+If you don't call this method, then there will be no upper limit on the number of decimals that may be entered, but JavaScript has its own limit on how many decimals a number can have, so when you read out the entered number, it might have fewer decimals than has been entered. JavaScript supports quite many decimal numbers in numbers, so in practice this will likely never be a problem for you.
 
 ::: tip Example
 
@@ -123,7 +122,8 @@ There are 4 different copnfiguration methods you can call to specify which page 
 
 These methods can be called multiple times. In addition to those, you can also use `page(page)` to specify the page the user should come to if the entered number isn't true for any of the previously mentioned configuration methods.
 
-Example:
+
+::: tip Example
 
 ```js
 EnterNumber
@@ -132,8 +132,10 @@ EnterNumber
 	.pageIfLower(0, NegativePage) // Go to NegativePage if the user enters a number lower than 0, for example -0.000001, -300 or -999999.
 	.pageIfHigher(100, HighPage) // Go to HighPage if the user enters a number higher than 100, for example 100.000001, 2000 or 999999.
 	.pageIfBetween(50, 60, MiddlePage) // Go to MiddlePage if the user enters a number between between 50 and 60, for example 50.000001, 55 or 59.999999.
-	.page(DefaultPage) // Go to DefaultPage if the user enters a number that doesn't fulfill any of the other pageIfXXX() methods, such as 5, 50 or 99.99999.
+	.page(DefaultPage) // Go to DefaultPage if the user enters a number that doesn't fulfill any of the pageIfXXX() methods, such as 5, 50 or 99.99999.
 ```
+
+:::
 
 ::: tip Example
 
@@ -192,7 +194,7 @@ class AdultPage extends Page{
 Use the configuration method `store()` to store the number the user entered in an object (for example in `a` or `p`). Pass it two values:
 
 1. The object in which the entered number should be stored (e.g. `a` or `p`)
-2. The name of the variable in the object where the entered number should be stored
+2. The name of the variable in the object where the entered number should be stored as a string
 
 ::: tip Example
 

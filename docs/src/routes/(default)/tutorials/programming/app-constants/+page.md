@@ -11,7 +11,9 @@ This tutorial will teach you what constants in programming are, and how you can 
 ## App constants vs page constants
 In the previous tutorial you learned what page constants are, and how to use them. Page constants are great, but they have one big limitation: a page constant can only be used on the page that created it. Sometimes we want to re-use a value on multiple different pages, and then it's better to use an *app constant* instead, since all different pages have access to all app constants.
 
-Below we have an example of an app that uses the same hardcoded value (the name of the app, `InfoApp`) at multiple diffrefent pages, including on multiple different pages.
+Below we have an example of an app that uses the same hardcoded value (the name of the app, `InfoApp`) on multiple different pages.
+
+::: tip
 
 ```js baga-show-editor-code
 class InfoApp extends App{
@@ -56,7 +58,7 @@ class ZeldaPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`<-`).page(MenuPage),
+				Button.text(`←`).page(MenuPage),
 				Space,
 			)
 		)
@@ -74,7 +76,7 @@ class MarioPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`<-`).page(MenuPage),
+				Button.text(`←`).page(MenuPage),
 				Space,
 			)
 		)
@@ -83,7 +85,9 @@ class MarioPage extends Page{
 }
 ```
 
-This works, but changing the name of the app in the future (for example to `Information App`) will be hard, since there are so many places we would need to change that name. Putting the name in an app constant, and then refer to that constant at each place in the code we need to use the name would be better.
+:::
+
+This works, but changing the name of the app in the future (for example from `InfoApp` to `Information App`) will be hard, since there are so many places we will need to change that name. Putting the name in an app constant, and then refer to that constant at each place in the code we need to use the name would be better.
 
 
 
@@ -108,9 +112,9 @@ class MyApp extends App{
 
 
 ### How to use app constants
-In BagaWork, everything you create in your `App` class (constants, variables and methods) are accessible in a special variable called `a` (short for *app*). To retrieve the value of a constant, you would simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
+In BagaWork, everything you create in your `App` class (constants, variables and methods) are accessible through a special variable named `a` (short for *app*). To retrieve the value of an app constant, you would simply write `a.THE_NAME_OF_THE_CONSTANT`, for example `a.APP_NAME`.
 
-To display the name of the app on the `MenuPage` we had before, the following code were used:
+To display the name of the app on the `MenuPage`, we used before the following code:
 
 ```js
 Text.text(`InfoApp`)
@@ -147,6 +151,8 @@ The same is true for the `ZeldaPage`.
 
 ### The final solution
 So, here's the code for the app using constants, instead of harding the name of the app at multiple places.
+
+::: tip
 
 ```js baga-show-editor-code
 class InfoApp extends App{
@@ -193,7 +199,7 @@ class ZeldaPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`<-`).page(MenuPage),
+				Button.text(`←`).page(MenuPage),
 				Space,
 			)
 		)
@@ -211,7 +217,7 @@ class MarioPage extends Page{
 			Space,
 			Columns.children(
 				Space,
-				Button.text(`<-`).page(MenuPage),
+				Button.text(`←`).page(MenuPage),
 				Space,
 			)
 		)
@@ -220,6 +226,8 @@ class MarioPage extends Page{
 }
 ```
 
+:::
+
 
 
 ## Exercises
@@ -227,7 +235,7 @@ Complete the exercises below to see if you have fully mastered what has been tau
 
 ::: exercise Exercise 1
 
-The code in [this BagaWork project](/editor#eNq9VA1r2zAQ/StXMWgCwuSrW2sYwx0lZKztaANbWMqi2OfE1JaMJLc1wf99kj23cZaEbrSFxEg66T7ee3crwtKUuCviiwCJS/yYKQXnuZemgA8aeaDArFdTPtX27w3PLsa/LrzzM/gIsy8sQQWnggez+oIvkWm81kzqb2yBrXb1VEvUmeQwlIg64gtrs4aieleQgpJQxAFKRdyfKxIFxO1Swk0Ak1XpjlAiwlCh/kHcTr2emHVxQ0lq/DVeVs5G1aZR3HoKjzXazapZwzCLNrO/EvfK8ZdRHEjkrco01dcp85HWu7Fx6Wjzac2GQgSQCMlNNArvVsx5gq84mLXpdg+fRZwlfEugzYtTfZppLfjWcNeRNCEcC0zLUypa8AR5yUmb7nJYW9oNaih5IG6vYzDPidvvdApaodzbh3Iz5OviPBEZKMQEGMwjDXMhMdiEm4ISsESJ4Asr2lxkErh5DuwxUxeGArT5LRHm7BZlDmopUhC8PBLmI0FFgVmG5YnSVksUGA9gLg3skBgbr+2RBN+4URTSGJlC58UpH4HEMFNY0l2zfVUe7Wd6w89laGDJ5IYjz/cx/X/JDE5O/kimX0umv08yT3m/rlxGViyO48BIHyqYI3LgkY9wy8W95dBI469udeArsjusZLPIuJVJEtlRaejOU+Q8tzIpzffMiFBk2gHbkfMcd7X6FsyOO+9LzLqDDzVmg71t9kjR62I2XjILFoOFHTIxCw7g0ug8YDm1RR/GsQHSmm08MBlw/eyJtweGQb9fT/cxJmlsamlM+Y2RczsKvSCL3wAPT5ZagJIY0+uMQ/f404v394WYPbuHJ6hm/9qna6O8AeUZ1yi9xRs04/dKWGXjGP+7IWzU2u2s3WtajnZZejvf9I6epczipvgNJgtF4w==) contains an app that works like this:
+The code in [this BagaWork project](/editor#eNq9VAtr2zAQ/itXMWgCwuTVrTWM4Y4SMtZ2tIEtLGVR7HNiaktGktua4P8+yZ7bOEtCN9pCYk463eu7725FWJoSd0V8ESBxiR8zpeA899IU8EEjDxQYeTXlU23/3vDsYvzrwjs/g48w+8ISVHAqeDCrH/gSmcZrzaT+xhbYalemWqLOJIehRNQRX1idVRSVXUEKSkIRBygVcX+uSBQQt0sJNwFMVqU7QokIQ4X6B3E7tTwxcnFDSWr8NSwrZ6Pq0ChuPYXHGu1h1axhmEWb2V+Je+X4yygOJPJWpZrq65T5SOvT2Lh0tPm0ZkMhAkiE5CYahXcr5jzBVxzM2nS7h88izhK+JdDmw6k+zbQWfGu460iaEI4FpuUpFS14grzsSZvuclhr2o3WUPJA3F7HYJ4Tt9/pFLRCubcP5WbI18V5IjJQiAkwmEca5kJisAk3BSVgiRLBF5a0ucgkcGMO7DFTF4YCtPktEebsFmUOailSELy8EuYjQUWBEcPyRmnLJQqMBzCXBnZIjI7X+kiCb9woCmmMTKHz4i0fgcQwU1i2u+72VXm1v9Mbfi5DA0smNxx5vo/p/1NmcHLyhzL9mjL9fZR5yvt16TKyZHEcB0b6UMEckQOPfIRbLu5tDw01/ppWB74iu8OKNouMW5okkV2Vpt15ipznlial+p4ZOdMO2IGc57hr0rdAdtx5X0LWHXyoIRvsnbLHDr0uZOMls1gxWNgdE7PgAC4NzQOWU1vzYRwbHK3axgOTAdfPXnh7YBj0+/VyH2OSxqaWxpLf2Di3o9ALsvgN8PBkSQUoG2NGnXHoHn968fG+ELNnj/AE1exfx3RtkzegPOMapbd4g1n8XhGrnBvjfzeEjVq7nbV3Tc3RLk1vp03v6FnMLG6K38ApRX8=) contains an app that works like this:
 
 ```js baga-show
 class MyApp extends App{
@@ -281,7 +289,7 @@ class RefusePage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Text.text(`I see... It's been nice knowing you, ${a.AGENT_NAME}. Leave your gun to miss Moneypenny on your wait out. Goodbye!`),
+			Text.text(`I see... It's been nice knowing you, ${a.AGENT_NAME}. Leave your gun to miss Moneypenny on your way out. Goodbye!`),
 			Space,
 		)
 	}
@@ -303,7 +311,7 @@ class AcceptPage extends Page{
 
 As you can see, the page's GUI contains the name `James Bond` at multiple places. This name is currently stored in an app constant, so all pages can access it. All seems good!
 
-However, to improve security and anonymousity among the agents, it has now been decided that one should never referr to the agents by name, but only by their code numbers, which for `James Bond` is `007`.
+However, to improve security and anonymity among the agents, it has now been decided that one should never refer to the agents by name, but only by their code numbers, which for `James Bond` is `007`.
 
 Change the code so the GUI displays `007` instead of `James Bond`. When you're done, it should look as shown below.
 
@@ -359,7 +367,7 @@ class RefusePage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Text.text(`I see... It's been nice knowing you, ${a.AGENT_NAME}. Leave your gun to miss Moneypenny on your wait out. Goodbye!`),
+			Text.text(`I see... It's been nice knowing you, ${a.AGENT_NAME}. Leave your gun to miss Moneypenny on your way out. Goodbye!`),
 			Space,
 		)
 	}
@@ -394,14 +402,14 @@ This is not a very convenient procedure when you need to use the same smiley mul
 
 Your task is to:
 
-1. Open [this BagaWork project](/editor#eNq1UcFqg0AQ/ZVlLo0gIRECxUuxpZQeWkoTaEMNZNExSnV32R1pg/jvXTUJUWJ76mFl1jfvzby3FXClwK8gkjGCD1HOjWFP+0Apht+EIjbM1lUoQmpOpJETLolreuE7nDgdQhqp1IKdgOZv3ZFqqF1IZB6jNuB/VJDF4M9dELxoJrYUcEEmiUF6B392rNe2rjcuKKvXMA/lCguV2yV6Yr31A/P5mARxmbernHw0l4GRhzIbWniVX2YapVkeaxSTDgppqXiE7vG2spJTsp/JNtDI9rJkrT9GKRdsfn2zddzLzDuZl4W4MGDYGNJtSSTFYcyzPJP8o3eN5pfmI+IMnqiL0htEeS8IdbDD/w/yLeV0ZZosNbP64xH2vM5nZ319ZDGGeKMcbzEydRDWpv4B1Ngrlw==)
+1. Open [this empty BagaWork project](/editor#eNq1UcFqg0AQ/ZVlLo0gIRECxUuxpZQeWkoTaEMNZNExSnV32R1pg/jvXTUJUWJ76mFl1jfvzby3FXClwK8gkjGCD1HOjWFP+0Apht+EIjbM1lUoQmpOpJETLolreuE7nDgdQhqp1IKdgOZv3ZFqqF1IZB6jNuB/VJDF4M9dELxoJrYUcEEmiUF6B392rNe2rjcuKKvXMA/lCguV2yV6Yr31A/P5mARxmbernHw0l4GRhzIbWniVX2YapVkeaxSTDgppqXiE7vG2spJTsp/JNtDI9rJkrT9GKRdsfn2zddzLzDuZl4W4MGDYGNJtSSTFYcyzPJP8o3eN5pfmI+IMnqiL0htEeS8IdbDD/w/yLeV0ZZosNbP64xH2vM5nZ319ZDGGeKMcbzEydRDWpv4B1Ngrlw==)
 2. Create the following three app constants:
 	* `SMILEY_SMILING` storing 🙂
 	* `SMILEY_GRIN` storing 😁
 	* `SMILEY_LAUGH_CRYING` storing 🤣
 3. Add a few pages that make use of these app constants to display the smileys
 
-When you are done, your app can for example work like this:
+When you are done, your app can for example look like the one below.
 
 ```js baga-show
 class MyApp extends App{
@@ -452,7 +460,7 @@ class GrinPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Text.text(`${a.SMILEY_GRIN} means that the one who wrote the text is smiling so much that you can see his/her teeth.`),
+			Text.text(`${a.SMILEY_GRIN} means that the one who wrote the text is smiling so much that you can see their teeth.`),
 			Space,
 			Button.text(`Back`).page(StartPage)
 		)
@@ -465,7 +473,7 @@ class LaughCryingPage extends Page{
 	createGui(){
 		return Rows.children(
 			Space,
-			Text.text(`${a.SMILEY_LAUGH_CRYING} means that the one who wrote the text is laughing so hard that tears come from his/her eyes.`),
+			Text.text(`${a.SMILEY_LAUGH_CRYING} means that the one who wrote the text is laughing so hard that tears come from their eyes.`),
 			Space,
 			Button.text(`Back`).page(StartPage)
 		)
@@ -480,4 +488,4 @@ class LaughCryingPage extends Page{
 
 
 ## That's it!
-Great work, now you also now how to use app constants in BagaWork! 🥳 And constants are great, but variables are even more usefull, so let's take a look at them next.
+Great work, now you also now how to use app constants in BagaWork! 🥳 And constants are great, but variables are even more useful, so let's take a look at them in the next tutorial, [Programming 3. Page Variables & Methods](../page-variables-and-methods/).

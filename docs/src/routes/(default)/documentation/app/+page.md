@@ -19,7 +19,8 @@ You should create your own class inheriting from `App` and in which you override
 Example of the basic code for creating your own `App` class.
 
 ```js
-// Name your own app whatever you want (in this example MyApp).
+// Name your own app whatever you want
+// (in this example MyApp).
 class MyApp extends App{
 	// Override methods here to give your own app
 	// the specific behavior you want it to have.
@@ -52,7 +53,7 @@ class MyApp extends App{
 	
 	THE_CONSTANT_NAME = "The constant value"
 	
-	theVariableNAME = "The variable value"
+	theVariableName = "The variable value"
 	
 	theMethodName(){
 		
@@ -70,7 +71,7 @@ class MyApp extends App{
 
 
 ## `onBefore()` - Initializing the state of the app
-The method `onBefore()` will be called directly when the app starts. In it, you can initialize the state of your app.
+The method `onBefore()` will be called directly when the app starts for the first time. In it, you can initialize the state of your app.
 
 ::: tip Example
 
@@ -79,22 +80,23 @@ Example of an app that uses `onBefore()`.
 ```js
 class MyApp extends App{
 	
-	TERM_1 = 5
-	TERM_2 = 4
+	NUMBER_1 = 5
+	NUMBER_2 = 4
 	
-	// We want the sum variable to contain the sum of
-	// TERM_1 and TERM_2. However, the "a" variable can
-	// only be used in methods in the App class, so we
-	// can't write sum = a.TERM_1 + a.TERM_2 here. So
-	// instead, we initialize the sum to a dummy value
-	// (0 in this case)...
+	// We want the sum variable to contain the
+	// sum of NUMBER_1 and NUMBER_2. However, the
+	// "a" variable can only be used in methods
+	// in the App class, so we can't write
+	// sum = a.NUMBER_1 + a.NUMBER_2 here. So
+	// instead, we initialize the sum to a dummy
+	// value (0 in this case)...
 	sum = 0
 	
 	onBefore(){
 		
 		// ...and in this method we assign
 		// the sum its correct value.
-		a.sum = a.TERM_1 + a.TERM_2
+		a.sum = a.NUMBER_1 + a.NUMBER_2
 		
 	}
 	
@@ -105,7 +107,7 @@ class MyApp extends App{
 
 ::: tip Not needed?
 
-You only need to initialize the global state if your app needs one. Some simple apps don't need one, and can simply leave `onBefore()` empty, or not have this method at all.
+You only need to initialize the global state if your app needs one. Many apps don't need one, and can simply leave `onBefore()` empty, or not have this method at all.
 
 :::
 
@@ -196,17 +198,45 @@ class StartPage extends Page{
 
 :::
 
-See the documentation for the :docs[Page] class to learn which methods you can override in your `Page` classes to make the page work the way you want.
+See the documentation for the :docs[Page] class to learn which methods you can override in your `Page` class to make it work the way you want.
 
 
 
 
 ## `createErrorRecoveringPage()` - Handling errors
-When the user runs your app and an une expected error occurs in your code, your app will crash, and a GUI from the framework will be shown to the user with a message that explains why the app crashed, and what the user can do about it.
+When the user runs your app and an unexpected error occurs in your code, your app will crash, and a GUI from the framework will be shown to the user with a message that explains why the app crashed, and what the user can do about it.
+
+::: tip Example
+
+Example of an app that can crash.
+
+```js baga-show-editor-code
+class StartPage extends Page{
+	
+	createGui(){
+		return Rows.children(
+			Text.text(`Try crashing this app by clicking on the button below.`),
+			Button.text(`Crash!`).onClick(p.handleClick),
+		)
+	}
+	
+	handleClick(){
+		
+		// When the code below is executed,
+		// the app will crash, because the
+		// variable "hello" does not exist.
+		p.test = hello
+		
+	}
+	
+}
+```
+
+:::
 
 One of the options presented to the user is to try running the app again. Most likely, the app will only crash when it tries to show/run the page that crashed, and hopefully the user will still be able to use the other pages in the app without problems until you have released a new version of the app that doesn't crash on that page anymore.
 
-If the user choses the option to try running the app again, then `App.createStartPage()` will be called, and the page returned from that method will be shown to the user. If you instead want to show another page to the user, you can implement `App.createErrorRecoveringPage()`, and return the page you want to show to the user there.
+If the user choses the option to try running the app again, then `App.createStartPage()` will be called, and the page returned from that method will be shown to the user. If you instead want to show another page to the user after a crash, you can implement `App.createErrorRecoveringPage()`, and return the page you want to show to the user there.
 
 ::: tip Example
 
@@ -252,10 +282,11 @@ class CounterPage extends Page{
 	
 	createGui(){
 		
-		// To try error handling, we will on purpose
-		// have code that crashes when counter is 3.
+		// To try error handling, we will on
+		// purpose have code that crashes when
+		// counter is 3.
 		if(p.counter == 3){
-			log(nonExistingVariable) // Will crash, since that variable doesn't exist.
+			log(nonExistingVariable)
 		}
 		
 		return Rows.children(
@@ -292,7 +323,7 @@ class ClockPage extends Page{
 
 ::: tip Example
 
-This is the same app as above, but in it we have also specified that `createErrorRecoveringPage()` should return `MenuPage`, so the user comes to the `MenuPage` after the app has crashed, and doesn't need to view the `StartPage` again.
+This is the same app as in the previous example, but this time we have also specified that `createErrorRecoveringPage()` should return `MenuPage`, so the user comes to the `MenuPage` after the app has crashed, and doesn't need to view the `StartPage` again.
 
 ```js baga-show-editor
 class MyApp extends App{

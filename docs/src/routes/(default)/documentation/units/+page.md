@@ -3,7 +3,7 @@
 </script>
 
 # Units
-On this page you find information on how BagaWork handles sizes used in the graphical user interface.
+On this page you find information on how BagaWork handles sizes used in the GUI.
 
 
 
@@ -17,7 +17,7 @@ Many numbers that you pass to GUI components represent a size of some kind, such
 * The `size` passed to `Font.size()`
 * Etc.
 
-These numbers need to be associated with a unit to have any meaning. If you don't specify which unit to use, then the `sw` unit will be used by default.
+These numbers need to be associated with a unit to have any meaning. If you don't specify which unit to use, then the `mm` (millimeter) unit will be used by default.
 
 
 
@@ -46,7 +46,7 @@ Also note that in this example, since the app title uses the `mm` unit (since no
 
 
 ## The `sw` unit
-The `sw` unit is short for **S**creen**W**idht, and it represents a percentage of the screen width. So, if the screen your app happens to be running on is 40 millimeters wide, then:
+The `sw` unit is short for **S**creen**W**idth, and it represents a percentage of the screen width. So, if the screen your app is running on is 40 millimeters wide, then:
 
 * `1sw` = 0.4 millimeters
 * `50sw` = 20 millimeters
@@ -59,6 +59,8 @@ However, you never think of it as a conversion to millimeters like this. Instead
 * `100sw` = the entire screen width
 
 The `sw` unit is great to use when you want the size of something to be related to the width of the screen your app is running on.
+
+To use the `sw` unit, just pass wrap your number in a call to the `sw()` function.
 
 ::: tip Example
 

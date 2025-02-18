@@ -17,7 +17,7 @@ This webpage only contains descriptions of the configuration methods that are sp
 ## Introduction
 The `Box` component is a layout that can have an optional child with a specific width and height specified by you. So if you ever want to give a GUI component a specific width and height, just use it as a child in a `Box` component.
 
-The `Box` component will by default be sized per the GUI layout you use it in or cover the entire screen if it's the root GUI component. But its child component can be smaller than that.
+The `Box` component will by default be sized per the GUI layout you use it in, or cover the entire screen if it's the root GUI component. But its child component can be smaller than that.
 
 ::: tip Example
 
@@ -40,7 +40,7 @@ class StartPage extends Page{
 ## `child()` - Setting the child
 Use the configuration method `child()` to tell the `Box` component which (optional) child it should have. 
 
-If the `Box` component has been given a size (for example by being the root layout, or by being used as a child in :docs[Rows] or :docs[Columns] and been given a `grow()`, etc.), then it's child will by default get the same size as the `Box` component itself (except its padding).
+If the `Box` component has been given a size (for example by being the root layout, or by being used as a child in :docs[Rows] or :docs[Columns] and been given a `grow()` number, etc.), then it's child will by default get the same size as the `Box` component itself (except its padding).
 
 ::: tip Example
 
@@ -103,10 +103,12 @@ Use the configuration method `width()` to tell the `Box` component how wide its 
 
 ::: tip Example
 
+Example of how to create a box whose child component is 40mm wide.
+
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(33.33).child(
+		return Box.backgroundColor(`red`).padding(1).width(40).child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -117,7 +119,7 @@ class StartPage extends Page{
 
 ::: tip Tip!
 
-A better name on this method is probably `childWidth()`, since it sets the width of the child component, and not the width of the `Box` component, but to keep the code shorter, the name `width()` is used.
+A better name on this method might be `childWidth()`, since it sets the width of the child component, and not the width of the `Box` component, but to keep the code shorter, the name `width()` is used.
 
 :::
 
@@ -132,7 +134,7 @@ If you use the configuration method `width()`, the child will by default be cent
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(33.33).left().child(
+		return Box.backgroundColor(`red`).padding(1).width(40).left().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -153,7 +155,7 @@ If you use the configuration method `width()`, the child will by default be cent
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(33.33).right().child(
+		return Box.backgroundColor(`red`).padding(1).width(40).right().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -172,7 +174,7 @@ Use the configuration method `height()` to tell the `Box` component how tall its
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(50).child(
+		return Box.backgroundColor(`red`).padding(1).height(30).child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -183,7 +185,7 @@ class StartPage extends Page{
 
 ::: tip Tip!
 
-A better name on this method is probably `childHeight()`, since it sets the height of the child component, and not the height of the `Box` component, but to keep the code shorter, the name `height()` is used.
+A better name on this method might be `childHeight()`, since it sets the height of the child component, and not the height of the `Box` component, but to keep the code shorter, the name `height()` is used.
 
 :::
 
@@ -198,7 +200,7 @@ If you use the configuration method `height()`, the child will by default be cen
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(50).top().child(
+		return Box.backgroundColor(`red`).padding(1).height(30).top().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -219,7 +221,7 @@ If you use the configuration method `height()`, the child will by default be cen
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).height(50).bottom().child(
+		return Box.backgroundColor(`red`).padding(1).height(30).bottom().child(
 			Text.backgroundColor(`lime`).text(`The child is lime!`)
 		)
 	}
@@ -243,8 +245,8 @@ Instead of giving the `Box` component an explicit width and height, you can use 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
-		return Box.backgroundColor(`red`).padding(1).width(50).aspectRatio(1, 2).child(
-			Text.backgroundColor(`lime`).text(`Width is 50sw, the aspect ratio is 1:2 (i.e. the height should be twice as big as the width), so the height is computed as 100sw.`)
+		return Box.backgroundColor(`red`).padding(1).width(30).aspectRatio(1, 2).child(
+			Text.backgroundColor(`lime`).text(`Width is 30mm, the aspect ratio is 1:2 (i.e. the height should be twice as big as the width), so the height is computed as 60mm.`)
 		)
 	}
 }
@@ -270,6 +272,6 @@ class StartPage extends Page{
 
 ::: tip Tip!
 
-A better name on this method is probably `childAspectRatio()`, since it sets the aspect ratio of the child component, and not of the `Box` component, but to keep the code shorter, the name `aspectRatio()` is used.
+A better name on this method might be `childAspectRatio()`, since it sets the aspect ratio of the child component, and not of the `Box` component, but to keep the code shorter, the name `aspectRatio()` is used.
 
 :::

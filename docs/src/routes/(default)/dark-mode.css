@@ -6,6 +6,7 @@
 	--container-background-color: rgba(128, 128, 128, 0.05);
 	--container-tip-color: rgb(66, 211, 146);
 	--container-warning-color: #c90;
-	--container-exercise-color: rgb(0, 105, 186);
+	--container-exercise-color: rgb(0, 105, 186);--code-background-color: rgba(177, 206, 234, 0.16);
+	
 	
 }

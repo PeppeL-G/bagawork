@@ -10,7 +10,7 @@ As you know, you should in the `Page` method `createGui()` use GUI components fr
 
 ::: tip Example
 
-In the app below, the root component of the page has no background color (its background is transparent), and it's the application's default background color (<span style="background-color: aqua; color: black; font-weight: bold;">aqua</span>) we se. So it's hard to tell what space the root component does occupy (but it does still occupy the entire screen).
+In the app below, the root component of the page has no background color (its background is transparent), and it's the framework's default background color (white) you can se. So it's hard to tell what space the root component does occupy (but it does still occupy the entire screen).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -40,11 +40,13 @@ class StartPage extends Page{
 
 
 ## Using multiple GUI components
-*But if `createGui()` can send back only one GUI component, how can I use multiple GUI components?* Well, there exists some GUI components whose sole purpose is to contain and position other GUI components on the screen. These GUI components are called *layouts*, and the GUI components they contain are called *children*.
+>*But if `createGui()` can send back only one GUI component, how can I use multiple GUI components?*
 
-By using a layout, `createGui()` can send back only one GUI component (the layout), but that GUI component can in turn contain other GUI components. And when the layout component is shown on the screen, it will position and show the child components it contains on the screen too. This way we can build a GUI consisting of multiple GUI components!
+Well, that's an excellent question. There exists some GUI components whose sole purpose is to contain and position other GUI components on the screen. These GUI components are called *layouts*, and the GUI components they contain are called *children*.
 
-Let's go through some of the layouts we can use in BagaWork.
+By using a layout, `createGui()` can send back only one GUI component (the layout), but that GUI component will in turn contain other GUI components. And when the layout component is shown on the screen, it will position and show the child components it contains on the screen too. This way we can build a GUI consisting of multiple GUI components!
+
+Let's go through the two most common layout components in BagaWork: the `Rows` component and the `Columns` component.
 
 ## The `Rows` component
 The GUI component called `Rows` is a layout that positions its children as rows:
@@ -58,7 +60,7 @@ All children are as wide as the `Rows` component, and their height is by default
 
 ::: tip Example
 
-Example of how to use the `Rows` component to position three `Text` components as rows. All GUI components are given a background color, so one easily can see the space each component occupies.
+Example of how to use the `Rows` component to position three `Text` components as rows. All GUI components are given a background color, so we easily can see the space each component occupies.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -74,7 +76,7 @@ class StartPage extends Page{
 
 :::
 
-Note, in the example above that the root component (the `Rows` component in this case) occupies the entire screen, including the parts occupied by its children, although it doesn't look like that. The children are drawn on top of the `Rows` component, so their' background is covering the background of the `Rows` component, so therefore we can't see the background of the `Rows` component where the children are positioned in this example.
+Note, in the example above that the root component (the `Rows` component in this case) occupies the entire screen, including the parts occupied by its children, although it doesn't look like that. The children are drawn on top of the `Rows` component, so their background is covering the background of the `Rows` component, so therefore we can't see the background of the `Rows` component where the children are positioned in this example.
 
 ::: tip Example
 
@@ -94,7 +96,6 @@ class StartPage extends Page{
 
 :::
 
-
 ::: tip Comma between arguments
 
 When you pass multiple arguments to a method, the arguments have to be separated by a comma, as shown below:
@@ -113,7 +114,7 @@ Rows.children(
 )
 ```
 
-When the code is written like this, some people find it strange that the last argument doesn't end with a `,` (comma). But do you know what? It is actually OK to write a `,` (comma) after the last argument too, so it is possible to write this code like this:
+When the code is written like this, some people find it strange that the last argument doesn't end with a `,` (comma). Don't you think the code would look nicer and more consistent if the last argument ended with a comma too? For this reason, it is actually OK to write a `,` (comma) after the last argument too, so it is possible to write this code like this:
 
 ```js
 Rows.children(
@@ -150,7 +151,7 @@ class StartPage extends Page{
 
 :::
 
-If you use multiple `Space` children in `Rows`, then the remaining available space of the `Rows` component will be split evenly among the `Space` children.
+If you use multiple `Space` children in `Rows`, then the remaining available space of the `Rows` component will be divided evenly among the `Space` children.
 
 ::: tip Example
 
@@ -172,7 +173,7 @@ class StartPage extends Page{
 
 :::
 
-The `Space` component doesn't show anything, so you can't see it on the screen. But if you give it a background color, you can easily see what space it occupies. While developing, it can be a good idea to give all your components a unique background color, so you can easily see what space they occupy.
+The `Space` component doesn't show anything (it only occupies space), so you can't see it on the screen. But if you give it a background color, you can easily see what space it occupies. While developing, it can be a good idea to give all your components a unique background color, so you can easily see what space they occupy.
 
 ::: tip Example
 
@@ -198,7 +199,7 @@ class StartPage extends Page{
 
 
 ## The `Columns` component
-The GUI component called `Columns` is a layout that positions its children as columns:
+The GUI component named `Columns` is a layout that positions its children as columns:
 
 * The first child is positioned to the left
 * The second child is positioned to the right of the first child
@@ -226,7 +227,7 @@ class StartPage extends Page{
 :::
 
 ### Positioning children
-Just as with the `Rows` component, you can insert extra `Space` children to push apart the other children.
+Just as with the `Rows` component, you can insert extra `Space` children to push apart the children.
 
 ::: tip Example
 
@@ -263,12 +264,25 @@ class StartPage extends Page{
 
 
 ## Combining Layouts
-So far you might not be that impressed. Not many applications have a GUI consisting of only rows or of only columns like that. But fear not; here's the secret to success: one can use a layout component as a child in another layout component! This way, a wide vararity GUIs can be implemented.
+So far you might not be that impressed. Not many applications have a GUI consisting of only rows or of only columns like that. But fear not, here's the secret to success: one can use a layout component as a child in another layout component! This way, a wide variety GUIs can be implemented.
 
 
 ::: tip Example
 
-Example of how to combine the `Rows` component and the `Columns` component to create a layout with a bottom navigation view (learn how to make it functional later).
+Example of how to combine the `Rows` component and the `Columns` component to create a layout with a bottom navigation view (learn how to make it functional later). The GUI components used in this app are these ones (if you read the code below, you can see the very same thing!):
+
+* Rows:
+	* Space
+	* Text
+	* Space
+	* Columns:
+		* Space
+		* Text
+		* Space
+		* Text
+		* Space
+		* Text
+		* Space
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -346,7 +360,7 @@ Just changing the root GUI component to another GUI component should do it. But 
 
 ::: exercise Exercise 2
 
-The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look as the page shown below.
+The code in [this BagaWork project](/editor#eNq1UdFKwzAU/ZVwX1yhjLUwHH2RKiI+KOIGOuxgob3dhm0Sklt0lP676bqOtaz65ENCbs495+aclMCVgqCEWCYIAcQZN4Y97UOlGH4TisQwey4jEVG9Yo2ccE5c0wvf4MhpENJIhRbsBNS3VUOqoHIhlVmC2kDwUcIugcBzQfC8nniggAsyTQ3Su4Ums7ZaQuBfVysXlJWsycfjAnOV2Xd09DoOQvP5mIZJkR1ec7JSFz0vD8Wu7+JVfplxvN1liUYxaqCI5orH6LbVwkqOyW6jdaiR7WXBDhYZbblg3uxm7biXmXcyK3JxYUC/MaLbgkiK45hneSb5R+8SzS/NLeL0fqmJ0u9FeS8IdbjB/w/ybcvpytRZamb1hyPsePUmZ31dZDqE+IMcfzowtRfWqvoBIG0sOQ==) contains no pages. Your task is to add a new page to the project named `StartPage`, and make it look like the page shown below.
 
 ```js baga-show
 class StartPage extends Page{

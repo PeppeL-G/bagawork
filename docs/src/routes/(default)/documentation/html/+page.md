@@ -15,15 +15,13 @@ This webpage only contains descriptions of the configuration methods that are sp
 
 **Beginners in programming are not expected to use this GUI component!**
 
-The `Html` component is a very advanced component to use. To be able to use it, you must know much of:
+The `Html` component is a very advanced component to use. To be able to use it, you must know some technologies that are not taught on this website, such as:
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)
 * [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
-These technologies are not taught on this website.
-
-Most functionalities in BagaWork apps can be implemented using the other BagaWork GUI components. The `Html` component is only available to satisfy the few exceptional cases where an experienced programmer with knowledge of the three mentioned technologies wants to create something more advanced than can be implemented using the existing BagaWork GUI components.
+Most functionalities in BagaWork apps can be implemented using the other BagaWork GUI components. The `Html` component is only available to satisfy the few exceptional cases where an experienced programmer with knowledge of the three mentioned technologies wants to create something more advanced than can't be implemented using the existing BagaWork GUI components.
 
 :::
 
@@ -67,7 +65,7 @@ class StartPage extends Page{
 
 
 ## `initializer()` - Initializing the HTML element
-Use the configuration method `initializer()` to tell the `Html` component which method it should call to initialize the HTML element. The method will receive the HTML element (a `<div>` element) as the first argument.
+Use the configuration method `initializer()` to tell the `Html` component which method it should call to initialize the HTML element. The method will receive the HTML element (a `<div>` element) as the first argument, and you can create and insert whichever DOM nodes you want into it.
 
 ::: tip Example
 
@@ -82,7 +80,7 @@ class StartPage extends Page{
 			.initializer(p.initializeHtmlElement)
 	}
 	
-	initializeHtmlElement(htmlElement){
+	initializeHtmlElement(divElement){
 		
 		const h1 = document.createElement(`h1`)
 		h1.innerText = `This is an HTML <h1> element!`
@@ -91,7 +89,7 @@ class StartPage extends Page{
 		p.innerText = `This is an HTML <p> element!`
 		p.style.backgroundColor = `red`
 		
-		htmlElement.append(h1, p)
+		divElement.append(h1, p)
 		
 	}
 	
@@ -111,18 +109,22 @@ class StartPage extends Page{
 			.initializer(p.initializeHtmlElement)
 	}
 	
-	initializeHtmlElement(htmlElement){
+	initializeHtmlElement(divElement){
 		
 		const canvas = document.createElement(`canvas`)
 		
-		canvas.width = htmlElement.clientWidth
-		canvas.height = htmlElement.clientHeight
+		canvas.width = divElement.clientWidth
+		canvas.height = divElement.clientHeight
 		
-		htmlElement.append(canvas)
+		divElement.append(canvas)
 		
 		// BagaWork intercepts calls to setInterval() and
 		// setTimeout() and automatically stops them when
-		// an error occurs or when going to next page.
+		// an error occurs or when going to next page,
+		// so you never need to call clearInterval() or
+		// clearTimeout() if you want them to stop when
+		// the app crashes, is closed, or when the user
+		// go to the next page in the app.
 		setInterval(
 			p.paintCircle,
 			1000,

@@ -15,13 +15,13 @@ This webpage only contains descriptions of the configuration methods that are sp
 
 
 ## Introduction
-The `EnterText` component is a view in which the user can enter some text. If the user presses the Enter key (`↵`) in the component, the app will progress to the next page.
+The `EnterText` component is a view in which the user can enter some text. If the user presses the Enter key (`↵`) when the component has focus, the app will progress to the next page.
 
 ::: tip Example
 
 In this example, the GUI consists of only the `EnterText` component, so it covers the entire screen.
 
-```js baga-show-editor-code
+```js baga-show
 class StartPage extends Page{
 	createGui(){
 		return EnterText
@@ -73,14 +73,14 @@ class StartPage extends Page{
 
 
 ## `page()` & `pageIfEqual()` - Going to next page
-Use the configuration method `pageIfEqual()` to specify a `Page` the user should come to if she has entered some specific text in the component. Pass the method two values:
+Use the configuration method `pageIfEqual()` to specify a `Page` the user should come to if they have entered some specific text in the component. Pass the method two values:
 
 1. The text the user might enter
 2. The `Page` the user should come to if that text has been entered
 
 You can call this method multiple times.
 
-Use the configuration method `page()` to specify which `Page` the user should come to if she has entered a text that's not equal to any of the texts passed to `pageIfEquals()`.
+Use the configuration method `page()` to specify which `Page` the user should come to if they have entered a text that's not equal to any of the texts passed to `pageIfEquals()`.
 
 ::: tip Example
 
@@ -147,7 +147,7 @@ class EmptyNamePage extends Page{
 Use the configuration method `store()` to store the text the user has entered in an object (for example in `a` or `p`). Pass it two values:
 
 1. The object in which the entered text should be stored (e.g. `a` or `p`)
-2. The name of the variable in the object where the entered text should be stored
+2. The name of the variable in the object where the entered text should be stored as a string
 
 ::: tip Example
 

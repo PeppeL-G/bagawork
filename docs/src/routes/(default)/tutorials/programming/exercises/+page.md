@@ -9,7 +9,7 @@ Below you have examples of apps you should be able to implement with what you ha
 
 ::: exercise Multiplication Table Exercise
 
-```js baga-show-editor-code
+```js baga-show-editor
 class StartPage extends Page{
 	
 	x = 0
@@ -56,7 +56,7 @@ class StartPage extends Page{
 
 ::: exercise Counter Exercise
 
-```js baga-show-editor-code
+```js baga-show-editor
 class MyApp extends App{
 	
 	createStartPage(){
@@ -101,7 +101,7 @@ class CounterPage extends Page{
 
 ::: exercise Power Point Presentation Exercise
 
-```js baga-show-editor-code
+```js baga-show-editor
 class MyApp extends App{
 	
 	createStartPage(){

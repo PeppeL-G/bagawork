@@ -13,7 +13,7 @@ The `m` variable, short for **M**ath, contains various methods you can call to p
 
 
 ## `lowest()` - Obtaining the lowest number
-You can use `m.lowest()` to pass it multiple numbers, and it will return back the lowest one to you. Simply separate the numbers by `,` (comma).
+You can use `m.lowest()` to pass it multiple numbers, and it will return back the lowest one to you. Pass the numbers as separate arguments.
 
 ::: tip Example
 
@@ -35,7 +35,7 @@ class StartPage extends Page{
 
 
 ## `highest()` - Obtaining the highest number
-You can use `m.highest()` to pass it multiple numbers, and it will return back the highest one to you. Simply separate the numbers by `,` (comma).
+You can use `m.highest()` to pass it multiple numbers, and it will return back the highest one to you. Pass the numbers as separate arguments.
 
 ::: tip Example
 

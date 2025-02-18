@@ -8,7 +8,13 @@ On this page you find the documentation for the `speaker` variable.
 
 
 ## Introduction
-The `speaker` variable contains an object used for playing something on the device's speaker. It can be used to play sounds (not yet supported 😅) or to speak words to the user.
+The `speaker` variable contains an object used for playing something on the device's speaker. It can be used to speak words to the user.
+
+::: warning Note!
+
+The first time you instruct the `speaker` variable to say something, it can take a little while before the computer says it.
+
+:::
 
 ::: tip Example
 

@@ -48,7 +48,7 @@ When the user starts your BagaWork app, the method named `createStartPage()` in 
 
 ::: tip Example
 
-Example showing a BagaWork app consisting of two pages, and how the app class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
+Example showing a BagaWork app consisting of two pages, and how the `App` class tells the computer that the page named `FirstPage` should be shown to the user when the app starts.
 
 ```js baga-show-editor-code
 class MyApp extends App{
@@ -99,12 +99,12 @@ When opening [this BagaWork project](/editor#eNq1UsFqg0AQ/ZXtXBpBgloCxUuxpZQcWko
 
 ::::hint
 
-This problem can actually be fixed in 2 different ways:
+This problem can be fixed in 2 different ways:
 
-* Rename the page `Page1` to `StartPage`
+* Rename the page `Page1` to `StartPage`, or
 * Change the code in `MyApp.createStartPage()` to return `Page1` instead of `StartPage`
 
-Which you should do depends simply depends on if you prefer to have the first page in the app named `StartPage` or `Page1`. 
+Which you should use depends on if you prefer to have the first page in the app named `StartPage` or `Page1`, and that's totally up to you!
 
 ::::
 
@@ -114,6 +114,6 @@ Which you should do depends simply depends on if you prefer to have the first pa
 
 
 ## That's it!
-Woho! Now you also know the basics of how to use the `App` class! 🥳 The `App` class can also be used for more things than just indicating which the start page is, but you will learn more about these things later.
+Woho! Now you also know the basics of how to use the `App` class! 🥳 The `App` class can be used for more things than just to indicate which page that should be used as the start page is, but you will learn more about these things later.
 
-Now you are done learning everything the Fundamentals part of the the tutorials were intended to teach you. To double check that you have learned everything you were meant to learn, try to complete exercises in [Fundamental 8. Exercises](../exercises/).
+Now you are done learning everything the Fundamentals part of the tutorials were intended to teach you. To double check that you have learned everything you were meant to learn, try to complete the exercises in [Fundamental 8. Exercises](../exercises/).

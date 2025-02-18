@@ -13,7 +13,7 @@
 		{@html iconAsSvgString}
 	</div>
 {:else}
-	<p>If you return a Paper component from App.createIcon(), it will be shown here. If your app then is installed on a user's smartphone, that icon will be shown as the icon the user should click on to start your app.</p>
+	<p>If you return a paper figure from App.createIcon(), it will be shown here. If your app then is installed on a user's smartphone, that icon will be shown as the icon the user should click on to start your app.</p>
 {/if}
 
 <style>

@@ -102,22 +102,6 @@ class StartPage extends Page{
 	createGui(){
 		return Columns.backgroundColor(`yellow`).children(
 			Text.text(`Col 1`).backgroundColor(`lime`),
-			Text.text(`Col 2`).backgroundColor(`aqua`),
-			Text.text(`Col 3`).backgroundColor(`gold`),
-		)
-	}
-}
-```
-
-:::
-
-::: tip Example
-
-```js baga-show-editor-code
-class StartPage extends Page{
-	createGui(){
-		return Columns.backgroundColor(`yellow`).children(
-			Text.text(`Col 1`).backgroundColor(`lime`),
 			Space,
 			Text.text(`Col 2`).backgroundColor(`aqua`),
 			Space,
@@ -208,7 +192,7 @@ If there is space left over in the `Columns` component after the children has be
 
 ::: tip Example
 
-Resize the screen for the app (only works on laptops/computers), and notice how the size of the children changes.
+Resize the screen for the app, and notice how the size of the children changes. In this case, `Col 3` should be twice as wide as `Col 1`, but it will only be that if there's space available for it to grow wider than its content.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -224,21 +208,21 @@ class StartPage extends Page{
 
 :::
 
-All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default size `1`, because that's often how you want to use it. But feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
+All children will have `grow()` set to `0` by default (meaning they will grab nothing of the extra space that might be available), except the :docs[Space] component , which has the default `grow()` set to `1`, because that's often how you want to use it. Feel free to call `grow()` also on :docs[Space] children if you want it to be something else.
 
 ::: tip Example
 
-Resize the screen for the app, and notice how the size of the children changes.
+Resize the screen for the app, and notice how the size of the children changes. 
 
 ```js baga-show-editor-code
 class StartPage extends Page{
 	createGui(){
 		return Columns.backgroundColor(`yellow`).children(
 			Space.backgroundColor(`red`), // This component has grow(1) by default.
-			Text.text(`Col 1`).backgroundColor(`lime`).grow(1),
+			Text.grow(1).text(`Col 1`).backgroundColor(`lime`),
 			Text.text(`Col 2`).backgroundColor(`aqua`),
 			Space.grow(2).backgroundColor(`silver`),
-			Text.text(`Col 3`).backgroundColor(`gold`).grow(2),
+			Text.grow(2).text(`Col 3`).backgroundColor(`gold`),
 		)
 	}
 }
@@ -250,13 +234,19 @@ class StartPage extends Page{
 
 
 ## `child.growShrink()` - Making the children wider or thinner
-`child.growShrink()` works the same way as `child.grow()` when there is much space left over in the parent layout (both methods indicate the child may grow bigger if there's room for that), but when there is no/little space left over in the parent layout, then this method indicates the child may shrink and let the child content become scrollable.
+`child.growShrink()` works the same way as `child.grow()` when there is much space left over in the parent layout (both methods indicate the child may grow bigger if there's room for that), but when there is no/little space left over in the parent layout, then this method indicates the child may shrink and let the child content become scrollable (instead of the `Columns` component becoming scrollable).
+
+::: warning Note!
+
+You can not use both `grow()` and `growShrink()` on one and the same child, but only one of the configuration methods.
+
+:::
 
 ::: tip Example
 
 In this example, we use `grow()` on a child, so you can compare how it differs from `growShrink()` in the next example.
 
-Try making the height of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 2` never becomes shorter than its content, and the scroll is added to the root component (the `Columns` component).
+Try making the width of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 2` never becomes shorter than its content, and the scroll is added to the root component (the `Columns` component).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -276,7 +266,7 @@ class StartPage extends Page{
 
 This code is the same as in the previous example, but we use `growShrink()` instead of `grow()`.
 
-Try making the height of the app screen below shorter, and you will see that the height of `Col 2` shrinks, and its content becomes scrollable.
+Try making the width of the app screen below shorter, and you will see that the height of `Col 2` shrinks, and its content becomes scrollable (and finally disappears when the screen is really small).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -296,7 +286,7 @@ class StartPage extends Page{
 
 In this example, we use `grow()` on two children, so you can compare how it differs from `growShrink()` in the next example.
 
-Try making the height of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 1` and `Col 2` never becomes shorter than their content, and the scroll is added to the root component (the `Cols` component).
+Try making the width of the app screen below shorter, and you will see that the entire app screen becomes scrollable. That is, `Col 1` and `Col 2` never becomes shorter than their content, and the scroll is added to the the `Columns` component.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -315,7 +305,7 @@ class StartPage extends Page{
 
 This code is the same as in the previous example, but we use `growShrink()` instead of `grow()`.
 
-Try making the height of the app screen below shorter, and you will see that the height of `Col 1` `Col 2` shrinks, and its content becomes scrollable.
+Try making the width of the app screen below shorter, and you will see that the width of `Col 1` and `Col 2` shrinks, and their content becomes scrollable (and finally disappears when the screen is really small).
 
 ```js baga-show-editor-code
 class StartPage extends Page{

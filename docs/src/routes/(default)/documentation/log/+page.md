@@ -9,7 +9,7 @@ On this page you find the documentation for the function `log()`.
 
 
 ## Introduction
-The `log()` function can be useful to use during development. Using it, you can log various values in your app while it is running, which can help you debug errors in it.
+The `log()` function can be useful during development. Using it, you can log various values in your app while it is running, which can help you debug errors in it.
 
 ::: warning Only useful in the editor!
 

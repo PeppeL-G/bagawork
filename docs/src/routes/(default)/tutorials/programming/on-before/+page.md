@@ -37,11 +37,11 @@ class MyApp extends App{
 }
 ```
 
-And that is very good thinking of you, but it does unfortuantelly not work; the special `a` variable can only be used inside methods in your `App` class, and can't be used when your app constants/variables are initialized.
+And that is very good thinking of you, but it does unfortunately not work; in your `App` class, the special `a` variable can only be used inside methods, and it can't be used when your app constants/variables are initialized.
 
 :::
 
-So, the proper solution to this problem is to use the `onBefore()` method in your `App` class. When the special `a` variable is created, it will contain all your app constants/variables/methods, and then your `App.onBefore()` method will be called on it (if you have one), in which you can set all constants/variables to their correct values.
+So, the proper solution to this problem is to use the `onBefore()` method in your `App` class. When the special `a` variable is created, it will contain all your app constants/variables/methods, and then your `App.onBefore()` method will be called (if you have one).
 
 ::: tip Example
 
@@ -164,3 +164,5 @@ Use a counter in a page variable to keep track of how many times the user has se
 
 ## That's it!
 Wow, wow, wow... Now you know about `onBefore()` too! 🥳 Excellent work, soon you'll be fully experienced programmer. Just 999 more things to learn before that 😉
+
+Now you are done learning everything the Programming part of the tutorials were intended to teach you, so you should have some very fundamental understanding of programming now. To double check that you have learned everything you were meant to learn, try to complete the exercises in [Programming 8. Exercises](../exercises/).

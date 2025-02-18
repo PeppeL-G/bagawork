@@ -3,23 +3,23 @@
 </script>
 
 # 5. Numbers
-This tutorial will teach you what datatypes are, and how to use numbers in JavaScript.
+This tutorial will teach you what data types are, and how to use numbers in JavaScript.
 
 
-## Datatypes
-In JavaScript, there exists different type of values, and we call these *datatypes*. So far, you have mostly been using the string datatype, whose values can be crated by encapuslating some characters between two `` ` `` characters, like `` `This is a string!` ``. You use this for example when you create a `Text` component that should have a background color and some specific text:
+## Data types
+In JavaScript, there exists different type of values, and we call these different types for *data types*. So far, you have mostly been using the string data type, whose values can be crated by encapsulating some characters between two `` ` `` characters, like `` `This is a string!` ``. You use this for example when you create a `Text` component that should have a background color and some specific text:
 
 ```js
 // The values `Hi there` and `red` are both string values!
 Text.text(`Hi there!`).backgroundColor(`red`)
 ```
 
-But JavaScript contains many more datatypes than just strings. Let's take a look at the *number* datatype!
+But JavaScript contains many more data types than just strings. Let's take a look at the *number* data type now.
 
 
 
 ## Creating a number
-Number is a datatype in JavaScript that represents a number (big surprice! xD). You can create new number values simply by writing them, for example:
+Number is a data type in JavaScript that represents a number (big surprise! xD). You can create new number values simply by writing them, for example:
 
 * Write `51` to create the number value `51`
 * Write `-140` to create the number value `-140`
@@ -28,15 +28,15 @@ Number is a datatype in JavaScript that represents a number (big surprice! xD). 
 
 ::: warning Localization
 
-In some natural languages, such as Swedish, one does not use period (`.`), but a comma (`,`), as the [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator). JavaScript is based on English, and uses period as the decimal seperator, so using a comma will not work.
+In some natural languages, such as Swedish, one does not use period (`.`), but a comma (`,`), as the [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator). JavaScript is based on English, and uses period as the decimal separator, so using a comma will not work.
 
 :::
 
-Just as strings (and all datatypes), number values can be stored in constant and variables.
+Just as strings (and all data types), number values can be stored in constants and variables.
 
 ::: tip Example
 
-Example of an app that creates a page constant that stores a number.
+Example of an app that creates two page constants that each stores a number.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -46,9 +46,8 @@ class StartPage extends Page{
 	
 	createGui(){
 		return Rows.children(
-			Text.text(`a: ${p.X} + 1 is equal to 5.`),
-			Text.text(`b: ${p.X} + ${p.Y} is equal to 6.`),
-			Text.text(`c: ${p.X} * ${p.Y} is equal to 8.`),
+			Text.text(`a: ${p.X} + ${p.Y} is equal to 6.`),
+			Text.text(`b: ${p.X} * ${p.Y} is equal to 8.`),
 		)
 	}
 	
@@ -57,7 +56,7 @@ class StartPage extends Page{
 
 :::
 
-As you can see in the example above, just as we can use the special `${ ... }` syntax in strings created with two `` ` `` characters to insert a string value into it, we can also use it to insert at number value into it (the special `${ ... }` syntax can also be used to insert values of other datatypes too; it does not only works for strings and numbers).
+As you can see in the example above, just as we can use the special `${ ... }` syntax in strings created with two `` ` `` characters to insert a string value into it, we can also use it to insert a number value into it (the special `${ ... }` syntax can also be used to insert values of other data types too; it does not only work for strings and numbers).
 
 
 
@@ -104,7 +103,7 @@ Most often, an application needs to do computations with numbers, such as comput
 You can use these mathematical operations anywhere in your JavaScript code you can use a number, for example:
 
 * When creating a constant/variable
-* In  `${ ... }` expressions in strings created with the `` ` `` symbol
+* In  `${...}` expressions in strings created with the `` ` `` symbol
 
 ::: tip Example
 
@@ -336,4 +335,4 @@ You will need to:
 
 
 ## That's it!
-Good work, now you know the basics about how to use numbers in BagaWork! 🥳 It's not that hard, is it? In next tutorial, you'll see more useful examples of how we can use numbers.
+Good work, now you know the basics about how to use numbers in BagaWork! 🥳 It's not that hard, is it? In next tutorial, [Programming 6. Booleans, keepIf() and showIf()](../booleans-keepif-and-showif/), you'll see more useful examples of how we can use numbers.

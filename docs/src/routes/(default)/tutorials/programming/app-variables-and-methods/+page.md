@@ -8,7 +8,7 @@ This tutorial will teach you what app variables and app methods are in BagaWork,
 
 
 ## Why app variables are needed
-A page variable can only be accessed and used on the page the created it. But often, we need to be able to use the same variable on many different pages. For these cases, we can instead use an app variable.
+A page variable can only be accessed and used on the page that created it. But often, we need to be able to use the same variable on many different pages. For these cases, we can instead use an app variable.
 
 
 
@@ -277,7 +277,7 @@ class StarredPage extends Page{
 
 ::::hint
 
-Add one app variable to keep track of which the selected stars are (start with ` `` ` (empty string) or `` `🌟🌟🌟` ``). Then add 5 app methods (one click handler for each button) that changes the app variable to a string containing 1 to 5 stars (depending on which button that was clicked). Then also display the string in the app variable in the last `Text` component.
+Add one app variable to keep track of which the selected stars are (start with ` `` ` (empty string) or `` `🌟🌟🌟` ``). Then add 5 app methods (one click handler for each button) that changes the app variable to a string containing 1 to 5 stars (depending on which button that was clicked). Then also display the string in the app variable in the last `Text` component on the `StarredPage`.
 
 ::::
 
@@ -287,3 +287,5 @@ Add one app variable to keep track of which the selected stars are (start with `
 
 ## That's it!
 Good work! 🥳 Page constants/variables/methods are really similar to app constants/variables/methods, the only difference is in which class you should create them, and if you should use `p` or `a` to access them. If you will just use the variable in one of your pages, then use a page variable, and if you need to use it in multiple pages, then use an app variable instead. Simple as that!
+
+Next, let us take a look at how we can use numbers in the tutorial [Programming 5. Numbers](../numbers/).

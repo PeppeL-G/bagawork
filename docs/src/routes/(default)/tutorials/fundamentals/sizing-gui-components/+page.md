@@ -22,7 +22,7 @@ It works the same for the `Columns` component, but the children are instead posi
 
 ::: tip Example
 
-Try resizing the app below, and notice how the `Space` children gets smaller/bigger, while the three other children stay at the same size.
+Try resizing the app below (on a laptop, use your mouse to drag the bottom right corner of the app screen), and notice how the `Space` children gets smaller/bigger, while the three other children stay at the same size.
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -55,11 +55,11 @@ class ColumnsPage extends Page{
 
 
 ## Sizing children
-It's not only `Space` children that can grab some of the remaining available space; any child in `Rows` and `Columns` can grab some of the remaining available space. But it's only the `Space` children that grabs it by default, and by default they all grab equally much of it. But all this can be changed with the configuration method `.grow()` on the children. Let's go through how this works in detail.
+It's not only `Space` children that can grab some parts of the remaining available space; any child in `Rows` and `Columns` can grab some of the remaining available space. But it's only the `Space` children that grabs it by default, and by default they all grab equally much of it. But all this can be changed with the configuration method `.grow()` on the children. Let's go through how this works in detail.
 
 First, let us ignore the `Space` children, and instead focus on all other children, such as `Text` and `Button` components.
 
-By default, all children in `Rows` will be just tall enough to surround their content. If you want them to grow tallwr by grabbing some of the remaining available space, you can call the method `.grow()` on the child, and pass it a number indicating how tall the child should be in relation to other children that have also called `.grow()`. 
+By default, all children in `Rows` will be just tall enough to surround their content. If you want them to grow taller by grabbing some of the remaining available space, you can call the configuration method `.grow()` on the child, and pass it a number indicating how tall the child should be in relation to other children that have also called `.grow()`. 
 
 ::: tip Examples
 
@@ -99,7 +99,7 @@ class StartPage extends Page{
 
 :::
 
-You can still call `.grow()` on `Space` if you want it to claim another amount of shares of the remaning available space.
+You can still call `.grow()` on `Space` if you want it to get another amount of the remaining available space.
 
 ::: tip Example
 
@@ -205,9 +205,9 @@ class StartPage extends Page{
 
 ::::hint
 
-Hmm... Is that GUI conisting of two `Rows` that contain two `Columns` each? Or two `Columns` that contain two `Rows` each? Hmm... Seems impossible to tell... Wait, does that mean any of the two approaches will work?
+Hmm... Is that GUI consisting of two `Rows` that contain two `Columns` each? Or two `Columns` that contain two `Rows` each? Hmm... Seems impossible to tell... Wait, does that mean any of the two approaches will work?
 
-And remember, `.grow()` can be called on any child component in `Rows` and `Columns`. So if `Columns` is being used as a child in `Rows`, you can call `.grow()` on that `Columns` component!
+And remember, `.grow()` can be called on any child component in `Rows` and `Columns`. So if `Columns` is being used as a child in `Rows`, you can call `.grow()` on that `Columns` component too!
 
 ::::
 

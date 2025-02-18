@@ -1,12 +1,12 @@
 # Glossary
-On this page you will find the meaning of various technological words that are good to know for all developers who use BagaWork.
+On this page you will find the meaning of various tech words that are good to know for all developers who use BagaWork.
 
 
 
 
 
 ## BagaLand
-The name of the website [bagaland.com](https://bagaland.com), on which you can create an account and store your BagaWork apps online, and make them accessible to others, as well as installable on most smartphones. Apps here will also remember their states between runs, so if the user closes the app and then opens it again, it will resume running just as the user left it!
+The name of the website [bagaland.com](https://bagaland.com), at which you can create an account and store your BagaWork apps online, and make them accessible to others, as well as installable on most smartphones. Apps here will also remember their states between runs, so if the user closes the app and then opens it again, it will resume running just as the user left it!
 
 
 ## BagaWork
@@ -14,7 +14,7 @@ A framework programmers can use to implement small and simple apps in JavaScript
 
 * The documentation for how the BagaWork framework works
 * Tutorials that teaches you how to build apps in the BagaWork framework
-* An :online-editor you can use for testing apps implemented in BagaWork
+* An :online-editor you can use to implement BagaWork apps
 * Etc.
 
 
@@ -44,14 +44,15 @@ class Ball{
 ## Framework
 If you want to write *all the code* needed to display an app on the screen, you would probably need to spend many years on that. That much code is needed for such an app!
 
-So, instead of you writing all the code from scratch like that, some friendly developers have implemented frameworks, which makes it much easier for us to implement apps. A framework contains most of the code needed to display an app on the screen, but it doesn't contain any specific information about the app that should be displayed, only the general functionality to display an app.
+So, instead of you writing all the code from scratch like that when creating an app, some friendly developers have implemented frameworks, which makes it much easier for the rest of us to implement apps. A framework contains most of the code needed to display an app on the screen, but it doesn't contain any specific information about the app that should be displayed, only the general functionality to display an app.
 
 For example, the BagaWork framework contains the general :docs[Button] component for displaying a button on the screen, but it doesn't contain any specific information about the button, such as:
 
 * Which text the button should display
 * What should happen when the button is clicked
+* Etc.
 
-So, when we implement an app in BagaWork, we use the general :docs[Button] component from the framework, and we provide it with the specific information we want it to have by calling different configuration methods on it (`text()`, `onClick()`, etc.).
+So, when we implement an app in BagaWork, we use the general :docs[Button] component from the framework to display a button on the screen, and we provide it with the specific information we want it to have by calling different configuration methods on it (`text()`, `onClick()`, etc.).
 
 
 ## Function
@@ -61,27 +62,41 @@ A function is like a method (a value that contains code that is executed when th
 ## Implementation
 Implementation refers to the code in a class or a method.
 
+::: tip Example
+
+Example of where the code for the implementation of a class is written.
+
 ```js
 class MyPage extends Page{
-	// All the code you write between the two curly
-	// brackets is the implementation of this class.
+	// All the code you write between
+	// the two curly brackets is the
+	// implementation of the MyPage class.
 }
 ```
+
+:::
+
+::: tip Example
+
+Example of where the code for the implementation of a method is written.
 
 ```js
 class MyPage extends Page{
 	onBefore(){
-		// All the code you write between the two closest curly
-		// brackets is the implementation of this method.
+		// All the code you write between the
+		// two closest curly brackets is the
+		// implementation of the onBefore() method.
 	}
 }
 ```
+
+:::
 
 
 ## Instance
 In programming, a class is a general description of how something should work. To use a class, you create a new instance of it. One and the same class can have many different instances, and each instance can store different information.
 
-In JavaScript, one usually writes `new TheClassName()` to create a new instance of a class, but BagaWork has simplified instantiation of classes from the framework (such as GUI components), so for these classes you just write the name of the class to create a new instance of it.
+In JavaScript, one usually writes `new TheClassName()` to create a new instance of a class, but BagaWork has simplified instantiation of classes from the framework (such as GUI component classes), so for these classes you just write the name of the class to create a new instance of it.
 
 ::: tip Example
 
@@ -99,7 +114,7 @@ const button2 = Button.text(`No, click me!`)
 
 
 ## JavaScript
-An app has to be implemented in a programming language. JavaScript (<abbr title="JavaScript">JS</abbr>) is a programming language. The BagaWork framework is implemented in JS, so an app using the BagaWork framework must also be implemented in JS.
+An app has to be implemented in a programming language. JavaScript (<abbr title="JavaScript">JS</abbr>) is such a programming language. The BagaWork framework is implemented in JS, so an app using the BagaWork framework must also be implemented in JS.
 
 
 ## JS
@@ -107,7 +122,7 @@ Acronym for JavaScript.
 
 
 ## Method
-A method is a function in a class that you can call after you have obtained an instance of a class.
+A method is a function in a class that you can call after you have obtained an instance of a class. When you call the method, the code in it will start to run.
 
 ::: tip Example
 

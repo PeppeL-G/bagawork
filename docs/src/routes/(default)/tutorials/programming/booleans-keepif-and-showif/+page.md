@@ -30,13 +30,13 @@ So instead of thinking of it like the question *Do you have 0 messages?*, this d
 	* If `true`, show the text *The age must be greater than or equal to 0*
 	* If `false`, show the text *The entered age is OK*
 
-`true` and `false`, like all values in JavaScript, can be stored in app variables and page variables just like strings and numbers.
+`true` and `false`, like all values in JavaScript, can be stored in variables and constants, just like strings and numbers.
 
 ::: warning Don't use `
 
 Don't surround `true` with the `` ` `` character! If you do, you create the string that contains the characters `t`, `r`, `u` and `e`, and not the boolean value `true` that means that something is correct.
 
-This also goes for `false`, of course.
+The same goes for `false` too, of course.
 
 :::
 
@@ -110,7 +110,7 @@ class StartPage extends Page{
 
 :::
 
-Directly passing `true` or `false` to `keepIf()` is of course not that meaningful. Instead, you can use an app/page variable to pass a boolean value to `keepIf()`, so you pass different values to `keepIf()` depending on what value is stored in the app/page variable.
+Directly passing `true` or `false` to `keepIf()` is of course not that meaningful. Instead, you can use a variable to pass a boolean value to `keepIf()`, so you pass different values to `keepIf()` depending on what value is stored in that variable.
 
 ::: tip Example
 
@@ -154,7 +154,7 @@ In the previous example, we kept a special `Text` component using:
 Text.text(`You are a girl!`).keepIf(p.isGirl)
 ```
 
-But how can we keep a special `Text` component if the user on the other hand is a boy (i.e. when `p.isGirl` is `false`)? Just as we can use mathemtical operations with numbers, there are some operations we can use with boolean values. The simplest is the `==` operation, which checks if the value to left of `==` is equal to the value to the right of it. If they are equal, the result of the operation is `true`, and if they are not equal, the result is instead `false`.
+But how can we keep a special `Text` component if the user on the other hand is a boy (i.e. when `p.isGirl` has the value `false`)? Just as we can use mathematical operations with numbers, there are some operations we can use with boolean values. The simplest is the `==` operation, which checks if the value to left of `==` is equal to the value to the right of it. If they are equal, the result of the operation is `true`, and if they are not equal, the result is instead `false`.
 
 So, to check if the user is a boy, we can compare `p.isGirl` with `false` using the `==` operator.
 
@@ -189,6 +189,24 @@ class StartPage extends Page{
 	
 }
 ```
+
+:::
+
+::: tip Checking for true values
+
+We used the following code to check if the user is a girl:
+
+```js
+Text.text(`You are a girl!`).keepIf(p.isGirl)
+```
+
+If you think the code becomes easier to read, you can also compare `p.isGirl` with `true`:
+
+```js
+Text.text(`You are a girl!`).keepIf(p.isGirl == true)
+```
+
+Both ways work equally good, so feel free to do whichever way you think is the easiest to understand.
 
 :::
 
@@ -400,4 +418,4 @@ The GUI actually contains two buttons, but only one of them is shown at a time! 
 
 
 ## That's it!
-Hurray, now you know how to conditionally keep/remove and show/hide GUI components! 🥳 Good work!
+Hurray, now you know how to conditionally keep/remove and show/hide GUI components! 🥳 Good work! Now there is only one more tutorial in this section, and that is [Tutorial 7. `onBefore()`](../on-before/).

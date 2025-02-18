@@ -93,7 +93,7 @@ class StartPage extends Page{
 
 ::: tip The "a" variable
 
-In your `Page` classes, you can also use the special BagaWork variable :docs[a] to access the things you have in your :docs[App] class. For more information, see the documentation for the :docs[App] class.
+In your `Page` classes you can also use the special BagaWork variable :docs[a] to access the things you have in your :docs[App] class. For more information, see the documentation for the :docs[App] class.
 
 :::
 
@@ -168,14 +168,14 @@ The method `onBefore()` will be called each time the user comes to the page (bef
 ```js baga-show-editor-code
 class StartPage extends Page{
 	
-	// This variable should keep track of how many
-	// times the user has been on this page.
+	// This variable should keep track of how
+	// many times the user has been on this page.
 	numberOfVisits = 0
 	
 	onBefore(){
 		
-		// So each time the user comes to this page,
-		// we increment it by 1.
+		// So each time the user comes to
+		// this page, we increment it by 1.
 		p.numberOfVisits += 1
 		
 	}
@@ -216,7 +216,7 @@ After `onBefore()` has been called, `createGui()` will be called. In this method
 
 ::: tip Example
 
-Example showing how to use `Page.createGui()`.
+Example showing how to use `Page.createGui()`. Note that clicking on the buttons in this example will just reload the page (the user comes to the same page again).
 
 ```js baga-show-editor-code
 class StartPage extends Page{
@@ -315,7 +315,7 @@ You only need to handle user input in `onAfter()` if your app's logic require's 
 ## `createAfterDirections()` - Redirecting the user to another page
 The method `createAfterDirections()` will be called after the user has interacted with the GUI. In it, you can return back an array with :docs[Direction] objects, indicating which page the user should come to.
 
-If you don't implement this method, or if non of the :docs[Direction] objects you create has `when()` set to `true`, then BagaWork will start checking if any of the GUI components on the page has indicated which page the user should come to (`Button.page()`, `EnterText.pageIfEqual()`, `EnterNumber.pageIfLower()`, etc.). If no GUI component has indicated which page to come to, the current page will simply be reloaded.
+If you don't implement this method, or if non of the :docs[Direction] objects you create has `when()` set to `true`, then BagaWork will start checking if any of the GUI components on the page has indicated which page the user should come to (if you have used `Button.page()`, `EnterText.pageIfEqual()`, `EnterNumber.pageIfLower()`, etc.). If no GUI component has indicated which page to come to, the current page will simply be reloaded.
 
 ::: tip Example
 
@@ -436,9 +436,10 @@ class StartPage extends Page{
 
 class AboutPage extends Page{
 	
-	// These will get their values from page arguments.
-	// If no page arguments are provided, these default
-	// values will be used. You can see that in the editor
+	// These will get their values from page
+	// arguments. If no page arguments are
+	// provided, these default values will be
+	// used. You can see that in the editor
 	// when previewing this page.
 	name = `DEFAULT_NAME`
 	age = -1
