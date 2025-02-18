@@ -2,6 +2,12 @@ export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
 	changes: [
+		`Fixed broken build`,
+	],
+}, {
+	version: `0.0.51`,
+	date: `2025-02-18`,
+	changes: [
 		`Changed BagaWork apps' default background color to white`,
 		`Added smartphone frames around screens running BagaWork apps on the docs website`,
 		`Added smartphone frames around screens in the editor`,
