@@ -21,6 +21,7 @@ The `EnterNumber` component is a view in which the user can enter a number. If t
 
 In this example, the GUI consists of only the `EnterNumber` component, so it covers the entire screen.
 
+```js baga-show
 class StartPage extends Page{
 	createGui(){
 		return EnterNumber
