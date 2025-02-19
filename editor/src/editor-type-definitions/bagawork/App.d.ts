@@ -14,7 +14,7 @@ declare class App {
 	 * This method is called directly when your app starts. In this
 	 * method you can initialize your app's global state.
 	 */
-	onBefore(): void;
+	onStart(): void;
 	
 	/**
 	 * This method is called directly when your app starts. In this

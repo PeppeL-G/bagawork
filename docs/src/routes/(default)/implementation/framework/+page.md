@@ -251,7 +251,7 @@ sequenceDiagram
 	participant FrameworkPage
 	participant Page
 	FrameworkApp->>App: createIcon()
-	FrameworkApp->>App: onBefore()
+	FrameworkApp->>App: onStart()
 	FrameworkApp->>App: createStartPage()
 	App->>Page: Creates
 	App->>FrameworkApp: startPage

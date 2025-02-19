@@ -2,12 +2,12 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 7. `onBefore()`
-This tutorial will teach you the methods `App.onBefore()` and `Page.onBefore()`.
+# 7. `onStart()` & `onBefore()`
+This tutorial will teach you the methods `App.onStart()` and `Page.onBefore()`.
 
 
-## `App.onBefore()`
-Sometimes you want to have some code that runs immediately when your application starts. That code can be placed in a special method in your `App` class that is named `onBefore()`.
+## `App.onStart()`
+Sometimes you want to have some code that runs immediately when your application starts. That code can be placed in a special method in your `App` class that is named `onStart()`.
 
 For example, let's say you need to have two number constants in your app, and you also need to have a constant that stores the sum of the previously two mentioned number constants. To achieve that, you can hardcode the sum, like this:
 
@@ -41,20 +41,20 @@ And that is very good thinking of you, but it does unfortunately not work; in yo
 
 :::
 
-So, the proper solution to this problem is to use the `onBefore()` method in your `App` class. When the special `a` variable is created, it will contain all your app constants/variables/methods, and then your `App.onBefore()` method will be called (if you have one).
+So, the proper solution to this problem is to use the `onStart()` method in your `App` class. When the special `a` variable is created, it will contain all your app constants/variables/methods, and then your `App.onStart()` method will be called (if you have one).
 
 ::: tip Example
 
-Example of an app that uses `App.onBefore()` to correctly initialize a constant.
+Example of an app that uses `App.onStart()` to correctly initialize a constant.
 
 ```js baga-show-editor-code
 class MyApp extends App{
 	
 	X = 5
 	Y = 3
-	SUM = 0 // Which initial number we give to SUM doesn't matter, since it will be given its correct number in onBefore().
+	SUM = 0 // Which initial number we give to SUM doesn't matter, since it will be given its correct number in onStart().
 	
-	onBefore(){
+	onStart(){
 		a.SUM = a.X + a.Y
 	}
 	
@@ -80,7 +80,7 @@ class StartPage extends Page{
 
 
 ## `Page.onBefore()`
-The special method `onBefore()` in your `Page` classes works very similar to `App.onBefore()`: `Page.onBefore()` will be called each time the user comes to the page. It can for example be useful if you want to keep track of how many times the user has visited that page.
+The special method `onBefore()` in your `Page` classes works very similar to `App.onStart()`: `Page.onBefore()` will be called each time the user comes to the page. It can for example be useful if you want to keep track of how many times the user has visited that page.
 
 ::: tip Example
 
@@ -163,6 +163,6 @@ Use a counter in a page variable to keep track of how many times the user has se
 
 
 ## That's it!
-Wow, wow, wow... Now you know about `onBefore()` too! 🥳 Excellent work, soon you'll be fully experienced programmer. Just 999 more things to learn before that 😉
+Wow, wow, wow... Now you know about `App.onStart()` and `Page.onBefore()` too! 🥳 Excellent work, soon you'll be fully experienced programmer. Just 999 more things to learn before that xD
 
 Now you are done learning everything the Programming part of the tutorials were intended to teach you, so you should have some very fundamental understanding of programming now. To double check that you have learned everything you were meant to learn, try to complete the exercises in [Programming 8. Exercises](../exercises/).

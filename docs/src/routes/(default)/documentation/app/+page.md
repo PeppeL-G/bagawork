@@ -70,49 +70,6 @@ class MyApp extends App{
 
 
 
-## `onBefore()` - Initializing the state of the app
-The method `onBefore()` will be called directly when the app starts for the first time. In it, you can initialize the state of your app.
-
-::: tip Example
-
-Example of an app that uses `onBefore()`.
-
-```js
-class MyApp extends App{
-	
-	NUMBER_1 = 5
-	NUMBER_2 = 4
-	
-	// We want the sum variable to contain the
-	// sum of NUMBER_1 and NUMBER_2. However, the
-	// "a" variable can only be used in methods
-	// in the App class, so we can't write
-	// sum = a.NUMBER_1 + a.NUMBER_2 here. So
-	// instead, we initialize the sum to a dummy
-	// value (0 in this case)...
-	sum = 0
-	
-	onBefore(){
-		
-		// ...and in this method we assign
-		// the sum its correct value.
-		a.sum = a.NUMBER_1 + a.NUMBER_2
-		
-	}
-	
-}
-```
-
-:::
-
-::: tip Not needed?
-
-You only need to initialize the global state if your app needs one. Many apps don't need one, and can simply leave `onBefore()` empty, or not have this method at all.
-
-:::
-
-
-
 
 ## `createIcon()` - Creating an icon
 The method `createIcon()` will be called directly when the app starts. In it, you can create and return a paper figure that will be used as the icon of your app. The icon of your app will not be shown in your app's GUI, but at other places, such as:
@@ -168,8 +125,52 @@ You only need to implement `createIcon()` if you want your app to have its own i
 
 
 
+## `OnStart()` - Initializing the state of the app
+The method `onStart()` will be called directly when the app starts for the first time. In it, you can initialize the state of your app.
+
+::: tip Example
+
+Example of an app that uses `onStart()`.
+
+```js
+class MyApp extends App{
+	
+	NUMBER_1 = 5
+	NUMBER_2 = 4
+	
+	// We want the sum variable to contain the
+	// sum of NUMBER_1 and NUMBER_2. However, the
+	// "a" variable can only be used in methods
+	// in the App class, so we can't write
+	// sum = a.NUMBER_1 + a.NUMBER_2 here. So
+	// instead, we initialize the sum to a dummy
+	// value (0 in this case)...
+	sum = 0
+	
+	onStart(){
+		
+		// ...and in this method we assign
+		// the sum its correct value.
+		a.sum = a.NUMBER_1 + a.NUMBER_2
+		
+	}
+	
+}
+```
+
+:::
+
+::: tip Not needed?
+
+You only need to initialize the global state if your app needs one. Many apps don't need one, and can simply leave `onStart()` empty, or not have this method at all.
+
+:::
+
+
+
+
 ## `createStartPage()` - Creating the start page
-After `onBefore()` has been called, `createStartPage()` will be called. In this method, you should create and send back an instance of the `Page` class that should first be shown to the user. You must implement this method, otherwise your app won't know which `Page` to show when it starts, and the app will crash as soon as the user tries to start it.
+After `onStart()` has been called, `createStartPage()` will be called. In this method, you should create and send back an instance of the `Page` class that should first be shown to the user. You must implement this method, otherwise your app won't know which `Page` to show when it starts, and the app will crash as soon as the user tries to start it.
 
 ::: warning Note!
 

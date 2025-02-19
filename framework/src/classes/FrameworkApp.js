@@ -90,7 +90,7 @@ export class FrameworkApp{
 			this.app = new this.App()
 		} catch (error) {
 			onError(
-				`Error ocurred while initializing variables in ${this.App.name}: ${error}.`,
+				`Error occurred while initializing variables in ${this.App.name}: ${error}.`,
 			)
 			return
 		}
@@ -287,15 +287,15 @@ export class FrameworkApp{
 			onLog
 		} = this.runtimeSettings
 		
-		if (this.App.prototype.hasOwnProperty('onBefore')) {
+		if (this.App.prototype.hasOwnProperty('onStart')) {
 			
 			try {
-				onLog(`framework`, `Calling ${this.App.name}.onBefore()...`)
-				this.app.onBefore()
-				onLog(`framework`, `Calling ${this.App.name}.onBefore()... ✅`)
+				onLog(`framework`, `Calling ${this.App.name}.onStart()...`)
+				this.app.onStart()
+				onLog(`framework`, `Calling ${this.App.name}.onStart()... ✅`)
 			} catch (error) {
 				onError(
-					`Error in ${this.App.name}.onBefore(): ${error}.`,
+					`Error in ${this.App.name}.onStart(): ${error}.`,
 				)
 				return
 			}
@@ -322,7 +322,7 @@ export class FrameworkApp{
 			onLog(`framework`, `Initializing variables in ${this.App.name}... ✅`)
 		} catch (error) {
 			onError(
-				`Error ocurred while initializing variables in ${this.App.name}: ${error}.`,
+				`Error occurred while initializing variables in ${this.App.name}: ${error}.`,
 			)
 			return
 		}

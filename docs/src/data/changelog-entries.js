@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changes: [],
+	changes: [
+		`Renamed App.onBefore() to App.onStart()`,
+	],
 }, {
 	version: `0.0.52`,
 	date: `2025-02-18`,
