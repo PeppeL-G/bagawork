@@ -5,7 +5,9 @@
 </script>
 
 <footer>
-	Copyright Peter L-G {year} |
+	Copyright
+	<a href="https://peterlg.se" target="_blank">Peter L-G</a>
+	{year} |
 	<a href="/motivation">Motivation</a> |
 	<a href="/glossary">Glossary</a>
 </footer>
