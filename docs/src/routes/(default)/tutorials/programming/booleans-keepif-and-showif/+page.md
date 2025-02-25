@@ -418,4 +418,4 @@ The GUI actually contains two buttons, but only one of them is shown at a time! 
 
 
 ## That's it!
-Hurray, now you know how to conditionally keep/remove and show/hide GUI components! 🥳 Good work! Now there is only one more tutorial in this section, and that is [Tutorial 7. `onBefore()`](../on-before/).
+Hurray, now you know how to conditionally keep/remove and show/hide GUI components! 🥳 Good work! Now there is only one more tutorial in this section, and that is [Tutorial 7. onStart() & onBefore()](../onstart-and-onbefore/).
