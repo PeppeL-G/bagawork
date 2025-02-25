@@ -112,4 +112,4 @@ class StartPage extends Page{
 
 
 ## That's it!
-Woho! 🥳 Now you know how to use images in your BagaWork apps, goor work!
+Woho! 🥳 Now you know how to use images in your BagaWork apps, good work!

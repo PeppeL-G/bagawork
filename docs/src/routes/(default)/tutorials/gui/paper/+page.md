@@ -78,13 +78,13 @@ For an example of this, see next sub-chapter.
 
 
 ## Showing the coordinate system
-To show the coordinate system, call the configuraiton method `showCoordinates()` on the `Paper` component. When you call this method, the following will be drawn on the `Paper`:
+To show the coordinate system, call the configuration method `showCoordinates()` on the `Paper` component. When you call this method, the following will be drawn on the `Paper`:
 
 * Some horizontal lines
 * Some vertical lines
 * The mouse's position in the upper right corner
 
-This is something you can use during development, but after you have fininshed writing your code, you probably want to remove the call to `showCoordinates()`, since you don't want your users to see it.
+This is something you can use during development, but after you have finished writing your code, you probably want to remove the call to `showCoordinates()`, since you don't want your users to see it.
 
 :::tip Example
 
@@ -107,7 +107,7 @@ class StartPage extends Page{
 ## Setting the coordinate system
 That the coordinate system uses the width 100 and height 100 often only makes sense when the width and the height of the `Paper` component are the same. If they are not (as in the previous example), then the size of one unit on the X-axe is not equally big as one unit on the Y-axe, and this makes it hard to use.
 
-So, if the widht and the height of the `Paper` component are not the same, it is often usefull to change the width and height of the coordinate system to match the actual width and height of the `Paper` component. That can be done by calling the configuration method `coordinateSystem()` on the `Paper` component. Pass it two values:
+So, if the width and the height of the `Paper` component are not the same, it is often useful to change the width and height of the coordinate system to match the actual width and height of the `Paper` component. That can be done by calling the configuration method `coordinateSystem()` on the `Paper` component. Pass it two values:
 
 * The desired width of the coordinate system as a number
 * The desired height of the coordinate system as a number
@@ -297,4 +297,4 @@ class StartPage extends Page{
 
 
 ## That's it!
-Woho! 🥳 Now you know how to use images in your BagaWork apps, goor work!
+Woho! 🥳 Now you know how to use images in your BagaWork apps, good work!

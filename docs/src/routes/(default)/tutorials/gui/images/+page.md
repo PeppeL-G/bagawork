@@ -18,7 +18,7 @@ Until network permissions have been implemented, the :docs[Image] component won'
 An image is a file that contains information about which color each pixel in the image should have. This information can be stored in many different ways, so there exists different type of image files:
 
 * If you take a photo with a camera, you often get a file with the file extension `.jpg` or `.jpeg`, and that indicates the file is stored in the JPEG format
-* If you want to have an image with a transparant background, you might end up with an image stored in the PNG format, indicated by the file extension `.png`
+* If you want to have an image with a transparent background, you might end up with an image stored in the PNG format, indicated by the file extension `.png`
 * If you want to have an image that is animated (something in the image changes with time), you might end up with an image stored in the GIF format, indicated by the file extension `.gif`
 * Etc.
 
@@ -33,7 +33,7 @@ On a webpage, an image can look like this:
 ## How to make an image available to a BagaApp
 Currently, a BagaApp itself can't contain images, but it can display images that are stored on the web. So, if you want to show an image in your BagaApp, that image must be available on the web. All images you can see on websites you visit in your web browsers are images available on the web.
 
-Each image on the web has its own unique identifer. That identifier is called the *Uniform Resource Identifier* (URL), sometimes referred to as the image's *link* or the image's *address*. In a web browser, when you see an image on a webpage, you can often right click on that image and in the apperaing menu select an option like `Copy Image Link`/`Copy Image Address` (it differs in different web browsers) to copy the image's URL.
+Each image on the web has its own unique identifier. That identifier is called the *Uniform Resource Identifier* (URL), sometimes referred to as the image's *link* or the image's *address*. In a web browser, when you see an image on a webpage, you can often right click on that image and in the appearing menu select an option like `Copy Image Link`/`Copy Image Address` (it differs in different web browsers) to copy the image's URL.
 
 ::: tip Example
 
@@ -112,7 +112,7 @@ If you create your own image that you want to use in your BagaWork app, you must
 After you have uploaded your image to Google Drive, it will only be available to you (the one signed in to your Google account). To make it available to others, you must change the image's *General Access* policy. In Google Drive:
 
 1. Choose to share the image
-2. In the apperaing modal, change the *General Access* option from `Restricted` to `Anyone with the link`
+2. In the appearing modal, change the *General Access* option from `Restricted` to `Anyone with the link`
 
 To obtain the URL to the image, in Google Drive:
 
@@ -138,4 +138,4 @@ If you read Google Drive's User Agreement, it probably says something like that 
 
 
 ## That's it!
-Woho! 🥳 Now you know how to use images in your BagaWork apps, goor work!
+Woho! 🥳 Now you know how to use images in your BagaWork apps, good work!

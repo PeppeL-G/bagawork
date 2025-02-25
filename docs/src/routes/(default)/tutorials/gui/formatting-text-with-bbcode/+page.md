@@ -8,7 +8,7 @@ This tutorial will teach you how to format text using BBCode.
 
 
 ## Introduction
-When your app shows text to the user, it will by default look like ordinary text, similiar to this text that you are reading now. Using BBCode, you can format the text, to change its size, color, boldness, etc.
+When your app shows text to the user, it will by default look like ordinary text, similar to this text that you are reading now. Using BBCode, you can format the text, to change its size, color, boldness, etc.
 
 
 
@@ -182,7 +182,7 @@ class StartPage extends Page{
 
 
 ## Links
-To display some text as a link the user can click on to open a webpage in a web browser, format the text as an URL that identifies which webpage the link should lead to by surroinding it with `[url]` and `[/url]`.
+To display some text as a link the user can click on to open a webpage in a web browser, format the text as an URL that identifies which webpage the link should lead to by surrounding it with `[url]` and `[/url]`.
 
 ::: tip Example
 
@@ -221,4 +221,4 @@ class StartPage extends Page{
 
 
 ## That's it!
-Fantastic, now you also now how to format text to make it look prettier. Good work! 🥳 In next tutorial we will take a look at how we can style not only the text in the componment, but the component itself.
+Fantastic, now you also now how to format text to make it look prettier. Good work! 🥳 In next tutorial we will take a look at how we can style not only the text in the component, but the component itself.
