@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changes: [
 		`Renamed App.onBefore() to App.onStart()`,
+		`Added the tutorial "Formatting Text with Font"`,
 	],
 }, {
 	version: `0.0.52`,

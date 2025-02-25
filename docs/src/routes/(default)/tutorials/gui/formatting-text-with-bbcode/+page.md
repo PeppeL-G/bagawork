@@ -2,7 +2,7 @@
 	import ViewApp from '$lib/ViewApp.svelte'
 </script>
 
-# 1. Formatting Text with BBCode
+# 2. Formatting Text with BBCode
 This tutorial will teach you how to format text using BBCode.
 
 

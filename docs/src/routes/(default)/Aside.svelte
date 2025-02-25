@@ -65,13 +65,16 @@
 		}, {
 			name: 'GUI',
 			links: [{
-				text: '1. Formatting Text with BBCode',
+				text: '1. Formatting Text with Font',
+				href: '/tutorials/gui/formatting-text-with-font/',
+			}, {
+				text: '2. Formatting Text with BBCode',
 				href: '/tutorials/gui/formatting-text-with-bbcode/',
 			}, {
-				text: '2. Styling',
+				text: '3. Styling',
 				href: '/tutorials/gui/styling/',
 			}, {
-				text: '3. Layouts',
+				text: '4. Layouts',
 				href: '/tutorials/gui/layouts/',
 			}, /*{
 				text: '4. Images',
