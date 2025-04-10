@@ -8,7 +8,7 @@ This tutorial will teach you how to format text using BBCode.
 
 
 ## Introduction
-When your app shows text to the user, it will by default look like ordinary text, similar to this text that you are reading now. Using BBCode, you can format the text, to change its size, color, boldness, etc.
+Using BBCode, you can format parts of text that are used in a GUI component. This way, you can make individual words bold, italic, bigger, etc.
 
 
 
@@ -24,7 +24,7 @@ If you instead want the component to be able to display text that has been forma
 
 
 ## Using simple BBCode tags
-To format text, you simply surround the text with *BBCode tags*, which describes how the surrounded text should be formated. For example, text surrounded with the BBCode start tag `[b]` (`b` is short for bold) and the end tag `[/b]` will display the surrounded tag as bold.
+To format text, you simply surround the text with *BBCode tags*, which describes how the surrounded text should be formatted. For example, text surrounded with the BBCode start tag `[b]` (`b` is short for bold) and the end tag `[/b]` will display the surrounded text as bold.
 
 
 ::: tip Example
@@ -129,7 +129,7 @@ Just remember to close the tags in correct order. If `[b]` comes before `[i]`, t
 
 
 ## Using BBCode tags with an attribute
-Some BBCode tags has an *attribute*, that provides additional information about how the BBCode tag should work.
+Some BBCode tags has an *attribute* that provides additional information about how the BBCode tag should work.
 
 To change the color of a text, you surround the text with `[color=THE_COLOR]` and `[/color]`, where `THE_COLOR` should be the name of a color in English, and it indicates the color the text will have, for example `[color=red]` to make the text red.
 
@@ -143,9 +143,9 @@ class StartPage extends Page{
 			Space,
 			Text.textWithBBCode(`Here is some [color=red]red text[/color].`),
 			Space,
-			Text.textWithBBCode(`Here is some [color=yellow]yellow text[/color].`),
+			Text.textWithBBCode(`Here is some [color=blue]blue text[/color].`),
 			Space,
-			Text.textWithBBCode(`[color=red]Here is some red text and [color=yellow]yellow text[/color].[/color]`),
+			Text.textWithBBCode(`[color=red]Here is some red text and [color=blue]blue text[/color].[/color]`),
 			Space,
 		)
 	}
@@ -221,4 +221,4 @@ class StartPage extends Page{
 
 
 ## That's it!
-Fantastic, now you also now how to format text to make it look prettier. Good work! 🥳 In next tutorial we will take a look at how we can style not only the text in the component, but the component itself.
+Hurray! Now you know all there is to know about formatting text 🥳 Let us continue to make out apps more and more beautiful by going through how to style components in the next tutorial, [3. Styling Components](../styling-components/).

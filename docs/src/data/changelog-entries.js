@@ -4,6 +4,9 @@ export const changelogEntries = [{
 	changes: [
 		`Renamed App.onBefore() to App.onStart()`,
 		`Added the tutorial "Formatting Text with Font"`,
+		`Added the tutorial "Making Components Scrollable"`,
+		`Added the tutorial "Using Units"`,
+		`Added the tutorial "GUI Exercises"`,
 	],
 }, {
 	version: `0.0.52`,

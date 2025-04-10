@@ -71,21 +71,33 @@
 				text: '2. Formatting Text with BBCode',
 				href: '/tutorials/gui/formatting-text-with-bbcode/',
 			}, {
-				text: '3. Styling',
-				href: '/tutorials/gui/styling/',
+				text: '3. Styling Components',
+				href: '/tutorials/gui/styling-components/',
 			}, {
-				text: '4. Layouts',
-				href: '/tutorials/gui/layouts/',
-			}, /*{
-				text: '4. Images',
-				href: '/tutorials/gui/images/',
-			}, */{
-				text: '5. Paper',
+				text: '4. Making Components Scrollable',
+				href: '/tutorials/gui/making-components-scrollable/',
+			}, {
+				text: '5. Layers',
+				href: '/tutorials/gui/layers/',
+			}, {
+				text: '6. Using a Box',
+				href: '/tutorials/gui/using-a-box/',
+			}, {
+				text: '7. Using Units',
+				href: '/tutorials/gui/using-units/',
+			}, {
+				text: '8. Exercises',
+				href: '/tutorials/gui/exercises/',
+			}],
+		}, {
+			name: `Drawing`,
+			links: [{
+				text: '1. Paper',
 				href: '/tutorials/gui/paper/',
 			}, {
-				text: '6. Dynamically Sized Paper',
+				text: '2. Dynamically Sized Paper',
 				href: '/tutorials/gui/dynamically-sized-paper/',
-			}],
+			}]
 		}],
 		
 		'examples': [{
